@@ -1,0 +1,579 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Pipe in the BeforeMagnetRegion area                -->
+<!--===========================================================================-->
+<lccdd>
+
+  <detectors>
+    <detector name="PipeBeforeVeloSupFix" type="DD4hep_VolumeAssembly" parent="${PipeBeforeVelo:parent}" vis="Pipe:Vis">
+
+      <!-- Fixed Pipe Support -->
+
+      <!-- Large plate -->
+      <volume name="lvPipeSupBefVeloRec1" material="Pipe:Al6082" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="subtraction" name="PipeSupBefVeloRec1Sub">
+	  <shape type="Box" name="PipeSupBefVeloRec1"
+		 dx="0.5*PipeSupBefVeloRec1X"
+		 dy="0.5*PipeSupBefVeloRec1Y"
+		 dz="0.5*PipeSupBefVeloRec1Z"/>
+	  <shape type="Tube" name="PipeSupBefVeloRec1Hole"
+		 dz="0.5*PipeSupBefVeloRec1Z+0.2*mm"
+		 rmin="0.0*mm"
+		 rmax="PipeSupBefVeloRec1HoleRad"/>
+	</shape>
+      </volume>
+
+      <!-- Small plate -->
+      <volume name="lvPipeSupBefVeloRec2" material="Pipe:Al6082" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="subtraction" name="PipeSupBefVeloRec2Sub">
+	  <shape type="Box" name="PipeSupBefVeloRec2"
+		 dx="0.5*PipeSupBefVeloRec2X"
+		 dy="0.5*PipeSupBefVeloRec2Y"
+		 dz="0.5*PipeSupBefVeloRec2Z"/>
+	  <shape type="Tube" name="PipeSupBefVeloRec2Hole"
+		 dz="0.5*PipeSupBefVeloRec2Z+0.2*mm"
+		 rmin="0.0*mm"
+		 rmax="PipeSupBefVeloRec2HoleRad"/>
+	</shape>
+      </volume>
+      <envelope type="Assembly"  name="lvPipeSupBefVelo" vis="Pipe:BeforeVelo">
+	<physvol name="pvPipeSupBefVeloRec1"             volume="lvPipeSupBefVeloRec1">
+	</physvol>
+	<physvol name="pvPipeSupBefVeloRec2"             volume="lvPipeSupBefVeloRec2">
+	  <position z="PipeSupBefVeloRec1Z/2 + PipeSupBefVeloRec2Z/2"/>
+	</physvol>
+      </envelope>
+
+      <comment> Pipe position in the region  </comment>
+      <position z="-2164.5*mm + Regions:BeforeMagnetZSize/2 - Regions:BeforeVeloZSize/2"/>
+
+    </detector>
+
+<comment>
+What is this ? Looks like a VMA warm module ....
+
+    <detector name="PipeBeforeVeloSupMobile" type="DD4hep_VolumeAssembly" parent="${PipeBeforeVelo:parent}" vis="Pipe:Vis">
+
+      <!-- End pieces of bellows -->
+      <volume name="lvMobSupEntryUp" material="Pipe:Steel316LN" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="union" name="MobSupEntryUpSub">
+	  <shape type="Tube" name="MobSupEntryUpCyl"
+		 dz="0.5*MobSupEntryUpCylZ"
+		 rmin="MobSupEntryRad"
+		 rmax="MobSupEntryRad+MobSupEntryThick"/>
+
+	  <shape type="ConeSegment" name="MobSupEntryUpCons"
+		 dz="0.5*MobSupEntryConsZ"
+		 rmin1="MobSupEntryRad"
+		 rmin2="MobSupEntryConsRadEnd"
+		 rmax1="MobSupEntryRad+MobSupEntryThick"
+		 rmax2="MobSupEntryConsRadEnd+MobSupEntryThick"/>
+	  <position z="MobSupEntryUpCylZ/2+MobSupEntryConsZ/2"/>
+	</shape>
+      </volume>
+
+      <volume name="lvMobSupEntryDown" material="Pipe:Steel316LN" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="union" name="MobSupEntryDownSub">
+	  <shape type="Tube" name="MobSupEntryDownCyl"
+		 dz="0.5*MobSupEntryDownCylZ"
+		 rmin="MobSupEntryRad"
+		 rmax="MobSupEntryRad+MobSupEntryThick"/>
+
+	  <shape type="ConeSegment" name="MobSupEntryDownCons"
+		 dz="0.5*MobSupEntryConsZ"
+		 rmin2="MobSupEntryRad"
+		 rmin1="MobSupEntryConsRadEnd"
+		 rmax2="MobSupEntryRad+MobSupEntryThick"
+		 rmax1="MobSupEntryConsRadEnd+MobSupEntryThick"/>
+	  <position z="-MobSupEntryDownCylZ/2-MobSupEntryConsZ/2"/>
+	</shape>
+      </volume>
+
+      <!-- Bellows -->
+      <volume name="lvMobSupBellow" material="Pipe:Steel316LN" vis="Pipe:Support">
+	<shape type="Polycone" name="MobSupBellowPolyCone">
+	  <zplane z="-MobSupBellowZ/2"
+		  rmin="MobSupEntryConsRadEnd"
+		  rmax="MobSupEntryConsRadEnd+MobSupBellowThick"/>
+	  <zplane z="-MobSupBellowZ/2+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch/2-MobSupBellowZ/2-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch/2-MobSupBellowZ/2+MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*2/2-MobSupBellowZ/2-MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*2/2-MobSupBellowZ/2+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*3/2-MobSupBellowZ/2-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*3/2-MobSupBellowZ/2+MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*4/2-MobSupBellowZ/2-MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*4/2-MobSupBellowZ/2+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*5/2-MobSupBellowZ/2-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*5/2-MobSupBellowZ/2+MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*5/2-MobSupBellowZ/2+MobSupBellowCyl1Z-MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*5/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*6/2-MobSupBellowZ/2+MobSupBellowCyl1Z-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*6/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*7/2-MobSupBellowZ/2+MobSupBellowCyl1Z-MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*7/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*8/2-MobSupBellowZ/2+MobSupBellowCyl1Z-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*8/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*8/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z-MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*8/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*9/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*9/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z+MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*10/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z-MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*10/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*11/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*11/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z+MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*12/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z-MobSupBellowThick"
+		  rmin="MobSupBellowOuterRad"
+		  rmax="MobSupBellowOuterRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*12/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z+MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+
+	  <zplane z="MobSupBellowPitch*13/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z-MobSupBellowThick"
+		  rmin="MobSupBellowInnerRad"
+		  rmax="MobSupBellowInnerRad+MobSupBellowThick"/>
+	  <zplane z="MobSupBellowPitch*13/2-MobSupBellowZ/2+MobSupBellowCyl1Z+MobSupBellowCyl2Z"
+		  rmin="MobSupEntryConsRadEnd"
+		  rmax="MobSupEntryConsRadEnd+MobSupBellowThick"/>
+	</shape>
+      </volume>
+
+
+      <!-- Upstream Flange -->
+      <volume name="lvMobSupFlangeUp" material="Pipe:Steel316LN" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="subtraction" name="MobSupFlangeUpSub">
+	  <shape type="Tube" name="MobSupFlangeUpCyl"
+		 dz="0.5*MobSupFlangeUpCylZ"
+		 rmin="MobSupFlangeUpCylRad"
+		 rmax="MobSupFlangeUpCylRad+MobSupFlangeUpThick"/>
+	  <shape type="Tube" name="MobSupFlangeUpCylSub"
+		 dz="0.5*MobSupFlangeUpCylSubZ"
+		 rmin="0.0*mm"
+		 rmax="MobSupFlangeUpCylSubRad"/>
+	  <position z="MobSupFlangeUpCylSubZ/2-MobSupFlangeUpCylZ/2"/>
+	</shape>
+
+      </volume>
+
+      <!-- Downstream Flange -->
+      <volume name="lvMobSupFlangeDown" material="Pipe:Steel316LN" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="subtraction" name="MobSupFlangeDownSub">
+	  <shape type="Tube" name="MobSupFlangeDownCyl"
+		 dz="0.5*MobSupFlangeDownCylZ"
+		 rmin="MobSupFlangeDownCylRad"
+		 rmax="MobSupFlangeDownCylRad+MobSupFlangeDownThick"/>
+	  <shape type="Tube" name="MobSupFlangeDownCylSub"
+		 dz="0.5*MobSupFlangeDownCylSubZ+0.02*mm"
+		 rmin="0.0*mm"
+		 rmax="MobSupFlangeDownCylSubRad"/>
+	  <position z="-MobSupFlangeDownCylSubZ/2+MobSupFlangeDownCylZ/2+0.01*mm"/>
+	</shape>
+      </volume>
+
+      <!-- Transition tube and mount -->
+      <volume name="lvMobSupTransTubeComplete" vis="Pipe:Support">
+	<physvol name="pvMobSupTransTube"
+		 volume="lvMobSupTransTube">
+	</physvol>
+	<physvol name="pvMobSupTransTubeFlange"
+		 volume="lvMobSupTransTubeFlange">
+	  <position z="-MobSupTransTubeCylZ/2+MobSupTransTubeFlangeZ/2"/>
+	</physvol>
+      </volume>
+
+      <!-- Transition Tube -->
+      <volume name="lvMobSupTransTube" material="Pipe:CuOFE" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="union" name="TransTubeUnion">
+	  <shape type="Tube" name="TransTubeCyl"
+		 dz="0.5*MobSupTransTubeCylZ"
+		 rmin="MobSupTransTubeRad"
+		 rmax="MobSupTransTubeRad+MobSupTransTubeThick"/>
+	  <shape type="ConeSegment" name="TransTubeCons"
+		 dz="0.5*MobSupTransTubeConsZ"
+		 rmin1="MobSupTransTubeRad"
+		 rmin2="MobSupTransTubeConsRad"
+		 rmax1="MobSupTransTubeRad+MobSupTransTubeThick"
+		 rmax2="MobSupTransTubeConsRad+MobSupTransTubeThick"/>
+	  <position z="MobSupTransTubeCylZ/2-MobSupTransTubeConsZ/2"/>
+	</shape>
+      </volume>
+
+      <!-- Transition mount -->
+      <volume name="lvMobSupTransTubeFlange" material="Pipe:CuOFE" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="union" name="TransTubeFlangeUnion">
+	  <shape type="Tube" name="TransTubeFlange"
+		 dz="0.5*MobSupTransTubeFlangeZ"
+		 rmin="MobSupTransTubeRad+MobSupTransTubeThick+MobSupTransTubeFlangeInnerThick+0.01*mm"
+		 rmax="MobSupTransTubeRad+MobSupTransTubeThick+MobSupTransTubeFlangeInnerThick+MobSupTransTubeFlangeThick"/>
+	  <shape type="Tube" name="TransTubeFlangeLedge"
+		 dz="0.5*MobSupTransTubeFlangeInnerZ"
+		 rmin="MobSupTransTubeRad+MobSupTransTubeThick"
+		 rmax="MobSupTransTubeRad+MobSupTransTubeThick+MobSupTransTubeFlangeInnerThick"/>
+	  <position z="MobSupTransTubeFlangeInnerZ/2-MobSupTransTubeFlangeZ/2"/>
+	</shape>
+      </volume>
+
+      <!-- RF Contact ring -->
+      <volume name="lvMobSupRfContactRing" vis="Pipe:Support">
+	<physvol name="pvMobSupRfContact1"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="0*360*degree / 48 + 90*degree"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact2"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="1*360*degree / 48 + 90*degree"/>
+	  <rotation z="1*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact3"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="2*360*degree / 48 + 90*degree"/>
+	  <rotation z="2*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact4"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="3*360*degree / 48 + 90*degree"/>
+	  <rotation z="3*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact5"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="4*360*degree / 48 + 90*degree"/>
+	  <rotation z="4*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact6"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="5*360*degree / 48 + 90*degree"/>
+	  <rotation z="5*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact7"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="6*360*degree / 48 + 90*degree"/>
+	  <rotation z="6*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact8"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="7*360*degree / 48 + 90*degree"/>
+	  <rotation z="7*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact9"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="8*360*degree / 48 + 90*degree"/>
+	  <rotation z="8*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact10"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="9*360*degree / 48 + 90*degree"/>
+	  <rotation z="9*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact11"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="10*360*degree / 48 + 90*degree"/>
+	  <rotation z="10*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact12"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="11*360*degree / 48 + 90*degree"/>
+	  <rotation z="11*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact13"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="12*360*degree / 48 + 90*degree"/>
+	  <rotation z="12*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact14"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="13*360*degree / 48 + 90*degree"/>
+	  <rotation z="13*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact15"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="14*360*degree / 48 + 90*degree"/>
+	  <rotation z="14*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact16"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="15*360*degree / 48 + 90*degree"/>
+	  <rotation z="15*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact17"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="16*360*degree / 48 + 90*degree"/>
+	  <rotation z="16*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact18"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="17*360*degree / 48 + 90*degree"/>
+	  <rotation z="17*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact19"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="18*360*degree / 48 + 90*degree"/>
+	  <rotation z="18*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact20"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="19*360*degree / 48 + 90*degree"/>
+	  <rotation z="19*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact21"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="20*360*degree / 48 + 90*degree"/>
+	  <rotation z="20*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact22"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="21*360*degree / 48 + 90*degree"/>
+	  <rotation z="21*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact23"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="22*360*degree / 48 + 90*degree"/>
+	  <rotation z="22*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact24"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="23*360*degree / 48 + 90*degree"/>
+	  <rotation z="23*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact25"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="24*360*degree / 48 + 90*degree"/>
+	  <rotation z="24*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact26"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="25*360*degree / 48 + 90*degree"/>
+	  <rotation z="25*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact27"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="26*360*degree / 48 + 90*degree"/>
+	  <rotation z="26*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact28"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="27*360*degree / 48 + 90*degree"/>
+	  <rotation z="27*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact29"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="28*360*degree / 48 + 90*degree"/>
+	  <rotation z="28*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact30"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="29*360*degree / 48 + 90*degree"/>
+	  <rotation z="29*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact31"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="30*360*degree / 48 + 90*degree"/>
+	  <rotation z="30*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact32"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="31*360*degree / 48 + 90*degree"/>
+	  <rotation z="31*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact33"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="32*360*degree / 48 + 90*degree"/>
+	  <rotation z="32*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact34"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="33*360*degree / 48 + 90*degree"/>
+	  <rotation z="33*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact35"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="34*360*degree / 48 + 90*degree"/>
+	  <rotation z="34*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact36"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="35*360*degree / 48 + 90*degree"/>
+	  <rotation z="35*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact37"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="36*360*degree / 48 + 90*degree"/>
+	  <rotation z="36*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact38"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="37*360*degree / 48 + 90*degree"/>
+	  <rotation z="37*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact39"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="38*360*degree / 48 + 90*degree"/>
+	  <rotation z="38*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact40"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="39*360*degree / 48 + 90*degree"/>
+	  <rotation z="39*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact41"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="40*360*degree / 48 + 90*degree"/>
+	  <rotation z="40*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact42"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="41*360*degree / 48 + 90*degree"/>
+	  <rotation z="41*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact43"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="42*360*degree / 48 + 90*degree"/>
+	  <rotation z="42*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact44"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ  phi="43*360*degree / 48 + 90*degree"/>
+	  <rotation z="43*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact45"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ phi="44*360*degree / 48 + 90*degree"/>
+	  <rotation z="44*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact46"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ phi="45*360*degree / 48 + 90*degree"/>
+	  <rotation z="45*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact47"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ phi="46*360*degree / 48 + 90*degree"/>
+	  <rotation z="46*360*degree / 48"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact48"		 volume="lvMobSupRfContSingle">
+	  <positionRPhiZ phi="47*360*degree / 48 + 90*degree"/>
+	  <rotation z="47*360*degree / 48"/>
+	</physvol>
+      </volume>
+
+      <!-- RF contact mount -->
+      <volume name="lvMobSupRfContMount" material="Pipe:CuOFE" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="union" name="MobSupRfContUnion">
+	  <shape type="Tube" name="MobSupRfContCyl"
+		 dz="0.5*MobSupRfContactCylZ"
+		 rmin="MobSupRfContactRad"
+		 rmax="MobSupRfContactRad+MobSupRfContactThick"/>
+	  <shape type="Tube" name="MobSupRfContactFlange"
+		 dz="0.5*MobSupRfContactFlangeZ"
+		 rmin="MobSupRfContactRad+MobSupRfContactThick+0.01*mm"
+		 rmax="MobSupRfContactRad+MobSupRfContactThick+MobSupRfContactFlangeThick"/>
+	  <position z="MobSupRfContactCylZ/2-MobSupRfContactFlangeZ/2"/>
+	</shape>
+      </volume>
+
+      <!-- RF single contact -->
+      <volume name="lvMobSupRfContSingle" material="Pipe:CuBe17410" vis="Pipe:Support">
+	<shape type="BooleanShape" operation="union" name="MobSupRfContSingleUnion">
+	  <shape type="Tube" name="MobSupRfContSinglePlate"
+		 dz="0.5*MobSupRfContSinglePlateZ"
+		 rmin="MobSupRfContactRad - MobSupRfContSingleThick"
+		 rmax="MobSupRfContactRad"
+		 startPhiAngle="-360*degree / 96 + 90*degree"
+		 deltaPhiAngle="360*degree / 48"/>
+	  <shape type="Box" name="MobSupRfContSingleArm"
+		 dx="0.5*MobSupRfContSingleX"
+		 dy="0.5*MobSupRfContSingleThick"
+		 dz="0.5*MobSupRfContSingleArmZ"/>
+	  <position y="MobSupRfContSingleArmPosY" z="MobSupRfContSingleArmPosZ"/>
+	  <rotation x="MobSupRfContSingleArmAng"/>
+	  <shape type="Box" name="MobSupRfContSingleEnd"
+		 dx="0.5*MobSupRfContSingleX"
+		 dy="0.5*MobSupRfContSingleThick"
+		 dz="0.5*MobSupRfContSingleEndZ"/>
+	  <position y="MobSupRfContSingleEndPosY" z="MobSupRfContSingleEndPosZ"/>
+	  <rotation x="MobSupRfContSingleEndAng"/>
+	</shape>
+      </volume>
+
+      <!-- RF Contact -->
+      <volume name="lvMobSupRfContact" vis="Pipe:Support">
+	<physvol name="pvMobSupRfContMount"		 volume="lvMobSupRfContMount">
+	</physvol>
+	<physvol name="pvMobSupRfContactRing"		 volume="lvMobSupRfContactRing">
+	  <position z="MobSupRfContactCylZ/2-MobSupRfContSinglePlateZ/2-1*mm"/>
+	</physvol>
+      </volume>
+
+      <!-- Vacuum -->
+      <volume name="lvMobSupVacuum" material="Vacuum" vis="Pipe:Vacuum">
+	<shape type="Tube" name="MobSupVacuumCyl"
+               dz="0.5*MobSupFullZ"
+               rmin="0.0*mm"
+               rmax="MobSupVacuumRad"/>
+      </volume>
+
+      <!-- Mobile Support -->
+      <envelope type="Assembly"  name="lvPipeMobileSupport" vis="Pipe:BeforeVelo">
+	<physvol name="pvMobSupEntryUp"             volume="lvMobSupEntryUp">
+	  <position z="MobSupEntryUpPosZ"/>
+	</physvol>
+	<physvol name="pvMobSupFlangeUp"            volume="lvMobSupFlangeUp">
+	  <position z="MobSupFlangeUpPosZ"/>
+	</physvol>
+
+	<physvol name="pvMobSupTransTubeComplete"   volume="lvMobSupTransTubeComplete">
+	  <position z="MobSupTransTubePosZ"/>
+	</physvol>
+	<physvol name="pvMobSupBellow"              volume="lvMobSupBellow">
+	  <position z="MobSupBellowPosZ"/>
+	</physvol>
+	<physvol name="pvMobSupRfContact"           volume="lvMobSupRfContact">
+	  <position z="MobSupRfContactPosZ"/>
+	</physvol>
+
+	<physvol name="pvMobSupEntryDown"           volume="lvMobSupEntryDown">
+	  <position z="MobSupEntryDownPosZ"/>
+	</physvol>
+	<physvol name="pvMobSupFlangeDown"          volume="lvMobSupFlangeDown">
+	  <position z="MobSupFlangeDownPosZ"/>
+	</physvol>
+	<physvol name="pvMobSupVacuum"              volume="lvMobSupVacuum"/>
+      </envelope>
+
+      <comment> Pipe position in the region  </comment>
+      <position z="-2164.5*mm + BeforeMagnetZSize/2 - BeforeVeloZSize/2"/>
+
+    </detector>
+</comment>
+
+  </detectors>
+</lccdd>

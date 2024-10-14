@@ -1,0 +1,24 @@
+UTCsideUTaX: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTCsideUTaU: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTCsideUTbV: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTCsideUTbX: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTAsideUTaX: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTAsideUTaU: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTAsideUTbV: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTAsideUTbX: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]

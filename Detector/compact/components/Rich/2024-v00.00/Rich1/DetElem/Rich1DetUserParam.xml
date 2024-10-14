@@ -1,0 +1,22 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    20/01/2022                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich1 detector user parameters                                           -->
+<!--  These are not needed for creating detector description. However useful   -->
+<!--  in different LHCb applications                                           -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+
+  </define>
+
+</lccdd>

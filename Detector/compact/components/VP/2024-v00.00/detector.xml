@@ -1,0 +1,59 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the BLS stations                                        -->
+<!-- ========================================================================== -->
+<lccdd>
+  <define>
+  </define>
+
+  <detectors>
+    <detector id="VP:ID" name="VP" type="LHCb_VP_v1_0" parent="${VP:parent}" readout="VPHits" vis="VP">
+
+      <include ref="RFBox.xml"/>
+      <include ref="RFFoil/RFFoil.xml"/>
+      <include ref="WFCone.xml"/>
+      <include ref="Support.xml"/>
+      <include ref="VacuumTank.xml"/>
+      <debug>
+        <item name="debug"             value="0"/>
+        <item name="build_sides"       value="1"/>
+        <item name="build_mod_support" value="1"/>
+        <item name="build_det_support" value="1"/>
+        <item name="build_rf_box"      value="1"/>
+        <item name="build_rf_foil"     value="1"/>
+        <item name="build_vacuum_tank" value="1"/>
+        <item name="build_wake_cones"  value="1"/>
+        <comment>
+          <item name="select_volume"     value="lvRFBoxLeft"/>
+          <item name="select_volume"     value="lvVeloDetSup"/>
+          <item name="select_volume"     value="lvLadder"/>
+          <item name="select_volume"     value="lvSupport"/>
+          <item name="select_volume"     value="lvModule"/>
+          <item name="select_volume"     value="lvHybrid"/>
+          <item name="select_volume"     value="lvModule"/>
+          <item name="select_volume"     value="lvModuleWithSupport"/>
+          <item name="select_volume"     value="lvSupport"/>
+          <item name="select_volume"     value="lvVPLeft"/>
+          <item name="select_volume"     value="lvVPRight"/>
+        </comment>
+        <item name="select_volume"     value="lvVP"/>
+      </debug>
+    </detector>
+  </detectors>
+
+  <readouts>
+    <readout name="VPHits">
+      <id>system:8,motionside:1,side:1,module:8,ladder:3</id>
+    </readout>
+  </readouts>
+
+</lccdd>

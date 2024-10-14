@@ -1,0 +1,170 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    09/11/2020                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich1 PMT surface property tables for optical property definitions       -->
+<!--===========================================================================-->
+<lccdd>
+
+
+
+<!--  Begin Rich PMT Surface Tab properties  -->
+ <properties>
+
+ <matrix name  = "RichPMTQuartzWindowSurfaceReflectivityPT" coldim="RichPropColDim" values="
+   (1.0*RichPhotEnUniteV)  1.0
+   (2.0*RichPhotEnUniteV)  1.0
+   (3.0*RichPhotEnUniteV)  1.0
+   (4.0*RichPhotEnUniteV)  1.0
+   (5.0*RichPhotEnUniteV)  1.0
+   (6.0*RichPhotEnUniteV)  1.0
+   (7.0*RichPhotEnUniteV)  1.0
+   (8.0*RichPhotEnUniteV)  1.0
+   (9.0*RichPhotEnUniteV)  1.0
+   (10.0*RichPhotEnUniteV)  1.0
+ "/>
+
+ <matrix name  = "RichPMTQuartzWindowSurfaceEfficiencyPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)  0.0
+    (2.0*RichPhotEnUniteV)  0.0
+    (3.0*RichPhotEnUniteV)  0.0
+    (4.0*RichPhotEnUniteV)  0.0
+    (5.0*RichPhotEnUniteV)  0.0
+    (6.0*RichPhotEnUniteV)  0.0
+    (7.0*RichPhotEnUniteV)  0.0
+    (8.0*RichPhotEnUniteV)  0.0
+    (9.0*RichPhotEnUniteV)  0.0
+   (10.0*RichPhotEnUniteV)  0.0
+ "/>
+  <matrix name  = "RichPMTQuartzWindowSurfaceTransmittancePT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)   1.0
+    (2.0*RichPhotEnUniteV)   1.0
+    (3.0*RichPhotEnUniteV)   1.0
+    (4.0*RichPhotEnUniteV)   1.0
+    (5.0*RichPhotEnUniteV)   1.0
+    (6.0*RichPhotEnUniteV)   1.0
+    (7.0*RichPhotEnUniteV)   1.0
+    (8.0*RichPhotEnUniteV)   1.0
+    (9.0*RichPhotEnUniteV)   1.0
+    (10.0*RichPhotEnUniteV)   1.0
+  "/>
+
+
+ <matrix name  = "RichPMTQWPhCathodeSurfaceReflectivityPT" coldim="RichPropColDim" values="
+   (1.0*RichPhotEnUniteV)  1.0
+   (2.0*RichPhotEnUniteV)  1.0
+   (3.0*RichPhotEnUniteV)  1.0
+   (4.0*RichPhotEnUniteV)  1.0
+   (5.0*RichPhotEnUniteV)  1.0
+   (6.0*RichPhotEnUniteV)  1.0
+   (7.0*RichPhotEnUniteV)  1.0
+   (8.0*RichPhotEnUniteV)  1.0
+   (9.0*RichPhotEnUniteV)  1.0
+   (10.0*RichPhotEnUniteV) 1.0
+ "/>
+
+ <matrix name  = "RichPMTQWPhCathodeSurfaceEfficiencyPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)  0.0
+    (2.0*RichPhotEnUniteV)  0.0
+    (3.0*RichPhotEnUniteV)  0.0
+    (4.0*RichPhotEnUniteV)  0.0
+    (5.0*RichPhotEnUniteV)  0.0
+    (6.0*RichPhotEnUniteV)  0.0
+    (7.0*RichPhotEnUniteV)  0.0
+    (8.0*RichPhotEnUniteV)  0.0
+    (9.0*RichPhotEnUniteV)  0.0
+   (10.0*RichPhotEnUniteV)  0.0
+ "/>
+
+  <matrix name  = "RichPMTQWPhCathodeSurfaceTransmittancePT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)   1.0
+    (2.0*RichPhotEnUniteV)   1.0
+    (3.0*RichPhotEnUniteV)   1.0
+    (4.0*RichPhotEnUniteV)   1.0
+    (5.0*RichPhotEnUniteV)   1.0
+    (6.0*RichPhotEnUniteV)   1.0
+    (7.0*RichPhotEnUniteV)   1.0
+    (8.0*RichPhotEnUniteV)   1.0
+    (9.0*RichPhotEnUniteV)   1.0
+    (10.0*RichPhotEnUniteV)   1.0
+  "/>
+
+
+ <matrix name  = "RichPMTMetalTubeSurfaceReflectivityPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)  0.6
+    (2.0*RichPhotEnUniteV) 0.6
+    (3.0*RichPhotEnUniteV)  0.6
+    (4.0*RichPhotEnUniteV)  0.6
+    (5.0*RichPhotEnUniteV)  0.6
+    (6.0*RichPhotEnUniteV)  0.6
+    (7.0*RichPhotEnUniteV)  0.6
+    (8.0*RichPhotEnUniteV)  0.6
+    (9.0*RichPhotEnUniteV)  0.6
+   (10.0*RichPhotEnUniteV)  0.6
+ "/>
+
+
+ <matrix name  = "RichPMTMetalTubeSurfaceEfficiencyPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)  0.0
+    (2.0*RichPhotEnUniteV)  0.0
+    (3.0*RichPhotEnUniteV)  0.0
+    (4.0*RichPhotEnUniteV)  0.0
+    (5.0*RichPhotEnUniteV)  0.0
+    (6.0*RichPhotEnUniteV)  0.0
+    (7.0*RichPhotEnUniteV)  0.0
+    (8.0*RichPhotEnUniteV)  0.0
+    (9.0*RichPhotEnUniteV)  0.0
+   (10.0*RichPhotEnUniteV)  0.0
+ "/>
+
+
+ <matrix name  = "RichPMTAnodeSurfaceReflectivityPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)  0.0
+    (2.0*RichPhotEnUniteV)  0.0
+    (3.0*RichPhotEnUniteV)  0.0
+    (4.0*RichPhotEnUniteV)  0.0
+    (5.0*RichPhotEnUniteV)  0.0
+    (6.0*RichPhotEnUniteV)  0.0
+    (7.0*RichPhotEnUniteV)  0.0
+    (8.0*RichPhotEnUniteV)  0.0
+    (9.0*RichPhotEnUniteV)  0.0
+    (10.0*RichPhotEnUniteV)  0.0
+ "/>
+
+
+
+ <matrix name  = "RichPMTAnodeSurfaceEfficiencyPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)  0.0
+    (2.0*RichPhotEnUniteV)  0.0
+    (3.0*RichPhotEnUniteV)  0.0
+    (4.0*RichPhotEnUniteV)  0.0
+    (5.0*RichPhotEnUniteV)  0.0
+    (6.0*RichPhotEnUniteV)  0.0
+    (7.0*RichPhotEnUniteV)  0.0
+    (8.0*RichPhotEnUniteV)  0.0
+    (9.0*RichPhotEnUniteV)  0.0
+    (10.0*RichPhotEnUniteV)  0.0
+ "/>
+
+<!--  End of Rich PMT Surface Tab property   -->
+
+</properties>
+
+</lccdd>
+
+
+
+
+
+
+
+
+
+

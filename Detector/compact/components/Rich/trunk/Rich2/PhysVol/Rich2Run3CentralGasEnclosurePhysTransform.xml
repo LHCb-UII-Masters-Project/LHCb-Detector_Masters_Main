@@ -1,0 +1,84 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+<!--    Begin Rich2 central region physvols including those for GasEnclosure -->
+<!--  This also includes Carbon tube, Gas radiator region and walls around the GasEnclosure -->
+<!--  They are inside the lvRich2Master volume -->
+<!--     Old names kept for reference when they are different from new names    -->
+<!--    <physvol  name="pvRich2Gas"  <volume name="lvRich2Gas"  -->
+<!--    <physvol  name="pvRich2GasContTop","pvRich2GasContBot"  <volume name="lvRich2GasContTopBot" -->
+<!--    <physvol name = "pvRich2GasContSide0"  <volume name="lvRich2GasContSide0"   -->
+<!--    <physvol name = "pvRich2GasContSide1"  <volume name="lvRich2GasContSide1"   -->
+
+<!-- New Names    listed here                                   -->
+<!--     <physvol  name= "pvRich2GasEnclosure"          <volume name="lvRich2GasEnclosure" -->
+<!--     <physvol  name= "pvRich2Tube"   <volume name="lvRich2Tube" -->
+<!--     <physvol  name= "pvRich2GasContWallTop"  <volume name="lvRich2GasContWallTopAndBot" -->
+<!--     <physvol  name= "pvRich2GasContWallBot"  <volume name="lvRich2GasContWallTopAndBot" -->
+<!--     <physvol  name= "pvRich2GasContWallSide0"  <volume name = "lvRich2GasContWallSide0" -->
+<!--     <physvol  name= "pvRich2GasContWallSide1"  <volume name = "lvRich2GasContWallSide1" -->
+
+<Rich2>
+
+    <item name="PhysVolName"    value="pvRich2GasEnclosure" />
+    <item name="TransformName"  value="pvRich2GasEnclosureTransform">
+      <transformation>
+           <position  x = "Rh2MainGasEnclosurePosX"
+                      y = "Rh2MainGasEnclosurePosY"
+                      z = "Rh2MainGasEnclosurePosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2Tube" />
+    <item name="TransformName"  value="pvRich2TubeTransform">
+      <transformation>
+           <position  z = "Rh2MainGasEnclosurePosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2GasContWallTop" />
+    <item name="TransformName"  value="pvRich2GasContWallTopTransform">
+      <transformation>
+           <position y = "Rh2GasContTopPosY" 
+                     z = "Rh2MainGasEnclosurePosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2GasContWallBot" />
+    <item name="TransformName"  value="pvRich2GasContWallBotTransform">
+      <transformation>
+           <position   y = "Rh2GasContBotPosY" 
+                       z = "Rh2MainGasEnclosurePosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2GasContWallSide0"/>
+    <item name="TransformName"  value="pvRich2GasContWallSide0Transform">
+      <transformation>
+          <position x = "Rh2GasContSide0PosX"
+                    z = "Rh2GasContSidePosZ" />
+          <rotation y = "Rh2GasContSide0Angle" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2GasContWallSide1"/>
+    <item name="TransformName"  value="pvRich2GasContWallSide1Transform">
+      <transformation>
+          <position x = "Rh2GasContSide1PosX"
+                    z = "Rh2GasContSidePosZ" />
+          <rotation y = "Rh2GasContSide1Angle" />
+      </transformation>
+    </item>
+
+
+
+
+</Rich2>

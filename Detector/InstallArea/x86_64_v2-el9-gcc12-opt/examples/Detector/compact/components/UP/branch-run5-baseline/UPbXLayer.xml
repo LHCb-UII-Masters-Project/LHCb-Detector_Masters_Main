@@ -1,0 +1,33 @@
+   <up>
+           <!--
+           (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+           This software is distributed under the terms of the GNU General Public
+           Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+           In applying this licence, CERN does not waive the privileges and immunities
+           granted to it by virtue of its status as an Intergovernmental Organization
+           or submit itself to any jurisdiction.
+           -->
+
+     <!-- ================================================================= -->
+     <volume material="Air" name="lvUPbXCsideLayer" vis="UP:Envelope">
+        <shape name="UUPbXCLayerBoxSub" type="BooleanShape" operation="subtraction">
+   	  <shape name="UUPbXCsideLayerBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideShortWidth/2" x2="UUPaXLayerSideLongWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+             <shape name="UUPbXCsideLayerBeamBox" type="Box" dx="UPPixelHoleWide/2" dy="UPPixelHoleLong/2" dz="UPPixelBareLayerThick*1.1/2"/>
+             <position x="1/2*UUPLayerSideCorrectedWidth"/>
+        </shape>
+
+     </volume>
+
+     <!-- ================================================================= -->
+     <volume material="Air" name="lvUPbXAsideLayer" vis="UP:Envelope">
+        <shape name="UUPbXALayerBoxSub" type="BooleanShape" operation="subtraction">
+   	  <shape name="UUPbXAsideLayerBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideLongWidth/2" x2="UUPaXLayerSideShortWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+             <shape name="UUPbXAsideLayerBeamBox" type="Box" dx="UPPixelHoleWide/2" dy="UPPixelHoleLong/2" dz="UPPixelBareLayerThick*1.1/2"/>
+             <position x="-1/2*UUPLayerSideCorrectedWidth"/>
+        </shape>
+
+     </volume>
+
+   </up>

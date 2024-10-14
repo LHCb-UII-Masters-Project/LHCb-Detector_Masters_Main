@@ -1,0 +1,648 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    01/02/2021                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich2 optical surface definitions                                        -->
+<!--===========================================================================-->
+
+<!--  The names of the mirror segment surfaces follow the corresponding    -->
+<!--  physical volume copy numbers.                                        -->
+<lccdd>
+
+ <surfaces>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg01" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror01_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg02" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror02_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg03" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror03_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg04" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror04_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg05" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror05_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg06" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror06_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg09" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror09_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg10" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror10_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg11" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror11_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg13" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror13_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg14" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror14_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg17" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror17_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg18" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror18_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg19" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror19_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg20" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror20_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg21" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror21_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg22" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror22_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg25" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror25_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg26" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror26_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg27" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror27_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg28" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror28_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg29" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror29_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg30" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror30_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg33" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror33_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg34" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror34_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg35" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror35_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg36" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror36_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg37" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror37_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg38" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror38_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg41" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror41_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg42" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror42_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg44" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror44_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg45" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror45_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg46" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror46_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg49" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror49_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg50" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror50_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg51" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror51_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg52" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror52_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg53" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror53_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHexSeg54" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror54_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg00" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror00_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg07" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror07_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg08" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror08_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg12" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror12_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg15" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror15_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg16" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror16_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg23" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror23_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg24" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror24_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg31" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror31_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg32" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror32_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg39" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror39_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg40" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror40_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg43" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror43_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg47" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror47_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg48" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror48_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2SphMirrorSurfaceHalfHexSeg55" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirror55_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2Mirror1SurfaceNominal" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SphMirrorSurfaceAverageReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SphMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+
+
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg00" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror00_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg01" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror01_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg02" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror02_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg03" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror03_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg04" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror04_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg05" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror05_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg06" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror06_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg07" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror07_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg08" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror08_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg09" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror09_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg10" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror10_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg11" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror11_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg12" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror12_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg13" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror13_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg14" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror14_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg15" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror15_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg16" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror16_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg17" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror17_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg18" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror18_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg19" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror19_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg20" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror20_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg21" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror21_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg22" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror22_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg23" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror23_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg24" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror24_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg25" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror25_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg26" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror26_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg27" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror27_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg28" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror28_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg29" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror29_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg30" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror30_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg31" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror31_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg32" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror32_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg33" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror33_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg34" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror34_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg35" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror35_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg36" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror36_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg37" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror37_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg38" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror38_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+  <opticalsurface name="Rich2SecMirrorSurfaceSeg39" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirror39_ReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2Mirror2SurfaceNominal" model="glisur" finish="polished"
+                  type="dielectric_metal"  value="0" >
+     <property name="REFLECTIVITY" ref="Rich2SecMirrorSurfaceAverageReflectivityPT" />
+     <property name="EFFICIENCY" ref="Rich2SecMirrorSurfaceEfficiencyPT" />
+
+  </opticalsurface>
+
+  <opticalsurface name="Rich2GasQuartzWindowSurface" model="glisur"  finish="polished"
+           type="dielectric_dielectric" value="0" >
+     <property name="REFLECTIVITY" ref="Rich2QuartzWindowSurfaceReflectivityPT"/>
+     <property name="EFFICIENCY"   ref="Rich2QuartzWindowSurfaceEfficiencyPT" />
+     <property name="TRANSMITTANCE" ref="Rich2QuartzWindowSurfaceTransmittancePT" />
+
+  </opticalsurface>
+
+</surfaces>
+
+</lccdd>

@@ -1,0 +1,89 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+<!--    Begin Rich1MirrorPhys          -->
+<!-- Rich1 Mirror1 Quadrant Module Physical Volumes are inside -->
+<!--     the log volume lvRich1Mirror1Master                           -->
+<!--    The old names are kept for reference                           -->
+<!--      <physvol  name="pvRich1Mirror1QuadrantModuleQ0:0"  -->
+<!--                volume="lvRich1Mirror1QuadrantModuleQ0" >                  -->
+<!--       <physvol  name="pvRich1Mirror1QuadrantModuleQ1:1" -->
+<!--                 volume="lvRich1Mirror1QuadrantModuleQ1" >                 -->
+<!--       <physvol  name="pvRich1Mirror1QuadrantModuleQ2:2" -->
+<!--                 volume="lvRich1Mirror1QuadrantModuleQ2" >                 -->
+<!--       <physvol  name="pvRich1Mirror1QuadrantModuleQ3:3" -->
+<!--                 volume="lvRich1Mirror1QuadrantModuleQ3" >                 -->
+<!--                                                                           -->
+<!--    ==================================================================     -->
+<Rich1>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1QuadrantModuleQ0" />
+    <item name="TransformName"  value="pvRich1Mirror1QuadrantModuleQ0Transform">
+
+          <transformation>
+            <position/>
+            <rotation x="Rh1Mirror1QuadrantXRotQ0"
+                      z="Rh1Mirror1QuadrantZRotQ0"  />
+            <position x= "Rh1Mirror1QuadrantModuleCOCXinQ0"
+                      y="Rh1Mirror1QuadrantModuleCOCYinQ0"
+                      z="Rh1Mirror1QuadrantModuleCOCZinQ0" />
+            <rotation y="Rh1Mirror1QuadrantYRotQ0" />
+          </transformation>
+
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1QuadrantModuleQ1" />
+    <item name="TransformName"  value="pvRich1Mirror1QuadrantModuleQ1Transform">
+
+          <transformation>
+            <position/>
+            <rotation x="Rh1Mirror1QuadrantXRotQ1"
+                      z="Rh1Mirror1QuadrantZRotQ1" />
+            <position x= "Rh1Mirror1QuadrantModuleCOCXinQ1"
+                      y="Rh1Mirror1QuadrantModuleCOCYinQ1"
+                      z="Rh1Mirror1QuadrantModuleCOCZinQ1" />
+            <rotation y="Rh1Mirror1QuadrantYRotQ1" />
+          </transformation>
+
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1QuadrantModuleQ2" />
+    <item name="TransformName"  value="pvRich1Mirror1QuadrantModuleQ2Transform">
+           <transformation>
+            <position/>
+            <rotation x="Rh1Mirror1QuadrantXRotQ2"
+                      z="Rh1Mirror1QuadrantZRotQ2" />
+            <position x= "Rh1Mirror1QuadrantModuleCOCXinQ2"
+                      y="Rh1Mirror1QuadrantModuleCOCYinQ2"
+                      z="Rh1Mirror1QuadrantModuleCOCZinQ2" />
+            <rotation y="Rh1Mirror1QuadrantYRotQ2" />
+          </transformation>
+
+    </item>
+
+
+    <item name="PhysVolName"    value="pvRich1Mirror1QuadrantModuleQ3" />
+    <item name="TransformName"  value="pvRich1Mirror1QuadrantModuleQ3Transform">
+
+          <transformation>
+            <position/>
+            <rotation x="Rh1Mirror1QuadrantXRotQ3"
+                      z="Rh1Mirror1QuadrantZRotQ3" />
+            <position x= "Rh1Mirror1QuadrantModuleCOCXinQ3"
+                      y="Rh1Mirror1QuadrantModuleCOCYinQ3"
+                      z="Rh1Mirror1QuadrantModuleCOCZinQ3" />
+            <rotation y="Rh1Mirror1QuadrantYRotQ3" />
+          </transformation>
+
+    </item>
+
+</Rich1>
+<!--          End   Rich1Mirror1PhysQuadrantModules      -->

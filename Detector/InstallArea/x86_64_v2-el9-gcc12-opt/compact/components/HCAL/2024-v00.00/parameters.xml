@@ -1,0 +1,243 @@
+<lccdd>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<define>
+  <!-- **************************************************************** -->
+  <!--                   Hcal Geometry Parameters Definition            -->
+  <!-- **************************************************************** -->
+  <!-- %%%%%%                  Hcal Basic Parameters             %%%%%% -->
+
+  <constant name = "HcalXMargin"          value = "8000.*mm"/>
+  <constant name = "HcalYMargin"          value = "50.*mm"/>
+  <constant name = "HcalZMargin"          value = "5.*mm"/>
+
+
+<!--
+	HcalDx MissAlighnment for each module
+	All MUST BE positive !!!
+-->
+
+  <constant name = "HcalDxLeft01"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft02"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft03"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft04"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft05"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft06"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft07"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft08"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft09"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft10"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft11"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft12"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft13"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft14"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft15"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft16"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft17"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft18"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft19"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft20"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft21"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft22"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft23"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft24"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft25"          value = "0.*mm"/>
+  <constant name = "HcalDxLeft26"          value = "0.*mm"/>
+
+  <constant name = "HcalDxRight01"          value = "0.*mm"/>
+  <constant name = "HcalDxRight02"          value = "0.*mm"/>
+  <constant name = "HcalDxRight03"          value = "0.*mm"/>
+  <constant name = "HcalDxRight04"          value = "0.*mm"/>
+  <constant name = "HcalDxRight05"          value = "0.*mm"/>
+  <constant name = "HcalDxRight06"          value = "0.*mm"/>
+  <constant name = "HcalDxRight07"          value = "0.*mm"/>
+  <constant name = "HcalDxRight08"          value = "0.*mm"/>
+  <constant name = "HcalDxRight09"          value = "0.*mm"/>
+  <constant name = "HcalDxRight10"          value = "0.*mm"/>
+  <constant name = "HcalDxRight11"          value = "0.*mm"/>
+  <constant name = "HcalDxRight12"          value = "0.*mm"/>
+  <constant name = "HcalDxRight13"          value = "0.*mm"/>
+  <constant name = "HcalDxRight14"          value = "0.*mm"/>
+  <constant name = "HcalDxRight15"          value = "0.*mm"/>
+  <constant name = "HcalDxRight16"          value = "0.*mm"/>
+  <constant name = "HcalDxRight17"          value = "0.*mm"/>
+  <constant name = "HcalDxRight18"          value = "0.*mm"/>
+  <constant name = "HcalDxRight19"          value = "0.*mm"/>
+  <constant name = "HcalDxRight20"          value = "0.*mm"/>
+  <constant name = "HcalDxRight21"          value = "0.*mm"/>
+  <constant name = "HcalDxRight22"          value = "0.*mm"/>
+  <constant name = "HcalDxRight23"          value = "0.*mm"/>
+  <constant name = "HcalDxRight24"          value = "0.*mm"/>
+  <constant name = "HcalDxRight25"          value = "0.*mm"/>
+  <constant name = "HcalDxRight26"          value = "0.*mm"/>
+
+
+  <constant name = "HcalTiltAngle"          value = "0.207*degree"/>
+  <constant name = "HcalYShift"             value = "-0.82*mm"/>
+  <constant name = "HcalRotation90"         value = "90.0*degree"/>
+  <constant name = "HcalRotation180"        value = "180.0*degree"/>
+
+  <constant name = "HcalOutCellXSize"       value = "262.6*mm"             />
+  <constant name = "HcalOutCellYSize"       value = "262.0*mm"             />
+  <constant name = "HcalInnCellXSize"       value = "0.5*HcalOutCellXSize" />
+  <constant name = "HcalInnCellYSize"       value = "0.5*HcalOutCellYSize" />
+  <constant name = "HcalSubModXSize"        value = "2.0*HcalOutCellXSize" />
+  <constant name = "HcalSubModYSize"        value = "HcalOutCellYSize"     />
+  <constant name = "HcalModXSize"           value = "8.0*HcalSubModXSize"  />
+  <constant name = "HcalModYSize"           value = "HcalSubModYSize"      />
+  <constant name = "HcalYGap"	              value = "0.5*mm"	            />
+  <constant name = "HcalTotXSize"           value = "2.0*HcalModXSize"        />
+  <constant name = "HcalTotYSize"           value = "26.0*HcalModYSize+26*HcalYGap"    />
+  <constant name = "HcalTotLength"          value = "1655*mm"              />
+  <constant name = "HcalTotSpace"           value = "1665*mm"              />
+  <constant name = "HcalZPosition"          value = "13385*mm"             />
+
+  <!-- %%%%%%    For boolean operations "HcalTolerance" is used  %%%%%% -->
+  <constant name = "HcalTolerance"          value = "1000*mm"              />
+  <constant name = "HcalDelta"              value = "0.1*mm"               />
+
+  <!-- %%%%%%              Hcal Beam Plug Parameters             %%%%%% -->
+  <constant name = "HcalBeamPlugOffset"     value = "0.0*mm" />
+
+  <constant name = "HcalBeamPlugXSize"		         value = "2*261.0*mm" />
+  <constant name = "HcalBeamPlugYSize"		         value = "515.0*mm" />
+  <constant name = "HcalBeamPlugZSize"		         value = "HcalTotSpace" />
+
+  <constant name = "HcalBeamPlugPipeHoleZ1"	     value = "-0.5*HcalBeamPlugZSize-1.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleZ2"	     value = "-0.5*HcalBeamPlugZSize+15.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleZ3"	     value = "0.5*HcalBeamPlugZSize-985.0*mm-628.5" />
+  <constant name = "HcalBeamPlugPipeHoleZ4"	     value = "0.5*HcalBeamPlugZSize-985.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleZ5"	     value = "0.5*HcalBeamPlugZSize-595.8*mm-110.0*mm-115.0*mm-28.9*mm-100.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleZ6"	     value = "0.5*HcalBeamPlugZSize-595.8*mm-110.0*mm-115.0*mm-28.9*mm" />
+  <constant name = "HcalBeamPlugPipeHoleZ7"	     value = "0.5*HcalBeamPlugZSize-595.8*mm-110.0*mm-115.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleZ8"	     value = "0.5*HcalBeamPlugZSize-595.8*mm-110.0*mm-HcalDelta" />
+  <constant name = "HcalBeamPlugPipeHoleZ9"	     value = "0.5*HcalBeamPlugZSize-595.8*mm-110.0*mm+HcalDelta" />
+  <constant name = "HcalBeamPlugPipeHoleZ10"	   value = "0.5*HcalBeamPlugZSize-595.8*mm-HcalDelta" />
+  <constant name = "HcalBeamPlugPipeHoleZ11"	   value = "0.5*HcalBeamPlugZSize-595.8*mm+HcalDelta" />
+  <constant name = "HcalBeamPlugPipeHoleZ12"	   value = "0.5*HcalBeamPlugZSize+1.0*mm" />
+
+  <constant name = "HcalBeamPlugPipeHoleR1"	     value = "184.7*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR2"	     value = "184.7*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR3"	     value = "159.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR4"	     value = "164.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR5"	     value = "184.7*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR6"	     value = "184.7*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR7"	     value = "168.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR8"	     value = "168.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR9"	     value = "202.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR10"	   value = "202.0*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR11"	   value = "159.6*mm" />
+  <constant name = "HcalBeamPlugPipeHoleR12"	   value = "165.5*mm" />
+
+  <constant name = "HcalSteelSheetThick"		     value = "15*mm" />
+  <constant name = "HcalSteelSheetFrontRadius"   value = "200.0*mm" />
+  <constant name = "HcalSteelSheetRibRadius"		 value = "184.0*mm" />
+  <constant name = "HcalSteelSheetBackRadius"	   value = "181.5*mm" />
+
+
+  <constant name = "HcalSteelSheetRibHoleZ1"		 value = "0.5*HcalBeamPlugZSize-1534.0*mm-0.5*HcalSteelSheetThick" />
+  <constant name = "HcalSteelSheetRibHoleZ2"		 value = "0.5*HcalBeamPlugZSize-1034.0*mm-0.5*HcalSteelSheetThick" />
+  <constant name = "HcalSteelSheetRibHoleZ3"		 value = "0.5*HcalBeamPlugZSize-757.0*mm-0.5*HcalSteelSheetThick" />
+  <constant name = "HcalSteelSheetRibHoleZ4"		 value = "0.5*HcalBeamPlugZSize-500.0*mm-0.5*HcalSteelSheetThick" />
+
+  <!-- %%%%%%                  Hcal Cells Parameters             %%%%%% -->
+  <!--
+    MsPl   = MasterPlate
+    Sc = Scintillating
+    Fw = Foward
+    Bk = Backward
+    Sm = Small
+    Up = Upper
+    Low = Lower
+    Br = Bracket
+    Cnt = Central
+  -->
+  <constant name = "HcalMsPlWidth"                 value = "6*mm"       />
+  <constant name = "HcalMsPlHeight"                value = "260*mm"     />
+  <constant name = "HcalMsPlStepLength"            value = "200*mm"     />
+  <constant name = "HcalScTileWidth"               value = "3*mm"       />
+  <constant name = "HcalScTileHeigth"              value = "256*mm"     />
+  <constant name = "HcalScTileLength"              value = "197*mm"     />
+  <constant name = "HcalScTileSlitWidth"           value = "2*mm"       />
+  <constant name = "HcalSpacerWidth"               value = "4*mm"       />
+  <constant name = "HcalSpacerHeigth"              value = "255.5*mm"   />
+  <constant name = "HcalSpacerLength"              value = "202*mm"     />
+  <constant name = "HcalCellPeriodWidth"           value = "20.2*mm"    />
+  <constant name = "HcalMsPlCalHoleR"              value = "5.7*mm"     />
+  <constant name = "HcalScTileCalHoleR"            value = "4.75*mm"    />
+  <constant name = "HcalOutCellXPos1stLayer"       value = "0.35"       />
+  <constant name = "HcalOutCellXPos2ndLayer"       value = "0.1"        />
+  <constant name = "HcalOutCellXPos3rdLayer"       value = "-0.15"      />
+  <constant name = "HcalOutCellXPos4thLayer"       value = "-0.4"       />
+  <constant name = "HcalInnCellXPos1stLayer"       value = "0.1"        />
+  <constant name = "HcalInnCellXPos2ndLayer"       value = "-0.15"      />
+  <!-- %%%%%%               Hcal Foward Face Parameters          %%%%%% -->
+  <constant name = "HcalFaceWidth_for_CntStrip"    value = "80*mm"      />
+  <constant name = "HcalFwFaceLength"              value = "19*mm"      />
+  <constant name = "HcalFwFaceShelfLength"         value = "15*mm"      />
+  <constant name = "HcalFwFaceShelfWidth"          value = "40*mm"      />
+  <!-- %%%%%%             Hcal Backward Face Parameters          %%%%%% -->
+  <constant name = "HcalBkFaceLength"              value = "64*mm"      />
+  <constant name = "HcalBkFaceShelfLength"         value = "40*mm"      />
+  <constant name = "HcalBkFaceShelfWidth"          value = "40*mm"      />
+  <!-- %%%%%%                Brackets Parameters                 %%%%%% -->
+  <constant name = "HcalCntStripWidth"             value = "19.0*mm"      />
+  <constant name = "HcalCntStripHeight"            value = "79.5*mm"      />
+  <constant name = "HcalFwOutStripWidth"           value = "14.8*mm"      />
+  <constant name = "HcalFwOutStripHeight"          value = "50.8*mm"      />
+  <constant name = "HcalBkOutStripWidth"           value = "40.8*mm"      />
+  <constant name = "HcalBkOutStripHeight"          value = "40.8*mm"      />
+  <constant name = "HcalBkFaceTotLength"           value = "HcalBkFaceLength-HcalBkFaceShelfLength+HcalBkOutStripWidth" />
+
+  <!-- %%%%%%     Extra Shielding Parameters %%%%%% -->
+  <constant name = "HcalBackShieldingMainHoleXSize"   value = "259.0*mm"/>
+  <constant name = "HcalBackShieldingMainHoleYSize"   value = "520.0*mm"/>
+  <constant name = "HcalBackShieldingXColumnSize"     value = "228*mm"/>
+  <constant name = "HcalBackShieldingXHalfSize"       value = "HcalBackShieldingMainHoleXSize+HcalBackShieldingXColumnSize"/>
+  <constant name = "HcalBackShieldingYSize"           value = "570.0*mm"/>
+  <constant name = "HcalBackShieldingZSize"           value = "175.0*mm"/> <!-- maximum 370.0*mm -->
+  <constant name = "HcalBackShieldingZReducedSize"    value = "138.0*mm"/> <!-- maximum HcalBackShieldingZSize -->
+  <constant name = "HcalBackShieldingBrick1YSize"     value = "0.5*(HcalBackShieldingYSize-HcalBackShieldingMainHoleYSize)"/>
+  <constant name = "HcalBackShieldingBrick2YSize"     value = "28.0*mm"/>
+  <constant name = "HcalBackShieldingBrick4YSize"     value = "64.0*mm"/>
+  <constant name = "HcalBackShieldingBrick3YSize"     value = "0.5*HcalBackShieldingMainHoleYSize-HcalBackShieldingBrick2YSize-0.5*HcalBackShieldingBrick4YSize"/>
+  <constant name = "HcalBackShieldingXOffset"         value = "34.0*mm"/>
+
+  <constant name = "HcalInnerReinforceSubstituteXSize"    value = "HcalModXSize"/>
+  <constant name = "HcalInnerReinforceSubstituteYSize"    value = "14.0*HcalModYSize+14*HcalYGap"/>
+  <constant name = "HcalInnerReinforceSubstituteZSize"    value = "HcalBackShieldingZSize"/>
+  <constant name = "HcalOuterReinforceSubstituteXSize"    value = "2*HcalModXSize"/>
+  <constant name = "HcalOuterReinforceSubstituteYSize"    value = "26*(HcalModYSize+HcalYGap)"/>
+  <constant name = "HcalOuterReinforceSubstituteZSize"    value = "HcalBackShieldingZSize"/>
+
+
+</define>
+
+<display>
+  <vis name="vHcal:MsPlSteel"	    alpha="0.1" r="0.0" g="0.0" b="1.0" showDaughters="true" visible="true"/>
+  <vis name="vHcal:SpacerSteel"   alpha="0.99" r="0.0" g="0.0" b="1.0" showDaughters="false" visible="true" />
+  <vis name="vHcal:Sc"            alpha="1.0" r="0.8" g="0.8" b="0.0" showDaughters="true" visible="true"/>
+  <vis name="vHcal:StripSteel"	  alpha="1.0" r="1.0" g="0.0" b="0.0" showDaughters="true" visible="true"/>
+  <vis name="vHcal:Steel"         alpha="1.0" r="0.0" g="0.8" b="0.8" showDaughters="true" visible="true"/>
+  <vis name="vHcal:PbTiles"       alpha="1.0" r="0.105" g="0.105" b="0.105" showDaughters="true" visible="true"/>
+  <vis name="vHcal:PlasticPlate"  alpha="1.0" r="0.1" g="0.9" b="0.1" showDaughters="false" visible="true"/>
+  <vis name="vHcal:StPlate"	      alpha="1.0" r="1.0" g="0.1" b="1.0" showDaughters="false" visible="false"/>
+  <vis name="vHcal:Shield"        alpha="0.5" r="1.0" g="0.5" b="1.0" showDaughters="false" visible="true"/>
+  <vis name="vHcal:Stack"         showDaughters="true" visible="false"/>
+  <vis name="vHcal:Fiber"         alpha="1.0" r="0.8" g="0.8" b="0.0" showDaughters="true" visible="true"/>
+  <vis name="vHcal:ReadOutBox"    alpha="1.0" r="0.8" g="0.5" b="0.0" showDaughters="true" visible="true"/>
+  <vis name="vHcal:Holes"         alpha="1.0" r="1.0" g="1.0" b="1.0" showDaughters="true" visible="true"/>
+  <vis name="vHcal:Air"           showDaughters="true" visible="false"/>
+  <vis name="vHcal:Tungsten"      alpha="1.0" r="0.5" g="0.5" b="0.5" showDaughters="false" visible="true"/>
+</display>
+
+
+</lccdd>

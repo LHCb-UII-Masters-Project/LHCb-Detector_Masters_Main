@@ -1,0 +1,32 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <debug>
+    <type name="includes" value="0" />
+    <type name="incguard" value="1" />
+  </debug>
+
+  <!-- Include common files required to define materials (must come first!), common parameters, the beam pipe, and the LHCb regions. -->
+  <!-- The versions of these components default to 'trunk', but each can be modified. -->
+  <!-- e.g. you may need a particular version for compatibility with the chosen version of the component you are debugging - see below. -->
+  <includes>
+    <file ref="../Materials/trunk/common.xml" />
+    <file ref="../Pipe/trunk/PipeCommon.xml" />
+    <file ref="../Regions/trunk/Regions-invisible.xml"/>
+  </includes>
+
+  <!-- The component you would like to check - again you can pick the version by changing 'trunk' to whatever you prefer. -->
+  <!-- For some components you might need to include more than one file here, but most will just need one, e.g. -->
+  <include ref="../MyComponent/trunk/MyComponent.xml" />
+
+</lccdd>

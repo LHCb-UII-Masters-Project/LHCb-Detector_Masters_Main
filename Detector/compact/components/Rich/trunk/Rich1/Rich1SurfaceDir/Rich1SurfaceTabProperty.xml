@@ -1,0 +1,806 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    09/11/2020                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich1 surface property tables for optical property definitions           -->
+<!--===========================================================================-->
+<lccdd>
+
+  <!--  Begin Rich1 Surface Tab properties  -->
+
+ <properties>
+
+  <matrix name  = "Rich1Mirror1AverageSurfRelectivity" coldim="RichPropColDim" values="
+    PhotMomWaveConv/190.0  0.0
+    PhotMomWaveConv/200 0.9175
+    PhotMomWaveConv/205 0.9119
+    PhotMomWaveConv/210 0.9055
+    PhotMomWaveConv/215 0.8988
+    PhotMomWaveConv/220 0.8920
+    PhotMomWaveConv/225 0.8828
+    PhotMomWaveConv/230 0.8741
+    PhotMomWaveConv/235 0.8663
+    PhotMomWaveConv/240 0.8596
+    PhotMomWaveConv/245 0.8578
+    PhotMomWaveConv/250 0.8579
+    PhotMomWaveConv/255 0.8598
+    PhotMomWaveConv/260 0.8633
+    PhotMomWaveConv/265 0.8673
+    PhotMomWaveConv/270 0.8720
+    PhotMomWaveConv/275 0.8772
+    PhotMomWaveConv/280 0.8826
+    PhotMomWaveConv/285 0.8866
+    PhotMomWaveConv/290 0.8906
+    PhotMomWaveConv/295 0.8943
+    PhotMomWaveConv/300 0.8977
+    PhotMomWaveConv/305 0.9012
+    PhotMomWaveConv/310 0.9043
+    PhotMomWaveConv/315 0.9071
+    PhotMomWaveConv/320 0.9096
+    PhotMomWaveConv/325 0.9121
+    PhotMomWaveConv/330 0.9146
+    PhotMomWaveConv/335 0.9169
+    PhotMomWaveConv/340 0.9189
+    PhotMomWaveConv/345 0.9205
+    PhotMomWaveConv/350 0.9218
+    PhotMomWaveConv/355 0.9224
+    PhotMomWaveConv/360 0.9230
+    PhotMomWaveConv/365 0.9236
+    PhotMomWaveConv/370 0.9241
+    PhotMomWaveConv/375 0.9245
+    PhotMomWaveConv/380 0.9248
+    PhotMomWaveConv/385 0.9246
+    PhotMomWaveConv/390 0.9244
+    PhotMomWaveConv/395 0.9242
+    PhotMomWaveConv/400 0.9238
+    PhotMomWaveConv/405 0.9231
+    PhotMomWaveConv/410 0.9224
+    PhotMomWaveConv/415 0.9216
+    PhotMomWaveConv/420 0.9208
+    PhotMomWaveConv/425 0.9200
+    PhotMomWaveConv/430 0.9191
+    PhotMomWaveConv/435 0.9181
+    PhotMomWaveConv/440 0.9167
+    PhotMomWaveConv/445 0.9150
+    PhotMomWaveConv/450 0.9134
+    PhotMomWaveConv/455 0.9117
+    PhotMomWaveConv/460 0.9099
+    PhotMomWaveConv/465 0.9082
+    PhotMomWaveConv/470 0.9064
+    PhotMomWaveConv/475 0.9047
+    PhotMomWaveConv/480 0.9029
+    PhotMomWaveConv/485 0.9012
+    PhotMomWaveConv/490 0.8995
+    PhotMomWaveConv/495 0.8974
+    PhotMomWaveConv/500 0.8952
+    PhotMomWaveConv/505 0.8929
+    PhotMomWaveConv/510 0.8907
+    PhotMomWaveConv/515 0.8885
+    PhotMomWaveConv/520 0.8863
+    PhotMomWaveConv/525 0.8841
+    PhotMomWaveConv/530 0.8820
+    PhotMomWaveConv/535 0.8798
+    PhotMomWaveConv/540 0.8778
+    PhotMomWaveConv/545 0.8757
+    PhotMomWaveConv/550 0.8739
+    PhotMomWaveConv/555 0.8721
+    PhotMomWaveConv/560 0.8704
+    PhotMomWaveConv/565 0.8687
+    PhotMomWaveConv/570 0.8671
+    PhotMomWaveConv/575 0.8655
+    PhotMomWaveConv/580 0.8636
+    PhotMomWaveConv/585 0.8611
+    PhotMomWaveConv/590 0.8588
+    PhotMomWaveConv/595 0.8564
+    PhotMomWaveConv/600 0.8542
+    PhotMomWaveConv/800.0  0.8000
+    PhotMomWaveConv/1000.0  0.8000
+  "/>
+
+  <matrix name  = "Rich1Mirror1CMAQuadrant0SurfaceReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0	0.0000
+    PhotMomWaveConv/190.0	0.0000
+    PhotMomWaveConv/200.0	0.5844
+    PhotMomWaveConv/201.0	0.5904
+    PhotMomWaveConv/202.8	0.5933
+    PhotMomWaveConv/204.2	0.5933
+    PhotMomWaveConv/206.0	0.5911
+    PhotMomWaveConv/207.5	0.5874
+    PhotMomWaveConv/208.7	0.5807
+    PhotMomWaveConv/209.7	0.5741
+    PhotMomWaveConv/211.2	0.5667
+    PhotMomWaveConv/212.5	0.5578
+    PhotMomWaveConv/214.0	0.5481
+    PhotMomWaveConv/215.5	0.5385
+    PhotMomWaveConv/217.0	0.5311
+    PhotMomWaveConv/218.5	0.5281
+    PhotMomWaveConv/220.2	0.5304
+    PhotMomWaveConv/221.4	0.5370
+    PhotMomWaveConv/222.2	0.5444
+    PhotMomWaveConv/223.4	0.5585
+    PhotMomWaveConv/224.4	0.5726
+    PhotMomWaveConv/225.4	0.5844
+    PhotMomWaveConv/226.1	0.6000
+    PhotMomWaveConv/226.9	0.6133
+    PhotMomWaveConv/227.6	0.6259
+    PhotMomWaveConv/228.6	0.6407
+    PhotMomWaveConv/229.6	0.6592
+    PhotMomWaveConv/230.6	0.6807
+    PhotMomWaveConv/231.5	0.6963
+    PhotMomWaveConv/232.3	0.7088
+    PhotMomWaveConv/233.5	0.7251
+    PhotMomWaveConv/235.0	0.7444
+    PhotMomWaveConv/236.7	0.7673
+    PhotMomWaveConv/238.7	0.7933
+    PhotMomWaveConv/241.2	0.8184
+    PhotMomWaveConv/243.4	0.8399
+    PhotMomWaveConv/246.6	0.8621
+    PhotMomWaveConv/249.3	0.8777
+    PhotMomWaveConv/253.1	0.8932
+    PhotMomWaveConv/257.3	0.9058
+    PhotMomWaveConv/261.3	0.9162
+    PhotMomWaveConv/266.5	0.9251
+    PhotMomWaveConv/271.2	0.9310
+    PhotMomWaveConv/277.9	0.9392
+    PhotMomWaveConv/286.1	0.9451
+    PhotMomWaveConv/295.1	0.9495
+    PhotMomWaveConv/302.8	0.9532
+    PhotMomWaveConv/310.5	0.9547
+    PhotMomWaveConv/321.2	0.9569
+    PhotMomWaveConv/328.1	0.9569
+    PhotMomWaveConv/338.1	0.9569
+    PhotMomWaveConv/345.1	0.9577
+    PhotMomWaveConv/351.5	0.9577
+    PhotMomWaveConv/358.2	0.9562
+    PhotMomWaveConv/365.0	0.9562
+    PhotMomWaveConv/372.2	0.9540
+    PhotMomWaveConv/378.4	0.9532
+    PhotMomWaveConv/384.4	0.9510
+    PhotMomWaveConv/390.8	0.9503
+    PhotMomWaveConv/397.0	0.9495
+    PhotMomWaveConv/404.3	0.9466
+    PhotMomWaveConv/410.7	0.9443
+    PhotMomWaveConv/417.7	0.9414
+    PhotMomWaveConv/424.7	0.9399
+    PhotMomWaveConv/430.9	0.9377
+    PhotMomWaveConv/438.3	0.9355
+    PhotMomWaveConv/446.5	0.9303
+    PhotMomWaveConv/453.5	0.9288
+    PhotMomWaveConv/464.5	0.9251
+    PhotMomWaveConv/472.4	0.9199
+    PhotMomWaveConv/481.9	0.9125
+    PhotMomWaveConv/489.3	0.9066
+    PhotMomWaveConv/496.3	0.9036
+    PhotMomWaveConv/505.0	0.8992
+    PhotMomWaveConv/512.2	0.8947
+    PhotMomWaveConv/519.9	0.8888
+    PhotMomWaveConv/528.2	0.8821
+    PhotMomWaveConv/535.1	0.8762
+    PhotMomWaveConv/542.3	0.8695
+    PhotMomWaveConv/549.8	0.8629
+    PhotMomWaveConv/557.3	0.8562
+    PhotMomWaveConv/565.5	0.8481
+    PhotMomWaveConv/573.0	0.8407
+    PhotMomWaveConv/581.4	0.8325
+    PhotMomWaveConv/588.9	0.8259
+    PhotMomWaveConv/594.4	0.8199
+    PhotMomWaveConv/600.0	0.8155
+    PhotMomWaveConv/800.0	0.7000
+    PhotMomWaveConv/1000.0	0.7000
+  "/>
+
+
+  <matrix name  = "Rich1Mirror1CMAQuadrant1SurfaceReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0	0.0000
+    PhotMomWaveConv/190.0	0.0000
+    PhotMomWaveConv/200.0	0.5844
+    PhotMomWaveConv/201.0	0.5904
+    PhotMomWaveConv/202.8	0.5933
+    PhotMomWaveConv/204.2	0.5933
+    PhotMomWaveConv/206.0	0.5911
+    PhotMomWaveConv/207.5	0.5874
+    PhotMomWaveConv/208.7	0.5807
+    PhotMomWaveConv/209.7	0.5741
+    PhotMomWaveConv/211.2	0.5667
+    PhotMomWaveConv/212.5	0.5578
+    PhotMomWaveConv/214.0	0.5481
+    PhotMomWaveConv/215.5	0.5385
+    PhotMomWaveConv/217.0	0.5311
+    PhotMomWaveConv/218.5	0.5281
+    PhotMomWaveConv/220.2	0.5304
+    PhotMomWaveConv/221.4	0.5370
+    PhotMomWaveConv/222.2	0.5444
+    PhotMomWaveConv/223.4	0.5585
+    PhotMomWaveConv/224.4	0.5726
+    PhotMomWaveConv/225.4	0.5844
+    PhotMomWaveConv/226.1	0.6000
+    PhotMomWaveConv/226.9	0.6133
+    PhotMomWaveConv/227.6	0.6259
+    PhotMomWaveConv/228.6	0.6407
+    PhotMomWaveConv/229.6	0.6592
+    PhotMomWaveConv/230.6	0.6807
+    PhotMomWaveConv/231.5	0.6963
+    PhotMomWaveConv/232.3	0.7088
+    PhotMomWaveConv/233.5	0.7251
+    PhotMomWaveConv/235.0	0.7444
+    PhotMomWaveConv/236.7	0.7673
+    PhotMomWaveConv/238.7	0.7933
+    PhotMomWaveConv/241.2	0.8184
+    PhotMomWaveConv/243.4	0.8399
+    PhotMomWaveConv/246.6	0.8621
+    PhotMomWaveConv/249.3	0.8777
+    PhotMomWaveConv/253.1	0.8932
+    PhotMomWaveConv/257.3	0.9058
+    PhotMomWaveConv/261.3	0.9162
+    PhotMomWaveConv/266.5	0.9251
+    PhotMomWaveConv/271.2	0.9310
+    PhotMomWaveConv/277.9	0.9392
+    PhotMomWaveConv/286.1	0.9451
+    PhotMomWaveConv/295.1	0.9495
+    PhotMomWaveConv/302.8	0.9532
+    PhotMomWaveConv/310.5	0.9547
+    PhotMomWaveConv/321.2	0.9569
+    PhotMomWaveConv/328.1	0.9569
+    PhotMomWaveConv/338.1	0.9569
+    PhotMomWaveConv/345.1	0.9577
+    PhotMomWaveConv/351.5	0.9577
+    PhotMomWaveConv/358.2	0.9562
+    PhotMomWaveConv/365.0	0.9562
+    PhotMomWaveConv/372.2	0.9540
+    PhotMomWaveConv/378.4	0.9532
+    PhotMomWaveConv/384.4	0.9510
+    PhotMomWaveConv/390.8	0.9503
+    PhotMomWaveConv/397.0	0.9495
+    PhotMomWaveConv/404.3	0.9466
+    PhotMomWaveConv/410.7	0.9443
+    PhotMomWaveConv/417.7	0.9414
+    PhotMomWaveConv/424.7	0.9399
+    PhotMomWaveConv/430.9	0.9377
+    PhotMomWaveConv/438.3	0.9355
+    PhotMomWaveConv/446.5	0.9303
+    PhotMomWaveConv/453.5	0.9288
+    PhotMomWaveConv/464.5	0.9251
+    PhotMomWaveConv/472.4	0.9199
+    PhotMomWaveConv/481.9	0.9125
+    PhotMomWaveConv/489.3	0.9066
+    PhotMomWaveConv/496.3	0.9036
+    PhotMomWaveConv/505.0	0.8992
+    PhotMomWaveConv/512.2	0.8947
+    PhotMomWaveConv/519.9	0.8888
+    PhotMomWaveConv/528.2	0.8821
+    PhotMomWaveConv/535.1	0.8762
+    PhotMomWaveConv/542.3	0.8695
+    PhotMomWaveConv/549.8	0.8629
+    PhotMomWaveConv/557.3	0.8562
+    PhotMomWaveConv/565.5	0.8481
+    PhotMomWaveConv/573.0	0.8407
+    PhotMomWaveConv/581.4	0.8325
+    PhotMomWaveConv/588.9	0.8259
+    PhotMomWaveConv/594.4	0.8199
+    PhotMomWaveConv/600.0	0.8155
+    PhotMomWaveConv/800.0	0.7000
+    PhotMomWaveConv/1000.0	0.7000
+  "/>
+
+  <matrix name  = "Rich1Mirror1CMAQuadrant2SurfaceReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0	0.0000
+    PhotMomWaveConv/190.0	0.0000
+    PhotMomWaveConv/200.0	0.5844
+    PhotMomWaveConv/201.0	0.5904
+    PhotMomWaveConv/202.8	0.5933
+    PhotMomWaveConv/204.2	0.5933
+    PhotMomWaveConv/206.0	0.5911
+    PhotMomWaveConv/207.5	0.5874
+    PhotMomWaveConv/208.7	0.5807
+    PhotMomWaveConv/209.7	0.5741
+    PhotMomWaveConv/211.2	0.5667
+    PhotMomWaveConv/212.5	0.5578
+    PhotMomWaveConv/214.0	0.5481
+    PhotMomWaveConv/215.5	0.5385
+    PhotMomWaveConv/217.0	0.5311
+    PhotMomWaveConv/218.5	0.5281
+    PhotMomWaveConv/220.2	0.5304
+    PhotMomWaveConv/221.4	0.5370
+    PhotMomWaveConv/222.2	0.5444
+    PhotMomWaveConv/223.4	0.5585
+    PhotMomWaveConv/224.4	0.5726
+    PhotMomWaveConv/225.4	0.5844
+    PhotMomWaveConv/226.1	0.6000
+    PhotMomWaveConv/226.9	0.6133
+    PhotMomWaveConv/227.6	0.6259
+    PhotMomWaveConv/228.6	0.6407
+    PhotMomWaveConv/229.6	0.6592
+    PhotMomWaveConv/230.6	0.6807
+    PhotMomWaveConv/231.5	0.6963
+    PhotMomWaveConv/232.3	0.7088
+    PhotMomWaveConv/233.5	0.7251
+    PhotMomWaveConv/235.0	0.7444
+    PhotMomWaveConv/236.7	0.7673
+    PhotMomWaveConv/238.7	0.7933
+    PhotMomWaveConv/241.2	0.8184
+    PhotMomWaveConv/243.4	0.8399
+    PhotMomWaveConv/246.6	0.8621
+    PhotMomWaveConv/249.3	0.8777
+    PhotMomWaveConv/253.1	0.8932
+    PhotMomWaveConv/257.3	0.9058
+    PhotMomWaveConv/261.3	0.9162
+    PhotMomWaveConv/266.5	0.9251
+    PhotMomWaveConv/271.2	0.9310
+    PhotMomWaveConv/277.9	0.9392
+    PhotMomWaveConv/286.1	0.9451
+    PhotMomWaveConv/295.1	0.9495
+    PhotMomWaveConv/302.8	0.9532
+    PhotMomWaveConv/310.5	0.9547
+    PhotMomWaveConv/321.2	0.9569
+    PhotMomWaveConv/328.1	0.9569
+    PhotMomWaveConv/338.1	0.9569
+    PhotMomWaveConv/345.1	0.9577
+    PhotMomWaveConv/351.5	0.9577
+    PhotMomWaveConv/358.2	0.9562
+    PhotMomWaveConv/365.0	0.9562
+    PhotMomWaveConv/372.2	0.9540
+    PhotMomWaveConv/378.4	0.9532
+    PhotMomWaveConv/384.4	0.9510
+    PhotMomWaveConv/390.8	0.9503
+    PhotMomWaveConv/397.0	0.9495
+    PhotMomWaveConv/404.3	0.9466
+    PhotMomWaveConv/410.7	0.9443
+    PhotMomWaveConv/417.7	0.9414
+    PhotMomWaveConv/424.7	0.9399
+    PhotMomWaveConv/430.9	0.9377
+    PhotMomWaveConv/438.3	0.9355
+    PhotMomWaveConv/446.5	0.9303
+    PhotMomWaveConv/453.5	0.9288
+    PhotMomWaveConv/464.5	0.9251
+    PhotMomWaveConv/472.4	0.9199
+    PhotMomWaveConv/481.9	0.9125
+    PhotMomWaveConv/489.3	0.9066
+    PhotMomWaveConv/496.3	0.9036
+    PhotMomWaveConv/505.0	0.8992
+    PhotMomWaveConv/512.2	0.8947
+    PhotMomWaveConv/519.9	0.8888
+    PhotMomWaveConv/528.2	0.8821
+    PhotMomWaveConv/535.1	0.8762
+    PhotMomWaveConv/542.3	0.8695
+    PhotMomWaveConv/549.8	0.8629
+    PhotMomWaveConv/557.3	0.8562
+    PhotMomWaveConv/565.5	0.8481
+    PhotMomWaveConv/573.0	0.8407
+    PhotMomWaveConv/581.4	0.8325
+    PhotMomWaveConv/588.9	0.8259
+    PhotMomWaveConv/594.4	0.8199
+    PhotMomWaveConv/600.0	0.8155
+    PhotMomWaveConv/800.0	0.7000
+    PhotMomWaveConv/1000.0	0.7000
+  "/>
+
+  <matrix name  = "Rich1Mirror1CMAQuadrant3SurfaceReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0	0.0000
+    PhotMomWaveConv/190.0	0.0000
+    PhotMomWaveConv/200.0	0.5844
+    PhotMomWaveConv/201.0	0.5904
+    PhotMomWaveConv/202.8	0.5933
+    PhotMomWaveConv/204.2	0.5933
+    PhotMomWaveConv/206.0	0.5911
+    PhotMomWaveConv/207.5	0.5874
+    PhotMomWaveConv/208.7	0.5807
+    PhotMomWaveConv/209.7	0.5741
+    PhotMomWaveConv/211.2	0.5667
+    PhotMomWaveConv/212.5	0.5578
+    PhotMomWaveConv/214.0	0.5481
+    PhotMomWaveConv/215.5	0.5385
+    PhotMomWaveConv/217.0	0.5311
+    PhotMomWaveConv/218.5	0.5281
+    PhotMomWaveConv/220.2	0.5304
+    PhotMomWaveConv/221.4	0.5370
+    PhotMomWaveConv/222.2	0.5444
+    PhotMomWaveConv/223.4	0.5585
+    PhotMomWaveConv/224.4	0.5726
+    PhotMomWaveConv/225.4	0.5844
+    PhotMomWaveConv/226.1	0.6000
+    PhotMomWaveConv/226.9	0.6133
+    PhotMomWaveConv/227.6	0.6259
+    PhotMomWaveConv/228.6	0.6407
+    PhotMomWaveConv/229.6	0.6592
+    PhotMomWaveConv/230.6	0.6807
+    PhotMomWaveConv/231.5	0.6963
+    PhotMomWaveConv/232.3	0.7088
+    PhotMomWaveConv/233.5	0.7251
+    PhotMomWaveConv/235.0	0.7444
+    PhotMomWaveConv/236.7	0.7673
+    PhotMomWaveConv/238.7	0.7933
+    PhotMomWaveConv/241.2	0.8184
+    PhotMomWaveConv/243.4	0.8399
+    PhotMomWaveConv/246.6	0.8621
+    PhotMomWaveConv/249.3	0.8777
+    PhotMomWaveConv/253.1	0.8932
+    PhotMomWaveConv/257.3	0.9058
+    PhotMomWaveConv/261.3	0.9162
+    PhotMomWaveConv/266.5	0.9251
+    PhotMomWaveConv/271.2	0.9310
+    PhotMomWaveConv/277.9	0.9392
+    PhotMomWaveConv/286.1	0.9451
+    PhotMomWaveConv/295.1	0.9495
+    PhotMomWaveConv/302.8	0.9532
+    PhotMomWaveConv/310.5	0.9547
+    PhotMomWaveConv/321.2	0.9569
+    PhotMomWaveConv/328.1	0.9569
+    PhotMomWaveConv/338.1	0.9569
+    PhotMomWaveConv/345.1	0.9577
+    PhotMomWaveConv/351.5	0.9577
+    PhotMomWaveConv/358.2	0.9562
+    PhotMomWaveConv/365.0	0.9562
+    PhotMomWaveConv/372.2	0.9540
+    PhotMomWaveConv/378.4	0.9532
+    PhotMomWaveConv/384.4	0.9510
+    PhotMomWaveConv/390.8	0.9503
+    PhotMomWaveConv/397.0	0.9495
+    PhotMomWaveConv/404.3	0.9466
+    PhotMomWaveConv/410.7	0.9443
+    PhotMomWaveConv/417.7	0.9414
+    PhotMomWaveConv/424.7	0.9399
+    PhotMomWaveConv/430.9	0.9377
+    PhotMomWaveConv/438.3	0.9355
+    PhotMomWaveConv/446.5	0.9303
+    PhotMomWaveConv/453.5	0.9288
+    PhotMomWaveConv/464.5	0.9251
+    PhotMomWaveConv/472.4	0.9199
+    PhotMomWaveConv/481.9	0.9125
+    PhotMomWaveConv/489.3	0.9066
+    PhotMomWaveConv/496.3	0.9036
+    PhotMomWaveConv/505.0	0.8992
+    PhotMomWaveConv/512.2	0.8947
+    PhotMomWaveConv/519.9	0.8888
+    PhotMomWaveConv/528.2	0.8821
+    PhotMomWaveConv/535.1	0.8762
+    PhotMomWaveConv/542.3	0.8695
+    PhotMomWaveConv/549.8	0.8629
+    PhotMomWaveConv/557.3	0.8562
+    PhotMomWaveConv/565.5	0.8481
+    PhotMomWaveConv/573.0	0.8407
+    PhotMomWaveConv/581.4	0.8325
+    PhotMomWaveConv/588.9	0.8259
+    PhotMomWaveConv/594.4	0.8199
+    PhotMomWaveConv/600.0	0.8155
+    PhotMomWaveConv/800.0	0.7000
+    PhotMomWaveConv/1000.0	0.7000
+  "/>
+
+  <matrix name  = "Rich1Mirror1SurfaceGenericReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0  0.0
+    PhotMomWaveConv/190.0  0.0
+    PhotMomWaveConv/200.0  0.692
+    PhotMomWaveConv/220.0  0.785
+    PhotMomWaveConv/240.0  0.855
+    PhotMomWaveConv/260.0  0.843
+    PhotMomWaveConv/280.0  0.804
+    PhotMomWaveConv/300.0  0.840
+    PhotMomWaveConv/340.0  0.909
+    PhotMomWaveConv/360.0  0.908
+    PhotMomWaveConv/380.0  0.896
+    PhotMomWaveConv/400.0  0.878
+    PhotMomWaveConv/420.0  0.863
+    PhotMomWaveConv/440.0  0.846
+    PhotMomWaveConv/460.0  0.830
+    PhotMomWaveConv/480.0  0.830
+    PhotMomWaveConv/500.0  0.829
+    PhotMomWaveConv/520.0  0.850
+    PhotMomWaveConv/540.0  0.848
+    PhotMomWaveConv/560.0  0.889
+    PhotMomWaveConv/580.0  0.883
+    PhotMomWaveConv/600.0  0.881
+    PhotMomWaveConv/660.0  0.898
+    PhotMomWaveConv/680.0  0.883
+    PhotMomWaveConv/850.0  0.883
+    PhotMomWaveConv/1000.0 0.883
+    PhotMomWaveConv/1250.0 0.883
+  "/>
+
+
+  <matrix name  = "Rich1Mirror1SurfaceIdealReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0  0.00
+    PhotMomWaveConv/150.0  0.00
+    PhotMomWaveConv/160.0  0.90
+    PhotMomWaveConv/170.0  0.90
+    PhotMomWaveConv/180.0  0.90
+    PhotMomWaveConv/190.0  0.90
+    PhotMomWaveConv/200.0  0.90
+    PhotMomWaveConv/220.0  0.90
+    PhotMomWaveConv/240.0  0.90
+    PhotMomWaveConv/260.0  0.90
+    PhotMomWaveConv/280.0  0.90
+    PhotMomWaveConv/300.0  0.90
+    PhotMomWaveConv/340.0  0.90
+    PhotMomWaveConv/360.0  0.90
+    PhotMomWaveConv/380.0  0.90
+    PhotMomWaveConv/400.0  0.90
+    PhotMomWaveConv/420.0  0.90
+    PhotMomWaveConv/440.0  0.90
+    PhotMomWaveConv/460.0  0.90
+    PhotMomWaveConv/480.0  0.90
+    PhotMomWaveConv/500.0  0.90
+    PhotMomWaveConv/520.0  0.90
+    PhotMomWaveConv/540.0  0.90
+    PhotMomWaveConv/560.0  0.90
+    PhotMomWaveConv/580.0  0.90
+    PhotMomWaveConv/600.0  0.90
+    PhotMomWaveConv/660.0  0.90
+    PhotMomWaveConv/680.0  0.90
+    PhotMomWaveConv/850.0  0.90
+    PhotMomWaveConv/1000.0 0.90
+    PhotMomWaveConv/1250.0 0.90
+  "/>
+
+
+  <matrix name  = "Rich1Mirror1SurfaceEfficiencyPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0  0.0
+    PhotMomWaveConv/190.0  0.0
+    PhotMomWaveConv/200.0  0.0
+    PhotMomWaveConv/220.0  0.0
+    PhotMomWaveConv/240.0  0.0
+    PhotMomWaveConv/260.0  0.0
+    PhotMomWaveConv/280.0  0.0
+    PhotMomWaveConv/300.0  0.0
+    PhotMomWaveConv/340.0  0.0
+    PhotMomWaveConv/360.0  0.0
+    PhotMomWaveConv/380.0  0.0
+    PhotMomWaveConv/400.0  0.0
+    PhotMomWaveConv/420.0  0.0
+    PhotMomWaveConv/440.0  0.0
+    PhotMomWaveConv/460.0  0.0
+    PhotMomWaveConv/480.0  0.0
+    PhotMomWaveConv/500.0  0.0
+    PhotMomWaveConv/520.0  0.0
+    PhotMomWaveConv/540.0  0.0
+    PhotMomWaveConv/560.0  0.0
+    PhotMomWaveConv/580.0  0.0
+    PhotMomWaveConv/600.0  0.0
+    PhotMomWaveConv/660.0  0.0
+    PhotMomWaveConv/680.0  0.0
+    PhotMomWaveConv/850.0  0.0
+    PhotMomWaveConv/1000.0 0.0
+    PhotMomWaveConv/1250.0 0.0
+  "/>
+
+  <matrix name  = "Rich1Mirror2SurfaceReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0	0.0000
+    PhotMomWaveConv/190.0	0.0000
+    PhotMomWaveConv/200.0	0.5000
+    PhotMomWaveConv/249.8	0.8360
+    PhotMomWaveConv/251.1	0.8433
+    PhotMomWaveConv/252.1	0.8491
+    PhotMomWaveConv/253.3	0.8562
+    PhotMomWaveConv/254.3	0.8628
+    PhotMomWaveConv/255.5	0.8689
+    PhotMomWaveConv/256.4	0.8739
+    PhotMomWaveConv/257.8	0.8818
+    PhotMomWaveConv/260.6	0.8919
+    PhotMomWaveConv/262.3	0.8987
+    PhotMomWaveConv/263.9	0.9038
+    PhotMomWaveConv/265.5	0.9098
+    PhotMomWaveConv/268.4	0.9202
+    PhotMomWaveConv/271.8	0.9291
+    PhotMomWaveConv/274.7	0.9339
+    PhotMomWaveConv/278.7	0.9404
+    PhotMomWaveConv/282.2	0.9453
+    PhotMomWaveConv/287.1	0.9506
+    PhotMomWaveConv/292.4	0.9554
+    PhotMomWaveConv/297.2	0.9584
+    PhotMomWaveConv/303.8	0.9625
+    PhotMomWaveConv/309.7	0.9655
+    PhotMomWaveConv/314.5	0.9673
+    PhotMomWaveConv/320.8	0.9683
+    PhotMomWaveConv/325.9	0.9695
+    PhotMomWaveConv/331.8	0.9708
+    PhotMomWaveConv/337.3	0.9723
+    PhotMomWaveConv/343.2	0.9728
+    PhotMomWaveConv/351.2	0.9733
+    PhotMomWaveConv/356.9	0.9731
+    PhotMomWaveConv/363.4	0.9731
+    PhotMomWaveConv/369.9	0.9723
+    PhotMomWaveConv/375.6	0.9718
+    PhotMomWaveConv/381.9	0.9708
+    PhotMomWaveConv/388.0	0.9703
+    PhotMomWaveConv/393.5	0.9693
+    PhotMomWaveConv/398.0	0.9688
+    PhotMomWaveConv/402.6	0.9678
+    PhotMomWaveConv/407.1	0.9670
+    PhotMomWaveConv/411.6	0.9657
+    PhotMomWaveConv/417.3	0.9647
+    PhotMomWaveConv/421.6	0.9637
+    PhotMomWaveConv/427.1	0.9620
+    PhotMomWaveConv/434.2	0.9599
+    PhotMomWaveConv/439.3	0.9584
+    PhotMomWaveConv/443.3	0.9566
+    PhotMomWaveConv/447.8	0.9554
+    PhotMomWaveConv/453.3	0.9556
+    PhotMomWaveConv/457.6	0.9569
+    PhotMomWaveConv/461.8	0.9569
+    PhotMomWaveConv/465.9	0.9559
+    PhotMomWaveConv/469.8	0.9541
+    PhotMomWaveConv/473.8	0.9521
+    PhotMomWaveConv/477.5	0.9490
+    PhotMomWaveConv/479.7	0.9473
+    PhotMomWaveConv/483.0	0.9437
+    PhotMomWaveConv/485.8	0.9407
+    PhotMomWaveConv/488.7	0.9392
+    PhotMomWaveConv/492.4	0.9389
+    PhotMomWaveConv/496.0	0.9394
+    PhotMomWaveConv/500.5	0.9397
+    PhotMomWaveConv/504.2	0.9389
+    PhotMomWaveConv/508.2	0.9377
+    PhotMomWaveConv/511.9	0.9361
+    PhotMomWaveConv/515.8	0.9336
+    PhotMomWaveConv/518.6	0.9318
+    PhotMomWaveConv/521.5	0.9301
+    PhotMomWaveConv/524.9	0.9275
+    PhotMomWaveConv/528.2	0.9253
+    PhotMomWaveConv/531.6	0.9225
+    PhotMomWaveConv/535.7	0.9192
+    PhotMomWaveConv/538.9	0.9167
+    PhotMomWaveConv/542.8	0.9136
+    PhotMomWaveConv/546.1	0.9108
+    PhotMomWaveConv/548.7	0.9083
+    PhotMomWaveConv/549.9	0.9076
+    PhotMomWaveConv/600.0	0.8500
+    PhotMomWaveConv/700.0	0.8000
+    PhotMomWaveConv/800.0	0.7000
+    PhotMomWaveConv/1000.0	0.5000
+  "/>
+
+  <matrix name  = "Rich1Mirror2SurfaceTBReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0  0.00
+    PhotMomWaveConv/150.0  0.00
+    PhotMomWaveConv/160.0  0.90
+    PhotMomWaveConv/170.0  0.90
+    PhotMomWaveConv/180.0  0.90
+    PhotMomWaveConv/190.0  0.90
+    PhotMomWaveConv/200.0  0.692
+    PhotMomWaveConv/220.0  0.785
+    PhotMomWaveConv/240.0  0.855
+    PhotMomWaveConv/260.0  0.843
+    PhotMomWaveConv/280.0  0.804
+    PhotMomWaveConv/300.0  0.840
+    PhotMomWaveConv/340.0  0.909
+    PhotMomWaveConv/360.0  0.908
+    PhotMomWaveConv/380.0  0.896
+    PhotMomWaveConv/400.0  0.878
+    PhotMomWaveConv/420.0  0.863
+    PhotMomWaveConv/440.0  0.846
+    PhotMomWaveConv/460.0  0.830
+    PhotMomWaveConv/480.0  0.830
+    PhotMomWaveConv/500.0  0.829
+    PhotMomWaveConv/520.0  0.850
+    PhotMomWaveConv/540.0  0.848
+    PhotMomWaveConv/560.0  0.889
+    PhotMomWaveConv/580.0  0.883
+    PhotMomWaveConv/600.0  0.881
+    PhotMomWaveConv/660.0  0.898
+    PhotMomWaveConv/680.0  0.883
+    PhotMomWaveConv/850.0  0.883
+    PhotMomWaveConv/1000.0 0.883
+    PhotMomWaveConv/1250.0 0.883
+  "/>
+
+
+  <matrix name  = "Rich1Mirror2SurfaceIdealReflectivityPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0  0.0
+    PhotMomWaveConv/190.0  0.0
+    PhotMomWaveConv/200.0  0.90
+    PhotMomWaveConv/220.0  0.90
+    PhotMomWaveConv/240.0  0.90
+    PhotMomWaveConv/260.0  0.90
+    PhotMomWaveConv/280.0  0.90
+    PhotMomWaveConv/300.0  0.90
+    PhotMomWaveConv/340.0  0.90
+    PhotMomWaveConv/360.0  0.90
+    PhotMomWaveConv/380.0  0.90
+    PhotMomWaveConv/400.0  0.90
+    PhotMomWaveConv/420.0  0.90
+    PhotMomWaveConv/440.0  0.90
+    PhotMomWaveConv/460.0  0.90
+    PhotMomWaveConv/480.0  0.90
+    PhotMomWaveConv/500.0  0.90
+    PhotMomWaveConv/520.0  0.90
+    PhotMomWaveConv/540.0  0.90
+    PhotMomWaveConv/560.0  0.90
+    PhotMomWaveConv/580.0  0.90
+    PhotMomWaveConv/600.0  0.90
+    PhotMomWaveConv/660.0  0.90
+    PhotMomWaveConv/680.0  0.90
+    PhotMomWaveConv/850.0  0.90
+    PhotMomWaveConv/1000.0 0.90
+    PhotMomWaveConv/1250.0 0.90
+  "/>
+
+
+  <matrix name  = "Rich1Mirror2SurfaceEfficiencyPT" coldim="RichPropColDim" values="
+    PhotMomWaveConv/100.0  0.0
+    PhotMomWaveConv/190.0  0.0
+    PhotMomWaveConv/200.0  0.0
+    PhotMomWaveConv/220.0  0.0
+    PhotMomWaveConv/240.0  0.0
+    PhotMomWaveConv/260.0  0.0
+    PhotMomWaveConv/280.0  0.0
+    PhotMomWaveConv/300.0  0.0
+    PhotMomWaveConv/340.0  0.0
+    PhotMomWaveConv/360.0  0.0
+    PhotMomWaveConv/380.0  0.0
+    PhotMomWaveConv/400.0  0.0
+    PhotMomWaveConv/420.0  0.0
+    PhotMomWaveConv/440.0  0.0
+    PhotMomWaveConv/460.0  0.0
+    PhotMomWaveConv/480.0  0.0
+    PhotMomWaveConv/500.0  0.0
+    PhotMomWaveConv/520.0  0.0
+    PhotMomWaveConv/540.0  0.0
+    PhotMomWaveConv/560.0  0.0
+    PhotMomWaveConv/580.0  0.0
+    PhotMomWaveConv/600.0  0.0
+    PhotMomWaveConv/660.0  0.0
+    PhotMomWaveConv/680.0  0.0
+    PhotMomWaveConv/850.0  0.0
+    PhotMomWaveConv/1000.0 0.0
+    PhotMomWaveConv/1250.0 0.0
+  "/>
+ 
+
+  <matrix name  = "Rich1QuartzWindowSurfaceReflectivityPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)   1.0
+    (2.0*RichPhotEnUniteV)   1.0
+    (3.0*RichPhotEnUniteV)   1.0
+    (4.0*RichPhotEnUniteV)   1.0
+    (5.0*RichPhotEnUniteV)   1.0
+    (6.0*RichPhotEnUniteV)   1.0
+    (7.0*RichPhotEnUniteV)   1.0
+    (8.0*RichPhotEnUniteV)   1.0
+    (9.0*RichPhotEnUniteV)   1.0
+    (10.0*RichPhotEnUniteV)   1.0
+  "/>
+
+  <matrix name  = "Rich1QuartzWindowSurfaceEfficiencyPT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)   0.0
+    (2.0*RichPhotEnUniteV)   0.0
+    (3.0*RichPhotEnUniteV)   0.0
+    (4.0*RichPhotEnUniteV)   0.0
+    (5.0*RichPhotEnUniteV)   0.0
+    (6.0*RichPhotEnUniteV)   0.0
+    (7.0*RichPhotEnUniteV)   0.0
+    (8.0*RichPhotEnUniteV)   0.0
+    (9.0*RichPhotEnUniteV)   0.0
+    (10.0*RichPhotEnUniteV)   0.0
+  "/>
+  <matrix name  = "Rich1QuartzWindowSurfaceTransmittancePT" coldim="RichPropColDim" values="
+    (1.0*RichPhotEnUniteV)   1.0
+    (2.0*RichPhotEnUniteV)   1.0
+    (3.0*RichPhotEnUniteV)   1.0
+    (4.0*RichPhotEnUniteV)   1.0
+    (5.0*RichPhotEnUniteV)   1.0
+    (6.0*RichPhotEnUniteV)   1.0
+    (7.0*RichPhotEnUniteV)   1.0
+    (8.0*RichPhotEnUniteV)   1.0
+    (9.0*RichPhotEnUniteV)   1.0
+    (10.0*RichPhotEnUniteV)   1.0
+  "/>
+
+
+
+
+  <!--  End of Rich1 Surface Tab property   -->
+</properties>
+
+</lccdd>
+
+
+
+
+
+
+

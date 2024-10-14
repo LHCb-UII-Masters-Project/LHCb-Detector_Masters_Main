@@ -1,0 +1,37 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--   Modified Z.Xu with halflayer                                             -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_FT_cond_XML_reader" type="xml">
+      <alignments type="mats"    ref="Conditions/FT/Alignment/HalfLayer/Mats.yml"/>
+      <alignments type="modules" ref="Conditions/FT/Alignment/HalfLayer/Modules.yml"/>
+      <alignments type="system"  ref="Conditions/FT/Alignment/HalfLayer/FTSystem.yml"/>
+      <conditions type="ReadoutMap" ref="Conditions/FT/ReadoutConf.yml"/>
+      <conditions type="matContraction" ref="Conditions/FT/matContraction.yml"/>
+      <conditions type="SiPMResponse" ref="Conditions/FT/Sim.yml"/>
+      <conditions type="AttenuationInterpolation" ref="Conditions/FT/Attenuation/AttenuationInterpolation.yml"/>
+      <conditions type="AttenuationMap0fb_z_920-940" ref="Conditions/FT/Attenuation/AttenuationMap0fb_z_920-940.yml"/>
+      <conditions type="AttenuationMap1fb_z_920-940" ref="Conditions/FT/Attenuation/AttenuationMap1fb_z_920-940.yml"/>
+      <conditions type="AttenuationMap10fb_z_920-940" ref="Conditions/FT/Attenuation/AttenuationMap10fb_z_920-940.yml"/>
+      <conditions type="AttenuationMap100fb_z_920-940" ref="Conditions/FT/Attenuation/AttenuationMap100fb_z_920-940.yml"/>
+      <conditions type="AttenuationMap100fb_z_920-940_linearmodel" ref="Conditions/FT/Attenuation/AttenuationMap100fb_z_920-940_linearmodel.yml"/>
+      <conditions type="AttenuationMap25fb_z_920-940" ref="Conditions/FT/Attenuation/AttenuationMap25fb_z_920-940.yml"/>
+      <conditions type="AttenuationMap50fb_z_920-940" ref="Conditions/FT/Attenuation/AttenuationMap50fb_z_920-940.yml"/>
+      <conditions type="AttenuationMap50fb_z_920-940_aging" ref="Conditions/FT/Attenuation/AttenuationMap50fb_z_920-940_aging.yml"/>
+      <conditions type="AttenuationMap50fb_z_920-940_linearmodel" ref="Conditions/FT/Attenuation/AttenuationMap50fb_z_920-940_linearmodel.yml"/>
+      <conditions type="AttenuationMap50fb_z_920-940_replacedmodule" ref="Conditions/FT/Attenuation/AttenuationMap50fb_z_920-940_replacedmodule.yml"/>
+      <conditions type="AttenuationMap50fb_z_920-940_aging_replacedmodule" ref="Conditions/FT/Attenuation/AttenuationMap50fb_z_920-940_aging_replacedmodule.yml"/>
+    </plugin>
+  </plugins>
+
+</lccdd>

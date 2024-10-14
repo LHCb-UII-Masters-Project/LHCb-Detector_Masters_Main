@@ -1,0 +1,124 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--==================================UX853====================================-->
+<!--===========================================================================-->
+<pipe>
+  <!-- UX85-3 Cone 10 mrad of Beryllium cylindrical part for support -->
+  <!-- Split Rich2/Downstream                                        -->
+  <volume name="lvUX853Cone12B" material="Pipe:BeTV56" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-3-Cone10mrad-12B"
+           dz="0.5*UX853Cone12BLenght"
+           rmin2="UX853Cone12BRadiusZmax"
+           rmin1="UX853Cone12BRadiusZmin"
+           rmax2="UX853Cone12BOuterRadius"
+           rmax1="UX853Cone12BOuterRadius"/>
+  </volume>
+
+  <!-- UX85-3 Cone 10 mrad of Beryllium 2.4 mm thick -->
+  <volume name="lvUX853Cone13" material="Pipe:BeTV56" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-3-Cone10mrad-13"
+           dz="0.5*UX853Cone13Lenght"
+           rmin2="UX853Cone13RadiusZmax"
+           rmin1="UX853Cone13RadiusZmin"
+           rmax2="UX853Cone13RadiusZmax + UX853Cone13Thick"
+           rmax1="UX853Cone13RadiusZmin + UX853Cone13Thick"/>
+  </volume>
+
+  <!-- UX85-3 Cone 10 mrad of Beryllium 3.5 mm thick for welding -->
+  <volume name="lvUX853Cone14" material="Pipe:BeTV56" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-3-Cone10mrad-14"
+           dz="0.5*UX853Cone14Lenght"
+           rmin2="UX853Cone14RadiusZmax"
+           rmin1="UX853Cone14RadiusZmin"
+           rmax2="UX853Cone14RadiusZmax + UX853Cone14Thick"
+           rmax1="UX853Cone14RadiusZmin + UX853Cone14Thick"/>
+  </volume>
+
+  <!-- UX85-3 Cone 10 mrad of Aluminium 3.5 mm thick -->
+  <volume name="lvUX853Cone15" material="Pipe:Al2219F" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-3-Cone10mrad-15"
+           dz="0.5*UX853Cone15Lenght"
+           rmin2="UX853Cone15RadiusZmax"
+           rmin1="UX853Cone15RadiusZmin"
+           rmax2="UX853Cone15RadiusZmax + UX853Cone15Thick"
+           rmax1="UX853Cone15RadiusZmin + UX853Cone15Thick"/>
+  </volume>
+
+  <!-- UX85-3 Step 10 mrad of Aluminium for welding to flange -->
+  <volume name="lvUX853Cone16" material="Pipe:Al2219F" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-3-Cone10mrad-16"
+           dz="0.5*UX853Cone16Lenght"
+           rmin2="UX853Cone16RadiusZmax"
+           rmin1="UX853Cone16RadiusZmin"
+           rmax2="UX853Cone16OuterRadius"
+           rmax1="UX853Cone16OuterRadius"/>
+  </volume>
+
+  <!-- UX85-3 Bimetallic Flange - Aluminium -->
+  <volume name="lvUX853Flange17A" material="Pipe:Al2219F" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-3-Flange-17A"
+           dz="0.5*UX853Flange17ALenght"
+           rmin2="UX853Flange17ARadiusZmax"
+           rmin1="UX853Flange17ARadiusZmin"
+           rmax2="UX853Flange17AOuterRadius"
+           rmax1="UX853Flange17AOuterRadius"/>
+  </volume>
+
+  <!-- UX85-3 Bimetallic Flange - St.Steel -->
+  <volume name="lvUX853Flange17B" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-3-Flange-17B"
+           dz="0.5*UX853Flange17BLenght"
+           rmin2="UX853Flange17BRadiusZmax"
+           rmin1="UX853Flange17BRadiusZmin"
+           rmax2="UX853Flange17BOuterRadius"
+           rmax1="UX853Flange17BOuterRadius"/>
+  </volume>
+
+  <!-- Vacuum inside whole of it -->
+  <volume name="lvUX853Vacuum12B" material="Vacuum" vis="Pipe:Vacuum">
+    <shape type="ConeSegment" name="UX85-3-Vacuum-12B"
+           dz="0.5*UX853DownstreamLenght"
+           rmax1="UX853Cone12BRadiusZmin"
+           rmax2="UX853Flange17BRadiusZmax"/>
+  </volume>
+
+  <volume name="lvUX853Downstream" vis="Pipe:Downstream">
+    <physvol name="pvUX853Cone12B"               logvol="lvUX853Cone12B">
+      <position z="UX853Cone12BZpos"/>
+    </physvol>
+    <physvol name="pvUX853Cone13"                logvol="lvUX853Cone13">
+      <position z="UX853Cone13Zpos"/>
+    </physvol>
+    <physvol name="pvUX853Cone14"                logvol="lvUX853Cone14">
+      <position z="UX853Cone14Zpos"/>
+    </physvol>
+    <physvol name="pvUX853Cone15"                logvol="lvUX853Cone15">
+      <position z="UX853Cone15Zpos"/>
+    </physvol>
+    <physvol name="pvUX853Cone16"                logvol="lvUX853Cone16">
+      <position z="UX853Cone16Zpos"/>
+    </physvol>
+    <physvol name="pvUX853Flange17A"             logvol="lvUX853Flange17A">
+      <position z="UX853Flange17AZpos"/>
+    </physvol>
+    <physvol name="pvUX853Flange17B"             logvol="lvUX853Flange17B">
+      <position z="UX853Flange17BZpos"/>
+    </physvol>
+    <!-- Now the vacuum inside -->
+    <physvol name="pvUX853Vacuum12B"             logvol="lvUX853Vacuum12B">
+      <position z="0.5*UX853DownstreamLenght"/>
+    </physvol>
+  </volume>
+
+</pipe>

@@ -1,0 +1,69 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Pipe in the BeforeMagnetRegion area                -->
+<!--===========================================================================-->
+<lccdd>
+
+  <detectors>
+    <detector name="PipeBeforeVelo" type="DD4hep_VolumeAssembly" parent="${PipeBeforeVelo:parent}" vis="Pipe:Vis">
+      <!-- ************************************************************** -->
+      <!-- * BEAM PIPE                                                  * -->
+      <!-- * Sections in BeforeMagnetRegion                             * -->
+      <!-- *   from z=-2700 mm to z=-1079 mm                        * -->
+      <!-- *                                                            * -->
+      <!-- * UX85-1 in TT                                               * -->
+      <!-- *                                                            * -->
+      <!-- * Author: Magnus Lieng                                       * -->
+      <!-- *                                                            * -->
+      <!-- * Consists of:                                               * -->
+      <!-- *     - cylindrical section of 41 mm diameter                * -->
+      <!-- *     - cylindrical section of 76 mm diameter                * -->
+      <!-- *   and corresponding vaccum sections                        * -->
+      <!-- ************************************************************** -->
+
+      <include ref="BeforeVelo-Support.xml"/>
+
+      <!-- UX84 Cylinder of 40 mm radius -->
+      <volume name="lvUX842Cyl" vis="Pipe:BeforeVelo" material="Pipe:CuOFE">
+        <shape type="Tube" name="shape-UX84-2-Cylinder"
+               dz="0.5*UX842CylLength"         rmin="UX842CylRadius"      rmax="UX842CylRadius+UX842CylThick"/>
+      </volume>
+      <!-- Vacuum in UX84Cyl -->
+      <volume name="lvUX842Vacuum" vis="Pipe:Vacuum" material="Vacuum">
+        <shape type="Tube" name="shape-UX84-2-Vacuum"
+               dz="0.5*UX842CylLength"         rmax="UX842CylRadius"/>
+      </volume>
+      <!-- UX84 Flange of 76 mm radius -->
+      <volume name="lvUX84FlangeDown" vis="Pipe:BeforeVelo" material="Pipe:Steel316LN">
+        <shape type="Tube" name="shape-UX84-FlangeDown"
+              dz="0.5*UX84FlangeDownLength"
+              rmin="UX84FlangeDownRadius"
+              rmax="UX84FlangeDownRadius+UX84FlangeDownThick"/>
+      </volume>
+      <!-- Whole section: combination of sections -->
+      <envelope type="Assembly" name="lvUX84BeforeVelo" vis="Pipe:BeforeVelo">
+        <!-- Pipes of Cu -->
+        <physvol name="pvUX842Cyl"              volume="lvUX842Cyl"/>
+        <!-- Now the vacuum inside -->
+        <physvol name="pvUX842Vacuum"           volume="lvUX842Vacuum"/>
+        <!-- Flange of Steel -->
+        <physvol name="pvUX84FlangeDown"        volume="lvUX84FlangeDown">
+          <position z="UX84FlangeDownPosZ"/>
+        </physvol>
+      </envelope>
+
+      <comment> Pipe position in the region  </comment>
+      <position z="-1889.5*mm + Regions:BeforeMagnetZSize/2 - Regions:BeforeVeloZSize/2"/>
+
+    </detector>
+  </detectors>
+</lccdd>

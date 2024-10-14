@@ -1,0 +1,128 @@
+<ut>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+    <!--======Metalization Layer======-->
+    <volume material="UT:Aluminium" name="lvMetalLayerA" vis="UT:Sensor">
+        <shape name="utMetalLayerA" type="Box" dx="(UTSensorAlWide)/2" dy="(UTSensorAlLongA)/2" dz="(UTSensorAlThick)/2"/>
+    </volume>
+    <volume material="UT:Aluminium" name="lvMetalLayerB" vis="UT:Sensor">
+        <shape name="utMetalLayerB" type="Box" dx="(UTSensorAlWide)/2" dy="(UTSensorAlLongB)/2" dz="(UTSensorAlThick)/2"/>
+    </volume>
+    <volume material="UT:Aluminium" name="lvMetalLayerC" vis="UT:Sensor">
+        <shape name="utMetalLayerC" type="Box" dx="(UTSensorAlWide)/2" dy="(UTSensorAlLongC)/2" dz="(UTSensorAlThick)/2"/>
+    </volume>
+    <volume material="UT:Aluminium" name="lvMetalLayerD" vis="UT:Sensor">
+        <shape name="utMetalLayerD" type="BooleanShape" operation="subtraction">
+            <shape name="utMetalLayerBox1" type="Box" dx="(UTSensorAlWide)/2" dy="(UTSensorAlLongD)/2" dz="(UTSensorAlThick)/2"/>
+            <shape name="utMetalLayerTub1" type="Tube" dz="(UTSensorAlThick*2)/2" rmax="UTBeamHoleRadius+UTEpsilon"/>
+            <position x="UTSensorAlWide/2-UTSensorOverlapX/2" y="UTSensorAlLongD/2-UTSensorOverlapY0/2"/>
+        </shape>
+    </volume>
+
+    <!--=====GuardRing=====-->
+    <volume material="Silicon" name="lvGuardRingA" vis="UT:Sensor">
+        <shape name="utGuardRingA" type="BooleanShape" operation="subtraction">
+            <shape name="utGuardRingBox11" type="Box" dx="(UTSensorWide)/2" dy="(UTSensorLongA)/2" dz="(UTSensorGRThickA)/2"/>
+            <shape name="utGuardRingBox12" type="Box" dx="(UTSensorSiWide+UTEpsilon)/2" dy="(UTSensorSiLongA+UTEpsilon)/2" dz="(UTSensorGRThickA*2)/2"/>
+            <position y="UTSensorSiOffsetY"/>
+        </shape>
+    </volume>
+    <volume material="Silicon" name="lvGuardRingB" vis="UT:Sensor">
+        <shape name="utGuardRingB" type="BooleanShape" operation="subtraction">
+            <shape name="utGuardRingBox21" type="Box" dx="(UTSensorWide)/2" dy="(UTSensorLongB)/2" dz="(UTSensorGRThickB)/2"/>
+            <shape name="utGuardRingBox22" type="Box" dx="(UTSensorSiWide+UTEpsilon)/2" dy="(UTSensorSiLongB+UTEpsilon)/2" dz="(UTSensorGRThickB*2)/2"/>
+            <position y="UTSensorSiOffsetY"/>
+        </shape>
+    </volume>
+    <volume material="Silicon" name="lvGuardRingC" vis="UT:Sensor">
+        <shape name="utGuardRingC" type="BooleanShape" operation="subtraction">
+            <shape name="utGuardRingBox31" type="Box" dx="(UTSensorWide)/2" dy="(UTSensorLongC)/2" dz="(UTSensorGRThickC)/2"/>
+            <shape name="utGuardRingBox32" type="Box" dx="(UTSensorSiWide+UTEpsilon)/2" dy="(UTSensorSiLongC+UTEpsilon)/2" dz="(UTSensorGRThickC*2)/2"/>
+            <position y="UTSensorSiOffsetY"/>
+        </shape>
+    </volume>
+    <volume material="Silicon" name="lvGuardRingD" vis="UT:Sensor">
+        <shape name="utGuardRingD" type="BooleanShape" operation="union">
+            <shape name="utGuardRingFrame1" type="BooleanShape" operation="subtraction">
+                <shape name="utGuardRingBox41" type="Box" dx="(UTSensorWide)/2" dy="(UTSensorLongD)/2" dz="(UTSensorGRThickD)/2"/>
+                <shape name="utGuardRingTub41" type="Tube" dz="(UTSensorGRThickD*2)/2" rmax="UTBeamHoleRadius+UTSensorGRWideFar+UTEpsilon"/>
+                <position x="UTSensorWide/2-UTSensorOverlapX/2" y="UTSensorLongD/2-UTSensorOverlapY0/2"/>
+                <shape name="utGuardRingBox42" type="Box" dx="(UTSensorSiWide+UTEpsilon)/2" dy="(UTSensorSiLongC+UTEpsilon)/2" dz="(UTSensorGRThickD*3)/2"/>
+                <position y="UTSensorSiOffsetY"/>
+            </shape>
+
+            <shape name="utGuardRingArc1" type="BooleanShape" operation="intersection">
+                <shape name="utGuardRingBox43" type="Box" dx="(UTSensorWide)/2" dy="(UTSensorLongD)/2" dz="(UTSensorGRThickD)/2"/>
+                <shape name="utGuardRingTub42" type="Tube" dz="(UTSensorGRThickD*2)/2" rmax="UTBeamHoleRadius+UTSensorGRWideFar" rmin="UTBeamHoleRadius"/>
+                <position x="UTSensorWide/2-UTSensorOverlapX/2" y="UTSensorLongD/2-UTSensorOverlapY0/2"/>
+            </shape>
+        </shape>
+    </volume>
+
+    <!--======Sensor (normal, dual, quad, hole)======-->
+    <volume material="Silicon" name="lvSensorNorm" sensitive="1" vis="UT:Sensor">
+        <shape name="utSensorNorm" type="Box" dx="(UTSensorSiWide)/2" dy="(UTSensorSiLongA)/2" dz="(UTSensorSiThickA)/2"/>
+    </volume>
+    <volume material="Silicon" name="lvSensorDual" sensitive="1" vis="UT:Sensor">
+        <shape name="utSensorDual" type="Box" dx="(UTSensorSiWide/2)/2" dy="(UTSensorSiLongB)/2" dz="(UTSensorSiThickB)/2"/>
+    </volume>
+    <volume material="Silicon" name="lvSensorQuad" sensitive="1" vis="UT:Sensor">
+        <shape name="utSensorQuad" type="Box" dx="(UTSensorSiWide/2)/2" dy="(UTSensorSiLongC)/2" dz="(UTSensorSiThickC)/2"/>
+    </volume>
+    <volume material="Silicon" name="lvSensorHole" sensitive="1" vis="UT:Sensor">
+        <shape name="utSensorHole" type="BooleanShape" operation="subtraction">
+            <shape name="utSensorQuadBox4" type="Box" dx="(UTSensorSiWide/2)/2" dy="(UTSensorSiLongD)/2" dz="(UTSensorSiThickD)/2"/>
+            <shape name="utSensorQuadTub4" type="Tube" dz="(UTSensorSiThickD*2)/2" rmax="UTBeamHoleRadius+UTSensorGRWideSide+UTEpsilon"/>
+            <position x="UTSensorSiWide/4-UTSensorSiOverlapX/2" y="UTSensorSiLongD/2-UTSensorSiOverlapY/2"/>
+        </shape>
+    </volume>
+
+    <!--======Sector (norm, dual, quad, hold)======-->
+    <volume name="lvSectorNorm" vis="UT:Envelope"/>
+    <volume name="lvSectorDual" vis="UT:Envelope"/>
+    <volume name="lvSectorQuad" vis="UT:Envelope"/>
+    <volume material="Air" name="lvSectorHole" vis="UT:Envelope">
+        <shape name="utSectorHole" type="Box" dx="(UTSensorSiWide/2)/2" dy="(UTSensorSiLongD)/2" dz="(UTSensorSiThickD)/2"/>
+    </volume>
+    <!--======Sensor Groups======-->
+    <volume name="lvGroupA" vis="UT:Envelope">
+        <physvol volume="lvMetalLayerA" name="pvMetalLayerA">
+            <position z="UTSensorAlZ"/>
+        </physvol>
+        <physvol volume="lvGuardRingA" name="pvGuardRingA">
+            <position z="UTSensorSiZ"/>
+        </physvol>
+    </volume>
+    <volume name="lvGroupB" vis="UT:Envelope">
+        <physvol volume="lvMetalLayerB" name="pvMetalLayerB">
+            <position z="UTSensorAlZ"/>
+        </physvol>
+        <physvol volume="lvGuardRingB" name="pvGuardRingB">
+            <position z="UTSensorSiZ"/>
+        </physvol>
+    </volume>
+    <volume name="lvGroupC" vis="UT:Envelope">
+        <physvol volume="lvMetalLayerC" name="pvMetalLayerC">
+            <position z="UTSensorAlZ"/>
+        </physvol>
+        <physvol volume="lvGuardRingC" name="pvGuardRingC">
+            <position z="UTSensorSiZ"/>
+        </physvol>
+    </volume>
+    <volume name="lvGroupD" vis="UT:Envelope">
+        <physvol volume="lvMetalLayerD" name="pvMetalLayerD">
+            <position z="UTSensorAlZ"/>
+        </physvol>
+        <physvol volume="lvGuardRingD" name="pvGuardRingD">
+            <position z="UTSensorSiZ"/>
+        </physvol>
+    </volume>
+</ut>

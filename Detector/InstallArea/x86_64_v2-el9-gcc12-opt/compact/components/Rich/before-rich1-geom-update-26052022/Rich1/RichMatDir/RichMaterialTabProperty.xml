@@ -1,0 +1,55 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    01/07/2020                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich material tables for optical property definitions                   -->
+<!--===========================================================================-->
+
+<lccdd>
+
+  <define>
+   <constant name="RichAirAbsLengthValue"  value="(1.0e32)*mm" />
+   <constant name="RichAirRindexValue"     value= "1.000273" />
+   <constant name="RichGasQwAbsLengthLowEnValue"  value="(1.0e18)*mm" />
+   <constant name="RichGasQwAbsLengthHighEnValue"  value="(0.00001)*mm" />
+   <constant name="RichGasQwRindexValue"   value="1.46" />
+   <constant name="RichPmtVacuumAbsLengthValue"   value="(1.0e32)*mm" />
+   <constant name="RichPmtVacuumRindexValue"   value="1.000273" />
+   <constant name="RichMirrorQuartzAbsLengthValue" value="0.01*mm" />
+   <constant name="RichMirrorQuartzRindexValue" value="1.40" />
+   <constant name="RichPmtWindowQuartzAbsLengthValue" value="(1.0e15)*mm" />
+   <constant name="RichPmtWindowQuartzRindexNominalValue" value="1.46" />
+   <constant name="RichPmtWindowPhCathAbsLengthValue" value="(1.0e15)*mm" />
+   <constant name="Rich1RadiatorGasAbsLengthNominalValue" value="(1.0e15)*mm" />
+   <constant name="Rich2RadiatorGasAbsLengthNominalValue" value="(1.0e15)*mm" />
+   <constant name="RichNitrogenGasAbsLengthNominalValue" value="(1.0e15)*mm" />
+   <constant name="RichCO2GasAbsLengthNominalValue" value="(1.0e15)*mm" />
+   </define>
+  <properties>
+<!--
+   <matrix name="RINDEX_Rich_GasWindowQuartzRindexPT" coldim="2" rows="3" values="
+          0.9*eV  1.46
+          1.0*eV  1.46
+          1.5*eV  1.46
+   "/>
+
+   <matrix name="CKVRNDEX_Rich_GasWindowQuartzRndexPT" coldim="2" values="
+          1.75*eV  1.46
+          2.0*eV   1.46
+          2.5*eV   1.46
+  "/>
+-->
+
+   <matrix name="CKVRNDEX_Rich_GasWindowQuartzRndexPT" coldim="2" values=" 1.75*eV  1.46 "/>
+
+
+  </properties>
+
+</lccdd>

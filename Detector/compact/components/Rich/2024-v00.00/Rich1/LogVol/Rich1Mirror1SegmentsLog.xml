@@ -1,0 +1,328 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--  Original version 01-02-2011 SE                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1 Mirror1  Log vols.  These are the Rich1 primary spherical mirrors   -->
+<!--  ==========================================================================-->
+<Rich1>
+
+
+  <volume name="lvRich1Mirror1CarbonFibreInnerLayerQ0" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiInnerSeg" >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1Mirror1CaFiInnerSegModuleQ0">
+      <shape type="Sphere" name="Rich1Mirror1CaFiInnerModSphQ0"
+	      rmax ="Rh1Mirror1CaFiInnerSegOuterRQ0"
+	      rmin ="Rh1Mirror1CaFiInnerSegInnerRQ0"
+	      startphi = "Rh1Mirror1CaFiInnerSegPhiStart"
+	      deltaphi = "Rh1Mirror1CaFiInnerSegDeltaPhi"
+	      starttheta = "Rh1Mirror1CaFiInnerSegThetaStart"
+	      deltatheta = "Rh1Mirror1CaFiInnerSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ0SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiInnerSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ0SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiInnerSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ0SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ0SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiInnerSegBeamPipeHoleQ0Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ0"
+	        z="Rh1Mirror1BeamHoleLocationZQ0"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreInnerLayerQ1" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiInnerSeg">
+    <shape type="BooleanShape" operation="subtraction"  name="Rich1Mirror1CaFiInnerSegModuleQ1">
+      <shape type="Sphere" name="Rich1Mirror1CaFiInnerModSphQ1"
+	      rmax ="Rh1Mirror1CaFiInnerSegOuterRQ1"
+	      rmin ="Rh1Mirror1CaFiInnerSegInnerRQ1"
+	      startphi = "Rh1Mirror1CaFiInnerSegPhiStart"
+	      deltaphi = "Rh1Mirror1CaFiInnerSegDeltaPhi"
+	      starttheta = "Rh1Mirror1CaFiInnerSegThetaStart"
+	      deltatheta = "Rh1Mirror1CaFiInnerSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ1SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiInnerSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ1SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiInnerSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ1SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ1SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiInnerSegBeamPipeHoleQ1Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ1"
+	        z="Rh1Mirror1BeamHoleLocationZQ1"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreInnerLayerQ2" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiInnerSeg"  >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1Mirror1CaFiInnerSegModuleQ2">
+      <shape type="Sphere" name="Rich1Mirror1CaFiInnerModSphQ2"
+	      rmax ="Rh1Mirror1CaFiInnerSegOuterRQ2"
+	      rmin ="Rh1Mirror1CaFiInnerSegInnerRQ2"
+	      startphi = "Rh1Mirror1CaFiInnerSegPhiStart"
+	      deltaphi = "Rh1Mirror1CaFiInnerSegDeltaPhi"
+	      starttheta = "Rh1Mirror1CaFiInnerSegThetaStart"
+	      deltatheta = "Rh1Mirror1CaFiInnerSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ2SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiInnerSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ2SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiInnerSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ2SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ2SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiInnerSegBeamPipeHoleQ2Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ2"
+	        z="Rh1Mirror1BeamHoleLocationZQ2"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreInnerLayerQ3" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiInnerSeg" >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1Mirror1CaFiInnerSegModuleQ3">
+      <shape type="Sphere" name="Rich1Mirror1CaFiInnerModSphQ3"
+	      rmax ="Rh1Mirror1CaFiInnerSegOuterRQ3"
+	      rmin ="Rh1Mirror1CaFiInnerSegInnerRQ3"
+	      startphi = "Rh1Mirror1CaFiInnerSegPhiStart"
+	      deltaphi = "Rh1Mirror1CaFiInnerSegDeltaPhi"
+	      starttheta = "Rh1Mirror1CaFiInnerSegThetaStart"
+	      deltatheta = "Rh1Mirror1CaFiInnerSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ3SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiInnerSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ3SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiInnerSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ3SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiInnerSegBoxQ3SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiInnerSegBeamPipeHoleQ3Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ3"
+	        z="Rh1Mirror1BeamHoleLocationZQ3"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreOuterLayerQ0" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiOuterSeg" >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1Mirror1CaFiOuterSegModuleQ0">
+      <shape type="Sphere" name="Rich1Mirror1CaFiOuterModSphQ0"
+	      rmax ="Rh1Mirror1CaFiOuterSegOuterRQ0"
+	      rmin ="Rh1Mirror1CaFiOuterSegInnerRQ0"
+	      startphi = "Rh1Mirror1CaFiOuterSegPhiStart"
+	      deltaphi = "Rh1Mirror1CaFiOuterSegDeltaPhi"
+	      starttheta = "Rh1Mirror1CaFiOuterSegThetaStart"
+	      deltatheta = "Rh1Mirror1CaFiOuterSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ0SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiInnerSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ0SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiOuterSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ0SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ0SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiOuterSegBeamPipeHoleQ0Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ0"
+	        z="Rh1Mirror1BeamHoleLocationZQ0"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreOuterLayerQ1" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiOuterSeg" >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1Mirror1CaFiOuterSegModuleQ1">
+      <shape type="Sphere" name="Rich1Mirror1CaFiOuterModSphQ1"
+	      rmax ="Rh1Mirror1CaFiOuterSegOuterRQ1"
+	      rmin ="Rh1Mirror1CaFiOuterSegInnerRQ1"
+	      startphi = "Rh1Mirror1CaFiOuterSegPhiStart"
+	      deltaphi = "Rh1Mirror1CaFiOuterSegDeltaPhi"
+	      starttheta = "Rh1Mirror1CaFiOuterSegThetaStart"
+	      deltatheta = "Rh1Mirror1CaFiOuterSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ1SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiOuterSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ1SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiOuterSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ1SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ1SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiOuterSegBeamPipeHoleQ1Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ1"
+	        z="Rh1Mirror1BeamHoleLocationZQ1"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreOuterLayerQ2" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiOuterSeg"  >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1Mirror1CaFiOuterSegModuleQ2">
+      <shape type="Sphere" name="Rich1Mirror1CaFiOuterModSphQ2"
+	      rmax ="Rh1Mirror1CaFiOuterSegOuterRQ2"
+	      rmin ="Rh1Mirror1CaFiOuterSegInnerRQ2"
+	      startphi = "Rh1Mirror1CaFiOuterSegPhiStart"
+	      deltaphi = "Rh1Mirror1CaFiOuterSegDeltaPhi"
+	      starttheta = "Rh1Mirror1CaFiOuterSegThetaStart"
+	      deltatheta = "Rh1Mirror1CaFiOuterSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ2SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiOuterSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ2SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiOuterSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ2SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ2SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiOuterSegBeamPipeHoleQ2Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ2"
+	        z="Rh1Mirror1BeamHoleLocationZQ2"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreOuterLayerQ3" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiOuterSeg"  >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1Mirror1CaFiOuterSegModuleQ3">
+      <shape type="Sphere" name="Rich1Mirror1CaFiOuterModSphQ3"
+	      rmax ="Rh1Mirror1CaFiOuterSegOuterRQ3"
+	      rmin ="Rh1Mirror1CaFiOuterSegInnerRQ3"
+	      startphi  = "Rh1Mirror1CaFiOuterSegPhiStart"
+	      deltaphi  = "Rh1Mirror1CaFiOuterSegDeltaPhi"
+	      starttheta  = "Rh1Mirror1CaFiOuterSegThetaStart"
+	      deltatheta  = "Rh1Mirror1CaFiOuterSegDeltaThetaExtended"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ3SubA"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y="Rh1Mirror1CaFiOuterSegBoxSubtractYLocationA"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ3SubB"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position y= "Rh1Mirror1CaFiOuterSegBoxSubtractYLocationB"/>
+      <shape type="Box"  name="Rich1Mirror1CaFiOuterSegBoxQ3SubC"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z="Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHA"/>
+      <shape type="Box" name="Rich1Mirror1CaFiOuterSegBoxQ3SubD"
+	   dx="Rh1Mirror1QuadrantBoxSubtractXSize*RhHalfSize"
+	   dy="Rh1Mirror1QuadrantBoxSubtractYSize*RhHalfSize"
+	   dz="Rh1Mirror1QuadrantBoxSubtractZSize*RhHalfSize"/>
+      <position z= "Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHB"/>
+      <shape type="Tube"  name ="Rich1Mirror1CaFiOuterSegBeamPipeHoleQ3Sub"
+	    dz="Rh1Mirror1BeamHoleLength*RhHalfSize"
+	    rmax="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents"/>
+      <position y="Rh1Mirror1BeamHoleLocationYQ3"
+	        z="Rh1Mirror1BeamHoleLocationZQ3"/>
+      <rotation y="Rh1Mirror1BeamHoleYRotationAngle"/>
+    </shape>
+  </volume>
+
+  <volume name="lvRich1Mirror1CarbonFibreCylinder" material="Rich:Rich1MirrorCarbonFibre" vis="Rich:VisRich1Mirror1CaFiCylinderSeg" >
+    <shape type="Tube"   name ="Rich1Mirror1CaFiCylinder"
+	  dz="Rh1Mirror1CaFiCylinderLength*RhHalfSize"
+	  rmax="Rh1Mirror1CaFiCylinderOuterRadius"
+	  rmin="Rh1Mirror1CaFiCylinderInnerRadius"/>
+  </volume>
+
+
+</Rich1>

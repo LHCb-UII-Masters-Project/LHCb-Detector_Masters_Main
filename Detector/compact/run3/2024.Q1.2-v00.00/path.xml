@@ -1,0 +1,31 @@
+<lccdd>
+<!--
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+  <define>
+    <constant name="path:BlockWall" value="../../components/BlockWall/2024-v00.00" type="string"/>
+    <constant name="path:GValve" value="../../components/GValve/2024-v00.00" type="string"/>
+    <constant name="path:Bls" value="../../components/Bls/2024-v00.00" type="string"/>
+    <constant name="path:Bcm" value="../../components/Bcm/2024-v00.00" type="string"/>
+    <constant name="path:MBXW" value="../../components/MBXW/2024-v00.00" type="string"/>
+    <constant name="path:Pipe" value="../../components/Pipe/2024-v00.00" type="string"/>
+    <constant name="path:Rich" value="../../components/Rich/2024-v00.00" type="string"/>
+    <constant name="path:VP" value="../../components/VP/2024.Q1.2-v00.00" type="string"/>
+    <constant name="path:UT" value="../../components/UT/2024-v00.00" type="string"/>
+    <constant name="path:Magnet" value="../../components/Magnet/2024-v00.00" type="string"/>
+    <constant name="path:FT" value="../../components/FT/2024-v00.00" type="string"/>
+    <constant name="path:NeutronShielding" value="../../components/NeutronShielding/2024-v00.00" type="string"/>
+    <constant name="path:Muon" value="../../components/Muon/2024-v00.00" type="string"/>
+    <constant name="path:ECAL" value="../../components/ECAL/2024-v00.00" type="string"/>
+    <constant name="path:HCAL" value="../../components/HCAL/2024-v00.00" type="string"/>
+    <constant name="path:Regions" value="../../components/Regions/2024-v00.00" type="string"/>
+    <constant name="path:Materials" value="../../components/Materials/2024-v00.00" type="string"/>
+  </define>
+</lccdd>

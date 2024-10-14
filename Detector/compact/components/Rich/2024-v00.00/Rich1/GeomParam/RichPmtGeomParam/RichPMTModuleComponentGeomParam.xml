@@ -1,0 +1,44 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--  First version:   30-01-2016 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for MAPMT Module components     -->
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+<!-- Now for RICH1 std modules -->
+<constant name = "RhPmtStdModuleLengthSize" value="223.8*mm" />
+<constant name = "RhPmtStdModuleWidthSize" value="56.0*mm" />
+<constant name = "RhPmtStdModuleDepthSize" value="60.0*mm" />
+
+<constant name = "RhPmtStdModuleAdjacentGapAlongLength" value="0.2*mm" />
+<constant name = "RhPmtStdModuleAdjacentGapAlongWidth" value="0.5*mm" />
+
+
+<constant name = "RhPmtStdModuleEdgeTolerenceAlongLength" value="0.1*mm" />
+<constant name = "RhPmtStdModuleEdgeTolerenceAlongWidth" value="0.2*mm" />
+
+<constant name = "RhPMTModuleZSize" value="RhPmtStdModuleDepthSize" />
+
+
+<!--  Now for RICH2 std modules -->
+<constant name = "Rich2PmtStdModuleXSize" value="RhPmtStdModuleLengthSize" />
+<constant name = "Rich2PmtStdModuleYSize" value="RhPmtStdModuleWidthSize" />
+<constant name = "Rich2PmtStdModuleZSize" value="RhPMTModuleZSize"  />
+
+<!--  Now for RICH2 Grand pmt modules -->
+
+<constant name = "Rich2PmtGrandModuleXSize"  value="RhPmtStdModuleLengthSize" />
+<constant name = "Rich2PmtGrandModuleYSize" value="RhPmtStdModuleWidthSize" />
+<constant name = "Rich2PmtGrandModuleZSize" value="RhPMTModuleZSize"  />
+
+  </define>
+</lccdd>

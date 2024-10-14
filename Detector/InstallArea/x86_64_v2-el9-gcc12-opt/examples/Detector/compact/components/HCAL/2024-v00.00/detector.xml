@@ -1,0 +1,162 @@
+<lccdd>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+  <info name="HCAL" title="HCAL" author="lcapriot" url="http://cern.ch/lhcb" status="development" version="$Id: $">
+    <comment>
+      Test HCAL stack
+    </comment>
+  </info>
+
+  <detectors>
+    <detector id="Hcal:ID" name="Hcal" type="LHCb_Hcal_v1_0" parent="${Hcal:parent}" readout="HcalHits" vis="Hcal">
+      <include ref="parameters.xml"/>
+      <position x="0.0*mm" y="HcalYShift" z="(HcalZPosition + 0.5*HcalTotSpace) - Regions:DownstreamZPos"/>
+      <rotation x="HcalTiltAngle"/>
+      <debug>
+        <item name="debug"                         value="0"/>
+        <item name="HcalBuildInnerCellWorkParts"   value="1"/>
+        <item name="HcalBuildOuterCellWorkParts"   value="1"/>
+        <item name="HcalBuildInnerCells"           value="1"/>
+        <item name="HcalBuildOuterCells"           value="1"/>
+        <item name="HcalBuildInnerSubModules"      value="1"/>
+        <item name="HcalBuildOuterSubModules"      value="1"/>
+        <item name="HcalBuildInnerModules"         value="1"/>
+        <item name="HcalBuildOuterModules"         value="1"/>
+        <item name="HcalBuildBackShield"           value="1"/>
+        <item name="HcalBuildBeamPlug"             value="1"/>
+        <item name="HcalBuildBeamPlugCarcass"      value="1"/>
+
+      </debug>
+
+
+
+      <volume name = "lvHcalHalfSubModuleReinforce" material = "Air">
+        <shape type="Box" name = "HcalHalfSubModuleReinforceBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "HcalSubModYSize/2"
+          dz = "(HcalTotLength-HcalFwFaceLength-6.0*HcalMsPlStepLength-HcalBkFaceTotLength-HcalBackShieldingZSize)/2"/>
+      </volume>
+
+
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%       Central Strip for Join SubModule     %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalCntStrip" material = "CaloSteel">
+        <shape type="Box" name  = "HcalCntStripBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "HcalCntStripHeight/2"
+          dz = "HcalCntStripWidth/2"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%    Outer Foward Strip for Join SubModule   %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalFwOutStrip" material = "CaloSteel">
+        <shape type="Box" name  = "HcalFwOutStripBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "HcalFwOutStripHeight/2"
+          dz = "HcalFwOutStripWidth/2"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%  Outer Backward Strip for Join SubModule   %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalBkOutStrip" material = "CaloSteel">
+        <shape type="Box" name  = "HcalBkOutStripBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "HcalBkOutStripHeight/2"
+          dz = "HcalBkOutStripWidth/2"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%  Foward Face of SubModule from Work Stuff  %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalFwFaceWorkStuff" material = "CaloSteel">
+        <shape type="Box" name  = "HcalFwFaceWorkStuffBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "(0.5*HcalMsPlHeight-0.5*HcalFaceWidth_for_CntStrip)/2"
+          dz = "(HcalFwFaceLength-HcalFwFaceShelfLength)/2"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%% Foward Face Shelf of SubModule from Work Stuff %%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalFwFaceShelfWorkStuff" material = "CaloSteel">
+        <shape type="Box" name  = "HcalFwFaceShelfWorkStuffBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "HcalFwFaceShelfWidth/2"
+          dz = "HcalFwFaceShelfLength/2"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%% Backward Face of SubModule from Work Stuff %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalBkFaceWorkStuff" material = "CaloSteel">
+        <shape type="Box" name  = "HcalBkFaceWorkStuffBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "HcalMsPlHeight/2"
+          dz = "(HcalBkFaceLength-HcalBkFaceShelfLength)/2"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%% Backward Face Shelf of SubModule from Work Stuff %%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalBkFaceShelfWorkStuff" material = "CaloSteel">
+        <shape type="Box" name  = "HcalBkFaceShelfWorkStuffBox"
+          dx = "0.5*HcalSubModXSize/2"
+          dy = "HcalBkFaceShelfWidth/2"
+          dz = "HcalBkFaceShelfLength/2"/>
+      </volume>
+
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%      Upper Foward Small Inner Spacer       %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalInnCellUpFwSmSpacer" material = "CaloSteel">
+        <shape type="Box" name  = "HcalInnCellUpFwSmSpacerBox"
+          dx = "HcalSpacerWidth"
+          dy = "0.5*HcalSpacerHeigth"
+          dz = "0.5*HcalSpacerLength-0.5*HcalMsPlStepLength"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%      Lower Foward Small Inner Spacer       %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalInnCellLowFwSmSpacer" material = "CaloSteel">
+        <shape type="Box" name  = "HcalInnCellLowFwSmSpacerBox"
+          dx = "HcalSpacerWidth"
+          dy = "0.5*HcalSpacerHeigth"
+          dz = "0.5*HcalSpacerLength-0.5*HcalMsPlStepLength"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%     Upper Backward Small Inner Spacer      %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalInnCellUpBkSmSpacer" material = "CaloSteel">
+        <shape type="Box" name  = "HcalInnCellUpBkSmSpacerBox"
+          dx = "HcalSpacerWidth"
+          dy = "0.5*HcalSpacerHeigth"
+          dz = "0.5*HcalSpacerLength-0.5*HcalMsPlStepLength"/>
+      </volume>
+      <!-- **************************************************************** -->
+      <!-- %%%%%%%%%%     Lower Backward Small Inner Spacer      %%%%%%%%%% -->
+      <!-- **************************************************************** -->
+      <volume name = "lvHcalInnCellLowBkSmSpacer" material = "CaloSteel">
+        <shape type="Box" name  = "HcalInnCellLowBkSmSpacerBox"
+          dx = "HcalSpacerWidth"
+          dy = "0.5*HcalSpacerHeigth"
+          dz = "0.5*HcalSpacerLength-0.5*HcalMsPlStepLength"/>
+      </volume>
+
+
+    </detector>
+
+
+  </detectors>
+
+  <readouts>
+    <readout name="HcalHits">
+      <id>system:8,side:1,region:1,module:7,submodule:4,cell:3,cellworkpart:7,sctile:1</id>
+    </readout>
+  </readouts>
+
+</lccdd>

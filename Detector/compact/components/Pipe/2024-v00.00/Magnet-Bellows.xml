@@ -1,0 +1,187 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<pipe>
+
+  <!-- Bellow at 6900 - Flange -->
+  <volume name="lvUX85B6900Flange01" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Tube" name="UX85-B6900-Flange-01"
+           dz="0.5*UX85B6900Flange01Lenght"
+           rmin="UX85B6900Flange01InnerRadius"
+           rmax="UX85B6900Flange01OuterRadius"/>
+  </volume>
+
+  <!-- Bellow at 6900 cylinder (almost cone 10 mrad)  -->
+  <volume name="lvUX85B6900Cyl02" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Tube" name="UX85-B6900-Cylinder-02"
+           dz="0.5*UX85B6900Cyl02Lenght"
+           rmin="UX85B6900Cyl02InnerRadius"
+           rmax="UX85B6900Cyl02OuterRadius"/>
+  </volume>
+
+  <!-- Bellow at 6900 rib around cone -->
+  <volume name="lvUX85B6900Rib03" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Tube" name="UX85-B6900-Rib-03"
+           dz="0.5*UX85B6900Rib03Lenght"
+           rmin="UX85B6900Rib03InnerRadius"
+           rmax="UX85B6900Rib03OuterRadius"/>
+  </volume>
+
+  <volume name="lvUX85B6900BellowBase" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Polycone" name="UX85-B6900-BellowBase-04">
+      <zplane z="-0.5*UX85B6900BellowLenght"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLenght + UX85B6900BellowWallThick"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLenght + UX85B6900BellowWallThick"
+              rmin="UX85B6900BellowOuterRadius - UX85B6900BellowWallThick"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLenght + UX85B6900BellowWallThick +
+                 UX85B6900BellowStep"
+              rmin="UX85B6900BellowOuterRadius - UX85B6900BellowWallThick"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLenght + UX85B6900BellowWallThick +
+                 UX85B6900BellowStep"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLenght + 2*UX85B6900BellowWallThick +
+                 UX85B6900BellowStep"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLenght + 2*UX85B6900BellowWallThick +
+                 UX85B6900BellowStep"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowInnerRadius + UX85B6900BellowWallThick "/>
+      <zplane z="-0.5*UX85B6900BellowLenght + 2*UX85B6900BellowWallThick +
+                 2*UX85B6900BellowStep"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowInnerRadius + UX85B6900BellowWallThick "/>
+    </shape>
+  </volume>
+
+  <volume name="lvUX85B6900BellowLast" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Polycone" name="UX85-B6900-BellowLast-04">
+      <zplane z="-0.5*UX85B6900BellowLastLenght"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLastLenght + UX85B6900BellowWallThick"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLastLenght + UX85B6900BellowWallThick"
+              rmin="UX85B6900BellowOuterRadius - UX85B6900BellowWallThick"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLastLenght + UX85B6900BellowWallThick +
+                 UX85B6900BellowStep"
+              rmin="UX85B6900BellowOuterRadius - UX85B6900BellowWallThick"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLastLenght + UX85B6900BellowWallThick +
+                 UX85B6900BellowStep"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+      <zplane z="-0.5*UX85B6900BellowLastLenght + 2*UX85B6900BellowWallThick +
+                 UX85B6900BellowStep"
+              rmin="UX85B6900BellowInnerRadius"
+              rmax="UX85B6900BellowOuterRadius"/>
+    </shape>
+  </volume>
+  <!-- Bellow at 6900 Bellow -->
+  <volume name="lvUX85B6900Bellow">
+    <paramphysvol number="UX85B6900BellowNConv-1">
+      <physvol name="pvUX85B6900BellowBase" volume="lvUX85B6900BellowBase"/>
+      <position z="UX85B6900BellowPitch"/>
+    </paramphysvol>
+    <physvol name="pvUX85B6900BellowLast"   volume="lvUX85B6900BellowLast">
+      <position z="-0.5*UX85B6900BellowLenght +
+                   (UX85B6900BellowNConv-1)*UX85B6900BellowPitch +
+                   0.5*UX85B6900BellowLastLenght"/>
+    </physvol>
+  </volume>
+
+
+  <!-- Bellow at 6900 rib around cone -->
+  <volume name="lvUX85B6900Rib05" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Tube" name="UX85-B6900-Rib-05"
+           dz="0.5*UX85B6900Rib05Lenght"
+           rmin="UX85B6900Rib05InnerRadius"
+           rmax="UX85B6900Rib05OuterRadius"/>
+  </volume>
+  <!-- Bellow at 6900 cylinder (almost cone 10 mrad)  -->
+  <volume name="lvUX85B6900Cyl06" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Tube" name="UX85-B6900-Cylinder-06"
+           dz="0.5*UX85B6900Cyl06Lenght"
+           rmin="UX85B6900Cyl06InnerRadius"
+           rmax="UX85B6900Cyl06OuterRadius"/>
+  </volume>
+  <!-- Bellow at 6900 Flange -->
+  <volume name="lvUX85B6900Flange07" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Tube" name="UX85-B6900-Flange-07"
+           dz="0.5*UX85B6900Flange07Lenght"
+           rmin="UX85B6900Flange07InnerRadius"
+           rmax="UX85B6900Flange07OuterRadius"/>
+  </volume>
+  <!-- Vacuum in Bellow 6900 series of cylinders -->
+  <volume name="lvUX85B6900Vacuum01" vis="Pipe:Magnet" material="Vacuum">
+    <shape type="Tube" name="UX85-B6900-Vacuum-01"
+           dz="0.5*UX85B6900Vacuum01Lenght"
+           rmax="UX85B6900Flange01InnerRadius"/>
+  </volume>
+  <volume name="lvUX85B6900Vacuum04" vis="Pipe:Magnet" material="Vacuum">
+    <shape type="Tube" name="UX85-B6900-Vacuum-04"
+           dz="0.5*UX85B6900Vacuum04Lenght"
+           rmax="UX85B6900BellowInnerRadius"/>
+  </volume>
+  <volume name="lvUX85B6900Vacuum06" vis="Pipe:Magnet" material="Vacuum">
+    <shape type="Tube" name="UX85-B6900-Vacuum-06"
+           dz="0.5*UX85B6900Vacuum06Lenght"
+           rmax="UX85B6900Cyl06InnerRadius"/>
+  </volume>
+
+
+  <!-- Bellow Section -->
+  <volume name="lvUX85Bellow6900" vis="Pipe:Magnet">
+    <physvol name="pvUX85B6900Flange01"              volume="lvUX85B6900Flange01">
+      <position z="UX85B6900Flange01Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Cyl02"                 volume="lvUX85B6900Cyl02">
+      <position z="UX85B6900Cyl02Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Rib03"                 volume="lvUX85B6900Rib03">
+      <position z="UX85B6900Rib03Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Bellow04"              volume="lvUX85B6900Bellow">
+      <position z="UX85B6900Bellow04Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Rib05"                 volume="lvUX85B6900Rib05">
+      <position z="UX85B6900Rib05Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Cyl06"                 volume="lvUX85B6900Cyl06">
+      <position z="UX85B6900Cyl06Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Flange07"              volume="lvUX85B6900Flange07">
+      <position z="UX85B6900Flange07Zpos"/>
+    </physvol>
+    <!-- Now the vacuum inside -->
+    <physvol name="pvUX85B6900Vacuum01"             volume="lvUX85B6900Vacuum01">
+      <position z="UX85B6900Vacuum01Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Vacuum04"             volume="lvUX85B6900Vacuum04">
+      <position z="UX85B6900Vacuum04Zpos"/>
+    </physvol>
+    <physvol name="pvUX85B6900Vacuum06"             volume="lvUX85B6900Vacuum06">
+      <position z="UX85B6900Vacuum06Zpos"/>
+    </physvol>
+  </volume>
+
+</pipe>

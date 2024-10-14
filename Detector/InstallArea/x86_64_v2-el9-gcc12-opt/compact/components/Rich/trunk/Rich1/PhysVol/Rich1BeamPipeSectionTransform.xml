@@ -1,0 +1,48 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--   There is a part upstream of rich1 submaster -->
+<!--   and downstream of rich1submaster  named as -->
+<!-- pvUX851InRich1BeforeSubM and pvUX851InRich1AfterSubM -->
+<!-- There is also a part inside the rich1 submaster -->
+<!-- named as pvUX851InRich1SubMaster  -->
+<!--   <physvol name="pvUX851InRich1BeforeSubM" logvol= "lvUX851InRich1BeforeSubM" -->
+<!--   <physvol name="pvUX851InRich1AfterSubM"  logvol="lvUX851InRich1AfterSubM"  -->
+<!--   <physvol name="pvUX851InRich1SubMaster" logvol="lvUX851InRich1SubMaster" -->
+
+<Rich1>
+   <item name="PhysVolName"   value="pvUX851InRich1BeforeSubM"  />
+   <item name="TransformName"  value="pvUX851InRich1BeforeSubMTransform" > 
+
+     <transformation>
+      <position z= "Rh1BeamPipeUpsAssemblyRMZ" />
+     </transformation>
+
+   </item>
+
+   <item name="PhysVolName"   value="pvUX851InRich1AfterSubM"  />
+   <item name="TransformName"  value="pvUX851InRich1AfterSubMTransform" > 
+
+      <transformation>
+       <position z= "Rh1BeamPipeDnsAssemblyRMZ"  />
+      </transformation>
+
+   </item>
+
+   <item name="PhysVolName"   value="pvUX851InRich1SubMaster" />
+   <item name="TransformName"  value="pvUX851InRich1SubMasterTransform" >
+
+      <transformation>
+       <position z= "Rh1BeamPipeAssemblyZ" />
+      </transformation>
+
+   </item>
+
+</Rich1>

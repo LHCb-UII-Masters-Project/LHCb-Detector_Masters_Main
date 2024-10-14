@@ -1,0 +1,96 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Global VMA Warm Module parameters                  -->
+<!--===========================================================================-->
+<lccdd>
+  <define>
+    <comment> RF contact mount global parameters </comment>
+    <constant name="VMA:RfContactThick"               value="3.00*mm"/>
+    <constant name="VMA:RfContactCylZ"                value="14.50*mm"/>
+    <constant name="VMA:RfContactFlangeZ"             value="2.50*mm"/>
+    <constant name="VMA:RfContactFlangeThickRaw"      value="55.8*mm"/>
+
+    <comment> RF contact single arm global parameters </comment>
+    <constant name="VMA:RfContSingleThick"            value="0.10*mm"/>
+    <constant name="VMA:RfContSinglePlateZ"           value="14.00*mm"/>
+    <constant name="VMA:RfContSingleX"                value="3.60*mm"/>
+
+    <constant name="VMA:RfContSingleArmZ"             value="90.80*mm"/>
+    <constant name="VMA:RfContSingleArmAng"           value="4.00*degree"/>
+    <constant name="VMA:RfContSingleEndZ"             value="8.37*mm"/>
+    <constant name="VMA:RfContSingleEndAng"           value="VMA:RfContSingleArmAng + 21*degree"/>
+
+    <comment> Transition tube global parameters </comment>
+    <constant name="VMA:TransTubeThick"               value="2.00*mm"/>
+    <constant name="VMA:TransTubeFlangeInnerThickRaw" value="51.5*mm"/>
+    <constant name="VMA:TransTubeFlangeThickRaw"      value="55.8*mm"/>
+    <constant name="VMA:TransTubeFlangeZ"             value="2.50*mm"/>
+    <constant name="VMA:TransTubeFlangeInnerZ"        value="5.5*mm"/>
+
+    <comment> Pipe global parameters </comment>
+    <constant name="VMA:EntryThick"                   value="1.50*mm"/>
+    <constant name="VMA:EntryRad"                     value="50.00*mm"/>
+    <constant name="VMA:EntryConsZ"                   value="2.80*mm"/>
+    <constant name="VMA:EntryConsRadEnd"              value="52.80*mm"/>
+    <constant name="VMA:EntryDownCylZ"                value="22.20*mm"/>
+
+    <constant name="VMA:BellowZ"                      value="110.00*mm"/>
+    <constant name="VMA:BellowPitch"                  value="4.00*mm"/>
+    <constant name="VMA:BellowThick"                  value="0.20*mm"/>
+    <constant name="VMA:BellowInnerRad"               value="51.50*mm"/>
+    <constant name="VMA:BellowOuterRad"               value="57.00*mm"/>
+    <constant name="VMA:BellowCyl1Z"                  value="50.00*mm"/>
+    <constant name="VMA:BellowCyl2Z"                  value="34.00*mm"/>
+
+    <constant name="VMA:FlangeUpThick"                value="24.50*mm"/>
+    <constant name="VMA:FlangeUpCylZ"                 value="19.80*mm"/>
+    <constant name="VMA:FlangeUpCylRad"               value="51.50*mm"/>
+    <constant name="VMA:FlangeUpCylSubZ"              value="3.80*mm"/>
+    <constant name="VMA:FlangeUpCylSubRad"            value="55.90*mm"/>
+
+    <constant name="VMA:FlangeDownThick"              value="24.50*mm"/>
+    <constant name="VMA:FlangeDownCylZ"               value="19.80*mm"/>
+    <constant name="VMA:FlangeDownCylRad"             value="51.50*mm"/>
+    <constant name="VMA:FlangeDownCylSubZ"            value="3.80*mm"/>
+    <constant name="VMA:FlangeDownCylSubRad"          value="55.90*mm"/>
+
+    <comment> Junction global parameters </comment>
+    <constant name="VMA:PipeCylZ"                     value="115.00*mm"/>
+    <constant name="VMA:PipeCylRad"                   value="50.00*mm"/>
+    <constant name="VMA:PipeCylThick"                 value="1.50*mm"/>
+
+    <constant name="VMA:PipeTopCylZ"                  value="112.0*mm"/>
+    <constant name="VMA:PipeTopCylRad"                value="17.5*mm"/>
+    <constant name="VMA:PipeTopCylThick"              value="VMA:PipeCylThick"/>
+    <constant name="VMA:PipeTopCylPosZ"               value="72.0*mm"/>
+
+    <constant name="VMA:PipeSideCylZ"                 value="125.0*mm"/>
+    <constant name="VMA:PipeSideCylRad"               value="30.0*mm"/>
+    <constant name="VMA:PipeSideCylThick"             value="VMA:PipeCylThick"/>
+    <constant name="VMA:PipeSideCylPosZ"              value="VMA:PipeTopCylPosZ"/>
+
+    <constant name="VMA:FlangeTopCylZ"                value="12.7*mm"/>
+    <constant name="VMA:FlangeTopCylThickRaw"         value="35.0*mm"/>
+
+    <constant name="VMA:FlangeSideCylZ"               value="17.5*mm"/>
+    <constant name="VMA:FlangeSideCylThickRaw"        value="57.0*mm"/>
+    <constant name="VMA:debug"                        value="0"/>
+  </define>
+
+  <display>
+    <vis name="VMA"                alpha="1.0"  r="0.5" g="0.5" b="0.5" showDaughters="true" visible="true"/>
+    <vis name="VMA:Contact"        alpha="1.0"  r="0.5" g="0.5" b="0.5" showDaughters="true" visible="true"/>
+    <vis name="VMA:TransitionTube" alpha="1.0"  r="0.5" g="0.5" b="0.5" showDaughters="true" visible="true"/>
+    <vis name="VMA:Pipe"           alpha="1.0"  r="0.5" g="0.5" b="0.5" showDaughters="true" visible="true"/>
+    <vis name="VMA:Junction"       alpha="1.0"  r="0.0" g="0.0" b="1.0" showDaughters="true" visible="true"/>
+  </display>
+</lccdd>

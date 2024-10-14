@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<lccdd>
+  <debug>
+    <type name="includes" value="0" />
+    <type name="incguard" value="1" />
+  </debug>
+
+
+  <includes>
+    <file ref="../../components/Materials/trunk/common.xml" />  <!-- We cannot change the location of this file, for some reason, materials must be defined first.-->
+    <file ref="path.xml" />
+    <file ref="${path:Pipe}/PipeCommon.xml" />
+  </includes>
+
+   <!-- Notes
+    - PipeT and PipeAfterT is dependent on PipeAfterMagnet (Pipe/AfterMagnet-Params)
+    - PipeDownstream dependent on PipeAfterMagnet (Pipe/AfterMagnet-Params)
+    - PipeTV dependent on TV (region not created yet)
+    - PipeUT dependent on UT (region not created yet)
+
+    - Everything else can be independently included/excluded
+   -->
+
+  <!-- Upstream Region  -->
+  <include ref="${path:Regions}/Regions.xml"/>
+  <include ref="${path:BlockWall}/BlockWall.xml"/>
+  <include ref="${path:GValve}/GValve.xml" />
+  <include ref="${path:Bls}/Bls.xml" />
+  <include ref="${path:Bcm}/Bcm.xml" />
+  <include ref="${path:MBXW}/MBXW.xml" />
+  <include ref="${path:Pipe}/PipeUpstream.xml" />
+
+  <!-- Before Magnet Region  -->
+  <include ref="${path:Rich}/Rich1/Rich1.xml" />
+  <include ref="${path:TV}/TV.xml" />
+  <include ref="${path:UP}/UP.xml" />
+  <include ref="${path:Pipe}/PipeBeforeVelo.xml" />
+  <include ref="${path:Pipe}/PipeBeforeMagnet.xml" />
+  <include ref="${path:Pipe}/PipeTV.xml" />
+  <include ref="${path:Pipe}/PipeUP.xml" />
+
+   <!-- Magnet Region  -->
+  <include ref="${path:Magnet}/Magnet.xml" />
+  <include ref="${path:Pipe}/PipeMagnet.xml" />
+
+  <!-- After Magnet Region  -->
+  <include ref="${path:FT}/FT.xml" />
+  <include ref="${path:MP}/MP.xml" />
+  <include ref="${path:TORCH}/TORCH.xml" />
+  <include ref="${path:Rich}/Rich2/Rich2.xml" />
+  <include ref="${path:Pipe}/AfterMagnet-Params.xml" />
+  <include ref="${path:Pipe}/PipeAfterMagnet.xml" />
+  <include ref="${path:Pipe}/PipeT.xml" />
+  <include ref="${path:Pipe}/PipeAfterT.xml" />
+
+  <!-- Downstream Region  -->
+  <include ref="${path:NeutronShielding}/NeutronShielding.xml" />
+  <include ref="${path:Muon}/Muon.xml" />
+  <include ref="${path:PicoCal}/PicoCal.xml" />
+  <include ref="${path:HCAL}/HCAL.xml" />
+  <include ref="${path:Pipe}/PipeDownstream.xml" />
+  <include ref="${path:Pipe}/PipeAfterMuon.xml" />
+
+</lccdd>

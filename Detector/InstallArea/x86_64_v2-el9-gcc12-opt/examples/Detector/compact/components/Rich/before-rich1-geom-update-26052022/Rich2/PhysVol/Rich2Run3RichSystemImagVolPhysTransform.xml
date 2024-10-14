@@ -1,0 +1,30 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!-- Name of the volume                                                         -->
+<!-- <physvol name ="pvRichSystem" <volume name="lvRichSystem"                   -->
+<!-- The pvRichSystem is kept inside lvRich2Master volume                       -->
+
+<Rich2>
+
+    <item name="PhysVolName"    value="pvRichSystem" />
+    <item name="TransformName"  value="pvRichSystemTransform">
+
+      <transformation>
+           <position  x = "RichSystemImagPosX"
+                      y = "RichSystemImagPosY" />
+      </transformation>
+    </item>
+
+
+
+</Rich2>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="Detector" version="2.0" />
+  <heptools>
+    <version>105a</version>
+    <binary_tag>x86_64_v2-el9-gcc12-opt</binary_tag>
+    <lcg_platform>x86_64-el9-gcc12-opt</lcg_platform>
+    <lcg_system>x86_64-el9-gcc12</lcg_system>
+    <packages>
+      <package name="Vdt" />
+      <package name="PkgConfig" />
+      <package name="GitCondDB" version="0.2.2" />
+      <package name="fmt" version="10.0.0" />
+      <package name="yaml-cpp" version="0.6.3" />
+      <package name="nlohmann_json" version="3.10.5" />
+      <package name="boost_program_options" version="1.82.0" />
+      <package name="Vc" version="1.4.4" />
+      <package name="Rangev3" />
+      <package name="ROOT" version="6.30.04" />
+      <package name="Python" version="3.9.12" />
+      <package name="LCIO" version="2.20.0" />
+      <package name="TBB" version="2021.10.0" />
+      <package name="XercesC" version="3.2.4" />
+      <package name="DD4hep" version="1.27" />
+      <package name="boost_headers" version="1.82.0" />
+      <package name="boost_unit_test_framework" version="1.82.0" />
+      <package name="Boost" version="1.82.0" />
+      <package name="Catch2" version="2.13.9" />
+    </packages>
+  </heptools>
+</manifest>

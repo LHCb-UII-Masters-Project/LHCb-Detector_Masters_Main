@@ -1,0 +1,39 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+
+<!--    Begin Rich1MagShieldTTPhys          -->
+<!--    These are inside lvRich1Master      -->
+<!--    old names kept for reference        -->
+<!--      <physvol  name="pvRich1MgsDnstrUTH0:180" -->
+<!--         volume="lvRich1MgsDnstrUTH0" >       -->
+<!--      <physvol  name="pvRich1MgsDnstrUTH1:181" -->
+<!--               volume="lvRich1MgsDnstrUTH1" > -->
+<!--                                            -->
+<Rich1>
+    <item name="PhysVolName"    value="pvRich1MgsDnstrUTH0" />
+    <item name="TransformName"  value="pvRich1MgsDnstrUTH0Transform">
+      <transformation>
+         <position y="Rh1MgsDnsTTYH0"
+                   z="Rh1MgsDnsTTZ"  />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1MgsDnstrUTH1" />
+    <item name="TransformName"  value="pvRich1MgsDnstrUTH1Transform">
+      <transformation>
+         <position y="Rh1MgsDnsTTYH1"
+                   z="Rh1MgsDnsTTZ"  />
+      </transformation>
+    </item>
+
+</Rich1>
+<!--    End Rich1MagShieldUTPhys          -->

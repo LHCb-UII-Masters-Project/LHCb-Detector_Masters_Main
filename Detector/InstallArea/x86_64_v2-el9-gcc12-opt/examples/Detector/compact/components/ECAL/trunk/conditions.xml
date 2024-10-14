@@ -1,0 +1,59 @@
+<!--
+    (c) Copyright 2022 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_Ecal_cond_XML_reader" type="xml">
+      <conditions_config prefix="Conditions/Ecal"/>
+      <alignment detector="Ecal" path="Alignment.yml" name="EcalSystem"/>
+
+      <conditions path="Calibration.yml">
+        <condition name="Calibration"/>
+        <condition name="Gain"/>
+        <condition name="L0Calibration"/>
+        <condition name="LEDReference"/>
+        <condition name="PileUpOffset"/>
+        <condition name="Quality"/>
+        <condition name="Reco"/>
+      </conditions>
+
+      <conditions path="ReadoutConf.yml">
+        <condition name="Hardware"/>
+        <condition name="Monitoring"/>
+        <condition name="Readout"/>
+      </conditions>
+
+      <conditions path="Reco.yml">
+        <condition name="EcalClusterMasks" optional="1"/>
+        <condition name="EcalCovariance" optional="1"/>
+        <condition name="ElectronECorrection" optional="1"/>
+        <condition name="ElectronLCorrection" optional="1"/>
+        <condition name="ElectronSCorrection" optional="1"/>
+        <condition name="PhotonECorrection" optional="1"/>
+        <condition name="PhotonLCorrection" optional="1"/>
+        <condition name="PhotonSCorrection" optional="1"/>
+        <condition name="PhotonShowerProfile" optional="1"/>
+        <condition name="SplitPhotonECorrection" optional="1"/>
+        <condition name="SplitPhotonLCorrection" optional="1"/>
+        <condition name="SplitPhotonSCorrection" optional="1"/>
+      </conditions>
+
+      <conditions path="ParticleID.yml">
+        <condition name="BremPIDe" optional="1"/>
+        <condition name="EcalPIDe" optional="1"/>
+        <condition name="EcalPIDmu" optional="1"/>
+        <condition name="ElectronXCorrection" optional="1"/>
+      </conditions>
+
+    </plugin>
+  </plugins>
+
+</lccdd>

@@ -1,0 +1,41 @@
+<ut>
+	<!--
+	(c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+	
+	This software is distributed under the terms of the GNU General Public
+	Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+	
+	In applying this licence, CERN does not waive the privileges and immunities
+	granted to it by virtue of its status as an Intergovernmental Organization
+	or submit itself to any jurisdiction.
+	-->
+	<volume name="lvUTaXCsideLayer" vis="UT:Envelope">
+		<physvol name="pvUTaCEOSX1" volume="lvUTaEOS">
+			<position x="1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4" y="UTBareStaveLong/2+UTEOSLong/2" z="UTStaveDz" />
+		</physvol>
+		<physvol name="pvUTaCEOSX2" volume="lvUTaEOS">
+			<position x="1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4" y="-(UTBareStaveLong/2+UTEOSLong/2)" z="UTStaveDz" />
+		</physvol>
+		<physvol name="pvUTaCEOSPigtailX1" volume="lvUTaEOSPigtail">
+			<position x="1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4" y="UTBareStaveLong/2+UTEOSLong+UTEOSPigtailLong/2" z="UTStaveDz+UTEOSPigtailThick-(UTStaveDz/2-UTStaveCableZ-1/2*(UTCableCuThickM0+UTMegArrayThick+UTCableKaptonThick)-1/2*UTMegArrayThick)+UTEpsilon" />
+		</physvol>
+		<physvol name="pvUTaCEOSPigtailX2" volume="lvUTaEOSPigtail">
+			<position x="1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4" y="-(UTBareStaveLong/2+UTEOSLong+UTEOSPigtailLong/2)" z="UTStaveDz+UTEOSPigtailThick-(UTStaveDz/2-UTStaveCableZ-1/2*(UTCableCuThickM0+UTMegArrayThick+UTCableKaptonThick)-1/2*UTMegArrayThick)+UTEpsilon" />
+		</physvol>
+	</volume>
+	<!-- ================================================================= -->
+	<volume name="lvUTaXAsideLayer" vis="UT:Envelope">
+		<physvol name="pvUTaAEOSX1" volume="lvUTaEOS">
+			<position x="-(1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4)" y="UTBareStaveLong/2+UTEOSLong/2" z="UTStaveDz" />
+		</physvol>
+		<physvol name="pvUTaAEOSX2" volume="lvUTaEOS">
+			<position x="-(1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4)" y="-(UTBareStaveLong/2+UTEOSLong/2)" z="UTStaveDz" />
+		</physvol>
+		<physvol name="pvUTaAEOSPigtailX1" volume="lvUTaEOSPigtail">
+			<position x="-(1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4)" y="UTBareStaveLong/2+UTEOSLong+UTEOSPigtailLong/2" z="UTStaveDz+UTEOSPigtailThick-(UTStaveDz/2-UTStaveCableZ-1/2*(UTCableCuThickM0+UTMegArrayThick+UTCableKaptonThick)-1/2*UTMegArrayThick)+UTEpsilon" />
+		</physvol>
+		<physvol name="pvUTaAEOSPigtailX2" volume="lvUTaEOSPigtail">
+			<position x="-(1/2*UTLayerSideCorrectedWidth-UTEOSWideUTa/4)" y="-(UTBareStaveLong/2+UTEOSLong+UTEOSPigtailLong/2)" z="UTStaveDz+UTEOSPigtailThick-(UTStaveDz/2-UTStaveCableZ-1/2*(UTCableCuThickM0+UTMegArrayThick+UTCableKaptonThick)-1/2*UTMegArrayThick)+UTEpsilon" />
+		</physvol>
+	</volume>
+</ut>

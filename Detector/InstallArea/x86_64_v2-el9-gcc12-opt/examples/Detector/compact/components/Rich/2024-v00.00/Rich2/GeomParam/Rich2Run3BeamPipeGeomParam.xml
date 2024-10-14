@@ -1,0 +1,107 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+
+<!-- In this file the parameters for the beampipe hole
+    in various sub systems of RICH2 is defined. This is the last
+   file in the Geomparam definition of volumes in RICH2 and
+   hence uses the parameters used in other RICH2 GeomParam files
+  The following is just intial estimates. These need to be refined.
+
+  For the BeamPipe Hole for Spherical mirrors the terms Left Right Top and Bottom refer to the
+  Mirror segements around the Beam Pipe as one looks at the Mirror from the Interaction point,
+  along the positive Z axis.
+
+                     Top
+
+            Left    BeamHole     Right
+
+                    Bottom
+
+ -->
+
+<!--  First the tolerence gap between the Actual BeamHole and the hole in the  -->
+<!--      Mirrors. -->
+
+<lccdd>
+  <define>
+
+
+
+   <constant name="Rh2SphMirrBeamHoleRadialTolerence"  value="10.0*mm"  />
+
+    <!--  The following parameters to be taken from the beampipe documentation in the future. SE 1-4-03 -->
+
+    <constant name="Rh2BeamHoleConeUpstreamRadius" value="Rh2GasHoleUpstream"  />
+    <constant name="Rh2BeamHoleConeDownstreamRadius" value="Rh2GasHoleDownstream"  />
+    <constant name="Rh2BeamHoleConeZSize"  value="Rich2MasterZSize" />
+    <constant name="Rh2BeamHoleConeZBeginInLHCb" value="Rich2MasterZ-0.5*Rh2BeamHoleConeZSize" />
+    <constant name="Rh2BeamHoleConeZInLHCb" value="Rich2MasterZ" />
+    <constant name="Rh2BeamHoleConeXInLHCb" value="Rich2MasterX" />
+
+<!-- Now for the parameters derived from the existing parameters for the Beam Hole. -->
+<!-- Now for the Beam Pipe Hole in Rich2 Gas coord system. -->
+    <constant name="Rh2BeamHoleConeZGas"  value="Rh2BeamHoleConeZInLHCb-Rh2MainGasEnclosurePosZ"  />
+    <constant name="Rh2BeamHoleConeXGas"  value="Rh2BeamHoleConeXInLHCb"  />
+<!--  Now for the BeamPipe Hole in the Spherical Mirror coord system.  -->
+    <constant name="Rh2BeamHoleConeZSphMirror"  value="Rh2BeamHoleConeZGas-Rh2SphMirrorLHCbCoCZ"  />
+    <constant name="Rh2BeamHoleConeXLeftSphMirror"  value="Rh2BeamHoleConeXGas-Rh2SphMirrorLHCbCoCX"  />
+    <constant name="Rh2BeamHoleConeXRightSphMirror"  value="Rh2BeamHoleConeXGas+Rh2SphMirrorLHCbCoCX"  />
+    <constant name="Rh2BeamHoleConeLeftTiltY"  value="-Rh2SphMirrorHorizTilt"  />
+    <constant name="Rh2BeamHoleConeLeftInverseTiltY"  value="Rh2SphMirrorHorizTilt"  />
+    <constant name="Rh2BeamHoleConeRightTiltY"  value="Rh2SphMirrorHorizTilt"  />
+    <constant name="Rh2BeamHoleConeRightInverseTiltY"  value="-Rh2SphMirrorHorizTilt"  />
+
+<!-- Size of the BeamPipe Hole in the Spherical  Mirrors  -->
+    <constant name="Rh2MirrBeamHoleConeUpstreamRadius" value="Rh2BeamHoleConeUpstreamRadius+Rh2SphMirrBeamHoleRadialTolerence"  />
+    <constant name="Rh2MirrBeamHoleConeDownstreamRadius" value="Rh2BeamHoleConeDownstreamRadius+Rh2SphMirrBeamHoleRadialTolerence"  />
+    <constant name="Rh2MirrBeamHoleConeZSize"  value="Rh2BeamHoleConeZSize" />
+
+<!-- Location of the Beam Pipe Hole wrt the center (not CoC)  of the individual Mirror segments surrouding the BeamPipe. -->
+<!-- Local Beam Hole subtraction shifts for the segments surrounding the BeamPipe Hole  -->
+<!--  Here one is using the fact that near the beam pipe , the left type half hexagons are on the
+     left side and right type half hexagons are on the right side -->
+<!-- First for the hexagons -->
+ <constant name="Rh2SphMirrHoleHexHorizShift"  value="0.5*Rh2SphMirrArrayAdjHorizShift+Rh2SphMirrArrayMinHorizShift" />
+ <constant name="Rh2SphMirrHoleShiftInLeftHexZ"  value="Rh2SphMirrHoleHexHorizShift"  />
+ <constant name="Rh2SphMirrHoleShiftInRightHexZ"  value="-Rh2SphMirrHoleHexHorizShift" />
+<!-- Now for the half Hexagons -->
+ <constant name="Rh2SphMirrHoleHalfHexHorizShift"  value="Rh2SphMirrArrayMinHorizShift"  />
+ <constant name="Rh2SphMirrHoleShiftInLeftHalfHexZ"  value="Rh2SphMirrHoleHalfHexHorizShift"  />
+ <constant name="Rh2SphMirrHoleShiftInRightHalfHexZ"  value="-Rh2SphMirrHoleHalfHexHorizShift" />
+
+ <constant name="Rh2SphMirrHoleShiftInTopHalfHexY" value="-Rh2SphMirrArrayAdjVertShift" />
+ <constant name="Rh2SphMirrHoleShiftInBotHalfHexY" value="Rh2SphMirrArrayAdjVertShift" />
+
+
+
+<!--  Final values of the BeamPipe Hole in the Spherical mirrors. -->
+<!-- First the overall values -->
+    <constant name="Rh2MirrBeamHoleLeftX" value="Rh2BeamHoleConeZSphMirror*cos(Rh2BeamHoleConeLeftTiltY)+Rh2BeamHoleConeXLeftSphMirror*sin(Rh2BeamHoleConeLeftTiltY)" />
+    <constant name="Rh2MirrBeamHoleRightX" value="Rh2BeamHoleConeZSphMirror*cos(Rh2BeamHoleConeRightTiltY)+Rh2BeamHoleConeXRightSphMirror*sin(Rh2BeamHoleConeRightTiltY)" />
+
+    <constant name="Rh2MirrBeamHoleLeftZ" value="Rh2BeamHoleConeZSphMirror*sin(Rh2BeamHoleConeLeftTiltY)-Rh2BeamHoleConeXLeftSphMirror*cos(Rh2BeamHoleConeLeftTiltY)" />
+    <constant name="Rh2MirrBeamHoleRightZ" value="Rh2BeamHoleConeZSphMirror*sin(Rh2BeamHoleConeRightTiltY)-Rh2BeamHoleConeXRightSphMirror*cos(Rh2BeamHoleConeRightTiltY)" />
+
+    <constant name="Rh2MirrBeamHoleLeftYRot" value="(pi/2.0)*rad+Rh2BeamHoleConeLeftInverseTiltY"  />
+    <constant name="Rh2MirrBeamHoleRightYRot" value="(pi/2.0)*rad+Rh2BeamHoleConeRightInverseTiltY"  />
+<!-- Now for the hexagons -->
+    <constant name="Rh2MirrBeamHoleLeftHexZ" value="Rh2MirrBeamHoleLeftZ +Rh2SphMirrHoleShiftInLeftHexZ " />
+    <constant name="Rh2MirrBeamHoleRightHexZ" value="Rh2MirrBeamHoleRightZ+Rh2SphMirrHoleShiftInRightHexZ" />
+
+<!-- Now for the half hexagons -->
+
+    <constant name="Rh2MirrBeamHoleLeftHalfHexZ" value="Rh2MirrBeamHoleLeftZ+Rh2SphMirrHoleShiftInLeftHalfHexZ " />
+    <constant name="Rh2MirrBeamHoleRightHalfHexZ" value="Rh2MirrBeamHoleRightZ+Rh2SphMirrHoleShiftInRightHalfHexZ " />
+    <constant name="Rh2MirrBeamHoleTopHalfHexY"  value="Rh2SphMirrHoleShiftInTopHalfHexY" />
+    <constant name="Rh2MirrBeamHoleBotHalfHexY"  value="Rh2SphMirrHoleShiftInBotHalfHexY" />
+
+  </define>
+</lccdd>

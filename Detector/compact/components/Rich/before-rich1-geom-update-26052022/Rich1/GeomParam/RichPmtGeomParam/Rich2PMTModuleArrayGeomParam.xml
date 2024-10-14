@@ -1,0 +1,155 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/07/2020                                                      -->
+<!--  First version:   18-02-2016 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for Module Arrays in RICH2       -->
+<!-- This refers to the arrays small MaPMT Modules and large PMT Modules         -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+
+<!--  The Module arrays are rotated by 90 degrees in RICH2 compared to RICH1. Hence the pitch in X Y are swapped  -->
+<!-- The number of modules increased in Feburay 2021 from 12 to 14. The extra modules are at the left and -->
+<!-- right extremes and are kept empty for now. As a default option the modules in the empty columns 0 and 13 are  -->
+<!-- assumed to have the same configuration of std and grand modules , for now. This may be changed in the future  -->
+
+
+<!-- <constant name = "Rh2MixedPMTNumModulesInRow" value = "12" /> --> 
+<constant name = "Rh2MixedPMTNumModulesInRow" value = "14" /> 
+<constant name = "Rh2MixedDefLivePMTNumModulesInRow" value = "12" /> 
+<constant name = "Rh2MixedDefLivePMTModuleStartColNum"  value="1" />
+<constant name = "Rh2MixedDefLivePMTModuleEndColNum"    value="12" />
+ 
+<constant name = "Rh2MixedStdPMTNumModulesInCol" value = "2" />
+<constant name = "Rh2MixedGrandPMTNumModulesInCol" value = "4" />
+
+<constant name = "Rh2MixedGrandPMTNumModulesInColInAPanel" value="2" />
+
+
+<constant name = "Rh2MixedPMTNumModulesInCol" value = "Rh2MixedStdPMTNumModulesInCol+Rh2MixedGrandPMTNumModulesInCol" />
+
+<constant name = "Rh2MixedPMTNumPanels" value="2" />
+
+
+<constant name = "Rich2MixedTotalNumberOfModules" value= "2*Rh2MixedPMTNumModulesInRow*Rh2MixedPMTNumModulesInCol" />
+<constant name = "Rich2MixedTotalNumberOfGrandModules" value="2*Rh2MixedPMTNumModulesInRow*Rh2MixedGrandPMTNumModulesInCol" />
+<constant name = "Rich2MixedTotalNumberOfStdModules"   value="2*Rh2MixedPMTNumModulesInRow*Rh2MixedStdPMTNumModulesInCol"  />
+<constant name = "Rich2MixedTotalNumberOfDefLiveModules" value= "2*Rh2MixedDefLivePMTNumModulesInRow*Rh2MixedPMTNumModulesInCol" />
+<constant name = "Rich2MixedTotalNumberOfDefLiveGrandModules" value="2*Rh2MixedDefLivePMTNumModulesInRow*Rh2MixedGrandPMTNumModulesInCol" />
+<constant name = "Rich2MixedTotalNumberOfDefLiveStdModules"   value="2*Rh2MixedDefLivePMTNumModulesInRow*Rh2MixedStdPMTNumModulesInCol"  />
+
+<!--
+<constant name = "Rich2MixedTotalNumberofPmts" value="(Rich2MixedTotalNumberOfGrandModules*RhGrandNumPMTInModule)+ (Rich2MixedTotalNumberOfStdModules*RhNumPMTInModule)" />
+<constant name = "Rich2MixedTotalNumberofGrandPmts"  value="(Rich2MixedTotalNumberOfGrandModules*RhGrandNumPMTInModule)" />
+<constant name = "Rich2MixedTotalNumberofStdPmts"    value="(Rich2MixedTotalNumberOfStdModules*RhNumPMTInModule)" />
+-->
+
+<constant name ="Rh2PMTModuleRotZ" value="(-pi/2)*rad" />
+
+<constant name = "RhMixedStdPMTModuleMasterDeltaAbsInX"  value="Rh1PMTModuleDeltaAbsInY" />
+<constant name = "RhMixedStdPMTModuleMasterDeltaAbsInY"  value="Rh1PMTModuleDeltaAbsInX" />
+
+<constant name = "RhMixedGrandPMTModuleMasterDeltaAbsInX"  value="RhMixedStdPMTModuleMasterDeltaAbsInX" />
+<constant name = "RhMixedGrandPMTModuleMasterDeltaAbsInY"  value="RhMixedStdPMTModuleMasterDeltaAbsInY" />
+
+
+<constant name="Rh2MixedStdPMTModuleXLocationStartLeft"  value="-0.5*RhMixedStdPMTModuleMasterDeltaAbsInX*(Rh2MixedPMTNumModulesInRow-1)" />
+<constant name="Rh2MixedStdPMTModuleXLocationStartRight"  value="Rh2MixedStdPMTModuleXLocationStartLeft" />
+
+<constant name="Rh2MixedAllPMTModuleXEdgeLeft"    value="Rh2MixedStdPMTModuleXLocationStartLeft-(0.5*RhMixedStdPMTModuleMasterDeltaAbsInX)" />
+<constant name="Rh2MixedAllPMTModuleXEdgeRight"  value="-1.0*Rh2MixedAllPMTModuleXEdgeLeft" />
+
+
+
+<constant name="Rh2MixedStdPMTModuleYLocationStartLeft"  value="0.5*RhMixedStdPMTModuleMasterDeltaAbsInY*(Rh2MixedStdPMTNumModulesInCol-1)" />
+<constant name="Rh2MixedStdPMTModuleYLocationStartRight"  value="Rh2MixedStdPMTModuleYLocationStartLeft" />
+
+<constant name="Rh2MixedStdPMTModuleYEdgeBot"  value= "(-0.5*RhMixedStdPMTModuleMasterDeltaAbsInY*(Rh2MixedStdPMTNumModulesInCol-1))-(0.5*RhMixedStdPMTModuleMasterDeltaAbsInY)" />
+<constant name="Rh2MixedStdPMTModuleYEdgeTop"  value= "-1.0*Rh2MixedStdPMTModuleYEdgeBot" />
+<constant name="Rh2MixedStdPMTModuleArrayYSize"   value="RhMixedStdPMTModuleMasterDeltaAbsInY*Rh2MixedStdPMTNumModulesInCol" />
+
+
+<constant name="Rh2MixedGrandPMTModuleXLocationStartLeft" value="Rh2MixedStdPMTModuleXLocationStartLeft" />
+<constant name="Rh2MixedGrandPMTModuleXLocationStartRight" value="Rh2MixedGrandPMTModuleXLocationStartLeft" />
+ 
+<constant name="Rh2MixedGrandPMTModuleYLocationStartLeftAtTop"  value="-1.0*(Rh2MixedStdPMTModuleYEdgeBot-RhMixedGrandPMTModuleMasterDeltaAbsInY*(Rh2MixedGrandPMTNumModulesInColInAPanel-0.5))" />
+<constant name="Rh2MixedGrandPMTModuleYLocationStartLeftAtBottom" value="-1.0*(Rh2MixedStdPMTModuleYEdgeTop+0.5*RhMixedGrandPMTModuleMasterDeltaAbsInY)" />
+<constant name="Rh2MixedGrandPMTModuleYLocationStartRightAtTop" value="Rh2MixedGrandPMTModuleYLocationStartLeftAtTop" />
+<constant name="Rh2MixedGrandPMTModuleYLocationStartRightAtBottom"  value="Rh2MixedGrandPMTModuleYLocationStartLeftAtBottom" />
+
+<constant name="Rh2MixedGrandPMTModuleYEdgeBot"  value= "(Rh2MixedStdPMTModuleYEdgeBot-RhMixedGrandPMTModuleMasterDeltaAbsInY*(Rh2MixedGrandPMTNumModulesInColInAPanel-0.5))-(0.5*RhMixedGrandPMTModuleMasterDeltaAbsInY)" />
+<constant name="Rh2MixedGrandPMTModuleYEdgeTop"  value= "-1.0*Rh2MixedGrandPMTModuleYEdgeBot" />
+
+<constant name="Rh2MixedAllPMTModuleYEdgeBot"  value="Rh2MixedGrandPMTModuleYEdgeBot"  />
+<constant name="Rh2MixedAllPMTModuleYEdgeTop"  value="-1.0*Rh2MixedAllPMTModuleYEdgeBot" />
+
+<!--
+<constant name="Rh2MixedGrandPMTModuleArrayYSizeAtBottom"   value="RhMixedGrandPMTModuleMasterDeltaAbsInX*Rh2MixedGrandPMTNumModulesInColInAPanel" />
+<constant name="Rh2MixedGrandPMTModuleArrayYSizeAtTop"  value="Rh2MixedGrandPMTModuleArrayYSizeAtBottom" />
+-->
+
+<constant name="Rh2MixedPMTModuleMasterZ"  value="-30.0*mm"  />
+
+
+<constant name = "Rh2MixedStdPMTModuleLeftXShift"  value="RhMixedStdPMTModuleMasterDeltaAbsInX" />
+<constant name = "Rh2MixedStdPMTModuleRightXShift"  value="RhMixedStdPMTModuleMasterDeltaAbsInX" />
+
+<constant name = "Rh2MixedGrandPMTModuleLeftXShift"  value="RhMixedStdPMTModuleMasterDeltaAbsInX" />
+<constant name = "Rh2MixedGrandPMTModuleRightXShift"  value="RhMixedStdPMTModuleMasterDeltaAbsInX" />
+
+
+<constant name = "Rh2MixedStdPMTModuleLeftYShift"  value="-1.0*RhMixedStdPMTModuleMasterDeltaAbsInY" />
+<constant name = "Rh2MixedStdPMTModuleRightYShift"  value="-1.0*RhMixedStdPMTModuleMasterDeltaAbsInY" />
+
+<constant name = "Rh2MixedGrandPMTModuleLeftYShift"  value="-1.0*RhMixedStdPMTModuleMasterDeltaAbsInY" />
+<constant name = "Rh2MixedGrandPMTModuleRightYShift"  value="-1.0*RhMixedStdPMTModuleMasterDeltaAbsInY" />
+
+
+
+<!-- for use in Brunel for the size of the detector plane -->
+
+<constant name ="RhMixedPMTMasterZSize"  value="RhPMTMasterZSize" />
+<constant name ="RhMixedPMTZLocationInModule" value="RhPMTZLocationInModule" />
+
+
+<constant name = "Rh2MixedPMTModulePlaneXEdgeLeft" value ="Rh2MixedAllPMTModuleXEdgeLeft"  />
+<constant name = "Rh2MixedPMTModulePlaneYEdgeLeft" value ="Rh2MixedAllPMTModuleYEdgeBot"  />
+<constant name = "Rh2MixedPMTModulePlaneXEdgeRight" value ="-1.0*Rh2MixedPMTModulePlaneXEdgeLeft"  />
+<constant name = "Rh2MixedPMTModulePlaneYEdgeRight" value ="-1.0*Rh2MixedPMTModulePlaneYEdgeLeft"  />
+
+<constant name = "Rh2MixedStdPMTModulePlaneYEdgeLeft" value ="Rh2MixedStdPMTModuleYEdgeBot"  />
+<constant name = "Rh2MixedStdPMTModulePlaneYEdgeRight" value="-1.0*Rh2MixedStdPMTModuleYEdgeBot"  /> 
+
+<!--
+Rh2MixedPMTDetPlaneZOffsetDueToEC: The detection plane position wrt PDPanel is shifted after adding ECs
+(wrt upgrade/dddb-20190223). The PDPanel position should also be
+shifted by this value, so that the detection plane edge remains the same. It is done here.
+-->
+
+<constant name ="Rh2MixedPMTDetPlaneZOffsetDueToEC"
+	   value="RhStdECR2ZLocationInR2Module+RhPMTMasterZLocationInECR-RhPMTZLocationInModule"
+	   />
+
+<constant name ="Rh2MixedPMTDetPlaneZLocationInPMTPanel" value="Rh2MixedPMTModuleMasterZ+RhPMTZLocationInModule+Rh2MixedPMTDetPlaneZOffsetDueToEC-(0.5*RhMixedPMTMasterZSize)+RhPMTEndToQuartzOuterSurface+RhPMTQuartzThickness"  />
+
+
+<constant name = "RhMixedStdPMTModuleMasterDeltaHalfAbsInX"  value="-0.5*RhMixedStdPMTModuleMasterDeltaAbsInX" />
+<constant name = "RhMixedStdPMTModuleMasterDeltaHalfAbsInY"  value="-0.5*RhMixedStdPMTModuleMasterDeltaAbsInY" />
+
+<constant name = "RhMixedGrandPMTModuleMasterDeltaHalfAbsInX"  value="-0.5*RhMixedGrandPMTModuleMasterDeltaAbsInX" />
+<constant name = "RhMixedGrandPMTModuleMasterDeltaHalfAbsInY"  value="-0.5*RhMixedGrandPMTModuleMasterDeltaAbsInY" />
+
+
+  </define>
+
+</lccdd>
+
+

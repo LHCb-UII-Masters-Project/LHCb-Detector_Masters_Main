@@ -1,0 +1,257 @@
+<up>
+        <!--
+        (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+        This software is distributed under the terms of the GNU General Public
+        Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+        In applying this licence, CERN does not waive the privileges and immunities
+        granted to it by virtue of its status as an Intergovernmental Organization
+        or submit itself to any jurisdiction.
+        -->
+
+        <!-- ========== MegArray connector ========== -->
+        <volume material="Silicon" name="lvMegArray">
+            <shape name="upMegArray" type="Box" dx="UPMegArrayWide/2" dy="UPMegArrayLong/2" dz="UPMegArrayThick/2"/>
+        </volume>
+
+
+        <!-- ========== HV connector ========== -->
+        <volume material="Silicon" name="lvHVConnector">
+            <shape name="upHVConnector" type="Box" dx="UPHVConnectorWide/2" dy="UPHVConnectorLong/2" dz="UPHVConnectorThick/2"/>
+        </volume>
+
+        <!-- ========== Flex Cable Kapton========== -->
+        <volume material="UP:FlexCable" name="lvCableKaptonPixelA">
+            <shape name="upCableKaptonPixelA" type="Box" dx="UPPixelCableWide/2" dy="UPPixelCableLong/2" dz="UPCableKaptonThick/2"/>
+        </volume>
+
+        <volume material="UP:FlexCable" name="lvCableKaptonPixelAHole">
+          <shape name="upCableKaptonPixelAHole" type="BooleanShape" operation="subtraction">
+            <shape name="upCableKaptonPixelAHole1" type="Box" dx="UPPixelCableWide/2" dy="UPPixelCableLong/2" dz="UPCableKaptonThick/2"/>
+            <shape name="upCableKaptonPixelAHole2" type="Box" dx="(UPPixelHoleWide+UPEpsilon)/2" dy="(UPPixelHoleLong-2*UPPixelNearExceed+UPEpsilon)/2" dz="UPCableKaptonThick"/>
+            <position x="-UPPixelCableWide/2"/>
+          </shape>
+        </volume>
+
+        <volume material="UP:FlexCable" name="lvCableKaptonPixelBHole">
+          <shape name="upCableKaptonPixelBHole" type="BooleanShape" operation="subtraction">
+            <shape name="upCableKaptonPixelBHole1" type="Box" dx="UPPixelCableWide/2" dy="UPPixelCableLong/2" dz="UPCableKaptonThick/2"/>
+            <shape name="upCableKaptonPixelBHole2" type="Box" dx="(UPPixelHoleWide+UPEpsilon)/2" dy="(UPPixelHoleLong+UPEpsilon)/2" dz="UPCableKaptonThick"/>
+            <position x="-UPPixelCableWide/2" y="UPStaveEHybridY0"/>
+          </shape>
+        </volume>
+
+
+        <!-- ========== Flex Cable Copper========== -->
+        <volume material="Copper" name="lvCablePixelCuA">
+            <shape name="upCablePixelCuA" type="Box" dx="UPPixelCableWide/2" dy="UPPixelCableLongA/2" dz="UPPixelCableCuThickA/2"/>
+        </volume>
+
+        <volume material="Copper" name="lvCablePixelCuAHole">
+          <shape name="upCablePixelCuAHole" type="BooleanShape" operation="subtraction">
+            <shape name="upCablePixelCuAHole1" type="Box" dx="UPPixelCableWide/2" dy="UPPixelCableLongA/2" dz="UPPixelCableCuThickA/2"/>
+            <shape name="upCablePixelCuAHole2" type="Box" dx="(UPPixelHoleWide+UPEpsilon)/2" dy="(UPPixelHoleLong+UPEpsilon)/2" dz="UPPixelCableCuThickA"/>
+            <position x="-UPPixelCableWide/2"/>
+          </shape>
+        </volume>
+
+        <volume material="Copper" name="lvCablePixelCuBHole">
+          <shape name="upCablePixelCuBHole" type="BooleanShape" operation="subtraction">
+            <shape name="upCablePixelCuBHole1" type="Box" dx="UPPixelCableWide/2" dy="UPPixelCableLongA/2" dz="UPPixelCableCuThickA/2"/>
+            <shape name="upCablePixelCuBHole2" type="Box" dx="(UPPixelHoleWide+UPEpsilon)/2" dy="(UPPixelHoleLong+UPEpsilon)/2" dz="UPPixelCableCuThickA"/>
+            <position x="-UPPixelCableWide/2" y="UPStaveEHybridY0"/>
+          </shape>
+        </volume>
+
+
+        <!-- ========== Kapton Cable ========== -->
+        <volume name="lvCablePixelA" vis="UP:KaptonCable">
+          <physvol name="pvCablePixelCuA" volume="lvCablePixelCuA">
+            <position z="UPCableKaptonThick/2"/>
+          </physvol>
+          <physvol name="pvCableKaptonPixelA" volume="lvCableKaptonPixelA">
+            <position z="-UPPixelCableCuThickA/2"/>
+          </physvol>
+        </volume>
+
+        <volume name="lvCablePixelAHole" vis="UP:KaptonCable">
+          <physvol name="pvCablePixelCuAHole" volume="lvCablePixelCuAHole">
+            <position z="UPCableKaptonThick/2"/>
+          </physvol>
+          <physvol name="pvCableKaptonPixelAHole" volume="lvCableKaptonPixelAHole">
+            <position z="-UPPixelCableCuThickA/2"/>
+          </physvol>
+        </volume>
+
+        <volume name="lvCablePixelBHole" vis="UP:KaptonCable">
+          <physvol name="pvCablePixelCuBHole" volume="lvCablePixelCuBHole">
+            <position z="UPCableKaptonThick/2"/>
+          </physvol>
+          <physvol name="pvCableKaptonPixelBHole" volume="lvCableKaptonPixelBHole">
+            <position z="-UPPixelCableCuThickA/2"/>
+          </physvol>
+        </volume>
+
+
+        <!-- ========== Bare Stave ========== -->
+        <volume material="UP:BareStave" name="lvBareStavePixelA" vis="UP:BareStave">
+          <shape name="upBareStavePixelA" type="Box" dx="UPPixelBareStaveWide/2" dy="UPPixelBareStaveLong/2" dz="UPBareStaveThick/2"/>
+        </volume>
+
+        <volume material="UP:BareStave" name="lvBareStavePixelAHole" vis="UP:BareStave">
+          <shape name="upBareStavePixelAHole" type="BooleanShape" operation="subtraction">
+            <shape name="upBareStavePixelAHole1" type="Box" dx="UPPixelBareStaveWide/2" dy="UPPixelBareStaveLong/2" dz="UPBareStaveThick/2"/>
+            <shape name="upBareStavePixelAHole2" type="Box" dx="(UPPixelHoleWide+UPEpsilon)/2" dy="(UPPixelHoleLong-2*UPPixelNearExceed+UPEpsilon)/2" dz="UPBareStaveThick"/>
+            <position x="-UPPixelBareStaveWide/2"/>
+          </shape>
+        </volume>
+
+        <!-- ========== Stave Type E ========== -->
+
+        <!-- ========== Stave Type E core ========== -->
+        <volume material="Air" name="lvStaveECore" vis="UP:Envelope">
+           <shape name="upStaveECoreBox" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="(UPBareStaveThick+UPPixelCableThick*2+2*UPEpsilon)/2"/>
+
+          <physvol name="pvBareStavePixelAE" volume="lvBareStavePixelA"/>
+
+          <physvol name="pvCablePixelAE2" volume="lvCablePixelA">
+            <position z="UPPixelStaveCableZ"/>
+            <rotation y="pi*rad" z="pi*rad"/>
+          </physvol>
+          <physvol name="pvCablePixelAE1" volume="lvCablePixelA">
+            <position z="-UPPixelStaveCableZ"/>
+          </physvol>
+
+        </volume>
+
+       <!-- ========== Stave Type E Front ========== -->
+        <volume material="Air" name="lvStaveEFront" vis="UP:Envelope">
+           <shape name="upHybridEFront" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+        </volume>
+
+       <!-- ========== Stave Type E Back ========== -->
+        <volume material="Air" name="lvStaveEBack" vis="UP:Envelope">
+           <shape name="upHybridEBack" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+        </volume>
+
+        <volume material="Air" name="lvStaveE" vis="UP:Envelope">
+           <shape name="upStaveE" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="UPPixelStaveThick/2"/>
+           <physvol name="pvStaveECore" volume="lvStaveECore">
+           </physvol>
+        </volume>
+
+        <!-- ========== Stave Type F ========== -->
+
+        <!-- ========== Stave Type F core ========== -->
+        <volume material="Air" name="lvStaveFCore" vis="UP:Envelope">
+           <shape name="upStaveFCoreBox" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="(UPBareStaveThick+UPPixelCableThick*2+2*UPEpsilon)/2"/>
+
+          <physvol name="pvBareStavePixelAF" volume="lvBareStavePixelA"/>
+
+          <physvol name="pvCablePixelAF1" volume="lvCablePixelA">
+            <position z="-UPPixelStaveCableZ"/>
+          </physvol>
+          <physvol name="pvCablePixelAF2" volume="lvCablePixelA">
+            <position z="UPPixelStaveCableZ"/>
+            <rotation y="pi*rad" z="pi*rad"/>
+          </physvol>
+
+        </volume>
+
+       <!-- ========== Stave Type F Front ========== -->
+        <volume material="Air" name="lvStaveFFront" vis="UP:Envelope">
+           <shape name="upHybridFFront" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+      </volume>
+
+       <!-- ========== Stave Type FI Back ========== -->
+        <volume material="Air" name="lvStaveFBack" vis="UP:Envelope">
+           <shape name="upHybridFBack" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+      </volume>
+
+        <volume material="Air" name="lvStaveF" vis="UP:Envelope">
+           <shape name="upStaveF" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="UPPixelStaveThick/2"/>
+           <physvol name="pvStaveFCore" volume="lvStaveFCore">
+           </physvol>
+        </volume>
+
+
+        <!-- ========== Stave Type G ========== -->
+
+        <!-- ========== Stave Type G core ========== -->
+        <volume material="Air" name="lvStaveGCore" vis="UP:Envelope">
+           <shape name="upStaveGCoreBox" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="(UPBareStaveThick+UPPixelCableThick*2+2*UPEpsilon)/2"/>
+
+          <physvol name="pvBareStavePixelAG" volume="lvBareStavePixelA"/>
+
+          <physvol name="pvCablePixelAG1" volume="lvCablePixelA">
+            <position z="-UPPixelStaveCableZ"/>
+          </physvol>
+          <physvol name="pvCablePixelAG2" volume="lvCablePixelA">
+            <position z="UPPixelStaveCableZ"/>
+            <rotation y="pi*rad" z="pi*rad"/>
+          </physvol>
+
+        </volume>
+
+       <!-- ========== Stave Type G Front ========== -->
+        <volume material="Air" name="lvStaveGFront" vis="UP:Envelope">
+           <shape name="upHybridGFront" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+
+      </volume>
+
+       <!-- ========== Stave Type G Back ========== -->
+        <volume material="Air" name="lvStaveGBack" vis="UP:Envelope">
+           <shape name="upHybridGBack" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+      </volume>
+
+        <volume material="Air" name="lvStaveG" vis="UP:Envelope">
+           <shape name="upStaveG" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="UPPixelStaveThick/2"/>
+           <physvol name="pvStaveGCore" volume="lvStaveGCore">
+           </physvol>
+        </volume>
+
+        <!-- ========== Stave Type H ========== -->
+
+        <!-- ========== Stave Type H core ========== -->
+        <volume material="Air" name="lvStaveHCore" vis="UP:Envelope">
+           <shape name="upStaveHCoreBox" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="(UPBareStaveThick+UPPixelCableThick*2+2*UPEpsilon)/2"/>
+
+          <physvol name="pvBareStavePixelAH" volume="lvBareStavePixelAHole"/>
+
+          <physvol name="pvCablePixelAH1" volume="lvCablePixelAHole">
+            <position z="-UPPixelStaveCableZ"/>
+          </physvol>
+          <physvol name="pvCablePixelAH2" volume="lvCablePixelAHole">
+            <position z="UPPixelStaveCableZ"/>
+            <rotation y="pi*rad" z="pi*rad"/>
+          </physvol>
+
+        </volume>
+
+       <!-- ========== Stave Type H Front ========== -->
+        <volume material="Air" name="lvStaveHFront" vis="UP:Envelope">
+           <shape name="upHybridHFront" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+
+      </volume>
+
+      <!-- ========== Stave Type H Back ========== -->
+        <volume material="Air" name="lvStaveHBack" vis="UP:Envelope">
+           <shape name="upHybridHBack" type="Box" dx="UPHybridFlex7Wide/2" dy="(-(UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4)*2+UPHybridLongE2)/2" dz="(UPHybrid7Thick+2*UPEpsilon)/2"/>
+
+      </volume>
+
+        <volume material="Air" name="lvStaveH" vis="UP:Envelope">
+           <shape name="upStaveH" type="Box" dx="UPPixelStaveWide/2" dy="UPPixelStaveLong/2" dz="UPPixelStaveThick/2"/>
+           <physvol name="pvStaveHCore" volume="lvStaveHCore">
+           </physvol>
+        </volume>
+
+</up>

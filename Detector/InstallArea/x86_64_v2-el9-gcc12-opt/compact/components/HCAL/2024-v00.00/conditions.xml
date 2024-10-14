@@ -1,0 +1,41 @@
+<!--
+    (c) Copyright 2022 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_Hcal_cond_XML_reader" type="xml">
+      <conditions_config prefix="Conditions/Hcal"/>
+      <alignment detector="Hcal" path="Alignment.yml" name="HcalSystem"/>
+
+      <conditions path="Calibration.yml">
+        <condition name="Calibration"/>
+        <condition name="Gain"/>
+        <condition name="L0Calibration"/>
+        <condition name="LEDReference"/>
+        <condition name="Quality"/>
+        <condition name="Reco"/>
+      </conditions>
+
+      <conditions path="ReadoutConf.yml">
+        <condition name="Hardware"/>
+        <condition name="Monitoring"/>
+        <condition name="Readout"/>
+      </conditions>
+
+      <conditions path="ParticleID.yml">
+        <condition name="HcalPIDmu" optional="1"/>
+        <condition name="HcalPIDe" optional="1"/>
+      </conditions>
+
+    </plugin>
+  </plugins>
+
+</lccdd>

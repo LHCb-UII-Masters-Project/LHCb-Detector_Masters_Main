@@ -1,0 +1,104 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- this file contains the Rich1 PhotoDetector Support Frame  
+     Geometry Parameters 
+     Rich1 HPDSupports contain arrays of HPDs. The Halves are
+     such that                         top    0 
+                                      bottom  1       -->
+<!--  Begin  Rich1PhotDetSupFrameGeomParameters    -->
+<!--  Begin the parameters input  -->
+
+<!--
+  Rh1PMTModuleArraySizeDiffY: difference in the module array size wrt old PMT system (as in: dddb-20190223).
+  It is used to calculate the Rh1PhDetSupYSize and offset Y in the Rich1PhotDetSupFrame plane. 
+  This offset ensures  that the detection plane edge stays the same as in the old system.
+-->
+<!-- Since DD4HEP does not have parameters with global validity in the sense that to evaulate each 
+   parameter in a line in a file ,all the calculations must in files included before the current 
+   file or the lines before current line in the current file , this file on PhotDetSupGFrameGeomParam
+   is spilt into two parts:
+    Rich1Run3PhotDetSupFrameBasicGeomParam.xml and Rich1Run3PhotDetSupFrameDerivedGeomParam.xml -->
+
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+   <constant name ="Rh1PMTModuleArraySizeDiffY"  value="-172.3*mm" /> 
+
+   <constant name="Rh1PhDetSupXSize" value="1480*mm" />
+   <constant name="Rh1PhDetSupYSize" value="820*mm + Rh1PMTModuleArraySizeDiffY" />
+
+
+  <constant name="Rh1PhDetSupZSize" value="130*mm" />
+
+  <!-- The following parameters are nominal param  -->
+
+   <constant name="Rh1PhDetTopPlaneDirCosX"  value="0.0"  />
+
+   <constant name="Rh1PhDetTopPlaneDirCosY"  value="0.846193"  />
+   <constant name="Rh1PhDetTopPlaneDirCosZ"  value="0.532877"  />
+
+
+   <constant name="Rh1PhDetBotPlaneDirCosX"  value="0.0"  />
+   <constant name="Rh1PhDetBotPlaneDirCosY"  value="-1.0*Rh1PhDetTopPlaneDirCosY"  />
+   <constant name="Rh1PhDetBotPlaneDirCosZ"  value="Rh1PhDetTopPlaneDirCosZ"  />
+
+   <constant name="Rh1PhDetTopAngleFromVert" value="(acos(Rh1PhDetTopPlaneDirCosY))*rad"  />
+
+<!--
+  Rh1PlaneUpgradeShift (Rh1PlaneUpgradeFocalPlaneShift) corresponds to the shift along (perpendicular) 
+  to the detection plane.
+  Rh1PlaneUpgradeShiftToNominal is a component needed to match the nominal planes positions given in https://edms.cern.ch/document/1390002/2.
+-->
+   <constant name ="Rh1PlaneUpgradeShiftToNominal"  value="30.15*mm" /> 
+   <constant name ="Rh1PlaneUpgradeShift"  value="56.0*mm + 0.5*Rh1PMTModuleArraySizeDiffY + Rh1PlaneUpgradeShiftToNominal" /> 
+   <constant name ="Rh1PlaneUpgradeFocalPlaneShift" value="-100.0*mm" />
+   <constant name="Rh1PhDetTopPlaneX"   value="0.0*mm" />
+   <constant name="Rh1PhDetTopPlaneY"   value="1492.335*mm + Rh1PlaneUpgradeShift*sin(Rh1PhDetTopAngleFromVert)+ Rh1PlaneUpgradeFocalPlaneShift*cos(Rh1PhDetTopAngleFromVert) "/>
+   <constant name="Rh1PhDetTopPlaneZ"   value="1694.705*mm - Rh1PlaneUpgradeShift*cos(Rh1PhDetTopAngleFromVert) + Rh1PlaneUpgradeFocalPlaneShift*sin(Rh1PhDetTopAngleFromVert)" />
+   <constant name="Rh1PhDetBotPlaneX"   value="0.0*mm" />
+   <constant name="Rh1PhDetBotPlaneY"   value="-1.0*Rh1PhDetTopPlaneY" />
+   <constant name="Rh1PhDetBotPlaneZ"   value="Rh1PhDetTopPlaneZ" />
+
+
+   <constant name="Rh1PhDetSupTolerence"  value="1.0*mm"  />
+
+
+<!-- Most of the derived parameters are in Rich1Run3PhotDetSupDerivedGeomParam.xml   -->
+<!-- A few are defined here, since they are also used in Rich1Run3MagShGeomParam.xml -->
+
+   <constant name="Rh1PhDetTopVertTilt" value="((pi/2)*rad)-Rh1PhDetTopAngleFromVert"  />
+   <constant name="Rh1PhDetTopHorizTilt" value="(atan(Rh1PhDetTopPlaneDirCosX/Rh1PhDetTopPlaneDirCosZ))*rad"  />
+
+   <constant name="Rh1PhDetBotAngleFromVert" value="(acos(Rh1PhDetBotPlaneDirCosY))*rad"  />
+   <constant name="Rh1PhDetBotVertTilt" value="((pi/2)*rad)-Rh1PhDetBotAngleFromVert" />
+   <constant name="Rh1PhDetBotHorizTilt" value="(atan(Rh1PhDetBotPlaneDirCosX/Rh1PhDetBotPlaneDirCosZ))*rad"  />
+
+   <constant name="Rh1PhDetSupTopRotXH0" value="-1.0*Rh1PhDetTopVertTilt"  />
+   <constant name="Rh1PhDetSupTopRotYH0" value="Rh1PhDetTopHorizTilt" />
+   <constant name="Rh1PhDetSupBotRotXH1" value="-1.0*Rh1PhDetBotVertTilt"  />
+   <constant name="Rh1PhDetSupBotRotYH1" value="Rh1PhDetBotHorizTilt" />
+
+
+<!--   End  Rich1PhotDetSupFrameGeomBasicParameters    -->
+  </define>
+</lccdd>
+
+
+
+
+
+
+
+
+
+

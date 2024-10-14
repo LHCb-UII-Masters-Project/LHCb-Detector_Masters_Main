@@ -1,0 +1,194 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+    <!--=====================================Pipe segment replacement of VVSSH (LHCb_Pipe_Section_Type_1)  -->
+    <constant name="DownStr:VVSSHPipeZ"                 value= "80.0*mm + 15.0*mm"/> <!-- 15mm to make pipe complete -->
+    <constant name="DownStr:VVSSHPipeRad"               value= "30.0*mm"/>
+    <constant name="DownStr:VVSSHPipeThick"             value= "1.5*mm"/>
+
+    <!--=====================================Parameters for pipe in MBXWS (LHCb_Pipe_Section_Type_1)  -->
+    <constant name="DownStr:MBXWSPipeLength"            value=  "1275.0*mm"/>
+    <constant name="DownStr:MBXWSPipeRadius"            value=  "26.0*mm"/>
+    <constant name="DownStr:MBXWSPipeThick"             value=  "2.0*mm"/>
+
+    <!--=====================================Parameters for VVSGF  -->
+    <constant name="DownStr:VVSGFBlockX"                value= "160.0*mm"/>
+    <constant name="DownStr:VVSGFBlockY"                value= "480.0*mm"/>
+    <constant name="DownStr:VVSGFBlockZ"                value= "55.0*mm"/>
+    <constant name="DownStr:VVSGFHoleY"                 value= "0.0*mm"/>
+    <constant name="DownStr:VVSGFFlangeZ"               value= "10.0*mm - 0.01*mm"/>
+    <constant name="DownStr:VVSGFBlockRad"              value= "31.5*mm"/>
+    <constant name="DownStr:VVSGFFlangeThick"           value= "100.0*mm - DownStr:VVSGFBlockRad"/>
+
+    <!--=====================================Parameters for BPMSWDownStr -->
+    <constant name="DownStr:BPMSWMidSectLength"         value=  "90.0*mm"/>
+    <constant name="DownStr:BPMSWMidSectRadius"         value=  "34.5*mm"/>
+    <constant name="DownStr:BPMSWMidSectThick"          value=  "56.5*mm - DownStr:BPMSWMidSectRadius"/>
+    <constant name="DownStr:BPMSWMidSectTopCutOffset"   value=  "47.9*mm"/>
+    <constant name="DownStr:BPMSWMidSectHoleRadius"     value=  "8.5*mm"/>
+    <constant name="DownStr:BPMSWMidSectHolePosZ"       value=  "15.0*mm"/>
+    <constant name="DownStr:BPMSWMidSectEdgeDepth"      value=  "4.0*mm"/>
+    <constant name="DownStr:BPMSWMidSectEdgeRadius"     value=  "28.0*mm"/>
+
+    <constant name="DownStr:BPMSWFlangeUpLength"        value=  "17.4*mm"/>
+    <constant name="DownStr:BPMSWFlangeUpRadius"        value=  "30.0*mm"/>
+    <constant name="DownStr:BPMSWFlangeUpThick"         value=  "57.0*mm - DownStr:BPMSWFlangeUpRadius"/>
+
+    <constant name="DownStr:BPMSWFlangeDownLength"      value=  "19.7*mm"/>
+    <constant name="DownStr:BPMSWFlangeDownRadius"      value=  "DownStr:BPMSWFlangeUpRadius"/>
+    <constant name="DownStr:BPMSWFlangeDownThick"       value=  "76.0*mm - DownStr:BPMSWFlangeDownRadius"/>
+
+    <constant name="DownStr:BPMSWEntryLength"           value=  "33.3*mm"/>
+    <constant name="DownStr:BPMSWEntryRadius"           value=  "DownStr:BPMSWFlangeUpRadius"/>
+    <constant name="DownStr:BPMSWEntryThick"            value=  "4.5*mm"/>
+
+    <constant name="DownStr:BPMSWExitLength"            value=  "34.6*mm"/>
+    <constant name="DownStr:BPMSWExitRadius"            value=  "DownStr:BPMSWFlangeUpRadius"/>
+    <constant name="DownStr:BPMSWExitThick"             value=  "51.5*mm - DownStr:BPMSWExitRadius"/>
+
+    <constant name="DownStr:BPMSWPlugFlangeLength"      value=  "11.0*mm"/>
+    <constant name="DownStr:BPMSWPlugFlangeRadius"      value=  "26.0*mm"/>
+    <constant name="DownStr:BPMSWPlugPinLength"         value=  "13.4*mm*2 + DownStr:BPMSWPlugFlangeLength"/>
+    <constant name="DownStr:BPMSWPlugPinRadius"         value=  "7.5*mm"/>
+
+    <constant name="DownStr:BPMSWVacuumLength"          value=  "DownStr:BPMSWFlangeUpLength + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength*2 + DownStr:BPMSWExitLength + DownStr:BPMSWFlangeDownLength"/>
+
+    <!--=====================================VaxDown  -->
+    <!-- Main -->
+    <constant name="DownStr:VaxMainBodyLength"               value="126.0*mm - 0.02*mm"/>
+    <constant name="DownStr:VaxMainBodyRadius"               value="100.0*mm"/>
+    <constant name="DownStr:VaxMainBodyThick"                value="2.0*mm"/>
+    <constant name="DownStr:VaxMainBodyHole1Radius"          value="50.0*mm"/>
+    <constant name="DownStr:VaxMainBodyHole2Radius"          value="50.0*mm"/>
+    <constant name="DownStr:VaxMainBodyHole3Radius"          value="30.25*mm"/>
+    <constant name="DownStr:VaxMainBodyHole4Radius"          value="19.6*mm"/>
+    <constant name="DownStr:VaxMainBodyHole5Radius"          value="8.5*mm"/>
+    <constant name="DownStr:VaxMainBodyHole4Offset"          value="30.0*mm"/>
+    <constant name="DownStr:VaxMainBodyHole5Offset"          value="45.0*mm"/>
+
+
+    <!-- Entry Window -->
+    <constant name="DownStr:VaxWindowTubsLenght"             value="4.0*mm"/>
+    <constant name="DownStr:VaxWindowFlangeRadius"           value="50.0*mm"/>
+    <constant name="DownStr:VaxWindowFlangeLength"           value="10.0*mm"/>
+    <constant name="DownStr:VaxWindowInnerRadius"            value="37.5*mm"/>
+    <constant name="DownStr:VaxWindowThick"                  value="DownStr:VaxMainBodyRadius + DownStr:VaxMainBodyThick - DownStr:VaxWindowFlangeRadius"/>
+    <constant name="DownStr:VaxWindowConeLength"             value="21.0*mm"/>
+    <constant name="DownStr:VaxWindowConeEndThick"           value="DownStr:VaxMainBodyRadius - DownStr:VaxWindowConeLength - DownStr:VaxWindowInnerRadius"/>
+    <constant name="DownStr:VaxWindowConeFlangeLength"       value="DownStr:VaxWindowFlangeLength - DownStr:VaxWindowTubsLenght"/>
+    <constant name="DownStr:VaxWindowConeEndLength"          value="5.0*mm"/>
+    <constant name="DownStr:VaxWindowConeEndRad"             value="59.0*mm"/>
+
+
+    <!-- End Pipe -->
+    <constant name="DownStr:VaxEndPipeLength"                value="64.0*mm"/>
+    <constant name="DownStr:VaxEndPipeRadius"                value="32.5*mm"/>
+    <constant name="DownStr:VaxEndPipeThick"                 value="2.0*mm"/>
+    <constant name="DownStr:VaxEndPipeFlangeLength"          value="17.5*mm"/>
+    <constant name="DownStr:VaxEndPipeFlangeRadius"          value="DownStr:VaxEndPipeRadius + DownStr:VaxEndPipeThick + 0.01*mm"/>
+    <constant name="DownStr:VaxEndPipeFlangeThick"           value="63.5*mm - DownStr:VaxEndPipeFlangeRadius"/>
+
+
+    <!-- End Cap -->
+    <constant name="DownStr:VaxEndCapTubsLenght"             value="DownStr:VaxWindowTubsLenght"/>
+    <constant name="DownStr:VaxEndCapInnerRadius"            value="DownStr:VaxEndPipeRadius + DownStr:VaxEndPipeThick + 0.01*mm"/>
+    <constant name="DownStr:VaxEndCapThick"                  value="DownStr:VaxMainBodyRadius - DownStr:VaxEndCapTubsLenght - DownStr:VaxEndCapInnerRadius"/>
+
+
+    <!-- RF screen -->
+    <constant name="DownStr:VaxRfScreenFlangeLength"         value="8.0*mm"/>
+    <constant name="DownStr:VaxRfScreenFlangeRadius"         value="31.5*mm"/>
+    <constant name="DownStr:VaxRfScreenFlangeThick"          value="49.0*mm - DownStr:VaxRfScreenFlangeRadius"/>
+    <constant name="DownStr:VaxRfScreenEntryLength"          value="101.0*mm"/>
+    <constant name="DownStr:VaxRfScreenEntryRadius"          value="DownStr:VaxRfScreenFlangeRadius"/>
+    <constant name="DownStr:VaxRfScreenEntryThick"           value="2.5*mm"/>
+    <constant name="DownStr:VaxRfScreenConsLength"           value="10.0*mm"/>
+    <constant name="DownStr:VaxRfScreenExitLength"           value="63.5*mm"/>
+    <constant name="DownStr:VaxRfScreenExitRadius"           value="29.0*mm"/>
+    <constant name="DownStr:VaxRfScreenExitThick"            value="2.0*mm"/>
+
+
+    <!-- Vacuum -->
+    <constant name="DownStr:VaxVacuumLength"                 value="190.0*mm"/>
+    <constant name="DownStr:VaxVacuumRadius"                 value="DownStr:VaxRfScreenExitRadius - 0.01*mm"/>
+
+
+    <!-- Pipe 1 -->
+    <constant name="DownStr:VaxPipe1Length"                  value="204.0*mm"/>
+    <constant name="DownStr:VaxPipe1Radius"                  value="DownStr:VaxMainBodyHole1Radius"/>
+    <constant name="DownStr:VaxPipe1Thick"                   value="1.5*mm"/>
+    <constant name="DownStr:VaxPipe1HoleRadius"              value="19.6*mm"/>
+    <constant name="DownStr:VaxPipe1HoleOffset"              value="160.0*mm"/>
+
+
+    <!-- Pipe 2 -->
+    <constant name="DownStr:VaxPipe2Length"                  value="330.0*mm"/>
+    <constant name="DownStr:VaxPipe2Radius"                  value="DownStr:VaxMainBodyHole2Radius"/>
+    <constant name="DownStr:VaxPipe2Thick"                   value="1.5*mm"/>
+    <constant name="DownStr:VaxPipe2FlangeLength"            value="19.8*mm"/>
+    <constant name="DownStr:VaxPipe2FlangeRadius"            value="DownStr:VaxPipe2Radius + DownStr:VaxPipe2Thick + 0.01*mm"/>
+    <constant name="DownStr:VaxPipe2FlangeThick"             value="75.5*mm - DownStr:VaxPipe2FlangeRadius"/>
+    <constant name="DownStr:VaxPipe2BeltLength"              value="5.0*mm"/>
+    <constant name="DownStr:VaxPipe2BeltPos"                 value="122.0*mm"/>
+
+    <!-- Pipe 3 -->
+    <constant name="DownStr:VaxPipe3EntryLength"             value="220.0*mm"/>
+    <constant name="DownStr:VaxPipe3ExitLength"              value="120.0*mm"/>
+    <constant name="DownStr:VaxPipe3CutLength"               value="50.0*mm"/>
+    <constant name="DownStr:VaxPipe3Radius"                  value="DownStr:VaxMainBodyHole3Radius"/>
+    <constant name="DownStr:VaxPipe3Thick"                   value="1.5*mm"/>
+    <constant name="DownStr:VaxPipe3FlangeLength"            value="17.0*mm"/>
+    <constant name="DownStr:VaxPipe3FlangeRadius"            value="DownStr:VaxPipe3Radius + DownStr:VaxPipe3Thick + 0.01*mm"/>
+    <constant name="DownStr:VaxPipe3FlangeThick"             value="57.0*mm - DownStr:VaxPipe3FlangeRadius"/>
+
+    <!-- Pipe 4 -->
+    <constant name="DownStr:VaxPipe4Length"                  value="158.5*mm"/>
+    <constant name="DownStr:VaxPipe4Radius"                  value="DownStr:VaxMainBodyHole4Radius"/>
+    <constant name="DownStr:VaxPipe4Thick"                   value="1.6*mm"/>
+    <constant name="DownStr:VaxPipe4FlangeLength"            value="13.0*mm"/>
+    <constant name="DownStr:VaxPipe4FlangeRadius"            value="DownStr:VaxPipe4Radius + DownStr:VaxPipe4Thick + 0.01*mm"/>
+    <constant name="DownStr:VaxPipe4FlangeThick"             value="35.0*mm - DownStr:VaxPipe4FlangeRadius"/>
+
+    <!-- Pipe 5 -->
+    <constant name="DownStr:VaxPipe5Length"                  value="138.5*mm"/>
+    <constant name="DownStr:VaxPipe5Radius"                  value="DownStr:VaxMainBodyHole5Radius"/>
+    <constant name="DownStr:VaxPipe5Thick"                   value="1.0*mm"/>
+    <constant name="DownStr:VaxPipe5FlangeLength"            value="7.0*mm"/>
+    <constant name="DownStr:VaxPipe5FlangeRadius"            value="DownStr:VaxPipe5Radius + DownStr:VaxPipe5Thick + 0.01*mm"/>
+    <constant name="DownStr:VaxPipe5FlangeThick"             value="17.0*mm - DownStr:VaxPipe5FlangeRadius"/>
+
+    <!-- Pipe 6 -->
+    <constant name="DownStr:VaxPipe6Length"                  value="110.0*mm"/>
+    <constant name="DownStr:VaxPipe6Radius"                  value="DownStr:VaxPipe1HoleRadius"/>
+    <constant name="DownStr:VaxPipe6Thick"                   value="1.6*mm"/>
+    <constant name="DownStr:VaxPipe6FlangeLength"            value="13.0*mm"/>
+    <constant name="DownStr:VaxPipe6FlangeRadius"            value="DownStr:VaxPipe6Radius + DownStr:VaxPipe6Thick + 0.01*mm"/>
+    <constant name="DownStr:VaxPipe6FlangeThick"             value="35.0*mm - DownStr:VaxPipe6FlangeRadius"/>
+
+    <!-- Pipe 7 -->
+    <constant name="DownStr:VaxPipe7EntryLength"             value="115.0*mm"/>
+    <constant name="DownStr:VaxPipe7ExitLength"              value="110.0*mm"/>
+    <constant name="DownStr:VaxPipe7CutLength"               value="50.0*mm"/>
+    <constant name="DownStr:VaxPipe7Radius"                  value="30.25*mm"/>
+    <constant name="DownStr:VaxPipe7Thick"                   value="1.5*mm"/>
+    <constant name="DownStr:VaxPipe7LidLength"               value="4.0*mm"/>
+    <constant name="DownStr:VaxPipe7LidThick"                value="DownStr:VaxPipe3Radius + DownStr:VaxPipe3Thick - DownStr:VaxPipe7Radius"/>
+    <constant name="DownStr:VaxPipe7FlangeLength"            value="17.0*mm"/>
+    <constant name="DownStr:VaxPipe7FlangeRadius"            value="DownStr:VaxPipe7Radius + DownStr:VaxPipe7Thick + 0.01*mm"/>
+    <constant name="DownStr:VaxPipe7FlangeThick"             value="57.0*mm - DownStr:VaxPipe7FlangeRadius"/>
+  </define>
+
+</lccdd>

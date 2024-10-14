@@ -1,0 +1,64 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--================================== VVSGF ==================================-->
+<!--===========================================================================-->
+<pipe>
+
+  <!-- Main body -->
+  <volume name="lvVVSGFBlock" material="Pipe:Steel316LN" vis="Pipe:Upstream">
+    <shape type="BooleanShape" operation="subtraction" name="VVSGFBlockSub">
+      <shape type="Box" name="VVSGFBlockBox"
+             dx="0.5*UpStr:VVSGFBlockX"
+             dy="0.5*UpStr:VVSGFBlockY"
+             dz="0.5*UpStr:VVSGFBlockZ"/>
+      <shape type="Box" name="VVSGFBlockBoxAir"
+             dx="0.5*(UpStr:VVSGFBlockX - 20.0*mm)"
+             dy="0.5*(UpStr:VVSGFBlockY - 20.0*mm)"
+             dz="0.5*(UpStr:VVSGFBlockZ - 20.0*mm)"/>
+      <shape type="Tube" name="VVSGFBlockHole"
+             dz="0.5*(UpStr:VVSGFBlockZ + 1.0*mm)"
+             rmax="UpStr:VVSGFBlockRad"/>
+      <position y="UpStr:VVSGFHoleY"/>
+    </shape>
+  </volume>
+
+  <!-- Flange -->
+  <volume name="lvVVSGFFlange" material="Pipe:Steel316LN" vis="Pipe:Upstream">
+    <shape type="Tube" name="VVSGFFlangeTubs"
+           dz="0.5*UpStr:VVSGFFlangeZ"
+           rmin="UpStr:VVSGFBlockRad"
+           rmax="UpStr:VVSGFBlockRad + UpStr:VVSGFFlangeThick"/>
+  </volume>
+
+  <!-- Vacuum -->
+  <volume name="lvVVSGFVacuum" material="Vacuum" vis="Pipe:Vacuum">
+    <shape type="Tube" name="VVSGFVacuumTubs"
+           dz="0.5*(UpStr:VVSGFFlangeZ*2 + UpStr:VVSGFBlockZ)"
+           rmax="UpStr:VVSGFBlockRad - 0.01*mm"/>
+  </volume>
+
+  <!-- VVSGF -->
+  <volume name="lvVVSGF" vis="Pipe:Upstream">
+    <physvol name="pvVVSGFVacuum"                 logvol="lvVVSGFVacuum"/>
+    <physvol name="pvVVSGFBlock"                  logvol="lvVVSGFBlock">
+      <position y="-UpStr:VVSGFHoleY"/>
+    </physvol>
+    <physvol name="pvVVSGFFlangeUp"               logvol="lvVVSGFFlange">
+      <position z="-UpStr:VVSGFBlockZ/2 - UpStr:VVSGFFlangeZ/2 - 0.01*mm"/>
+    </physvol>
+    <physvol name="pvVVSGFFlangeUp"             logvol="lvVVSGFFlange">
+      <position z="UpStr:VVSGFBlockZ/2 + UpStr:VVSGFFlangeZ/2 + 0.01*mm"/>
+    </physvol>
+  </volume>
+</pipe>

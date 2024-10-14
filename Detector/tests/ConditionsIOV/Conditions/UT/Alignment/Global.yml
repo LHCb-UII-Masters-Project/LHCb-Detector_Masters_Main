@@ -1,0 +1,9 @@
+UTSystem: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTCside: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+UTAside: !alignment
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]

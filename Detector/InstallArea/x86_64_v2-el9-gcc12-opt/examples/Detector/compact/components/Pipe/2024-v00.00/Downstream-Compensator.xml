@@ -1,0 +1,228 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--==================================UX853====================================-->
+<!--===========================================================================-->
+<pipe>
+  <!-- Compensator at 2800 - Flange -->
+  <volume name="lvUX85C13100Flange01" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Flange-01"
+           dz="0.5*UX85C13100Flange01Lenght"
+           rmin1="UX85C13100Flange01RadiusZmin"
+           rmin2="UX85C13100Flange01RadiusZmax"
+           rmax1="UX85C13100Flange01OuterRadius"
+           rmax2="UX85C13100Flange01OuterRadius"/>
+  </volume>
+  <!-- Compensator at 2800 cone of 10 mrad -->
+  <volume name="lvUX85C13100Cone02" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Cone10mrad-02"
+           dz="0.5*UX85C13100Cone02Lenght"
+           rmin1="UX85C13100Cone02RadiusZmin"
+           rmin2="UX85C13100Cone02RadiusZmax"
+           rmax1="UX85C13100Cone02RadiusZmin + UX85C13100Cone02Thick"
+           rmax2="UX85C13100Cone02RadiusZmax + UX85C13100Cone02Thick"/>
+  </volume>
+  <!-- Compensator at 2800 connection to bellow -->
+  <volume name="lvUX85C13100BellowCnct03" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Connection-03"
+           dz="0.5*UX85C13100BellowCnct03Lenght"
+           rmin1="UX85C13100BellowCnct03RadiusZmin"
+           rmin2="UX85C13100BellowCnct03RadiusZmax"
+           rmax1="UX85C13100BellowCnct03RadiusZmin + UX85C13100BellowCnct03Thick"
+           rmax2="UX85C13100BellowCnct03RadiusZmax + UX85C13100BellowCnct03Thick"/>
+  </volume>
+
+  <volume name="lvUX85C13100BellowBase" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Polycone" name="UX85-C13100-BellowBase-04">
+      <zplane z="-0.5*UX85C13100BellowLenght"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLenght + UX85C13100BellowWallThick"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLenght + UX85C13100BellowWallThick"
+              rmin="UX85C13100BellowOuterRadius - UX85C13100BellowWallThick"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLenght + UX85C13100BellowWallThick +
+                 UX85C13100BellowStep"
+              rmin="UX85C13100BellowOuterRadius - UX85C13100BellowWallThick"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLenght + UX85C13100BellowWallThick +
+                 UX85C13100BellowStep"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLenght + 2*UX85C13100BellowWallThick +
+                 UX85C13100BellowStep"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLenght + 2*UX85C13100BellowWallThick +
+                 UX85C13100BellowStep"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowInnerRadius + UX85C13100BellowWallThick "/>
+      <zplane z="-0.5*UX85C13100BellowLenght + 2*UX85C13100BellowWallThick +
+                 2*UX85C13100BellowStep"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowInnerRadius + UX85C13100BellowWallThick "/>
+    </shape>
+  </volume>
+
+  <volume name="lvUX85C13100BellowLast" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Polycone" name="UX85-C13100-BellowLast-04">
+      <zplane z="-0.5*UX85C13100BellowLastLenght"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLastLenght + UX85C13100BellowWallThick"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLastLenght + UX85C13100BellowWallThick"
+              rmin="UX85C13100BellowOuterRadius - UX85C13100BellowWallThick"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLastLenght + UX85C13100BellowWallThick +
+                 UX85C13100BellowStep"
+              rmin="UX85C13100BellowOuterRadius - UX85C13100BellowWallThick"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLastLenght + UX85C13100BellowWallThick +
+                 UX85C13100BellowStep"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C13100BellowLastLenght + 2*UX85C13100BellowWallThick +
+                 UX85C13100BellowStep"
+              rmin="UX85C13100BellowInnerRadius"
+              rmax="UX85C13100BellowOuterRadius"/>
+    </shape>
+  </volume>
+
+  <!-- Compensator at 2800 Bellow -->
+  <volume name="lvUX85C13100Bellow" vis="Pipe:Downstream">
+    <paramphysvol number="UX85C13100BellowNConv-1">
+      <physvol name="pvUX85C13100BellowBase"           volume="lvUX85C13100BellowBase"/>
+      <position z="UX85C13100BellowPitch"/>
+    </paramphysvol>
+    <physvol name="pvUX85C13100BellowLast"             volume="lvUX85C13100BellowLast">
+      <position z="-0.5*UX85C13100BellowLenght +
+                   (UX85C13100BellowNConv-1)*UX85C13100BellowPitch +
+                   0.5*UX85C13100BellowLastLenght"/>
+    </physvol>
+  </volume>
+
+
+  <!-- Compensator at 13100 connection to bellow -->
+  <volume name="lvUX85C13100BellowCnct05" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Connection-05"
+           dz="0.5*UX85C13100BellowCnct05Lenght"
+           rmin1="UX85C13100BellowCnct05RadiusZmin"
+           rmin2="UX85C13100BellowCnct05RadiusZmax"
+           rmax1="UX85C13100BellowCnct05RadiusZmin + UX85C13100BellowCnct05Thick"
+           rmax2="UX85C13100BellowCnct05RadiusZmax + UX85C13100BellowCnct05Thick"/>
+  </volume>
+
+  <!-- Compensator at 13100 cone of 10 mrad -->
+  <volume name="lvUX85C13100Cone06" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Cone10mrad-06"
+           dz="0.5*UX85C13100Cone06Lenght"
+           rmin1="UX85C13100Cone06RadiusZmin"
+           rmin2="UX85C13100Cone06RadiusZmax"
+           rmax1="UX85C13100Cone06RadiusZmin + UX85C13100Cone06Thick"
+           rmax2="UX85C13100Cone06RadiusZmax + UX85C13100Cone06Thick"/>
+  </volume>
+
+  <!-- Compensator at 13100 connection to bellow -->
+  <volume name="lvUX85C13100BellowCnct07" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Connection-07"
+           dz="0.5*UX85C13100BellowCnct07Lenght"
+           rmin1="UX85C13100BellowCnct07RadiusZmin"
+           rmin2="UX85C13100BellowCnct07RadiusZmax"
+           rmax1="UX85C13100BellowCnct07RadiusZmin + UX85C13100BellowCnct07Thick"
+           rmax2="UX85C13100BellowCnct07RadiusZmax + UX85C13100BellowCnct07Thick"/>
+  </volume>
+
+  <!-- Compensator at 13100 connection to bellow -->
+  <volume name="lvUX85C13100BellowCnct09" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Connection-09"
+           dz="0.5*UX85C13100BellowCnct09Lenght"
+           rmin1="UX85C13100BellowCnct09RadiusZmin"
+           rmin2="UX85C13100BellowCnct09RadiusZmax"
+           rmax1="UX85C13100BellowCnct09RadiusZmin + UX85C13100BellowCnct09Thick"
+           rmax2="UX85C13100BellowCnct09RadiusZmax + UX85C13100BellowCnct09Thick"/>
+  </volume>
+
+  <!-- Compensator at 13100 cone of 10 mrad -->
+  <volume name="lvUX85C13100Cone10" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Cone10mrad-10"
+           dz="0.5*UX85C13100Cone10Lenght"
+           rmin1="UX85C13100Cone10RadiusZmin"
+           rmin2="UX85C13100Cone10RadiusZmax"
+           rmax1="UX85C13100Cone10RadiusZmin + UX85C13100Cone10Thick"
+           rmax2="UX85C13100Cone10RadiusZmax + UX85C13100Cone10Thick"/>
+  </volume>
+
+  <!-- Compensator at 13100 Flange -->
+  <volume name="lvUX85C13100Flange11" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-C13100-Flange-11"
+           dz="0.5*UX85C13100Flange11Lenght"
+           rmin1="UX85C13100Flange11RadiusZmin"
+           rmin2="UX85C13100Flange11RadiusZmax"
+           rmax1="UX85C13100Flange11OuterRadius"
+           rmax2="UX85C13100Flange11OuterRadius"/>
+  </volume>
+
+  <!-- Vacuum in UX85 Compensator 13100 -->
+  <volume name="lvUX85C13100Vacuum01" material="Vacuum" vis="Pipe:Vacuum">
+    <shape type="ConeSegment" name="UX85-C13100-Vacuum-01"
+           dz="0.5*UX85C13100Vacuum01Lenght"
+           rmax1="UX85C13100Flange01RadiusZmin"
+           rmax2="UX85C13100Flange11RadiusZmax"/>
+  </volume>
+
+  <!-- Compensator -->
+  <volume name="lvUX85Compensator13100" vis="Pipe:Downstream">
+    <physvol name="pvUX85C13100Flange01"          volume="lvUX85C13100Flange01">
+      <position z="UX85C13100Flange01Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100Cone02"            volume="lvUX85C13100Cone02">
+      <position z="UX85C13100Cone02Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100BellowCnct03"      volume="lvUX85C13100BellowCnct03">
+      <position z="UX85C13100BellowCnct03Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100Bellow04"          volume="lvUX85C13100Bellow">
+      <position z="UX85C13100Bellow04Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100BellowCnct05"      volume="lvUX85C13100BellowCnct05">
+      <position z="UX85C13100BellowCnct05Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100Cone06"            volume="lvUX85C13100Cone06">
+      <position z="UX85C13100Cone06Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100BellowCnct07"      volume="lvUX85C13100BellowCnct07">
+      <position z="UX85C13100BellowCnct07Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100Bellow08"          volume="lvUX85C13100Bellow">
+      <position z="UX85C13100Bellow08Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100BellowCnct09"      volume="lvUX85C13100BellowCnct09">
+      <position z="UX85C13100BellowCnct09Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100Cone10"            volume="lvUX85C13100Cone10">
+      <position z="UX85C13100Cone10Zpos"/>
+    </physvol>
+    <physvol name="pvUX85C13100Flange11"          volume="lvUX85C13100Flange11">
+      <position z="UX85C13100Flange11Zpos"/>
+    </physvol>
+    <!-- Now the vacuum inside -->
+    <physvol name="pvUX85C13100Vacuum01"          volume="lvUX85C13100Vacuum01">
+      <position z="0.5*UX85C13100Vacuum01Lenght"/>
+    </physvol>
+  </volume>
+
+</pipe>

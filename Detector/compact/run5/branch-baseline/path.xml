@@ -1,0 +1,34 @@
+<lccdd>
+<!--
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+  <define>
+    <constant name="path:BlockWall" value="../../components/BlockWall/trunk" type="string"/>
+    <constant name="path:GValve" value="../../components/GValve/trunk" type="string"/>
+    <constant name="path:Bls" value="../../components/Bls/trunk" type="string"/>
+    <constant name="path:Bcm" value="../../components/Bcm/trunk" type="string"/>
+    <constant name="path:MBXW" value="../../components/MBXW/trunk" type="string"/>
+    <constant name="path:Pipe" value="../../components/Pipe/trunk" type="string"/>
+    <constant name="path:Rich" value="../../components/Rich/trunk" type="string"/>
+    <constant name="path:TV" value="../../components/TV/branch-run5-baseline" type="string"/>
+    <constant name="path:UT" value="../../components/UT/trunk" type="string"/>
+    <constant name="path:UP" value="../../components/UP/branch-run5-baseline" type="string"/>
+    <constant name="path:Magnet" value="../../components/Magnet/trunk" type="string"/>
+    <constant name="path:FT" value="../../components/FT/branch-run5-baseline" type="string"/>
+    <constant name="path:MP" value="../../components/MP/branch-run5-baseline" type="string"/>
+    <constant name="path:NeutronShielding" value="../../components/NeutronShielding/trunk" type="string"/>
+    <constant name="path:Muon" value="../../components/Muon/trunk" type="string"/>
+    <constant name="path:PicoCal" value="../../components/PicoCal/trunk" type="string"/>
+    <constant name="path:HCAL" value="../../components/HCAL/trunk" type="string"/>
+    <constant name="path:TORCH" value="../../components/TORCH/trunk" type="string"/>
+    <constant name="path:Regions" value="../../components/Regions/trunk" type="string"/>
+    <constant name="path:Materials" value="../../components/Materials/trunk" type="string"/>
+  </define>
+</lccdd>

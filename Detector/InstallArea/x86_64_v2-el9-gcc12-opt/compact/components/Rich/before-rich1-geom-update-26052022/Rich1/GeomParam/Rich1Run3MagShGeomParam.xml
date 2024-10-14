@@ -1,0 +1,476 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- this file contains the geometry parameters                                   -->
+<!--      for Rich1 Magnetic Shielding. The Master Volume near the photodetectors -->
+<!--      is made of Nitrogen. It has the shape of a (trapizoid - Box) .          -->
+<!--      The Photodet support frame are kept inside this.                        -->
+<!--      The actual shields are kept are separate volumes                        -->
+<!--      inside the rich1submaster.                                              -->
+
+<!--      The magnetic shield is composed of a (box-box) for the outer part,      -->
+<!--      a box for the upstream part near aerogel, a box for the                 -->
+<!--      downstream part near the spherical Mirror1,                             -->
+<!--      a box on left extreme of Rich1 and a box on                             -->
+<!--      right extreme Rich1.                                                    -->
+
+
+<!--      The Top half is H0 and  the Bottom Half is H1.                          -->
+<!--      They are given copy numbers are 0 for Top and 1 for Bottom.             -->
+<!--      For the shield boxes at the extreme the quadrants are  as looking       -->
+<!--      downstream along Z,    Q0       Q3                                      -->
+<!--                                beam                                          -->
+<!--                             Q1       Q2                                      -->
+<!--                                                                              -->
+<!--      Modified according to the drawings from IC in March 2004.               -->
+<!--      The MagSH Z location in the Rich1 SubMaster= (990+2165)/2=1577.5        -->
+<!--      This is derived from the old RICH submaster Z limits.                   -->
+<!--      In the upgrade the submaster                                            -->
+<!--      limits are changed, but the shielding is kept at the same place as before.-->
+<!--  ==========================================================================    -->
+<lccdd>
+  <define>
+
+<constant name="Rh1MagShMainPartDnsZLim"  value="2165*mm" />
+<constant name="Rh1MagShMainPartUpsZLim"  value="990*mm" />
+<constant name="Rh1MagShZLocationInLHCb" value="0.5*(Rh1MagShMainPartDnsZLim+Rh1MagShMainPartUpsZLim)" />
+<constant name="Rh1MagShMainPartMaxZSize" value="Rh1MagShMainPartDnsZLim-Rh1MagShMainPartUpsZLim" />
+
+<constant name="Rh1MagShZLocationInRich1SubMaster"  value="Rh1MagShZLocationInLHCb-Rh1SubMasterZ-Rich1MasterZ" />
+<!-- Outer Y limit of the Magnetic shield from the beam line -->
+<constant name="Rh1MagShMaxYLim"  value="2000*mm" />
+
+<constant name="Rh1MagShThickness" value="100.0*mm" />
+<constant name="Rh1MagShSmallThickness" value="50.0*mm" />
+<!-- Now the smallest distance of the shield from beam at upstream, except for the teeth part -->
+<constant name="Rh1MgsUpstrYlim" value="550.0*mm"  />
+<!-- Now the smallest distance of the shield from beam at downstream -->
+<constant name="Rh1MgsDnstrYlim" value="830.0*mm"  />
+<!--  Now the location where the box-box part of shield ends  -->
+<constant name="Rh1ShRUpYLim" value="Rh1MgsDnstrYlim"  />
+<!-- Now the smallest distance of the teeth part of the shield from beam -->
+<constant name="Rh1MgsTeethUpstrYLim" value="350.0*mm" />
+<!-- Now the bottom on the side plates. -->
+<constant name="Rh1MgsSideYLim" value="280.0*mm" />
+<constant name="Rh1MgsSideZMidLim"  value="1760.0*mm" />
+<constant name="Rh1MgsSideYTolerence" value="1.0*mm" />
+<constant name="Rh1MgsSideZTolerence" value="1.0*mm" />
+<constant name="Rh1MgsUpstreamYTolerence" value="1.0*mm" />
+<!-- Now the cut at the top of the two sides to help with -->
+<!--     hpd installation.   -->
+<!--   This cut is commented out in the logvol creation for RUN3 for now  SE 2020 -->
+
+<constant name="Rh1MgsSideTopCutYLim" value="1600*mm" />
+<constant name="Rh1MgsSideTopCutZBeg" value="1577.5*mm" />
+<constant name="Rh1MgsSideTopCutZEnd" value="1977.5*mm" />
+<constant name="Rh1MgsSideTopCutXTolerence" value="80.0*mm" />
+<!-- Now the edge towards middle of Rich1 in Z. This is 100 mm away in Y from the -->
+<!--     smallest distance from the beam pipe.                                    -->
+<!--   This is point 8 in the drawings from Trevor                                -->
+<!--   Modified for RUN3 by reducing the size of the midshelf at dns by shifting the  Rh1MgsMidEdgeZ  -->
+<!-- <constant name="Rh1MgsMidEdgeZ" value="1990.0*mm" />   -->
+<!-- This is futher modified after consulting Mike McCann and Christoph Frei to 1810 mm in Feb2021 -->
+
+<constant name="Rh1MgsMidEdgeY" value="930.0*mm" />
+
+<constant name="Rh1MgsMidEdgeZ" value="1810.0*mm" />
+<!--  The corner piece inside the box-box part of the shield. -->
+<!--  This is point 4 in the drawings from Trevor   -->
+<constant name="Rh1MgsCornerEdgeY" value="1350.0*mm" />
+<constant name="Rh1MgsCornerEdgeZ" value="1140.0*mm" />
+<!--The following value of 100 already uses the above info 1140 mm since the
+   thickness is 1140 - (990+50) = 100 mm   -->
+
+<constant name="Rh1MgsCornerThickness" value="100.0*mm" />
+<constant name="Rh1ShRDnstrSubBoxYTolerence" value="2.0*mm" />
+<constant name="Rh1ShRDnstrSubBoxZTolerence" value="10.0*mm" />
+<constant name="Rh1MgsCornerXTolerence" value="0.5*mm" />
+<constant name="Rh1MgsCornerYTolerence" value="1.0*mm" />
+<constant name="Rh1MgsCornerZTolerence" value="1.0*mm" />
+<constant name="Rh1MgsCornerDnsZTolerence" value="10.0*mm" />
+<constant name="Rh1MgsCornerDnsYTolerence" value="10.0*mm" />
+<!-- Now for the part of Rich1 shield above and below TT.
+   The following is point 13 from the drawings of Trevor.  -->
+<constant name="Rh1MgsDnsTTYP13Lim" value="1800.0*mm" />
+<constant name="Rh1MgsDnsTTYAddOnYThickness"  value="200*mm" />
+<constant name="Rh1MgsDnsTTZLim" value="2610.0*mm" />
+<constant name="Rh1MgsDnsTTXTolerence" value="1.0*mm" />
+<constant name="Rh1MgsDnsTTYTolerence" value="2.0*mm" />
+<constant name="Rh1MgsDnsTTZTolerence" value="2.0*mm" />
+<constant name="Rh1MgsMidPartYTolerence" value="2.0*mm" />
+<constant name="Rh1MgsMidPartZTolerence" value="2.0*mm" />
+<!-- Now for the drawings of the Teeth part upstream .
+  Point 1,2, 3 and 4 on the shield teeth drawings from Trevor.
+  Use the convention that positive X goes to the left. -->
+<constant name="Rh1MgsTeethYTolerence" value="2.0*mm" />
+<constant name="Rh1MgsTeethP1CornerX" value="900.0*mm" />
+<constant name="Rh1MgsTeethP2CornerX" value="800.0*mm" />
+<constant name="Rh1MgsTeethP3CornerX" value="410.0*mm" />
+<constant name="Rh1MgsTeethP4CornerX" value="150.0*mm" />
+<!--  Now for the derived parameters  -->
+<!-- For the teeth part at the upstream.
+   Each Teeth is a trapizoid - box. The trapozoid is
+   defined by points 2,3,4 in the diagram of Trevor for the Teeth.
+   The box is subtracted from the oblique side of the trapizoid
+   which is farthest from the nominal beampipe.
+   The teeth part on the four quadrants have the same shape, but
+   positioned with the appropriate rotations and translations.
+   The box boolean subtracted from the teeth part has its dimensions set
+   a large value which is 10 meters. -->
+
+<constant name="Rh1MgsDnsTTYLim" value="Rh1MgsDnsTTYP13Lim-Rh1MgsDnsTTYAddOnYThickness" />
+<constant name="Rh1MgsTeethP1P2MidX" value="0.5*(Rh1MgsTeethP1CornerX+Rh1MgsTeethP2CornerX)" />
+<constant name="Rh1MgsTeethP2P3MidX" value="0.5*(Rh1MgsTeethP2CornerX+Rh1MgsTeethP3CornerX)" />
+
+<constant name="Rh1MgsTeethP1CornerY" value="Rh1MgsUpstrYlim-Rh1MgsTeethYTolerence" />
+<constant name="Rh1MgsTeethP2CornerY" value="Rh1MgsTeethUpstrYLim" />
+<constant name="Rh1MgsTeethP3CornerY" value="Rh1MgsTeethUpstrYLim" />
+<constant name="Rh1MgsTeethP4CornerY" value="Rh1MgsUpstrYlim-Rh1MgsTeethYTolerence" />
+<constant name="Rh1MgsTeethZThickness" value="Rh1MagShSmallThickness" />
+<constant name="Rh1MgsTeethP1P2MidY" value="0.5*(Rh1MgsTeethP1CornerY+Rh1MgsTeethP2CornerY)" />
+<constant name="Rh1MgsTeethTrapY1Size" value="Rh1MgsTeethP2CornerX-Rh1MgsTeethP3CornerX" />
+<constant name="Rh1MgsTeethTrapY2Size" value="Rh1MgsTeethTrapY1Size+2.0*(Rh1MgsTeethP3CornerX-Rh1MgsTeethP4CornerX)" />
+<constant name="Rh1MgsTeethTrapX1Size" value="Rh1MgsTeethZThickness" />
+<constant name="Rh1MgsTeethTrapX2Size" value="Rh1MgsTeethZThickness" />
+<constant name="Rh1MgsTeethTrapZSize" value="Rh1MgsTeethP1CornerY-Rh1MgsTeethP2CornerY" />
+<constant name="Rh1MgsTeethSubBoxXLargeSize" value="10.0*m"  />
+<constant name="Rh1MgsTeethSubBoxYLargeSize" value="10.0*m"  />
+<constant name="Rh1MgsTeethSubBoxZLargeSize" value="10.0*m"  />
+<constant name="Rh1MgsTeethP1ToP2Y" value="Rh1MgsTeethP1CornerX-Rh1MgsTeethP2CornerX" />
+<constant name="Rh1MgsTeethP1ToP2X" value="Rh1MgsTeethP1CornerY-Rh1MgsTeethP2CornerY" />
+<constant name="Rh1MgsTeethP1P2Tilt" value="(atan(Rh1MgsTeethP1ToP2Y/Rh1MgsTeethP1ToP2X))*rad" />
+<constant name="Rh1MgsTeethSubBoxRotX" value="-1.0*Rh1MgsTeethP1P2Tilt" />
+<constant name="Rh1MgsTeethSubBoxYShift" value="((Rh1MgsTeethP2CornerX-Rh1MgsTeethP2P3MidX
+                                                  +0.5*Rh1MgsTeethSubBoxYLargeSize )/cos(Rh1MgsTeethSubBoxRotX))" />
+<!-- Now to position the four teeths.   first the Z rot , then the X rot followed by the translations  -->
+<constant name="Rh1MgsTeethXQ0" value="Rh1MgsTeethP2P3MidX" />
+<constant name="Rh1MgsTeethYQ0" value="Rh1MgsTeethP1P2MidY" />
+<constant name="Rh1MgsTeethZQ0" value="Rh1MagShMainPartUpsZLim+0.5*Rh1MgsTeethZThickness-Rh1SubMasterZ-Rich1MasterZ" />
+<constant name="Rh1MgsTeethRotZQ0" value="-(pi/2.0)*rad" />
+<constant name="Rh1MgsTeethRotXQ0" value="-(pi/2.0)*rad" />
+<constant name="Rh1MgsTeethXQ1" value="Rh1MgsTeethXQ0" />
+<constant name="Rh1MgsTeethYQ1" value="-1.0*Rh1MgsTeethYQ0" />
+<constant name="Rh1MgsTeethZQ1" value="Rh1MgsTeethZQ0" />
+<constant name="Rh1MgsTeethRotZQ1" value="-(pi/2.0)*rad" />
+<constant name="Rh1MgsTeethRotXQ1" value="(pi/2.0)*rad" />
+
+<constant name="Rh1MgsTeethXQ2" value="-1.0*Rh1MgsTeethXQ0"  />
+<constant name="Rh1MgsTeethYQ2" value="-1.0*Rh1MgsTeethYQ0" />
+<constant name="Rh1MgsTeethZQ2" value="Rh1MgsTeethZQ0" />
+<constant name="Rh1MgsTeethRotZQ2" value="(pi/2.0)*rad" />
+<constant name="Rh1MgsTeethRotXQ2" value="(pi/2.0)*rad" />
+
+<constant name="Rh1MgsTeethXQ3" value="-1.0*Rh1MgsTeethXQ0"  />
+<constant name="Rh1MgsTeethYQ3" value="Rh1MgsTeethYQ0" />
+<constant name="Rh1MgsTeethZQ3" value="Rh1MgsTeethZQ0" />
+<constant name="Rh1MgsTeethRotZQ3" value="(pi/2.0)*rad" />
+<constant name="Rh1MgsTeethRotXQ3" value="-(pi/2.0)*rad" />
+
+
+<!-- For the big box-box part at the Y extremes
+    This is actually box-box for getting the shell of
+    a box. Then there are two more box subtractions of large boxes on the
+    sides to get the cut where the hpds are moved in and out -->
+
+<constant name="Rh1MgsOuterBoxXSize" value="Rh1SubMasterXSize"  />
+<constant name="Rh1MgsOuterBoxYSize" value="Rh1MagShMaxYLim-Rh1ShRUpYLim"  />
+<constant name="Rh1MgsOuterBoxZSize" value="Rh1MagShMainPartMaxZSize"  />
+<constant name="Rh1MgsInnerBoxXSize" value="Rh1MgsOuterBoxXSize-2*Rh1MagShThickness"  />
+<!-- Make the following YSixe a large value for boolean subtraction -->
+<constant name="Rh1MgsInnerBoxYSize" value="Rh1SubMasterYSize"  />
+<constant name="Rh1MgsInnerBoxZSize" value="Rh1MagShMainPartMaxZSize-Rh1MagShSmallThickness-Rh1MagShThickness"  />
+
+
+<constant name="Rh1MgsOuterBoxY"     value="Rh1ShRUpYLim+0.5*Rh1MgsOuterBoxYSize"  />
+<constant name="Rh1MgsOuterBoxYH0"   value="Rh1MgsOuterBoxY"  />
+<constant name="Rh1MgsOuterBoxYH1"   value="-1.0*Rh1MgsOuterBoxY"  />
+<constant name="Rh1MgsInnerBoxY"     value="0.5*(Rh1MgsOuterBoxYSize-Rh1MgsInnerBoxYSize)-Rh1MagShThickness"  />
+<constant name="Rh1MgsInnerBoxYH0"   value="Rh1MgsInnerBoxY"  />
+<constant name="Rh1MgsInnerBoxYH1"   value="-1.0*Rh1MgsInnerBoxY"  />
+<constant name="Rh1MgsInnerBoxZ"     value="0.5*(Rh1MagShSmallThickness-Rh1MagShThickness)" />
+<constant name="Rh1MgsTopCutLargeBoxLargeXSize" value="10.0*m" />
+<constant name="Rh1MgsTopCutLargeBoxLargeYSize" value="10.0*m" />
+<constant name="Rh1MgsTopCutLargeBoxZSize" value="Rh1MgsSideTopCutZEnd-Rh1MgsSideTopCutZBeg" />
+<constant name="Rh1MgsTopCutLargeBoxX" value="0.5*Rh1MgsOuterBoxXSize-Rh1MagShThickness-Rh1MgsSideTopCutXTolerence+0.5*Rh1MgsTopCutLargeBoxLargeXSize" />
+<constant name="Rh1MgsTopCutLargeBoxY" value="Rh1MgsSideTopCutYLim-Rh1MgsOuterBoxY+0.5*Rh1MgsTopCutLargeBoxLargeYSize" />
+<constant name="Rh1MgsTopCutLargeBoxZ" value="0.5*(Rh1MgsSideTopCutZEnd+Rh1MgsSideTopCutZBeg)- Rh1MagShZLocationInLHCb" />
+<constant name="Rh1MgsTopCutLargeBoxXQ0" value="Rh1MgsTopCutLargeBoxX" />
+<constant name="Rh1MgsTopCutLargeBoxXQ1" value="Rh1MgsTopCutLargeBoxX" />
+<constant name="Rh1MgsTopCutLargeBoxXQ2" value="-1.0*Rh1MgsTopCutLargeBoxX" />
+<constant name="Rh1MgsTopCutLargeBoxXQ3" value="-1.0*Rh1MgsTopCutLargeBoxX" />
+<constant name="Rh1MgsTopCutLargeBoxYQ0" value="Rh1MgsTopCutLargeBoxY" />
+<constant name="Rh1MgsTopCutLargeBoxYQ1" value="-1.0*Rh1MgsTopCutLargeBoxY" />
+<constant name="Rh1MgsTopCutLargeBoxYQ2" value="-1.0*Rh1MgsTopCutLargeBoxY" />
+<constant name="Rh1MgsTopCutLargeBoxYQ3" value="Rh1MgsTopCutLargeBoxY" />
+
+
+<!-- Now for the upstream part  -->
+<constant name="Rh1MgsUpstrBoxXSize" value="Rh1MgsOuterBoxXSize"   />
+<constant name="Rh1MgsUpstrBoxYSize" value="Rh1ShRUpYLim-Rh1MgsUpstrYlim-Rh1MgsUpstreamYTolerence"   />
+<constant name="Rh1MgsUpstrBoxZSize" value="Rh1MagShSmallThickness"   />
+<constant name="Rh1MgsUpstrBoxY" value="Rh1MgsUpstrYlim+0.5*Rh1MgsUpstrBoxYSize"   />
+<constant name="Rh1MgsUpstrBoxYH0" value="Rh1MgsUpstrBoxY"   />
+<constant name="Rh1MgsUpstrBoxYH1" value="-1.0*Rh1MgsUpstrBoxY"   />
+<constant name="Rh1MgsUpstrBoxZ" value="Rh1MagShMainPartUpsZLim+0.5*Rh1MgsUpstrBoxZSize-Rh1SubMasterZ-Rich1MasterZ"   />
+<!-- Now for the part downstream of the Rich1SubMaster and above and below TT . It is placed in
+     Rich1Master. It has a box cut out. Hence it is a box-box.  -->
+<constant name="Rh1MgsDnsTTXSize" value="Rh1MgsOuterBoxXSize-Rh1MgsDnsTTXTolerence" />
+<constant name="Rh1MgsDnsTTYSize" value="Rh1MagShMaxYLim-Rh1MgsDnsTTYLim-Rh1MgsDnsTTYTolerence" />
+<constant name="Rh1MgsDnsTTZSize"  value="Rh1MgsDnsTTZLim-Rh1MagShMainPartDnsZLim-Rh1MgsDnsTTZTolerence" />
+<constant name="Rh1MgsDnsTTY"  value="Rh1MgsDnsTTYLim+0.5*Rh1MgsDnsTTYSize" />
+<constant name="Rh1MgsDnsTTYH0" value="Rh1MgsDnsTTY" />
+<constant name="Rh1MgsDnsTTYH1" value="-1.0*Rh1MgsDnsTTY" />
+<constant name="Rh1MgsDnsTTZ"  value="Rh1MagShMainPartDnsZLim+Rh1MgsDnsTTZTolerence+0.5*Rh1MgsDnsTTZSize-Rich1MasterZ" />
+<constant name="Rh1MgsDnsTTInnerSubBoxLargeXSize" value="10.0*m"  />
+<constant name="Rh1MgsDnsTTInnerSubBoxLargeYSize" value="10.0*m"  />
+<!--
+<constant name="Rh1MgsDnsTTInnerSubBoxZSize" value="Rh1MgsDnsTTZSize-Rh1MagShThickness" />
+-->
+<constant name="Rh1MgsDnsTTInnerSubBoxLargeZSize" value="10.0*m" />
+<constant name="Rh1MgsDnsTTInnerSubBoxYShift" value="-0.5*(Rh1MgsDnsTTYSize+Rh1MgsDnsTTInnerSubBoxLargeYSize)+Rh1MgsDnsTTYAddOnYThickness" />
+<constant name="Rh1MgsDnsTTInnerSubBoxZShift"  value="0.5*Rh1MgsDnsTTZSize-Rh1MagShThickness-0.5*Rh1MgsDnsTTInnerSubBoxLargeZSize" />
+<constant name="Rh1MgsDnsTTInnerSubBoxYShiftH0" value="Rh1MgsDnsTTInnerSubBoxYShift" />
+<constant name="Rh1MgsDnsTTInnerSubBoxYShiftH1" value="-1.0*Rh1MgsDnsTTInnerSubBoxYShift" />
+<!-- Now for the part going towards the middle of Rich1.  -->
+<constant name="Rh1MgsMidPartBoxXSize"   value="Rh1MgsOuterBoxXSize-2.0*Rh1MagShThickness"  />
+<constant name="Rh1MgsMidPartBoxYSize"   value="Rh1MagShThickness" />
+<constant name="Rh1MgsMidPartBoxZSize"   value="Rh1MagShMainPartDnsZLim-Rh1MagShThickness-Rh1MgsMidPartZTolerence-Rh1MgsMidEdgeZ" />
+<constant name="Rh1MgsMidPartBoxY"  value="Rh1MgsDnstrYlim+0.5*Rh1MgsMidPartBoxYSize-Rh1SubMasterY-Rich1MasterY" />
+<constant name="Rh1MgsMidPartBoxYH0" value="Rh1MgsMidPartBoxY" />
+<constant name="Rh1MgsMidPartBoxYH1" value="-1.0*Rh1MgsMidPartBoxY" />
+<constant name="Rh1MgsMidPartBoxZ" value="Rh1MagShMainPartDnsZLim-Rh1MagShThickness-Rh1MgsMidPartZTolerence-0.5*Rh1MgsMidPartBoxZSize-Rh1SubMasterZ-Rich1MasterZ" />
+
+<!-- Now for the subtraction of the midpart from Magsh -->
+<constant name="Rh1MgsSubMidPartYPlaneTop" value="Rh1MgsDnstrYlim+Rh1MgsMidPartBoxYSize+4.0*Rh1MgsMidPartYTolerence-Rh1SubMasterY-Rich1MasterY" />
+<constant name="Rh1MgsSubMidPartYPlaneBot" value="-1.0*Rh1MgsSubMidPartYPlaneTop" />
+<constant name="Rh1MgsSubMidPartZPlane"  value="Rh1MgsMidPartBoxZ-0.5*Rh1MgsMidPartBoxZSize-4.0*Rh1MgsMidPartZTolerence" />
+
+
+<!--  Now for the boxes at the Sides on the left extreme and the right extreme. subtract a
+      trapozoid fromt his box to get the shape at the places nearest to middle of the detector. -->
+
+<constant name="Rh1MgsSideBoxXSize"  value="Rh1MagShThickness" />
+<constant name="Rh1MgsSideBoxYSize"  value="Rh1ShRUpYLim-Rh1MgsSideYLim-Rh1MgsSideYTolerence" />
+<constant name="Rh1MgsSideBoxZSize"  value="Rh1MagShMainPartMaxZSize-Rh1MagShSmallThickness-Rh1MgsSideZTolerence" />
+<constant name="Rh1MgsSideZLargeSize" value="5.0*m"  />
+<constant name="Rh1MgsSideSubTrapX1LargeSize" value="5.0*m" />
+<constant name="Rh1MgsSideSubTrapX2LargeSize" value="5.0*m" />
+<constant name="Rh1MgsSideSubTrapY2SmallSize" value= "100.0*mm" />
+<constant name="Rh1MgsSideSubTrapY1Size" value= "Rh1MgsSideSubTrapY2SmallSize+
+                                2.0*(Rh1MgsUpstrYlim-Rh1MgsSideYLim)*
+                                Rh1MgsSideZLargeSize/(Rh1MgsSideZMidLim-Rh1MagShMainPartUpsZLim+Rh1MagShSmallThickness)" />
+<constant name="Rh1MgsSideSubTrapY" value="-0.5*(Rh1MgsSideBoxYSize+Rh1MgsSideSubTrapY2SmallSize)" />
+<constant name="Rh1MgsSideSubTrapZ" value="0.5*Rh1MgsSideBoxZSize-(Rh1MagShMainPartDnsZLim-Rh1MgsSideZMidLim)-0.5*Rh1MgsSideZLargeSize" />
+<constant name="Rh1MgsSideBoxX"  value="0.5*(Rh1MgsOuterBoxXSize-Rh1MgsSideBoxXSize)" />
+<constant name="Rh1MgsSideBoxXQ0" value="Rh1MgsSideBoxX" />
+<constant name="Rh1MgsSideBoxXQ1" value="Rh1MgsSideBoxX" />
+<constant name="Rh1MgsSideBoxXQ2" value="-1.0*Rh1MgsSideBoxX" />
+<constant name="Rh1MgsSideBoxXQ3" value="-1.0*Rh1MgsSideBoxX" />
+<constant name="Rh1MgsSideBoxY"   value="Rh1MgsSideYLim+0.5*Rh1MgsSideBoxYSize"  />
+<constant name="Rh1MgsSideBoxYQ0"   value="Rh1MgsSideBoxY" />
+<constant name="Rh1MgsSideBoxYQ1"   value="-1.0*Rh1MgsSideBoxY" />
+<constant name="Rh1MgsSideBoxYQ2"   value="-1.0*Rh1MgsSideBoxY" />
+<constant name="Rh1MgsSideBoxYQ3"   value="Rh1MgsSideBoxY" />
+<constant name="Rh1MgsSideBoxZ"     value="Rh1MagShMainPartUpsZLim+Rh1MagShSmallThickness+Rh1MgsSideZTolerence+0.5*Rh1MgsSideBoxZSize-Rh1SubMasterZ-Rich1MasterZ" />
+<constant name="Rh1MgsSideBoxRotZQ0" value="0.0*rad" />
+<constant name="Rh1MgsSideBoxRotZQ1" value="pi*rad" />
+<constant name="Rh1MgsSideBoxRotZQ2" value="pi*rad" />
+<constant name="Rh1MgsSideBoxRotZQ3" value="0.0*rad" />
+<!-- Now for the corner pieces at the upstream end. These are simple boxes.-->
+<constant name="Rh1MgsCornerXSize" value="Rh1MgsOuterBoxXSize-2.0*Rh1MagShThickness-Rh1MgsCornerXTolerence" />
+
+<constant name="Rh1MgsCornerYSize" value="Rh1MagShMaxYLim-Rh1MagShThickness-Rh1MgsCornerEdgeY-Rh1MgsCornerYTolerence" />
+
+<constant name="Rh1MgsCornerZSize" value="Rh1MgsCornerThickness-Rh1MgsCornerZTolerence" />
+<constant name="Rh1MgsCornerY"     value="Rh1MgsCornerEdgeY+0.5*Rh1MgsCornerYSize-Rh1SubMasterY-Rich1MasterY" />
+<constant name="Rh1MgsCornerYH0"  value="Rh1MgsCornerY" />
+<constant name="Rh1MgsCornerYH1"  value="-1.0*Rh1MgsCornerY" />
+<constant name="Rh1MgsCornerZ"  value="Rh1MagShMainPartUpsZLim+Rh1MagShSmallThickness+Rh1MgsCornerZTolerence+
+                                        0.5*Rh1MgsCornerZSize-Rh1SubMasterZ-Rich1MasterZ" />
+
+<!-- Now for the subtraction of the corner piece from Magsh vol  -->
+<constant name="Rh1SubMgsCornerDnsPlaneZ" value = "Rh1MgsCornerZ+0.5*Rh1MgsCornerZSize+5.0*Rh1MgsCornerZTolerence" />
+<constant name="Rh1SubMgsCornerPlaneTopY" value = "Rh1MgsCornerEdgeY - 5.0*Rh1MgsCornerYTolerence-Rh1SubMasterY-Rich1MasterY" />
+<constant name="Rh1SubMgsCornerPlaneBotY"  value ="-1.0*Rh1SubMgsCornerPlaneTopY" />
+
+<!--  Now for the region inside the shield which has the photodetector support frame -->
+<!-- This is a trapizioid - box at the Ylimit fartherest from beamline  to match the shape of the  -->
+<!--     Magnetic shield. A second box is subtracted at  downstream to avoid the part of the shielding  -->
+<!--     with shelf. The upstream part of the box is just after the iron piece which is at the   -->
+<!--    upstream top corner in the top half and the upstream bottom corner for the bottom half.-->
+<!--     A third box is subtracted to avoid any overlap with the corner pieces of the shield.-->
+<!--     The tapizoid starts at mid point of 3 and 4  and passes through the mid point of 8 and 9   -->
+<!--     in the drawing of Trevor.(except for the tolerence values of these shield pieces. )  -->
+
+<constant name="Rh1ShRTrapXSize" value="Rh1SubMasterXSize-2.0*Rh1MagShThickness" />
+<constant name="Rh1ShRTrapX1Size" value="Rh1ShRTrapXSize" />
+<constant name="Rh1ShRTrapX2Size" value="Rh1ShRTrapXSize" />
+
+<constant name="Rh1ShrTrapYShiftTolerenceFromP3P4" value="75.0*mm" />
+<constant name="Rh1ShrTrapZShiftTolerenceFromP8P9" value="75.0*mm" />
+<constant name="Rh1ShrTrapMidOfP3P4Z" value="Rh1SubMasterUpstrZLim+Rh1MagShSmallThickness+Rh1MgsCornerZTolerence+0.5*Rh1MgsCornerThickness" />
+<constant name="Rh1ShrTrapMidOfP3P4Y" value="Rh1MgsCornerEdgeY-Rh1ShrTrapYShiftTolerenceFromP3P4" />
+<constant name="Rh1ShrTrapMidOfP8P9Z" value="Rh1MgsMidEdgeZ-Rh1ShrTrapZShiftTolerenceFromP8P9" />
+<constant name="Rh1ShrTrapMidOfP8P9Y" value="Rh1MgsMidEdgeY-0.5*Rh1MagShThickness" />
+
+
+
+
+<constant name="Rh1ShRDnZLim" value="Rh1SubMasterDnstrZLim-Rh1MagShThickness"  />
+
+<!--<constant name="Rh1ShRUpZLim" value="Rh1ExtendedSubMasterUpstrZLim + 500*mm"  /> -->
+
+<constant name="Rh1ShRUpZLim" value="Rh1SubMasterUpstrZLim + 110*mm"  />
+
+
+
+
+
+<constant name="Rh1ShRTrapZSize" value="Rh1ShRDnZLim-Rh1ShRUpZLim" />
+<constant name="Rh1ShRTrapYOuterLim"  value="0.5*Rh1SubMasterYSize-Rh1MagShThickness"  />
+<constant name="Rh1ShRTrapYDiffToMid" value="Rh1ShrTrapMidOfP3P4Y-Rh1ShrTrapMidOfP8P9Y" />
+<constant name="Rh1ShRTrapZDiffToMid" value="Rh1ShrTrapMidOfP8P9Z-Rh1ShRUpZLim" />
+<constant name="Rh1ShRTrapYDiffToTopOfMidShelf" value="Rh1ShrTrapMidOfP3P4Y-Rh1MgsMidEdgeY" />
+<constant name="Rh1ShRTrapYTotalAbsDiff" value="(Rh1ShRTrapYDiffToMid/Rh1ShRTrapZDiffToMid)*Rh1ShRTrapZSize" />
+
+
+<constant name="Rh1ShRTrapY1Tolerence" value="200.0*mm"/>
+
+
+
+<constant name="Rh1ShRTrapY1Size" value="0.5*Rh1SubMasterYSize-Rh1MagShThickness-Rh1ShRTrapY1Tolerence"  />
+<constant name="Rh1ShRTrapY2Size" value="Rh1ShRTrapY1Size+2.0*Rh1ShRTrapYTotalAbsDiff"  />
+
+
+
+<!--  Create large boxes for boolean subtractions -->
+<constant name="Rh1ShRSubBoxXSize"   value="5.0*m"  />
+<constant name="Rh1ShRSubBoxYSize"   value="5.0*m"  />
+<constant name="Rh1ShRSubBoxZSize"   value="5.0*m"  />
+
+<constant name="Rh1ShRTrapX"  value="0.0*mm"  />
+<constant name="Rh1ShRTrapY"  value="Rh1ShRTrapYOuterLim-0.5*Rh1ShRTrapY1Size"  />
+<constant name="Rh1ShRTrapZ"  value="0.5*(Rh1ShRDnZLim+Rh1ShRUpZLim)-Rh1SubMasterZ-Rich1MasterZ"  />
+
+<!--  First for the +Y most and -Y most part of the shield. -->
+<constant name="Rh1ShRTrapXH0" value="Rh1ShRTrapX"  />
+<constant name="Rh1ShRTrapYH0" value="Rh1ShRTrapY"  />
+<constant name="Rh1ShRTrapZH0"  value="Rh1ShRTrapZ"  />
+
+<constant name="Rh1ShRSubBoxXH0"  value="0.0*mm"  />
+<constant name="Rh1ShRSubBoxYH0"  value="0.5*(Rh1ShRTrapY1Size+Rh1ShRSubBoxYSize)"  />
+<constant name="Rh1ShRSubBoxZH0"  value="0.0*mm"  />
+
+<constant name="Rh1ShRTrapXH1"  value="Rh1ShRTrapX"  />
+<constant name="Rh1ShRTrapYH1"  value="-1.0*Rh1ShRTrapY"  />
+<constant name="Rh1ShRTrapZH1"  value="Rh1ShRTrapZ"  />
+<constant name="Rh1ShRSubBoxXH1"  value="Rh1ShRSubBoxXH0"  />
+<constant name="Rh1ShRSubBoxYH1"  value="-1.0*Rh1ShRSubBoxYH0"  />
+<constant name="Rh1ShRSubBoxZH1"  value="Rh1ShRSubBoxZH0"  />
+
+<!-- Now for the shelf part of shield downstream  -->
+<constant name="Rh1ShRDnstrSubBoxXSize"   value="Rh1ShRSubBoxXSize"  />
+<constant name="Rh1ShRDnstrSubBoxYSize"   value="Rh1ShRSubBoxYSize"  />
+<constant name="Rh1ShRDnstrSubBoxZSize"   value="Rh1ShRSubBoxZSize"  />
+
+<constant name="Rh1ShRDnstrSubBoxXH0"  value="0.0*mm"  />
+<constant name="Rh1ShRDnstrSubBoxYH0"  value="-0.5*Rh1ShRTrapY1Size- Rh1ShRTrapYDiffToTopOfMidShelf+Rh1ShRDnstrSubBoxYTolerence-0.5*Rh1ShRDnstrSubBoxYSize"  />
+<constant name="Rh1ShRDnstrSubBoxZH0"  value="0.5*Rh1ShRTrapZSize-(Rh1ShRDnZLim-Rh1ShrTrapMidOfP8P9Z-Rh1ShrTrapZShiftTolerenceFromP8P9)-Rh1ShRDnstrSubBoxZTolerence+0.5*Rh1ShRDnstrSubBoxZSize"  />
+<constant name="Rh1ShRDnstrSubBoxXH1"  value="Rh1ShRDnstrSubBoxXH0"  />
+<constant name="Rh1ShRDnstrSubBoxYH1"  value="-1.0*Rh1ShRDnstrSubBoxYH0"  />
+<constant name="Rh1ShRDnstrSubBoxZH1"  value="Rh1ShRDnstrSubBoxZH0"  />
+
+<!-- Now for the corner part upstream -->
+<constant name="Rh1ShRUpstrCornerSubBoxXSize"   value="Rh1ShRSubBoxXSize"  />
+<constant name="Rh1ShRUpstrCornerSubBoxYSize"   value="Rh1ShRSubBoxYSize"  />
+<constant name="Rh1ShRUpstrCornerSubBoxZSize"   value="Rh1ShRSubBoxZSize"  />
+
+<constant name="Rh1ShRUpstrCornerSubBoxXH0"  value="0.0*mm"  />
+<constant name="Rh1ShRUpstrCornerSubBoxYH0"  value ="-0.5*Rh1ShRTrapY1Size+Rh1ShrTrapYShiftTolerenceFromP3P4+0.5*Rh1ShRUpstrCornerSubBoxYSize-Rh1MgsCornerDnsYTolerence" />
+<constant name="Rh1ShRUpstrCornerSubBoxZH0"  value="-0.5*Rh1ShRTrapZSize+0.5*Rh1MgsCornerThickness-0.5*Rh1ShRUpstrCornerSubBoxZSize+Rh1MgsCornerDnsZTolerence" />
+
+<constant name="Rh1ShRUpstrCornerSubBoxXH1"  value="Rh1ShRUpstrCornerSubBoxXH0"  />
+<constant name="Rh1ShRUpstrCornerSubBoxYH1" value ="-1.0*Rh1ShRUpstrCornerSubBoxYH0" />
+<constant name="Rh1ShRUpstrCornerSubBoxZH1"  value="Rh1ShRUpstrCornerSubBoxZH0" />
+
+<!--  Now the parameters for the MagSH only - it is  Trapizoid and is  part of vertical rich1 -->
+
+<constant name="Rh1MagSVertXTolerence"  value="4.0*mm" />
+<constant name="Rh1MagSVertYTolerence"  value="4.0*mm" />
+<constant name="Rh1MagSVertZTolerence"  value="10.0*mm" />
+<constant name="Rh1MagSVertXSize"  value="Rh1MgsInnerBoxXSize-Rh1MagSVertXTolerence" />
+<constant name="Rh1MagSVertYSize"  value="0.9*(Rh1MgsOuterBoxYSize-Rh1MagShThickness)"/>
+
+<constant name="Rh1MagSVertZSize"  value="Rh1MgsInnerBoxZSize-Rh1MagSVertZTolerence " />
+
+<constant name="Rh1MagSVertZLocationInLHCb"  value="Rh1MagShMainPartDnsZLim -Rh1MagShThickness-0.5*Rh1MagSVertZTolerence-0.5*Rh1MagSVertZSize" />
+<constant name="Rh1MagSVertYShiftForQu"   value="75*mm" />
+
+
+<constant name="Rh1MagSVertYLocationInLHCb"  value="Rh1MagShMaxYLim- Rh1MagSVertYShiftForQu- Rh1MagShThickness-Rh1MagSVertYTolerence-0.5*Rh1MagSVertYSize" />
+
+
+<constant name="Rh1MagSVertSubBoxLargeXSize" value="20.0*m" />
+<constant name="Rh1MagSVertSubBoxLargeYSize" value="20.0*m" />
+<constant name="Rh1MagSVertSubBoxLargeZSize" value="20.0*m" />
+
+
+
+
+<constant name="Rh1MagSVertSubBoxXRotH0"  value="Rh1PhDetSupTopRotXH0" />
+<constant name="Rh1MagSVertSubBoxXRotH1"  value="Rh1PhDetSupBotRotXH1" />
+
+
+<constant name="Rh1MagSVertSubBoxShift"  value= "1.01*Rh1MagSVertSubBoxLargeZSize" />
+<constant name="Rh1MagSVertSubBoxH0Z"  value= "Rh1MgsCornerEdgeZ-Rh1MagSVertZLocationInLHCb-0.5*Rh1MagSVertSubBoxShift*cos(Rh1MagSVertSubBoxXRotH0)" />
+<constant name="Rh1MagSVertSubBoxH0Y"  value= "-1.0*(Rh1MgsCornerEdgeY-Rh1MagSVertYLocationInLHCb-0.5*Rh1MagSVertSubBoxShift*sin(Rh1MagSVertSubBoxXRotH0))" />
+
+<constant name="Rh1MagSVertSubBoxH1Z"  value="Rh1MagSVertSubBoxH0Z" />
+<constant name="Rh1MagSVertSubBoxH1Y"  value= "-1.0*Rh1MagSVertSubBoxH0Y" />
+
+
+
+<constant name="Rh1MagSVertYLocationTop"  value="Rh1MagSVertYLocationInLHCb-Rh1SubMasterY-Rich1MasterY" />
+<constant name="Rh1MagSVertYLocationBot" value="-1.0*Rh1MagSVertYLocationTop" />
+<constant name="Rh1MagSVertXLocation" value="0.0*mm" />
+
+
+<constant name="Rh1MagSVertZLocation"  value="Rh1MagSVertZLocationInLHCb-Rh1SubMasterZ-Rich1MasterZ"  />
+
+
+<constant name="Rh1MagSVertSubUpsCornerYTop" value="0.5*Rh1MagSVertSubBoxLargeYSize + Rh1SubMgsCornerPlaneTopY - Rh1MagSVertYLocationTop" />
+<constant name="Rh1MagSVertSubUpsCornerYBot" value="-1.0*Rh1MagSVertSubUpsCornerYTop" />
+<constant name="Rh1MagSVertSubUpsCornerZ"  value="-0.5*Rh1MagSVertSubBoxLargeZSize+Rh1SubMgsCornerDnsPlaneZ-Rh1MagSVertZLocation" />
+
+<constant name="Rh1MagSVertSubDnsMidYTop"  value="-0.5*Rh1MagSVertSubBoxLargeYSize+Rh1MgsSubMidPartYPlaneTop-Rh1MagSVertYLocationTop" />
+<constant name="Rh1MagSVertSubDnsMidYBot"  value="-1.0*Rh1MagSVertSubDnsMidYTop" />
+<constant name="Rh1MagSVertSubDnsMidZ"   value="0.5*Rh1MagSVertSubBoxLargeZSize+ Rh1MgsSubMidPartZPlane-Rh1MagSVertZLocation" />
+
+
+
+<!--  Now for the parameters derived for Brunel -->
+
+<constant name="C4F10RadiatorXMaxExtentBegin" value="0.5*Rh1SubMasterXSize-Rh1MagShThickness" />
+<constant name="C4F10RadiatorXMaxExtentEnd" value="0.5*Rh1SubMasterXSize-Rh1MagShThickness" />
+<constant name="C4F10RadiatorYMaxExtentBegin" value="Rh1MgsCornerEdgeY" />
+<constant name="C4F10RadiatorYMaxExtentEnd" value="Rh1MgsMidEdgeY" />
+<!-- End of Mag Shield Parameters  -->
+  </define>
+</lccdd>
+
+
+
+
+
+
+
+
+
+

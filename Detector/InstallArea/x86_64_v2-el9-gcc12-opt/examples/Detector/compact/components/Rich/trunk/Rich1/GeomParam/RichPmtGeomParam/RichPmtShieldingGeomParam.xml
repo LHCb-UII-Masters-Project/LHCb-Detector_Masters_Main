@@ -1,0 +1,56 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--  First version:   12-02-2011 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for MAPMT shielding             -->
+<!--  ==========================================================================-->
+
+<!--  The long and semi plates form a cross shape (+) inside the EC. The long plate is along -->
+<!--   theEC X axis and the two semi plates are along the   -->
+<!--      EC Y axis. The long plate is located at x=0, y==0 in the EC. -->
+<!-- The semi plates are at +Y and -Y wrt the EC center.  -->
+
+<lccdd>
+  <define>
+
+
+<constant name ="RhPMTShieldingPlateThickness"  value="0.9*mm" />
+
+<constant name ="RhPMTShieldingPlateFullLengthSize"  value="RhStdECRXSize-2.0*RhPMTMasterGapToStdECREdge" />
+<constant name ="RhPMTShieldingPlateGapTolerence"  value="0.4*mm" />
+
+<constant name ="RhPMTShieldingPlateSemiLengthSize"  value="0.5*(RhPMTShieldingPlateFullLengthSize - RhPMTShieldingPlateThickness-RhPMTShieldingPlateGapTolerence)" />
+
+<constant name ="RhPMTShieldingPlateZSize"   value="12.0*mm" />
+
+<constant name ="RhPMTShieldingPlateZProtrusionFromPmt" value="10.0*mm" />
+
+
+<constant name ="RhPMTQuartzZEdgeInEC" value="RhPMTMasterZLocationInECR-0.5*(RhPMTMasterZSize)+RhPMTEndToQuartzOuterSurface "/>
+
+<constant name ="RhPMTShieldingPlateZLocation" value="RhPMTQuartzZEdgeInEC-RhPMTShieldingPlateZProtrusionFromPmt+0.5*RhPMTShieldingPlateZSize"/>
+<constant name ="RhPMTShieldingSemiPlateZLocation"  value="RhPMTShieldingPlateZLocation"  />
+
+
+<constant name ="RhPMTShieldingLongPlateXSize"   value="RhPMTShieldingPlateFullLengthSize" />
+<constant name ="RhPMTShieldingLongPlateYSize"   value="RhPMTShieldingPlateThickness" />
+
+
+<constant name ="RhPMTShieldingLongPlateXLocation"  value="0.0*mm" />
+<constant name ="RhPMTShieldingLongPlateYLocation"  value="0.0*mm" /> 
+
+<constant name ="RhPMTShieldingSemiPlateXSize"  value="RhPMTShieldingPlateThickness" />
+<constant name ="RhPMTShieldingSemiPlateYSize"  value="RhPMTShieldingPlateSemiLengthSize" />
+ 
+<constant name ="RhPMTShieldingSemiPlateXLocation" value="0.0*mm" />
+<constant name ="RhPMTShieldingSemiPlateYLocationTop" value="0.5*(RhPMTShieldingPlateSemiLengthSize+RhPMTShieldingPlateGapTolerence+RhPMTShieldingPlateThickness)" />
+<constant name ="RhPMTShieldingSemiPlateYLocationBottom" value="-1.0*RhPMTShieldingSemiPlateYLocationTop" />
+
+  </define>
+</lccdd>

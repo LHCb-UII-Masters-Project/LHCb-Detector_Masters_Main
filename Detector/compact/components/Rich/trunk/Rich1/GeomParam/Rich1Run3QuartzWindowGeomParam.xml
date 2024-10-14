@@ -1,0 +1,97 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- this file contains the geometry parameters      -->
+<!--      for Rich1 Quartz Window.  It has the shape of a Box and is kept  -->  
+<!--      in the lvRich1MagShH0 (Top) and  lvRich1MagShH1(Bottom) .  -->
+<!--      The one on the TopHalf is labelled H0 and the              -->
+<!--      one at the  BottomHalf is Labelled H1.    -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+<constant name="Rh1QuartzWindowZSize" value="6.0*mm"   />
+<constant name="Rh1QuartzWindowXSizeTolerence" value="100.0*mm"  />
+<constant name="Rh1QuartzWPlaneX"  value="0.0*mm"   />
+
+<!--
+ The location of the plane as defined in Rh1QuartzWPlaneY
+  and Rh1QuartzWPlaneZ etc  are the upstream surface of the
+ Quartz window plane.
+ The old amount of shift made is 15 mm along the Z axis of the phdet supframe
+ which is same as the the nominal direction of the axis of each hpd.
+ This would have given the Plane location as Y=1161.4-15*cos(atan(500/260))=1161.4-6.9=1154.5
+   and Z= 1457.3-15*sin(atan(500/260))=1457.3-13.5 =1443.8
+
+ March 2009
+ The survey orientations of of HPDs are not the nominal directions anymore.
+ But the quartz window is kept at the nominal direction, but shift from the
+ PhDet support frame is increased to avoid overlaps with the PHdet support frame.
+ The new shift is 40 mm along Z axis of the ph det frame.
+
+ A further shift of 50 mm along the plane of the hpds to towards the beampipe direction is
+ also applied so that the quartz window plane is matched to the Ph DetSupframe area.
+ When the survey position of Quartz window available, they may be used.
+
+ This gives the plane location as Y = 1161.4-40*cos(atan(500/260))-50*sin(atan(500/260)) = 1161.4 - 62.82 =1098.6
+ and Z = 1457.2 - 40*sin(atan(500/260))+ 50*cos(atan(500/260)) =  1457.2 -12.43 =1444.7
+
+ For upgrade the quatz plate is moved towards the  phdet by (1423+Yextrashift-1182.75) along Y and
+ (1616- Zextra shift -1491.125) along Z
+
+
+-->
+<constant name="Rh1QuartzWPlaneDirCosY"  value="Rh1PhDetTopPlaneDirCosY"  />
+<constant name="Rh1QuartzWPlaneDirCosZ"  value="Rh1PhDetTopPlaneDirCosZ" />
+
+<constant name="Rh1QuartzWPlaneUpgradeShiftY" value= "Rh1PhDetTopPlaneY-1182.75*mm" />
+<constant name="Rh1QuartzWPlaneUpgradeShiftZ" value= "Rh1PhDetTopPlaneZ-1491.125*mm" />
+<!--
+ The following value to be reviewed
+<constant name="Rh1QuartzWPlaneUpgradeShiftAlongQWPlane" value= "-75.0*mm" />
+-->
+<constant name="Rh1QuartzWPlaneUpgradeShiftAlongQWPlane" value= "55.0*mm" />
+
+<constant name="Rh1QuartzWPlaneUpgradeShiftYAlongQWPlane" value="Rh1QuartzWPlaneUpgradeShiftAlongQWPlane*Rh1QuartzWPlaneDirCosZ" />
+<constant name="Rh1QuartzWPlaneUpgradeShiftZAlongQWPlane" value="-Rh1QuartzWPlaneUpgradeShiftAlongQWPlane*Rh1QuartzWPlaneDirCosY" />
+
+<constant name="Rh1QuartzWPlaneUpgradeShiftAlongPmtAxis" value= "-300.0*mm" />
+
+<constant name="Rh1QuartzWPlaneUpgradeShiftYAlongPmtAxis" value="Rh1QuartzWPlaneUpgradeShiftAlongPmtAxis*Rh1QuartzWPlaneDirCosY" />
+<constant name="Rh1QuartzWPlaneUpgradeShiftZAlongPmtAxis" value="Rh1QuartzWPlaneUpgradeShiftAlongPmtAxis*Rh1QuartzWPlaneDirCosZ" />
+
+<constant name="Rh1QuartzWPlaneY"  value="1098.6*mm+Rh1QuartzWPlaneUpgradeShiftY+Rh1QuartzWPlaneUpgradeShiftYAlongPmtAxis+Rh1QuartzWPlaneUpgradeShiftYAlongQWPlane"   />
+<constant name="Rh1QuartzWPlaneZ"  value="1444.7*mm+Rh1QuartzWPlaneUpgradeShiftZ+Rh1QuartzWPlaneUpgradeShiftZAlongPmtAxis+Rh1QuartzWPlaneUpgradeShiftZAlongQWPlane"   />
+
+<!-- The following two param are the reduction in the size of the quartz window as it moved from near the
+     Pmt plane to the flat mirror. The X size was bigger than the det plane size to begin with. So now it is made to be a smaller size to
+     be compatible with the size of the flat mirror size projection . -->
+
+
+<constant name="Rh1QuartzWindowReduceSizeX" value="200.0*mm" />
+<constant name="Rh1QuartzWindowReduceSizeY" value="20.0*mm" />
+
+
+<!--  Now for the derived parameters  -->
+  <constant name="Rh1QuartzWPlaneVertTilt" value="Rh1PhDetTopVertTilt" />
+
+ <constant name="Rh1QuartzWRotXH0" value="-1.0*Rh1QuartzWPlaneVertTilt"  />
+ <constant name="Rh1QuartzWRotXH1" value="Rh1QuartzWPlaneVertTilt"  />
+
+<constant name="Rh1QuartzWindowXSize" value= "Rh1MgsOuterBoxXSize-2.0*Rh1MagShThickness-Rh1QuartzWindowXSizeTolerence-Rh1QuartzWindowReduceSizeX"  />
+<constant name="Rh1QuartzWindowYSize" value="820.0*mm - Rh1QuartzWindowReduceSizeY "   />
+<constant name="Rh1QuartzWindowX"  value="Rh1QuartzWPlaneX-Rh1MagSVertXLocation"  />
+<constant name="Rh1QuartzWindowY"  value="Rh1QuartzWPlaneY+0.5*Rh1QuartzWindowZSize*sin(Rh1QuartzWPlaneVertTilt)"   />
+<constant name="Rh1QuartzWindowYH0" value="Rh1QuartzWindowY-Rh1MagSVertYLocationTop-Rh1SubMasterY-Rich1MasterY"  />
+<constant name="Rh1QuartzWindowYH1" value="-1.0*Rh1QuartzWindowY-Rh1MagSVertYLocationBot-Rh1SubMasterY-Rich1MasterY"  />
+<constant name="Rh1QuartzWindowZ"  value="Rh1QuartzWPlaneZ+0.5*Rh1QuartzWindowZSize*cos(Rh1QuartzWPlaneVertTilt)-Rh1MagSVertZLocation-Rh1SubMasterZ-Rich1MasterZ"  />
+
+  </define>
+</lccdd>

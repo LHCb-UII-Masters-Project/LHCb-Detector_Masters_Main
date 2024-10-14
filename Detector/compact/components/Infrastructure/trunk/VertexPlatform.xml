@@ -1,0 +1,195 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<lccdd>
+
+  <define>
+    <!-- lhbtvm_0001-vAA.plt -->
+    <constant name="VertexPlateformxPos" value="-790*mm"/>
+    <constant name="VertexPlateformyPos" value="-2074.5*mm"/>
+    <constant name="VertexPlateformzPos" value="340*mm"/>
+
+    <constant name="LegLength" value="250.0*mm"/>
+    <constant name="LegWidth" value="140.0*mm"/>
+    <constant name="LegHeight" value="1200.0*mm"/>
+
+    <constant name="SupportDirectVeloLengthTall" value="1325.0*mm"/>
+    <constant name="SupportDirectVeloLengthSmall" value="1270.0*mm"/>
+    <constant name="SupportDirectVeloWidth" value="115.0*mm"/>
+    <constant name="SupportDirectVeloHeight" value="80.0*mm"/>
+  </define>
+
+  <detectors>
+    <detector name="VertexPlatform" type="DD4hep_VolumeAssembly" parent="${VertexPlatform:parent}">
+      <!--  the main volume , you can add any component you need-->
+      <envelope name="lvVertexPlateform" material="Infrastructure:Steel" vis="Infrastructure:VertexPlatformVis">
+        <shape name="VertexPlatform" type="BooleanShape" operation="union">
+
+          <!--   ** Background  **  -->
+          <shape type="BooleanShape" operation="union" name="VextexSupport">
+            <shape type="Box" name="Support1"
+                   dx="0.5*1550*mm"                 dy="0.5*10*mm"                 dz="0.5*250*mm"/>
+
+            <shape type="Box" name="LeftBoxHigh"
+                   dx="0.5*240*mm"                  dy="0.5*150*mm"                dz="0.5*15*mm"/>
+            <position x="-775*mm"                   y="75*mm"                      z="125*mm"/>
+
+            <shape type="Box" name="LeftBoxBottom"
+                   dx="0.5*240*mm"                  dy="0.5*15*mm"                 dz="0.5*250*mm"/>
+            <position x="-775*mm"                   y="0*mm"                       z="0*mm"/>
+
+            <shape type="Box" name="RightBoxHigh"
+                   dx="0.5*240*mm"                  dy="0.5*150*mm"                dz="0.5*15*mm"/>
+            <position x="775*mm"                    y="75*mm"                      z="125*mm"/>
+
+            <shape type="Box" name="RightBoxBottom"
+                   dx="0.5*240*mm"                  dy="0.5*15*mm"                 dz="0.5*250*mm"/>
+            <position x="775*mm"                    y="0*mm"                       z="0*mm"/>
+
+            <shape type="Box" name="LeftBoxExternal"
+                   dx="0.5*15*mm"                   dy="0.5*150*mm"                dz="0.5*240*mm"/>
+            <position x="887.5*mm"                  y="75*mm"                      z="0*mm"/>
+            <rotation y="180*degree"/>
+
+            <shape type="Box" name="LeftBoxInternal"
+                   dx="0.5*15*mm"                   dy="0.5*150*mm"                dz="0.5*240*mm"/>
+            <position x="662.5*mm"                  y="75*mm"                      z="0*mm"/>
+            <rotation y="0*degree"/>
+
+            <shape type="Box" name="LegLeft2"
+                   dx="0.5*LegLength"               dy="0.5*LegHeight"             dz="0.5*LegWidth"/>
+            <position x="-785*mm"                   y="LegHeight/2"                z="10*mm"/>
+            <rotation y="90*degree"/>
+
+            <shape type="Box" name="LegRight1"
+                   dx="0.5*LegLength"               dy="0.5*LegHeight"             dz="0.5*LegWidth"/>
+            <position x="-785*mm"                   y="LegHeight/2"                z="-1542*mm"/>
+            <rotation y="90*degree"/>
+
+          </shape>
+
+          <!--   ** Background2  **  -->
+          <shape type="BooleanShape" operation="union" name="VextexSupport2">
+
+            <shape type="Box" name="support1"
+                   dx="0.5*1550*mm"                 dy="0.5*10*mm"                 dz="0.5*250*mm"/>
+
+            <shape type="Box" name="leftBoxHigh"
+                   dx="0.5*240*mm"                  dy="0.5*150*mm"                dz="0.5*15*mm"/>
+            <position x="775*mm"                    y="75*mm"                      z="-125*mm"/>
+
+            <shape type="Box" name="leftBoxBottom"
+                   dx="0.5*240*mm"                  dy="0.5*15*mm"                 dz="0.5*250*mm"/>
+            <position x="775*mm"                    y="0*mm"                       z="0*mm"/>
+
+            <shape type="Box" name="rightBoxHigh"
+                   dx="0.5*240*mm"                  dy="0.5*150*mm"                dz="0.5*15*mm"/>
+            <position x="-775*mm"                   y="75*mm"                      z="-125*mm"/>
+
+            <shape type="Box" name="rightBoxBottom"
+                   dx="0.5*240*mm"                  dy="0.5*15*mm"                 dz="0.5*250*mm"/>
+            <position x="-775*mm"                   y="0*mm"                       z="0*mm"/>
+
+            <shape type="Box" name="leftBoxExternal"
+                   dx="0.5*15*mm"                   dy="0.5*150*mm"                dz="0.5*240*mm"/>
+            <position x="887.5*mm"                  y="75*mm"                      z="0*mm"/>
+
+            <shape type="Box" name="leftBoxInternal"
+                   dx="0.5*15*mm"                   dy="0.5*150*mm"                dz="0.5*240*mm"/>
+            <position x="662.5*mm"                  y="75*mm"                      z="0*mm"/>
+
+            <shape type="Box" name="LegLeft3"
+                   dx="0.5*LegLength"               dy="0.5*LegHeight"             dz="0.5*LegWidth"/>
+            <position x="785*mm"                    y="LegHeight/2"                z="9*mm"/>
+            <rotation y="90*degree"/>
+
+            <shape type="Box" name="LegRight2"
+                   dx="0.5*LegLength"               dy="0.5*LegHeight"             dz="0.5*LegWidth"/>
+            <position x="785*mm"                    y="LegHeight/2"                z="1499.9*mm"/>
+            <rotation y="90*degree"/>
+
+          </shape>
+
+
+          <position x="0*mm"
+                  y="0*mm"
+                  z="-1560*mm"/>
+
+          <!--   ** PipeStand  **  -->
+          <shape type="BooleanShape" operation="union" name="VextexPipeStand">
+            <shape type="Box" name="Transverse1"
+                   dx="0.5*1730*mm"                 dy="0.5*33*mm"                 dz="0.5*160*mm"/>
+
+            <shape type="Box" name="Transverse2"
+                   dx="0.5*1730*mm"                 dy="0.5*33*mm"                 dz="0.5*160*mm"/>
+            <position x="0*mm"                      y="0*mm"                       z="-1560*mm"/>
+
+          </shape>
+          <position x="780*mm"                      y="150*mm"                     z="-795*mm"/>
+          <rotation y="90*degree"/>
+
+
+          <!--   ** PipeStandup  **  -->
+          <shape type="BooleanShape" operation="union" name="VextexPipeStandup">
+            <shape type="Box" name="Transverse1up"
+                   dx="0.5*1755*mm"                 dy="0.5*190*mm"                dz="0.5*215*mm"/>
+
+            <shape type="Box" name="Transverse2up"
+                   dx="0.5*1755*mm"                 dy="0.5*30*mm"                 dz="0.5*215*mm"/>
+            <position x="0*mm"                      z="-1562.9*mm"/>
+
+            <shape type="Box" name="Transverse2upbis"
+                   dx="0.5*1755*mm"                 dy="0.5*185*mm"                dz="0.5*215*mm"/>
+            <position x="0*mm"                      z="-1562.9*mm"/>
+
+            <shape type="Box" name="Transverse3up"
+                   dx="0.5*1700*mm"                 dy="0.5*185*mm"                dz="0.5*215*mm"/>
+            <position x="-795*mm"                   z="-777.5*mm"/>
+            <rotation y="90*degree"/>
+
+            <shape type="Box" name="Transverse4up"
+                   dx="0.5*1700*mm"                 dy="0.5*185*mm"                dz="0.5*215*mm"/>
+            <position x="795*mm"                    z="-777.5*mm"/>
+            <rotation y="90*degree"/>
+
+          </shape>
+          <position x="780*mm"   y="1172*mm"   z="-795*mm"/>
+          <rotation y="90*degree"/>
+
+          <!--   ** SupportDirectVelo  **  -->
+          <shape type="BooleanShape" operation="union" name="SupportDirectVelo">
+            <shape type="Box" name="SupportDirectVelo1"
+                   dx="0.5*SupportDirectVeloLengthTall"  dy="0.5*SupportDirectVeloHeight" dz="0.5*SupportDirectVeloWidth"/>
+
+            <shape type="Box" name="SupportDirectVelo2"
+                   dx="0.5*SupportDirectVeloLengthSmall" dy="0.5*SupportDirectVeloHeight" dz="0.5*SupportDirectVeloWidth"/>
+            <position x="SupportDirectVeloLengthTall/2-SupportDirectVeloWidth/2" y="0*mm" z="SupportDirectVeloLengthSmall/2"/>
+            <rotation y="90*degree"/>
+
+            <shape type="Box" name="SupportDirectVelo3"
+                   dx="0.5*SupportDirectVeloLengthTall"  dy="0.5*SupportDirectVeloHeight" dz="0.5*SupportDirectVeloWidth"/>
+            <position x="0*mm"                           y="0*mm"                         z="1900*mm-530*mm-SupportDirectVeloWidth"/>
+
+            <shape type="Box" name="SupportDirectVelo4"
+                   dx="0.5*SupportDirectVeloLengthSmall" dy="0.5*SupportDirectVeloHeight" dz="0.5*SupportDirectVeloWidth"/>
+            <position x="-SupportDirectVeloLengthTall/2+SupportDirectVeloWidth/2" y="0*mm" z="SupportDirectVeloLengthSmall/2"/>
+            <rotation y="90*degree"/>
+          </shape>
+          <position x="-2.5*mm" y="1322*mm" z="-1394*mm"/>
+        </shape>
+      </envelope>
+
+      <position   x="VertexPlateformxPos" y="VertexPlateformyPos" z="VertexPlateformzPos"/>
+      <rotation y="-90.0*degree"/>
+
+    </detector>
+  </detectors>
+</lccdd>

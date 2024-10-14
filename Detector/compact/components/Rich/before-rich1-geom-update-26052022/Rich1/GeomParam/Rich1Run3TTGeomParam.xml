@@ -1,0 +1,44 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--                                                                            -->
+<!-- This file contains the geomety parameters for                              -->
+<!--     Rich1 TT  region. The region of the TT is subtracted                   -->
+<!--     out and the region downstream of the magnetic shield                   -->
+<!--     above TT is also subtracted out from Rich1 Master                      -->
+<!--     The box size below is kept as large value for boolean subtraction.     -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+<constant name="Rh1TTXSize"   value="4.0*Rich1MasterXSize" />
+<constant name="Rh1TTZSize"   value="4.0*m" />
+<constant name="Rh1TTCentralPartYTolerence" value="3.0*mm"  />
+<constant name="Rh1TTCentralPartYSize"   value="2.0*(Rh1MgsDnsTTYLim-Rh1TTCentralPartYTolerence)" />
+<constant name="Rh1TTPerpheralPartYSize"  value="4.0*Rich1MasterYSize" />
+
+<!-- The following hardcoded commented out value is just for info extracted from PipeGeomParams.xml -->
+<!-- <constant name="Rh1UX851Rich1TTSplitZposIP" value="2270.00*mm"/>  -->
+
+
+<constant name="Rh1UX851Rich1TTSplitZposIP" value="UX851Rich1TTSplitZposIP"/>
+
+<constant name="Rh1TTCentralPartZ"  value="Rh1UX851Rich1TTSplitZposIP-Rich1MasterZ+0.5*Rh1TTZSize" />
+<constant name="Rh1TTPeripheralPartZ"  value="Rh1MgsDnsTTZLim-Rich1MasterZ+0.5*Rh1TTZSize" />
+
+
+<constant name="Rh1TTCentralPartZInRh1SubM"  value="Rh1SubMasterDnstrZLim-Rh1SubMasterZ-Rich1MasterZ+0.5*Rh1TTZSize" />
+<constant name="Rh1TTPeripheralPartZInRh1SubM"  value="Rh1MagShMainPartDnsZLim-Rh1SubMasterZ-Rich1MasterZ+0.5*Rh1TTZSize" />
+<constant name="Rh1TTXSizeDouble" value="2.0*Rh1TTXSize" />
+<constant name="Rh1TTZSizeDouble" value="2.0*Rh1TTZSize" />
+<constant  name="Rh1TTPeripheralPartYSizeInSubMSubtr"   value= "Rh1TTCentralPartYSize-2.0*Rh1TTCentralPartYTolerence" />
+
+  </define>
+</lccdd>

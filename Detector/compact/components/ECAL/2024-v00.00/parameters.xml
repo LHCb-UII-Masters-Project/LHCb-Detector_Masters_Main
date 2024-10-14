@@ -1,0 +1,208 @@
+<lccdd>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+ <define>
+
+
+
+<!-- %%%%%%                      Ecal Basic Parameters                 %%%%%% -->
+     <constant name = "EcalTiltAngle"          value = "0.207*degree"/>
+     <constant name = "EcalYShift"             value = "-0.19*mm"/>
+
+     <constant name = "EcalXMargin"             value = "8000.0*mm"/>
+     <constant name = "EcalYMargin"             value = "50.0*mm"/>
+     <constant name = "EcalZMargin"             value = "5.0*mm"/>
+
+<!-- ##        The Basic Sizes: "EcalModXYSize", "Ecal*ModLength"          ## -->
+     <constant name = "EcalModXYSize"             value = "121.7*mm"/>
+     <constant name = "EcalInnModLength"          value = "690.0*mm"/>
+     <constant name = "EcalMidModLength"          value = "705.0*mm"/>
+     <constant name = "EcalOutModLength"          value = "705.0*mm"/>
+
+     <constant name  = "EcalTapeThick"       value = "0.1*mm"/>
+     <constant name  = "EcalModXSize"
+     		value = "EcalModXYSize+ 2*EcalTapeThick"/>
+     <constant name  = "EcalModYSize"
+                value = "EcalModXYSize + 2*EcalTapeThick"/>
+
+<!--##         For boolean operations "EcalTolerance" is used              ## -->
+     <constant name = "EcalTolerance"             value = "10*mm"/>
+<!-- %%%%%%                  Ecal Installation Parameters              %%%%%% -->
+<!-- ##     Inner Support Frame: 4 * 4 Module Sizes -  Beam Pipe Hole      ## -->
+     <constant name = "EcalSupportXSize"      value = "4*EcalModXSize"/>
+     <constant name = "EcalSupportYSize"      value = "4*EcalModYSize"/>
+     <constant name = "EcalSupportLength"     value = "825.0*mm"/>
+
+<!-- ##     Inner Section:  16 * 12 Module Sizes -  4 * 4 Module Sizes     ## -->
+     <constant name = "EcalInnXSize"        value = "16*EcalModXSize"/>
+     <constant name = "EcalInnYSize"        value = "12*EcalModYSize"/>
+
+<!-- ##    Middle Section:  32 * 20 Module Sizes - 16 * 12 Modules Sizes   ## -->
+     <constant name = "EcalMidXSize"        value = "32*EcalModXSize"/>
+     <constant name = "EcalMidYSize"        value = "20*EcalModYSize"/>
+
+<!-- ##     Outer Section:  64 * 52 Module Sizes - 32 * 20 Module Sizes    ## -->
+     <constant name = "EcalOutXSize"        value = "64*EcalModXSize"/>
+     <constant name = "EcalOutYSize"        value = "52*EcalModYSize"/>
+
+<!-- ##     Dimensions of Ecal     ## -->
+     <constant name = "EcalXSize"           value = "EcalOutXSize"/>
+     <constant name = "EcalYSize"           value = "EcalOutYSize"/>
+     <constant name = "EcalZSize"           value = "825*mm"/>
+
+<!-- ##     Ecal Modules Geometry Center Offset to the Center of ECAL      ## -->
+     <constant name = "EcalSupportOffset"   value = "0*mm"/>
+     <constant name = "EcalInnOffset"       value = "-7.5*mm"/>
+     <constant name = "EcalMidOffset"       value = "0*mm"/>
+     <constant name = "EcalOutOffset"       value = "0*mm"/>
+     <constant name = "EcalShieldOffset"    value = "-0.5*EcalMidModLength-55.0*mm"/>
+
+<!-- %%%%%%                Ecal Modules Basic Parameters               %%%%%% -->
+
+<!--  Ecal Modules consist of Stack, Front and Back Covers, ReadOut           -->
+<!--  Ecal Stack, Front and Back Covers, Read Out Geometry Centers
+                                          are offset to the Center of Modules -->
+     <constant name = "EcalStackLength"          value = "432.0*mm"/>
+     <constant name = "EcalTubeInnRadius"        value = "15.0*mm"/>
+     <constant name = "EcalTubeOutRadius"        value = "17.0*mm"/>
+
+<!-- ##                         Inner Module Parameters                    ## -->
+     <constant name = "EcalInnFrontCoverLength"  value = "23.0*mm"/>
+     <constant name = "EcalInnBackCoverLength"   value = "69.0*mm"/>
+     <constant name = "EcalInnReadOutLength"     value = "166.0*mm"/>
+     <constant name = "EcalInnReadOutX"          value = "110.7*mm"/>
+     <constant name = "EcalInnReadOutY"          value = "110.7*mm"/>
+
+     <constant name  = "EcalInnFrontCoverOffset"
+               value = "-0.5*EcalInnModLength+0.5*EcalInnFrontCoverLength"/>
+     <constant name = "EcalInnStackOffset"
+               value = "-0.5*EcalInnModLength+EcalInnFrontCoverLength+0.5*EcalStackLength"/>
+     <constant name = "EcalInnBackCoverOffset"
+               value = "0.5*EcalInnModLength-1*EcalInnReadOutLength-0.5*EcalInnBackCoverLength"/>
+     <constant name  = "EcalInnReadOutOffset"
+               value = "0.5*EcalInnModLength-0.5*EcalInnReadOutLength"/>
+
+<!-- ##                        Middle Module Parameters                    ## -->
+     <constant name = "EcalMidFrontCoverLength"  value = "23.0*mm"/>
+     <constant name = "EcalMidBackCoverLength"   value = "74.0*mm"/>
+     <constant name = "EcalMidReadOutLength"     value = "176.0*mm"/>
+
+     <constant name  = "EcalMidFrontCoverOffset"
+               value = "-0.5*EcalMidModLength+0.5*EcalMidFrontCoverLength"/>
+     <constant name = "EcalMidStackOffset"
+               value = "-0.5*EcalMidModLength+EcalMidFrontCoverLength+0.5*EcalStackLength"/>
+     <constant name = "EcalMidBackCoverOffset"
+     value = "0.5*EcalMidModLength-1*EcalMidReadOutLength-0.5*EcalMidBackCoverLength"/>
+     <constant name  = "EcalMidReadOutOffset"
+          value = "0.5*EcalMidModLength-0.5*EcalMidReadOutLength"/>
+<!-- ##                       Outer Module Parameters                      ## -->
+     <constant name = "EcalOutFrontCoverLength"  value = "23.0*mm"/>
+     <constant name = "EcalOutBackCoverLength"   value = "74.0*mm"/>
+     <constant name = "EcalOutReadOutLength"     value = "176.0*mm"/>
+
+     <constant name  = "EcalOutFrontCoverOffset"
+               value = "-0.5*EcalOutModLength+0.5*EcalOutFrontCoverLength"/>
+     <constant name = "EcalOutStackOffset"
+               value = "-0.5*EcalOutModLength+EcalOutFrontCoverLength+0.5*EcalStackLength"/>
+     <constant name = "EcalOutBackCoverOffset"
+               value = "0.5*EcalOutModLength-1*EcalOutReadOutLength-0.5*EcalOutBackCoverLength"/>
+     <constant name  = "EcalOutReadOutOffset"
+               value = "0.5*EcalOutModLength-0.5*EcalOutReadOutLength"/>
+
+<!-- %%%%%%                    Stack Basic Parameters                  %%%%%% -->
+
+<!-- ### Z Geometry ### -->
+<!-- ## Ecal Stack consist of Front and Back Steel Matrix Plates,
+     Front and Back Plastic Plates, Paper+Sc+Paper+Pb Sandwiches           ## -->
+     <constant name = "EcalSteelThick"       value = "1.0*mm"/>
+     <constant name = "EcalPlasticThick"     value = "7.0*mm"/>
+     <constant name = "EcalPbThick"          value = "2.0*mm"/>
+     <constant name = "EcalScThick"          value = "4.0*mm"/>
+     <constant name = "EcalPaperThick"       value = "0.12*mm"/>
+<!-- ## Geometry Centers of Front and Back Steel Plates,
+     Front and Back Plastic Plates, Pb and Sc Plates are offset
+                           to the Geometry Center of Ecal Stack            ## -->
+     <constant name = "EcalSteelOffset"     value = "-215.50*mm"/>
+     <constant name = "EcalPlasticOffset"   value = "-211.50*mm"/>
+     <constant name = "EcalScOffset"        value = "-205.88*mm"/>
+     <constant name = "EcalPbOffset"        value = "-202.76*mm"/>
+<!-- ### XY Geometry ### -->
+<!-- ##   Outer Module Stack is divided into  1 Outer  Cells               ## -->
+     <constant name = "EcalOutCellXYSize"  value = "121.2*mm"/>
+<!-- ## Middle Module Stack is divided into  4 Middle Cells                ## -->
+     <constant name = "EcalMidCellXYSize"  value = "EcalOutCellXYSize/2"/>
+<!-- ## Inner  Module Stack is divided into  9 Inner  Cells                ## -->
+     <constant name = "EcalInnCellXYSize"  value = "EcalOutCellXYSize/3"/>
+<!-- ## Inner  Cell is divided into 16 SubCells   ## -->
+     <constant name = "EcalInnSubCellXYSize"  value = "EcalInnCellXYSize/4"/>
+<!-- ## Middle Cell is divided into 36 SubCells   ## -->
+     <constant name = "EcalMidSubCellXYSize"  value = "EcalMidCellXYSize/6"/>
+<!-- ## Outer  Cell is divided into 64 SubCells   ## -->
+     <constant name = "EcalOutSubCellXYSize"  value = "EcalOutCellXYSize/8"/>
+<!-- ## One SubFiber goes through each SubCell    ##-->
+     <constant name = "EcalFiberRadius"       value = "0.6*mm"/>
+     <constant name = "EcalFiberHoleRadius"   value = "0.75*mm"/>
+
+     <!-- %%%%%%                BeamPlug Parameters                 %%%%%% -->
+     <constant name = "EcalBeamPlugXSize"		 value = "EcalSupportXSize"   />
+     <constant name = "EcalBeamPlugYSize"		 value = "EcalSupportYSize"   />
+     <constant name = "EcalBeamPlugZSize"		 value = "EcalSupportLength"  />
+     <constant name = "EcalDelta"		           value = "0.1*mm"             />
+
+     <constant name = "EcalBeamPlugPipeHoleZ1"	 value = "-0.5*EcalBeamPlugZSize-10.0*mm"   />
+     <constant name = "EcalBeamPlugPipeHoleZ2"	 value = "-0.5*EcalBeamPlugZSize+480.11*mm" />
+     <constant name = "EcalBeamPlugPipeHoleZ3"	 value = "EcalBeamPlugPipeHoleZ2+23.*mm"    />
+     <constant name = "EcalBeamPlugPipeHoleZ4"	 value = "EcalBeamPlugPipeHoleZ3+0.5*mm"    />
+     <constant name = "EcalBeamPlugPipeHoleZ5"	 value = "EcalBeamPlugPipeHoleZ4+216.5*mm"  />
+     <constant name = "EcalBeamPlugPipeHoleZ6"	 value = " 0.5*EcalBeamPlugZSize+10.0*mm"   />
+
+     <constant name = "EcalBeamPlugPipeHoleR1"	 value = "156.025*mm" />
+     <constant name = "EcalBeamPlugPipeHoleR2"	 value = "160.925*mm" />
+     <constant name = "EcalBeamPlugPipeHoleR3"	 value = "162.0*mm"   />
+     <constant name = "EcalBeamPlugPipeHoleR4"	 value = "191.0*mm"   />
+     <constant name = "EcalBeamPlugPipeHoleR5"	 value = "206.0*mm"   />
+     <constant name = "EcalBeamPlugPipeHoleR6"	 value = "206.0*mm"   />
+
+     <constant name = "EcalSteelSheetThick1"		 value = "22*mm"	 />
+     <constant name = "EcalSteelSheetThick2"		 value = "8*mm"	 />
+     <constant name = "EcalSteelSheetLength1"	 value = "590*mm"	 />
+     <constant name = "EcalSteelSheetLength2"	 value = "340*mm"	 />
+
+     <constant name = "EcalSteelSheetWithHoleThick1"       value = "10*mm"	 />
+     <constant name = "EcalSteelSheetWithHoleThick2"	    value = "20*mm"	 />
+     <constant name = "EcalSteelSheetWithHoleRadius1"      value = "210*mm" />
+     <constant name = "EcalSteelSheetWithHoleRadius2"	    value = "165*mm" />
+     <constant name = "EcalSteelSheetWithHoleStep1"        value = "200*mm" />
+     <constant name = "EcalSteelSheetWithHoleStep2"	    value = "210*mm" />
+
+     <constant name = "EcalShieldZSize"	     value = "1*mm"	    />
+     <constant name = "EcalCorrection"       value = "10*mm"    />
+
+     <constant name = "EcalZPosition"        value = "12520*mm" />
+
+</define>
+
+<display>
+     <vis name="vEcal:PbTiles"       alpha="1.0" r="0.0" g="0.0" b="1.0" showDaughters="true" visible="true"/>
+     <vis name="vEcal:Sc"            alpha="0.6" r="0.8" g="0.8" b="0.0" showDaughters="true" visible="true"/>
+     <vis name="vEcal:Plastic"       alpha="1.0" r="1.0" g="0.0" b="0.0" showDaughters="true" visible="true"/>
+     <vis name="vEcal:Steel"         alpha="0.0" showDaughters="true" visible="false"/>
+     <vis name="vEcal:PlasticPlate"  alpha="1.0" r="0.1" g="0.9" b="0.1" showDaughters="false" visible="true"/>
+     <vis name="vEcal:StPlate"       alpha="1.0" r="1.0" g="0.0" b="0.0" showDaughters="true"  visible="true"/>
+     <vis name="vEcal:Shield"        alpha="1.0" r="1.0" g="0.5" b="1.0" showDaughters="true" visible="true"/>
+     <vis name="vEcal:Stack"         showDaughters="true" visible="false"/>
+     <vis name="vEcal:Fiber"         alpha="1.0" r="0.8" g="0.8" b="0.0" showDaughters="true" visible="true"/>
+     <vis name="vEcal:ReadOutBox"    alpha="1.0" r="0.8" g="0.5" b="0.0" showDaughters="true" visible="true"/>
+     <vis name="vEcal:ROSteel"       alpha="1.0" r="0.8" g="0.5" b="0.0" showDaughters="true" visible="true"/>
+     <vis name="vEcal:Air"           showDaughters="true" visible="false"/>
+</display>
+
+</lccdd>

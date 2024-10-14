@@ -1,0 +1,256 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--  Original version 01-02-2011 SE                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1 Mirror2 Master and Segment Log vols.  These are for the Rich1 secondary mirrors which are -->
+<!--  spherical with large large radius of curvature and hence are almost flat. -->
+<!--  ==========================================================================-->
+
+<Rich1>
+
+
+  <volume name="lvRich1Mirror2MasterTop" material="Rich:R1RadiatorGas" vis="Rich:VisRich1Mirror2Master" >
+    <shape type="Box" name="Rich1Mirror2MasterTopBox"
+	 dx = "Rh1Mirror2MasterXSize*RhHalfSize"
+	 dy = "Rh1Mirror2MasterYSize*RhHalfSize"
+	 dz = "Rh1Mirror2MasterZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich1Mirror2MasterBot" material="Rich:R1RadiatorGas" vis="Rich:VisRich1Mirror2Master">
+   <shape type="Box"  name="Rich1Mirror2MasterBotBox"
+	 dx = "Rh1Mirror2MasterXSize*RhHalfSize"
+	 dy = "Rh1Mirror2MasterYSize*RhHalfSize"
+	 dz = "Rh1Mirror2MasterZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich1Mirror2Q0Master" material="Rich:R1RadiatorGas" vis="Rich:VisRich1Mirror2QuadrantMaster" >
+    <shape type="Box" name="Rich1Mirror2Qudrant0MasterBox"
+	 dx = "Rh1Mirror2QuadrantMasterXSize*RhHalfSize"
+	 dy = "Rh1Mirror2QuadrantMasterYSize*RhHalfSize"
+	 dz = "Rh1Mirror2QuadrantMasterZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich1Mirror2Q1Master" material="Rich:R1RadiatorGas" vis="Rich:VisRich1Mirror2QuadrantMaster" >
+    <shape type="Box" name="Rich1Mirror2Qudrant1MasterBox"
+	 dx = "Rh1Mirror2QuadrantMasterXSize*RhHalfSize"
+	 dy = "Rh1Mirror2QuadrantMasterYSize*RhHalfSize"
+	 dz = "Rh1Mirror2QuadrantMasterZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich1Mirror2Q2Master" material="Rich:R1RadiatorGas" vis="Rich:VisRich1Mirror2QuadrantMaster" >
+    <shape type="Box" name="Rich1Mirror2Qudrant2MasterBox"
+	 dx = "Rh1Mirror2QuadrantMasterXSize*RhHalfSize"
+	 dy = "Rh1Mirror2QuadrantMasterYSize*RhHalfSize"
+	 dz = "Rh1Mirror2QuadrantMasterZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich1Mirror2Q3Master" material="Rich:R1RadiatorGas" vis="Rich:VisRich1Mirror2QuadrantMaster" >
+    <shape type="Box" name="Rich1Mirror2Qudrant3MasterBox"
+	 dx = "Rh1Mirror2QuadrantMasterXSize*RhHalfSize"
+	 dy = "Rh1Mirror2QuadrantMasterYSize*RhHalfSize"
+	 dz = "Rh1Mirror2QuadrantMasterZSize*RhHalfSize" />
+
+  </volume>
+
+
+
+  <volume name="lvRich1Mirror2Seg00" material="Rich:Rich1MirrorGlassSimex"  vis="Rich:VisRich1Mirror2">
+    <shape type="Sphere" name="Rich1Mirror2Sph00"
+            rmax ="Rh1Mirror2OuterR00"
+            rmin ="Rh1Mirror2InnerR00"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart00"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi00"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart00"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta00"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg01" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph01"
+            rmax ="Rh1Mirror2OuterR01"
+            rmin ="Rh1Mirror2InnerR01"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart01"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi01"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart01"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta01"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg02" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph02"
+            rmax ="Rh1Mirror2OuterR02"
+            rmin ="Rh1Mirror2InnerR02"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart02"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi02"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart02"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta02"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg03" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph03"
+            rmax ="Rh1Mirror2OuterR03"
+            rmin ="Rh1Mirror2InnerR03"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart03"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi03"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart03"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta03"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg04" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph04"
+            rmax ="Rh1Mirror2OuterR04"
+            rmin ="Rh1Mirror2InnerR04"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart04"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi04"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart04"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta04"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg05" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph05"
+            rmax ="Rh1Mirror2OuterR05"
+            rmin ="Rh1Mirror2InnerR05"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart05"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi05"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart05"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta05"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg06" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph06"
+            rmax ="Rh1Mirror2OuterR06"
+            rmin ="Rh1Mirror2InnerR06"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart06"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi06"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart06"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta06"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg07" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph07"
+            rmax ="Rh1Mirror2OuterR07"
+            rmin ="Rh1Mirror2InnerR07"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart07"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi07"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart07"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta07"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg08" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph08"
+            rmax ="Rh1Mirror2OuterR08"
+            rmin ="Rh1Mirror2InnerR08"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart08"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi08"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart08"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta08"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg09" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph09"
+            rmax ="Rh1Mirror2OuterR09"
+            rmin ="Rh1Mirror2InnerR09"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart09"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi09"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart09"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta09"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg10" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph10"
+            rmax ="Rh1Mirror2OuterR10"
+            rmin ="Rh1Mirror2InnerR10"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart10"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi10"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart10"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta10"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg11" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph11"
+            rmax ="Rh1Mirror2OuterR11"
+            rmin ="Rh1Mirror2InnerR11"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart11"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi11"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart11"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta11"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg12" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph12"
+            rmax ="Rh1Mirror2OuterR12"
+            rmin ="Rh1Mirror2InnerR12"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart12"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi12"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart12"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta12"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg13" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph13"
+            rmax ="Rh1Mirror2OuterR13"
+            rmin ="Rh1Mirror2InnerR13"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart13"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi13"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart13"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta13"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg14" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere" name="Rich1Mirror2Sph14"
+            rmax ="Rh1Mirror2OuterR14"
+            rmin ="Rh1Mirror2InnerR14"
+            startphi ="Rh1Mirror2SinglePhiSegmentStart14"
+            deltaphi ="Rh1Mirror2SingleDeltaPhi14"
+            starttheta="Rh1Mirror2SingleThetaSegmentStart14"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta14"/>
+  </volume>
+
+
+  <volume name="lvRich1Mirror2Seg15" material="Rich:Rich1MirrorGlassSimex"   vis="Rich:VisRich1Mirror2" >
+    <shape type="Sphere"  name="Rich1Mirror2Sph15"
+            rmax ="Rh1Mirror2OuterR15"
+            rmin ="Rh1Mirror2InnerR15"
+            startphi   = "Rh1Mirror2SinglePhiSegmentStart15"
+            deltaphi   = "Rh1Mirror2SingleDeltaPhi15"
+            starttheta = "Rh1Mirror2SingleThetaSegmentStart15"
+            deltatheta = "Rh1Mirror2SingleDeltaTheta15"/>
+  </volume>
+
+  <volume name="lvRich1Mirror2SupportTop" material="Rich:Rich1Mirror2SupportMaterial"  vis="Rich:VisRich1Mirror2Support">
+    <shape type="Box" name="Rich1Mirror2SupportTopBox"
+	 dx = "Rh1Mirror2SupXSize*RhHalfSize"
+	 dy = "Rh1Mirror2SupYSize*RhHalfSize"
+	 dz = "Rh1Mirror2SupZSize*RhHalfSize"/>
+  </volume>
+  <volume  name="lvRich1Mirror2SupportBot" material="Rich:Rich1Mirror2SupportMaterial" vis="Rich:VisRich1Mirror2Support" >
+   <shape type="Box" name="Rich1Mirror2SupportBotBox"
+	 dx = "Rh1Mirror2SupXSize*RhHalfSize"
+	 dy = "Rh1Mirror2SupYSize*RhHalfSize"
+	 dz = "Rh1Mirror2SupZSize*RhHalfSize"/>
+  </volume>
+
+</Rich1>

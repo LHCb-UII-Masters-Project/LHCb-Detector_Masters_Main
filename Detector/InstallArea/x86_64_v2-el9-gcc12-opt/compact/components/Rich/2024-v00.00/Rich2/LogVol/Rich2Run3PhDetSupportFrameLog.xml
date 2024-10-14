@@ -1,0 +1,53 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Photon detector enclosure (support frame)  LogVol  definitions      -->
+<!--  ==========================================================================-->
+<!--  Here the Side0 label correspondonds to the Positive X side and            -->
+<!--  Side 1 corresponds to the Negative X side                                 -->
+<!--  The Positive X side is the A side and Negative X side is the C side       -->
+<!--  lvRich2PhDetGasEncl0 is made of Nitrogen and it contains the lvRich2PhDetPanel0 -->
+<!--   which in turn contains the arrays of photon detectors on the A Side      -->
+<!--  lvRich2PhDetGasEncl1 is made of Nitrogen and it contains the lvRich2PhDetPanel1 -->
+<!--   which in turn contains the arrays of photon detectors on the C Side      -->
+
+<Rich2>
+
+  <volume name="lvRich2PhDetGasEncl0" material="Rich:Rich2Nitrogen" vis= "Rich:VisRich2PhDetGasEncl" >
+    <shape type="Box" name="Rh2PhDetGasEnclBox0"
+      dx = "Rh2PhDetGasEnclSizeX*RhHalfSize"
+      dy = "Rh2PhDetGasEnclSizeY*RhHalfSize"
+      dz = "Rh2PhDetGasEnclSizeZ*RhHalfSize" />
+  </volume>
+
+  <volume name="lvRich2PhDetPanel0" material="Rich:Rich2Nitrogen" vis = "Rich:VisRich2PhDetPanel" >
+    <shape type="Box" name="Rh2PhDetSupBox0"
+      dx = "Rh2PDPanelSizeX*RhHalfSize"
+      dy = "Rh2PDPanelSizeY*RhHalfSize"
+      dz = "Rh2PDPanelSizeZ*RhHalfSize" />
+  </volume>
+
+
+  <volume name="lvRich2PhDetGasEncl1" material="Rich:Rich2Nitrogen" vis= "Rich:VisRich2PhDetGasEncl" >
+    <shape type="Box" name="Rh2PhDetGasEnclBox1"
+      dx = "Rh2PhDetGasEnclSizeX*RhHalfSize"
+      dy = "Rh2PhDetGasEnclSizeY*RhHalfSize"
+      dz = "Rh2PhDetGasEnclSizeZ*RhHalfSize" />
+  </volume>
+
+  <volume name="lvRich2PhDetPanel1"  material="Rich:Rich2Nitrogen" vis = "Rich:VisRich2PhDetPanel" >
+    <shape type="Box" name="Rh2PhDetSupBox1"
+      dx = "Rh2PDPanelSizeX*RhHalfSize"
+      dy = "Rh2PDPanelSizeY*RhHalfSize"
+      dz = "Rh2PDPanelSizeZ*RhHalfSize" />
+  </volume>
+
+
+</Rich2>

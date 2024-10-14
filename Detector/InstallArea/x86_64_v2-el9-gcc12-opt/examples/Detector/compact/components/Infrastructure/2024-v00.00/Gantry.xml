@@ -1,0 +1,300 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the Cavern's parameter definitions                      -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <define>
+
+    <constant name="FrontWidth"  value="600*mm"/>
+    <constant name="FrontHeight"  value="13330*mm"/>
+
+    <constant name="PortiquexPos" value="Bunker:xPos+9315*mm+FrontWidth"/>
+    <constant name="PortiqueyPos" value="0*mm"/>
+    <constant name="PortiquezPos" value="12.2*m"/>
+
+
+    <!--   LHBIG___0013 -->
+    <!--parameter name="FrontLeftxPos"  value="-9684*mm"/ -->
+    <constant name="FrontLeftxPos"  value="0*mm"/>
+    <constant name="FrontLeftzPos"  value="0*mm"/>
+
+    <constant name="FrontRightxPos"  value="FrontLeftxPos-18630*mm"/>
+    <constant name="FrontRightzPos"  value="FrontLeftzPos*mm"/>
+
+
+    <!--   LHBIG___0007    LHBIG___0006  -->
+    <constant name="FrontBeamyPos"  value="10600*mm"/>
+    <constant name="FrontBeamHeight"  value="623*mm"/>
+    <constant name="FrontBeamWidth"  value="1008*mm"/>
+    <!--parameter name="FrontBeamLength"  value="FrontLeftxPos-FrontRightxPos"/-->
+    <constant name="FrontBeamLength"  value="22162.5*mm"/>
+    <!--parameter name="FrontBeamLength"  value="19452.5*mm"/-->
+
+
+    <constant name="TopLeftxPos"  value="FrontLeftxPos+1232*mm-9315*mm"/>
+    <constant name="TopLeftzPos"  value="FrontLeftzPos+2207.4*mm"/>
+
+    <constant name="TopRightxPos"  value="FrontRightxPos-1232*mm-9315*mm"/>
+    <constant name="TopRightzPos"  value="FrontRightzPos+2207.4*mm"/>
+
+    <constant name="TopBeamyPos"  value="9971*mm"/>
+    <constant name="TopBeamHeight"  value="623*mm"/>
+    <constant name="TopBeamWidth"  value="1008*mm"/>
+    <constant name="TopBeamLength"  value="TopLeftxPos-TopRightxPos"/>
+
+    <constant name="Top2BeamHeight"  value="260*mm"/>
+
+    <!--   LHBIG___0007    LHBIG___0025  -->
+    <constant name="CrossPieceLength"  value="2528*mm"/>
+    <constant name="CrossPieceHeight"  value="300*mm"/>
+    <constant name="CrossPieceDepth"  value="275*mm"/>
+
+    <!--   LHBIG___0004  -->
+    <constant name="ExtremaBackLength"  value="4450*mm"/>
+    <constant name="MiddleBackLength"  value="4083*mm"/>
+    <constant name="BackHeight"  value="300*mm"/>
+    <constant name="BackDepth"  value="300*mm"/>
+
+
+    <constant name="VerticalHeight"  value="2375*mm"/>
+    <constant name="VerticalWidth"  value="150*mm"/>
+    <constant name="VerticalLength"  value="300*mm"/>
+  </define>
+
+
+  <detectors>
+    <detector name="Gantry" type="DD4hep_VolumeAssembly" parent="${Gantry:parent}">
+
+      <!--  the main volume , you can add any component you need  -->
+      <envelope name="lvGantry" material="Infrastructure:Steel" vis="Infrastructure:GantryVis">
+	<shape type="BooleanShape" operation="union" name="GantryAll">
+
+	  <!--   Gantry front:    -->
+	  <shape type="BooleanShape" operation="union" name="GantryWall">
+
+	    <!-- Poteau  -->
+	    <shape type="Box" name="FrontLeft"
+		   dx="0.5*FrontWidth"
+		   dy="0.5*FrontHeight"
+		   dz="0.5*FrontWidth"/>
+
+	    <shape type="Box" name="FrontRight"
+		   dx="0.5*FrontWidth"
+		   dy="0.5*FrontHeight"
+		   dz="0.5*FrontWidth"/>
+            <position x="FrontRightxPos"
+                      y="0*mm"/>
+
+	    <shape type="Box" name="TopLeft"
+		   dx="0.5*FrontWidth"
+		   dy="0.5*FrontHeight"
+		   dz="0.5*FrontWidth"/>
+            <position x="FrontLeftxPos+1232*mm"
+                      z="FrontLeftzPos+2207.4*mm"/>
+
+	    <shape type="Box" name="TopRight"
+		   dx="0.5*FrontWidth"
+		   dy="0.5*FrontHeight"
+		   dz="0.5*FrontWidth"/>
+            <position x="FrontRightxPos-1232*mm"
+                      z="FrontRightzPos+2207.4*mm"/>
+
+	    <!-- Beams  -->
+	    <shape type="Box" name="FrontBeam"
+		   dx="0.5*(22162.5*mm+FrontBeamWidth/2)"
+		   dy="0.5*FrontBeamHeight"
+		   dz="0.5*FrontBeamWidth"/>
+            <position x="-7548.75*mm"
+                      y="FrontBeamyPos/2"/>
+
+	    <shape type="Box" name="TopBeam"
+		   dx="0.5*TopBeamLength+3*FrontWidth/4"
+		   dy="0.5*FrontBeamHeight"
+		   dz="0.5*FrontBeamWidth"/>
+            <position x="FrontLeftxPos+1232*mm-TopBeamLength/2"
+                      y="TopBeamyPos/2"
+                      z="TopLeftzPos"/>
+
+	    <shape type="Box" name="TopBeam2"
+		   dx="0.5*(TopBeamLength+FrontWidth)"
+		   dy="0.5*Top2BeamHeight"
+		   dz="0.5*FrontBeamWidth"/>
+            <position x="TopLeftxPos-5*FrontBeamWidth/4"
+                      y="FrontHeight/2"
+                      z="TopLeftzPos"/>
+
+	    <!-- junctions between top and front -->
+	    <shape type="Box" name="LeftPiece"
+		   dx="0.5*ExtremaBackLength"
+		   dy="0.5*BackHeight"
+		   dz="0.5*BackDepth"/>
+	    <position x="FrontLeftxPos+1750*mm"
+		      y="FrontHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength/2"/>
+	    <rotation y="36.73*degree-90*degree"/>
+
+	    <shape type="Box" name="RightPiece"
+		   dx="0.5*ExtremaBackLength"
+		   dy="0.5*BackHeight"
+		   dz="0.5*BackDepth"/>
+	    <position x="FrontLeftxPos+1750*mm-TopBeamLength-2*FrontWidth"
+		      y="FrontHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength/2"/>
+	    <rotation y="90*degree-36.73*degree"/>
+
+	  </shape>
+
+	  <!--   Gantry back:    -->
+	  <shape type="BooleanShape" operation="union" name="Back">
+
+	    <!-- to the walls of the cavern  -->
+	    <shape type="Box" name="FrontLeft2"
+		   dx="0.5*FrontWidth"
+		   dy="0.5*FrontHeight"
+		   dz="0.5*FrontWidth"/>
+
+	    <shape type="Box" name="CentralBeam"
+		   dx="0.5*28831*mm"
+		   dy="0.5*600*mm"
+		   dz="0.5*300*mm"/>
+	    <position x="FrontLeftxPos-8770.5*mm"
+		      y="FrontHeight/2"
+		      z="TopLeftzPos+MiddleBackLength"/>
+
+	    <shape type="Box" name="CentralShelf"
+		   dx="0.5*26540*mm"
+		   dy="0.5*600*mm"
+		   dz="0.5*1750*mm"/>
+	    <position x="FrontLeftxPos-8770.5*mm"
+		      y="FrontHeight/2"
+		      z="TopLeftzPos+MiddleBackLength+1175*mm"/>
+
+	    <!-- junctions between top and front -->
+	    <shape type="Box" name="LeftCrossPiece"
+		   dx="0.5*CrossPieceLength"
+		   dy="0.5*CrossPieceHeight"
+		   dz="0.5*CrossPieceDepth"/>
+            <position x="FrontLeftxPos+561.6*mm-FrontWidth/4"
+                      y="FrontHeight/2-CrossPieceHeight"
+                      z="FrontLeftzPos+1103.7*mm"/>
+            <rotation y="-58.9*degree"/>
+
+	    <shape type="Box" name="RightCrossPiece"
+		   dx="0.5*CrossPieceLength"
+		   dy="0.5*CrossPieceHeight"
+		   dz="0.5*CrossPieceDepth"/>
+            <position x="FrontRightxPos-561.6*mm+FrontWidth/4"
+                      y="FrontHeight/2-CrossPieceHeight"
+                      z="FrontRightzPos+1103.7*mm"/>
+            <rotation y="58.9*degree"/>
+
+
+	    <shape type="Box" name="MiddleCrossPiece"
+		   dx="0.5*1950*mm"
+		   dy="0.5*300*mm"
+		   dz="0.5*277.7*mm"/>
+            <position x="FrontLeftxPos-9315*mm"
+                      y="FrontBeamyPos/2+3*FrontWidth/4"
+                      z="FrontBeamWidth"/>
+            <rotation y="90*degree"
+                      x="-34.7*degree"/>
+
+
+	    <!-- junctions between top and back -->
+	    <shape type="Box" name="MiddleLeftPiece"
+		   dx="0.5*MiddleBackLength"
+		   dy="0.5*BackHeight"
+		   dz="0.5*BackDepth"/>
+	    <position x="FrontLeftxPos-11815*mm"
+		      y="FrontHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength/2"/>
+	    <rotation y="90*degree"/>
+
+	    <shape type="Box" name="MiddleRightPiece"
+		   dx="0.5*MiddleBackLength"
+		   dy="0.5*BackHeight"
+		   dz="0.5*BackDepth"/>
+	    <position x="FrontLeftxPos-6815*mm"
+		      y="FrontHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength/2"/>
+	    <rotation y="90*degree"/>
+
+
+	    <!-- to the walls of the cavern  -->
+	    <shape type="Box" name="vertical1"
+		   dx="0.5*VerticalLength"
+		   dy="0.5*VerticalHeight"
+		   dz="0.5*VerticalWidth"/>
+	    <position x="FrontLeftxPos+3125*mm"
+		      y="FrontHeight/2+VerticalHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength"/>
+	    <rotation y="90*degree"/>
+
+	    <shape type="Box" name="vertical2"
+		   dx="0.5*VerticalLength"
+		   dy="0.5*VerticalHeight"
+		   dz="0.5*VerticalWidth"/>
+	    <position x="FrontLeftxPos+3125*mm-5000*mm"
+		      y="FrontHeight/2+VerticalHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength"/>
+	    <rotation y="90*degree"/>
+
+
+	    <shape type="Box" name="vertical3"
+		   dx="0.5*VerticalLength"
+		   dy="0.5*VerticalHeight"
+		   dz="0.5*VerticalWidth"/>
+	    <position x="FrontLeftxPos-6875*mm"
+		      y="FrontHeight/2+VerticalHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength"/>
+	    <rotation y="90*degree"/>
+
+
+	    <shape type="Box" name="vertical4"
+		   dx="0.5*VerticalLength"
+		   dy="0.5*VerticalHeight"
+		   dz="0.5*VerticalWidth"/>
+	    <position x="FrontLeftxPos-11875*mm"
+		      y="FrontHeight/2+VerticalHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength"/>
+	    <rotation y="90*degree"/>
+
+
+	    <shape type="Box" name="vertical5"
+		   dx="0.5*VerticalLength"
+		   dy="0.5*VerticalHeight"
+		   dz="0.5*VerticalWidth"/>
+	    <position x="FrontLeftxPos-16875*mm"
+		      y="FrontHeight/2+VerticalHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength"/>
+	    <rotation y="90*degree"/>
+
+	    <shape type="Box" name="vertical6"
+		   dx="0.5*VerticalLength"
+		   dy="0.5*VerticalHeight"
+		   dz="0.5*VerticalWidth"/>
+	    <position x="FrontLeftxPos-21875*mm"
+		      y="FrontHeight/2+VerticalHeight/2"
+		      z="TopLeftzPos+ExtremaBackLength"/>
+	    <rotation y="90*degree"/>
+	  </shape>
+
+	  <position y="100*mm"/>
+	</shape>
+      </envelope>
+      <position x = "PortiquexPos"  y = "PortiqueyPos"  z = "PortiquezPos"/>
+
+    </detector>
+  </detectors>
+
+</lccdd>

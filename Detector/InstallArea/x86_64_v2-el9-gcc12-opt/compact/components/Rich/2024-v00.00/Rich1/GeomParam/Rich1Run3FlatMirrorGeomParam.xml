@@ -1,0 +1,813 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!-- Modif on 12-04-2023 by Sajan Easo based on survey measurements             -->
+<!--  ==========================================================================-->
+
+<!-- This file has the geometry parameters for Rich1 Flat Mirror  -->
+<!--   Begin   Rich1MirrorGeomParameters     -->
+<!--  This is for the Vertical Rich1.            -->
+<!-- Mirror2: There is four per each quadrant. The Cherenkov photons normally
+     get reflected first from Mirror1 and then from Mirror2.
+     The mirror2 is a set of spherical segments with
+     large radii of curvature.
+     In the default arrangement they are kept in such way that all the segments have the
+     same orientation in LHCb. This means that the lines from the center of each segment
+     the corresponding Center of curvature are parallel lines.  August 2005.
+     Each mirror is set as a separate logical volume so that it can has its own radius
+     of curvature. The quadrant numbering scheme is changed in March 2008 to match that
+     of the primary mirrors of Rich1.
+
+     April 2013: The tilt of the flat mirror is kept to zero for the optimized RICH1.
+   -->
+
+<!--   The mirror quadrants are named   0 1  when looking along  -->
+<!--                                    3 2  the positive Z axis -->
+<!--  Hence all the 4 mirror sectors        Q0             Q1
+      are when looking downstream
+      along positive Z axis                       beam
+
+                                            Q3             Q2
+
+       The Mirror2 copy numbers for the G4 physical volume are as follows.
+       Looking downstream from the interaction point along positive Z axis:
+
+            C0   C1                 C2      C3
+
+     R0     0      1                 4       5    R0
+               Q0                       Q1             H0   (top)
+     R1     2      3                 6       7    R1
+
+             A side        beam     C side
+
+    R2      8     9                 12      13    R2
+               Q3                       Q2             H1 (bottom)
+    R3      10    11                14      15    R3
+
+
+
+
+     These correspond to the hardware mirror numbering in the edms notes
+      857711 and 857321 as follows.  (This was for run1 and run2 ).
+
+       Software      Hardware
+        0             21
+        1             19
+        2             23
+        3             24
+
+        4             17
+        5             14
+        6             18
+        7             15
+
+
+        8             06
+        9             05
+       10             01
+       11             02
+
+
+       12             12
+       13             09
+       14             13
+       15             07
+
+
+
+      The Mirror1 is a set of spherical segments and Mirror2 is also a set of spherical segments.
+      There are 16 logical volumes for mirror2.
+      There a logical volume for the mirror2 support panel which is a box. It is placed in
+      two physical volumes, one above the beam pipe and one below the beam pipe.
+      The copy numbers of the mirror2 support panels are
+
+        H0 (top)   0
+
+        beam
+
+        H1 (bottom) 1
+
+      The Top mirror2 segments are inside a master volume made of c4f10 in the shape of a box.
+      The bottom  mirror2 segments are inside a master volume made of c4f10 in the shape of a box.
+      Survey measurments as used in EDMS document 860274 and 857711 and message from D.Websdale on
+      September 21-2007 and info from F. Metlica are used as input.
+      Modified in August 2008 after the survey by Dave Websdale.
+      SE.
+
+   In 2023, using the survey from Marco Adinolfi et.al., the mirror tilts are modified from 12-April-2023. With this the
+   Left and right quadrants have slghtly different tilt. This is accomodated by rotating the corresponding mirror segments
+   by these small amounts. The main parts of the tilt for the top/bottom are implemeted in the corresponding mirror master volumes.
+   In 2023 the correspondence between hardware and software quadrants:
+       Software Q0 = TA = top A side
+                Q1 = TC  = top C side
+                Q2 = BC = bottom C side
+                Q3 = BA = bottom A side
+
+
+   In 2023 Mirror hardware and software numbers
+
+   In software :
+
+       The Mirror2 copy numbers for the G4 physical volume are as follows.
+       Looking downstream from the interaction point along positive Z axis:
+
+            C0   C1                 C2      C3
+
+     R0     0      1                 4       5    R0
+               Q0                       Q1             H0   (top)
+     R1     2      3                 6       7    R1
+
+             A side        beam     C side
+
+    R2      8     9                 12      13    R2
+               Q3                       Q2             H1 (bottom)
+    R3      10    11                14      15    R3
+
+
+
+In hardware
+  (using EDMS 2607404 )
+
+        Looking upstream from muon chamber towards the interaction point
+             42   52  74  88     Top
+             81   62  70  86
+
+     C side         beam      A side
+
+             54   64  77  44
+             49   58  82  83
+
+      Correspondance
+        0    88
+        1    74
+        2    86
+        3    70
+        4    52
+        5    42
+        6    62
+        7    81
+        8    44
+        9    77
+       10    83
+       11    82
+       12    64
+       13    54
+       14    58
+       15    49
+
+   In this file the RICH2 Mirror survey parameters are reversed to nominal parameters, pending tests on RICH alignment.
+   However this has the new structures so that it is compatible with the version with the survey parameters.
+   July29-2023.
+ -->
+<lccdd>
+  <define>
+
+
+
+   <constant name="Rh1Mirror2SingleXSize" value="370.0*mm"   />
+   <constant name="Rh1Mirror2SingleYSize" value="440.0*mm"   />
+   <constant name="Rh1Mirror2ZSize" value="6.0*mm"   />
+
+   <constant name="Rh1Mirror2TopVertTilt" value="0.25656*rad" />
+
+   <constant name="Rh1Mirror2BotVertTilt" value="Rh1Mirror2TopVertTilt" />
+   <constant name="Rh1Mirror2TopHorizTilt" value="0.0*rad" />
+   <constant name="Rh1Mirror2BotHorizTilt" value="0.0*rad" />
+
+   <!-- The following are nominal values -->
+    <constant name="Rh1Mirror2VertTilt"  value= "Rh1Mirror2TopVertTilt" />
+    <constant name="Rh1Mirror2InnerR"  value="1000.0*m"  />
+   <!-- End of nominal values -->
+   <!-- From the 2021 survey the changes to the tilts in the four quadrants -->
+   <!-- Reference EDMS 2643842                     -->
+   <!-- In this version it is reversed back to nominal parameters -->
+<!--
+    <constant name="Rh1Mirror2Q0TopVertAuxTilt" value="0.00003*rad " />
+    <constant name="Rh1Mirror2Q1TopVertAuxTilt" value="0.00033*rad " />
+    <constant name="Rh1Mirror2Q2BotVertAuxTilt" value="-0.00001*rad " />
+    <constant name="Rh1Mirror2Q3BotVertAuxTilt" value="0.00084*rad " />
+-->
+
+    <constant name="Rh1Mirror2Q0TopVertAuxTilt" value="0.0*rad " />
+    <constant name="Rh1Mirror2Q1TopVertAuxTilt" value="0.0*rad " />
+    <constant name="Rh1Mirror2Q2BotVertAuxTilt" value="0.0*rad " />
+    <constant name="Rh1Mirror2Q3BotVertAuxTilt" value="0.0*rad " />
+
+
+   <!-- Gap between adjacent  mirror2 segments -->
+    <constant name="Rh1Mirror2XNetGap"  value="3.0*mm"    />
+    <constant name="Rh1Mirror2YNetGap"  value="3.0*mm"    />
+   <!-- Gap between the mirror and the Rh1mirro2master on the downstream side and bottom edge -->
+    <constant name="Rh1Mirror2ToMasterDnsSurfGap" value="2.0*mm" />
+   <!-- <constant name="Rh1Mirror2ToMasterLocalYGap" value="6.0*mm" /> -->
+    <constant name="Rh1Mirror2ToMasterLocalYGap" value="7.0*mm" />
+    <constant name="Rh1Mirror2ToQuadrantMasterLocalYGap" value="6.0*mm" />
+
+   <!-- Y and Z of bottom edge of reflecting surface wrt the LHCborigin.      -->
+
+   <constant name="Rh1Mirror2BotCornerOfTopMirrLHCbY" value="337.89575*mm"  />
+   <constant name="Rh1Mirror2BotCornerOfTopMirrLHCbZ" value="1323.30699*mm"  />
+
+   <constant name="Rh1Mirror2TopCornerOfBotMirrLHCbY" value="-1.0*Rh1Mirror2BotCornerOfTopMirrLHCbY"  />
+   <constant name="Rh1Mirror2TopCornerOfBotMirrLHCbZ" value="Rh1Mirror2BotCornerOfTopMirrLHCbZ"  />
+
+     <!-- The following two lines can be removed in the future -->
+    <constant name="Rh1Mirror2BotCornerLHCbY" value= "Rh1Mirror2BotCornerOfTopMirrLHCbY" />  <!-- Kept for backward compatibility with TopMirrValue -->
+    <constant name="Rh1Mirror2BotCornerLHCbZ" value= "Rh1Mirror2BotCornerOfTopMirrLHCbZ" /> <!-- Kept for backward compatibility with TopMirrValue -->
+
+
+
+   <constant name = "Rh1NumberOfMirror2Segments"  value="16" />
+   <constant name = "Rh1NumberOfMirror2SegmentsInaHalf" value="8" />
+   <constant name = "Rh1NumMirror2SegmentsInaQuadrant" value="4" />
+   <constant name = "Rh1NumMirror2ColInAQuad" value="2" />
+   <constant name = "Rh1NumMirror2RowInAQuad" value="2" />
+   <constant name = "Rh1Mirror2NumRows" value="2" />
+   <constant name = "Rh1Mirror2NumColumns" value="4" />
+   <constant name = "Rh1NumberOfMirror2Systems" value="2" />
+   <constant name = "Rh1NumberOfMirror2Quadrants" value="4" />
+
+
+  <constant name="Rh1Mirror2MasterXSize" value="1500.0*mm" />
+  <constant name="Rh1Mirror2MasterYSize" value="892.0*mm" />
+  <constant name="Rh1Mirror2MasterZSize" value="15.0*mm" />
+
+  <constant name="Rh1Mirror2QuadrantMasterXSize" value="748.0*mm" />
+  <constant name="Rh1Mirror2QuadrantMasterYSize" value="890.0*mm" />
+  <constant name="Rh1Mirror2QuadrantMasterZSize" value="11.0*mm" />
+  <constant name="Rh1Mirror2QuadrantMasterXGap"  value="2.0*mm" />
+  <constant name="Rh1Mirror2QuadrantMasterYGap"  value="2.0*mm" />
+  <constant name="Rh1Mirror2SegmentXGapInQuadrant" value="0.5*(Rh1Mirror2XNetGap-Rh1Mirror2QuadrantMasterXGap)" />
+  <constant name="Rh1Mirror2SegmentYGapInQuadrant" value="0.5*(Rh1Mirror2YNetGap-Rh1Mirror2QuadrantMasterYGap)" />
+
+ <constant name="Rh1Mirror2Quadrant0MasterXPos" value="0.5*(Rh1Mirror2QuadrantMasterXSize+Rh1Mirror2QuadrantMasterXGap)" />
+ <constant name="Rh1Mirror2Quadrant1MasterXPos" value="-1.0*Rh1Mirror2Quadrant0MasterXPos" />
+ <constant name="Rh1Mirror2Quadrant2MasterXPos" value="Rh1Mirror2Quadrant1MasterXPos" />
+ <constant name="Rh1Mirror2Quadrant3MasterXPos" value="Rh1Mirror2Quadrant0MasterXPos" />
+
+ <constant name="Rh1Mirror2Quadrant0MasterYPos" value="0.0*mm" />
+ <constant name="Rh1Mirror2Quadrant1MasterYPos" value="0.0*mm" />
+ <constant name="Rh1Mirror2Quadrant2MasterYPos" value="0.0*mm" />
+ <constant name="Rh1Mirror2Quadrant3MasterYPos" value="0.0*mm" />
+
+ <constant name="Rh1Mirror2Quadrant0MasterZPos" value="0.0*mm" />
+ <constant name="Rh1Mirror2Quadrant1MasterZPos" value="0.0*mm" />
+ <constant name="Rh1Mirror2Quadrant2MasterZPos" value="0.0*mm" />
+ <constant name="Rh1Mirror2Quadrant3MasterZPos" value="0.0*mm" />
+
+  <constant name="Rh1Mirror2Q0MasterXRot" value="Rh1Mirror2Q0TopVertAuxTilt"/>
+  <constant name="Rh1Mirror2Q1MasterXRot" value="Rh1Mirror2Q1TopVertAuxTilt" />
+  <constant name="Rh1Mirror2Q2MasterXRot" value="Rh1Mirror2Q3BotVertAuxTilt" />
+  <constant name="Rh1Mirror2Q3MasterXRot" value="Rh1Mirror2Q3BotVertAuxTilt" />
+
+
+  <constant name="Rh1Mirror2MasterShiftInLocalZ" value="0.5*Rh1Mirror2MasterZSize-Rh1Mirror2ToMasterDnsSurfGap" /> -->
+  <!-- <constant name="Rh1Mirror2MasterShiftInLocalZ" value="0.5*Rh1Mirror2MasterZSize" /> -->
+  <constant name="Rh1Mirror2MasterShiftInLocalY" value="-Rh1Mirror2ToMasterLocalYGap + 0.5*Rh1Mirror2MasterYSize" />
+  <constant name="Rh1Mirror2QudrantMasterShiftInLocalY" value="-Rh1Mirror2ToQuadrantMasterLocalYGap+ (0.5*Rh1Mirror2QuadrantMasterYSize)" />
+
+  <constant name="Rh1Mirror2MasterTopVertTilt"   value="Rh1Mirror2TopVertTilt" />
+  <constant name="Rh1Mirror2MasterBotVertTilt"   value="Rh1Mirror2BotVertTilt" />
+  <constant name="Rh1Mirror2MasterTopXRot"      value="-1.0*Rh1Mirror2MasterTopVertTilt" />
+  <constant name="Rh1Mirror2MasterBotXRot"      value="Rh1Mirror2MasterBotVertTilt" />
+  <constant name="Rh1Mirror2MasterTopYRot"      value="-1.0*Rh1Mirror2TopHorizTilt" />
+  <constant name="Rh1Mirror2MasterBotYRot"      value="Rh1Mirror2BotHorizTilt" />
+
+
+  <constant name="Rh1Mirror2MasterTopXLocationInLHCb" value="0.0*mm" />
+  <constant name="Rh1Mirror2MasterTopYLocationInLHCb" value="Rh1Mirror2BotCornerOfTopMirrLHCbY + Rh1Mirror2MasterShiftInLocalY*cos(-1.0*Rh1Mirror2MasterTopXRot)+ Rh1Mirror2MasterShiftInLocalZ*sin(-1.0*Rh1Mirror2MasterTopXRot)" />
+  <constant name="Rh1Mirror2MasterTopZLocationInLHCb" value="Rh1Mirror2BotCornerOfTopMirrLHCbZ - Rh1Mirror2MasterShiftInLocalY*sin(-1.0*Rh1Mirror2MasterTopXRot)+ Rh1Mirror2MasterShiftInLocalZ*cos(-1.0*Rh1Mirror2MasterTopXRot)" />
+
+
+  <constant name="Rh1Mirror2MasterBotXLocationInLHCb" value="0.0*mm" />
+  <constant name="Rh1Mirror2MasterBotYLocationInLHCb" value="Rh1Mirror2TopCornerOfBotMirrLHCbY + (-1.0* Rh1Mirror2MasterShiftInLocalY)*cos(-1.0*Rh1Mirror2MasterBotXRot) +  Rh1Mirror2MasterShiftInLocalZ*sin(-1.0*Rh1Mirror2MasterBotXRot)" />
+  <constant name="Rh1Mirror2MasterBotZLocationInLHCb" value="Rh1Mirror2TopCornerOfBotMirrLHCbZ - (-1.0*Rh1Mirror2MasterShiftInLocalY)*sin(-1.0*Rh1Mirror2MasterBotXRot) +  Rh1Mirror2MasterShiftInLocalZ*cos(-1.0*Rh1Mirror2MasterBotXRot)" />
+
+
+  <constant name="Rh1Mirror2MasterTopXLocation" value="Rh1Mirror2MasterTopXLocationInLHCb-Rich1MasterX-Rh1SubMasterX" />
+  <constant name="Rh1Mirror2MasterTopYLocation" value="Rh1Mirror2MasterTopYLocationInLHCb-Rich1MasterY-Rh1SubMasterY" />
+  <constant name="Rh1Mirror2MasterTopZLocation" value="Rh1Mirror2MasterTopZLocationInLHCb-Rich1MasterZ-Rh1SubMasterZ" />
+  <constant name="Rh1Mirror2MasterBotXLocation" value="Rh1Mirror2MasterBotXLocationInLHCb-Rich1MasterX-Rh1SubMasterX" />
+  <constant name="Rh1Mirror2MasterBotYLocation" value="Rh1Mirror2MasterBotYLocationInLHCb-Rich1MasterY-Rh1SubMasterY" />
+  <constant name="Rh1Mirror2MasterBotZLocation" value="Rh1Mirror2MasterBotZLocationInLHCb-Rich1MasterZ-Rh1SubMasterZ" />
+
+
+<!-- end of Rich1Mirror2Master definition -->
+
+
+ <!--  Now for Rich1 Mirror2 Support Panel. -->
+ <!-- The following locations are extracted from EDMS document 860274 page 7.
+     The sizes are approximate only -->
+
+  <constant name="Rh1Mirror2SupXSize" value="1200.0*mm"  />
+  <constant name="Rh1Mirror2SupYSize" value="600.0*mm"  />
+  <constant name="Rh1Mirror2SupZSize" value="25.0*mm"  />
+
+<!-- The following two parameters for the support plate are not used but kept here for info. This
+   gap gives the constraint on how much the Rh1Mirror2master can rotate without causing overlaps with the support plate. -->
+
+  <constant name="Rh1Mirror2SupGapFromMirror2" value="30.0*mm"  />
+  <constant name="Rh1Mirror2SupShiftInLocalY" value="-20.0*mm" />
+
+
+<!-- The following parameters for the support plate are from Survey measurements. -->
+
+
+  <constant name="Rh1Mirror2SupXLocation" value="Rh1Mirror2MasterTopXLocation" />
+  <constant name= "Rh1Mirror2SupTotalShiftFromMirror2" value="Rh1Mirror2SupGapFromMirror2+0.5*(Rh1Mirror2SupZSize+Rh1Mirror2MasterZSize)" />
+  <constant name="Rh1Mirror2SupYTopLocation" value="Rh1Mirror2MasterTopYLocation- Rh1Mirror2SupTotalShiftFromMirror2*cos( Rh1Mirror2MasterTopVertTilt )" />
+  <constant name="Rh1Mirror2SupZTopLocation" value="Rh1Mirror2MasterTopZLocation- Rh1Mirror2SupTotalShiftFromMirror2*sin( Rh1Mirror2MasterTopVertTilt )" />
+  <constant name="Rh1Mirror2SupYBotLocation" value="Rh1Mirror2MasterBotYLocation+ Rh1Mirror2SupTotalShiftFromMirror2*cos( Rh1Mirror2MasterTopVertTilt )" />
+  <constant name="Rh1Mirror2SupZBotLocation" value="Rh1Mirror2MasterBotZLocation- Rh1Mirror2SupTotalShiftFromMirror2*sin( Rh1Mirror2MasterTopVertTilt )" />
+
+
+  <constant name="Rh1Mirror2SupTopXRot" value="Rh1Mirror2MasterTopXRot" />
+  <constant name="Rh1Mirror2SupBotXRot" value="Rh1Mirror2MasterBotXRot" />
+  <constant name="Rh1Mirror2SupTopYRot" value="Rh1Mirror2MasterTopYRot" />
+  <constant name="Rh1Mirror2SupBotYRot" value="Rh1Mirror2MasterBotYRot" />
+
+<!--  Now start  the parameters for the actual mirrors  -->
+<!--   The following replaced in April 2023 by the measurements listed in EDMS 2416059-v1 -->
+<!--  In this version the ROC is reversed back to old nominal values July29-2023-->
+
+  <constant name="Rh1Mirror2InnerR00" value="778.3*m" />
+  <constant name="Rh1Mirror2InnerR01" value="1813.3*m" />
+  <constant name="Rh1Mirror2InnerR02" value="1564.9*m" />
+  <constant name="Rh1Mirror2InnerR03" value="1722.2*m" />
+  <constant name="Rh1Mirror2InnerR04" value="1564.9*m" />
+  <constant name="Rh1Mirror2InnerR05" value="712.7*m" />
+  <constant name="Rh1Mirror2InnerR06" value="632.6*m" />
+  <constant name="Rh1Mirror2InnerR07" value="1639.8*m" />
+  <constant name="Rh1Mirror2InnerR08" value="1185.1 *m" />
+  <constant name="Rh1Mirror2InnerR09" value="857.0*m" />
+  <constant name="Rh1Mirror2InnerR10" value="1722.2 *m" />
+  <constant name="Rh1Mirror2InnerR11" value="953.1*m" />
+  <constant name="Rh1Mirror2InnerR12" value="2654.1*m" />
+  <constant name="Rh1Mirror2InnerR13" value="1040.5*m" />
+  <constant name="Rh1Mirror2InnerR14" value="1433.8*m" />
+  <constant name="Rh1Mirror2InnerR15" value="632.6*m" />
+
+
+
+<!--
+  <constant name="Rh1Mirror2InnerR00" value="254.7*m" />
+  <constant name="Rh1Mirror2InnerR01" value="243.3*m" />
+  <constant name="Rh1Mirror2InnerR02" value="290.1*m" />
+  <constant name="Rh1Mirror2InnerR03" value="284.5*m" />
+  <constant name="Rh1Mirror2InnerR04" value="314.9*m" />
+  <constant name="Rh1Mirror2InnerR05" value="774.7*m" />
+  <constant name="Rh1Mirror2InnerR06" value="211.3*m" />
+  <constant name="Rh1Mirror2InnerR07" value="257.7*m" />
+  <constant name="Rh1Mirror2InnerR08" value="703.4*m" />
+  <constant name="Rh1Mirror2InnerR09" value="286.3*m" />
+  <constant name="Rh1Mirror2InnerR10" value="410.5*m" />
+  <constant name="Rh1Mirror2InnerR11" value="284.5*m" />
+  <constant name="Rh1Mirror2InnerR12" value="228.0*m" />
+  <constant name="Rh1Mirror2InnerR13" value="324.1*m" />
+  <constant name="Rh1Mirror2InnerR14" value="232.9*m" />
+  <constant name="Rh1Mirror2InnerR15" value="231.7*m" />
+-->
+
+ <constant name="Rh1Mirror2SingleAngularXExtent00" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR00)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent00" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR00" />
+ <constant name="Rh1Mirror2OuterR00" value="Rh1Mirror2InnerR00+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta00" value="asin(Rh1Mirror2SingleAngularXExtent00)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi00"   value="asin(Rh1Mirror2SingleAngularYExtent00)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart00" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta00)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart00"  value="-0.5*Rh1Mirror2SingleDeltaPhi00" />
+
+  <!-- The following are the gaps at the inner reflecting surfaces of the mirrors calculated from
+    the net gaps at the outer surfaces of the mirrors . Same thing repeated for other mirrors-->
+
+
+ <constant name="Rh1Mirror2XHalfTotGap00" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent00)" />
+ <constant name="Rh1Mirror2YHalfTotGap00" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent00)" />
+
+ <!-- now for the rotations of the mirror segments -->
+  <constant name="Rh1Mirror2ThetaShift" value="(pi/2)*rad" />
+  <constant name="Rh1Mirror2YRot" value= "Rh1Mirror2ThetaShift" />
+
+<!--
+  <constant name="Rh1Mirror2SegAuxYShift00" value="-1.0*Rh1Mirror2InnerR00*sin(Rh1Mirror2SegZRot00)" />
+  <constant name="Rh1Mirror2SegAuxYShift01" value="-1.0*Rh1Mirror2InnerR01*sin(Rh1Mirror2SegZRot01)" />
+  <constant name="Rh1Mirror2SegAuxYShift02" value="-1.0*Rh1Mirror2InnerR02*sin(Rh1Mirror2SegZRot02)" />
+  <constant name="Rh1Mirror2SegAuxYShift03" value="-1.0*Rh1Mirror2InnerR03*sin(Rh1Mirror2SegZRot03)" />
+  <constant name="Rh1Mirror2SegAuxYShift04" value="-1.0*Rh1Mirror2InnerR04*sin(Rh1Mirror2SegZRot04)" />
+  <constant name="Rh1Mirror2SegAuxYShift05" value="-1.0*Rh1Mirror2InnerR05*sin(Rh1Mirror2SegZRot05)" />
+  <constant name="Rh1Mirror2SegAuxYShift06" value="-1.0*Rh1Mirror2InnerR06*sin(Rh1Mirror2SegZRot06)" />
+  <constant name="Rh1Mirror2SegAuxYShift07" value="-1.0*Rh1Mirror2InnerR07*sin(Rh1Mirror2SegZRot07)" />
+  <constant name="Rh1Mirror2SegAuxYShift08" value="-1.0*Rh1Mirror2InnerR08*sin(Rh1Mirror2SegZRot08)" />
+  <constant name="Rh1Mirror2SegAuxYShift09" value="-1.0*Rh1Mirror2InnerR09*sin(Rh1Mirror2SegZRot09)" />
+  <constant name="Rh1Mirror2SegAuxYShift10" value="-1.0*Rh1Mirror2InnerR10*sin(Rh1Mirror2SegZRot10)" />
+  <constant name="Rh1Mirror2SegAuxYShift11" value="-1.0*Rh1Mirror2InnerR11*sin(Rh1Mirror2SegZRot11)" />
+  <constant name="Rh1Mirror2SegAuxYShift12" value="-1.0*Rh1Mirror2InnerR12*sin(Rh1Mirror2SegZRot12)" />
+  <constant name="Rh1Mirror2SegAuxYShift13" value="-1.0*Rh1Mirror2InnerR13*sin(Rh1Mirror2SegZRot13)" />
+  <constant name="Rh1Mirror2SegAuxYShift14" value="-1.0*Rh1Mirror2InnerR14*sin(Rh1Mirror2SegZRot14)" />
+  <constant name="Rh1Mirror2SegAuxYShift15" value="-1.0*Rh1Mirror2InnerR15*sin(Rh1Mirror2SegZRot15)" />
+
+  <constant name="Rh1Mirror2SegAuxZShift00" value="-1.0*Rh1Mirror2InnerR00*(1.0-cos(Rh1Mirror2SegZRot00))" />
+  <constant name="Rh1Mirror2SegAuxZShift01" value="-1.0*Rh1Mirror2InnerR01*(1.0-cos(Rh1Mirror2SegZRot01))" />
+  <constant name="Rh1Mirror2SegAuxZShift02" value="-1.0*Rh1Mirror2InnerR02*(1.0-cos(Rh1Mirror2SegZRot02))" />
+  <constant name="Rh1Mirror2SegAuxZShift03" value="-1.0*Rh1Mirror2InnerR03*(1.0-cos(Rh1Mirror2SegZRot03))" />
+  <constant name="Rh1Mirror2SegAuxZShift04" value="-1.0*Rh1Mirror2InnerR04*(1.0-cos(Rh1Mirror2SegZRot04))" />
+  <constant name="Rh1Mirror2SegAuxZShift05" value="-1.0*Rh1Mirror2InnerR05*(1.0-cos(Rh1Mirror2SegZRot05))" />
+  <constant name="Rh1Mirror2SegAuxZShift06" value="-1.0*Rh1Mirror2InnerR06*(1.0-cos(Rh1Mirror2SegZRot06))" />
+  <constant name="Rh1Mirror2SegAuxZShift07" value="-1.0*Rh1Mirror2InnerR07*(1.0-cos(Rh1Mirror2SegZRot07))" />
+  <constant name="Rh1Mirror2SegAuxZShift08" value="-1.0*Rh1Mirror2InnerR08*(1.0-cos(Rh1Mirror2SegZRot08))" />
+  <constant name="Rh1Mirror2SegAuxZShift09" value="-1.0*Rh1Mirror2InnerR09*(1.0-cos(Rh1Mirror2SegZRot09))" />
+  <constant name="Rh1Mirror2SegAuxZShift10" value="-1.0*Rh1Mirror2InnerR10*(1.0-cos(Rh1Mirror2SegZRot10))" />
+  <constant name="Rh1Mirror2SegAuxZShift11" value="-1.0*Rh1Mirror2InnerR11*(1.0-cos(Rh1Mirror2SegZRot11))" />
+  <constant name="Rh1Mirror2SegAuxZShift12" value="-1.0*Rh1Mirror2InnerR12*(1.0-cos(Rh1Mirror2SegZRot12))" />
+  <constant name="Rh1Mirror2SegAuxZShift13" value="-1.0*Rh1Mirror2InnerR13*(1.0-cos(Rh1Mirror2SegZRot13))" />
+  <constant name="Rh1Mirror2SegAuxZShift14" value="-1.0*Rh1Mirror2InnerR14*(1.0-cos(Rh1Mirror2SegZRot14))" />
+  <constant name="Rh1Mirror2SegAuxZShift15" value="-1.0*Rh1Mirror2InnerR15*(1.0-cos(Rh1Mirror2SegZRot15))" />
+-->
+
+<!-- Now for placing the Rich1 Mirror2 segments -->
+<constant name="Rh1Mirror2ZCCShift00"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR00*cos(0.5*Rh1Mirror2SingleAngularYExtent00)" />
+<!-- <constant name="Rh1Mirror2ZCCShift00"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR00*cos(0.5*Rh1Mirror2SingleAngularYExtent00)" /> -->
+
+ <constant name="Rh1Mirror2SingleAngularXExtent01" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR01)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent01" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR01" />
+ <constant name="Rh1Mirror2OuterR01" value="Rh1Mirror2InnerR01+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta01" value="asin(Rh1Mirror2SingleAngularXExtent01)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi01"   value="asin(Rh1Mirror2SingleAngularYExtent01)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart01" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta01)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart01"  value="-0.5*Rh1Mirror2SingleDeltaPhi01" />
+
+ <constant name="Rh1Mirror2XHalfTotGap01" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent01)" />
+ <constant name="Rh1Mirror2YHalfTotGap01" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent01)" />
+
+ <constant name="Rh1Mirror2ZCCShift01"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR01*cos(0.5*Rh1Mirror2SingleAngularYExtent01)" />
+
+<!-- <constant name="Rh1Mirror2ZCCShift01"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR01*cos(0.5*Rh1Mirror2SingleAngularYExtent01)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent02" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR02)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent02" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR02" />
+ <constant name="Rh1Mirror2OuterR02" value="Rh1Mirror2InnerR02+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta02" value="asin(Rh1Mirror2SingleAngularXExtent02)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi02"   value="asin(Rh1Mirror2SingleAngularYExtent02)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart02" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta02)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart02"  value="-0.5*Rh1Mirror2SingleDeltaPhi02" />
+
+ <constant name="Rh1Mirror2XHalfTotGap02" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent02)" />
+ <constant name="Rh1Mirror2YHalfTotGap02" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent02)" />
+
+ <constant name="Rh1Mirror2ZCCShift02"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR02*cos(0.5*Rh1Mirror2SingleAngularYExtent02)" />
+
+<!-- <constant name="Rh1Mirror2ZCCShift02"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR02*cos(0.5*Rh1Mirror2SingleAngularYExtent02)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent03" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR03)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent03" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR03" />
+ <constant name="Rh1Mirror2OuterR03" value="Rh1Mirror2InnerR03+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta03" value="asin(Rh1Mirror2SingleAngularXExtent03)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi03"   value="asin(Rh1Mirror2SingleAngularYExtent03)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart03" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta03)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart03"  value="-0.5*Rh1Mirror2SingleDeltaPhi03" />
+
+ <constant name="Rh1Mirror2XHalfTotGap03" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent03)" />
+ <constant name="Rh1Mirror2YHalfTotGap03" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent03)" />
+
+ <constant name="Rh1Mirror2ZCCShift03"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR03*cos(0.5*Rh1Mirror2SingleAngularYExtent03)" />
+<!-- <constant name="Rh1Mirror2ZCCShift03"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR03*cos(0.5*Rh1Mirror2SingleAngularYExtent03)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent04" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR04)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent04" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR04" />
+ <constant name="Rh1Mirror2OuterR04" value="Rh1Mirror2InnerR04+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta04" value="asin(Rh1Mirror2SingleAngularXExtent04)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi04"   value="asin(Rh1Mirror2SingleAngularYExtent04)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart04" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta04)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart04"  value="-0.5*Rh1Mirror2SingleDeltaPhi04" />
+
+ <constant name="Rh1Mirror2XHalfTotGap04" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent04)" />
+ <constant name="Rh1Mirror2YHalfTotGap04" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent04)" />
+
+ <constant name="Rh1Mirror2ZCCShift04"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR04*cos(0.5*Rh1Mirror2SingleAngularYExtent04)" />
+
+<!-- <constant name="Rh1Mirror2ZCCShift04"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR04*cos(0.5*Rh1Mirror2SingleAngularYExtent04)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent05" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR05)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent05" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR05" />
+ <constant name="Rh1Mirror2OuterR05" value="Rh1Mirror2InnerR05+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta05" value="asin(Rh1Mirror2SingleAngularXExtent05)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi05"   value="asin(Rh1Mirror2SingleAngularYExtent05)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart05" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta05)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart05"  value="-0.5*Rh1Mirror2SingleDeltaPhi05" />
+
+ <constant name="Rh1Mirror2XHalfTotGap05" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent05)" />
+ <constant name="Rh1Mirror2YHalfTotGap05" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent05)" />
+
+ <constant name="Rh1Mirror2ZCCShift05"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR05*cos(0.5*Rh1Mirror2SingleAngularYExtent05)" />
+
+ <!-- <constant name="Rh1Mirror2ZCCShift05"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR05*cos(0.5*Rh1Mirror2SingleAngularYExtent05)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent06" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR06)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent06" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR06" />
+ <constant name="Rh1Mirror2OuterR06" value="Rh1Mirror2InnerR06+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta06" value="asin(Rh1Mirror2SingleAngularXExtent06)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi06"   value="asin(Rh1Mirror2SingleAngularYExtent06)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart06" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta06)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart06"  value="-0.5*Rh1Mirror2SingleDeltaPhi06" />
+
+ <constant name="Rh1Mirror2XHalfTotGap06" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent06)" />
+ <constant name="Rh1Mirror2YHalfTotGap06" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent06)" />
+
+ <constant name="Rh1Mirror2ZCCShift06"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR06*cos(0.5*Rh1Mirror2SingleAngularYExtent06)" />
+
+ <!-- <constant name="Rh1Mirror2ZCCShift06"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR06*cos(0.5*Rh1Mirror2SingleAngularYExtent06)" />  -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent07" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR07)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent07" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR07" />
+ <constant name="Rh1Mirror2OuterR07" value="Rh1Mirror2InnerR07+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta07" value="asin(Rh1Mirror2SingleAngularXExtent07)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi07"   value="asin(Rh1Mirror2SingleAngularYExtent07)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart07" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta07)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart07"  value="-0.5*Rh1Mirror2SingleDeltaPhi07" />
+
+ <constant name="Rh1Mirror2XHalfTotGap07" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent07)" />
+ <constant name="Rh1Mirror2YHalfTotGap07" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent07)" />
+
+ <constant name="Rh1Mirror2ZCCShift07"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR07*cos(0.5*Rh1Mirror2SingleAngularYExtent07)" />
+
+<!-- <constant name="Rh1Mirror2ZCCShift07"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR07*cos(0.5*Rh1Mirror2SingleAngularYExtent07)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent08" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR08)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent08" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR08" />
+ <constant name="Rh1Mirror2OuterR08" value="Rh1Mirror2InnerR08+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta08" value="asin(Rh1Mirror2SingleAngularXExtent08)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi08"   value="asin(Rh1Mirror2SingleAngularYExtent08)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart08" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta08)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart08"  value="-0.5*Rh1Mirror2SingleDeltaPhi08" />
+
+ <constant name="Rh1Mirror2XHalfTotGap08" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent08)" />
+ <constant name="Rh1Mirror2YHalfTotGap08" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent08)" />
+
+ <constant name="Rh1Mirror2ZCCShift08"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR08*cos(0.5*Rh1Mirror2SingleAngularYExtent08)" />
+
+ <!-- <constant name="Rh1Mirror2ZCCShift08"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR08*cos(0.5*Rh1Mirror2SingleAngularYExtent08)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent09" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR09)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent09" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR09" />
+ <constant name="Rh1Mirror2OuterR09" value="Rh1Mirror2InnerR09+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta09" value="asin(Rh1Mirror2SingleAngularXExtent09)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi09"   value="asin(Rh1Mirror2SingleAngularYExtent09)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart09" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta09)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart09"  value="-0.5*Rh1Mirror2SingleDeltaPhi09" />
+
+ <constant name="Rh1Mirror2XHalfTotGap09" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent09)" />
+ <constant name="Rh1Mirror2YHalfTotGap09" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent09)" />
+
+ <constant name="Rh1Mirror2ZCCShift09"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR09*cos(0.5*Rh1Mirror2SingleAngularYExtent09)" />
+
+<!-- <constant name="Rh1Mirror2ZCCShift09"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR09*cos(0.5*Rh1Mirror2SingleAngularYExtent09)" />  -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent10" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR10)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent10" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR10" />
+ <constant name="Rh1Mirror2OuterR10" value="Rh1Mirror2InnerR10+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta10" value="asin(Rh1Mirror2SingleAngularXExtent10)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi10"   value="asin(Rh1Mirror2SingleAngularYExtent10)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart10" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta10)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart10"  value="-0.5*Rh1Mirror2SingleDeltaPhi10" />
+
+ <constant name="Rh1Mirror2XHalfTotGap10" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent10)" />
+ <constant name="Rh1Mirror2YHalfTotGap10" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent10)" />
+
+ <constant name="Rh1Mirror2ZCCShift10"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR10*cos(0.5*Rh1Mirror2SingleAngularYExtent10)" />
+
+ <!-- <constant name="Rh1Mirror2ZCCShift10"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR10*cos(0.5*Rh1Mirror2SingleAngularYExtent10)" />  -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent11" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR11)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent11" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR11" />
+ <constant name="Rh1Mirror2OuterR11" value="Rh1Mirror2InnerR11+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta11" value="asin(Rh1Mirror2SingleAngularXExtent11)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi11"   value="asin(Rh1Mirror2SingleAngularYExtent11)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart11" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta11)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart11"  value="-0.5*Rh1Mirror2SingleDeltaPhi11" />
+
+ <constant name="Rh1Mirror2XHalfTotGap11" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent11)" />
+ <constant name="Rh1Mirror2YHalfTotGap11" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent11)" />
+
+ <constant name="Rh1Mirror2ZCCShift11"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR11*cos(0.5*Rh1Mirror2SingleAngularYExtent11)" />
+
+<!--  <constant name="Rh1Mirror2ZCCShift11"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR11*cos(0.5*Rh1Mirror2SingleAngularYExtent11)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent12" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR12)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent12" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR12" />
+ <constant name="Rh1Mirror2OuterR12" value="Rh1Mirror2InnerR12+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta12" value="asin(Rh1Mirror2SingleAngularXExtent12)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi12"   value="asin(Rh1Mirror2SingleAngularYExtent12)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart12" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta12)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart12"  value="-0.5*Rh1Mirror2SingleDeltaPhi12" />
+
+ <constant name="Rh1Mirror2XHalfTotGap12" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent12)" />
+ <constant name="Rh1Mirror2YHalfTotGap12" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent12)" />
+
+ <constant name="Rh1Mirror2ZCCShift12"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR12*cos(0.5*Rh1Mirror2SingleAngularYExtent12)" />
+
+ <!--<constant name="Rh1Mirror2ZCCShift12"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR12*cos(0.5*Rh1Mirror2SingleAngularYExtent12)" /> -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent13" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR13)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent13" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR13" />
+ <constant name="Rh1Mirror2OuterR13" value="Rh1Mirror2InnerR13+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta13" value="asin(Rh1Mirror2SingleAngularXExtent13)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi13"   value="asin(Rh1Mirror2SingleAngularYExtent13)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart13" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta13)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart13"  value="-0.5*Rh1Mirror2SingleDeltaPhi13" />
+
+ <constant name="Rh1Mirror2XHalfTotGap13" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent13)" />
+ <constant name="Rh1Mirror2YHalfTotGap13" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent13)" />
+
+ <constant name="Rh1Mirror2ZCCShift13"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR13*cos(0.5*Rh1Mirror2SingleAngularYExtent13)" />
+
+<!-- <constant name="Rh1Mirror2ZCCShift13"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR13*cos(0.5*Rh1Mirror2SingleAngularYExtent13)" />  -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent14" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR14)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent14" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR14" />
+ <constant name="Rh1Mirror2OuterR14" value="Rh1Mirror2InnerR14+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta14" value="asin(Rh1Mirror2SingleAngularXExtent14)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi14"   value="asin(Rh1Mirror2SingleAngularYExtent14)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart14" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta14)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart14"  value="-0.5*Rh1Mirror2SingleDeltaPhi14" />
+
+ <constant name="Rh1Mirror2XHalfTotGap14" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent14)" />
+ <constant name="Rh1Mirror2YHalfTotGap14" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent14)" />
+
+ <constant name="Rh1Mirror2ZCCShift14"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR14*cos(0.5*Rh1Mirror2SingleAngularYExtent14)" />
+
+ <!--<constant name="Rh1Mirror2ZCCShift14"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR14*cos(0.5*Rh1Mirror2SingleAngularYExtent14)" />  -->
+
+
+
+ <constant name="Rh1Mirror2SingleAngularXExtent15" value="(Rh1Mirror2SingleXSize/Rh1Mirror2InnerR15)" />
+ <constant name="Rh1Mirror2SingleAngularYExtent15" value="Rh1Mirror2SingleYSize/Rh1Mirror2InnerR15" />
+ <constant name="Rh1Mirror2OuterR15" value="Rh1Mirror2InnerR15+Rh1Mirror2ZSize" />
+
+ <constant name="Rh1Mirror2SingleDeltaTheta15" value="asin(Rh1Mirror2SingleAngularXExtent15)"  />
+ <constant name="Rh1Mirror2SingleDeltaPhi15"   value="asin(Rh1Mirror2SingleAngularYExtent15)"  />
+ <constant name="Rh1Mirror2SingleThetaSegmentStart15" value="(pi/2.0)*rad-(0.5*Rh1Mirror2SingleDeltaTheta15)" />
+ <constant name="Rh1Mirror2SinglePhiSegmentStart15"  value="-0.5*Rh1Mirror2SingleDeltaPhi15" />
+
+ <constant name="Rh1Mirror2XHalfTotGap15" value="0.5*(Rh1Mirror2XNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularXExtent15)" />
+ <constant name="Rh1Mirror2YHalfTotGap15" value="0.5*(Rh1Mirror2YNetGap+Rh1Mirror2ZSize*Rh1Mirror2SingleAngularYExtent15)" />
+
+ <constant name="Rh1Mirror2ZCCShift15"  value="0.5*Rh1Mirror2ZSize+Rh1Mirror2InnerR15*cos(0.5*Rh1Mirror2SingleAngularYExtent15)" />
+
+ <!-- <constant name="Rh1Mirror2ZCCShift15"  value="0.5*Rh1Mirror2QuadrantMasterZSize-Rh1Mirror2ToMasterDnsSurfGap+Rh1Mirror2InnerR15*cos(0.5*Rh1Mirror2SingleAngularYExtent15)" /> -->
+
+
+
+
+
+
+
+ <!-- Now for placing the mirror segment COCs in the Rich1Mirror2Master System. Z shift already done above-->
+ <!-- Shift by Rh1Mirror2QuadrantMasterXGap to compensate for the QudrantMasterXGap in the absolute X location of the segments -->
+ <constant name="Rh1Mirror2XCCShift01"  value="-Rh1Mirror2XHalfTotGap01 - (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift03"  value="-Rh1Mirror2XHalfTotGap03 - (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift09"  value="-Rh1Mirror2XHalfTotGap09 - (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift11"  value="-Rh1Mirror2XHalfTotGap11 - (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+
+ <constant name="Rh1Mirror2XCCShift04"  value="Rh1Mirror2XHalfTotGap04 + (0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift06"  value="Rh1Mirror2XHalfTotGap06 + (0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift12"  value="Rh1Mirror2XHalfTotGap12 + (0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift14"  value="Rh1Mirror2XHalfTotGap14 + (0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+
+ <constant name="Rh1Mirror2XCCShift00"  value="Rh1Mirror2XHalfTotGap00 + (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift02"  value="Rh1Mirror2XHalfTotGap02 + (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift08"  value="Rh1Mirror2XHalfTotGap08 + (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift10"  value="Rh1Mirror2XHalfTotGap10 + (0.5*Rh1Mirror2SingleXSize)- Rh1Mirror2QuadrantMasterXGap"  />
+
+ <constant name="Rh1Mirror2XCCShift05"  value="-Rh1Mirror2XHalfTotGap05 -(0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift07"  value="-Rh1Mirror2XHalfTotGap07 -(0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift13"  value="-Rh1Mirror2XHalfTotGap13 -(0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+ <constant name="Rh1Mirror2XCCShift15"  value="-Rh1Mirror2XHalfTotGap15 -(0.5*Rh1Mirror2SingleXSize)+ Rh1Mirror2QuadrantMasterXGap"  />
+
+ <constant name="Rh1Mirror2YCCShift02"  value="-Rh1Mirror2QudrantMasterShiftInLocalY+(0.5*Rh1Mirror2SingleYSize)" />
+ <constant name="Rh1Mirror2YCCShift03"  value="-Rh1Mirror2QudrantMasterShiftInLocalY+(0.5*Rh1Mirror2SingleYSize)" />
+ <constant name="Rh1Mirror2YCCShift06"  value="-Rh1Mirror2QudrantMasterShiftInLocalY+(0.5*Rh1Mirror2SingleYSize)" />
+ <constant name="Rh1Mirror2YCCShift07"  value="-Rh1Mirror2QudrantMasterShiftInLocalY+(0.5*Rh1Mirror2SingleYSize)" />
+
+ <constant name="Rh1Mirror2YCCShift00"  value="Rh1Mirror2YCCShift02+Rh1Mirror2YHalfTotGap02+Rh1Mirror2YHalfTotGap00+Rh1Mirror2SingleYSize" />
+ <constant name="Rh1Mirror2YCCShift01"  value="Rh1Mirror2YCCShift02+Rh1Mirror2YHalfTotGap03+Rh1Mirror2YHalfTotGap01+Rh1Mirror2SingleYSize" />
+ <constant name="Rh1Mirror2YCCShift04"  value="Rh1Mirror2YCCShift06+Rh1Mirror2YHalfTotGap06+Rh1Mirror2YHalfTotGap04+Rh1Mirror2SingleYSize" />
+ <constant name="Rh1Mirror2YCCShift05"  value="Rh1Mirror2YCCShift07+Rh1Mirror2YHalfTotGap07+Rh1Mirror2YHalfTotGap05+Rh1Mirror2SingleYSize" />
+
+
+ <constant name="Rh1Mirror2YCCShift08"  value="Rh1Mirror2QudrantMasterShiftInLocalY-(0.5*Rh1Mirror2SingleYSize)" />
+ <constant name="Rh1Mirror2YCCShift09"  value="Rh1Mirror2QudrantMasterShiftInLocalY-(0.5*Rh1Mirror2SingleYSize)" />
+ <constant name="Rh1Mirror2YCCShift12"  value="Rh1Mirror2QudrantMasterShiftInLocalY-(0.5*Rh1Mirror2SingleYSize)" />
+ <constant name="Rh1Mirror2YCCShift13"  value="Rh1Mirror2QudrantMasterShiftInLocalY-(0.5*Rh1Mirror2SingleYSize)" />
+
+ <constant name="Rh1Mirror2YCCShift10"  value="Rh1Mirror2YCCShift08-Rh1Mirror2YHalfTotGap08-Rh1Mirror2YHalfTotGap10-Rh1Mirror2SingleYSize" />
+ <constant name="Rh1Mirror2YCCShift11"  value="Rh1Mirror2YCCShift09-Rh1Mirror2YHalfTotGap09-Rh1Mirror2YHalfTotGap11-Rh1Mirror2SingleYSize" />
+ <constant name="Rh1Mirror2YCCShift14"  value="Rh1Mirror2YCCShift12-Rh1Mirror2YHalfTotGap12-Rh1Mirror2YHalfTotGap14-Rh1Mirror2SingleYSize" />
+ <constant name="Rh1Mirror2YCCShift15"  value="Rh1Mirror2YCCShift13-Rh1Mirror2YHalfTotGap13-Rh1Mirror2YHalfTotGap15-Rh1Mirror2SingleYSize" />
+
+
+ <!--        End of derived parameters for the Rich1 Mirror       -->
+ <!--    Now start the parameters derived for the Brunel application  . The following 6 lines can be removed
+        in the future. For now kept for backward compatibility   -->
+    <constant name = "Rh1Mirror2NorSlope" value="tan(Rh1Mirror2VertTilt)" />
+    <constant name = "Rh1Mirror2CosSum"  value = "pow((1.0+Rh1Mirror2NorSlope*Rh1Mirror2NorSlope),0.5)" />
+    <constant name = "Rh1Mirror2CosX" value = "0.0" />
+    <constant name = "Rh1Mirror2CosY" value = "Rh1Mirror2NorSlope/Rh1Mirror2CosSum" />
+    <constant name = "Rh1Mirror2CosZ" value = "1.0/Rh1Mirror2CosSum" />
+
+
+    <constant name ="Rh1Mirror2SurfZInLHCb"  value= "Rh1Mirror2BotCornerOfTopMirrLHCbZ+0.5*(Rh1Mirror2QuadrantMasterZSize+Rh1Mirror2ZSize)*(cos(Rh1Mirror2VertTilt))" />
+    <constant name ="Rh1Mirror2SurfYInLHCb"  value= "Rh1Mirror2BotCornerOfTopMirrLHCbY+0.5*(Rh1Mirror2QuadrantMasterZSize+Rh1Mirror2ZSize)*(sin(Rh1Mirror2VertTilt))"/>
+    <constant name ="Rh1Mirror2SurfTolerence" value="-0.0768*mm" />
+
+
+    <constant name = "Rh1Mirror2NorVertSlopeTop" value="tan(Rh1Mirror2VertTilt)" />
+    <constant name = "Rh1Mirror2NorHorizSlopeTop" value="tan(Rh1Mirror2TopHorizTilt)" />
+    <constant name = "Rh1Mirror2CosSumTop"  value = "pow((1.0+Rh1Mirror2NorVertSlopeTop*Rh1Mirror2NorVertSlopeTop+ Rh1Mirror2NorHorizSlopeTop*Rh1Mirror2NorHorizSlopeTop ),0.5)" />
+    <constant name = "Rh1Mirror2TopCosX" value = "Rh1Mirror2NorHorizSlopeTop/Rh1Mirror2CosSumTop" />
+    <constant name = "Rh1Mirror2TopCosY" value = "Rh1Mirror2NorVertSlopeTop/Rh1Mirror2CosSumTop" />
+    <constant name = "Rh1Mirror2TopCosZ" value = "1.0/Rh1Mirror2CosSumTop" />
+
+
+    <constant name = "Rh1Mirror2DistFromNominalOrigin"  value="Rh1Mirror2SurfYInLHCb*Rh1Mirror2TopCosY + Rh1Mirror2SurfZInLHCb* Rh1Mirror2TopCosZ+Rh1Mirror2SurfTolerence"  />
+
+    <constant name = "Rh1Mirror2DistFromNominalOriginTop"  value= "Rh1Mirror2DistFromNominalOrigin" />
+
+
+
+
+    <constant name = "Rh1Mirror2NorVertSlopeBot" value= "-1.0*Rh1Mirror2NorVertSlopeTop"  />
+    <constant name = "Rh1Mirror2NorHorizSlopeBot" value="tan(Rh1Mirror2BotHorizTilt)" />
+    <constant name = "Rh1Mirror2CosSumBot"  value = "pow((1.0+Rh1Mirror2NorVertSlopeBot*Rh1Mirror2NorVertSlopeBot+ Rh1Mirror2NorHorizSlopeBot*Rh1Mirror2NorHorizSlopeBot),0.5)" />
+    <constant name = "Rh1Mirror2BotCosX" value = "Rh1Mirror2NorHorizSlopeBot/Rh1Mirror2CosSumBot" />
+    <constant name = "Rh1Mirror2BotCosY" value = "Rh1Mirror2NorVertSlopeBot/Rh1Mirror2CosSumBot" />
+    <constant name = "Rh1Mirror2BotCosZ" value = "1.0/Rh1Mirror2CosSumBot" />
+    <constant name = "Rh1Mirror2DistFromNominalOriginBot"  value= "Rh1Mirror2DistFromNominalOrigin" />
+
+     <constant name="pvRich1Mirror2Seg00CopyNumber" value="0" />
+     <constant name="pvRich1Mirror2Seg01CopyNumber" value="1" />
+     <constant name="pvRich1Mirror2Seg02CopyNumber" value="2" />
+     <constant name="pvRich1Mirror2Seg03CopyNumber" value="3" />
+     <constant name="pvRich1Mirror2Seg04CopyNumber" value="4" />
+     <constant name="pvRich1Mirror2Seg05CopyNumber" value="5" />
+     <constant name="pvRich1Mirror2Seg06CopyNumber" value="6" />
+     <constant name="pvRich1Mirror2Seg07CopyNumber" value="7" />
+     <constant name="pvRich1Mirror2Seg08CopyNumber" value="8" />
+     <constant name="pvRich1Mirror2Seg09CopyNumber" value="9" />
+     <constant name="pvRich1Mirror2Seg10CopyNumber" value="10" />
+     <constant name="pvRich1Mirror2Seg11CopyNumber" value="11" />
+     <constant name="pvRich1Mirror2Seg12CopyNumber" value="12" />
+     <constant name="pvRich1Mirror2Seg13CopyNumber" value="13" />
+     <constant name="pvRich1Mirror2Seg14CopyNumber" value="14" />
+     <constant name="pvRich1Mirror2Seg15CopyNumber" value="15" />
+
+
+
+<!--        End   Rich1MirrorGeomParameters    -->
+  </define>
+</lccdd>

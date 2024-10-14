@@ -1,0 +1,1202 @@
+<lccdd>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+    <detectors>
+      <detector id="Muon:ID" name="Muon" type="LHCb_Muon_v1_0" parent="${Muon:parent}" readout="MuonHits" vis="MuonVis">
+
+      <position z="1579*mm" />
+
+  <includes>
+    <gdmlFile ref="../global/parameters.xml"/>
+  </includes>
+
+        <debug>
+          <item name="debug"            value="0"/>
+          <item name="b_build_support"  value="1"/>
+          <item name="b_build_stations" value="1"/>
+          <item name="b_build_filters"  value="1"/>
+          <item name="b_build_plugs"    value="1"/>
+        </debug>
+
+	<!-- Chamber naming and position: start -->
+	<chambers>
+          <!--M2-->
+          <!--R1-->
+          <chamber name="M2R1Cham001" x="451.2*mm"  y="374.19*mm"  z="-142.5*mm" side="0"/>
+          <chamber name="M2R1Cham002" x="151.2*mm"  y="376.89*mm"  z="-58.5*mm"  side="0"/>
+          <chamber name="M2R1Cham005" x="459.7*mm"  y="128.41*mm"  z="+142.5*mm" side="0"/>
+          <chamber name="M2R1Cham007" x="451.2*mm"  y="-126.11*mm" z="-142.5*mm" side="0"/>
+          <chamber name="M2R1Cham009" x="459.7*mm"  y="-381.19*mm" z="+142.5*mm" side="0"/>
+          <chamber name="M2R1Cham010" x="152.4*mm"  y="-379.79*mm" z="+58.5*mm"  side="0"/>
+
+          <chamber name="M2R1Cham003" x="-150.4*mm" y="374.19*mm"  z="-142.5*mm" side="1"/>
+          <chamber name="M2R1Cham004" x="-453.7*mm" y="376.89*mm"  z="-58.5*mm"  side="1"/>
+          <chamber name="M2R1Cham006" x="-457.2*mm" y="127.11*mm"  z="+58.5*mm"  side="1"/>
+          <chamber name="M2R1Cham008" x="-453.7*mm" y="-126.21*mm" z="-58.5*mm"  side="1"/>
+          <chamber name="M2R1Cham011" x="-153.2*mm" y="-381.19*mm" z="+142.5*mm" side="1"/>
+          <chamber name="M2R1Cham012" x="-457.2*mm" y="-379.79*mm" z="+58.5*mm"  side="1"/>
+
+          <!--R2-->
+          <chamber name="M2R2Cham001"  x="907.4*mm"  y="879.89*mm"  z="-58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham002"  x="300.8*mm"  y="874.39*mm"  z="-142.5*mm" side="0"/>
+          <chamber name="M2R2Cham005"  x="914.3*mm"  y="634.01*mm"  z="+58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham006"  x="306.5*mm"  y="638.11*mm"  z="+142.5*mm" side="0"/>
+          <chamber name="M2R2Cham009"  x="907.4*mm"  y="376.89*mm"  z="-58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham011"  x="914.3*mm"  y="127.11*mm"  z="+58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham013"  x="907.4*mm"  y="-126.21*mm" z="-58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham015"  x="914.3*mm"  y="-379.79*mm" z="+58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham017"  x="907.4*mm"  y="-629.21*mm" z="-58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham018"  x="300.8*mm"  y="-626.31*mm" z="-142.5*mm" side="0"/>
+          <chamber name="M2R2Cham021"  x="914.3*mm"  y="-886.59*mm" z="+58.5*mm"  side="0"/>
+          <chamber name="M2R2Cham022"  x="306.5*mm"  y="-890.89*mm" z="+142.5*mm" side="0"/>
+
+          <chamber name="M2R2Cham003" x="-302.5*mm"  y="879.89*mm"  z="-58.5*mm"  side="1"/>
+          <chamber name="M2R2Cham004" x="-902.4*mm"  y="874.39*mm"  z="-142.5*mm" side="1"/>
+          <chamber name="M2R2Cham007" x="-304.8*mm"  y="634.01*mm"  z="+58.5*mm"  side="1"/>
+          <chamber name="M2R2Cham008" x="-919.4*mm"  y="638.11*mm"  z="+142.5*mm" side="1"/>
+          <chamber name="M2R2Cham010" x="-902.4*mm"  y="374.19*mm"  z="-142.5*mm" side="1"/>
+          <chamber name="M2R2Cham012" x="-919.4*mm"  y="128.41*mm"  z="+142.5*mm" side="1"/>
+          <chamber name="M2R2Cham014" x="-902.4*mm"  y="-126.11*mm" z="-142.5*mm" side="1"/>
+          <chamber name="M2R2Cham016" x="-919.4*mm"  y="-381.19*mm" z="+142.5*mm" side="1"/>
+          <chamber name="M2R2Cham019" x="-302.5*mm"  y="-629.21*mm" z="-58.5*mm"  side="1"/>
+          <chamber name="M2R2Cham020" x="-902.4*mm"  y="-626.31*mm" z="-142.5*mm" side="1"/>
+          <chamber name="M2R2Cham023" x="-304.8*mm"  y="-886.59*mm" z="+58.5*mm"  side="1"/>
+          <chamber name="M2R2Cham024" x="-919.4*mm"  y="-890.89*mm" z="+142.5*mm" side="1"/>
+
+	  <!--R3-->
+	  <chamber name="M2R3Cham001" x="1804.7*mm"  y="1874.89*mm"  z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham002" x="604.9*mm"   y="1885.89*mm"  z="-58.5*mm"  side="0"/>
+          <chamber name="M2R3Cham005" x="1838.7*mm"  y="1657.41*mm"  z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham006" x="609.6*mm"   y="1647.81*mm"  z="+58.5*mm"  side="0"/>
+          <chamber name="M2R3Cham009" x="1804.7*mm"  y="1374.69*mm"  z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham010" x="604.9*mm"   y="1382.89*mm"  z="-58.5*mm"  side="0"/>
+          <chamber name="M2R3Cham013" x="1838.7*mm"  y="1147.81*mm"  z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham014" x="609.6*mm"   y="1140.91*mm"  z="+58.5*mm"  side="0"/>
+          <chamber name="M2R3Cham017" x="1804.7*mm"  y="874.39*mm"   z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham019" x="1838.7*mm"  y="638.11*mm"   z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham021" x="1804.7*mm"  y="374.19*mm"   z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham023" x="1838.7*mm"  y="128.41*mm"   z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham025" x="1804.7*mm"  y="-126.11*mm"  z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham027" x="1838.7*mm"  y="-381.19*mm"  z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham029" x="1804.7*mm"  y="-626.31*mm"  z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham031" x="1838.7*mm"  y="-890.89*mm"  z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham033" x="1804.7*mm"  y="-1126.61*mm" z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham034" x="604.9*mm"   y="-1132.21*mm" z="-58.5*mm"  side="0"/>
+          <chamber name="M2R3Cham037" x="1838.7*mm"  y="-1400.59*mm" z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham038" x="609.6*mm"   y="-1393.49*mm" z="+58.5*mm"  side="0"/>
+          <chamber name="M2R3Cham041" x="1804.7*mm"  y="-1626.81*mm" z="-142.5*mm" side="0"/>
+          <chamber name="M2R3Cham042" x="604.9*mm"   y="-1635.21*mm" z="-58.5*mm"  side="0"/>
+          <chamber name="M2R3Cham045" x="1838.7*mm"  y="-1910.19*mm" z="+142.5*mm" side="0"/>
+          <chamber name="M2R3Cham046" x="609.6*mm"   y="-1900.39*mm" z="+58.5*mm"  side="0"/>
+
+	  <chamber name="M2R3Cham003" x="-601.6*mm"  y="1874.89*mm"  z="-142.5*mm" side="1"/>
+          <chamber name="M2R3Cham004" x="-1814.7*mm" y="1885.89*mm"  z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham007" x="-612.9*mm"  y="1657.41*mm"  z="+142.5*mm" side="1"/>
+          <chamber name="M2R3Cham008" x="-1828.7*mm" y="1647.81*mm"  z="+58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham011" x="-601.6*mm"  y="1374.69*mm"  z="-142.5*mm" side="1"/>
+          <chamber name="M2R3Cham012" x="-1814.7*mm" y="1382.89*mm"  z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham015" x="-612.9*mm"  y="1147.81*mm"  z="+142.5*mm" side="1"/>
+          <chamber name="M2R3Cham016" x="-1828.7*mm" y="1140.91*mm"  z="+58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham018" x="-1814.7*mm" y="879.89*mm"   z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham020" x="-1828.7*mm" y="634.01*mm"   z="+58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham022" x="-1814.7*mm" y="376.89*mm"   z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham024" x="-1828.7*mm" y="127.11*mm"   z="+58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham026" x="-1814.7*mm" y="-126.21*mm"  z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham028" x="-1828.7*mm" y="-379.79*mm"  z="+58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham030" x="-1814.7*mm" y="-629.21*mm"  z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham032" x="-1828.7*mm" y="-886.59*mm"  z="+58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham035" x="-601.6*mm"  y="-1126.61*mm" z="-142.5*mm" side="1"/>
+          <chamber name="M2R3Cham036" x="-1814.7*mm" y="-1132.21*mm" z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham039" x="-612.9*mm"  y="-1400.59*mm" z="+142.5*mm" side="1"/>
+          <chamber name="M2R3Cham040" x="-1828.7*mm" y="-1393.49*mm" z="+58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham043" x="-601.6*mm"  y="-1626.81*mm" z="-142.5*mm" side="1"/>
+          <chamber name="M2R3Cham044" x="-1814.7*mm" y="-1635.21*mm" z="-58.5*mm"  side="1"/>
+          <chamber name="M2R3Cham047" x="-612.9*mm"  y="-1910.19*mm" z="+142.5*mm" side="1"/>
+          <chamber name="M2R3Cham048" x="-1828.7*mm" y="-1900.39*mm" z="+58.5*mm"  side="1"/>
+
+          <!--R4-->
+          <chamber name="M2R4Cham001"  x="4211.0*mm"  y="3875.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham002"  x="3024.6*mm"  y="3897.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham003"  x="1804.7*mm"  y="3875.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham004"  x="604.9*mm"  y="3897.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham009"  x="4290.3*mm"  y="3696.11*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham010"  x="3047.8*mm"  y="3675.41*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham011"  x="1838.7*mm"  y="3696.11*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham012"  x="609.6*mm"  y="3675.41*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham017"  x="4211.0*mm"  y="3375.59*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham018"  x="3024.6*mm"  y="3394.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham019"  x="1804.7*mm"  y="3375.59*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham020"  x="604.9*mm"  y="3394.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham025"  x="4290.3*mm"  y="3186.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham026"  x="3047.8*mm"  y="3168.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham027"  x="1838.7*mm"  y="3186.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham028"  x="609.6*mm"  y="3168.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham033"  x="4211.0*mm"  y="2875.39*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham034"  x="3024.6*mm"  y="2891.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham035"  x="1804.7*mm"  y="2875.39*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham036"  x="604.9*mm"  y="2891.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham041"  x="4290.3*mm"  y="2676.81*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham042"  x="3047.8*mm"  y="2661.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham043"  x="1838.7*mm"  y="2676.81*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham044"  x="609.6*mm"  y="2661.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham049"  x="4211.0*mm"  y="2375.09*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham050"  x="3024.6*mm"  y="2388.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham051"  x="1804.7*mm"  y="2375.09*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham052"  x="604.9*mm"  y="2388.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham057"  x="4290.3*mm"  y="2167.11*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham058"  x="3047.8*mm"  y="2154.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham059"  x="1838.7*mm"  y="2167.11*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham060"  x="609.6*mm"  y="2154.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham065"  x="4211.0*mm"  y="1874.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham066"  x="3024.6*mm"  y="1885.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham069"  x="4290.3*mm"  y="1657.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham070"  x="3047.8*mm"  y="1647.81*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham073"  x="4211.0*mm"  y="1374.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham074"  x="3024.6*mm"  y="1382.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham077"  x="4290.3*mm"  y="1147.81*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham078"  x="3047.8*mm"  y="1140.91*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham081"  x="4211.0*mm"  y="874.39*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham082"  x="3024.6*mm"  y="879.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham085"  x="4290.3*mm"  y="638.11*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham086"  x="3047.8*mm"  y="634.01*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham089"  x="4211.0*mm"  y="374.19*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham090"  x="3024.6*mm"  y="376.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham093"  x="4290.3*mm"  y="128.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham094"  x="3047.8*mm"  y="127.11*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham097"  x="4211.0*mm"  y="-126.11*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham098"  x="3024.6*mm"  y="-126.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham101"  x="4290.3*mm"  y="-381.19*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham102"  x="3047.8*mm"  y="-379.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham105"  x="4211.0*mm"  y="-626.31*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham106"  x="3024.6*mm"  y="-629.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham109"  x="4290.3*mm"  y="-890.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham110"  x="3047.8*mm"  y="-886.59*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham113"  x="4211.0*mm"  y="-1126.61*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham114"  x="3024.6*mm"  y="-1132.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham117"  x="4290.3*mm"  y="-1400.59*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham118"  x="3047.8*mm"  y="-1393.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham121"  x="4211.0*mm"  y="-1626.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham122"  x="3024.6*mm"  y="-1635.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham125"  x="4290.3*mm"  y="-1910.19*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham126"  x="3047.8*mm"  y="-1900.39*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham129"  x="4211.0*mm"  y="-2127.01*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham130"  x="3024.6*mm"  y="-2138.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham131"  x="1804.7*mm"  y="-2127.01*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham132"  x="604.9*mm"  y="-2138.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham137"  x="4290.3*mm"  y="-2419.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham138"  x="3047.8*mm"  y="-2407.29*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham139"  x="1838.7*mm"  y="-2419.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham140"  x="609.6*mm"  y="-2407.29*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham145"  x="4211.0*mm"  y="-2627.31*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham146"  x="3024.6*mm"  y="-2641.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham147"  x="1804.7*mm"  y="-2627.31*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham148"  x="604.9*mm"  y="-2641.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham153"  x="4290.3*mm"  y="-2929.59*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham154"  x="3047.8*mm"  y="-2914.19*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham155"  x="1838.7*mm"  y="-2929.59*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham156"  x="609.6*mm"  y="-2914.19*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham161"  x="4211.0*mm"  y="-3127.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham162"  x="3024.6*mm"  y="-3144.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham163"  x="1804.7*mm"  y="-3127.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham164"  x="604.9*mm"  y="-3144.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham169"  x="4290.3*mm"  y="-3439.19*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham170"  x="3047.8*mm"  y="-3421.09*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham171"  x="1838.7*mm"  y="-3439.19*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham172"  x="609.6*mm"  y="-3421.09*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham177"  x="4211.0*mm"  y="-3627.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham178"  x="3024.6*mm"  y="-3647.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham179"  x="1804.7*mm"  y="-3627.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M2R4Cham180"  x="604.9*mm"  y="-3647.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M2R4Cham185"  x="4290.3*mm"  y="-3948.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham186"  x="3047.8*mm"  y="-3927.99*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M2R4Cham187"  x="1838.7*mm"  y="-3948.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M2R4Cham188"  x="609.6*mm"  y="-3927.99*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M2R4Cham005"  x="-601.6*mm"  y="3875.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham006"  x="-1814.7*mm"  y="3897.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham007"  x="-3007.9*mm"  y="3875.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham008"  x="-4234.4*mm"  y="3897.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham013"  x="-612.9*mm"  y="3696.11*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham014"  x="-1828.7*mm"  y="3675.41*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham015"  x="-3064.5*mm"  y="3696.11*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham016"  x="-4267.0*mm"  y="3675.41*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham021"  x="-601.6*mm"  y="3375.59*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham022"  x="-1814.7*mm"  y="3394.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham023"  x="-3007.9*mm"  y="3375.59*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham024"  x="-4234.4*mm"  y="3394.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham029"  x="-612.9*mm"  y="3186.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham030"  x="-1828.7*mm"  y="3168.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham031"  x="-3064.5*mm"  y="3186.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham032"  x="-4267.0*mm"  y="3168.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham037"  x="-601.6*mm"  y="2875.39*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham038"  x="-1814.7*mm"  y="2891.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham039"  x="-3007.9*mm"  y="2875.39*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham040"  x="-4234.4*mm"  y="2891.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham045"  x="-612.9*mm"  y="2676.81*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham046"  x="-1828.7*mm"  y="2661.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham047"  x="-3064.5*mm"  y="2676.81*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham048"  x="-4267.0*mm"  y="2661.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham053"  x="-601.6*mm"  y="2375.09*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham054"  x="-1814.7*mm"  y="2388.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham055"  x="-3007.9*mm"  y="2375.09*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham056"  x="-4234.4*mm"  y="2388.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham061"  x="-612.9*mm"  y="2167.11*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham062"  x="-1828.7*mm"  y="2154.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham063"  x="-3064.5*mm"  y="2167.11*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham064"  x="-4267.0*mm"  y="2154.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham067"  x="-3007.9*mm"  y="1874.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham068"  x="-4234.4*mm"  y="1885.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham071"  x="-3064.5*mm"  y="1657.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham072"  x="-4267.0*mm"  y="1647.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham075"  x="-3007.9*mm"  y="1374.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham076"  x="-4234.4*mm"  y="1382.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham079"  x="-3064.5*mm"  y="1147.81*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham080"  x="-4267.0*mm"  y="1140.91*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham083"  x="-3007.9*mm"  y="874.39*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham084"  x="-4234.4*mm"  y="879.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham087"  x="-3064.5*mm"  y="638.11*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham088"  x="-4267.0*mm"  y="634.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham091"  x="-3007.9*mm"  y="374.19*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham092"  x="-4234.4*mm"  y="376.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham095"  x="-3064.5*mm"  y="128.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham096"  x="-4267.0*mm"  y="127.11*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham099"  x="-3007.9*mm"  y="-126.11*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham100"  x="-4234.4*mm"  y="-126.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham103"  x="-3064.5*mm"  y="-381.19*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham104"  x="-4267.0*mm"  y="-379.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham107"  x="-3007.9*mm"  y="-626.31*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham108"  x="-4234.4*mm"  y="-629.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham111"  x="-3064.5*mm"  y="-890.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham112"  x="-4267.0*mm"  y="-886.59*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham115"  x="-3007.9*mm"  y="-1126.61*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham116"  x="-4234.4*mm"  y="-1132.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham119"  x="-3064.5*mm"  y="-1400.59*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham120"  x="-4267.0*mm"  y="-1393.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham123"  x="-3007.9*mm"  y="-1626.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham124"  x="-4234.4*mm"  y="-1635.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham127"  x="-3064.5*mm"  y="-1910.19*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham128"  x="-4267.0*mm"  y="-1900.39*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham133"  x="-601.6*mm"  y="-2127.01*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham134"  x="-1814.7*mm"  y="-2138.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham135"  x="-3007.9*mm"  y="-2127.01*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham136"  x="-4234.4*mm"  y="-2138.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham141"  x="-612.9*mm"  y="-2419.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham142"  x="-1828.7*mm"  y="-2407.29*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham143"  x="-3064.5*mm"  y="-2419.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham144"  x="-4267.0*mm"  y="-2407.29*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham149"  x="-601.6*mm"  y="-2627.31*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham150"  x="-1814.7*mm"  y="-2641.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham151"  x="-3007.9*mm"  y="-2627.31*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham152"  x="-4234.4*mm"  y="-2641.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham157"  x="-612.9*mm"  y="-2929.59*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham158"  x="-1828.7*mm"  y="-2914.19*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham159"  x="-3064.5*mm"  y="-2929.59*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham160"  x="-4267.0*mm"  y="-2914.19*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham165"  x="-601.6*mm"  y="-3127.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham166"  x="-1814.7*mm"  y="-3144.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham167"  x="-3007.9*mm"  y="-3127.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham168"  x="-4234.4*mm"  y="-3144.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham173"  x="-612.9*mm"  y="-3439.19*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham174"  x="-1828.7*mm"  y="-3421.09*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham175"  x="-3064.5*mm"  y="-3439.19*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham176"  x="-4267.0*mm"  y="-3421.09*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham181"  x="-601.6*mm"  y="-3627.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham182"  x="-1814.7*mm"  y="-3647.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham183"  x="-3007.9*mm"  y="-3627.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M2R4Cham184"  x="-4234.4*mm"  y="-3647.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M2R4Cham189"  x="-612.9*mm"  y="-3948.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham190"  x="-1828.7*mm"  y="-3927.99*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M2R4Cham191"  x="-3064.5*mm"  y="-3948.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M2R4Cham192"  x="-4267.0*mm"  y="-3927.99*mm"  z="+58.5*mm"  side="1" />
+
+          <!--M3-->
+          <!--R1-->
+          <chamber name="M3R1Cham001"  x="487.0*mm"  y="403.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R1Cham002"  x="163.2*mm"  y="406.59*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R1Cham005"  x="495.5*mm"  y="138.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R1Cham007"  x="487.0*mm"  y="-136.01*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R1Cham009"  x="495.5*mm"  y="-410.99*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R1Cham010"  x="164.3*mm"  y="-409.49*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M3R1Cham003"  x="-162.3*mm"  y="403.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R1Cham004"  x="-489.5*mm"  y="406.59*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R1Cham006"  x="-493.0*mm"  y="137.11*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R1Cham008"  x="-489.5*mm"  y="-136.11*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R1Cham011"  x="-165.2*mm"  y="-410.99*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R1Cham012"  x="-493.0*mm"  y="-409.49*mm"  z="+58.5*mm"  side="1" />
+
+          <!--R2-->
+          <chamber name="M3R2Cham001"  x="978.9*mm"  y="949.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R2Cham002"  x="324.6*mm"  y="943.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R2Cham005"  x="985.9*mm"  y="683.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R2Cham006"  x="330.3*mm"  y="687.71*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R2Cham009"  x="978.9*mm"  y="406.59*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R2Cham011"  x="985.9*mm"  y="137.11*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R2Cham013"  x="978.9*mm"  y="-136.11*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R2Cham015"  x="985.9*mm"  y="-409.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R2Cham017"  x="978.9*mm"  y="-678.81*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R2Cham018"  x="324.6*mm"  y="-675.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R2Cham021"  x="985.9*mm"  y="-956.09*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R2Cham022"  x="330.3*mm"  y="-960.29*mm"  z="+142.5*mm"  side="0" />
+
+          <chamber name="M3R2Cham003"  x="-326.3*mm"  y="949.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R2Cham004"  x="-973.9*mm"  y="943.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R2Cham007"  x="-328.6*mm"  y="683.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R2Cham008"  x="-990.9*mm"  y="687.71*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R2Cham010"  x="-973.9*mm"  y="403.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R2Cham012"  x="-990.9*mm"  y="138.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R2Cham014"  x="-973.9*mm"  y="-136.01*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R2Cham016"  x="-990.9*mm"  y="-410.99*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R2Cham019"  x="-326.3*mm"  y="-678.81*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R2Cham020"  x="-973.9*mm"  y="-675.91*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R2Cham023"  x="-328.6*mm"  y="-956.09*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R2Cham024"  x="-990.9*mm"  y="-960.29*mm"  z="+142.5*mm"  side="1" />
+
+          <!--R3-->
+          <chamber name="M3R3Cham001"  x="1947.9*mm"  y="2023.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham002"  x="652.6*mm"  y="2034.69*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R3Cham005"  x="1981.9*mm"  y="1786.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham006"  x="657.3*mm"  y="1776.81*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R3Cham009"  x="1947.9*mm"  y="1483.79*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham010"  x="652.6*mm"  y="1491.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R3Cham013"  x="1981.9*mm"  y="1237.01*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham014"  x="657.3*mm"  y="1230.21*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R3Cham017"  x="1947.9*mm"  y="943.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham019"  x="1981.9*mm"  y="687.71*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham021"  x="1947.9*mm"  y="403.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham023"  x="1981.9*mm"  y="138.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham025"  x="1947.9*mm"  y="-136.01*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham027"  x="1981.9*mm"  y="-410.99*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham029"  x="1947.9*mm"  y="-675.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham031"  x="1981.9*mm"  y="-960.29*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham033"  x="1947.9*mm"  y="-1215.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham034"  x="652.6*mm"  y="-1221.51*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R3Cham037"  x="1981.9*mm"  y="-1509.69*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham038"  x="657.3*mm"  y="-1502.69*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R3Cham041"  x="1947.9*mm"  y="-1755.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R3Cham042"  x="652.6*mm"  y="-1764.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R3Cham045"  x="1981.9*mm"  y="-2058.99*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R3Cham046"  x="657.3*mm"  y="-2049.19*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M3R3Cham003"  x="-649.3*mm"  y="2023.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R3Cham004"  x="-1957.9*mm"  y="2034.69*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham007"  x="-660.6*mm"  y="1786.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R3Cham008"  x="-1971.9*mm"  y="1776.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R3Cham011"  x="-649.3*mm"  y="1483.79*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R3Cham012"  x="-1957.9*mm"  y="1491.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham015"  x="-660.6*mm"  y="1237.01*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R3Cham016"  x="-1971.9*mm"  y="1230.21*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R3Cham018"  x="-1957.9*mm"  y="949.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham020"  x="-1971.9*mm"  y="683.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R3Cham022"  x="-1957.9*mm"  y="406.59*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham024"  x="-1971.9*mm"  y="137.11*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R3Cham026"  x="-1957.9*mm"  y="-136.11*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham028"  x="-1971.9*mm"  y="-409.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R3Cham030"  x="-1957.9*mm"  y="-678.81*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham032"  x="-1971.9*mm"  y="-956.09*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R3Cham035"  x="-649.3*mm"  y="-1215.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R3Cham036"  x="-1957.9*mm"  y="-1221.51*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham039"  x="-660.6*mm"  y="-1509.69*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R3Cham040"  x="-1971.9*mm"  y="-1502.69*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R3Cham043"  x="-649.3*mm"  y="-1755.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R3Cham044"  x="-1957.9*mm"  y="-1764.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R3Cham047"  x="-660.6*mm"  y="-2058.99*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R3Cham048"  x="-1971.9*mm"  y="-2049.19*mm"  z="+58.5*mm"  side="1" />
+
+          <!--R4-->
+          <chamber name="M3R4Cham001"  x="4545.0*mm"  y="4183.39*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham002"  x="3263.2*mm"  y="4205.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham003"  x="1947.9*mm"  y="4183.39*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham004"  x="652.6*mm"  y="4205.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham009"  x="4624.4*mm"  y="3983.81*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham010"  x="3286.4*mm"  y="3963.01*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham011"  x="1981.9*mm"  y="3983.81*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham012"  x="657.3*mm"  y="3963.01*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham017"  x="4545.0*mm"  y="3643.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham018"  x="3263.2*mm"  y="3662.79*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham019"  x="1947.9*mm"  y="3643.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham020"  x="652.6*mm"  y="3662.79*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham025"  x="4624.4*mm"  y="3434.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham026"  x="3286.4*mm"  y="3416.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham027"  x="1981.9*mm"  y="3434.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham028"  x="657.3*mm"  y="3416.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham033"  x="4545.0*mm"  y="3103.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham034"  x="3263.2*mm"  y="3120.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham035"  x="1947.9*mm"  y="3103.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham036"  x="652.6*mm"  y="3120.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham041"  x="4624.4*mm"  y="2885.11*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham042"  x="3286.4*mm"  y="2869.91*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham043"  x="1981.9*mm"  y="2885.11*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham044"  x="657.3*mm"  y="2869.91*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham049"  x="4545.0*mm"  y="2563.59*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham050"  x="3263.2*mm"  y="2577.39*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham051"  x="1947.9*mm"  y="2563.59*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham052"  x="652.6*mm"  y="2577.39*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham057"  x="4624.4*mm"  y="2335.71*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham058"  x="3286.4*mm"  y="2323.31*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham059"  x="1981.9*mm"  y="2335.71*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham060"  x="657.3*mm"  y="2323.31*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham065"  x="4545.0*mm"  y="2023.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham066"  x="3263.2*mm"  y="2034.69*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham069"  x="4624.4*mm"  y="1786.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham070"  x="3286.4*mm"  y="1776.81*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham073"  x="4545.0*mm"  y="1483.79*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham074"  x="3263.2*mm"  y="1491.99*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham077"  x="4624.4*mm"  y="1237.01*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham078"  x="3286.4*mm"  y="1230.21*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham081"  x="4545.0*mm"  y="943.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham082"  x="3263.2*mm"  y="949.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham085"  x="4624.4*mm"  y="687.71*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham086"  x="3286.4*mm"  y="683.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham089"  x="4545.0*mm"  y="403.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham090"  x="3263.2*mm"  y="406.59*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham093"  x="4624.4*mm"  y="138.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham094"  x="3286.4*mm"  y="137.11*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham097"  x="4545.0*mm"  y="-136.01*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham098"  x="3263.2*mm"  y="-136.11*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham101"  x="4624.4*mm"  y="-410.99*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham102"  x="3286.4*mm"  y="-409.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham105"  x="4545.0*mm"  y="-675.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham106"  x="3263.2*mm"  y="-678.81*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham109"  x="4624.4*mm"  y="-960.29*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham110"  x="3286.4*mm"  y="-956.09*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham113"  x="4545.0*mm"  y="-1215.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham114"  x="3263.2*mm"  y="-1221.51*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham117"  x="4624.4*mm"  y="-1509.69*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham118"  x="3286.4*mm"  y="-1502.69*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham121"  x="4545.0*mm"  y="-1755.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham122"  x="3263.2*mm"  y="-1764.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham125"  x="4624.4*mm"  y="-2058.99*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham126"  x="3286.4*mm"  y="-2049.19*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham129"  x="4545.0*mm"  y="-2295.71*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham130"  x="3263.2*mm"  y="-2306.91*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham131"  x="1947.9*mm"  y="-2295.71*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham132"  x="652.6*mm"  y="-2306.91*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham137"  x="4624.4*mm"  y="-2608.39*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham138"  x="3286.4*mm"  y="-2595.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham139"  x="1981.9*mm"  y="-2608.39*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham140"  x="657.3*mm"  y="-2595.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham145"  x="4545.0*mm"  y="-2835.61*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham146"  x="3263.2*mm"  y="-2849.61*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham147"  x="1947.9*mm"  y="-2835.61*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham148"  x="652.6*mm"  y="-2849.61*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham153"  x="4624.4*mm"  y="-3157.69*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham154"  x="3286.4*mm"  y="-3142.39*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham155"  x="1981.9*mm"  y="-3157.69*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham156"  x="657.3*mm"  y="-3142.39*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham161"  x="4545.0*mm"  y="-3375.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham162"  x="3263.2*mm"  y="-3392.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham163"  x="1947.9*mm"  y="-3375.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham164"  x="652.6*mm"  y="-3392.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham169"  x="4624.4*mm"  y="-3707.09*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham170"  x="3286.4*mm"  y="-3688.89*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham171"  x="1981.9*mm"  y="-3707.09*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham172"  x="657.3*mm"  y="-3688.89*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham177"  x="4545.0*mm"  y="-3915.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham178"  x="3263.2*mm"  y="-3935.01*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham179"  x="1947.9*mm"  y="-3915.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M3R4Cham180"  x="652.6*mm"  y="-3935.01*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M3R4Cham185"  x="4624.4*mm"  y="-4256.39*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham186"  x="3286.4*mm"  y="-4235.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M3R4Cham187"  x="1981.9*mm"  y="-4256.39*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M3R4Cham188"  x="657.3*mm"  y="-4235.49*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M3R4Cham005"  x="-649.3*mm"  y="4183.39*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham006"  x="-1957.9*mm"  y="4205.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham007"  x="-3246.5*mm"  y="4183.39*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham008"  x="-4568.4*mm"  y="4205.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham013"  x="-660.6*mm"  y="3983.81*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham014"  x="-1971.9*mm"  y="3963.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham015"  x="-3303.1*mm"  y="3983.81*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham016"  x="-4601.0*mm"  y="3963.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham021"  x="-649.3*mm"  y="3643.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham022"  x="-1957.9*mm"  y="3662.79*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham023"  x="-3246.5*mm"  y="3643.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham024"  x="-4568.4*mm"  y="3662.79*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham029"  x="-660.6*mm"  y="3434.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham030"  x="-1971.9*mm"  y="3416.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham031"  x="-3303.1*mm"  y="3434.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham032"  x="-4601.0*mm"  y="3416.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham037"  x="-649.3*mm"  y="3103.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham038"  x="-1957.9*mm"  y="3120.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham039"  x="-3246.5*mm"  y="3103.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham040"  x="-4568.4*mm"  y="3120.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham045"  x="-660.6*mm"  y="2885.11*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham046"  x="-1971.9*mm"  y="2869.91*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham047"  x="-3303.1*mm"  y="2885.11*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham048"  x="-4601.0*mm"  y="2869.91*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham053"  x="-649.3*mm"  y="2563.59*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham054"  x="-1957.9*mm"  y="2577.39*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham055"  x="-3246.5*mm"  y="2563.59*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham056"  x="-4568.4*mm"  y="2577.39*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham061"  x="-660.6*mm"  y="2335.71*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham062"  x="-1971.9*mm"  y="2323.31*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham063"  x="-3303.1*mm"  y="2335.71*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham064"  x="-4601.0*mm"  y="2323.31*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham067"  x="-3246.5*mm"  y="2023.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham068"  x="-4568.4*mm"  y="2034.69*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham071"  x="-3303.1*mm"  y="1786.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham072"  x="-4601.0*mm"  y="1776.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham075"  x="-3246.5*mm"  y="1483.79*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham076"  x="-4568.4*mm"  y="1491.99*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham079"  x="-3303.1*mm"  y="1237.01*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham080"  x="-4601.0*mm"  y="1230.21*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham083"  x="-3246.5*mm"  y="943.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham084"  x="-4568.4*mm"  y="949.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham087"  x="-3303.1*mm"  y="687.71*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham088"  x="-4601.0*mm"  y="683.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham091"  x="-3246.5*mm"  y="403.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham092"  x="-4568.4*mm"  y="406.59*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham095"  x="-3303.1*mm"  y="138.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham096"  x="-4601.0*mm"  y="137.11*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham099"  x="-3246.5*mm"  y="-136.01*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham100"  x="-4568.4*mm"  y="-136.11*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham103"  x="-3303.1*mm"  y="-410.99*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham104"  x="-4601.0*mm"  y="-409.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham107"  x="-3246.5*mm"  y="-675.91*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham108"  x="-4568.4*mm"  y="-678.81*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham111"  x="-3303.1*mm"  y="-960.29*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham112"  x="-4601.0*mm"  y="-956.09*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham115"  x="-3246.5*mm"  y="-1215.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham116"  x="-4568.4*mm"  y="-1221.51*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham119"  x="-3303.1*mm"  y="-1509.69*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham120"  x="-4601.0*mm"  y="-1502.69*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham123"  x="-3246.5*mm"  y="-1755.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham124"  x="-4568.4*mm"  y="-1764.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham127"  x="-3303.1*mm"  y="-2058.99*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham128"  x="-4601.0*mm"  y="-2049.19*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham133"  x="-649.3*mm"  y="-2295.71*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham134"  x="-1957.9*mm"  y="-2306.91*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham135"  x="-3246.5*mm"  y="-2295.71*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham136"  x="-4568.4*mm"  y="-2306.91*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham141"  x="-660.6*mm"  y="-2608.39*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham142"  x="-1971.9*mm"  y="-2595.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham143"  x="-3303.1*mm"  y="-2608.39*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham144"  x="-4601.0*mm"  y="-2595.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham149"  x="-649.3*mm"  y="-2835.61*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham150"  x="-1957.9*mm"  y="-2849.61*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham151"  x="-3246.5*mm"  y="-2835.61*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham152"  x="-4568.4*mm"  y="-2849.61*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham157"  x="-660.6*mm"  y="-3157.69*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham158"  x="-1971.9*mm"  y="-3142.39*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham159"  x="-3303.1*mm"  y="-3157.69*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham160"  x="-4601.0*mm"  y="-3142.39*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham165"  x="-649.3*mm"  y="-3375.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham166"  x="-1957.9*mm"  y="-3392.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham167"  x="-3246.5*mm"  y="-3375.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham168"  x="-4568.4*mm"  y="-3392.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham173"  x="-660.6*mm"  y="-3707.09*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham174"  x="-1971.9*mm"  y="-3688.89*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham175"  x="-3303.1*mm"  y="-3707.09*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham176"  x="-4601.0*mm"  y="-3688.89*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham181"  x="-649.3*mm"  y="-3915.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham182"  x="-1957.9*mm"  y="-3935.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham183"  x="-3246.5*mm"  y="-3915.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M3R4Cham184"  x="-4568.4*mm"  y="-3935.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M3R4Cham189"  x="-660.6*mm"  y="-4256.39*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham190"  x="-1971.9*mm"  y="-4235.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M3R4Cham191"  x="-3303.1*mm"  y="-4256.39*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M3R4Cham192"  x="-4601.0*mm"  y="-4235.49*mm"  z="+58.5*mm"  side="1" />
+
+          <!--M4-->
+          <!--R1-->
+          <chamber name="M4R1Cham001"  x="522.8*mm"  y="433.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R1Cham002"  x="175.1*mm"  y="436.39*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R1Cham005"  x="531.3*mm"  y="148.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R1Cham007"  x="522.8*mm"  y="-145.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R1Cham009"  x="531.3*mm"  y="-440.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R1Cham010"  x="176.3*mm"  y="-439.29*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M4R1Cham003"  x="-174.3*mm"  y="433.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R1Cham004"  x="-525.3*mm"  y="436.39*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R1Cham006"  x="-528.8*mm"  y="147.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R1Cham008"  x="-525.3*mm"  y="-146.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R1Cham011"  x="-177.1*mm"  y="-440.79*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R1Cham012"  x="-528.8*mm"  y="-439.29*mm"  z="+58.5*mm"  side="1" />
+
+          <!--R2-->
+          <chamber name="M4R2Cham001"  x="1050.5*mm"  y="1018.79*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R2Cham002"  x="348.5*mm"  y="1013.29*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R2Cham005"  x="1057.5*mm"  y="733.21*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R2Cham006"  x="354.2*mm"  y="737.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R2Cham009"  x="1050.5*mm"  y="436.39*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R2Cham011"  x="1057.5*mm"  y="147.01*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R2Cham013"  x="1050.5*mm"  y="-146.01*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R2Cham015"  x="1057.5*mm"  y="-439.29*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R2Cham017"  x="1050.5*mm"  y="-728.41*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R2Cham018"  x="348.5*mm"  y="-725.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R2Cham021"  x="1057.5*mm"  y="-1025.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R2Cham022"  x="354.2*mm"  y="-1029.79*mm"  z="+142.5*mm"  side="0" />
+
+          <chamber name="M4R2Cham003"  x="-350.2*mm"  y="1018.79*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R2Cham004"  x="-1045.5*mm"  y="1013.29*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R2Cham007"  x="-352.5*mm"  y="733.21*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R2Cham008"  x="-1062.5*mm"  y="737.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R2Cham010"  x="-1045.5*mm"  y="433.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R2Cham012"  x="-1062.5*mm"  y="148.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R2Cham014"  x="-1045.5*mm"  y="-145.91*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R2Cham016"  x="-1062.5*mm"  y="-440.79*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R2Cham019"  x="-350.2*mm"  y="-728.41*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R2Cham020"  x="-1045.5*mm"  y="-725.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R2Cham023"  x="-352.5*mm"  y="-1025.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R2Cham024"  x="-1062.5*mm"  y="-1029.79*mm"  z="+142.5*mm"  side="1" />
+
+          <!--R3-->
+          <chamber name="M4R3Cham001"  x="2091.0*mm"  y="2172.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham002"  x="700.4*mm"  y="2183.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R3Cham005"  x="2125.0*mm"  y="1915.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham006"  x="705.0*mm"  y="1905.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R3Cham009"  x="2091.0*mm"  y="1592.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham010"  x="700.4*mm"  y="1601.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R3Cham013"  x="2125.0*mm"  y="1326.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham014"  x="705.0*mm"  y="1319.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R3Cham017"  x="2091.0*mm"  y="1013.29*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham019"  x="2125.0*mm"  y="737.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham021"  x="2091.0*mm"  y="433.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham023"  x="2125.0*mm"  y="148.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham025"  x="2091.0*mm"  y="-145.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham027"  x="2125.0*mm"  y="-440.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham029"  x="2091.0*mm"  y="-725.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham031"  x="2125.0*mm"  y="-1029.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham033"  x="2091.0*mm"  y="-1305.11*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham034"  x="700.4*mm"  y="-1310.81*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R3Cham037"  x="2125.0*mm"  y="-1618.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham038"  x="705.0*mm"  y="-1611.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R3Cham041"  x="2091.0*mm"  y="-1884.71*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R3Cham042"  x="700.4*mm"  y="-1893.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R3Cham045"  x="2125.0*mm"  y="-2207.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R3Cham046"  x="705.0*mm"  y="-2197.99*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M4R3Cham003"  x="-697.0*mm"  y="2172.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R3Cham004"  x="-2101.1*mm"  y="2183.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham007"  x="-708.3*mm"  y="1915.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R3Cham008"  x="-2115.0*mm"  y="1905.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R3Cham011"  x="-697.0*mm"  y="1592.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R3Cham012"  x="-2101.1*mm"  y="1601.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham015"  x="-708.3*mm"  y="1326.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R3Cham016"  x="-2115.0*mm"  y="1319.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R3Cham018"  x="-2101.1*mm"  y="1018.79*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham020"  x="-2115.0*mm"  y="733.21*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R3Cham022"  x="-2101.1*mm"  y="436.39*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham024"  x="-2115.0*mm"  y="147.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R3Cham026"  x="-2101.1*mm"  y="-146.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham028"  x="-2115.0*mm"  y="-439.29*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R3Cham030"  x="-2101.1*mm"  y="-728.41*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham032"  x="-2115.0*mm"  y="-1025.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R3Cham035"  x="-697.0*mm"  y="-1305.11*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R3Cham036"  x="-2101.1*mm"  y="-1310.81*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham039"  x="-708.3*mm"  y="-1618.79*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R3Cham040"  x="-2115.0*mm"  y="-1611.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R3Cham043"  x="-697.0*mm"  y="-1884.71*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R3Cham044"  x="-2101.1*mm"  y="-1893.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R3Cham047"  x="-708.3*mm"  y="-2207.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R3Cham048"  x="-2115.0*mm"  y="-2197.99*mm"  z="+58.5*mm"  side="1" />
+
+          <!--R4-->
+          <chamber name="M4R4Cham001"  x="4879.1*mm"  y="4490.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham002"  x="3501.8*mm"  y="4513.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham003"  x="2091.0*mm"  y="4490.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham004"  x="700.4*mm"  y="4513.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham009"  x="4958.4*mm"  y="4271.51*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham010"  x="3525.0*mm"  y="4250.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham011"  x="2125.0*mm"  y="4271.51*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham012"  x="705.0*mm"  y="4250.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham017"  x="4879.1*mm"  y="3911.29*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham018"  x="3501.8*mm"  y="3930.69*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham019"  x="2091.0*mm"  y="3911.29*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham020"  x="700.4*mm"  y="3930.69*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham025"  x="4958.4*mm"  y="3682.51*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham026"  x="3525.0*mm"  y="3664.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham027"  x="2125.0*mm"  y="3682.51*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham028"  x="705.0*mm"  y="3664.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham033"  x="4879.1*mm"  y="3331.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham034"  x="3501.8*mm"  y="3348.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham035"  x="2091.0*mm"  y="3331.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham036"  x="700.4*mm"  y="3348.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham041"  x="4958.4*mm"  y="3093.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham042"  x="3525.0*mm"  y="3078.21*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham043"  x="2125.0*mm"  y="3093.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham044"  x="705.0*mm"  y="3078.21*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham049"  x="4879.1*mm"  y="2752.09*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham050"  x="3501.8*mm"  y="2765.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham051"  x="2091.0*mm"  y="2752.09*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham052"  x="700.4*mm"  y="2765.89*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham057"  x="4958.4*mm"  y="2504.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham058"  x="3525.0*mm"  y="2492.01*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham059"  x="2125.0*mm"  y="2504.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham060"  x="705.0*mm"  y="2492.01*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham065"  x="4879.1*mm"  y="2172.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham066"  x="3501.8*mm"  y="2183.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham069"  x="4958.4*mm"  y="1915.41*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham070"  x="3525.0*mm"  y="1905.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham073"  x="4879.1*mm"  y="1592.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham074"  x="3501.8*mm"  y="1601.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham077"  x="4958.4*mm"  y="1326.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham078"  x="3525.0*mm"  y="1319.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham081"  x="4879.1*mm"  y="1013.29*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham082"  x="3501.8*mm"  y="1018.79*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham085"  x="4958.4*mm"  y="737.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham086"  x="3525.0*mm"  y="733.21*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham089"  x="4879.1*mm"  y="433.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham090"  x="3501.8*mm"  y="436.39*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham093"  x="4958.4*mm"  y="148.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham094"  x="3525.0*mm"  y="147.01*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham097"  x="4879.1*mm"  y="-145.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham098"  x="3501.8*mm"  y="-146.01*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham101"  x="4958.4*mm"  y="-440.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham102"  x="3525.0*mm"  y="-439.29*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham105"  x="4879.1*mm"  y="-725.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham106"  x="3501.8*mm"  y="-728.41*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham109"  x="4958.4*mm"  y="-1029.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham110"  x="3525.0*mm"  y="-1025.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham113"  x="4879.1*mm"  y="-1305.11*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham114"  x="3501.8*mm"  y="-1310.81*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham117"  x="4958.4*mm"  y="-1618.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham118"  x="3525.0*mm"  y="-1611.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham121"  x="4879.1*mm"  y="-1884.71*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham122"  x="3501.8*mm"  y="-1893.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham125"  x="4958.4*mm"  y="-2207.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham126"  x="3525.0*mm"  y="-2197.99*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham129"  x="4879.1*mm"  y="-2464.31*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham130"  x="3501.8*mm"  y="-2475.51*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham131"  x="2091.0*mm"  y="-2464.31*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham132"  x="700.4*mm"  y="-2475.51*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham137"  x="4958.4*mm"  y="-2796.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham138"  x="3525.0*mm"  y="-2784.29*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham139"  x="2125.0*mm"  y="-2796.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham140"  x="705.0*mm"  y="-2784.29*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham145"  x="4879.1*mm"  y="-3043.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham146"  x="3501.8*mm"  y="-3057.91*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham147"  x="2091.0*mm"  y="-3043.91*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham148"  x="700.4*mm"  y="-3057.91*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham153"  x="4958.4*mm"  y="-3385.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham154"  x="3525.0*mm"  y="-3370.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham155"  x="2125.0*mm"  y="-3385.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham156"  x="705.0*mm"  y="-3370.49*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham161"  x="4879.1*mm"  y="-3623.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham162"  x="3501.8*mm"  y="-3640.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham163"  x="2091.0*mm"  y="-3623.51*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham164"  x="700.4*mm"  y="-3640.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham169"  x="4958.4*mm"  y="-3974.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham170"  x="3525.0*mm"  y="-3956.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham171"  x="2125.0*mm"  y="-3974.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham172"  x="705.0*mm"  y="-3956.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham177"  x="4879.1*mm"  y="-4203.21*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham178"  x="3501.8*mm"  y="-4222.71*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham179"  x="2091.0*mm"  y="-4203.21*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M4R4Cham180"  x="700.4*mm"  y="-4222.71*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M4R4Cham185"  x="4958.4*mm"  y="-4563.99*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham186"  x="3525.0*mm"  y="-4542.99*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M4R4Cham187"  x="2125.0*mm"  y="-4563.99*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M4R4Cham188"  x="705.0*mm"  y="-4542.99*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M4R4Cham005"  x="-697.0*mm"  y="4490.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham006"  x="-2101.1*mm"  y="4513.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham007"  x="-3485.1*mm"  y="4490.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham008"  x="-4902.5*mm"  y="4513.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham013"  x="-708.3*mm"  y="4271.51*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham014"  x="-2115.0*mm"  y="4250.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham015"  x="-3541.7*mm"  y="4271.51*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham016"  x="-4935.0*mm"  y="4250.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham021"  x="-697.0*mm"  y="3911.29*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham022"  x="-2101.1*mm"  y="3930.69*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham023"  x="-3485.1*mm"  y="3911.29*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham024"  x="-4902.5*mm"  y="3930.69*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham029"  x="-708.3*mm"  y="3682.51*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham030"  x="-2115.0*mm"  y="3664.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham031"  x="-3541.7*mm"  y="3682.51*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham032"  x="-4935.0*mm"  y="3664.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham037"  x="-697.0*mm"  y="3331.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham038"  x="-2101.1*mm"  y="3348.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham039"  x="-3485.1*mm"  y="3331.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham040"  x="-4902.5*mm"  y="3348.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham045"  x="-708.3*mm"  y="3093.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham046"  x="-2115.0*mm"  y="3078.21*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham047"  x="-3541.7*mm"  y="3093.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham048"  x="-4935.0*mm"  y="3078.21*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham053"  x="-697.0*mm"  y="2752.09*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham054"  x="-2101.1*mm"  y="2765.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham055"  x="-3485.1*mm"  y="2752.09*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham056"  x="-4902.5*mm"  y="2765.89*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham061"  x="-708.3*mm"  y="2504.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham062"  x="-2115.0*mm"  y="2492.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham063"  x="-3541.7*mm"  y="2504.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham064"  x="-4935.0*mm"  y="2492.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham067"  x="-3485.1*mm"  y="2172.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham068"  x="-4902.5*mm"  y="2183.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham071"  x="-3541.7*mm"  y="1915.41*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham072"  x="-4935.0*mm"  y="1905.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham075"  x="-3485.1*mm"  y="1592.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham076"  x="-4902.5*mm"  y="1601.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham079"  x="-3541.7*mm"  y="1326.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham080"  x="-4935.0*mm"  y="1319.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham083"  x="-3485.1*mm"  y="1013.29*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham084"  x="-4902.5*mm"  y="1018.79*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham087"  x="-3541.7*mm"  y="737.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham088"  x="-4935.0*mm"  y="733.21*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham091"  x="-3485.1*mm"  y="433.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham092"  x="-4902.5*mm"  y="436.39*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham095"  x="-3541.7*mm"  y="148.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham096"  x="-4935.0*mm"  y="147.01*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham099"  x="-3485.1*mm"  y="-145.91*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham100"  x="-4902.5*mm"  y="-146.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham103"  x="-3541.7*mm"  y="-440.79*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham104"  x="-4935.0*mm"  y="-439.29*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham107"  x="-3485.1*mm"  y="-725.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham108"  x="-4902.5*mm"  y="-728.41*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham111"  x="-3541.7*mm"  y="-1029.79*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham112"  x="-4935.0*mm"  y="-1025.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham115"  x="-3485.1*mm"  y="-1305.11*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham116"  x="-4902.5*mm"  y="-1310.81*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham119"  x="-3541.7*mm"  y="-1618.79*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham120"  x="-4935.0*mm"  y="-1611.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham123"  x="-3485.1*mm"  y="-1884.71*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham124"  x="-4902.5*mm"  y="-1893.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham127"  x="-3541.7*mm"  y="-2207.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham128"  x="-4935.0*mm"  y="-2197.99*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham133"  x="-697.0*mm"  y="-2464.31*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham134"  x="-2101.1*mm"  y="-2475.51*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham135"  x="-3485.1*mm"  y="-2464.31*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham136"  x="-4902.5*mm"  y="-2475.51*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham141"  x="-708.3*mm"  y="-2796.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham142"  x="-2115.0*mm"  y="-2784.29*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham143"  x="-3541.7*mm"  y="-2796.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham144"  x="-4935.0*mm"  y="-2784.29*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham149"  x="-697.0*mm"  y="-3043.91*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham150"  x="-2101.1*mm"  y="-3057.91*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham151"  x="-3485.1*mm"  y="-3043.91*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham152"  x="-4902.5*mm"  y="-3057.91*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham157"  x="-708.3*mm"  y="-3385.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham158"  x="-2115.0*mm"  y="-3370.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham159"  x="-3541.7*mm"  y="-3385.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham160"  x="-4935.0*mm"  y="-3370.49*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham165"  x="-697.0*mm"  y="-3623.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham166"  x="-2101.1*mm"  y="-3640.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham167"  x="-3485.1*mm"  y="-3623.51*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham168"  x="-4902.5*mm"  y="-3640.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham173"  x="-708.3*mm"  y="-3974.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham174"  x="-2115.0*mm"  y="-3956.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham175"  x="-3541.7*mm"  y="-3974.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham176"  x="-4935.0*mm"  y="-3956.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham181"  x="-697.0*mm"  y="-4203.21*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham182"  x="-2101.1*mm"  y="-4222.71*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham183"  x="-3485.1*mm"  y="-4203.21*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M4R4Cham184"  x="-4902.5*mm"  y="-4222.71*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M4R4Cham189"  x="-708.3*mm"  y="-4563.99*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham190"  x="-2115.0*mm"  y="-4542.99*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M4R4Cham191"  x="-3541.7*mm"  y="-4563.99*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M4R4Cham192"  x="-4935.0*mm"  y="-4542.99*mm"  z="+58.5*mm"  side="1" />
+
+          <!--M5-->
+          <!--R1-->
+          <chamber name="M5R1Cham001"  x="558.5*mm"  y="463.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R1Cham002"  x="187.0*mm"  y="466.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R1Cham005"  x="567.1*mm"  y="158.21*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R1Cham007"  x="558.5*mm"  y="-155.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R1Cham009"  x="567.1*mm"  y="-470.49*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R1Cham010"  x="188.2*mm"  y="-468.99*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M5R1Cham003"  x="-186.2*mm"  y="463.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R1Cham004"  x="-561.1*mm"  y="466.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R1Cham006"  x="-564.5*mm"  y="156.91*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R1Cham008"  x="-561.1*mm"  y="-155.91*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R1Cham011"  x="-189.0*mm"  y="-470.49*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R1Cham012"  x="-564.5*mm"  y="-468.99*mm"  z="+58.5*mm"  side="1" />
+
+          <!--R2-->
+          <chamber name="M5R2Cham001"  x="1122.1*mm"  y="1088.19*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R2Cham002"  x="372.4*mm"  y="1082.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R2Cham005"  x="1129.1*mm"  y="782.81*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R2Cham006"  x="378.0*mm"  y="786.91*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R2Cham009"  x="1122.1*mm"  y="466.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R2Cham011"  x="1129.1*mm"  y="155.91*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R2Cham013"  x="1122.1*mm"  y="-155.91*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R2Cham015"  x="1129.1*mm"  y="-468.99*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R2Cham017"  x="1122.1*mm"  y="-778.01*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R2Cham018"  x="372.4*mm"  y="-775.11*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R2Cham021"  x="1129.1*mm"  y="-1094.99*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R2Cham022"  x="378.0*mm"  y="-1099.19*mm"  z="+142.5*mm"  side="0" />
+
+          <chamber name="M5R2Cham003"  x="-374.0*mm"  y="1088.19*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R2Cham004"  x="-1117.1*mm"  y="1082.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R2Cham007"  x="-376.4*mm"  y="782.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R2Cham008"  x="-1134.1*mm"  y="786.91*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R2Cham010"  x="-1117.1*mm"  y="463.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R2Cham012"  x="-1134.1*mm"  y="158.21*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R2Cham014"  x="-1117.1*mm"  y="-155.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R2Cham016"  x="-1134.1*mm"  y="-470.49*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R2Cham019"  x="-374.0*mm"  y="-778.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R2Cham020"  x="-1117.1*mm"  y="-775.11*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R2Cham023"  x="-376.4*mm"  y="-1094.99*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R2Cham024"  x="-1134.1*mm"  y="-1099.19*mm"  z="+142.5*mm"  side="1" />
+
+          <!--R3-->
+          <chamber name="M5R3Cham001"  x="2234.2*mm"  y="2321.29*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham002"  x="748.1*mm"  y="2333.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R3Cham005"  x="2268.2*mm"  y="2044.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham006"  x="752.7*mm"  y="2034.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R3Cham009"  x="2234.2*mm"  y="1701.99*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham010"  x="748.1*mm"  y="1710.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R3Cham013"  x="2268.2*mm"  y="1415.61*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham014"  x="752.7*mm"  y="1408.81*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R3Cham017"  x="2234.2*mm"  y="1082.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham019"  x="2268.2*mm"  y="786.91*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham021"  x="2234.2*mm"  y="463.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham023"  x="2268.2*mm"  y="158.21*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham025"  x="2234.2*mm"  y="-155.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham027"  x="2268.2*mm"  y="-470.49*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham029"  x="2234.2*mm"  y="-775.11*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham031"  x="2268.2*mm"  y="-1099.19*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham033"  x="2234.2*mm"  y="-1394.41*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham034"  x="748.1*mm"  y="-1400.11*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R3Cham037"  x="2268.2*mm"  y="-1727.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham038"  x="752.7*mm"  y="-1720.89*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R3Cham041"  x="2234.2*mm"  y="-2013.71*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R3Cham042"  x="748.1*mm"  y="-2022.11*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R3Cham045"  x="2268.2*mm"  y="-2356.69*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R3Cham046"  x="752.7*mm"  y="-2346.79*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M5R3Cham003"  x="-744.7*mm"  y="2321.29*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R3Cham004"  x="-2244.2*mm"  y="2332.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham007"  x="-756.1*mm"  y="2044.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R3Cham008"  x="-2258.2*mm"  y="2034.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R3Cham011"  x="-744.7*mm"  y="1701.99*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R3Cham012"  x="-2244.2*mm"  y="1710.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham015"  x="-756.1*mm"  y="1415.61*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R3Cham016"  x="-2258.2*mm"  y="1408.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R3Cham018"  x="-2244.2*mm"  y="1088.19*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham020"  x="-2258.2*mm"  y="782.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R3Cham022"  x="-2244.2*mm"  y="466.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham024"  x="-2258.2*mm"  y="156.91*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R3Cham026"  x="-2244.2*mm"  y="-155.91*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham028"  x="-2258.2*mm"  y="-468.99*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R3Cham030"  x="-2244.2*mm"  y="-778.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham032"  x="-2258.2*mm"  y="-1094.99*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R3Cham035"  x="-744.7*mm"  y="-1394.41*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R3Cham036"  x="-2244.2*mm"  y="-1400.11*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham039"  x="-756.1*mm"  y="-1727.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R3Cham040"  x="-2258.2*mm"  y="-1720.89*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R3Cham043"  x="-744.7*mm"  y="-2013.71*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R3Cham044"  x="-2244.2*mm"  y="-2022.11*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R3Cham047"  x="-756.1*mm"  y="-2356.69*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R3Cham048"  x="-2258.2*mm"  y="-2346.79*mm"  z="+58.5*mm"  side="1" />
+
+          <!--R4-->
+          <chamber name="M5R4Cham001"  x="5213.1*mm"  y="4798.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham002"  x="3740.4*mm"  y="4820.59*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham003"  x="2234.2*mm"  y="4798.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham004"  x="748.1*mm"  y="4821.59*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham009"  x="5292.5*mm"  y="4559.21*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham010"  x="3763.6*mm"  y="4538.41*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham011"  x="2268.2*mm"  y="4559.21*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham012"  x="752.7*mm"  y="4538.41*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham017"  x="5213.1*mm"  y="4179.19*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham018"  x="3740.4*mm"  y="4198.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham019"  x="2234.2*mm"  y="4179.19*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham020"  x="748.1*mm"  y="4199.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham025"  x="5292.5*mm"  y="3930.51*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham026"  x="3763.6*mm"  y="3912.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham027"  x="2268.2*mm"  y="3930.51*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham028"  x="752.7*mm"  y="3912.51*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham033"  x="5213.1*mm"  y="3559.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham034"  x="3740.4*mm"  y="3576.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham035"  x="2234.2*mm"  y="3559.89*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham036"  x="748.1*mm"  y="3577.49*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham041"  x="5292.5*mm"  y="3301.81*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham042"  x="3763.6*mm"  y="3286.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham043"  x="2268.2*mm"  y="3301.81*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham044"  x="752.7*mm"  y="3286.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham049"  x="5213.1*mm"  y="2940.59*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham050"  x="3740.4*mm"  y="2954.39*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham051"  x="2234.2*mm"  y="2940.59*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham052"  x="748.1*mm"  y="2954.39*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham057"  x="5292.5*mm"  y="2673.01*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham058"  x="3763.6*mm"  y="2660.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham059"  x="2268.2*mm"  y="2673.01*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham060"  x="752.7*mm"  y="2660.61*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham065"  x="5213.1*mm"  y="2321.29*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham066"  x="3740.4*mm"  y="2332.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham069"  x="5292.5*mm"  y="2044.31*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham070"  x="3763.6*mm"  y="2034.71*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham073"  x="5213.1*mm"  y="1701.99*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham074"  x="3740.4*mm"  y="1710.29*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham077"  x="5292.5*mm"  y="1415.61*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham078"  x="3763.6*mm"  y="1408.81*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham081"  x="5213.1*mm"  y="1082.69*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham082"  x="3740.4*mm"  y="1088.19*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham085"  x="5292.5*mm"  y="786.91*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham086"  x="3763.6*mm"  y="782.81*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham089"  x="5213.1*mm"  y="463.49*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham090"  x="3740.4*mm"  y="466.09*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham093"  x="5292.5*mm"  y="158.21*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham094"  x="3763.6*mm"  y="156.91*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham097"  x="5213.1*mm"  y="-155.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham098"  x="3740.4*mm"  y="-155.91*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham101"  x="5292.5*mm"  y="-470.49*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham102"  x="3763.6*mm"  y="-468.99*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham105"  x="5213.1*mm"  y="-775.11*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham106"  x="3740.4*mm"  y="-778.01*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham109"  x="5292.5*mm"  y="-1099.19*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham110"  x="3763.6*mm"  y="-1094.99*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham113"  x="5213.1*mm"  y="-1394.41*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham114"  x="3740.4*mm"  y="-1400.11*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham117"  x="5292.5*mm"  y="-1727.89*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham118"  x="3763.6*mm"  y="-1720.89*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham121"  x="5213.1*mm"  y="-2013.71*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham122"  x="3740.4*mm"  y="-2022.11*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham125"  x="5292.5*mm"  y="-2356.69*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham126"  x="3763.6*mm"  y="-2346.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham129"  x="5213.1*mm"  y="-2633.01*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham130"  x="3740.4*mm"  y="-2644.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham131"  x="2234.2*mm"  y="-2633.01*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham132"  x="748.1*mm"  y="-2644.21*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham137"  x="5292.5*mm"  y="-2985.39*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham138"  x="3763.6*mm"  y="-2972.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham139"  x="2268.2*mm"  y="-2985.39*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham140"  x="752.7*mm"  y="-2972.79*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham145"  x="5213.1*mm"  y="-3252.31*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham146"  x="3740.4*mm"  y="-3266.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham147"  x="2234.2*mm"  y="-3252.31*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham148"  x="748.1*mm"  y="-3266.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham153"  x="5292.5*mm"  y="-3614.09*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham154"  x="3763.6*mm"  y="-3598.69*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham155"  x="2268.2*mm"  y="-3614.09*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham156"  x="752.7*mm"  y="-3598.69*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham161"  x="5213.1*mm"  y="-3871.61*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham162"  x="3740.4*mm"  y="-3888.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham163"  x="2234.2*mm"  y="-3871.61*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham164"  x="748.1*mm"  y="-3888.31*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham169"  x="5292.5*mm"  y="-4242.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham170"  x="3763.6*mm"  y="-4224.59*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham171"  x="2268.2*mm"  y="-4242.79*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham172"  x="752.7*mm"  y="-4224.59*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham177"  x="5213.1*mm"  y="-4490.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham178"  x="3740.4*mm"  y="-4510.41*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham179"  x="2234.2*mm"  y="-4490.81*mm"  z="-142.5*mm"  side="0" />
+          <chamber name="M5R4Cham180"  x="748.1*mm"  y="-4510.41*mm"  z="-58.5*mm"  side="0" />
+          <chamber name="M5R4Cham185"  x="5292.5*mm"  y="-4871.49*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham186"  x="3763.6*mm"  y="-4850.59*mm"  z="+58.5*mm"  side="0" />
+          <chamber name="M5R4Cham187"  x="2268.2*mm"  y="-4871.49*mm"  z="+142.5*mm"  side="0" />
+          <chamber name="M5R4Cham188"  x="752.7*mm"  y="-4850.59*mm"  z="+58.5*mm"  side="0" />
+
+          <chamber name="M5R4Cham005"  x="-744.7*mm"  y="4798.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham006"  x="-2244.2*mm"  y="4820.59*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham007"  x="-3723.7*mm"  y="4798.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham008"  x="-5236.5*mm"  y="4820.59*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham013"  x="-756.1*mm"  y="4559.21*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham014"  x="-2258.2*mm"  y="4538.41*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham015"  x="-3780.3*mm"  y="4559.21*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham016"  x="-5269.1*mm"  y="4539.41*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham021"  x="-744.7*mm"  y="4179.19*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham022"  x="-2244.2*mm"  y="4198.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham023"  x="-3723.7*mm"  y="4179.19*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham024"  x="-5236.5*mm"  y="4198.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham029"  x="-756.1*mm"  y="3930.51*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham030"  x="-2258.2*mm"  y="3912.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham031"  x="-3780.3*mm"  y="3930.51*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham032"  x="-5269.1*mm"  y="3912.51*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham037"  x="-744.7*mm"  y="3559.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham038"  x="-2244.2*mm"  y="3576.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham039"  x="-3723.7*mm"  y="3559.89*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham040"  x="-5236.5*mm"  y="3576.49*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham045"  x="-756.1*mm"  y="3301.81*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham046"  x="-2258.2*mm"  y="3286.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham047"  x="-3780.3*mm"  y="3301.81*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham048"  x="-5269.1*mm"  y="3287.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham053"  x="-744.7*mm"  y="2940.59*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham054"  x="-2244.2*mm"  y="2954.39*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham055"  x="-3723.7*mm"  y="2940.59*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham056"  x="-5236.5*mm"  y="2954.39*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham061"  x="-756.1*mm"  y="2673.01*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham062"  x="-2258.2*mm"  y="2660.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham063"  x="-3780.3*mm"  y="2673.01*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham064"  x="-5269.1*mm"  y="2660.61*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham067"  x="-3723.7*mm"  y="2321.29*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham068"  x="-5236.5*mm"  y="2332.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham071"  x="-3780.3*mm"  y="2044.31*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham072"  x="-5269.1*mm"  y="2034.71*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham075"  x="-3723.7*mm"  y="1701.99*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham076"  x="-5236.5*mm"  y="1710.29*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham079"  x="-3780.3*mm"  y="1415.61*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham080"  x="-5269.1*mm"  y="1409.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham083"  x="-3723.7*mm"  y="1082.69*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham084"  x="-5236.5*mm"  y="1088.19*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham087"  x="-3780.3*mm"  y="786.91*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham088"  x="-5269.1*mm"  y="783.81*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham091"  x="-3723.7*mm"  y="463.49*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham092"  x="-5236.5*mm"  y="466.09*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham095"  x="-3780.3*mm"  y="158.21*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham096"  x="-5269.1*mm"  y="158.91*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham099"  x="-3723.7*mm"  y="-155.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham100"  x="-5236.5*mm"  y="-155.91*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham103"  x="-3780.3*mm"  y="-470.49*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham104"  x="-5269.1*mm"  y="-467.59*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham107"  x="-3723.7*mm"  y="-775.11*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham108"  x="-5236.5*mm"  y="-778.01*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham111"  x="-3780.3*mm"  y="-1099.19*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham112"  x="-5269.1*mm"  y="-1093.59*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham115"  x="-3723.7*mm"  y="-1394.41*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham116"  x="-5236.5*mm"  y="-1400.11*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham119"  x="-3780.3*mm"  y="-1727.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham120"  x="-5269.1*mm"  y="-1720.89*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham123"  x="-3723.7*mm"  y="-2013.71*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham124"  x="-5236.5*mm"  y="-2022.11*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham127"  x="-3780.3*mm"  y="-2355.29*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham128"  x="-5269.1*mm"  y="-2346.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham133"  x="-744.7*mm"  y="-2633.01*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham134"  x="-2244.2*mm"  y="-2644.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham135"  x="-3723.7*mm"  y="-2633.01*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham136"  x="-5236.5*mm"  y="-2644.21*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham141"  x="-756.1*mm"  y="-2985.39*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham142"  x="-2258.2*mm"  y="-2972.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham143"  x="-3780.3*mm"  y="-2985.39*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham144"  x="-5269.1*mm"  y="-2972.79*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham149"  x="-744.7*mm"  y="-3252.31*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham150"  x="-2244.2*mm"  y="-3266.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham151"  x="-3723.7*mm"  y="-3252.31*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham152"  x="-5236.5*mm"  y="-3266.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham157"  x="-756.1*mm"  y="-3614.09*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham158"  x="-2258.2*mm"  y="-3598.69*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham159"  x="-3780.3*mm"  y="-3612.89*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham160"  x="-5269.1*mm"  y="-3598.69*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham165"  x="-744.7*mm"  y="-3871.61*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham166"  x="-2244.2*mm"  y="-3888.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham167"  x="-3723.7*mm"  y="-3871.61*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham168"  x="-5236.5*mm"  y="-3888.31*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham173"  x="-756.1*mm"  y="-4241.19*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham174"  x="-2258.2*mm"  y="-4224.59*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham175"  x="-3780.3*mm"  y="-4241.19*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham176"  x="-5269.1*mm"  y="-4224.59*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham181"  x="-744.7*mm"  y="-4490.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham182"  x="-2244.2*mm"  y="-4510.41*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham183"  x="-3723.7*mm"  y="-4490.81*mm"  z="-142.5*mm"  side="1" />
+          <chamber name="M5R4Cham184"  x="-5236.5*mm"  y="-4510.41*mm"  z="-58.5*mm"  side="1" />
+          <chamber name="M5R4Cham189"  x="-756.1*mm"  y="-4871.49*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham190"  x="-2258.2*mm"  y="-4850.59*mm"  z="+58.5*mm"  side="1" />
+          <chamber name="M5R4Cham191"  x="-3780.3*mm"  y="-4868.49*mm"  z="+142.5*mm"  side="1" />
+          <chamber name="M5R4Cham192"  x="-5269.1*mm"  y="-4850.59*mm"  z="+58.5*mm"  side="1" />1
+
+        </chambers>
+
+	<!-- Chamber naming and position: end   -->
+
+        <item name="select_volume" value="lvMuon"/>
+      </detector>
+    </detectors>
+
+    <readouts>
+      <readout name="MuonHits">
+        <!-- <id>system:8,Station:3,Region:8,Chamber:16,GasGap:8,GasGapLayer:8</id> -->
+        <id>system:8,Station:3,Side:1,Region:3,Chamber:8,GasGap:2,GasGapLayer:1</id>
+      </readout>
+    </readouts>
+
+</lccdd>

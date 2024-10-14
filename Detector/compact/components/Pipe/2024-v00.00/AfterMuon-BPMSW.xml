@@ -1,0 +1,188 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--==================================  BPMSW  ================================-->
+<!--===========================================================================-->
+<pipe>
+  <!-- 1/8th of middle section -->
+  <volume name="lvDownStrBPMSWMidSect" material="Pipe:Steel316LN" vis="Pipe:AfterMuon">
+    <shape type="BooleanShape" operation="subtraction" name="DownStrBPMSWMidSectSub">
+      <shape type="Tube" name="DownStrBPMSWMidSectTubs"
+             dz="DownStr:BPMSWMidSectLength/2"
+             rmin="DownStr:BPMSWMidSectRadius"
+             rmax="DownStr:BPMSWMidSectRadius + DownStr:BPMSWMidSectThick"
+             startPhiAngle="44.9*degree"
+             deltaPhiAngle="89.8*degree"/>
+      <shape type="Box" name="DownStrBPMSWMidSectTopCut"
+             dx="(DownStr:BPMSWMidSectRadius + DownStr:BPMSWMidSectThick)/2"
+             dy="(DownStr:BPMSWMidSectRadius + DownStr:BPMSWMidSectThick)/2"
+             dz="(DownStr:BPMSWMidSectLength+1.0*mm)/2"/>
+      <position y="DownStr:BPMSWMidSectTopCutOffset + DownStr:BPMSWMidSectRadius/2 + DownStr:BPMSWMidSectThick/2"/>
+      <shape type="Tube" name="DownStrBPMSWMidSectHoleTubs"
+             dz="(DownStr:BPMSWMidSectRadius + DownStr:BPMSWMidSectThick)/2"
+             rmax="DownStr:BPMSWMidSectHoleRadius"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="DownStr:BPMSWMidSectRadius + DownStr:BPMSWMidSectThick/2" z="-DownStr:BPMSWMidSectHolePosZ"/>
+      </transformation>
+      <shape type="Tube" name="DownStrBPMSWMidSectEdgeTubs"
+             dz="DownStr:BPMSWMidSectEdgeDepth"
+             rmax="DownStr:BPMSWMidSectEdgeRadius"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="DownStr:BPMSWMidSectTopCutOffset" z="-DownStr:BPMSWMidSectHolePosZ"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <!-- Upstream Flange -->
+  <volume name="lvDownStrBPMSWFlangeUp" material="Pipe:Steel316LN" vis="Pipe:AfterMuon">
+    <shape type="Tube" name="DownStrBPMSWFlangeUpTubs"
+           dz="DownStr:BPMSWFlangeUpLength/2"
+           rmin="DownStr:BPMSWFlangeUpRadius"
+           rmax="DownStr:BPMSWFlangeUpRadius + DownStr:BPMSWFlangeUpThick"/>
+  </volume>
+
+  <!-- Downstream Flange -->
+  <volume name="lvDownStrBPMSWFlangeDown" material="Pipe:Steel316LN" vis="Pipe:AfterMuon">
+    <shape type="Tube" name="DownStrBPMSWFlangeDownTubs"
+           dz="DownStr:BPMSWFlangeDownLength/2"
+           rmin="DownStr:BPMSWFlangeDownRadius"
+           rmax="DownStr:BPMSWFlangeDownRadius + DownStr:BPMSWFlangeDownThick"/>
+  </volume>
+
+  <!-- Entry tube -->
+  <volume name="lvDownStrBPMSWEntry" material="Pipe:Steel316LN" vis="Pipe:AfterMuon">
+    <shape type="Tube" name="DownStrBPMSWEntryTubs"
+           dz="DownStr:BPMSWEntryLength/2"
+           rmin="DownStr:BPMSWEntryRadius"
+           rmax="DownStr:BPMSWEntryRadius + DownStr:BPMSWEntryThick"/>
+  </volume>
+
+  <!-- Exit Tube -->
+  <volume name="lvDownStrBPMSWExit" material="Pipe:Steel316LN" vis="Pipe:AfterMuon">
+    <shape type="Tube" name="DownStrBPMSWExitTubs"
+           dz="DownStr:BPMSWExitLength/2"
+           rmin="DownStr:BPMSWExitRadius"
+           rmax="DownStr:BPMSWExitRadius + DownStr:BPMSWExitThick"/>
+  </volume>
+
+  <!-- Plug -->
+  <volume name="lvDownStrBPMSWPlug" material="Pipe:Steel316LN" vis="Pipe:AfterMuon">
+    <shape type="BooleanShape" operation="union" name="lvDownStrBPMSWPlugUnion">
+      <shape type="Tube" name="lvDownStrBPMSWPlugFlange"
+             dz="0.5*DownStr:BPMSWPlugFlangeLength"
+             rmax="DownStr:BPMSWPlugFlangeRadius"/>
+      <shape type="Tube" name="lvDownStrBPMSWPlugPin"
+             dz="0.5*DownStr:BPMSWPlugPinLength"
+             rmax="DownStr:BPMSWPlugPinRadius"/>
+    </shape>
+  </volume>
+
+  <!-- Vacuum -->
+  <volume name="lvDownStrBPMSWVacuum" material="Vacuum" vis="Pipe:Vacuum">
+    <shape type="Tube" name="DownStrBPMSWVacuumTubs"
+           dz="0.5*DownStr:BPMSWVacuumLength"
+           rmax="DownStr:BPMSWFlangeUpRadius - 0.01*mm"/>
+  </volume>
+
+  <!-- 1/8th of middle section with plug -->
+  <volume name="lvDownStrBPMSWMidSectAss" vis="Pipe:AfterMuon">
+    <physvol name="pvDownStrBPMSWMidSect"                logvol="lvDownStrBPMSWMidSect"/>
+    <physvol name="pvDownStrBPMSWPlug"                   logvol="lvDownStrBPMSWPlug">
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="DownStr:BPMSWMidSectTopCutOffset + DownStr:BPMSWPlugFlangeLength/2" z="-DownStr:BPMSWMidSectHolePosZ"/>
+      </transformation>
+    </physvol>
+  </volume>
+
+  <!-- Assembly of body -->
+  <volume name="lvDownStrBPMSWBody" vis="Pipe:AfterMuon">
+    <physvol name="pvDownStrBPMSWFlangeUp"              logvol="lvDownStrBPMSWFlangeUp"/>
+    <physvol name="pvDownStrBPMSWEntry"                 logvol="lvDownStrBPMSWEntry">
+      <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength/2"/>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect0A"             logvol="lvDownStrBPMSWMidSectAss">
+      <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength/2"/>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect1A"             logvol="lvDownStrBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation z="90.0*degree"/>
+        <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect2A"             logvol="lvDownStrBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation z="180.0*degree"/>
+        <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect3A"             logvol="lvDownStrBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation z="270.0*degree"/>
+        <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect0B"             logvol="lvDownStrBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree"/>
+        <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength + DownStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect1B"             logvol="lvDownStrBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree" z="90.0*degree"/>
+        <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength + DownStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect2B"             logvol="lvDownStrBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree" z="180.0*degree"/>
+        <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength + DownStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvDownStrBPMSWMidSect3B"             logvol="lvDownStrBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree" z="270.0*degree"/>
+        <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength + DownStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvDownStrBPMSWExit"                  logvol="lvDownStrBPMSWExit">
+      <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength*2 + DownStr:BPMSWExitLength/2"/>
+    </physvol>
+    <physvol name="pvDownStrBPMSWFlangeDown"
+             logvol="lvDownStrBPMSWFlangeDown">
+      <position z="DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWEntryLength + DownStr:BPMSWMidSectLength*2 + DownStr:BPMSWExitLength + DownStr:BPMSWFlangeDownLength/2"/>
+    </physvol>
+  </volume>
+
+  <!-- DownStrBPMSW -->
+  <volume name="lvDownStrBPMSW" vis="Pipe:AfterMuon">
+    <physvol name="pvDownStrBPMSWBody"                 logvol="lvDownStrBPMSWBody"/>
+    <physvol name="pvDownStrBPMSWVacuum"               logvol="lvDownStrBPMSWVacuum">
+      <position z="-DownStr:BPMSWFlangeUpLength/2 + DownStr:BPMSWVacuumLength/2"/>
+    </physvol>
+  </volume>
+
+</pipe>

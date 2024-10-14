@@ -1,0 +1,634 @@
+###############################################################################
+# (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration           #
+#                                                                             #
+# This software is distributed under the terms of the GNU General Public      #
+# Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".   #
+#                                                                             #
+# In applying this licence, CERN does not waive the privileges and immunities #
+# granted to it by virtue of its status as an Intergovernmental Organization  #
+# or submit itself to any jurisdiction.                                       #
+###############################################################################
+ladder_00_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_00_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_00_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_00_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_01_0: !alignment
+  position: [0.01 * mm, 0.02 * mm, 1000.03 * mm]
+
+ladder_01_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_01_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_01_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_02_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_02_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_02_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_02_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_03_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_03_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_03_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_03_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_04_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_04_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_04_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_04_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_05_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_05_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_05_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_05_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_06_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_06_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_06_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_06_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_07_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_07_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_07_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_07_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_08_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_08_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_08_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_08_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_09_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_09_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_09_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_09_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_10_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_10_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_10_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_10_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_11_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_11_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_11_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_11_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_12_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_12_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_12_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_12_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_13_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_13_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_13_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_13_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_14_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_14_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_14_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_14_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_15_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_15_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_15_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_15_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_16_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_16_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_16_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_16_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_17_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_17_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_17_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_17_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_18_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_18_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_18_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_18_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_19_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_19_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_19_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_19_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_20_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_20_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_20_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_20_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_21_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_21_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_21_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_21_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_22_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_22_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_22_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_22_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_23_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_23_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_23_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_23_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_24_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_24_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_24_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_24_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_25_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_25_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_25_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_25_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_26_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_26_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_26_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_26_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_27_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_27_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_27_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_27_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_28_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_28_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_28_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_28_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_29_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_29_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_29_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_29_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_30_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_30_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_30_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_30_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_31_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_31_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_31_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_31_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_32_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_32_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_32_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_32_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_33_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_33_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_33_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_33_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_34_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_34_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_34_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_34_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_35_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_35_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_35_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_35_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_36_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_36_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_36_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_36_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_37_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_37_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_37_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_37_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_38_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_38_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_38_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_38_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_39_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_39_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_39_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_39_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_40_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_40_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_40_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_40_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_41_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_41_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_41_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_41_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_42_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_42_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_42_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_42_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_43_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_43_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_43_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_43_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_44_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_44_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_44_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_44_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_45_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_45_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_45_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_45_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_46_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_46_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_46_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_46_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_47_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_47_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_47_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_47_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_48_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_48_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_48_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_48_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_49_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_49_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_49_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_49_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_50_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_50_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_50_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_50_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_51_0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_51_1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_51_2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+ladder_51_3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+

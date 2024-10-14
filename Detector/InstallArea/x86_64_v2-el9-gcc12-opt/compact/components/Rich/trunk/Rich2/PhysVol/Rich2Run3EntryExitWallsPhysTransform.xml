@@ -1,0 +1,94 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+
+<!--    Begin Rich2 Entry wall and Exit wall physvols  -->
+<!--  They are inside the lvRich2Master volume -->
+<!--     Old names kept for reference when they are different from new names    -->
+<!--    <physvol  name="pvRich2EntryWindowSkinBack"  <volume name= "lvRich2EntryWindowSkin"  -->
+<!--    <physvol  name="pvRich2EntryWindowSkinFront"  <volume name= "lvRich2EntryWindowSkin"  -->
+<!--     <physvol  name= "pvRich2ExitWindowSkinBack"          <volume name="lvRich2ExitWindowSkin" -->
+<!--     <physvol  name= "pvRich2ExitWindowSkinFront"          <volume name="lvRich2ExitWindowSkin" -->
+
+<!-- New Names    listed here                                   -->
+
+<!--     <physvol  name= "pvRich2EntryWindowSkinDns"          <volume name="lvRich2EntryWindowSkin" -->
+<!--     <physvol  name= "pvRich2EntryWindowSkinUps"          <volume name="lvRich2EntryWindowSkin" -->
+<!--     <physvol  name=  "pvRich2EntryWindowPMI"             <volume name= "lvRich2EntryWindowPMI" -->
+<!--     <physvol  name=  "pvRich2EntryWinTubeLock"           <volume name="lvRich2EntryWinTubeLock" -->
+<!--     <physvol  name= "pvRich2ExitWindowSkinDns"          <volume name="lvRich2ExitWindowSkin" -->
+<!--     <physvol  name= "pvRich2ExitWindowSkinUps"          <volume name="lvRich2ExitWindowSkin" -->
+<!--     <physvol  name=  "pvRich2ExitWindowPMI"             <volume name= "lvRich2ExitWindowPMI" -->
+<!--     <physvol  name=  "pvRich2ExitWinTubeLock"           <volume name="lvRich2ExitWinTubeLock" -->
+
+
+<Rich2>
+
+    <item name="PhysVolName"    value="pvRich2EntryWindowSkinDns" />
+    <item name="TransformName"  value="pvRich2EntryWindowSkinDnsTransform">
+      <transformation>
+           <position  z = "Rh2EntryWindowSkinDnsPosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2EntryWindowSkinUps" />
+    <item name="TransformName"  value="pvRich2EntryWindowSkinUpsTransform">
+      <transformation>
+           <position  z = "Rh2EntryWindowSkinUpsPosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2EntryWindowPMI"  />
+    <item name="TransformName"  value="pvRich2EntryWindowPMITransform">
+      <transformation>
+           <position  z = "Rh2EntryWindowPMIPosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2EntryWinTubeLock"  />
+    <item name="TransformName"  value="pvRich2EntryWinTubeLockTransform">
+      <transformation>
+           <position  z = "Rh2EntryWindowPMIPosZ" />
+      </transformation>
+    </item>
+
+
+    <item name="PhysVolName"    value="pvRich2ExitWindowSkinDns" />
+    <item name="TransformName"  value="pvRich2ExitWindowSkinDnsTransform">
+      <transformation>
+           <position  z = "Rh2ExitWindowSkinDnsPosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2ExitWindowSkinUps" />
+    <item name="TransformName"  value="pvRich2ExitWindowSkinUpsTransform">
+      <transformation>
+           <position  z = "Rh2ExitWindowSkinUpsPosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2ExitWindowPMI"  />
+    <item name="TransformName"  value="pvRich2ExitWindowPMITransform">
+      <transformation>
+           <position  z = "Rh2ExitWindowPMIPosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2ExitWinTubeLock"  />
+    <item name="TransformName"  value="pvRich2ExitWinTubeLockTransform">
+      <transformation>
+           <position  z = "Rh2ExitWindowPMIPosZ" />
+      </transformation>
+    </item>
+
+
+</Rich2>

@@ -1,0 +1,29 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Tai-Hua Lin, J.Koppanyi                                                      -->
+<!--   @date    29/10/2021 (last rev.)                                          -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the Mighty tracker                                      -->
+<!--==========================================================================-->
+
+<lccdd>
+  <display>
+    <vis name="MP:Envelope"       alpha="0.35" r="0.8" g="0.8" b="0.0"  showDaughters="true"  visible="true"/>
+    <vis name="MP:Frame"          alpha="0.35" showDaughters="true"  visible="true"/>
+    <vis name="MP:Layer"          alpha="0.35" showDaughters="true"  visible="true"/>
+    <vis name="MP:Half"        alpha="0.35" showDaughters="true"  visible="true"/>
+
+    <vis name="MP:CFrame"         alpha="1.0"  r="0.0" g="0.0" b="1.0"  showDaughters="false" visible="true"/>
+    <vis name="MP:Module"         alpha="0.6"  r="0.9" g="0.2" b="0.2"  showDaughters="true"  visible="true"/>
+    <vis name="MP:Support"        alpha="0.5"  r="0.5" g="0.5" b="0.5"  showDaughters="true"  visible="true"/>
+    <vis name="MP:MT"             alpha="1.0"  r="0.0" g="0.6" b="0.88" showDaughters="false" visible="true"/>
+
+    <vis name="MP:Silicon"        alpha="1.0"  r="0.70" g="0.45" b="0.65"  showDaughters="false" visible="true"/>
+  </display>
+</lccdd>

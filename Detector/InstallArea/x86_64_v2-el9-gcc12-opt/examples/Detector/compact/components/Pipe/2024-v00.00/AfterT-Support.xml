@@ -1,0 +1,40 @@
+<!--========================================================================== -->
+<!--  LHCb Detector Description                                                -->
+<!--========================================================================== -->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--========================================================================== -->
+<!-- XML description of the Pipe support after the T area                      -->
+<!--========================================================================== -->
+<lccdd>
+  <detectors>
+
+    <!-- =================================Supports =========================== -->
+    <!-- Pipe support between Rich2 and M1 (part in Rich2)                     -->
+    <!-- ===================================================================== -->
+    <detector name="PipeSupportAfterT" type="DD4hep_VolumeAssembly" parent="${PipeAfterT:parent}" vis="Pipe:Vis">
+      <!-- UX85-3 Support: Spacer and Collar togheter, sectioning due to regions -->
+      <volume name="lvUX853AfterMagnetCollar" material="Pipe:Al6082" vis="Pipe:AfterT">
+        <shape type="Tube" name="UX85-3-Collar-A"
+              dz="UX853CollarRich2Size/2"
+              rmin="UX853CollarInnerRadius"
+              rmax="UX853CollarOuterRadius"/>
+      </volume>
+
+      <!-- UX85-3 Support -->
+      <envelope type="Assembly" name="lvUX85SupportsAfterMagnet" vis="Pipe:AfterT">
+        <physvol name ="pvUX853AfterMagnetCollar"  volume="lvUX853AfterMagnetCollar" vis="Pipe:AfterT">
+          <position z="- 0.5*UX853CollarRich2Size"/>
+        </physvol>
+      </envelope>
+      <position z="UX853Rich2DownSplitZposIP - Regions:AfterMagnetZPos"/>
+      <nodebug/>
+    </detector>
+
+  </detectors>
+</lccdd>

@@ -1,0 +1,144 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the Cavern's parameter definitions                      -->
+<!--==========================================================================-->
+<lccdd>
+
+  <define>
+
+    <constant name="UX85xPos" value="-11.5*mm"/>
+    <constant name="UX85yPos" value="-2300*mm"/>
+    <constant name="UX85zPos" value="396*mm"/>
+  </define>
+
+
+  <detectors>
+    <detector name="UX85" type="DD4hep_VolumeAssembly" parent="${UX85:parent}">
+
+      <!--  the main volume , you can add any component you need  -->
+      <envelope name="lvUX85" material="Infrastructure:Concrete" vis="Infrastructure:ConcreteVis">
+	<shape type="BooleanShape" operation="union" name="U">
+
+	  <!--  Support: -->
+
+	  <shape type="BooleanShape" operation="union" name="Bases3">
+
+            <shape type="Box" name="Concretebase"
+		   dx="0.5*1813*mm"   dy="0.5*400*mm"   dz="0.5*1795*mm"/>
+
+            <shape type="Box" name="HorizontalUp34"
+		   dx="0.5*1625*mm"   dy="0.5*1525*mm"   dz="0.5*7500*mm"/>
+            <position x="1*mm"        y="5100*mm"        z="0*mm"/>
+
+            <shape type="Trapezoid" name="stem1"
+		   z="0.5*4040*mm"
+		   x1="0.5*10*mm"
+		   y1="0.5*2300*mm"
+		   x2="0.5*1278*mm"
+		   y2="0.5*2300*mm"/>
+            <position x="1459*mm"      y="-2020*mm"      z="-2600*mm"/>
+            <rotation  x="90*degree"   y="180.*degree"   z="180*degree"/>
+
+            <shape type="Trapezoid" name="stem2"
+		   z="0.5*4040*mm"
+		   x1="0.5*10*mm"
+		   y1="0.5*2300*mm"
+		   x2="0.5*1278*mm"
+		   y2="0.5*2300*mm"/>
+            <position x="1459*mm"     y="-2020*mm"      z="2600*mm"/>
+            <rotation  x="90*degree"  y="180.*degree"   z="180*degree"/>
+
+            <shape type="Trapezoid" name="StemMiddle"
+		   z="0.5*4617.5*mm"
+		   x1="0.5*10*mm"
+		   y1="0.5*2825*mm"
+		   x2="0.5*1478*mm"
+		   y2="0.5*2850*mm"/>
+            <position x="1559*mm"      y="-2308.75*mm"      z="0*m"/>
+            <rotation  x="90*degree"   y="180.*degree"      z="180*degree"/>
+
+            <shape type="Box" name="Leftvertical"
+                   dx="0.5*1630*mm"    dy="0.5*4460*mm"     dz="0.5*1625*mm"/>
+            <position x="0*mm"         y="2230*mm"          z="3795*mm"/>
+            <rotation y="90.*degree"/>
+
+
+            <shape type="Box" name="Leftvertical2"
+                   dx="0.5*875*mm"     dy="0.5*4460*mm" dz="0.5*1625*mm"/>
+            <position x="0*mm"         y="2230*mm"      z="5870*mm"/>
+            <rotation y="90.*degree"/>
+
+
+            <shape type="Box" name="Rightvertical"
+                   dx="0.5*1200*mm"    dy="0.5*4460*mm" dz="0.5*1625*mm"/>
+            <position x="0*mm"         y="2230*mm"      z="-3155*mm"/>
+            <rotation y="90.*degree"/>
+
+
+            <shape type="Box" name="Rightvertical2"
+                   dx="0.5*1096*mm"    dy="0.5*4460*mm"   dz="0.5*630*mm"/>
+            <position x="-315*mm"      y="2230*mm"       z="-1992.5*mm"/>
+            <rotation y="90.*degree"/>
+
+	  </shape>
+
+	  <!--  Basement: -->
+	  <shape type="BooleanShape" operation="subtraction" name="Link">
+
+            <shape type="Trapezoid" name="StemBack"
+		   z="0.5*3792*mm"
+		   x1="0.5*10300*mm"
+		   y1="0.5*5448*mm"
+		   x2="0.5*10300*mm"
+		   y2="0.5*8516*mm"/>
+
+            <shape type="Tube" name="Tunnel_Hole1"
+                   dz="0.5*10.0*m"      rmax="TunnelRadius+0.8*m"/>
+            <position x="541.5*mm"      y="-500*mm"      z="5*m"/>
+
+            <shape type="Tube" name="Tunnel_Hole2"
+                   dz="0.5*10.0*m"        rmax="TunnelRadius"/>
+            <position x="541.5*mm"         y="-500*mm"      z="0*m"/>
+
+            <shape type="Box" name="HoleFront"
+                   dx="0.5*5100*mm"        dy="0.5*4460*mm" dz="0.5*1455*mm"/>
+            <position x="681*mm"           y="-500*mm"      z="850*mm"/>
+
+            <shape type="Box" name="HoleBack"
+                   dx="0.5*5500*mm"        dy="0.5*4460*mm" dz="0.5*842*mm"/>
+            <position x="881*mm"           y="-500*mm"      z="408*mm"/>
+
+            <shape type="Box" name="Corridor"
+                   dx="0.5*800*mm"         dy="0.5*4460*mm" dz="0.5*2467*mm"/>
+            <position x="-3825*mm"         y="-500*mm"      z="825.5*mm"/>
+
+            <!--  <shape type="Box" name="CorridorTransversal"
+		 dx="0.5*2950*mm"
+		 dy="0.5*4460*mm"
+		 dz="0.5*1005*mm"/>
+		 <position x="-4900*mm"
+		 y="-500*mm"
+		 z="3293*mm"/> -->
+
+	  </shape>
+	  <position x="-2150*mm" y="3000*mm" z="1170*mm"/>
+	  <rotation y="90.*degree"/>
+	</shape>
+
+      </envelope>
+      <position   x="UX85xPos" y="UX85yPos"  z="UX85zPos"/>
+      <rotation y="-90.0*degree"/>
+
+    </detector>
+  </detectors>
+
+</lccdd>

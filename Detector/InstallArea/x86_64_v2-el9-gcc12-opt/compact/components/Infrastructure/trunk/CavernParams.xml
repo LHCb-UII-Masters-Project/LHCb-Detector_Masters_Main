@@ -1,0 +1,56 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the Cavern's parameter definitions                      -->
+<!-- ========================================================================== -->
+<lccdd>
+  <define>
+    <!-- This file contains the general parameters for Cavern -->
+    <!-- Cavern radius comes from top left hand corner of LHBIEGU0035 -->
+    <!-- Also circumference of circular bit and height of Trap "boat" -->
+    <!-- Wall thickness is a guess - should be a variable? -->
+
+    <constant name="CavernWallThick"               value="0.825*m"/>
+    <constant name="CavernTotalWidth"              value="70*m"/>
+    <constant name="CavernOuterDiameter"           value="21.4*m"/>
+    <constant name="CavernOuterRadiusHeight"       value="0.5*(CavernOuterDiameter) + CavernWallThick"/>
+    <constant name="CavernInnerRadiusHeight"       value="0.5*CavernOuterDiameter"/>
+    <constant name="CavernStartAngle"              value="-14.449862*degree"/>
+    <constant name="CavernDeltaAngle"              value="208.89973*degree"/>
+
+    <!-- now the cavern bottom "boat" -->
+    <constant name="CavernTrapZ"                   value="70*m"/>
+    <constant name="CavernTrapY1"                  value="5.2*m"/>
+    <constant name="CavernTrapX1"                  value="16.5*m"/>
+    <constant name="CavernTrapX2"                  value="20.72304*m"/>
+    <constant name="CavernTrapY2"                  value="5.2*m"/>
+    <constant name="CavernTrapX3"                  value="16.5*m"/>
+    <constant name="CavernTrapX4"                  value="20.72304*m"/>
+    <!--parameter name="CavernBoatY"                   value="-(2.67*m + 0.5*CavernTrapY1+0.5*CavernWallThick)"-->
+    <constant name="ExtraCut2"                      value="0.1*mm"/>
+    <constant name="ExtraCut"                      value="5.0*mm"/>
+    <constant name="CavernBoatY"                   value="-(2.67*m + 0.5*CavernTrapY1+0.5*CavernWallThick+ExtraCut2)"/>
+
+    <constant name="ShieldingCut"                      value="10.0*m"/>
+    <!-- From LHBIEGU_0035 takes it to back wall (after DELPHI) -->
+    <constant name="CavernxPos" value="20.*m"/>
+    <constant name="CavernyPos" value="1.57*m"/>
+    <constant name="CavernzPos" value="11.2*m"/>
+    <constant name="CavernRotate" value="90.0*degree"/>
+
+
+    <!-- Cavern floor is not used in Cavern but for reference - it's -->
+    <!-- for reference to shielding etc.... should be position from  -->
+    <!-- centre of curvature to floor -->
+    <constant name="CavernFloorPosition" value="CavernTrapY2 + 2.67*m"/>
+
+  </define>
+</lccdd>

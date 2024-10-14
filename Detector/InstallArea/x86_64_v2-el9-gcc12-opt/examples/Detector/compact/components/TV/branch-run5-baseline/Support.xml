@@ -1,0 +1,1222 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<velo>
+
+  <!-- PlanA Substrate definition -->
+  <volume vis="TV:ModuleSupport" name="lvSubstrate" material="TV:SubstrateSilicon">
+    <!-- Consists of parent box with a series of subtractions to get the correct shape-->
+    <shape type="BooleanShape" operation="subtraction" name="SubstrateNewSub">
+      <shape type="Box" name="SubstrateNewMain"
+             dx="0.5*TV:SubstrateNewSizeX"
+             dy="0.5*TV:SubstrateNewSizeY"
+             dz="0.5*TV:SubstrateThick"/>
+      <shape type="Box" name="SubstrateNewTRCornerCut"
+             dx="(TV:SubstrateScaleSizeX**2)*0.5*sqrt(2)*34.3583*mm*(1+(TV:ClosestPixel-TV:DefaultClosestPixel)/(sqrt(2)*TV:DefaultClosestPixel))"
+             dy="TV:SubstrateNewSizeY"
+             dz="TV:SubstrateThick"/>
+      <position x="TV:SubstrateNewSizeX/2"
+		y="TV:SubstrateNewSizeY/2"/>
+      <rotation z="TV:Rotation"/>
+      <shape type="Box" name="SubstrateNewTLCornerCut"
+             dx="TV:SubstrateScaleSizeX*0.5*sqrt(2)*33.5*mm"
+             dy="TV:SubstrateNewSizeY"
+             dz="TV:SubstrateThick"/>
+      <position x="-TV:SubstrateNewSizeX/2"
+		y="TV:SubstrateNewSizeY/2"/>
+      <rotation z="-TV:Rotation"/>
+      <shape type="Box" name="SubstrateNewBLCornerCut"
+             dx="TV:SubstrateScaleSizeX*0.5*sqrt(2)*10*mm"
+             dy="TV:SubstrateNewSizeY"
+             dz="TV:SubstrateThick"/>
+      <position x="-TV:SubstrateNewSizeX/2"
+		y="-TV:SubstrateNewSizeY/2"/>
+      <rotation z="TV:Rotation"/>
+      <shape type="Box" name="SubstrateNewBRCornerCut"
+             dx="0.5*sqrt(2)*35.4037*mm/TV:SubstrateScaleSizeX"
+             dy="TV:SubstrateNewSizeY"
+             dz="TV:SubstrateThick"/>
+      <position x="-TV:SubstrateNewSizeX/2 + 86.8233*mm + (TV:SiSizeX-TV:DefaultSiSizeX)/2"
+		y="-TV:SubstrateNewSizeY/2"/>
+      <rotation z="-TV:Rotation"/>
+      <shape type="Box" name="SubstrateNewBottomInnerCut"
+             dx="TV:SubstrateNewBottomInnerCutSize"
+             dy="TV:SubstrateNewBottomInnerCutSize"
+             dz="TV:SubstrateThick"/>
+      <position x="TV:SubstrateNewSizeX/2 + TV:SubstrateNewBottomInnerCutSize/sqrt(2) - TV:SubstrateScaleSizeX*24.5455*mm - (TV:ClosestPixel/TV:DefaultClosestPixel*5.005*mm)*0.95"
+		y="TV:SubstrateNewSizeY/2 - TV:SubstrateScaleSizeY**2*70*mm - (5.005*mm/sqrt(2)) + (TV:ClosestPixel/TV:DefaultClosestPixel*5.005*mm)*0.95"/>
+      <rotation z="45*degree"/>
+      <shape type="Box" name="SubstrateNewTopInnerCut"
+             dx="TV:SubstrateNewTopInnerCutSize"
+             dy="TV:SubstrateNewTopInnerCutSize"
+             dz="TV:SubstrateThick"/>
+      <position x="TV:SubstrateNewSizeX/2 + TV:SubstrateNewTopInnerCutSize/sqrt(2)"
+		y="TV:SubstrateNewSizeY/2 - TV:SubstrateScaleSizeY*70*mm + ((5.005*mm)/sqrt(2))"/>
+      <rotation z="45*degree"/>
+
+      <!-- Removing Substrate Corner Cut -->
+      <!-- <shape type="Tube" name="SubstrateNewInnerCorner"
+             dz="TV:SubstrateThick*2"
+             rmax="(5.005*mm+TV:DeltaInnerRad)"
+             deltaphi="360*degree"/>
+       <position y="-TV:SubstrateNewSizeY/2 + TV:SubstrateScaleSizeY*46.5*mm"
+              x="-TV:SubstrateNewSizeX/2 + TV:SubstrateScaleSizeX*82.8052*mm"/> -->
+    </shape>
+  </volume>
+
+
+  <!-- 3-part Hybrid description -->
+  <volume vis="TV:Hybrid" name="lvHybridVFEHYB3" material="TV:CopperKaptonMix">
+	  <shape type="Box" name="VFEHYB3MainBox"
+		  dx="0.5*TV:HybridVFEHYB3SizeX"
+		  dy="0.5*TV:HybridVFEHYB3SizeY"
+		  dz="0.5*TV:HybridVFEHYB3Thick"/>
+  </volume>
+
+  <volume vis="TV:Hybrid" name="lvHybridVFEGBTX3" material="TV:GBTXCopperKaptonSiliconMix">
+	  <shape type="Box" name="VFEGBTX3MainBox"
+		  dx="0.5*TV:HybridVFEGBTX3SizeX"
+		  dy="0.5*TV:HybridVFEGBTX3SizeY"
+		  dz="0.5*TV:HybridVFEGBTX3Thick"/>
+  </volume>
+
+  <!-- LV cable volumes -->
+  <volume vis="TV:LVCable" name="lvLVCableLongFront" material="TV:SiliCopper">
+      <shape type="BooleanShape" operation="subtraction" name="LVCableLongFrontSub">
+          <shape type="Box" name="LVCableLongFrontBox1"
+              dx="0.5*TV:LVLongFrontX"
+              dy="0.5*TV:LVLongFrontY"
+              dz="0.5*TV:LVCableThick"/>
+          <shape type="Box" name="LVCableLongFrontBox2"
+              dx="TV:LVLongFrontX / sqrt(2)"
+              dy="TV:LVLongFrontY"
+              dz="TV:LVCableThick"/>
+          <position x = "-0.5*TV:LVLongFrontX"
+                    y = "0.5*TV:LVLongFrontY"/>
+          <rotation z = "-45*degree"/>
+      </shape>
+  </volume>
+
+  <volume vis="TV:LVCable" name="lvLVCableShortFront" material="TV:SiliCopper">
+      <shape type="BooleanShape" operation="subtraction" name="LVCableShortFrontSub">
+          <shape type="Box" name="LVCableShortFrontBox1"
+              dx="0.5*TV:LVShortFrontX"
+              dy="0.5*TV:LVShortFrontY"
+              dz="0.5*TV:LVCableThick"/>
+          <shape type="Box" name="LVCableShortFrontBox2"
+              dx="TV:LVShortFrontX / sqrt(2)"
+              dy="TV:LVShortFrontY"
+              dz="TV:LVCableThick"/>
+          <position x = "0.5*TV:LVShortFrontX"
+                    y = "-0.5*TV:LVShortFrontY"/>
+          <rotation z = "-45*degree"/>
+      </shape>
+  </volume>
+
+  <volume vis="TV:LVCable" name="lvLVCableShortFrontExtension" material="TV:SiliCopper">
+      <shape type="Box" name="LVCableShortFrontExtBox"
+          dx="0.5*TV:SiSizeX"
+          dy="0.5*TV:LVShortFrontExtY"
+          dz="0.5*TV:LVCableThick"/>
+  </volume>
+
+  <volume vis="TV:LVCable" name="lvLVCableLongBack" material="TV:SiliCopper">
+      <shape type="BooleanShape" operation="subtraction" name="LVCableLongBackSub">
+          <shape type="Box" name="LVCableLongBackBox1"
+              dx="0.5*TV:LVLongBackX"
+              dy="0.5*TV:LVLongBackY"
+              dz="0.5*TV:LVCableThick"/>
+          <shape type="Box" name="LVCableLongBackBox2"
+              dx="TV:LVLongBackX / sqrt(2)"
+              dy="TV:LVLongBackY"
+              dz="TV:LVCableThick"/>
+          <position x = "-0.5*TV:LVLongBackX"
+                    y = "0.5*TV:LVLongBackY"/>
+          <rotation z = "-45*degree"/>
+      </shape>
+  </volume>
+
+  <volume vis="TV:LVCable" name="lvLVCableShortBack" material="TV:SiliCopper">
+      <shape type="BooleanShape" operation="subtraction" name="LVCableShortBackSub">
+          <shape type="Box" name="LVCableShortBackBox1"
+              dx="0.5*TV:LVShortBackX"
+              dy="0.5*TV:LVShortBackY"
+              dz="0.5*TV:LVCableThick"/>
+          <shape type="Box" name="LVCableShortBackBox2"
+              dx="TV:LVShortBackX / sqrt(2)"
+              dy="TV:LVShortBackY"
+              dz="TV:LVCableThick"/>
+          <position x = "0.5*TV:LVShortBackX"
+                    y = "-0.5*TV:LVShortBackY"/>
+          <rotation z = "-45*degree"/>
+      </shape>
+  </volume>
+
+  <volume vis="TV:LVCable" name="lvLVCableShortBackExtension" material="TV:SiliCopper">
+      <shape type="Box" name="LVCableShortBackExtBox"
+          dx="0.5*TV:SiSizeX"
+          dy="0.5*TV:LVShortBackExtY"
+          dz="0.5*TV:LVCableThick"/>
+  </volume>
+
+  <!-- Assemblies of FE hybrid + LV cable volume -->
+  <volume vis="TV:Assembly" name="lvHybridLVLongFront">
+      <physvol volume = "lvHybridVFEHYB3" name = "pvHybridLongFront">
+      </physvol>
+      <physvol volume = "lvLVCableLongFront" name = "pvLVCableLongFront">
+          <transformation>
+              <position x = "0*mm"
+                        y = "-0.5*TV:LVLongFrontY + 0.5*TV:LVLongFrontX"/>
+              <rotation/>
+              <position x = "0*mm"
+                        y = "-0.5*TV:HybridVFEHYB3SizeY"
+                        z="-0.5*(TV:HybridVFEHYB3Thick + TV:LVCableThick)"/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+  </volume>
+
+  <volume vis="TV:Assembly" name="lvHybridLVShortFront">
+      <physvol volume = "lvHybridVFEHYB3" name = "pvHybridShortFront">
+      </physvol>
+      <physvol volume = "lvLVCableShortFrontExtension" name = "pvLVCableShortFrontExt">
+          <position y = "0.5*(TV:HybridVFEHYB3SizeY + TV:LVShortFrontExtY)"
+                    z = "-0.5*(TV:HybridVFEHYB3Thick + TV:LVCableThick)"/>
+      </physvol>
+      <physvol volume = "lvLVCableShortFront" name = "pvLVCableShortFront">
+          <transformation>
+              <position x = "0*mm"
+                        y = "0.5*TV:LVShortFrontY - 0.5*TV:LVShortFrontX"/>
+              <rotation/>
+              <position x = "0*mm"
+                        y = "0.5*TV:HybridVFEHYB3SizeY + TV:LVShortFrontExtY + TV:TVEpsilon"
+                        z="-0.5*(TV:HybridVFEHYB3Thick + TV:LVCableThick)"/>
+              <rotation y = "180*degree" z = "-45*degree"/>
+          </transformation>
+      </physvol>
+  </volume>
+
+  <volume vis="TV:Assembly" name="lvHybridLVLongBack">
+      <physvol volume = "lvHybridVFEHYB3" name = "pvHybridLongBack">
+      </physvol>
+      <physvol volume = "lvLVCableLongBack" name = "pvLVCableLongBack">
+          <transformation>
+              <position x = "0*mm"
+                        y = "-0.5*TV:LVLongBackY + 0.5*TV:LVLongBackX"/>
+              <rotation/>
+              <position x = "0*mm"
+                        y = "-0.5*TV:HybridVFEHYB3SizeY"
+                        z="0.5*(TV:HybridVFEHYB3Thick + TV:LVCableThick)"/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+  </volume>
+
+  <volume vis="TV:Assembly" name="lvHybridLVShortBack">
+      <physvol volume = "lvHybridVFEHYB3" name = "pvHybridShortBack">
+      </physvol>
+      <physvol volume = "lvLVCableShortBackExtension" name = "pvLVCableShortBackExt">
+          <position y = "0.5*(TV:HybridVFEHYB3SizeY + TV:LVShortBackExtY)"
+                    z = "0.5*(TV:HybridVFEHYB3Thick + TV:LVCableThick)"/>
+      </physvol>
+      <physvol volume = "lvLVCableShortBack" name = "pvLVCableShortBack">
+          <transformation>
+              <position x = "0*mm"
+                        y = "0.5*TV:LVShortBackY - 0.5*TV:LVShortBackX"/>
+              <rotation/>
+              <position x = "0*mm"
+                        y = "0.5*TV:HybridVFEHYB3SizeY + TV:LVShortBackExtY + TV:TVEpsilon"
+                        z="0.5*(TV:HybridVFEHYB3Thick + TV:LVCableThick)"/>
+              <rotation y = "180*degree" z = "-45*degree"/>
+          </transformation>
+      </physvol>
+  </volume>
+
+  <!-- The complete hybrid + LV cables assembly -->
+  <!-- "Front" is the side with the CO2 connector, hence "Back" is the other side -->
+  <volume vis="TV:Assembly" name="lvHybrid">
+      <!-- The substrate volume must be first in the list - it defines the placement wrt IP -->
+      <physvol volume = "lvSubstrate" name = "pvSubstrate">
+          <transformation>
+              <position x = "TV:SubstrateNewSizeX/2 - TV:SubstrateNewIPXDistFromBL"
+                  y = "TV:SubstrateNewSizeY/2 - TV:SubstrateNewIPYDistFromBL"/>
+              <rotation/>
+              <position/>
+              <rotation x = "180*degree"/>
+          </transformation>
+      </physvol>
+      <physvol volume = "lvHybridVFEGBTX3" name = "pvGBTXBack">
+          <transformation>
+              <position x = "-TV:SubstrateNewIPXDistFromBL*0.65"
+                  y = "-TV:HybridVFEGBTX3SizeY*0.65"
+                  z = "TV:SubstrateThick/2 + TV:HybridVFEGBTX3Thick/2"/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+      <physvol volume = "lvHybridLVLongBack" name = "pvHYBLongBack">
+          <transformation>
+              <position x = "TV:HybridVFEHYB3SizeX/2 - (TV:ClosestNLOPixelColumn + TV:PixelSize/2)"
+                  y = "-(TV:HybridVFEHYB3SizeY/2 + TV:ClosestOuterPixelRow + TV:SiSizeY - TV:PixelSize/2 + TV:ChipBtmEdgeY + 2*TV:PixelSize)"
+                  z = "TV:SubstrateThick/2 + TV:HybridVFEHYB3Thick/2"/>
+              <rotation/>
+              <position/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+      <physvol volume = "lvHybridLVShortBack" name = "pvHYBShortBack">
+          <transformation>
+              <position x = "-(TV:HybridVFEHYB3SizeY/2 + TV:ClosestInnerPixelRow + TV:SiSizeY - TV:PixelSize/2 + TV:ChipBtmEdgeY + 2*TV:PixelSize)"
+                  y = "-TV:HybridVFEHYB3SizeX/2 + TV:ClosestShortPixelColumn + TV:PixelSize/2"
+                  z = "TV:SubstrateThick/2 + TV:HybridVFEHYB3Thick/2"/>
+              <rotation z = "90*degree"/>
+              <position/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+      <physvol volume = "lvHybridVFEGBTX3" name = "pvGBTXFront">
+          <transformation>
+              <position x = "-TV:SubstrateNewIPXDistFromBL*0.65"
+                  y = "-TV:HybridVFEGBTX3SizeY*0.65"
+                  z = "-(TV:SubstrateThick/2 + TV:HybridVFEGBTX3Thick/2)"/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+      <physvol volume = "lvHybridLVLongFront" name = "pvHYBLongFront">
+          <transformation>
+              <position x = "-TV:HybridVFEHYB3SizeX/2 + (TV:SiSizeX - TV:ClosestCLIPixelColumn - TV:PixelSize/2)"
+                  y = "-TV:HybridVFEHYB3SizeY/2 - (TV:ClosestInnerPixelRow + TV:SiSizeY - TV:PixelSize/2 + TV:ChipBtmEdgeY + 2*TV:PixelSize)"
+                  z = "-(TV:SubstrateThick/2 + TV:HybridVFEHYB3Thick/2)"/>
+              <rotation/>
+              <position/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+      <physvol volume = "lvHybridLVShortFront" name = "pvHYBShortFront">
+          <transformation>
+              <position x = "-TV:HybridVFEHYB3SizeY/2 - (TV:ClosestOuterPixelRow + TV:SiSizeY - TV:PixelSize/2 + TV:ChipBtmEdgeY + 2*TV:PixelSize)"
+                  y = "TV:HybridVFEHYB3SizeX/2 - (TV:SiSizeX - TV:ClosestShortPixelColumn - TV:PixelSize/2)"
+                  z = "-(TV:SubstrateThick/2 + TV:HybridVFEHYB3Thick/2)"/>
+              <rotation z = "90*degree"/>
+              <position/>
+              <rotation z = "-45*degree"/>
+          </transformation>
+      </physvol>
+  </volume>
+
+  <!-- LV Transition Board and TB -> Foot cables -->
+
+    <volume vis="TV:Hybrid" name="lvTransitionBoardMain" material="TV:CopperFR4Mix">
+        <shape type="BooleanShape" operation="subtraction" name="TransitionBoardMainSection">
+            <shape type="Box" name="TransitionMainBoard" dz="0.5*(TV:TransitionMainThick)" dy="0.5*(TV:TransitionMainY)" dx="0.5*(TV:TransitionMainX)" />
+            <shape type="Tube" name="SupportPipeHoleL" dz="0.5*(TV:TransitionMainThick + TV:TVEpsilon)" rmin="0*mm" rmax="TV:LegHoleRadius" />
+            <position x="TV:LegHolePositionX" />
+            <shape type="Tube" name="SupportPipeHoleR" dz="0.5*(TV:TransitionMainThick + TV:TVEpsilon)" rmin="0*mm" rmax="TV:LegHoleRadius" />
+            <position x="-TV:LegHolePositionX" />
+            <shape type="Box" name="DeliveryPipeHoleL" dz="0.5*(TV:TransitionMainThick + TV:TVEpsilon)" dy="0.5*(TV:TransitionDeliveryPipeHoleY)" dx="0.5*(TV:TransitionDeliveryPipeHoleX)" />
+            <position x="TV:TransitionDeliveryPipeOffset" y="0.5*TV:TransitionDeliveryPipeHoleY" />
+            <shape type="Box" name="DeliveryPipeHoleR" dz="0.5*(TV:TransitionMainThick + TV:TVEpsilon)" dy="0.5*(TV:TransitionDeliveryPipeHoleY)" dx="0.5*(TV:TransitionDeliveryPipeHoleX)" />
+            <position x="-TV:TransitionDeliveryPipeOffset" y="0.5*TV:TransitionDeliveryPipeHoleY" />
+        </shape>
+    </volume>
+
+    <volume vis="TV:Hybrid" name="lvTransitionBoardWingL" material="TV:CopperFR4Mix">
+        <shape type="Box" name="TransitionBoardWingL" dz="0.5*(TV:TransitionMainThick)" dy="0.5*(TV:TransitionWingY)" dx="0.5*(TV:TransitionWingLX)" />
+    </volume>
+
+    <volume vis="TV:Hybrid" name="lvTransitionBoardWingR" material="TV:CopperFR4Mix">
+        <shape type="Box" name="TransitionBoardWingR" dz="0.5*(TV:TransitionMainThick)" dy="0.5*(TV:TransitionWingY)" dx="0.5*(TV:TransitionWingRX)" />
+    </volume>
+
+    <volume vis="TV:LVCable" name="lvLVCableTB2Foot" material="TV:SiliCopper">
+        <shape type="Box" name="LVCableTB2Foot"
+            dx = "0.5*TV:LVFootX"
+            dy = "0.5*TV:LVLongFrontX"
+            dz = "TV:LVCableThick"/>
+    </volume>
+
+    <volume vis="TV:Assembly" name="lvLVTransitionBoard">
+        <physvol name="pvTransitionBoardMain" volume="lvTransitionBoardMain">
+            <position x="TV:TransitionX" z="0*mm" />
+            <rotation x="-90*degree" y="90*degree" />
+        </physvol>
+        <physvol name="pvTransitionBoardWingL" volume="lvTransitionBoardWingL">
+            <position x="TV:TransitionX" y="0.5*(TV:TransitionMainX + TV:TransitionWingLX)" />
+            <rotation x="-90*degree" y="90*degree" />
+        </physvol>
+        <physvol name="pvTransitionBoardWingR" volume="lvTransitionBoardWingR">
+            <position x="TV:TransitionX" y="-0.5*(TV:TransitionMainX + TV:TransitionWingRX)" />
+            <rotation x="-90*degree" y="90*degree" />
+        </physvol>
+        <physvol name="pvTB2FootCableTop" volume="lvLVCableTB2Foot">
+            <position x="TV:LVFootPosX" y="TV:FootBigHoleYOffset + TV:SupportPipeOuterRadius + 0.55*TV:LVLongFrontX"/>
+        </physvol>
+        <physvol name="pvTB2FootCableBtm" volume="lvLVCableTB2Foot">
+            <position x="TV:LVFootPosX" y="-(TV:FootBigHoleYOffset + TV:SupportPipeOuterRadius + 0.55*TV:LVLongFrontX)"/>
+        </physvol>
+    </volume>
+
+    <!-- End of LV Transition Board and TB -> Foot cables -->
+
+
+  <!-- PlanA CO2 manifold description -->
+  <volume vis="TV:ModuleSupport" name="lvManifold" material="TV:Invar">
+    <shape type="BooleanShape" operation="subtraction" name="CooolingConnectorBoxSub">
+      <!-- Create a parent box -->
+      <shape type="Box" name="CoolingConnectorBox"
+             dx="0.5*TV:CoolingConnectorSizeX"
+             dy="0.5*TV:CoolingConnectorSizeY"
+             dz="0.5*TV:CoolingConnectorThickness"/>
+      <!-- Round off the corners -->
+      <shape type="Tube" name="CoolingConnectorCorner1"
+             dz="TV:CoolingConnectorThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="0*degree"
+             deltaphi="90*degree"/>
+      <position x="TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius"
+		y="TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius"/>
+      <shape type="Tube" name="CoolingConnectorCorner2"
+             dz="TV:CoolingConnectorThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="90*degree"
+             deltaphi="90*degree"/>
+      <position x="-(TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius)"
+		y="TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius"/>
+      <shape type="Tube" name="CoolingConnectorCorner3"
+             dz="TV:CoolingConnectorThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="180*degree"
+             deltaphi="90*degree"/>
+      <position x="-(TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius)"
+		y="-(TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius)"/>
+      <shape type="Tube" name="CoolingConnectorCorner4"
+             dz="TV:CoolingConnectorThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="270*degree"
+             deltaphi="90*degree"/>
+      <position x="TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius"
+		y="-(TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius)"/>
+      <!-- Make the two slit-like indents in the middle of CoolingConnector-->
+      <!--First Indent-->
+      <shape type="BooleanShape" operation="subtraction" name="CoolingConnectorIndentSlit1Sub">
+        <shape type="Box" name="CoolingConnectorIndentSlit1Box"
+               dx="0.5*TV:CoolingConnectorIndentSizeX"
+               dy="0.5*TV:CoolingConnectorIndentSizeY"
+               dz="TV:CoolingConnectorIndentDepth"/>
+        <shape type="Tube" name="CoolingConnectorIndentSlit1Tubs1"
+               dz="0.5*4*TV:CoolingConnectorIndentDepth"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="-90*degree"
+               deltaphi="180*degree"/>
+        <position x="TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius"/>
+        <shape type="Tube" name="CoolingConnectorIndentSlit1Tubs2"
+               dz="0.5*4*TV:CoolingConnectorIndentDepth"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="90*degree"
+               deltaphi="180*degree"/>
+        <position x="-(TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius)"/>
+      </shape>
+      <position x="(TV:CoolingConnectorIndentSizeX - TV:CoolingConnectorSizeX)/2 + TV:CoolingConnectorIndentX1"
+		y="(TV:CoolingConnectorSizeY - TV:CoolingConnectorIndentSizeY)/2 - TV:CoolingConnectorIndentY1"
+		z="TV:CoolingConnectorThickness/2"/>
+      <!--Second Indent-->
+      <shape type="BooleanShape" operation="subtraction" name="CoolingConnectorIndentSlit2Sub">
+        <shape type="Box" name="CoolingConnectorIndentSlit2Box"
+               dx="0.5*TV:CoolingConnectorIndentSizeX"
+               dy="0.5*TV:CoolingConnectorIndentSizeY"
+               dz="TV:CoolingConnectorIndentDepth"/>
+        <shape type="Tube" name="TV:CoolingConnectorIndentSlit2Tubs1"
+               dz="0.5*4*TV:CoolingConnectorIndentDepth"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="-90*degree"
+               deltaphi="180*degree"/>
+        <position x="TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius"/>
+        <shape type="Tube" name="CoolingConnectorIndentSlit2Tubs2"
+               dz="0.5*4*TV:CoolingConnectorIndentDepth"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="90*degree"
+               deltaphi="180*degree"/>
+        <position x="-(TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius)"/>
+      </shape>
+      <position x="(TV:CoolingConnectorIndentSizeX - TV:CoolingConnectorSizeX)/2 + TV:CoolingConnectorIndentX3"
+		y="(TV:CoolingConnectorSizeY - TV:CoolingConnectorIndentSizeY)/2 - TV:CoolingConnectorIndentY1"
+		z="TV:CoolingConnectorThickness/2"/>
+      <!-- Define 2 pairs of small and big tubes to create the CO2 inlets-->
+      <!--First Pair-->
+      <shape type="Tube" name="CoolingConnectorBigTube1"
+             rmax="TV:CoolingConnectorBigTubeRadiusRight"
+             dz="TV:CoolingConnectorBigTubeZ"/>
+      <position x="TV:CoolingConnectorTubeCentreFromEdge-TV:CoolingConnectorSizeX/2"
+		y="-TV:CoolingConnectorSizeY/2"/>
+      <rotation x="90*degree"/>
+      <shape type="Tube" name="CoolingConnectorSmallTube1"
+             rmax="TV:CoolingConnectorSmallTubeRadius"
+             dz="TV:CoolingConnectorSmallTubeZ"/>
+      <position x="TV:CoolingConnectorTubeCentreFromEdge-TV:CoolingConnectorSizeX/2"
+		y="-TV:CoolingConnectorSizeY/2"/>
+      <rotation x="90*degree"/>
+      <!--Second Pair-->
+      <shape type="Tube" name="CoolingConnectorBigTube2"
+             rmax="TV:CoolingConnectorBigTubeRadiusLeft"
+             dz="TV:CoolingConnectorBigTubeZ"/>
+      <position x="-(TV:CoolingConnectorTubeCentreFromEdge-TV:CoolingConnectorSizeX/2)"
+		y="-TV:CoolingConnectorSizeY/2"/>
+      <rotation x="90*degree"/>
+      <shape type="Tube" name="CoolingConnectorSmallTube2"
+             rmax="TV:CoolingConnectorSmallTubeRadius"
+             dz="TV:CoolingConnectorSmallTubeZ"/>
+      <position x="-(TV:CoolingConnectorTubeCentreFromEdge-TV:CoolingConnectorSizeX/2)"
+		y="-TV:CoolingConnectorSizeY/2"/>
+      <rotation x="90*degree"/>
+    </shape>
+  </volume>
+  <!-- End of CO2 Manifold description -->
+
+  <!-- PlanA CO2 manifold foil description -->
+  <volume vis="TV:ModuleSupport" name="lvManifoldSolder" material="TV:Solder">
+    <shape type="BooleanShape" operation="subtraction" name="CooolingConnectorSolderBoxSub">
+      <!-- Create a parent box -->
+      <shape type="Box" name="CoolingConnectorSolderBox"
+             dx="0.5*TV:CoolingConnectorSizeX"
+             dy="0.5*TV:CoolingConnectorSizeY"
+             dz="0.5*TV:CoolingConnectorFoilThickness"/>
+      <!-- Round off the corners -->
+      <shape type="Tube" name="CoolingConnectorSolderCorner1"
+             dz="TV:CoolingConnectorFoilThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="0*degree"
+             deltaphi="90*degree"/>
+      <position x="TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius"
+		y="TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius"/>
+      <shape type="Tube" name="CoolingConnectorSolderCorner2"
+             dz="TV:CoolingConnectorFoilThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="90*degree"
+             deltaphi="90*degree"/>
+      <position x="-(TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius)"
+		y="TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius"/>
+      <shape type="Tube" name="CoolingConnectorSolderCorner3"
+             dz="TV:CoolingConnectorFoilThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="180*degree"
+             deltaphi="90*degree"/>
+      <position x="-(TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius)"
+		y="-(TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius)"/>
+      <shape type="Tube" name="CoolingConnectorSolderCorner4"
+             dz="TV:CoolingConnectorFoilThickness"
+             rmin="TV:CoolingConnectorCornerRadius+TV:Epsilon"
+             rmax="2*TV:CoolingConnectorCornerRadius"
+             startphi="270*degree"
+             deltaphi="90*degree"/>
+      <position x="TV:CoolingConnectorSizeX/2-TV:CoolingConnectorCornerRadius"
+		y="-(TV:CoolingConnectorSizeY/2-TV:CoolingConnectorCornerRadius)"/>
+      <!-- Make the two slit-like indents in the middle of CoolingConnector-->
+      <!--First Indent-->
+      <shape type="BooleanShape" operation="subtraction" name="CoolingConnectorSolderIndentSlit1Sub">
+        <shape type="Box" name="CoolingConnectorSolderIndentSlit1Box"
+               dx="0.5*TV:CoolingConnectorIndentSizeX"
+               dy="0.5*TV:CoolingConnectorIndentSizeY"
+               dz="TV:CoolingConnectorFoilThickness"/>
+        <shape type="Tube" name="CoolingConnectorSolderIndentSlit1Tubs1"
+               dz="0.5*4*TV:CoolingConnectorFoilThickness"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="-90*degree"
+               deltaphi="180*degree"/>
+        <position x="TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius"/>
+        <shape type="Tube" name="CoolingConnectorSolderIndentSlit1Tubs2"
+               dz="0.5*4*TV:CoolingConnectorFoilThickness"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="90*degree"
+               deltaphi="180*degree"/>
+        <position x="-(TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius)"/>
+      </shape>
+      <position x="(TV:CoolingConnectorIndentSizeX - TV:CoolingConnectorSizeX)/2 + TV:CoolingConnectorIndentX1"
+		y="(TV:CoolingConnectorSizeY - TV:CoolingConnectorIndentSizeY)/2 - TV:CoolingConnectorIndentY1"/>
+      <!--Second Indent-->
+      <shape type="BooleanShape" operation="subtraction" name="CoolingConnectorIndentSlit2Sub">
+        <shape type="Box" name="CoolingConnectorIndentSlit2Box"
+               dx="0.5*TV:CoolingConnectorIndentSizeX"
+               dy="0.5*TV:CoolingConnectorIndentSizeY"
+               dz="TV:CoolingConnectorFoilThickness"/>
+        <shape type="Tube" name="TV:CoolingConnectorIndentSlit2Tubs1"
+               dz="0.5*4*TV:CoolingConnectorFoilThickness"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="-90*degree"
+               deltaphi="180*degree"/>
+        <position x="TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius"/>
+        <shape type="Tube" name="CoolingConnectorIndentSlit2Tubs2"
+               dz="0.5*4*TV:CoolingConnectorFoilThickness"
+               rmin="TV:CoolingConnectorIndentRadius+TV:Epsilon"
+               rmax="2*TV:CoolingConnectorIndentRadius"
+               startphi="90*degree"
+               deltaphi="180*degree"/>
+        <position x="-(TV:CoolingConnectorIndentSizeX/2-TV:CoolingConnectorIndentRadius)"/>
+      </shape>
+      <position x="(TV:CoolingConnectorIndentSizeX - TV:CoolingConnectorSizeX)/2 + TV:CoolingConnectorIndentX3"
+		y="(TV:CoolingConnectorSizeY - TV:CoolingConnectorIndentSizeY)/2 - TV:CoolingConnectorIndentY1"/>
+    </shape>
+  </volume>
+  <!-- End of Manifold foil description -->
+
+
+  <!-- Start of CO2 Delivery Pipe -->
+  <!-- Delivery Pipe Metal -->
+  <!--
+  <volume vis="TV:ModuleSupport" name="lvDeliveryPipeMetal" material="TV:StainlessSteel">
+    <shape type="Tube" name="DeliveryPipeMetal"
+           rmin="TV:DeliveryPipeInnerRadius"
+           rmax="TV:DeliveryPipeOuterRadius"
+           dz="0.5*TV:DeliveryPipeLength"/>
+  </volume>
+-->
+  <!-- Delivery Pipe CO2 -->
+  <!--
+  <volume vis="TV:ModuleSupport" name="lvDeliveryPipeCO2" material="TV:Coolant">
+    <shape type="Tube" name="DeliveryPipeCO2"
+           rmin="0*mm"
+           rmax="TV:DeliveryPipeInnerRadius-TV:TVEpsilon"
+           dz="0.5*TV:DeliveryPipeLength"/>
+  </volume>
+
+  <volume vis="TV:ModuleSupport" name="lvDeliveryPipe" material="Vacuum">
+    <shape type="Tube" name="DeliveryPipeMotherVolume"
+           rmin="0*mm"
+           rmax="TV:DeliveryPipeOuterRadius"
+           dz="0.5*TV:DeliveryPipeLength"/>
+    <physvol volume="lvDeliveryPipeMetal"
+             name="pvDeliveryPipeMetal">
+    </physvol>
+    <physvol volume="lvDeliveryPipeCO2"
+             name="pvDeliveryPipeCO2">
+    </physvol>
+  </volume>
+  -->
+  <!-- End of CO2 Delivery Pipe-->
+
+  <!-- Start of VCR Connectors -->
+  <volume vis="TV:ModuleSupport" name="lvPipeVCRTop" material="TV:StainlessSteel">
+    <shape type="Tube" name="lvPipeVCRTopTube"
+      dz="0.5*(TV:VCRTopLength)"
+      rmin="TV:VCRInnerRadius"
+      rmax="TV:VCRTopOuterRadius"/>
+  </volume>
+
+  <volume vis="TV:ModuleSupport" name="lvPipeVCRBottom" material="TV:StainlessSteel">
+    <shape type="Tube" name="lvPipeVCRBottomTube"
+      dz="0.5*(TV:VCRBottomLength)"
+      rmin="TV:VCRInnerRadius"
+      rmax="TV:VCRBottomOuterRadius"/>
+  </volume>
+  <!-- End of VCR Connectors -->
+
+  <!-- Start of Braze Socket -->
+  <volume vis="TV:ModuleSupport" name="lvBrazeSocketRMetal" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="subtraction" name="BrazeSocketRMetal">
+    <shape type="Tube" name="BrazeSocketMainBodyR"
+    	   rmin="TV:BrazeSocketInnerRadius"
+	   rmax="TV:BrazeSocketOuterRadius"
+	   dz="TV:BrazeSocketLength/2"/>
+    <shape type="Tube" name="BrazeSocketCut1R"
+    	   rmin="TV:BrazeSocketCut1Radius"
+	   rmax="TV:BrazeSocketOuterRadius*2"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketCut1Zpos"/>
+    <shape type="Tube" name="BrazeSocketCut2R"
+    	   rmin="TV:BrazeSocketCut2Radius"
+	   rmax="TV:BrazeSocketOuterRadius*2"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketCut2Zpos"/>
+    <shape type="Tube" name="BrazeSocketPipeCutR"
+    	   rmin="0*mm"
+	   rmax="TV:BrazeSocketPipeCutRadiusR"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketPipeCutZpos"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:ModuleSupport" name="lvBrazeSocketLMetal" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="subtraction" name="BrazeSocketLMetal">
+    <shape type="Tube" name="BrazeSocketMainBodyL"
+    	   rmin="TV:BrazeSocketInnerRadius"
+	   rmax="TV:BrazeSocketOuterRadius"
+	   dz="TV:BrazeSocketLength/2"/>
+    <shape type="Tube" name="BrazeSocketCut1L"
+    	   rmin="TV:BrazeSocketCut1Radius"
+	   rmax="TV:BrazeSocketOuterRadius*2"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketCut1Zpos"/>
+    <shape type="Tube" name="BrazeSocketCut2L"
+    	   rmin="TV:BrazeSocketCut2Radius"
+	   rmax="TV:BrazeSocketOuterRadius*2"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketCut2Zpos"/>
+    <shape type="Tube" name="BrazeSocketPipeCutL"
+    	   rmin="0*mm"
+	   rmax="TV:BrazeSocketPipeCutRadiusL"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketPipeCutZpos"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:ModuleSupport" name="lvBrazeSocketCone" material="TV:StainlessSteel">
+    <shape type="ConeSegment" name="BrazeSocketCone"
+    	   rmin1="TV:BrazeSocketCut2Radius"
+	   rmax1="TV:BrazeSocketCut1Radius"
+	   rmin2="TV:BrazeSocketCut2Radius"
+	   rmax2="TV:BrazeSocketCut2Radius"
+	   dz="TV:BrazeSocketConeLength"/>
+  </volume>
+
+  <volume vis="TV:ModuleSupport" name="lvBrazeSocketCO2" material="TV:Coolant">
+    <shape type="Tube" name="BrazeSocketCO2"
+    	   rmin="0*mm"
+	   rmax="TV:BrazeSocketInnerRadius"
+	   dz="TV:BrazeSocketCO2Length/2"/>
+  </volume>
+
+  <volume vis="TV:Assembly" name="lvBrazeSocketR" material="Vacuum">
+    <shape type="BooleanShape" operation="subtraction" name="BrazeSocketRMotherVolume">
+    <shape type="Tube" name="BrazeSocketMainBodyMotherVolumeR"
+    	   rmin="0*mm"
+	   rmax="TV:BrazeSocketOuterRadius"
+	   dz="TV:BrazeSocketLength/2"/>
+    <shape type="Tube" name="BrazeSocketPipeCutMotherVolumeR"
+    	   rmin="0*mm"
+	   rmax="TV:BrazeSocketPipeCutRadiusR"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketPipeCutZpos"/>
+    </shape>
+    <physvol volume="lvBrazeSocketRMetal"
+             name="pvBrazeSocketRMetal">
+    </physvol>
+    <physvol volume="lvBrazeSocketCone"
+             name="pvBrazeSocketConeR">
+    <position z="TV:BrazeSocketConeZpos"/>
+    </physvol>
+    <physvol volume="lvBrazeSocketCO2"
+             name="pvBrazeSocketCO2R">
+    <position z="-(TV:BrazeSocketLength-TV:BrazeSocketCO2Length)/2"/>
+    </physvol>
+  </volume>
+
+  <volume vis="TV:Assembly" name="lvBrazeSocketL" material="Vacuum">
+    <shape type="BooleanShape" operation="subtraction" name="BrazeSocketLMotherVolume">
+    <shape type="Tube" name="BrazeSocketMainBodyMotherVolumeL"
+    	   rmin="0*mm"
+	   rmax="TV:BrazeSocketOuterRadius"
+	   dz="TV:BrazeSocketLength/2"/>
+    <shape type="Tube" name="BrazeSocketPipeCutMotherVolumeL"
+    	   rmin="0*mm"
+	   rmax="TV:BrazeSocketPipeCutRadiusL"
+	   dz="TV:BrazeSocketLength/2"/>
+    <position z="TV:BrazeSocketPipeCutZpos"/>
+    </shape>
+    <physvol volume="lvBrazeSocketLMetal"
+             name="pvBrazeSocketLMetal">
+    </physvol>
+    <physvol volume="lvBrazeSocketCone"
+             name="pvBrazeSocketConeL">
+    <position z="TV:BrazeSocketConeZpos"/>
+    </physvol>
+    <physvol volume="lvBrazeSocketCO2"
+             name="pvBrazeSocketCO2L">
+    <position z="-(TV:BrazeSocketLength-TV:BrazeSocketCO2Length)/2"/>
+    </physvol>
+  </volume>
+
+  <!-- End of Braze Socket -->
+
+
+  <!-- Start of the Nikhef support description -->
+
+  <!-- Complete support design -->
+  <volume vis="TV:ModuleSupport" name="lvSupportPipe" material="TV:CarbonFibre">
+    <shape type="BooleanShape" operation="subtraction" name="lvSupportPipeSub" >
+      <shape type="Tube" name="SupportPipeTubs"
+             dz="TV:SupportPipeLength/2"
+             rmin="TV:SupportPipeInnerRadius"
+             rmax="TV:SupportPipeOuterRadius"/>
+      <shape type="Box" name="lvSupportPipeBoxCut"
+             dx="TV:SupportPipeGrooveDepth"
+             dy="TV:SupportPipeGrooveLength"
+             dz="0.5*TV:SupportPipeGrooveLength"/>
+      <position x="TV:SupportPipeOuterRadius"
+		z="TV:SupportPipeLength/2 + TV:SupportPipeGrooveLength/2 - TV:SupportPipeGrooveDistFromEnd"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:ModuleSupport" name = "lvSupportGlueLayer" material="TV:Stycast">
+    <shape type="Box" name="SupportGlueLayer"
+           dx="TV:SupportPipeGrooveLength/2-TV:TVEpsilon"
+           dy="TV:SupportPipeGlueWidth/2"
+           dz="TV:SupportPipeGlueDepth/2-TV:TVEpsilon"/>
+  </volume>
+
+  <volume vis="TV:ModuleSupport" name="lvSupportMidPlate" material="TV:CarbonFibre">
+    <shape type="BooleanShape" operation="subtraction" name="SupportMidPlateSub" >
+      <shape type="Box" name="SupportMidPlateSubBox1"
+             dx="0.5*TV:SupportMidPlateSizeX"
+             dy="0.5*TV:SupportMidPlateSizeY"
+             dz="0.5*TV:SupportMidPlateThick"/>
+      <shape type="BooleanShape" operation="subtraction" name="SupportMidPlateSub2">
+        <shape type="Box" name="SupportMidPlateSubBox2"
+               dx="TV:SupportMidPlateCornerSizeX"
+               dy="TV:SupportMidPlateCornerSizeY"
+               dz="TV:SupportMidPlateThick"/>
+        <shape type="Tube" name="SupportMidPlateSubTubs1"
+               dz="2*TV:SupportMidPlateThick"
+               rmin="TV:SupportMidPlateCornerRadius"
+               rmax="2*TV:SupportMidPlateCornerRadius"
+               startphi="90*degree"
+               deltaphi="90*degree"/>
+        <position x="-TV:SupportMidPlateCornerSizeX + TV:SupportMidPlateCornerRadius" y="TV:SupportMidPlateCornerSizeY - TV:SupportMidPlateCornerRadius"/>
+      </shape>
+      <position x="TV:SupportMidPlateSizeX/2" y="-TV:SupportMidPlateSizeY/2"/>
+      <shape type="BooleanShape" operation="subtraction" name="SupportMidPlateSub3">
+        <shape type="Box" name="SupportMidPlateSubBox3"
+               dx="TV:SupportMidPlateCornerSizeX"
+               dy="TV:SupportMidPlateCornerSizeY"
+               dz="TV:SupportMidPlateThick"/>
+        <shape type="Tube" name="SupportMidPlateSubTubs2"
+               dz="2*TV:SupportMidPlateThick"
+               rmin="TV:SupportMidPlateCornerRadius"
+               rmax="2*TV:SupportMidPlateCornerRadius"
+               startphi="180*degree"
+               deltaphi="90*degree"/>
+        <position x="-TV:SupportMidPlateCornerSizeX + TV:SupportMidPlateCornerRadius" y="-TV:SupportMidPlateCornerSizeY + TV:SupportMidPlateCornerRadius"/>
+      </shape>
+      <position x="TV:SupportMidPlateSizeX/2" y="TV:SupportMidPlateSizeY/2"/>
+    </shape>
+  </volume>
+  <volume vis="TV:Assembly" name="lvNikhefSupport">
+    <physvol volume="lvSupportPipe"
+             name="pvPipeBottom">
+      <position x="-TV:SupportPipeLength/2"
+		y="-TV:FootBigHoleYOffset"/>
+      <rotation y="90*degree"/>
+    </physvol>
+    <physvol volume="lvSupportGlueLayer"
+             name="pvPipeBottomGlueBottom">
+    <position x = "TV:SupportPipeGrooveLength/2 - TV:SupportPipeGrooveDistFromEnd"
+              y = "-((TV:SupportMidPlateSizeY+TV:SupportPipeGlueWidth)/2 - TV:SupportPipeOuterRadius + TV:SupportPipeGlueInnerY)"
+	      z = "-TV:SupportPipeOuterRadius - TV:SupportPipeGlueDepth/2 + TV:SupportPipeGrooveDepth"/>
+    </physvol>
+    <physvol volume="lvSupportGlueLayer"
+             name="pvPipeBottomGlueTop">
+    <position x = "TV:SupportPipeGrooveLength/2 - TV:SupportPipeGrooveDistFromEnd"
+              y = "-((TV:SupportMidPlateSizeY+TV:SupportPipeGlueWidth)/2 - TV:SupportPipeOuterRadius - TV:SupportPipeGlueOuterY)"
+	      z = "-TV:SupportPipeOuterRadius - TV:SupportPipeGlueDepth/2 + TV:SupportPipeGrooveDepth"/>
+    </physvol>
+    <physvol volume="lvSupportPipe"
+             name="pvPipeTop">
+      <position x="-TV:SupportPipeLength/2"
+		y="TV:FootBigHoleYOffset"/>
+      <rotation y="90*degree"/>
+    </physvol>
+    <physvol volume="lvSupportGlueLayer"
+             name="pvPipeTopGlueBottom">
+    <position x = "TV:SupportPipeGrooveLength/2 - TV:SupportPipeGrooveDistFromEnd"
+              y = "((TV:SupportMidPlateSizeY+TV:SupportPipeGlueWidth)/2 - TV:SupportPipeOuterRadius + TV:SupportPipeGlueInnerY)"
+	      z = "-TV:SupportPipeOuterRadius - TV:SupportPipeGlueDepth/2 + TV:SupportPipeGrooveDepth"/>
+    </physvol>
+    <physvol volume="lvSupportGlueLayer"
+             name="pvPipeTopGlueTop">
+    <position x = "TV:SupportPipeGrooveLength/2 - TV:SupportPipeGrooveDistFromEnd"
+              y = "((TV:SupportMidPlateSizeY+TV:SupportPipeGlueWidth)/2 - TV:SupportPipeOuterRadius - TV:SupportPipeGlueOuterY)"
+	      z = "-TV:SupportPipeOuterRadius - TV:SupportPipeGlueDepth/2 + TV:SupportPipeGrooveDepth"/>
+    </physvol>
+    <physvol volume="lvSupportMidPlate"
+             name="pvSupportMidPlate">
+      <position x="TV:SupportMidPlateSizeX/2 - TV:SupportPipeGrooveDistFromEnd + (TV:SupportPipeGrooveLength - (TV:SupportMidPlateSizeX - TV:SupportMidPlateCornerSizeX))/2"
+		z="-TV:SupportPipeOuterRadius - TV:SupportMidPlateThick/2 + (TV:SupportPipeGrooveDepth - TV:SupportPipeGlueDepth)"/>
+    </physvol>
+  </volume>
+
+  <!-- Start of Foot Description -->
+  <volume vis="TV:Foot" name="lvFootCentrePlate" material="TV:Aluminium">
+    <shape type="BooleanShape" operation="subtraction" name="FootCentrePlateSub">
+      <shape type="Box" name="FootCentrePlateBox"
+             dx="0.5*TV:FootCentreHeight"
+             dy="0.5*TV:FootCentreLength"
+             dz="0.5*TV:FootCentreWidth"/>
+      <shape type = "Tube" name = "FootCentrePlateBigHole1"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootBigHoleLargerRadius"
+	     dz = "TV:FootBigHoleSubDepth+3*TV:Epsilon"/>
+      <position x="0.5*TV:FootCentreHeight"
+	        y="TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootCentrePlateBigHole2"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootBigHoleLargerRadius"
+	     dz = "TV:FootBigHoleSubDepth+3*TV:Epsilon"/>
+      <position x="0.5*TV:FootCentreHeight"
+	        y="-TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootCentrePlateBigHole3"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootBigHoleSmallerRadius"
+	     dz = "TV:FootCentreHeight"/>
+      <position x="-0.5*TV:FootCentreHeight"
+	        y="TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootCentrePlateBigHole4"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootBigHoleSmallerRadius"
+	     dz = "TV:FootCentreHeight"/>
+      <position x="-0.5*TV:FootCentreHeight"
+	        y="-TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootCentrePlateSmallHole1"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootSmallHoleRadius"
+	     dz = "TV:FootCentreHeight"/>
+      <position y="TV:FootSmallHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootCentrePlateSmallHole2"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootSmallHoleRadius"
+	     dz = "TV:FootCentreHeight"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootCentrePlateSmallHole3"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootSmallHoleRadius"
+	     dz = "TV:FootCentreHeight"/>
+      <position y="-TV:FootSmallHoleYOffset"/>
+      <rotation y="90 * degree"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:Foot" name="lvFootShortEnd" material="TV:Aluminium">
+    <shape type="BooleanShape" operation="subtraction" name="FootShortEndSub">
+      <shape type="Box" name="FootShortEndBox"
+	     dx="0.5*TV:FootEndHeight"
+             dy="0.5*TV:FootShortEndLength"
+             dz="0.5*TV:FootCentreWidth"/>
+      <shape type="Box" name="FootShortEndBoxCut"
+	     dx="TV:FootEndHeight - TV:FootCentreHeight"
+             dy="TV:FootShortEndLength - TV:FootBottomBumpYSize"
+             dz="TV:FootCentreWidth"/>
+      <position x="-0.5*TV:FootEndHeight"
+	        y="0.5*TV:FootShortEndLength"/>
+      <shape type = "Tube" name = "FootShortEndLargeHole"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootShortEndLargeHoleRadius"
+	     dz = "TV:FootEndHeight"/>
+      <position y="TV:FootShortEndLargeHoleY - 0.5*TV:FootShortEndLength"/>
+      <rotation y="90 * degree"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:Foot" name="lvFootLongEnd" material="TV:Aluminium">
+    <shape type="BooleanShape" operation="subtraction" name="FootLongEndSub">
+      <shape type="Box" name="FootLongEndBox"
+             dx="0.5*TV:FootEndHeight"
+             dy="0.5*TV:FootLongEndLength"
+             dz="0.5*TV:FootCentreWidth"/>
+      <shape type="Box" name="FootLongEndBoxCut1"
+             dx="TV:FootEndHeight - TV:FootCentreHeight"
+             dy="TV:FootLongEndLength"
+             dz="TV:FootCentreWidth"/>
+      <position x="-0.5*TV:FootEndHeight"/>
+      <shape type = "Tube" name = "FootLongEndLargeHole1"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootLongEndLargeHoleRadius1"
+	     dz = "TV:FootEndHeight"/>
+      <position y="0.5*TV:FootLongEndLength - TV:FootLongEndLargeHoleY1"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootLongEndLargeHole2"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootLongEndLargeHoleRadius2"
+	     dz = "TV:FootEndHeight"/>
+      <position y="0.5*TV:FootLongEndLength - TV:FootLongEndLargeHoleY2"/>
+      <rotation y="90 * degree"/>
+    </shape>
+  </volume>
+
+  <!-- Foot top bump definition -->
+  <volume vis="TV:Foot" name = "lvFootTopBump" material = "TV:Aluminium">
+  <shape type="BooleanShape" operation="intersection" name="FootTopBumpInter">
+    <shape type = "Tube" name = "FootTopBumpTube"
+	   rmin = "TV:FootBigHoleLargerRadius"
+	   rmax = "TV:FootBigHoleExtrusionRadius"
+	   dz = "0.5*TV:FootTopBumpHeight"/>
+    <shape type = "Box" name = "FootTopBumpBox"
+	   dx = "0.5*TV:FootCentreWidth"
+	   dy = "2.0*TV:FootBigHoleExtrusionRadius"
+	   dz = "0.5*TV:FootTopBumpHeight"/>
+  </shape>
+  </volume>
+
+  <!-- Foot bottom bump definition -->
+  <volume vis="TV:Foot" name = "lvFootBottomBump" material = "TV:Aluminium">
+  <shape type="BooleanShape" operation="subtraction" name="FootBottomBumpInter">
+    <shape type = "Box" name = "FootBottomBumpBox"
+	   dx = "0.5*TV:FootBottomBumpHeight"
+	   dy = "0.5*TV:FootBottomBumpYSize"
+	   dz = "0.5*TV:FootBottomBumpZSize"/>
+    <shape type = "Tube" name = "FootBottomBumpCentreTube"
+	   rmin = "0.0*mm"
+	   rmax = "TV:FootShortEndLargeHoleRadius"
+	   dz = "TV:FootBottomBumpHeight"/>
+    <rotation y="-90 * degree"/>
+    <shape type = "Tube" name = "FootBottomBumpTopRightTube"
+	   rmin = "TV:FootBottomBumpRoundingRadius"
+	   rmax = "2*TV:FootBottomBumpRoundingRadius"
+	   dz = "TV:FootBottomBumpHeight"
+	   startphi="0*degree"
+	   deltaphi="90*degree"/>
+    <position y="0.5*(TV:FootBottomBumpYSize - 2*TV:FootBottomBumpRoundingRadius)"
+	      z="0.5*(TV:FootBottomBumpZSize - 2*TV:FootBottomBumpRoundingRadius)"/>
+    <rotation y="-90 * degree"/>
+    <shape type = "Tube" name = "FootBottomBumpTopLeftTube"
+	   rmin = "TV:FootBottomBumpRoundingRadius"
+	   rmax = "2*TV:FootBottomBumpRoundingRadius"
+	   dz = "TV:FootBottomBumpHeight"
+	   startphi="90*degree"
+	   deltaphi="90*degree"/>
+    <position y="0.5*(TV:FootBottomBumpYSize - 2*TV:FootBottomBumpRoundingRadius)"
+	      z="-0.5*(TV:FootBottomBumpZSize - 2*TV:FootBottomBumpRoundingRadius)"/>
+    <rotation y="-90 * degree"/>
+    <shape type = "Tube" name = "FootBottomBumpBottomLeftTube"
+	   rmin = "TV:FootBottomBumpRoundingRadius"
+	   rmax = "2*TV:FootBottomBumpRoundingRadius"
+	   dz = "TV:FootBottomBumpHeight"
+	   startphi="180*degree"
+	   deltaphi="90*degree"/>
+    <position y="-0.5*(TV:FootBottomBumpYSize - 2*TV:FootBottomBumpRoundingRadius)"
+	      z="-0.5*(TV:FootBottomBumpZSize - 2*TV:FootBottomBumpRoundingRadius)"/>
+    <rotation y="-90 * degree"/>
+    <shape type = "Tube" name = "FootBottomBumpBottomRightTube"
+	   rmin = "TV:FootBottomBumpRoundingRadius"
+	   rmax = "2*TV:FootBottomBumpRoundingRadius"
+	   dz = "TV:FootBottomBumpHeight"
+	   startphi="270*degree"
+	   deltaphi="90*degree"/>
+    <position y="-0.5*(TV:FootBottomBumpYSize - 2*TV:FootBottomBumpRoundingRadius)"
+	      z="0.5*(TV:FootBottomBumpZSize - 2*TV:FootBottomBumpRoundingRadius)"/>
+    <rotation y="-90 * degree"/>
+  </shape>
+  </volume>
+
+  <!-- LV clamp sides - clamp plus copper plugs -->
+  <volume vis="TV:LVClamp" name = "lvLVClampSide" material = "TV:LVClampPlugs">
+    <shape type="Box" name = "LVClampSideBox"
+           dx = "0.5*TV:LVClampSideHeight"
+           dy = "0.5*TV:LVClampLength"
+           dz = "0.5*TV:LVClampSideWidth"/>
+  </volume>
+
+  <!-- LV clamp top -->
+  <volume vis="TV:LVClamp" name = "lvLVClampTop" material = "TV:LVClampPlastic">
+    <shape type="BooleanShape" operation="subtraction" name="LVClampTopSub">
+      <shape type="Box" name="LVClampTopBox"
+	      dx = "0.5*TV:LVClampTopHeight"
+	      dy = "0.5*TV:LVClampLength"
+	      dz = "0.5*TV:LVClampTopWidth"/>
+      <shape type="BooleanShape" operation="intersection" name="LVClampInter1">
+        <shape type = "Tube" name = "LVClampInter1Tube"
+	       rmin = "0.0*mm"
+	       rmax = "TV:FootBigHoleExtrusionRadius + TV:Epsilon"
+	       dz = "TV:LVClampTopHeight"/>
+        <shape type = "Box" name = "LVClampInter1Box"
+	       dx = "0.5*(TV:LVClampTopWidth + TV:Epsilon)"
+	       dy = "(TV:FootBigHoleExtrusionRadius + TV:Epsilon)"
+	       dz = "TV:LVClampTopHeight"/>
+      </shape>
+      <position y="TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type="BooleanShape" operation="intersection" name="LVClampInter2">
+        <shape type = "Tube" name = "LVClampInter2Tube"
+	       rmin = "0.0*mm"
+	       rmax = "TV:FootBigHoleExtrusionRadius + TV:Epsilon"
+	       dz = "TV:LVClampTopHeight"/>
+	<shape type = "Box" name = "LVClampInter2Box"
+	       dx = "0.5*(TV:LVClampTopWidth + TV:Epsilon)"
+	       dy = "(TV:FootBigHoleExtrusionRadius + TV:Epsilon)"
+	       dz = "TV:LVClampTopHeight"/>
+       </shape>
+      <position y="-TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "LVClampSmallTube1"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootSmallHoleRadius"
+	     dz = "TV:LVClampTopHeight"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "LVClampSmallTube2"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootSmallHoleRadius"
+	     dz = "TV:LVClampTopHeight"/>
+      <position y="TV:FootSmallHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "LVClampSmallTube3"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootSmallHoleRadius"
+	     dz = "TV:LVClampTopHeight"/>
+      <position y="-TV:FootSmallHoleYOffset"/>
+      <rotation y="90 * degree"/>
+    </shape>
+  </volume>
+
+  <!-- Foot total shape definition -->
+  <volume vis="TV:Assembly" name = "lvFoot" material = "Vacuum">
+    <shape type="BooleanShape" operation="subtraction" name="FootEnvelopeSub">
+      <shape type = "Box" name = "FootEnvelopeBox"
+             dx = "0.5*TV:FootEnvelopeHeight + TV:Epsilon"
+             dy = "0.5*TV:FootEnvelopeLength"
+             dz = "0.5*TV:FootEnvelopeWidth"/>
+      <shape type = "Tube" name = "FootEnvelopeTube1"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootBigHoleLargerRadius - TV:Epsilon"
+	     dz = "TV:FootBigHoleTotalDepth + 2*TV:Epsilon"/>
+      <position x="0.5*TV:FootEnvelopeHeight"
+	        y="TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+      <shape type = "Tube" name = "FootEnvelopeTube2"
+	     rmin = "0.0*mm"
+	     rmax = "TV:FootBigHoleLargerRadius - TV:Epsilon"
+	     dz = "TV:FootBigHoleTotalDepth + 2*TV:Epsilon"/>
+      <position x="0.5*TV:FootEnvelopeHeight"
+	        y="-TV:FootBigHoleYOffset"/>
+      <rotation y="90 * degree"/>
+    </shape>
+
+    <physvol volume="lvFootCentrePlate"
+             name="pvFootCentrePlate">
+    </physvol>
+
+    <physvol volume="lvLVClampTop"
+	     name="pvLVClampTop">
+    <position x = "0.5*(TV:FootEnvelopeHeight - TV:LVClampTopHeight)"/>
+    </physvol>
+
+    <physvol volume="lvFootTopBump"
+             name="pvFootTopBumpL">
+    <position x = "0.5*(TV:FootEnvelopeHeight - TV:FootTopBumpHeight)"
+              y = "-TV:FootBigHoleYOffset"/>
+    <rotation y = "90 * degree"/>
+    </physvol>
+
+    <physvol volume="lvFootTopBump"
+             name="pvFootTopBumpR">
+    <position x = "0.5*(TV:FootEnvelopeHeight - TV:FootTopBumpHeight)"
+              y = "TV:FootBigHoleYOffset"/>
+    <rotation y = "90 * degree"/>
+    </physvol>
+
+    <physvol volume="lvFootShortEnd"
+             name = "pvFootShortEnd">
+    <position x = "0.5*(TV:FootCentreHeight - TV:FootEndHeight)"
+              y = "TV:FootShortEndYOffset"/>
+    </physvol>
+
+    <physvol volume="lvFootBottomBump"
+             name="pvFootBottomBumpR">
+    <position x = "-0.5*(TV:FootEnvelopeHeight - TV:FootBottomBumpHeight)"
+              y = "TV:FootShortEndLargeHoleY - TV:FootShortHalfLength"/>
+    </physvol>
+
+    <physvol volume="lvFootLongEnd"
+             name = "pvFootLongEnd">
+    <position x = "0.5*(TV:FootCentreHeight - TV:FootEndHeight)"
+              y = "TV:FootLongEndYOffset"/>
+    </physvol>
+  </volume>
+
+  <!-- End of Foot Description -->
+
+  <!-- Total support -->
+  <volume vis="TV" name="lvSupport">
+    <!-- The carbon fibre and borofloat hurdle -->
+    <physvol volume="lvNikhefSupport"             name="pvNikhefSupport">
+      <position x="-(TV:SubstrateNewIPXDistFromBL + TV:SupportPipeDistFromSubstrateBase)"/>
+    </physvol>
+
+    <!-- LV Transition Board -->
+    <physvol name="pvLVTransBoard" volume="lvLVTransitionBoard">
+      <position x="0*mm" />
+    </physvol>
+
+    <!-- The CO2 manifold -->
+    <physvol name="pvCoolingConnector"            volume="lvManifold">
+      <position x="-(TV:SubstrateNewIPXDistFromBL - TV:CoolingConnectorDistFromSubstrateBase - TV:CoolingConnectorSizeY/2)"
+		z="-(TV:SubstrateThick/2 + TV:CoolingConnectorFoilThickness + TV:CoolingConnectorThickness/2)"/>
+      <rotation z="-90*degree"/>
+    </physvol>
+
+    <!-- The manifold solder -->
+    <physvol name="pvCoolingConnectorSolder"	  volume="lvManifoldSolder">
+      <position x="-(TV:SubstrateNewIPXDistFromBL - TV:CoolingConnectorDistFromSubstrateBase - TV:CoolingConnectorSizeY/2)"
+		z="-(TV:SubstrateThick + TV:CoolingConnectorFoilThickness)/2"/>
+      <rotation z="-90*degree"/>
+    </physvol>
+
+	<!-- VCR Connectors -->
+	<physvol name="pvPipeVCRTopR" volume="lvPipeVCRTop">
+		<position x="TV:VCRTopPosX - 0.5*TV:VCRTopLength"
+			y="TV:VCRPosY"
+			z="TV:VCRPosZ" />
+		<rotation y="90*degree" />
+	</physvol>
+	<physvol name="pvPipeVCRBottomR" volume="lvPipeVCRBottom">
+		<position x="TV:VCRTopPosX - TV:VCRTopLength - 0.5*TV:VCRBottomLength"
+			y="TV:VCRPosY"
+			z="TV:VCRPosZ" />
+		<rotation y="90*degree" />
+	</physvol>
+
+	<physvol name="pvPipeVCRTopL" volume="lvPipeVCRTop">
+		<position x="TV:VCRTopPosX - 0.5*TV:VCRTopLength"
+			y="-TV:VCRPosY"
+			z="TV:VCRPosZ" />
+		<rotation y="90*degree" />
+	</physvol>
+	<physvol name="pvPipeVCRBottomL" volume="lvPipeVCRBottom">
+		<position x="TV:VCRTopPosX - TV:VCRTopLength - 0.5*TV:VCRBottomLength"
+			y="-TV:VCRPosY"
+			z="TV:VCRPosZ" />
+		<rotation y="90*degree" />
+	</physvol>
+
+    <!-- The Braze sockets -->
+    <physvol name="pvBrazeSocketR"	  volume="lvBrazeSocketR">
+      <position x="TV:BrazeSocketPosX"
+      		y="TV:BrazeSocketPosY"
+      		z="TV:BrazeSocketPosZ"/>
+      <rotation y="90*degree"/>
+    </physvol>
+    <physvol name="pvBrazeSocketL"	  volume="lvBrazeSocketL">
+      <position x="TV:BrazeSocketPosX"
+      		y="-TV:BrazeSocketPosY"
+      		z="TV:BrazeSocketPosZ"/>
+      <rotation y="90*degree"/>
+    </physvol>
+
+    <!-- Foot -->
+    <physvol volume="lvFoot"                      name="pvSupportFoot">
+      <position x = "-TV:SubstrateNewIPXDistFromBL - TV:SupportPipeDistFromSubstrateBase - TV:SupportPipeLength - TV:FootEnvelopeHeight/2 + TV:FootBigHoleTotalDepth"/>
+    </physvol>
+
+  </volume>
+
+</velo>

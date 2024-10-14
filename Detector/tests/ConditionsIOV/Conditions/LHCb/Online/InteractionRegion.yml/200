@@ -1,0 +1,10 @@
+# Example of InteractionRegion condition
+# ```
+# InteractionRegion:
+#     position: <avg_position_x_y_z: [float x3]>
+#     spread: <spread_matrix_xx_xy_yy_xz_yz_zz: [float x6]>
+# ```
+---
+InteractionRegion:
+    position: [ "0.0*mm", "0.0*mm", "0.0*mm" ]
+    spread: [ "0.0064*mm2", "0.0*mm2", "0.0064*mm2", "0.0*mm2", "0.0*mm2", "2809.0*mm2" ]

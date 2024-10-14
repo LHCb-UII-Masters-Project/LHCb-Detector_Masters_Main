@@ -1,0 +1,131 @@
+<ut>
+	<!--
+	(c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+	
+	This software is distributed under the terms of the GNU General Public
+	Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+	
+	In applying this licence, CERN does not waive the privileges and immunities
+	granted to it by virtue of its status as an Intergovernmental Organization
+	or submit itself to any jurisdiction.
+	-->
+	<!-- UT frame -->
+	<volume name="lvUT" vis="UT:Envelope"/>
+	<volume material="UT:Aluminium" name="lvUTFrame" vis="UT:Frame">
+		<shape name="utFrame" operation="subtraction" type="BooleanShape">
+			<shape dx="UTFrameOuterWide/2" dy="UTFrameOuterLong/2" dz="UTFrameThick/2" name="utFrameBoxOuter" type="Box" />
+			<shape dx="UTFrameInnerWide/2" dy="UTFrameInnerLong/2" dz="UTFrameThick*1.1/2" name="utFrameBoxInner" type="Box" />
+		</shape>
+	</volume>
+	<!-- UT light tight box -->
+	<volume material="UT:BoxWall" name="lvUTBox" vis="UT:Box">
+		<shape name="utBox" operation="subtraction" type="BooleanShape">
+			<shape dx="UTBoxOuterWide/2" dy="UTBoxOuterLong/2" dz="UTBoxOuterThick/2" name="utBoxOuter" type="Box" />
+			<shape dx="UTBoxInnerWide/2" dy="UTBoxInnerLong/2" dz="UTBoxInnerThick/2" name="utBoxInner" type="Box" />
+			<shape dz="UTBoxOuterThick*1.1/2" name="utBoxPipeHole" rmax="UTBoxWallSealOR" type="Tube" />
+		</shape>
+	</volume>
+	<!-- UT box plug -->
+	<volume vis="UT:Airex" material="UT:Airex" name="lvUTBoxPipeAirexRingInner">
+		<shape dz="UTBoxPipeAirexRingInnerThick/2" name="utBoxPipeAirexRingInner" rmax="UTBoxPipeAirexRingInnerOR" rmin="UTBoxPipeAirexRingIR" type="Tube" />
+	</volume>
+	<volume vis="UT:Airex" material="UT:Airex" name="lvUTBoxPipeAirexRingMiddle">
+		<shape dz="UTBoxPipeAirexRingMiddleThick/2" name="utBoxPipeAirexRingMiddle" rmax="UTBoxPipeAirexRingMiddleOR" rmin="UTBoxPipeAirexRingIR" type="Tube" />
+	</volume>
+	<volume vis="UT:Airex" material="UT:Airex" name="lvUTBoxPipeAirexRingOuter">
+		<shape dz="UTBoxPipeAirexRingOuterThick/2" name="utBoxPipeAirexRingOuter" rmax="UTBoxPipeAirexRingOuterOR" rmin="UTBoxPipeAirexRingIR" type="Tube" />
+	</volume>
+	<volume name="lvUTBoxPipeAirexRing">
+		<physvol name="pvUTBoxPipeAirexRingInner" volume="lvUTBoxPipeAirexRingInner">
+			<position z="0.5*(UTBoxPipeAirexRingInnerThick+UTBoxPipeAirexRingMiddleThick)" />
+		</physvol>
+		<physvol name="pvUTBoxPipeAirexRingMiddle" volume="lvUTBoxPipeAirexRingMiddle" />
+		<physvol name="pvUTBoxPipeAirexRingOuter" volume="lvUTBoxPipeAirexRingOuter">
+			<position z="-0.5*(UTBoxPipeAirexRingOuterThick+UTBoxPipeAirexRingMiddleThick)" />
+		</physvol>
+	</volume>
+	<volume vis="UT:EPDM" material="UT:EPDM" name="lvUTBoxWallSeal">
+		<shape dz="UTBoxWallSealThick/2" name="utBoxWallSeal" rmax="UTBoxWallSealOR-UTEpsilon" rmin="UTBoxWallSealIR" type="Tube" />
+	</volume>
+	<volume vis="UT:HalfMoon" material="UT:Airex" name="lvUTBoxInternalAirexRing">
+		<shape dz="UTInternalRingThick/2-UTEpsilon" name="utBoxInternalAirexRing" rmax="UTInternalRingOR" rmin="UTInternalRingIR" type="Tube" />
+	</volume>
+	<volume vis="UT:EPDM" material="UT:EPDM" name="lvUTBoxInternalSeal">
+		<shape dz="UTInternalSealThick/2" name="utBoxInternalSeal" rmax="UTInternalSealOR" rmin="UTInternalSealIR" type="Tube" />
+	</volume>
+	<volume name="lvUTBoxPlugPiece">
+		<physvol name="pvUTBoxPipeAirexRing" volume="lvUTBoxPipeAirexRing">
+			<position z="3*mm"/>
+		</physvol>
+		<physvol name="pvUTBoxWallSeal" volume="lvUTBoxWallSeal">
+			<position z="3*mm"/>
+		</physvol>
+		<physvol name="pvUTBoxInternalAirexRing" volume="lvUTBoxInternalAirexRing">
+			<position z="0.5*(UTBoxWallDownstreamThick+UTInternalRingThick)" />
+		</physvol>
+		<physvol name="pvUTBoxInternalSeal" volume="lvUTBoxInternalSeal">
+			<position z="0.5*(UTBoxWallDownstreamThick+UTInternalSealThick)" />
+		</physvol>
+	</volume>
+	<volume name="lvUTBoxPlug">
+		<physvol name="pvUTBoxPlug1" volume="lvUTBoxPlugPiece">
+			<position z="0.5*(UTBoxOuterThick-UTPlugThickZ)" />
+			<rotation x="180*degree" />
+		</physvol>
+		<physvol name="pvUTBoxPlug2" volume="lvUTBoxPlugPiece">
+			<position z="-0.5*(UTBoxOuterThick-UTPlugThickZ)" />
+		</physvol>
+	</volume>
+	<!-- End of Stave (EOS) volumes -->
+	<volume material="UT:Steel" name="lvUTaEOS" vis="UT:EOS">
+		<shape dx="(UTEOSWideUTa/2)/2-UTEpsilon" dy="UTEOSLong/2-UTEpsilon" dz="UTEOSThick/2-UTEpsilon" name="utUTaEOS" type="Box" />
+	</volume>
+	<volume material="UT:EOSPigtail" name="lvUTaEOSPigtail" vis="UT:EOS">
+		<shape dx="(UTEOSWideUTa/2)/2-UTEpsilon" dy="UTEOSPigtailLong/2-UTEpsilon" dz="UTEOSPigtailThick/2-UTEpsilon" name="utUTaEOSPigtail" type="Box" />
+	</volume>
+	<volume material="UT:Steel" name="lvUTbEOS" vis="UT:EOS">
+		<shape dx="(UTEOSWideUTb/2)/2-UTEpsilon" dy="UTEOSLong/2-UTEpsilon" dz="UTEOSThick/2-UTEpsilon" name="utUTbEOS" type="Box" />
+	</volume>
+	<volume material="UT:EOSPigtail" name="lvUTbEOSPigtail" vis="UT:EOS">
+		<shape dx="(UTEOSWideUTb/2)/2-UTEpsilon" dy="UTEOSPigtailLong/2-UTEpsilon" dz="UTEOSPigtailThick/2-UTEpsilon" name="utUTbEOSPigtail" type="Box" />
+	</volume>
+	<!-- UT Kapton jacket for electronic insulation -->
+	<volume material="UT:BeamPipeJacket" name="lvUTCylJacket">
+		<shape dz="UTCylJacketLength/2" name="UTCylJacket" rmax="UTCylJacketRadius+UTCylJacketThick" rmin="UTCylJacketRadius" type="Tube" />
+	</volume>
+	<volume material="UT:BeamPipeJacket" name="lvUTConeJacketUpstream">
+		<shape dz="UTConeJacketUpstreamLength/2" name="UTConeJacketUpstream" rmax2="UTConeJacketCutOutRadiusZmin+UTConeJacketThick" rmax1="UTConeJacketRadiusZmin+UTConeJacketThick" rmin2="UTConeJacketCutOutRadiusZmin" rmin1="UTConeJacketRadiusZmin" type="ConeSegment" />
+	</volume>
+	<volume material="UT:BeamPipeJacket" name="lvUTConeJacketDownstream">
+		<shape dz="UTConeJacketDownstreamLength/2" name="UTConeJacketDownstream" rmax2="UTConeJacketRadiusZmax+UTConeJacketThick" rmax1="UTConeJacketCutOutRadiusZmax+UTConeJacketThick" rmin2="UTConeJacketRadiusZmax" rmin1="UTConeJacketCutOutRadiusZmax" type="ConeSegment" />
+	</volume>
+	<volume name="lvUTJacket">
+		<physvol name="pvUTCylJacket" volume="lvUTCylJacket">
+			<position z="UTCylJacketZpos" />
+		</physvol>
+		<physvol name="pvUTConeJacketUpstream" volume="lvUTConeJacketUpstream">
+			<position z="UTConeJacketZposUpstream" />
+		</physvol>
+		<physvol name="pvUTConeJacketDownstream" volume="lvUTConeJacketDownstream">
+			<position z="UTConeJacketZposDownstream" />
+		</physvol>
+	</volume>
+	<volume vis="UT:PipeHeater" material="UT:PipeHeater" name="lvUTPipeHeaterUpstream">
+		<shape dz="UTPipeHeaterUpstreamLength/2" name="UTPipeHeaterUpstream" rmax="UTPipeHeaterUpstreamRadius+UTPipeHeaterUpstreamThick" rmin="UTPipeHeaterUpstreamRadius" type="Tube" />
+	</volume>
+	<volume vis="UT:PipeHeater" material="UT:PipeHeater" name="lvUTPipeHeaterDownstreamInUT">
+		<shape name="utPipeHeaterInUT" operation="subtraction" type="BooleanShape">
+			<shape dz="UTPipeHeaterDownstreamLength/2" name="UTPipeHeaterDownstream" rmax2="UTPipeHeaterDownstreamRadiusZmax+UTPipeHeaterDownstreamThick" rmax1="UTPipeHeaterDownstreamRadiusZmin+UTPipeHeaterDownstreamThick" rmin2="UTPipeHeaterDownstreamRadiusZmax" rmin1="UTPipeHeaterDownstreamRadiusZmin" type="ConeSegment" />
+			<shape rmax="UTPipeHeaterDownstreamRadiusZmax+UTPipeHeaterDownstreamThick+UTEpsilon" dz="(UTPipeHeaterDownstreamLengthInMagnet)/2+UTEpsilon" name="UTPipeHeaterDownstreamInUTSubMagnet" type="Tube" />
+			<position z="UTPipeHeaterDownstreamZmax-(UTPipeHeaterDownstreamLengthInMagnet)/2+UTEpsilon-UTPipeHeaterDownstreamPos-UTSystemZ" />
+		</shape>
+	</volume>
+	<volume name="lvUTPipeHeater">
+		<physvol name="pvUTPipeHeaterUpstream" volume="lvUTPipeHeaterUpstream">
+			<position z="UTPipeHeaterUpstreamPos" />
+		</physvol>
+		<physvol name="pvUTPipeHeaterDownstream" volume="lvUTPipeHeaterDownstreamInUT">
+			<position z="UTPipeHeaterDownstreamPos" />
+		</physvol>
+	</volume>
+</ut>

@@ -1,0 +1,26 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Shuqi Sheng & Ji Peng & Mingjie Feng & Yanru Li & Wenjing Yao   -->
+<!--   @date    30/05/2024                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <plugins>
+
+    <plugin name="LHCb_UP_cond_XML_reader" type="xml">
+    <conditions_config prefix="Conditions/UP"/>
+
+      <!-- To-do-next: a new condition should add -->
+    	<alignment detector="UP" path="global.yml" name="UPSystem"/>
+
+    </plugin>
+  </plugins>
+
+
+</lccdd>

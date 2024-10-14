@@ -1,0 +1,3 @@
+add_test( [==[Detector.Core.alignment parsing]==] /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector/build.x86_64_v2-el9-gcc12-opt/toolchain/wrapper /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector/build.x86_64_v2-el9-gcc12-opt/bin/test_alignment_parsing [==[alignment parsing]==]  )
+set_tests_properties( [==[Detector.Core.alignment parsing]==] PROPERTIES WORKING_DIRECTORY /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector/build.x86_64_v2-el9-gcc12-opt/Core/tests LABELS Detector LABELS Detector.Core)
+set( test_alignment_parsing_TESTS [==[Detector.Core.alignment parsing]==])

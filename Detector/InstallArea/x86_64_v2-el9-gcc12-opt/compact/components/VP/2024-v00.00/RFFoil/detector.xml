@@ -1,0 +1,27 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+  <define>
+    <constant name="RFFoil:ID" value="333"/>
+    <constant name="RFFoil:parent" value="/world" type="string"/>
+  </define>
+
+
+  <detectors>
+    <detector id="RFFoil:ID" name="RFFoil" type="DD4hep_VolumeAssembly" parent="${RFFoil:parent}" vis="RFFoil">
+      <include ref="RFFoil.xml"/>
+      <envelope material="Air" type="Assembly">
+        <physvol name="pvRFFoil"      volume="lvRFFoil">
+          <position z="0*mm"/>
+        </physvol>
+      </envelope>
+    </detector>
+  </detectors>
+
+</lccdd>

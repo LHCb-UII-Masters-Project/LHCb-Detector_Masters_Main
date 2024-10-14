@@ -1,0 +1,586 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout in the Magnet                    -->
+<!--===========================================================================-->
+<lccdd>
+  <define>
+
+    <!-- ***************************************************************** -->
+    <!-- *  BeamPipe Supports geometry parameters                        * -->
+    <!-- *                                                               * -->
+    <!-- *  Date: 2006-03-02                                             * -->
+    <!-- *  Author: Gloria Corti                                         * -->
+    <!-- *  Modified by Daria Savrina, Oct. 2008 to adapt supports as    * -->
+    <!-- *  installed                                                    * -->
+    <!-- * Modified by Jimmy McCarthy May 2012  to adapt supports as     * -->
+    <!-- * installed during 2012 LSD                                     * -->
+    <!-- * Modified by Sajan Easo in June 2015 for the new supports      * -->
+    <!-- *                                                               * -->
+    <!-- ***************************************************************** -->
+
+
+    <constant name="UX852BckCableAttRodHeadRad" value="5.5*mm"/>
+    <constant name="UX853CollarClipSFDeltaPhi" value="120.00*degree"/>
+    <constant name="UX853FixCollarQuarterRot" value="90*degree"/>
+    <constant name="UX852FixCollarCable08ZRot" value="45.00*degree"/>
+    <constant name="UX852TechnoraCable04Length" value="3360.00*mm"/>
+    <constant name="UX852FwdCableAttCut2SizeZ" value="10.00*mm"/>
+    <constant name="UX852FwdCableAttCut2SizeX" value="2.50*mm"/>
+    <constant name="UX852CollarClipHoleScrewSubLargeLength" value="50.0*mm"/>
+    <constant name="UX852CollarClipHoleScrewRad" value="1.25*mm"/>
+    <constant name="UX852CollarClipSFDeltaPhi" value="120.00*degree"/>
+    <constant name="UX852CableHeadLengthReductionValueTolerence" value="4.0*mm"/>
+    <constant name="UX853FixCollarOuterRadius" value="133.00*mm"/>
+    <constant name="UX852CollarAttMainPartPhiShift" value="1.0*degree"/>
+    <constant name="UX852BckCableAttRodLength" value="28.10*mm"/>
+    <constant name="UX852BckCableAttRodHeadLength" value="1.5*mm"/>
+    <constant name="UX852CollarAttMainPartZsize" value="5.50*mm"/>
+    <constant name="UX853BckCableAttCut2SizeZ" value="10.00*mm"/>
+    <constant name="UX852CollarAttMainPartEdge2StartPhi" value="225*degree"/>
+    <constant name="UX853FixCollarRingInnerRad" value="90.50*mm"/>
+    <constant name="UX853BckCableAttCut2SizeX" value="2.00*mm"/>
+    <constant name="UX852CableHeadDemiCableSubBoxLargeXSize" value="100*mm"/>
+    <constant name="UX853FwdCableAttRodHeadRad" value="6.5*mm"/>
+    <constant name="UX853CollarAttPlateCutXsize" value="10.00*mm"/>
+    <constant name="UX852CollarForkAttachProngSubBoxLargeZSize" value="200.*mm"/>
+    <constant name="UX853FwdCableAttCut2posZ" value="23.00*mm"/>
+    <constant name="UX853FixCollarCable03Theta" value="79.1*degree"/>
+    <constant name="UX852FixCollarSect1Rot" value="-7.4*degree"/>
+    <constant name="UX852CollarClipHoleScrewHeadRad" value="2.75*mm"/>
+    <constant name="UX853CollarAttMainBigHoleYpos" value="-2.70*mm"/>
+    <constant name="UX852CableHeadOuterHoleBeginPhi" value="60*degree"/>
+    <constant name="UX853FixCollarCable08Theta" value="45.00*degree"/>
+    <constant name="UX852BigRingSect2SlopeXsize" value="40*mm"/>
+    <constant name="UX853CollarAttMainPartEdge2bDeltaPhi" value="45*degree"/>
+    <constant name="UX852CableHeadDemiCableTiltAngle" value="0.22*rad"/>
+    <constant name="UX853BckCableAttRodCutLength" value="1.10*mm"/>
+    <constant name="UX852FixCollarCable03Radius" value="1.50*mm"/>
+    <constant name="UX852CollarAttSlope3YRot" value="38*degree"/>
+    <constant name="UX852FixCollarHoleSect3Rad" value="4.00*mm"/>
+    <constant name="UX852CollarGapDeltaPhi" value="0.20*degree"/>
+    <constant name="UX853CollarAttMainPartYsize" value="52.0*mm"/>
+    <constant name="UX852CableHeadBasicThickness" value="11.5*mm"/>
+    <constant name="UX853CollarAttPlateZsize" value="15.00*mm"/>
+    <constant name="UX852CollarForkAttachProngBoxYSize" value="5.0*mm"/>
+    <constant name="UX852FwdCableAttRingDeltaAng" value="200*degree"/>
+    <constant name="UX852CollarAttMainPartEdge1DeltaPhi" value="180*degree"/>
+    <constant name="UX852BigRingSect2SlopeYsize" value="20*mm"/>
+    <constant name="UX852CollarForkStemTrdholeX1Size" value="8.0*mm"/>
+    <constant name="UX852CableHeadDemiCableRadius" value="1.5*mm"/>
+    <constant name="UX852CollarAttMainPartEdge2DeltaPhi" value="135*degree"/>
+    <constant name="UX852FwdCableAttMainRad" value="9.00*mm"/>
+    <constant name="UX852FutureFibreCable03ZRot" value="45.00*degree"/>
+    <constant name="UX853CollarClipHoleRing12TotalLength" value="14.5*mm"/>
+    <constant name="UX853FixCollarLenght" value="40.00*mm"/>
+    <constant name="UX853BckCableAttRingOuterRad" value="14.00*mm"/>
+    <constant name="UX852FixCollarSect3DelthaAngle" value="45*degree"/>
+    <constant name="UX853BckCableAttRingDeltaAng" value="89*degree"/>
+    <constant name="UX853CollarClipDeltaPhi" value="120.00*degree - 0.20*degree"/>
+    <constant name="UX852FixCollarCable04XRot" value="45.00*degree"/>
+    <constant name="UX852TechnoraCableHeadLengthReductionValueTolerence" value="1.0*mm"/>
+    <constant name="UX853CollarClipHoleScrewHeadRad" value="3.5*mm"/>
+    <constant name="UX852FixCollarRingOuterRad" value="57.50*mm"/>
+    <constant name="UX852FixCollarCable04ZRot" value="45.00*degree"/>
+    <constant name="UX852FwdCableAttRodLength" value="28.10*mm"/>
+    <constant name="UX853CollarAttMainPartEdge2InnerRad" value="10.0*mm"/>
+    <constant name="UX853BckCableAttLongHoleLength" value="34.00*mm"/>
+    <constant name="UX852FixCollarOuterRad" value="64.50*mm"/>
+    <constant name="UX853BckCableAttCut1SizeX" value="3.00*mm"/>
+    <constant name="UX853CollarAttMainPartEdge2StartPhi" value="45*degree"/>
+    <constant name="UX852FwdCableAttCut2posZ" value="23.00*mm"/>
+    <constant name="UX853FixCollarCableBckTheta" value="45.00*degree"/>
+    <constant name="UX852CollarAttMainPartEdge2InnerRad" value="9.0*mm"/>
+    <constant name="UX852TechnoraCableHeadPhiPosTolerence" value="-0.025*degree"/>
+    <constant name="UX853BckCableAttRodInnerHoleRad" value="3.0*mm"/>
+    <constant name="UX853BckCableAttRodHeadRad" value="7.5*mm"/>
+    <constant name="UX852BckFACableAttRodCutLength" value="1.10*mm"/>
+    <constant name="UX852CollarForkAttachProngRadiusTolerence" value="0.2*mm"/>
+    <constant name="UX852CollarAttMainHole2RadTolerence" value="0.3*mm"/>
+    <constant name="UX852CableHeadHRotX" value="(pi/2)*rad"/>
+    <constant name="UX853CollarAttMainPartPhiShift" value="5.5*degree"/>
+    <constant name="UX852CollarAttMainPartEdge1StartPhi" value="0*degree"/>
+    <constant name="UX852CollarForkAttachStemCylDeltaPhi" value="pi*(1.0- (18.0/180.0) )*rad"/>
+    <constant name="UX852CollarClipHolesRpos" value="52.50*mm"/>
+    <constant name="UX852CollarClipRing2OuterRad" value="57.50*mm"/>
+    <constant name="UX852CollarAttMainPartYsize" value="47.0*mm"/>
+    <constant name="UX853FixCollarRibInnerRadius" value="81.30*mm"/>
+    <constant name="UX853TechnoraCable07Radius" value="2.25*mm"/>
+    <constant name="UX852FutureFibreCable03Radius" value="2.25*mm"/>
+    <constant name="UX853CollarClipHoleScrewLength" value="37.5*mm"/>
+    <constant name="UX852FwdCableAttLongHoleLength" value="27.00*mm"/>
+    <constant name="UX853FixCollarCable03ZTolerence" value="2.0*mm"/>
+    <constant name="UX853CollarAttMainSmallHoleRad" value="0.20*mm"/>
+    <constant name="UX852BckCableAttRodManPartLargeLength" value="50.0*mm"/>
+    <constant name="UX853CollarAttMainPartRad" value="16.00*mm"/>
+    <constant name="UX852CollarForkAttachProngTrapX2Size" value="18.0*mm"/>
+    <constant name="UX851CablePhiAngle" value="45.0*degree"/>
+    <constant name="UX853CollarAttPlateCutZsize" value="18.00*mm"/>
+    <constant name="UX852CollarClipRing2InnerRad" value="43.50*mm"/>
+    <constant name="UX853CollarAttCircleCutBoxXsize" value="12.00*mm"/>
+    <constant name="UX853TechnoraCable08Radius" value="2.25*mm"/>
+    <constant name="UX853BckCableAttLongHoleRad" value="4.00*mm"/>
+    <constant name="UX852BckCableAttCut2posZ" value="22.00*mm"/>
+    <constant name="UX852CableHeadCentralPinThickness" value="19.0*mm"/>
+    <constant name="UX852FutureFibreCableTolerence" value="1.00*mm"/>
+    <constant name="UX853FixCollarRibLenght" value="8.00*mm"/>
+    <constant name="UX852FixCollarZrot" value="45.00*degree"/>
+    <constant name="UX853CollarAttMainPartZsize" value="8.0*mm"/>
+    <constant name="UX852CollarClipRing1InnerRad" value="48.50*mm"/>
+    <constant name="UX852CollarClipHoleScrewLength" value="18.5*mm"/>
+    <constant name="UX853CollarAttSlope2ZPos" value="0*mm"/>
+    <constant name="UX852FutureFibreCableHeadPhiPosTolerence" value="-0.025*degree"/>
+    <constant name="UX852CableHeadSphereRadius" value="9.4*mm"/>
+    <constant name="UX853FwdCableAttMainLength" value="57.50*mm"/>
+    <constant name="UX853CollarAttMainBoxHoleYsize" value="40.00*mm"/>
+    <constant name="UX852BigRingSect2SlopeZrot" value="145*degree"/>
+    <constant name="UX853CollarAttCircleRad" value="20.00*mm"/>
+    <constant name="UX853CollarAttMainBoxHoleXsize" value="14.00*mm"/>
+    <constant name="UX852CollarAttMainPartEdge1InnerRad" value="8.0*mm"/>
+    <constant name="UX852CollarForkAttachProngSubBoxLargeXSize" value="200.*mm"/>
+    <constant name="UX853FwdCableAttRodManPartLargeLength" value="50.0*mm"/>
+    <constant name="UX853FwdCableAttRingInnerRad" value="4.00*mm"/>
+    <constant name="UX853BckCableAttRodManPartLargeLength" value="50.0*mm"/>
+    <constant name="UX853CollarClipHoleScrewRad" value="1.5*mm"/>
+    <constant name="UX853BigRingQuarterSlopeXsize" value="30*mm"/>
+    <constant name="UX853CollarAttSlope1YRot" value="-90*degree+9.7*degree"/>
+    <constant name="UX852CollarClipHolesRad" value="1.75*mm"/>
+    <constant name="UX853CollarAttMainPartEdge2bStartPhi" value="0*degree"/>
+    <constant name="UX852CollarForkAttachStemCylStartPhi" value="pi*(1.0+ ((18.0/2.0)/180.0) )*rad"/>
+    <constant name="UX853FutureFibreCable06Radius" value="3.4*mm"/>
+    <constant name="UX853FixCollarCable08Lenght" value="3200.00*mm"/>
+    <constant name="UX852TechnoraCable04Radius" value="2.25*mm"/>
+    <constant name="UX852CollarForkAttachStemCylRadius" value="9.0*mm"/>
+    <constant name="UX852FixCollarCable08Lenght" value="2418.00*mm"/>
+    <constant name="UX853FwdCableAttLongHoleLength" value="27.00*mm"/>
+    <constant name="UX852FutureFibreCable03XRot" value="67.50*degree"/>
+    <constant name="UX852CollarClipRing1Length" value="2.90*mm"/>
+    <constant name="UX853FixCollarAttOuterRad" value="119.50*mm"/>
+    <constant name="UX853CollarClipRing2OuterRad" value="93.50*mm"/>
+    <constant name="UX852TechnoraCable04XRot" value="45.00*degree"/>
+    <constant name="UX853CollarAttMainPartEdge1InnerRad" value="12.0*mm"/>
+    <constant name="UX852FwdCableAttRodCutZpos" value="3.60*mm"/>
+    <constant name="UX852TechnoraCableHeadThickness" value="10.8*mm"/>
+    <constant name="UX852CollarAttMainPartEdge2bStartPhi" value="0*degree"/>
+    <constant name="UX852FixCollarZpos" value="4025.50*mm - 0.5*Regions:BeforeMagnetZSize"/>
+    <constant name="UX853FixCollarRingLength" value="12.00*mm"/>
+    <constant name="UX853CollarAttCircleLength" value="3.00*mm"/>
+    <constant name="UX853FixCollarPhiStart" value="(90-34)*degree"/>
+    <constant name="UX852CollarClipSFPosStartPhi" value="90.0*degree"/>
+    <constant name="UX852FwdCableAttRodHeadRad" value="6.5*mm"/>
+    <constant name="UX851CollarLenght" value="30.00*mm"/>
+    <constant name="UX852CollarForkAttachProngTrapZSize" value="12.24*mm"/>
+    <constant name="UX853FixCollarCircleCutDeltaPhi" value="50*degree"/>
+    <constant name="UX852CollarAttSlope1YRot" value="90*degree+40*degree"/>
+    <constant name="UX851CableRadius" value="1.00*mm"/>
+    <constant name="UX853CollarClipHoleScrewLengthTolerence" value="0.2*mm"/>
+    <constant name="UX853CollarAttMainBigHoleZpos" value="23.00*mm"/>
+    <constant name="UX853CollarAttMainPartEdge1StartPhi" value="270*degree"/>
+    <constant name="UX852CollarForkAttachProngOuterRadius" value="10.0*mm"/>
+    <constant name="UX852CollarClipRing1OuterRad" value="55.50*mm"/>
+    <constant name="UX852BckCableAttLongHoleLength" value="27.00*mm"/>
+    <constant name="UX852FixCollarRingLength" value="6.00*mm"/>
+    <constant name="UX852CollarClipDeltaPhi" value="120.00*degree - 0.20*degree"/>
+    <constant name="UX852BckFACableAttRodRad" value="4.00*mm"/>
+    <constant name="UX853CollarAttMainPartLength" value="66.00*mm"/>
+    <constant name="UX853BigRingQuarterSlopeYsize" value="50*mm"/>
+    <constant name="UX853TechnoraCableHeadTypeBOuterRadius" value="(16.0/2.0)*mm"/>
+    <constant name="UX852CollarForkAttachProngThickness" value="5.0*mm"/>
+    <constant name="UX853CollarAttMainBigHoleLength" value="40.00*mm"/>
+    <constant name="UX851CollarThick" value="4.00*mm"/>
+    <constant name="UX852FixCollarCable03XRot" value="45.00*degree"/>
+    <constant name="UX852CollarForkAttachStemLargeCylZSize" value="50.0*mm"/>
+    <constant name="UX852CollarClipHoleScrewLengthTolerence" value="0.2*mm"/>
+    <constant name="UX852CableHeadDemiCableLength" value="50.0*mm"/>
+    <constant name="UX852BckCableAttRodCutRad" value="3.8*mm"/>
+    <constant name="UX852CableHeadHoleLargeZSize" value="100.0*mm"/>
+    <constant name="UX853CollarAttPlateYsize2" value="43.60*mm"/>
+    <constant name="UX852FixCollarCableTolerence" value="2.00*mm"/>
+    <constant name="UX853CollarAttPlateYsize1" value="13.40*mm"/>
+    <constant name="UX852CollarClipHoleScrewSubLargeRadius" value="10.0*mm"/>
+    <constant name="UX852BckFACableAttRodHeadRad" value="5.5*mm"/>
+    <constant name="UX852BckCollarForkAttachRotX" value="(pi/2)*rad"/>
+    <constant name="UX853FixCollarLength" value="25.00*mm"/>
+    <constant name="UX853CollarAttCircleCutBoxYsize" value="40.00*mm"/>
+    <constant name="UX852FwdCableAttRodHeadLength" value="1.5*mm"/>
+    <constant name="UX853CollarClipHolesLength" value="17.00*mm"/>
+    <constant name="UX852FutureFibreCable03PhiPosTolerence" value="-0.01*degree"/>
+    <constant name="UX852CableHeadOuterHoleDeltaPhi" value="60*degree"/>
+    <constant name="UX853FixCollarOuterRad" value="103.00*mm"/>
+    <constant name="UX852BckCableAttMainRad" value="9.00*mm"/>
+    <constant name="UX853BckCableAttCut2posZ" value="18.00*mm"/>
+    <constant name="UX853CollarAttSlope2YRot" value="-90*degree+61.8*degree"/>
+    <constant name="UX852BckCableAttRingDeltaAng" value="200*degree"/>
+    <constant name="UX852BckFACableAttRodLength" value="30.10*mm"/>
+    <constant name="UX853CollarGapDeltaPhi" value="0.20*degree"/>
+    <constant name="UX853FwdCableAttRodCutZpos" value="3.60*mm"/>
+    <constant name="UX852TechnoraCable04PhiPosTolerence" value="-0.01*degree"/>
+    <constant name="UX852TechnoraCableHeadDemiCableRadiusTolerence" value="0.15*mm"/>
+    <constant name="UX853FixCollarInnerRadius" value="35.5*mm"/>
+    <constant name="UX852CableHeadOuterRadius" value="(28.5/2.0)*mm"/>
+    <constant name="UX852FwdCableAttRodManPartLargeLength" value="50.0*mm"/>
+    <constant name="UX851CableZpos" value="2780.00*mm - 0.5*Regions:BeforeMagnetZSize"/>
+    <constant name="UX853CollarClipRing2InnerRad" value="75.30*mm"/>
+    <constant name="UX853FwdCableAttRodInnerHoleRad" value="4.0*mm"/>
+    <constant name="UX852FixCollarQuarterRot" value="90*degree"/>
+    <constant name="UX852CableHeadInnerRadiusTolerence" value="0.2*mm"/>
+    <constant name="UX852CollarForkAttachProngSubBoxLargeYSize" value="200.*mm"/>
+    <constant name="UX852FixCollarAttOuterRad" value="77.50*mm"/>
+    <constant name="UX853BckCableAttRodRad" value="6.00*mm"/>
+    <constant name="UX852BckCableAttCut2SizeZ" value="10.00*mm"/>
+    <constant name="UX852BckCableAttCut2SizeX" value="2.50*mm"/>
+    <constant name="UX853FixCollarCable03Lenght" value="3127.00*mm"/>
+    <constant name="UX852CollarForkStemTrdholeY1LargeSize" value="100.0*mm"/>
+    <constant name="UX852FixCollarCable08Radius" value="4.00*mm"/>
+    <constant name="UX853BigRingQuarterSlopeZrot" value="130*degree"/>
+    <constant name="UX852CollarForkAttachStemHoleLargeZSize" value="50.0*mm"/>
+    <constant name="UX853CollarClipRing1InnerRad" value="80.30*mm"/>
+    <constant name="UX852FixCollarCable03Lenght" value="2050.00*mm"/>
+    <constant name="UX852BckFACableAttRodHeadLength" value="1.5*mm"/>
+    <constant name="UX852FixCollarSect2DelthaAngle" value="15.1*degree"/>
+    <constant name="UX853FwdCableAttCut2SizeZ" value="10.00*mm"/>
+    <constant name="UX853FwdCableAttRodLength" value="36.10*mm"/>
+    <constant name="UX852CollarForkAttachProngTrapX1Size" value="8.0*mm"/>
+    <constant name="UX852BckCableAttLongHoleRad" value="4.00*mm"/>
+    <constant name="UX852CollarForkAttachStemTrapX2Size" value="24.0*mm"/>
+    <constant name="UX852TechnoraCableHeadDemiCableLengthTolerence" value="0.3*mm"/>
+    <constant name="UX852BckFACableAttRodManPartLargeLength" value="50.0*mm"/>
+    <constant name="UX852CollarAttMainPartXsize" value="32.0*mm"/>
+    <constant name="UX852BckFACableAttRodInnerHoleRad" value="2.0*mm"/>
+    <constant name="UX853FixCollarTransHoleRad" value="5.00*mm"/>
+    <constant name="UX852CollarForkStemTrdholeY2LargeSize" value="100.0*mm"/>
+    <constant name="UX853CollarAttCircleCutBoxZsize" value="2.50*mm"/>
+    <constant name="UX853FutureFibreCable05Length" value="2590.0*mm"/>
+    <constant name="UX853CollarAttMainSmallHoleLength" value="20.00*mm"/>
+    <constant name="UX853BckCableAttMainRad" value="10.00*mm"/>
+    <constant name="UX852BckCableAttCut1SizeX" value="5.50*mm"/>
+    <constant name="UX852CollarForkAttachStemTrapX1Size" value="13.5*mm"/>
+    <constant name="UX852TechnoraCableHeadDemiCableLength" value="16*mm"/>
+    <constant name="UX852FwdCableAttRingOuterRad" value="7.00*mm"/>
+    <constant name="UX853CollarAttMainHoleRadTolerence" value="0.2*mm"/>
+    <constant name="UX853FixCollarDeltaPhi" value="90*degree"/>
+    <constant name="UX852FixCollarRingInnerRad" value="55.50*mm"/>
+    <constant name="UX852BckCableAttRingInnerRad" value="3.00*mm"/>
+    <constant name="UX852TechnoraCableHeadInnerRadiusTolerence" value="0.2*mm"/>
+    <constant name="UX852FwdCableAttRodRad" value="5.00*mm"/>
+    <constant name="UX853CollarClipRing1Length" value="2.90*mm"/>
+    <constant name="UX852CollarGapSFDeltaPhi" value="0.20*degree"/>
+    <constant name="UX853FwdCableAttRodCutRad" value="4.80*mm"/>
+    <constant name="UX853CollarClipRing1OuterRad" value="90.50*mm"/>
+    <constant name="UX852FixCollarInnerRad" value="57.50*mm"/>
+    <constant name="UX852CollarAttMainHole1RadTolerence" value="0.3*mm"/>
+    <constant name="UX852CollarAttSlope2RPos" value="16*mm"/>
+    <constant name="UX852FixCollarCable04Lenght" value="1440.00*mm"/>
+    <constant name="UX852FwdCableAttRodCutRad" value="4.80*mm"/>
+    <constant name="UX852FwdCableAttRodInnerHoleRad" value="4.0*mm"/>
+    <constant name="UX853FwdCableAttRodRad" value="5.00*mm"/>
+    <constant name="UX853BckCableAttRodLength" value="36.10*mm"/>
+    <constant name="UX853FwdCableAttRingOuterRad" value="9.50*mm"/>
+    <constant name="UX852FixCollarCable04Radius" value="2.00*mm"/>
+    <constant name="UX852CollarClipHoleScrewHeadLength" value="3.0*mm"/>
+    <constant name="UX852BckFACableAttRodCutRad" value="3.8*mm"/>
+    <constant name="UX852BckCableAttRodCutZpos" value="3.60*mm"/>
+    <constant name="UX852CollarAttSlope3RPos" value="25*mm"/>
+    <constant name="UX853CollarClipHolesRad" value="2.25*mm"/>
+    <constant name="UX853CollarClipHolesRpos" value="86.00*mm"/>
+    <constant name="UX853CollarAttTrdHoleRad" value="4.00*mm"/>
+    <constant name="UX853FwdCableAttCut2SizeX" value="2.50*mm"/>
+    <constant name="UX853CollarAttMainPartEdge2DeltaPhi" value="90*degree"/>
+    <constant name="UX852TechnoraCableHeadTypeAOuterRadius" value="(17.5/2.0)*mm"/>
+    <constant name="UX851CableLenght" value="1000.00*mm"/>
+    <constant name="UX852CollarForkStemTrdholeLargeZSize" value="100.0*mm"/>
+    <constant name="UX852CableHeadCentralPinRadius" value="3.8*mm"/>
+    <constant name="UX852BckCableAttRodCutLength" value="1.10*mm"/>
+    <constant name="UX853FixCollarCablePlaneAbsRotZ" value="90*degree"/>
+    <constant name="UX852CollarForkAttachStemTrapZSize" value="24.56*mm"/>
+    <constant name="UX853TechnoraCable07Length" value="2080.0*mm"/>
+    <constant name="UX853BckCableAttMainLength" value="62.00*mm"/>
+    <constant name="UX852CollarClipHolesSFDeltaPhi" value="40*degree"/>
+    <constant name="UX853CollarAttMainPartEdge1DeltaPhi" value="90*degree"/>
+    <constant name="UX853FixCollarZpos" value="7150.00*mm - 0.5*Regions:BeforeMagnetZSize"/>
+    <constant name="UX852FwdCableAttRodCutLength" value="1.10*mm"/>
+    <constant name="UX853FwdCableAttLongHoleRad" value="4.00*mm"/>
+    <constant name="UX852BckCableAttRodInnerHoleRad" value="2.0*mm"/>
+    <constant name="UX852FwdCableAttRingInnerRad" value="2.50*mm"/>
+    <constant name="UX853CollarClipHoleScrewHeadLength" value="4.0*mm"/>
+    <constant name="UX853FixCollarCableRadialTolerence" value="2.0*mm"/>
+    <constant name="UX852FixCollarSect1DelthaAngle" value="14.8*degree"/>
+    <constant name="UX853BckCableAttRingInnerRad" value="6.00*mm"/>
+    <constant name="UX852FwdCableAttCut1SizeX" value="5.50*mm"/>
+    <constant name="UX852FixCollarCutAngl" value="45*degree"/>
+    <constant name="UX853FixCollarCable08ZTolerence" value="5.0*mm"/>
+    <constant name="UX853FixCollarCable08Radius" value="4.00*mm"/>
+    <constant name="UX853BckCableAttRodCutZpos" value="3.60*mm"/>
+    <constant name="UX852FixCollarCable03ZRot" value="45.00*degree"/>
+    <constant name="UX853FwdCableAttMainRad" value="9.00*mm"/>
+    <constant name="UX853CollarAttPlateXsize1" value="8.00*mm"/>
+    <constant name="UX852TechnoraCableHeadDemiCableRotX" value="(pi/2.0)*rad"/>
+    <constant name="UX853CollarAttPlateXsize2" value="8.00*mm"/>
+    <constant name="UX852CollarForkStemTrdholeX2Size" value="115.0*mm"/>
+    <constant name="UX853FwdCableAttRodCutLength" value="1.10*mm"/>
+    <constant name="UX852TechnoraCableHeadDemiCableRadius" value="2.5*mm"/>
+    <constant name="UX852CableHeadDemiCableSubBoxLargeZSize" value="100*mm"/>
+    <constant name="UX852CollarForkStemRotX" value="-(pi/2.0)*rad"/>
+    <constant name="UX852CollarForkStemRotY" value="(pi/2.0)*rad"/>
+    <constant name="UX852CollarClipHolesLength" value="45.00*mm"/>
+    <constant name="UX852BckCableAttRingOuterRad" value="7.50*mm"/>
+    <constant name="UX852CollarForkAttachLengthProtrusion" value="35.0*mm"/>
+    <constant name="UX852CollarForkAttachStemHoleRadiusTolerence" value="0.3*mm"/>
+    <constant name="UX853FutureFibreCable06Length" value="1710.0*mm"/>
+    <constant name="UX853FwdCableAttCut1SizeX" value="3.00*mm"/>
+    <constant name="UX853TechnoraCable08Length" value="1690.0*mm"/>
+    <constant name="UX853CollarAttMainBigHoleRad" value="6.00*mm"/>
+    <constant name="UX851CollarRadius" value="43.00*mm"/>
+    <constant name="UX852CollarAttMainPartEdge2bDeltaPhi" value="45*degree"/>
+    <constant name="UX852CollarForkAttachStemCylRotX" value="(pi/2)*rad"/>
+    <constant name="UX853CollarClipHoleScrewSubLargeRadius" value="10.0*mm"/>
+    <constant name="UX852FutureFibreCable03Length" value="1290.0*mm"/>
+    <constant name="UX852FwdCableAttLongHoleRad" value="4.00*mm"/>
+    <constant name="UX852FixCollarCable08XRot" value="67.5*degree"/>
+    <constant name="UX853CollarAttTrdHoleZpos" value="-3.00*mm"/>
+    <constant name="UX852FixCollarLenght" value="24.00*mm"/>
+    <constant name="UX853CollarAttTrdHoleYpos" value="1.60*mm"/>
+    <constant name="UX853FixCollarCableFwdTheta" value="79.1*degree"/>
+    <constant name="UX853CollarGapSFDeltaPhi" value="0.20*degree"/>
+    <constant name="UX852TechnoraCableTolerence" value="1.00*mm"/>
+    <constant name="UX853BckCableAttRodCutRad" value="5.75*mm"/>
+    <constant name="UX852CollarForkAttachProngTrapRotX" value="(-1.0*pi/2.0)*rad"/>
+    <constant name="UX853CollarClipHolesDeltaPhiSF" value="30*degree"/>
+    <constant name="UX852CableHeadDemiCableSideARotX" value="-(pi/2.0)*rad"/>
+    <constant name="UX852CableHeadDemiCableSubBoxLargeYSize" value="100*mm"/>
+    <constant name="UX852BckCableAttRodRad" value="4.00*mm"/>
+    <constant name="UX852CollarForkAttachProngSubBoxShiftLocalY" value="4.2*mm"/>
+    <constant name="UX853CollarClipHoleScrewSubLargeLength" value="50.0*mm"/>
+    <constant name="UX853CollarAttMainPartXsize" value="40.0*mm"/>
+    <constant name="UX852FixCollarLength" value="12.00*mm"/>
+    <constant name="UX853FixCollarRingOuterRad" value="93.50*mm"/>
+    <constant name="UX853FutureFibreCable05Radius" value="3.4*mm"/>
+    <constant name="UX853FwdCableAttRodHeadLength" value="1.5*mm"/>
+    <constant name="UX852CollarForkAttachStemLargeCylRadius" value="50.0*mm"/>
+    <constant name="UX853FwdCableAttRingDeltaAng" value="143*degree"/>
+    <constant name="UX852BckFACableAttRodCutZpos" value="3.60*mm"/>
+    <constant name="UX853CollarAttPlateCutYsize" value="18.00*mm"/>
+    <constant name="UX853BckCableAttRodHeadLength" value="1.5*mm"/>
+    <constant name="UX853FixCollarCable03Radius" value="1.50*mm"/>
+    <constant name="UX853CollarAttTrdHoleLength" value="40.00*mm"/>
+    <constant name="UX852FixCollarCable08PhiPos" value="UX852FixCollarCable08ZRot"/>
+    <constant name="UX852CableHeadDemiCableSubBoxTilt" value="3.0*UX852CableHeadDemiCableTiltAngle"/>
+    <constant name="UX852FwdCableAttCut2SizeY" value="2*UX852FwdCableAttMainRad"/>
+    <constant name="UX852FwdCableAttCut1SizeY" value="2*UX852FwdCableAttMainRad"/>
+    <constant name="UX852FutureFibreCable03PhiPos" value="UX852FutureFibreCable03ZRot"/>
+    <constant name="UX853CollarClipHoleDoubleRingTotalLength" value="2*UX853CollarClipHoleRing12TotalLength"/>
+    <constant name="UX853BckCableAttCut1SizeZ" value="18*mm+UX853BckCableAttRingOuterRad"/>
+    <constant name="UX852FixCollarCable04PhiPos" value="UX852FixCollarCable04ZRot"/>
+    <constant name="UX852CollarForkAttachProngInnerRadius" value="4.0*mm+UX852CollarForkAttachProngRadiusTolerence"/>
+    <constant name="UX852CollarAttMainHole2Rad" value="4*mm+UX852CollarAttMainHole2RadTolerence"/>
+    <constant name="UX852BckCableAttRodManPartPosZ" value="-0.5*UX852BckCableAttRodLength+0.5*UX852BckCableAttRodManPartLargeLength+UX852BckCableAttRodHeadLength"/>
+    <constant name="UX853FixCollarBeforeRibLenght" value="0.5*(UX853FixCollarLenght - UX853FixCollarRibLenght)"/>
+    <constant name="UX852TechnoraCable04ZRot" value="UX852FixCollarZrot"/>
+    <constant name="UX852FwdTechnoraCableHeadPhiPos" value="UX852FixCollarZrot-0.05*degree"/>
+    <constant name="UX852FwdCableHeadMagnetFacePhiPos" value="UX852FixCollarZrot-0.05*degree"/>
+    <constant name="UX852BckCollarForkAttachPhiPos" value="UX852FixCollarZrot-0.05*degree"/>
+    <constant name="UX852BckCollarForkAttachMagnetFacePhiPos" value="UX852FixCollarZrot-0.05*degree"/>
+    <constant name="UX852CableHeadOuterPartInnerRadius" value="UX852CableHeadSphereRadius+0.2*mm"/>
+    <constant name="UX853FwdCableAttHoleRad" value="UX853FwdCableAttRingInnerRad"/>
+    <constant name="UX853BckCableHeadCommonPhipos" value="UX853FixCollarPhiStart+34*degree"/>
+    <constant name="UX853FwdCableHeadCommonPhipos" value="UX853FixCollarPhiStart+34*degree"/>
+    <constant name="UX853FixCollarTransHolePhipos" value="UX853FixCollarPhiStart+34*degree+45*degree"/>
+    <constant name="UX851CollarZpos" value="2798.80*mm - 0.5*Regions:BeforeMagnetZSize - 0.5*UX851CollarLenght "/>
+    <constant name="UX853BigRingQuarterSlopePhipos" value="UX853FixCollarPhiStart+0.25*UX853FixCollarCircleCutDeltaPhi"/>
+    <constant name="UX853CollarAttMainSmallHoleZpos2" value="30.00*mm - UX853CollarAttMainPartLength*0.5"/>
+    <constant name="UX853CollarAttMainBoxHoleZsize" value="UX853CollarAttMainPartLength - 41.50*mm"/>
+    <constant name="UX853CollarAttPlateZpos" value="-0.5*(UX853CollarAttMainPartLength + UX853CollarAttPlateZsize) - UX853CollarAttCircleLength"/>
+    <constant name="UX853CollarAttCircleZpos" value="-0.5*(UX853CollarAttMainPartLength + UX853CollarAttCircleLength)"/>
+    <constant name="UX853CollarAttMainSmallHoleZpos1" value="10.00*mm - UX853CollarAttMainPartLength*0.5"/>
+    <constant name="UX852CollarForkAttachProngTrapY2Size" value="UX852CollarForkAttachProngThickness"/>
+    <constant name="UX852CollarForkAttachProngBoxZSize" value="UX852CollarForkAttachProngThickness"/>
+    <constant name="UX852CollarForkAttachProngTrapY1Size" value="UX852CollarForkAttachProngThickness"/>
+    <constant name="UX852CollarForkAttachProngShiftZ" value="7.0*mm + 0.5*UX852CollarForkAttachProngThickness"/>
+    <constant name="UX852CableHeadDemiCablePosY" value="0.4*UX852CableHeadDemiCableLength"/>
+    <constant name="UX852CableHeadDemiCableSideAPosX" value="0.5*UX852CableHeadDemiCableLength*sin(UX852CableHeadDemiCableTiltAngle)+UX852CableHeadDemiCableRadius*1.5"/>
+    <constant name="UX852CableHeadLengthReductionValue" value="2.0*UX852CableHeadDemiCableLength*cos(UX852CableHeadDemiCableTiltAngle)"/>
+    <constant name="UX853CollarAttPlateYpos" value="-0.5*UX853CollarAttPlateYsize1"/>
+    <constant name="UX853CollarAttMainHole2ZPos" value="1.6*mm+0.5*UX853FixCollarLength+0.5*UX853CollarAttMainPartYsize-0.5*UX853FixCollarLength - UX853CollarAttMainPartEdge2InnerRad -3*mm"/>
+    <constant name="UX852BckCableAttCut2SizeY" value="2*UX852BckCableAttMainRad"/>
+    <constant name="UX852BckCableAttCut1SizeY" value="2*UX852BckCableAttMainRad"/>
+    <constant name="UX852CableHeadOuterHoleOuterRadius" value="UX852CableHeadOuterRadius-1.5*mm"/>
+    <constant name="UX852FwdCableAttRodManPartPosZ" value="-0.5*UX852FwdCableAttRodLength+0.5*UX852FwdCableAttRodManPartLargeLength+UX852FwdCableAttRodHeadLength"/>
+    <constant name="UX852CableHeadInnerRadius" value="(12/2.0)*mm +UX852CableHeadInnerRadiusTolerence"/>
+    <constant name="UX852CollarForkAttachStemTrapY1Size" value="UX852CollarForkAttachProngTrapX1Size"/>
+    <constant name="UX852CollarForkAttachStemTrapY2Size" value="UX852CollarForkAttachProngTrapX1Size"/>
+    <constant name="UX852CollarForkAttachProngBoxXSize" value="UX852CollarForkAttachProngTrapX1Size"/>
+    <constant name="UX852CollarForkAttachStemCylZSize" value="UX852CollarForkAttachProngTrapX1Size"/>
+    <constant name="UX852BckFACableAttRodManPartPosZ" value="-0.5*UX852BckFACableAttRodLength+0.5*UX852BckFACableAttRodManPartLargeLength+UX852BckFACableAttRodHeadLength"/>
+    <constant name="UX852CollarAttMainPartRPos" value="59.5*mm+0.5*UX852CollarAttMainPartXsize+2*mm"/>
+    <constant name="UX852CollarAttSlope1RPos" value="UX852CollarAttMainPartXsize+18*mm"/>
+    <constant name="UX853CollarAttMainSmallHoleYpos" value="UX853CollarAttMainPartRad - 0.5*UX853CollarAttMainSmallHoleLength"/>
+    <constant name="UX853BckCableAttCut2SizeY" value="2*UX853BckCableAttMainRad"/>
+    <constant name="UX853BckCableAttCut1SizeY" value="2*UX853BckCableAttMainRad"/>
+    <constant name="UX852FwdCableAttMainLength" value="48.00*mm+UX852FwdCableAttRingOuterRad"/>
+    <constant name="UX852FwdCableAttCut1SizeZ" value="13.00*mm+UX852FwdCableAttRingOuterRad"/>
+    <constant name="UX853CollarAttMainHole2Rad" value="5*mm + UX853CollarAttMainHoleRadTolerence"/>
+    <constant name="UX853CollarAttMainHole1Rad" value="6*mm+ UX853CollarAttMainHoleRadTolerence"/>
+    <constant name="UX853BigRingQuarterSlope2Phipos" value="UX853FixCollarPhiStart + UX853FixCollarDeltaPhi - 0.75*UX853FixCollarCircleCutDeltaPhi-5*degree"/>
+    <constant name="UX852BckCableAttHoleRad" value="UX852BckCableAttRingInnerRad"/>
+    <constant name="UX852TechnoraCableHeadInnerRadius" value="(10.0/2.0)*mm+UX852TechnoraCableHeadInnerRadiusTolerence"/>
+    <constant name="UX853CollarClipRing2Length" value="UX853CollarClipHoleRing12TotalLength - UX853CollarClipRing1Length"/>
+    <constant name="UX852CollarClipSFStartPhi" value="-0.5*UX852CollarClipSFDeltaPhi+0.5*UX852CollarGapSFDeltaPhi"/>
+    <constant name="UX852FixCollarHoleSect3Length" value="0.5*(UX852FixCollarOuterRad-UX852FixCollarInnerRad)"/>
+    <constant name="UX852CollarAttMainHole1RadPos" value="-(67.5*mm-UX852FixCollarInnerRad-0.5*UX852CollarAttMainPartXsize-2*mm)"/>
+    <constant name="UX852CollarAttMainHole2RadPos" value="80.314*mm-UX852FixCollarInnerRad-0.5*UX852CollarAttMainPartXsize-2*mm"/>
+    <constant name="UX852CollarAttMainHole1Rad" value="5*mm+UX852CollarAttMainHole1RadTolerence"/>
+    <constant name="UX853FwdCableAttCut1SizeZ" value="13.00*mm+UX853FwdCableAttRingOuterRad"/>
+    <constant name="UX852CollarClipHoleScrewSubPosZ" value="0.5*(UX852CollarClipHoleScrewSubLargeLength-UX852CollarClipHoleScrewLength) + UX852CollarClipHoleScrewHeadLength "/>
+    <constant name="UX852TechnoraCableHeadLengthReductionValue" value="2.0*(UX852TechnoraCableHeadDemiCableLength+ UX852TechnoraCableHeadTypeAOuterRadius+UX852TechnoraCableHeadDemiCableLengthTolerence)"/>
+    <constant name="UX852TechnoraCableHeadDemiCableSidePosY" value="UX852TechnoraCableHeadTypeAOuterRadius+0.5*UX852TechnoraCableHeadDemiCableLength+UX852TechnoraCableHeadDemiCableLengthTolerence"/>
+    <constant name="UX853FixCollarCableFwdPlaneRotZHorizRight" value="UX853FixCollarCablePlaneAbsRotZ"/>
+    <constant name="UX853FixCollarCableFwdPlaneRotZTopVertical" value="90.0*degree+UX853FixCollarCablePlaneAbsRotZ"/>
+    <constant name="UX853FixCollarCableBckPlaneRotZHorizRight" value="UX853FixCollarCablePlaneAbsRotZ"/>
+    <constant name="UX853FixCollarCableBckPlaneRotZHorizLeft" value="UX853FixCollarCablePlaneAbsRotZ"/>
+    <constant name="UX853FixCollarCableFwdPlaneRotZHorizLeft" value="180*degree+UX853FixCollarCablePlaneAbsRotZ"/>
+    <constant name="UX853FixCollarCableFwdPlaneRotZBotVertical" value="270*degree+UX853FixCollarCablePlaneAbsRotZ"/>
+    <constant name="UX852CollarForkAttachStemCylCenterZFromTrapCenter" value="-0.5*UX852CollarForkAttachStemTrapZSize + UX852CollarForkAttachStemCylRadius+2.0*mm "/>
+    <constant name="UX853CollarAttMainPartZPos" value="UX853FixCollarZpos - 0.5*UX853CollarAttMainPartYsize + 0.5*UX853FixCollarLength + UX853CollarAttMainPartEdge2InnerRad-1.5*mm"/>
+    <constant name="UX852FwdCableAttHoleRad" value="UX852FwdCableAttRingInnerRad"/>
+    <constant name="UX852FixCollarSect2Rot" value="(UX852FixCollarSect1DelthaAngle + UX852FixCollarSect2DelthaAngle)*0.5"/>
+    <constant name="UX852BigRingSect4SlopePhipos" value="UX852FixCollarSect1DelthaAngle + UX852FixCollarSect2DelthaAngle + UX852FixCollarSect3DelthaAngle + 0.5*UX852FixCollarSect2DelthaAngle"/>
+    <constant name="UX852FixCollarHoleSect3Phipos" value="UX852FixCollarSect1DelthaAngle + UX852FixCollarSect2DelthaAngle+0.5*UX852FixCollarSect3DelthaAngle"/>
+    <constant name="UX852FutureFibreCableHeadCommonRotZ" value="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - 40.2*degree"/>
+    <constant name="UX852BigRingSect2SlopePhipos" value="UX852FixCollarSect1DelthaAngle + 0.5*UX852FixCollarSect2DelthaAngle"/>
+    <constant name="UX852FixCollarSect3Rot" value="(UX852FixCollarSect1DelthaAngle + UX852FixCollarSect3DelthaAngle)*0.5 + UX852FixCollarSect2DelthaAngle"/>
+    <constant name="UX852TechnoraCableHeadCommonRotZ" value="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - 40.2*degree"/>
+    <constant name="UX853BckCableAttHoleRad" value="UX853BckCableAttRingInnerRad"/>
+    <constant name="UX852FixCollarCable03PhiPos" value="UX852FixCollarCable03ZRot"/>
+    <constant name="UX853FwdCableAttCut2SizeY" value="2*UX853FwdCableAttMainRad"/>
+    <constant name="UX853FwdCableAttCut1SizeY" value="2*UX853FwdCableAttMainRad"/>
+    <constant name="UX853CollarAttPlateXpos" value="0.5*(UX853CollarAttCircleCutBoxXsize + UX853CollarAttPlateXsize1)"/>
+    <constant name="UX852TechnoraCableHeadDemiCableSideAPosX" value="-UX852TechnoraCableHeadDemiCableRadius-UX852TechnoraCableHeadDemiCableRadiusTolerence"/>
+    <constant name="UX852CableHeadDemiCableSubBoxFarEndPosZ" value="0.5*(UX852CableHeadDemiCableSubBoxLargeZSize+UX852CableHeadDemiCableLength)+12.0*mm"/>
+    <constant name="UX852CableHeadDemiCableSubBoxPosZ" value="-0.5*(UX852CableHeadDemiCableSubBoxLargeZSize+UX852CableHeadDemiCableLength)+2.2*mm"/>
+    <constant name="UX852BckCableAttMainLength" value="48.00*mm+UX852BckCableAttRingOuterRad"/>
+    <constant name="UX852BckCableAttCut1SizeZ" value="14.00*mm+UX852BckCableAttRingOuterRad"/>
+    <constant name="UX852CollarForkAttachStemHoleRadius" value="4.0*mm+UX852CollarForkAttachStemHoleRadiusTolerence"/>
+    <constant name="UX851CableXYpos" value="(UX851CollarRadius + UX851CollarThick + 0.5*UX851CableLenght) * sin(UX851CablePhiAngle)"/>
+    <constant name="UX853CollarClipSFStartPhi" value="-0.5*UX853CollarClipSFDeltaPhi+ 0.5*UX853CollarGapSFDeltaPhi"/>
+    <constant name="UX852CableHeadDemiCableSideBRotX" value="UX852CableHeadDemiCableSideARotX"/>
+    <constant name="UX852CollarForkAttachProngSubBoxShiftY" value="-UX852CollarForkAttachProngSubBoxShiftLocalY - 0.5*UX852CollarForkAttachProngSubBoxLargeYSize"/>
+    <constant name="UX852CollarForkAttachProngTrapPosY" value="-1.0*(UX852CollarForkAttachProngSubBoxShiftLocalY+0.5*UX852CollarForkAttachProngTrapZSize)"/>
+    <constant name="UX853CollarClipHoleScrewSubPosZ" value="0.5*(UX853CollarClipHoleScrewSubLargeLength-UX853CollarClipHoleScrewLength) + UX853CollarClipHoleScrewHeadLength "/>
+    <constant name="UX853CollarAttMainPartRPos" value="97*mm+0.5*UX853CollarAttMainPartXsize"/>
+    <constant name="UX853CollarAttSlope1RPos" value="0.5*UX853CollarAttMainPartXsize+8*mm"/>
+    <constant name="UX853CollarAttSlope1Zpos" value="0.5*UX853CollarAttMainPartYsize+UX853CollarAttMainPartXsize+3*mm"/>
+    <constant name="UX853CollarAttSlope2RPos" value="0.5*UX853CollarAttMainPartXsize+13*mm"/>
+    <constant name="UX852CollarAttMainHole2ZPos" value="-8.7*mm-0.5*UX852FixCollarLength"/>
+    <constant name="UX852CollarClipHoleScrewPosZ" value="0.5*UX852CollarClipHoleScrewLength-0.5*UX852FixCollarLength-UX852CollarClipHoleScrewHeadLength-UX852CollarClipHoleScrewLengthTolerence"/>
+    <constant name="UX853CollarAttMainHole1ZPos" value="-29.5*mm+0.5*UX852FixCollarLength+0.5*UX853CollarAttMainPartYsize-0.5*UX853FixCollarLength-3*mm"/>
+    <constant name="UX852CollarAttMainHole1ZPos" value="19.0*mm+UX852CollarClipRing1Length-0.5*UX852FixCollarLength"/>
+    <constant name="UX852CollarClipRing2Length" value="0.5*UX852FixCollarLength - UX852CollarClipRing1Length"/>
+    <constant name="UX853FixCollarInnerRad" value="UX853FixCollarRingOuterRad"/>
+    <constant name="UX853FwdCableAttRodManPartPosZ" value="-0.5*UX853FwdCableAttRodLength+0.5*UX853FwdCableAttRodManPartLargeLength+UX853FwdCableAttRodHeadLength"/>
+    <constant name="UX853CollarAttPlateCutYpos" value="0.5*(UX853CollarAttPlateCutYsize + UX853CollarAttPlateYsize1)"/>
+    <constant name="UX853BckCableAttRodManPartPosZ" value="-0.5*UX853BckCableAttRodLength+0.5*UX853BckCableAttRodManPartLargeLength+UX853BckCableAttRodHeadLength"/>
+    <constant name="UX853CollarClipHoleScrewPosZ" value="0.5*UX853CollarClipHoleScrewLength-0.5*UX853CollarClipHoleDoubleRingTotalLength-UX853CollarClipHoleScrewHeadLength-UX853CollarClipHoleScrewLengthTolerence"/>
+    <constant name="UX852TechnoraCable04PhiPos" value="UX852TechnoraCable04ZRot"/>
+    <constant name="UX853BckCable05HeadMagnetFaceCommonPhipos" value="UX853BckCableHeadCommonPhipos"/>
+    <constant name="UX853BckCable06HeadMagnetFaceCommonPhipos" value="UX853BckCableHeadCommonPhipos"/>
+    <constant name="UX853FwdCable08HeadMagnetFaceCommonPhipos" value="UX853FwdCableHeadCommonPhipos"/>
+    <constant name="UX853FwdCable07HeadMagnetFaceCommonPhipos" value="UX853FwdCableHeadCommonPhipos"/>
+    <constant name="UX853CollarAttMainBoxHoleZpos" value="0.5*(UX853CollarAttMainPartLength - UX853CollarAttMainBoxHoleZsize)"/>
+    <constant name="UX853CollarAttPlateCutZpos" value="UX853CollarAttPlateZpos"/>
+    <constant name="UX852CollarForkAttachProngDnsPosZ" value="UX852CollarForkAttachProngShiftZ"/>
+    <constant name="UX852CollarForkAttachProngUpsPosZ" value="-1.0*UX852CollarForkAttachProngShiftZ"/>
+    <constant name="UX852CableHeadDemiCableSideBPosX" value="-1.0*UX852CableHeadDemiCableSideAPosX"/>
+    <constant name="UX853FutureFibreCable06ReducedLength" value="UX853FutureFibreCable06Length - UX852CableHeadLengthReductionValue"/>
+    <constant name="UX852FutureFibreCable03ReducedLength" value="UX852FutureFibreCable03Length - UX852CableHeadLengthReductionValue"/>
+    <constant name="UX853FutureFibreCable05ReducedLength" value="UX853FutureFibreCable05Length - UX852CableHeadLengthReductionValue"/>
+    <constant name="UX852FixCollarHoleSect3Rpos" value="UX852FixCollarOuterRad-0.5*UX852FixCollarHoleSect3Length"/>
+    <constant name="UX852FwdCableAttRodRpos" value="-UX852CollarAttMainHole1RadPos+UX852CollarAttMainPartRPos"/>
+    <constant name="UX852TechnoraCable04RShift" value="-UX852CollarAttMainHole1RadPos+UX852CollarAttMainPartRPos"/>
+    <constant name="UX852BckCollarForkAttachRpos" value="UX852CollarAttMainHole2RadPos+UX852CollarAttMainPartRPos+ UX852CollarForkAttachLengthProtrusion*sin(UX852FutureFibreCable03XRot)"/>
+    <constant name="UX852BckCableAttRodRpos" value="UX852CollarAttMainHole2RadPos+UX852CollarAttMainPartRPos"/>
+    <constant name="UX852BckCableAtt08Rpos" value="UX852CollarAttMainHole2RadPos+UX852CollarAttMainPartRPos+0.5*UX852FwdCableAttMainLength*sin(UX852FixCollarCable08XRot) - 0.5*UX852CollarAttMainHole2Rad-0.5*UX852BckCableAttRingOuterRad-1*mm"/>
+    <constant name="UX852BckCableAtt04Rpos" value="UX852CollarAttMainHole2RadPos+UX852CollarAttMainPartRPos+0.5*UX852FwdCableAttMainLength*sin(UX852FixCollarCable04XRot) - 0.5*UX852CollarAttMainHole2Rad-0.5*UX852BckCableAttRingOuterRad-1*mm"/>
+    <constant name="UX852FwdCableAttRpos" value="-UX852CollarAttMainHole1RadPos+UX852CollarAttMainPartRPos+0.5*UX852FwdCableAttMainLength*sin(UX852FixCollarCable03XRot) - 0.5*UX852CollarAttMainHole1Rad-0.5*UX852FwdCableAttRingOuterRad+1*mm"/>
+    <constant name="UX853TechnoraCable08ReducedLength" value="UX853TechnoraCable08Length - UX852TechnoraCableHeadLengthReductionValue"/>
+    <constant name="UX853TechnoraCable07ReducedLength" value="UX853TechnoraCable07Length - UX852TechnoraCableHeadLengthReductionValue"/>
+    <constant name="UX852TechnoraCable04ReducedLength" value="UX852TechnoraCable04Length - UX852TechnoraCableHeadLengthReductionValue"/>
+    <constant name="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizRight" value="UX853FixCollarCableFwdPlaneRotZHorizRight"/>
+    <constant name="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizRight" value="UX853FixCollarCableBckPlaneRotZHorizRight+ 180*degree "/>
+    <constant name="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizLeft" value="UX853FixCollarCableBckPlaneRotZHorizLeft"/>
+    <constant name="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizLeft" value="UX853FixCollarCableFwdPlaneRotZHorizLeft"/>
+    <constant name="UX852CollarForkStemTrdholeZPos" value="UX852CollarForkAttachStemCylCenterZFromTrapCenter+8.0*mm+0.5*UX852CollarForkStemTrdholeLargeZSize"/>
+    <constant name="UX852CollarForkStemPosY" value="-35.0*mm-UX852CollarForkAttachStemCylCenterZFromTrapCenter"/>
+    <constant name="UX853FwdCableAttRodZpos" value="UX853CollarAttMainPartZPos+UX853CollarAttMainHole2ZPos"/>
+    <constant name="UX853FwdCableAttZpos" value="UX853CollarAttMainPartZPos+UX853CollarAttMainHole2ZPos+0.5*UX853FwdCableAttMainLength*cos(UX853FixCollarCable03Theta)-2*mm"/>
+    <constant name="UX852FutureFibreCableHeadCommonRotZWithBckTolerence" value="UX852FutureFibreCableHeadCommonRotZ+2.7*degree"/>
+    <constant name="UX852TechnoraCableHeadCommonRotZWithTolerence" value="UX852TechnoraCableHeadCommonRotZ + 1.2*degree"/>
+    <constant name="UX853CollarAttPlateCutXpos" value="UX853CollarAttPlateXpos"/>
+    <constant name="UX852TechnoraCableHeadDemiCableSideBPosX" value="-1.0*UX852TechnoraCableHeadDemiCableSideAPosX"/>
+    <constant name="UX852CollarForkAttachProngBoxYPos" value="UX852CollarForkAttachProngTrapPosY-0.5*(UX852CollarForkAttachProngTrapZSize+UX852CollarForkAttachProngBoxYSize-0.1*mm)"/>
+    <constant name="UX852BckCableAttRodZpos" value="UX852CollarAttMainHole2ZPos+UX852FixCollarZpos"/>
+    <constant name="UX852BckCollarForkAttachZpos" value="UX852CollarAttMainHole2ZPos+UX852FixCollarZpos-UX852CollarForkAttachLengthProtrusion*cos(UX852FutureFibreCable03XRot)"/>
+    <constant name="UX852BckCableAtt04Zpos" value="UX852CollarAttMainHole2ZPos+UX852FixCollarZpos-0.5*UX852FwdCableAttMainLength*cos(UX852FixCollarCable04XRot) + 0.5*UX852CollarAttMainHole2Rad+0.5*UX852BckCableAttRingOuterRad-3*mm"/>
+    <constant name="UX852BckCableAtt08Zpos" value="UX852CollarAttMainHole2ZPos+UX852FixCollarZpos-0.5*UX852FwdCableAttMainLength*cos(UX852FixCollarCable08XRot) + 0.5*UX852CollarAttMainHole2Rad+0.5*UX852BckCableAttRingOuterRad-3*mm"/>
+    <constant name="UX853BckCableAttRodZpos" value="UX853CollarAttMainPartZPos+UX853CollarAttMainHole1ZPos"/>
+    <constant name="UX853BckCableAttZpos" value="UX853CollarAttMainPartZPos+UX853CollarAttMainHole1ZPos-0.5*UX853BckCableAttMainLength*cos(UX853FixCollarCable08Theta) +0.5*UX853CollarAttMainHole1Rad+0.5*UX853BckCableAttRingOuterRad"/>
+    <constant name="UX852CollarAttSlope2ZPos" value="UX852CollarAttMainHole1ZPos+0.5*UX852CollarAttMainPartYsize-19*mm+UX852FixCollarRingLength+3*mm"/>
+    <constant name="UX852TechnoraCable04ZShift" value="UX852CollarAttMainHole1ZPos+UX852FixCollarZpos"/>
+    <constant name="UX852FwdCableAttZpos" value="UX852CollarAttMainHole1ZPos+UX852FixCollarZpos+0.5*UX852FwdCableAttMainLength*cos(UX852FixCollarCable03XRot) - 0.5*UX852CollarAttMainHole1Rad-0.5*UX852FwdCableAttRingOuterRad+1*mm"/>
+    <constant name="UX852FwdCableAttRodZpos" value="UX852CollarAttMainHole1ZPos+UX852FixCollarZpos"/>
+    <constant name="UX853CollarAttMainHole1RadPos" value="-(109*mm-UX853FixCollarInnerRad-0.5*UX853CollarAttMainPartXsize-3*mm)"/>
+    <constant name="UX853CollarAttMainHole2RadPos" value="128*mm-UX853FixCollarInnerRad-0.5*UX853CollarAttMainPartXsize-3*mm"/>
+    <constant name="UX853FixCollarTransHoleLength" value="0.5*(UX853FixCollarOuterRad-UX853FixCollarInnerRad)"/>
+    <constant name="UX852CollarForkAttachProngBoxDnsPosZ" value="UX852CollarForkAttachProngDnsPosZ"/>
+    <constant name="UX852CollarForkAttachProngTrapDnsPosZ" value="UX852CollarForkAttachProngDnsPosZ"/>
+    <constant name="UX852CollarForkAttachProngTrapUpsPosZ" value="UX852CollarForkAttachProngUpsPosZ"/>
+    <constant name="UX852CollarForkAttachProngBoxUpsPosZ" value="UX852CollarForkAttachProngUpsPosZ"/>
+    <constant name="UX852TechnoraCable04RPos" value="UX852TechnoraCable04RShift+(0.5*UX852TechnoraCable04Length-UX852TechnoraCableHeadLengthReductionValueTolerence)*sin(UX852TechnoraCable04XRot)+UX852TechnoraCableTolerence"/>
+    <constant name="UX852FutureFibreCable03RPos" value="UX852BckCollarForkAttachRpos+(0.5*UX852FutureFibreCable03Length-UX852CableHeadLengthReductionValueTolerence)*sin(UX852FutureFibreCable03XRot)+UX852FutureFibreCableTolerence-2.0*mm"/>
+    <constant name="UX852FixCollarCable08RPos" value="UX852BckCableAtt08Rpos+0.5*UX852FixCollarCable08Lenght*sin(UX852FixCollarCable08XRot)+UX852FixCollarCableTolerence"/>
+    <constant name="UX852FixCollarCable04RPos" value="UX852BckCableAtt04Rpos+0.5*UX852FixCollarCable04Lenght*sin(UX852FixCollarCable04XRot)+UX852FixCollarCableTolerence"/>
+    <constant name="UX852FixCollarCable03RPos" value="UX852FwdCableAttRpos+0.5*UX852FixCollarCable03Lenght*sin(UX852FixCollarCable03ZRot)+UX852FixCollarCableTolerence"/>
+    <constant name="UX853FwdCableHeadZpos" value="UX853FwdCableAttRodZpos"/>
+    <constant name="UX852FutureFibreCable03ZPos" value="UX852BckCollarForkAttachZpos-(0.5*UX852FutureFibreCable03Length-UX852CableHeadLengthReductionValueTolerence)*cos(UX852FutureFibreCable03XRot)+UX852FutureFibreCableTolerence"/>
+    <constant name="UX852FixCollarCable04ZPos" value="UX852BckCableAtt04Zpos-0.5*UX852FixCollarCable04Lenght*cos(UX852FixCollarCable04XRot)-UX852FixCollarCableTolerence"/>
+    <constant name="UX852FixCollarCable08ZPos" value="UX852BckCableAtt08Zpos-0.5*UX852FixCollarCable08Lenght*cos(UX852FixCollarCable08XRot)-UX852FixCollarCableTolerence"/>
+    <constant name="UX853BckCableHeadZpos" value="UX853BckCableAttRodZpos"/>
+    <constant name="UX852TechnoraCable04ZPos" value="UX852TechnoraCable04ZShift+(0.5*UX852TechnoraCable04Length-UX852TechnoraCableHeadLengthReductionValueTolerence)*cos(UX852TechnoraCable04XRot)+UX852TechnoraCableTolerence"/>
+    <constant name="UX852FixCollarCable03ZPos" value="UX852FwdCableAttZpos+0.5*UX852FixCollarCable03Lenght*cos(UX852FixCollarCable03ZRot)+UX852FixCollarCableTolerence"/>
+    <constant name="UX853BckCableAttRpos" value="-UX853CollarAttMainHole1RadPos+UX853CollarAttMainPartRPos+0.5*UX853BckCableAttMainLength*sin(UX853FixCollarCable08Theta) -0.5*UX853CollarAttMainHole1Rad-0.5*UX853BckCableAttRingOuterRad"/>
+    <constant name="UX853BckCableAttRodRpos" value="-UX853CollarAttMainHole1RadPos+UX853CollarAttMainPartRPos"/>
+    <constant name="UX853FwdCableAttRodRpos" value="UX853CollarAttMainHole2RadPos+UX853CollarAttMainPartRPos"/>
+    <constant name="UX853FwdCableAttRpos" value="UX853CollarAttMainHole2RadPos+UX853CollarAttMainPartRPos+0.5*UX853FwdCableAttMainLength*sin(UX853FixCollarCable03Theta) -0.5*UX853CollarAttMainHole2Rad-0.5*UX853FwdCableAttRingOuterRad-3*mm"/>
+    <constant name="UX853FixCollarTransHoleRpos" value="UX853FixCollarOuterRad-0.5*UX853FixCollarTransHoleLength"/>
+    <constant name="UX852FwdCableHeadMagnetFaceRpos" value="UX852TechnoraCable04RPos+ (0.5*UX852TechnoraCable04Length-UX852CableHeadLengthReductionValueTolerence+4.5*mm)*sin(UX852TechnoraCable04XRot)"/>
+    <constant name="UX852BckCollarForkAttachMagnetFaceRpos" value="UX852FutureFibreCable03RPos+ (0.5*UX852FutureFibreCable03Length-UX852CableHeadLengthReductionValueTolerence+1.0*mm)*sin(UX852FutureFibreCable03XRot)"/>
+    <constant name="UX853FwdCable08ZPos" value="UX853FwdCableHeadZpos + (0.5*UX853TechnoraCable08Length -UX852TechnoraCableHeadLengthReductionValueTolerence)*cos(UX853FixCollarCableFwdTheta)+UX852TechnoraCableTolerence"/>
+    <constant name="UX853FwdCable07ZPos" value="UX853FwdCableHeadZpos + (0.5*UX853TechnoraCable07Length -UX852TechnoraCableHeadLengthReductionValueTolerence)*cos(UX853FixCollarCableFwdTheta)+UX852TechnoraCableTolerence"/>
+    <constant name="UX852BckCollarForkAttachMagnetFaceZpos" value="UX852FutureFibreCable03ZPos- (0.5*UX852FutureFibreCable03Length-UX852CableHeadLengthReductionValueTolerence)*cos(UX852FutureFibreCable03XRot) "/>
+    <constant name="UX853BckCable06ZPos" value="UX853BckCableHeadZpos - (0.5*UX853FutureFibreCable06Length -UX852CableHeadLengthReductionValueTolerence)*cos(UX853FixCollarCableBckTheta)+UX852FutureFibreCableTolerence"/>
+    <constant name="UX853BckCable05ZPos" value="UX853BckCableHeadZpos - (0.5*UX853FutureFibreCable05Length -UX852CableHeadLengthReductionValueTolerence)*cos(UX853FixCollarCableBckTheta)+UX852FutureFibreCableTolerence"/>
+    <constant name="UX852FwdCableHeadMagnetFaceZpos" value="UX852TechnoraCable04ZPos+ (0.5*UX852TechnoraCable04Length-UX852CableHeadLengthReductionValueTolerence+4.5*mm)*cos(UX852TechnoraCable04XRot) "/>
+    <constant name="UX853BckCableHeadRpos" value="UX853BckCableAttRodRpos"/>
+    <constant name="UX853FwdCableHeadRpos" value="UX853FwdCableAttRodRpos"/>
+    <constant name="UX853FwdCable08HeadMagnetFaceZpos" value="UX853FwdCable08ZPos + (0.5*UX853TechnoraCable08Length - UX852TechnoraCableHeadLengthReductionValueTolerence+4.5*mm) * cos(UX853FixCollarCableFwdTheta)"/>
+    <constant name="UX853FwdCable07HeadMagnetFaceZpos" value="UX853FwdCable07ZPos + (0.5*UX853TechnoraCable07Length - UX852TechnoraCableHeadLengthReductionValueTolerence+4.5*mm) * cos(UX853FixCollarCableFwdTheta)"/>
+    <constant name="UX853BckCable06HeadMagnetFaceZpos" value="UX853BckCable06ZPos - (0.5*UX853FutureFibreCable06Length - UX852CableHeadLengthReductionValueTolerence +4.5*mm) * cos(UX853FixCollarCableBckTheta)"/>
+    <constant name="UX853BckCable05HeadMagnetFaceZpos" value="UX853BckCable05ZPos - (0.5*UX853FutureFibreCable05Length - UX852CableHeadLengthReductionValueTolerence +4.5*mm) * cos(UX853FixCollarCableBckTheta)"/>
+    <constant name="UX853BckCable06RPos" value="UX853BckCableHeadRpos + (0.5*UX853FutureFibreCable06Length -UX852CableHeadLengthReductionValueTolerence)*sin(UX853FixCollarCableBckTheta)+UX852FutureFibreCableTolerence"/>
+    <constant name="UX853BckCable05RPos" value="UX853BckCableHeadRpos + (0.5*UX853FutureFibreCable05Length -UX852CableHeadLengthReductionValueTolerence)*sin(UX853FixCollarCableBckTheta)+UX852FutureFibreCableTolerence"/>
+    <constant name="UX853FwdCable07RPos" value="UX853FwdCableHeadRpos + (0.5*UX853TechnoraCable07Length -UX852TechnoraCableHeadLengthReductionValueTolerence)*sin(UX853FixCollarCableFwdTheta)+UX852TechnoraCableTolerence"/>
+    <constant name="UX853FwdCable08RPos" value="UX853FwdCableHeadRpos + (0.5*UX853TechnoraCable08Length -UX852TechnoraCableHeadLengthReductionValueTolerence)*sin(UX853FixCollarCableFwdTheta)+UX852TechnoraCableTolerence"/>
+    <constant name="UX853BckCable06HeadMagnetFaceRpos" value="UX853BckCable06RPos + (0.5*UX853FutureFibreCable06Length - UX852CableHeadLengthReductionValueTolerence +4.5*mm)*sin(UX853FixCollarCableBckTheta)"/>
+    <constant name="UX853BckCable05HeadMagnetFaceRpos" value="UX853BckCable05RPos + (0.5*UX853FutureFibreCable05Length - UX852CableHeadLengthReductionValueTolerence +4.5*mm)*sin(UX853FixCollarCableBckTheta)"/>
+    <constant name="UX853FwdCable07HeadMagnetFaceRpos" value="UX853FwdCable07RPos + (0.5*UX853TechnoraCable07Length - UX852CableHeadLengthReductionValueTolerence+4.5*mm)*sin(UX853FixCollarCableFwdTheta)"/>
+    <constant name="UX853FwdCable08HeadMagnetFaceRpos" value="UX853FwdCable08RPos + (0.5*UX853TechnoraCable08Length - UX852CableHeadLengthReductionValueTolerence+4.5*mm)*sin(UX853FixCollarCableFwdTheta)"/>
+
+  </define>
+</lccdd>

@@ -1,0 +1,35 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/12/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Main parameter file with references to the XML descriptions of            -->
+<!--  various components of LHCb-RICH2                                          -->
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+  </define>
+
+  <include ref="Rich2Run3GeneralGeomParam.xml" />
+  <include ref="Rich2Run3MasterGeomParam.xml"/>
+  <include ref="Rich2Run3RadiatorGasEnclosureGeomParam.xml"/>
+  <include ref="Rich2Run3MirrorRadiiGeomParam.xml"/>
+  <include ref="Rich2Run3MagShieldGeomParam.xml"/>
+  <include ref="Rich2Run3SphMirrorGeomParam.xml"/>
+  <include ref="Rich2Run3SecMirrorGeomParam.xml"/>
+  <include ref="Rich2Run3BeamPipeGeomParam.xml"/>
+  <include ref="Rich2Run3PhDetSupportStructureGeomParam.xml"/>
+  <include ref="Rich2Run3PhysVolGeneralCopyNumbers.xml" />
+  <include ref="Rich2SuperStructGeomParamDir/Rich2SuperStructureGeomParam.xml"/>
+  <include ref="../DetElem/Rich2DetUserParam.xml" />
+  <materials>
+
+  </materials>
+</lccdd>

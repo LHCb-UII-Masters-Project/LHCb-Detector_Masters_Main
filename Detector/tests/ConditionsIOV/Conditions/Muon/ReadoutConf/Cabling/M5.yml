@@ -1,0 +1,365 @@
+M5:
+   StationNumber: 4
+   TSLayout:
+       - [0,2,2]
+       - [1,2,2]
+       - [2,2,2]
+       - [3,2,8]
+
+   TELL40Board:
+     - Tell40Number:   19
+       Tell40Name: 'M5TELL40BoardNumber1'
+       UsedPCINumber: 2
+       PCI:
+         - PCINumber:   0
+           ODEList: [121, 121, 122, 129, 129, 133, 133, 137, 137, 138, 138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [0, 2, 0, 0, 2, 0, 2, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+         - PCINumber:   1
+           ODEList: [121, 121, 122, 129, 129, 133, 133, 137, 137, 138, 138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [1, 3, 1, 1, 3, 1, 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+     - Tell40Number:   20
+       Tell40Name: 'M5TELL40BoardNumber2'
+       UsedPCINumber: 2
+       PCI:
+         - PCINumber:   0
+           ODEList: [123, 123, 124, 130, 130, 134, 134, 139, 139, 140, 140, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [0, 2, 0, 0, 2, 0, 2, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+         - PCINumber:   1
+           ODEList: [123, 123, 124, 130, 130, 134, 134, 139, 139, 140, 140, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [1, 3, 1, 1, 3, 1, 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+     - Tell40Number:   21
+       Tell40Name: 'M5TELL40BoardNumber3'
+       UsedPCINumber: 2
+       PCI:
+         - PCINumber:   0
+           ODEList: [125, 125, 126, 131, 131, 135, 135, 141, 141, 142, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [0, 2, 0, 0, 2, 0, 2, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+         - PCINumber:   1
+           ODEList: [125, 125, 126, 131, 131, 135, 135, 141, 141, 142, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [1, 3, 1, 1, 3, 1, 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+     - Tell40Number:   22
+       Tell40Name: 'M5TELL40BoardNumber4'
+       UsedPCINumber: 2
+       PCI:
+         - PCINumber:   0
+           ODEList: [127, 127, 128, 132, 132, 136, 136, 143, 143, 144, 144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [0, 2, 0, 0, 2, 0, 2, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+         - PCINumber:   1
+           ODEList: [127, 127, 128, 132, 132, 136, 136, 143, 143, 144, 144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ODELink: [1, 3, 1, 1, 3, 1, 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ActiveLinkNumber:   11
+
+   NODEBoard:
+     - ODEECSName: 'Q1M5R1_1'
+       ODESerialNumber:   121
+       RegionNumber:    0
+       TSNumber:    8
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 3, 3 ]
+       TSGridYList:  [0, 1, 1, 0, 2, 3, 3, 2 ]
+       TSGridQList:  [0, 0, 0, 0, 0, 0, 0, 0 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2','TSM5R1Map1','TSM5R1Map1',
+                      'TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2, 1, 1, 2, 2]
+     - ODEECSName: 'Q1M5R1_2'
+       ODESerialNumber:   122
+       RegionNumber:    0
+       TSNumber:    4
+       TSGridXList:  [0, 0, 1, 1 ]
+       TSGridYList:  [2, 3, 3, 2 ]
+       TSGridQList:  [0, 0, 0, 0 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2]
+     - ODEECSName: 'Q2M5R1_1'
+       ODESerialNumber:   123
+       RegionNumber:    0
+       TSNumber:    8
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 3, 3 ]
+       TSGridYList:  [0, 1, 1, 0, 2, 3, 3, 2 ]
+       TSGridQList:  [1, 1, 1, 1, 1, 1, 1, 1 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2','TSM5R1Map1','TSM5R1Map1',
+                      'TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2, 1, 1, 2, 2]
+     - ODEECSName: 'Q2M5R1_2'
+       ODESerialNumber:   124
+       RegionNumber:    0
+       TSNumber:    4
+       TSGridXList:  [0, 0, 1, 1 ]
+       TSGridYList:  [2, 3, 3, 2 ]
+       TSGridQList:  [1, 1, 1, 1 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2]
+     - ODEECSName: 'Q3M5R1_1'
+       ODESerialNumber:   125
+       RegionNumber:    0
+       TSNumber:    8
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 3, 3 ]
+       TSGridYList:  [0, 1, 1, 0, 2, 3, 3, 2 ]
+       TSGridQList:  [2, 2, 2, 2, 2, 2, 2, 2 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2','TSM5R1Map1','TSM5R1Map1',
+                      'TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2, 1, 1, 2, 2]
+     - ODEECSName: 'Q3M5R1_2'
+       ODESerialNumber:   126
+       RegionNumber:    0
+       TSNumber:    4
+       TSGridXList:  [0, 0, 1, 1 ]
+       TSGridYList:  [2, 3, 3, 2 ]
+       TSGridQList:  [2, 2, 2, 2 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2]
+     - ODEECSName: 'Q4M5R1_1'
+       ODESerialNumber:   127
+       RegionNumber:    0
+       TSNumber:    8
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 3, 3 ]
+       TSGridYList:  [0, 1, 1, 0, 2, 3, 3, 2 ]
+       TSGridQList:  [3, 3, 3, 3, 3, 3, 3, 3 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2','TSM5R1Map1','TSM5R1Map1',
+                      'TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2, 1, 1, 2, 2]
+     - ODEECSName: 'Q4M5R1_2'
+       ODESerialNumber:   128
+       RegionNumber:    0
+       TSNumber:    4
+       TSGridXList:  [0, 0, 1, 1 ]
+       TSGridYList:  [2, 3, 3, 2 ]
+       TSGridQList:  [3, 3, 3, 3 ]
+       TSNameList:   ['TSM5R1Map1','TSM5R1Map1','TSM5R1Map2','TSM5R1Map2']
+       TSMapNumberList: [1, 1, 2, 2]
+     - ODEECSName: 'Q1M5R2_1'
+       ODESerialNumber:   129
+       RegionNumber:    1
+       TSNumber:    12
+       TSGridXList:  [0, 1, 0, 1, 2, 3, 2, 3, 2, 3, 2, 3 ]
+       TSGridYList:  [3, 3, 2, 2, 3, 3, 2, 2, 1, 1, 0, 0 ]
+       TSGridQList:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+       TSNameList:   ['TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1',
+                      'TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q2M5R2_1'
+       ODESerialNumber:   130
+       RegionNumber:    1
+       TSNumber:    12
+       TSGridXList:  [0, 1, 0, 1, 2, 3, 2, 3, 2, 3, 2, 3 ]
+       TSGridYList:  [3, 3, 2, 2, 3, 3, 2, 2, 1, 1, 0, 0 ]
+       TSGridQList:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+       TSNameList:   ['TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1',
+                      'TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q3M5R2_1'
+       ODESerialNumber:   131
+       RegionNumber:    1
+       TSNumber:    12
+       TSGridXList:  [0, 1, 0, 1, 2, 3, 2, 3, 2, 3, 2, 3 ]
+       TSGridYList:  [3, 3, 2, 2, 3, 3, 2, 2, 1, 1, 0, 0 ]
+       TSGridQList:  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ]
+       TSNameList:   ['TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1',
+                      'TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q4M5R2_1'
+       ODESerialNumber:   132
+       RegionNumber:    1
+       TSNumber:    12
+       TSGridXList:  [0, 1, 0, 1, 2, 3, 2, 3, 2, 3, 2, 3 ]
+       TSGridYList:  [3, 3, 2, 2, 3, 3, 2, 2, 1, 1, 0, 0 ]
+       TSGridQList:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+       TSNameList:   ['TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1',
+                      'TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1','TSM5R2Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q1M5R3_1'
+       ODESerialNumber:   133
+       RegionNumber:    2
+       TSNumber:    12
+       TSGridXList:  [2, 3, 2, 3, 0, 1, 2, 3, 2, 3, 0, 1 ]
+       TSGridYList:  [0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 ]
+       TSGridQList:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+       TSNameList:   ['TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1',
+                      'TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q2M5R3_1'
+       ODESerialNumber:   134
+       RegionNumber:    2
+       TSNumber:    12
+       TSGridXList:  [2, 3, 2, 3, 0, 1, 2, 3, 2, 3, 0, 1 ]
+       TSGridYList:  [0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 ]
+       TSGridQList:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+       TSNameList:   ['TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1',
+                      'TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q3M5R3_1'
+       ODESerialNumber:   135
+       RegionNumber:    2
+       TSNumber:    12
+       TSGridXList:  [2, 3, 2, 3, 0, 1, 2, 3, 2, 3, 0, 1 ]
+       TSGridYList:  [0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 ]
+       TSGridQList:  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ]
+       TSNameList:   ['TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1',
+                      'TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q4M5R3_1'
+       ODESerialNumber:   136
+       RegionNumber:    2
+       TSNumber:    12
+       TSGridXList:  [2, 3, 2, 3, 0, 1, 2, 3, 2, 3, 0, 1 ]
+       TSGridYList:  [0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 ]
+       TSGridQList:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+       TSNameList:   ['TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1',
+                      'TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1','TSM5R3Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q1M5R4_1'
+       ODESerialNumber:   137
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [0, 1, 0, 1, 4, 5, 6, 7, 2, 3, 2, 3, 4, 5, 8, 9, 8, 9, 10, 11, 10, 11, 6, 7 ]
+       TSGridQList:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q1M5R4_2'
+       ODESerialNumber:   138
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [8, 9, 8, 9, 12, 13, 14, 15, 10, 11, 10, 11, 12, 13, 12, 13, 12, 13, 14, 15, 14, 15, 14, 15 ]
+       TSGridQList:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q2M5R4_1'
+       ODESerialNumber:   139
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [0, 1, 0, 1, 4, 5, 6, 7, 2, 3, 2, 3, 4, 5, 8, 9, 8, 9, 10, 11, 10, 11, 6, 7 ]
+       TSGridQList:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q2M5R4_2'
+       ODESerialNumber:   140
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [8, 9, 8, 9, 12, 13, 14, 15, 10, 11, 10, 11, 12, 13, 12, 13, 12, 13, 14, 15, 14, 15, 14, 15 ]
+       TSGridQList:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q3M5R4_1'
+       ODESerialNumber:   141
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [0, 1, 0, 1, 4, 5, 6, 7, 2, 3, 2, 3, 4, 5, 8, 9, 8, 9, 10, 11, 10, 11, 6, 7 ]
+       TSGridQList:  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q3M5R4_2'
+       ODESerialNumber:   142
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [8, 9, 8, 9, 12, 13, 14, 15, 10, 11, 10, 11, 12, 13, 12, 13, 12, 13, 14, 15, 14, 15, 14, 15 ]
+       TSGridQList:  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q4M5R4_1'
+       ODESerialNumber:   143
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [0, 1, 0, 1, 4, 5, 6, 7, 2, 3, 2, 3, 4, 5, 8, 9, 8, 9, 10, 11, 10, 11, 6, 7 ]
+       TSGridQList:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+     - ODEECSName: 'Q4M5R4_2'
+       ODESerialNumber:   144
+       RegionNumber:    3
+       TSNumber:    24
+       TSGridXList:  [2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3 ]
+       TSGridYList:  [8, 9, 8, 9, 12, 13, 14, 15, 10, 11, 10, 11, 12, 13, 12, 13, 12, 13, 14, 15, 14, 15, 14, 15 ]
+       TSGridQList:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+       TSNameList:   ['TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1',
+                      'TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1','TSM5R4Map1']
+       TSMapNumberList: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+   TSMap:
+      - RegionNumber: 0
+        TSNumber: 2
+        TSMapInRegion:
+          - TSName: TSM5R1Map1
+            ActiveChannels:    24
+            NumberLogLayout:    1
+            GridList: [[6, 4]]
+            OutputLayoutSeq: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+            OutputGridXSeq: [0, 1, 2, 3, 4, 5, 5, 4, 0, 1, 2, 3, 3, 2, 1, 0, 4, 5, 5, 4, 3, 2, 1, 0 ]
+            OutputGridYSeq: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3 ]
+            OutputSequence: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+          - TSName: TSM5R1Map2
+            ActiveChannels:    24
+            NumberLogLayout:    1
+            GridList: [[6, 4]]
+            OutputLayoutSeq: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+            OutputGridXSeq: [5, 4, 3, 2, 1, 0, 0, 1, 5, 4, 3, 2, 2, 3, 4, 5, 1, 0, 0, 1, 2, 3, 4, 5 ]
+            OutputGridYSeq: [3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 ]
+            OutputSequence: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+      - RegionNumber: 1
+        TSNumber: 1
+        TSMapInRegion:
+          - TSName: TSM5R2Map1
+            ActiveChannels:    14
+            NumberLogLayout:    2
+            GridList: [[6, 1], [2, 4]]
+            OutputLayoutSeq: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1 ]
+            OutputGridXSeq: [0, 1, 2, 3, 4, 5, 0, 1, 0, 1, 0, 1, 0, 1 ]
+            OutputGridYSeq: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3 ]
+            OutputSequence: [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 ]
+      - RegionNumber: 2
+        TSNumber: 1
+        TSMapInRegion:
+          - TSName: TSM5R3Map1
+            ActiveChannels:    10
+            NumberLogLayout:    2
+            GridList: [[6, 1], [1, 4]]
+            OutputLayoutSeq: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1 ]
+            OutputGridXSeq: [0, 1, 2, 3, 4, 5, 0, 0, 0, 0 ]
+            OutputGridYSeq: [0, 0, 0, 0, 0, 0, 0, 1, 2, 3 ]
+            OutputSequence: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 ]
+      - RegionNumber: 3
+        TSNumber: 1
+        TSMapInRegion:
+          - TSName: TSM5R4Map1
+            ActiveChannels:    6
+            NumberLogLayout:    1
+            GridList: [[6, 1]]
+            OutputLayoutSeq: [0, 0, 0, 0, 0, 0 ]
+            OutputGridXSeq: [0, 1, 2, 3, 4, 5 ]
+            OutputGridYSeq: [0, 0, 0, 0, 0, 0 ]
+            OutputSequence: [1, 1, 1, 1, 1, 1, 0, 0 ]

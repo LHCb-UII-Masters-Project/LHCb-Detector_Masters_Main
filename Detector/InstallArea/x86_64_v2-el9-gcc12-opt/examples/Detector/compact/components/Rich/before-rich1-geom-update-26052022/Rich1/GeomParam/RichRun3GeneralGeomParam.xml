@@ -1,0 +1,30 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--   This file contains general parameters for the Rich geometry, which       -->
+<!--   are not specific to a specific volume or set of volumes .                -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+  <!-- This parameter is the conversion factor between full and half size specifications -->
+  <!-- in the defintion of  shapes like the Box                                          -->
+  <constant name="RhHalfSize" value="0.5" />
+  <!-- The following used to distinguish between Rich1 and Rich2  regions                 -->
+  <constant name="RhZBeyondDownstreamOfRich1"  value="3000.0*mm" />
+ <!-- The following used for sanity check on the max Z position of hit coord -->
+  <constant name="RhZBeyondDownstreamOfRich2"  value="12000.0*mm" />
+  <!-- The number of Rich1 sides which refer to the two panels top and bottom    -->
+  <constant name="Rh1NumSides" value="2" />
+ <!-- Number of Rich detectors in LHCb  -->
+  <constant name="RhNumDetInLHCb"    value="2" />
+
+
+  </define>
+</lccdd>

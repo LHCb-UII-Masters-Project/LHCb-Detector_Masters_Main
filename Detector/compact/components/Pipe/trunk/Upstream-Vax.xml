@@ -1,0 +1,538 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<pipe>
+
+<!-- Entry window -->
+  <volume name="lvVaxUpStrWindow" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrWindowUnion">
+      <shape type="Tube" name="VaxUpStrWindowTubs"
+            dz="0.5*UpStr:VaxWindowTubsLenght"
+            rmin="UpStr:VaxWindowFlangeRadius"
+            rmax="UpStr:VaxWindowFlangeRadius + UpStr:VaxWindowThick"/>
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrWindowSub">
+        <shape type="ConeSegment" name="VaxUpStrWindowCons"
+              dz="0.5*UpStr:VaxWindowConeLength"
+              rmax1="UpStr:VaxMainBodyRadius - 0.01*mm"
+              rmax2="UpStr:VaxWindowInnerRadius + UpStr:VaxWindowConeEndThick"/>
+        <shape type="Tube" name="VaxUpStrWindowSubTubs1"
+              dz="0.5*(UpStr:VaxWindowConeLength + 1.0*mm)"
+              rmax="UpStr:VaxWindowInnerRadius"/>
+        <shape type="Tube" name="VaxUpStrWindowSubTubs2"
+              dz="0.5*2*UpStr:VaxWindowConeFlangeLength"
+              rmax="UpStr:VaxWindowFlangeRadius"/>
+        <position z="-UpStr:VaxWindowConeLength/2"/>
+        <shape type="Tube" name="VaxUpStrWindowSubTubs3"
+              dz="0.5*2*UpStr:VaxWindowConeEndLength"
+              rmax="UpStr:VaxWindowConeEndRad"/>
+        <position z="UpStr:VaxWindowConeLength/2"/>
+      </shape>
+      <position z="UpStr:VaxWindowTubsLenght/2 + UpStr:VaxWindowConeLength/2 + 0.01*mm"/>
+    </shape>
+  </volume>
+
+<!-- Endcap -->
+  <volume name="lvVaxUpStrEndCap" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="lvVaxUpStrEndCapUnion">
+      <shape type="Tube" name="VaxUpStrEndCapTubs"
+            dz="0.5*UpStr:VaxEndCapTubsLenght"
+            rmin="UpStr:VaxEndCapInnerRadius + 0.01*mm"
+            rmax="UpStr:VaxMainBodyRadius + UpStr:VaxMainBodyThick"/>
+      <shape type="ConeSegment" name="VaxUpStrEndCapCons"
+            dz="0.5*UpStr:VaxEndCapTubsLenght"
+            rmax1="UpStr:VaxEndCapInnerRadius + UpStr:VaxEndCapThick"
+            rmax2="UpStr:VaxMainBodyRadius - 0.01*mm"
+            rmin1="UpStr:VaxEndCapInnerRadius + 0.01*mm"
+            rmin2="UpStr:VaxEndCapInnerRadius + 0.01*mm"/>
+      <position z="-UpStr:VaxEndCapTubsLenght/2 - UpStr:VaxEndCapTubsLenght/2 - 0.01*mm"/>
+    </shape>
+  </volume>
+
+
+<!-- Main Body -->
+  <volume name="lvVaxUpStrMainBody" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="subtraction" name="VaxUpStrMainBodySub">
+      <shape type="Tube" name="VaxUpStrMainBodyTubs"
+            dz="0.5*UpStr:VaxMainBodyLength"
+            rmin="UpStr:VaxMainBodyRadius"
+            rmax="UpStr:VaxMainBodyRadius + UpStr:VaxMainBodyThick"/>
+      <shape type="Tube" name="VaxUpStrMainBodyHole1"
+            dz="0.5*UpStr:VaxMainBodyRadius"
+            rmax="UpStr:VaxMainBodyHole1Radius"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="UpStr:VaxMainBodyRadius"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrMainBodyHole2"
+            dz="0.5*UpStr:VaxMainBodyRadius"
+            rmax="UpStr:VaxMainBodyHole2Radius"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="-UpStr:VaxMainBodyRadius"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrMainBodyHole3"
+            dz="0.5*UpStr:VaxMainBodyRadius"
+            rmax="UpStr:VaxMainBodyHole3Radius"/>
+      <transformation>
+        <position/>
+        <rotation y="90.0*degree"/>
+        <position x="UpStr:VaxMainBodyRadius"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrMainBodyHole4"
+            dz="0.5*UpStr:VaxMainBodyRadius"
+            rmax="UpStr:VaxMainBodyHole4Radius"/>
+      <transformation>
+        <position/>
+        <rotation y="90.0*degree"/>
+        <position x="-UpStr:VaxMainBodyRadius" z="-UpStr:VaxMainBodyHole4Offset"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrMainBodyHole5"
+            dz="0.5*UpStr:VaxMainBodyRadius"
+            rmax="UpStr:VaxMainBodyHole5Radius"/>
+      <transformation>
+        <position/>
+        <rotation y="90.0*degree"/>
+        <position x="-UpStr:VaxMainBodyRadius" z="UpStr:VaxMainBodyHole5Offset"/>
+      </transformation>
+    </shape>
+  </volume>
+
+
+<!-- End pipe -->
+  <volume name="lvVaxUpStrEndPipe" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrEndPipeUnion">
+      <shape type="Tube" name="VaxUpStrEndPipeTubs"
+            dz="0.5*UpStr:VaxEndPipeLength"
+            rmin="UpStr:VaxEndPipeRadius"
+            rmax="UpStr:VaxEndPipeRadius + UpStr:VaxEndPipeThick"/>
+      <shape type="Tube" name="VaxUpStrEndPipeFlangeTubs"
+            dz="0.5*UpStr:VaxEndPipeFlangeLength"
+            rmin="UpStr:VaxEndPipeFlangeRadius"
+            rmax="UpStr:VaxEndPipeFlangeRadius + UpStr:VaxEndPipeFlangeThick"/>
+      <position z="UpStr:VaxEndPipeLength/2 - UpStr:VaxEndPipeFlangeLength/2"/>
+    </shape>
+  </volume>
+
+
+<!-- RF Screen -->
+  <volume name="lvVaxUpStrRfScreen" material="Pipe:CuOFE">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrRfScreenUnion">
+      <shape type="Tube" name="VaxUpStrRfScreenFlangeTubs"
+            dz="0.5*UpStr:VaxRfScreenFlangeLength"
+            rmin="UpStr:VaxRfScreenFlangeRadius"
+            rmax="UpStr:VaxRfScreenFlangeRadius + UpStr:VaxRfScreenFlangeThick"/>
+      <shape type="Tube" name="VaxUpStrRfScreenEntryTubs"
+            dz="0.5*UpStr:VaxRfScreenEntryLength"
+            rmin="UpStr:VaxRfScreenEntryRadius"
+            rmax="UpStr:VaxRfScreenEntryRadius + UpStr:VaxRfScreenEntryThick"/>
+      <position z="UpStr:VaxRfScreenFlangeLength/2 + UpStr:VaxRfScreenEntryLength/2 + 0.01*mm"/>
+      <shape type="ConeSegment" name="VaxUpStrRfScreenCons"
+            dz="0.5*UpStr:VaxRfScreenConsLength"
+            rmin1="UpStr:VaxRfScreenEntryRadius"
+            rmin2="UpStr:VaxRfScreenExitRadius"
+            rmax1="UpStr:VaxRfScreenEntryRadius + UpStr:VaxRfScreenEntryThick"
+            rmax2="UpStr:VaxRfScreenExitRadius + UpStr:VaxRfScreenExitThick"/>
+      <position z="UpStr:VaxRfScreenFlangeLength/2 + UpStr:VaxRfScreenEntryLength + UpStr:VaxRfScreenConsLength/2 + 0.02*mm"/>
+      <shape type="Tube" name="VaxUpStrRfScreenExitTubs"
+            dz="0.5*UpStr:VaxRfScreenExitLength"
+            rmin="UpStr:VaxRfScreenExitRadius"
+            rmax="UpStr:VaxRfScreenExitRadius + UpStr:VaxRfScreenExitThick"/>
+      <position z="UpStr:VaxRfScreenFlangeLength/2 + UpStr:VaxRfScreenEntryLength + UpStr:VaxRfScreenConsLength + UpStr:VaxRfScreenExitLength/2 + 0.03*mm"/>
+    </shape>
+  </volume>
+
+
+<!-- Vacuum -->
+  <volume name="lvVaxUpStrVacuum" material="Vacuum">
+    <shape type="Tube" name="VaxUpStrVacuumTubs"
+          dz="0.5*UpStr:VaxVacuumLength"
+          rmax="UpStr:VaxVacuumRadius"/>
+  </volume>
+
+
+<!-- Pipe1, top pipe -->
+  <volume name="lvVaxUpStrPipe1" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe1Sub">
+      <shape type="Tube" name="VaxUpStrPipe1Tubs"
+            dz="0.5*UpStr:VaxPipe1Length"
+            rmin="UpStr:VaxPipe1Radius"
+            rmax="UpStr:VaxPipe1Radius + UpStr:VaxPipe1Thick"/>
+      <shape type="Tube" name="VaxUpStrPipe1SubTubs"
+            dz="0.5*UpStr:VaxMainBodyLength"
+            rmax="UpStr:VaxMainBodyRadius + UpStr:VaxMainBodyThick + 0.01*mm"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position z="-UpStr:VaxPipe1Length/2"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrPipe1Hole1"
+            dz="0.5*UpStr:VaxPipe1Radius"
+            rmax="UpStr:VaxPipe1HoleRadius"/>
+      <transformation>
+        <position/>
+        <rotation y="90.0*degree"/>
+        <position x="UpStr:VaxPipe1Radius" z="-UpStr:VaxPipe1Length/2 + UpStr:VaxPipe1HoleOffset"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrPipe1Hole2"
+            dz="0.5*UpStr:VaxPipe1Radius"
+            rmax="UpStr:VaxPipe1HoleRadius"/>
+      <transformation>
+        <position/>
+        <rotation y="90.0*degree"/>
+        <position x="-UpStr:VaxPipe1Radius" z="-UpStr:VaxPipe1Length/2 + UpStr:VaxPipe1HoleOffset"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrPipe1Hole3"
+            dz="0.5*UpStr:VaxPipe1Radius"
+            rmax="UpStr:VaxPipe1HoleRadius"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="UpStr:VaxPipe1Radius" z="-UpStr:VaxPipe1Length/2 + UpStr:VaxPipe1HoleOffset"/>
+      </transformation>
+    </shape>
+  </volume>
+
+
+
+<!-- Pipe2 -->
+  <volume name="lvVaxUpStrPipe2" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrPipe2Union">
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe2Sub">
+        <shape type="Tube" name="VaxUpStrPipe2Tubs"
+              dz="0.5*UpStr:VaxPipe2Length"
+              rmin="UpStr:VaxPipe2Radius"
+              rmax="UpStr:VaxPipe2Radius + UpStr:VaxPipe2Thick"/>
+        <shape type="Tube" name="VaxUpStrPipe2SubTubs"
+              dz="0.5*UpStr:VaxMainBodyLength"
+              rmax="UpStr:VaxMainBodyRadius + UpStr:VaxMainBodyThick + 0.01*mm"/>
+        <transformation>
+          <position/>
+          <rotation x="90.0*degree"/>
+          <position z="-UpStr:VaxPipe2Length/2"/>
+        </transformation>
+      </shape>
+      <shape type="Tube" name="VaxUpStrPipe2FlangeTubs"
+            dz="0.5*UpStr:VaxPipe2FlangeLength"
+            rmin="UpStr:VaxPipe2FlangeRadius"
+            rmax="UpStr:VaxPipe2FlangeRadius + UpStr:VaxPipe2FlangeThick"/>
+      <position z="UpStr:VaxPipe2Length/2 - UpStr:VaxPipe2FlangeLength/2"/>
+      <shape type="Tube" name="VaxUpStrPipe2BeltTubs"
+            dz="0.5*UpStr:VaxPipe2BeltLength"
+            rmin="UpStr:VaxPipe2FlangeRadius"
+            rmax="UpStr:VaxPipe2FlangeRadius + UpStr:VaxPipe2FlangeThick"/>
+      <position z="-UpStr:VaxPipe2Length/2 + UpStr:VaxPipe2BeltPos - UpStr:VaxPipe2BeltLength/2"/>
+    </shape>
+  </volume>
+
+
+<!-- Pipe3 -->
+  <volume name="lvVaxUpStrPipe3" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrPipe3Union">
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe3Sub">
+        <shape type="Tube" name="VaxUpStrPipe3Tubs"
+              dz="0.5*(UpStr:VaxPipe3EntryLength + UpStr:VaxPipe3CutLength)"
+              rmin="UpStr:VaxPipe3Radius"
+              rmax="UpStr:VaxPipe3Radius + UpStr:VaxPipe3Thick"/>
+        <shape type="Tube" name="VaxUpStrPipe3SubTubs"
+              dz="0.5*UpStr:VaxMainBodyLength"
+              rmax="UpStr:VaxMainBodyRadius + UpStr:VaxMainBodyThick + 0.01*mm"/>
+        <transformation>
+          <position/>
+          <rotation y="90.0*degree"/>
+          <position z="-UpStr:VaxPipe3EntryLength/2 - UpStr:VaxPipe3CutLength/2"/>
+        </transformation>
+        <shape type="Box" name="VaxUpStrPipe3SubBox"
+             dx="0.5*150.0*mm"
+             dy="0.5*150.0*mm"
+             dz="0.5*2*UpStr:VaxPipe3CutLength"/>
+        <transformation>
+          <position z="UpStr:VaxPipe3CutLength"/>
+          <rotation/>
+          <position/>
+          <rotation x="45.0*degree"/>
+          <position z="UpStr:VaxPipe3EntryLength/2 - UpStr:VaxPipe3CutLength/2"/>
+        </transformation>
+      </shape>
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe3Sub2">
+        <shape type="Tube" name="VaxUpStrPipe3Tubs2"
+              dz="0.5*(UpStr:VaxPipe3ExitLength + UpStr:VaxPipe3CutLength)"
+              rmin="UpStr:VaxPipe3Radius"
+              rmax="UpStr:VaxPipe3Radius + UpStr:VaxPipe3Thick"/>
+        <shape type="Box" name="VaxUpStrPipe3SubBox2"
+             dx="0.5*150.0*mm"
+             dy="0.5*150.0*mm"
+             dz="0.5*2*UpStr:VaxPipe3CutLength"/>
+        <transformation>
+          <position z="-UpStr:VaxPipe3CutLength"/>
+          <rotation/>
+          <position/>
+          <rotation x="-45.0*degree"/>
+          <position z="-UpStr:VaxPipe3ExitLength/2 + UpStr:VaxPipe3CutLength/2"/>
+        </transformation>
+      </shape>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="-UpStr:VaxPipe3ExitLength/2 + UpStr:VaxPipe3CutLength/2" z="UpStr:VaxPipe3EntryLength/2 - UpStr:VaxPipe3CutLength/2 + 0.01*mm"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrPipe3FlangeTubs"
+            dz="0.5*UpStr:VaxPipe3FlangeLength"
+            rmin="UpStr:VaxPipe3FlangeRadius"
+            rmax="UpStr:VaxPipe3FlangeRadius + UpStr:VaxPipe3FlangeThick"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="-UpStr:VaxPipe3ExitLength + UpStr:VaxPipe3FlangeLength/2" z="UpStr:VaxPipe3EntryLength/2 - UpStr:VaxPipe3CutLength/2 + 0.01*mm"/>
+      </transformation>
+    </shape>
+  </volume>
+
+<!-- Pipe4 -->
+  <volume name="lvVaxUpStrPipe4" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrPipe4Union">
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe4Sub">
+        <shape type="Tube" name="VaxUpStrPipe4Tubs"
+              dz="0.5*UpStr:VaxPipe4Length"
+              rmin="UpStr:VaxPipe4Radius"
+              rmax="UpStr:VaxPipe4Radius + UpStr:VaxPipe4Thick"/>
+        <shape type="Tube" name="VaxUpStrPipe4SubTubs"
+              dz="0.5*UpStr:VaxMainBodyLength"
+              rmax="UpStr:VaxMainBodyRadius + UpStr:VaxMainBodyThick + 0.01*mm"/>
+        <transformation>
+          <position/>
+          <rotation y="90.0*degree"/>
+          <position z="-UpStr:VaxPipe4Length/2"/>
+        </transformation>
+      </shape>
+      <shape type="Tube" name="VaxUpStrPipe4FlangeTubs"
+            dz="0.5*UpStr:VaxPipe4FlangeLength"
+            rmin="UpStr:VaxPipe4FlangeRadius"
+            rmax="UpStr:VaxPipe4FlangeRadius + UpStr:VaxPipe4FlangeThick"/>
+      <position z="UpStr:VaxPipe4Length/2 - UpStr:VaxPipe4FlangeLength/2"/>
+    </shape>
+  </volume>
+
+
+<!-- Pipe5 -->
+  <volume name="lvVaxUpStrPipe5" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrPipe5Union">
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe5Sub">
+        <shape type="Tube" name="VaxUpStrPipe5Tubs"
+              dz="0.5*UpStr:VaxPipe5Length"
+              rmin="UpStr:VaxPipe5Radius"
+              rmax="UpStr:VaxPipe5Radius + UpStr:VaxPipe5Thick"/>
+        <shape type="Tube" name="VaxUpStrPipe5SubTubs"
+              dz="0.5*UpStr:VaxMainBodyLength"
+              rmax="UpStr:VaxMainBodyRadius + UpStr:VaxMainBodyThick + 0.01*mm"/>
+        <transformation>
+          <position/>
+          <rotation y="90.0*degree"/>
+          <position z="-UpStr:VaxPipe5Length/2"/>
+        </transformation>
+      </shape>
+      <shape type="Tube" name="VaxUpStrPipe5FlangeTubs"
+            dz="0.5*UpStr:VaxPipe5FlangeLength"
+            rmin="UpStr:VaxPipe5FlangeRadius"
+            rmax="UpStr:VaxPipe5FlangeRadius + UpStr:VaxPipe5FlangeThick"/>
+      <position z="UpStr:VaxPipe5Length/2 - UpStr:VaxPipe5FlangeLength/2"/>
+    </shape>
+  </volume>
+
+
+<!-- Pipe6 -->
+  <volume name="lvVaxUpStrPipe6" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrPipe6Union">
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe6Sub">
+        <shape type="Tube" name="VaxUpStrPipe6Tubs"
+              dz="0.5*UpStr:VaxPipe6Length"
+              rmin="UpStr:VaxPipe6Radius"
+              rmax="UpStr:VaxPipe6Radius + 1.6*mm"/>
+        <shape type="Tube" name="VaxUpStrPipe6SubTubs"
+              dz="0.5*UpStr:VaxPipe1Length"
+              rmax="UpStr:VaxPipe1Radius + UpStr:VaxPipe1Thick + 0.01*mm"/>
+        <transformation>
+          <position/>
+          <rotation x="90.0*degree"/>
+          <position z="-UpStr:VaxPipe6Length/2"/>
+        </transformation>
+      </shape>
+      <shape type="Tube" name="VaxUpStrPipe6FlangeTubs"
+            dz="0.5*UpStr:VaxPipe6FlangeLength"
+            rmin="UpStr:VaxPipe6FlangeRadius"
+            rmax="UpStr:VaxPipe6FlangeRadius + UpStr:VaxPipe6FlangeThick"/>
+      <position z="UpStr:VaxPipe6Length/2 - UpStr:VaxPipe6FlangeLength/2"/>
+    </shape>
+  </volume>
+
+
+<!-- Pipe7 -->
+  <volume name="lvVaxUpStrPipe7" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="VaxUpStrPipe7Union">
+      <shape type="Tube" name="VaxUpStrPipe7Lid"
+            dz="0.5*UpStr:VaxPipe7LidLength"
+            rmin="UpStr:VaxPipe7Radius"
+            rmax="UpStr:VaxPipe7Radius + UpStr:VaxPipe7LidThick"/>
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe7Sub">
+        <shape type="Tube" name="VaxUpStrPipe7Tubs"
+              dz="0.5*(UpStr:VaxPipe7EntryLength + UpStr:VaxPipe7CutLength)"
+              rmin="UpStr:VaxPipe7Radius"
+              rmax="UpStr:VaxPipe7Radius + UpStr:VaxPipe7Thick"/>
+        <shape type="Box" name="VaxUpStrPipe7SubBox"
+             dx="0.5*150.0*mm"
+             dy="0.5*150.0*mm"
+             dz="0.5*2*UpStr:VaxPipe7CutLength"/>
+        <transformation>
+          <position z="UpStr:VaxPipe7CutLength"/>
+          <rotation/>
+          <position/>
+          <rotation x="45.0*degree"/>
+          <position z="UpStr:VaxPipe7EntryLength/2 - UpStr:VaxPipe7CutLength/2"/>
+        </transformation>
+      </shape>
+      <position z="UpStr:VaxPipe7EntryLength/2 + UpStr:VaxPipe7CutLength/2 + UpStr:VaxPipe7LidLength/2 + 0.01*mm"/>
+      <shape type="BooleanShape" operation="subtraction" name="VaxUpStrPipe7Sub2">
+        <shape type="Tube" name="VaxUpStrPipe7Tubs2"
+              dz="0.5*(UpStr:VaxPipe7ExitLength + UpStr:VaxPipe7CutLength)"
+              rmin="UpStr:VaxPipe7Radius"
+              rmax="UpStr:VaxPipe7Radius + UpStr:VaxPipe7Thick"/>
+        <shape type="Box" name="VaxUpStrPipe7SubBox2"
+             dx="0.5*150.0*mm"
+             dy="0.5*150.0*mm"
+             dz="0.5*2*UpStr:VaxPipe7CutLength"/>
+        <transformation>
+          <position z="-UpStr:VaxPipe7CutLength"/>
+          <rotation/>
+          <position/>
+          <rotation x="-45.0*degree"/>
+          <position z="-UpStr:VaxPipe7ExitLength/2 + UpStr:VaxPipe7CutLength/2"/>
+        </transformation>
+      </shape>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="-UpStr:VaxPipe7ExitLength/2 + UpStr:VaxPipe7CutLength/2" z="UpStr:VaxPipe7EntryLength + UpStr:VaxPipe7LidLength/2 + 0.04*mm"/>
+      </transformation>
+      <shape type="Tube" name="VaxUpStrPipe7FlangeTubs"
+            dz="0.5*UpStr:VaxPipe7FlangeLength"
+            rmin="UpStr:VaxPipe7FlangeRadius"
+            rmax="UpStr:VaxPipe7FlangeRadius + UpStr:VaxPipe7FlangeThick"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="-UpStr:VaxPipe7ExitLength + UpStr:VaxPipe7FlangeLength/2" z="UpStr:VaxPipe7EntryLength + UpStr:VaxPipe7LidLength/2 + 0.04*mm"/>
+      </transformation>
+    </shape>
+  </volume>
+
+
+<!-- Complete -->
+  <volume name="lvVaxUpStr">
+    <physvol name="pvVaxUpStrMainBody"
+             volume="lvVaxUpStrMainBody"/>
+    <physvol name="pvVaxUpStrWindow"
+             volume="lvVaxUpStrWindow">
+      <position z="-UpStr:VaxMainBodyLength/2 - UpStr:VaxWindowTubsLenght/2 - 0.01*mm"/>
+    </physvol>
+    <physvol name="pvVaxUpStrRfScreen"
+             volume="lvVaxUpStrRfScreen">
+      <position z="-UpStr:VaxMainBodyLength/2 - UpStr:VaxWindowTubsLenght - 0.01*mm + UpStr:VaxRfScreenFlangeLength/2"/>
+    </physvol>
+    <physvol name="pvVaxUpStrEndCap"
+             volume="lvVaxUpStrEndCap">
+      <position z="UpStr:VaxMainBodyLength/2 + UpStr:VaxEndCapTubsLenght/2 + 0.01*mm"/>
+    </physvol>
+    <physvol name="pvVaxUpStrEndPipe"
+             volume="lvVaxUpStrEndPipe">
+      <position z="UpStr:VaxMainBodyLength/2 - UpStr:VaxEndCapTubsLenght + 0.01*mm + UpStr:VaxEndPipeLength/2"/>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe1"
+             volume="lvVaxUpStrPipe1">
+      <transformation>
+        <position/>
+        <rotation x="-90.0*degree"/>
+        <position y="UpStr:VaxPipe1Length/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe2"
+             volume="lvVaxUpStrPipe2">
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="-UpStr:VaxPipe2Length/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe3"
+             volume="lvVaxUpStrPipe3">
+      <transformation>
+        <position/>
+        <rotation y="90.0*degree"/>
+        <position x="UpStr:VaxPipe3EntryLength/2 + UpStr:VaxPipe3CutLength/2 "/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe4"
+             volume="lvVaxUpStrPipe4">
+      <transformation>
+        <position/>
+        <rotation y="-90.0*degree"/>
+        <position x="-UpStr:VaxPipe4Length/2" z="-UpStr:VaxMainBodyHole4Offset"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe5"
+             volume="lvVaxUpStrPipe5">
+      <transformation>
+        <position/>
+        <rotation y="-90.0*degree"/>
+        <position x="-UpStr:VaxPipe5Length/2" z="UpStr:VaxMainBodyHole5Offset"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe6a"
+             volume="lvVaxUpStrPipe6">
+      <transformation>
+        <position/>
+        <rotation y="-90.0*degree"/>
+        <position x="-UpStr:VaxPipe6Length/2" y="UpStr:VaxPipe1HoleOffset"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe6b"
+             volume="lvVaxUpStrPipe6">
+      <transformation>
+        <position/>
+        <rotation y="90.0*degree"/>
+        <position x="UpStr:VaxPipe6Length/2" y="UpStr:VaxPipe1HoleOffset"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe6c"
+             volume="lvVaxUpStrPipe6">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree"/>
+        <position y="UpStr:VaxPipe1HoleOffset" z="-UpStr:VaxPipe6Length/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrPipe7"
+             volume="lvVaxUpStrPipe7">
+      <transformation>
+        <position/>
+        <rotation x="-90.0*degree" z="90.0*degree"/>
+        <position y="UpStr:VaxPipe1Length + UpStr:VaxPipe7LidLength/2 + 0.01*mm"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvVaxUpStrVacuum"
+             volume="lvVaxUpStrVacuum">
+      <position z="-UpStr:VaxMainBodyLength/2 - UpStr:VaxWindowTubsLenght - 0.01*mm + UpStr:VaxVacuumLength/2"/>
+    </physvol>
+  </volume>
+
+</pipe>

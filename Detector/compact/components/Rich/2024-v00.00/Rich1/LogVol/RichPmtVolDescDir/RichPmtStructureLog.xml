@@ -1,0 +1,63 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich PmtModule  Logvol for single Module                                  -->
+<!--  Rich PmtECR  Logvol for single EC                                         -->
+<!--  Rich Pmt shielding  plates                                                -->
+<!--  They are cloned to create the multiple copies                             -->
+<!--  ==========================================================================-->
+<Rich1>
+  <volume name="lvRich1PmtSingleStdModule"  material="Rich:Rich1Nitrogen" vis="Rich:VisRichPMTModuleMaster" >
+
+       <shape type="Box" name  = "Rich1PmtSingleModuleBox"
+              dx = "RhPmtStdModuleLengthSize*RhHalfSize"
+              dy = "RhPmtStdModuleWidthSize*RhHalfSize"
+              dz = "RhPmtStdModuleDepthSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich1PmtSingleECR"  material="Rich:Rich1Nitrogen" vis="Rich:VisRichPMTECR" >
+
+       <shape type="Box" name  = "Rich1PmtSingleECRBox"
+              dx = "RhStdECRXSize*RhHalfSize"
+              dy = "RhStdECRYSize*RhHalfSize"
+              dz = "RhStdECRZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich1PmtSingleStdMaster"  material="Rich:Rich1Nitrogen" vis="Rich:VisRichPMTMaster" >
+
+      <shape type="Box" name  = "Rich1PmtSinglePmtMasterBox"
+              dx = "RhPMTMasterLengthSize*RhHalfSize"
+              dy = "RhPMTMasterLengthSize*RhHalfSize"
+              dz = "RhPMTMasterZSize*RhHalfSize" />
+
+
+  </volume>
+
+
+<volume name="lvRichPmtShieldingLongPlate" material="Rich:MuMetal" vis = "Rich:VisRichPMTShielding" >
+      <shape type="Box"  name="RhPMTShieldingLongBox"
+          dx = "RhPMTShieldingLongPlateXSize*RhHalfSize"
+          dy = "RhPMTShieldingLongPlateYSize*RhHalfSize"
+          dz = "RhPMTShieldingPlateZSize*RhHalfSize" />
+
+</volume>
+
+<volume name="lvRichPmtShieldingSemiPlate" material="Rich:MuMetal" vis = "Rich:VisRichPMTShielding" >
+      <shape type="Box"  name="RhPMTShieldingSemiBox"
+          dx = "RhPMTShieldingSemiPlateXSize*RhHalfSize"
+          dy = "RhPMTShieldingSemiPlateYSize*RhHalfSize"
+          dz = "RhPMTShieldingPlateZSize*RhHalfSize" />
+
+</volume>
+
+
+</Rich1>

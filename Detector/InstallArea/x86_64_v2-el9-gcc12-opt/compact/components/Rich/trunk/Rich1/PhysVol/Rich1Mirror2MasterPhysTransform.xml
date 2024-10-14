@@ -1,0 +1,123 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+<!--    Begin Rich1Mirror2Phys          -->
+<!--     Rich1 Mirror2 Master Physical Volumes are inside lvRich1SubMaster volume -->
+<!--     Rich1 Mirror2 support volumes are also inside lvRich1SubMaster volume -->
+<!--     Old names are kept for reference                                      -->
+<!--   <physvol name="pvRich1Mirror2MasterTop:0"                               -->
+<!--      logvol="lvRich1Mirror2MasterTop" >                                   -->
+<!--   <physvol name="pvRich1Mirror2MasterBot:1"                                -->
+<!--      logvol="lvRich1Mirror2MasterBot" >                                    -->
+<!--    <physvol name="pvRich1Mirror2SupportTop:0"                             -->
+<!--         logvol="lvRich1Mirror2SupportTop" >                               -->
+<!--     <physvol name="pvRich1Mirror2SupportBot:1"                            -->
+ <!--        logvol="lvRich1Mirror2SupportBot" >                                -->
+ <!--  =====================================================================   -->
+<Rich1>
+    <item name="PhysVolName"    value="pvRich1Mirror2MasterTop" />
+    <item name="TransformName"  value="pvRich1Mirror2MasterTopTransform">
+      <transformation>
+          <position    x="Rh1Mirror2MasterTopXLocation"
+                       y="Rh1Mirror2MasterTopYLocation"
+                       z="Rh1Mirror2MasterTopZLocation" />
+          <rotation    x="Rh1Mirror2MasterTopXRot"
+                       y="Rh1Mirror2MasterTopYRot"/>
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror2MasterBot" />
+    <item name="TransformName"  value="pvRich1Mirror2MasterBotTransform">
+      <transformation>
+          <position    x="Rh1Mirror2MasterBotXLocation"
+                       y="Rh1Mirror2MasterBotYLocation"
+                       z="Rh1Mirror2MasterBotZLocation" />
+          <rotation    x="Rh1Mirror2MasterBotXRot"
+                       y="Rh1Mirror2MasterBotYRot"/>
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror2SupportTop" />
+    <item name="TransformName"  value="pvRich1Mirror2SupportTopTransform">
+      <transformation>
+          <position    x="Rh1Mirror2SupXLocation"
+                       y="Rh1Mirror2SupYTopLocation"
+                       z="Rh1Mirror2SupZTopLocation" />
+          <rotation    x="Rh1Mirror2SupTopXRot"
+                       y="Rh1Mirror2SupTopYRot"/>
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror2SupportBot" />
+    <item name="TransformName"  value="pvRich1Mirror2SupportBotTransform">
+      <transformation>
+          <position    x="Rh1Mirror2SupXLocation"
+                       y="Rh1Mirror2SupYBotLocation"
+                       z="Rh1Mirror2SupZBotLocation" />
+          <rotation    x ="Rh1Mirror2SupBotXRot"
+                       y ="Rh1Mirror2SupBotYRot" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror2Q0Master" />
+    <item name="TransformName"  value="pvRich1Mirror2Q0MasterTransform">
+      <transformation>
+          <position    x="Rh1Mirror2Quadrant0MasterXPos"
+                       y="Rh1Mirror2Quadrant0MasterYPos"
+                       z="Rh1Mirror2Quadrant0MasterZPos" />
+          <rotation    x="Rh1Mirror2Q0MasterXRot" />
+       </transformation>
+    </item>
+    <item name="PhysVolName"    value="pvRich1Mirror2Q1Master" />
+    <item name="TransformName"  value="pvRich1Mirror2Q1MasterTransform">
+      <transformation>
+          <position    x="Rh1Mirror2Quadrant1MasterXPos"
+                       y="Rh1Mirror2Quadrant1MasterYPos"
+                       z="Rh1Mirror2Quadrant1MasterZPos" />
+          <rotation    x="Rh1Mirror2Q1MasterXRot" />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror2Q2Master" />
+    <item name="TransformName"  value="pvRich1Mirror2Q2MasterTransform">
+      <transformation>
+          <position    x="Rh1Mirror2Quadrant2MasterXPos"
+                       y="Rh1Mirror2Quadrant2MasterYPos"
+                       z="Rh1Mirror2Quadrant2MasterZPos" />
+          <rotation    x="Rh1Mirror2Q2MasterXRot" />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror2Q3Master" />
+    <item name="TransformName"  value="pvRich1Mirror2Q3MasterTransform">
+      <transformation>
+          <position    x="Rh1Mirror2Quadrant3MasterXPos"
+                       y="Rh1Mirror2Quadrant3MasterYPos"
+                       z="Rh1Mirror2Quadrant3MasterZPos" />
+          <rotation    x="Rh1Mirror2Q3MasterXRot" />
+       </transformation>
+    </item>
+
+
+
+
+
+</Rich1>
+
+
+<!--          End   Rich1Mirror2Phys      -->
+
+
+
+
+
+
+

@@ -1,0 +1,345 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 superstructure in  Run3 configuration          -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+
+<!-- Top & Bottom parameters -->
+<constant name="Rh2StructDepth"            value="2252.0*mm"/>
+<constant name="Rh2SqRodCrossSection2"     value="56.6*mm"/>
+<constant name="Rh2SqRodCrossSection3"     value="84.9*mm"/>
+<constant name="Rh2StructHeight"           value="6380.0*mm"/>
+<constant name="Rh2StructTopWidth"         value="8292.0*mm"/>
+<constant name="Rh2TopHeight"              value="400.0*mm"/>
+<constant name="Rh2RodZJoinYPos"           value="0.0*mm"/>
+<constant name="Rh2TotalBotWidth"          value="9746.0*mm"/>
+<constant name="Rh2StructBotWidth"         value="8497.5*mm"/>
+<constant name="Rh2RodTopAngJoinLength"    value="2200.0*mm"/>
+<constant name="Rh2RodBotAngJoinInLength"  value="1950.0*mm"/>
+<constant name="Rh2RodBotAngJoinOutLength" value="1975.0*mm"/>
+<constant name="Rh2StructBotLeftXPos"      value="4248.75*mm-0.5*Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodBotAngledEdgeLength" value= "1280*mm"/>
+<constant name="Rh2RodBotAngledEdgeRot"    value= "32.0*degree"/>
+<constant name="Rh2RodBotAngledEdgeXPos"   value= "-4613*mm"/>
+<constant name="Rh2RodBotAngledEdgeZPos"   value= "563*mm"/>
+<constant name="Rh2RodBotXJoinEdgeLength"  value= "330*mm"/>
+<constant name="Rh2RodBotXJoinEdgeXPos"    value= "4248.75*mm+0.5*Rh2RodBotXJoinEdgeLength"/>
+<constant name="Rh2RodBotXJoinEdgeZPos"    value= "509.5*mm"/>
+
+<constant name="Rh2AirTrapBackWidth"       value="875*mm"/>
+<constant name="Rh2AirTrapHeight"          value="6300*mm"/>
+
+<constant name="Rh2RodZJoinPosY"           value="Rh2RodZJoinYPos"/>
+<constant name="Rh2RodBotAngledEdgePosX"   value="Rh2RodBotAngledEdgeXPos" />
+<constant name="Rh2RodBotAngledEdgePosZ"   value="Rh2RodBotAngledEdgeZPos" />
+<constant name="Rh2RodBotXJoinEdgePosX"    value="Rh2RodBotXJoinEdgeXPos" />
+<constant name="Rh2RodBotXJoinEdgePosZ"    value="Rh2RodBotXJoinEdgeZPos" />
+<constant name="Rh2StructBotLeftPosX"      value="Rh2StructBotLeftXPos" />
+
+
+<constant name="Rh2SuperStrAirTrapHeight"  value="Rh2AirTrapHeight" />
+<constant name="Rh2SuperStrAirTrapBackWidth" value="Rh2AirTrapBackWidth" />
+
+<!-- Air Box parameters  -->
+
+<constant name="Rh2SuperStrAirTrapSubBoxPosY" value="-25*mm" />
+<constant name="Rh2SuperStrAirTrapSubBox2SizeX"  value="600*mm" />
+<constant name="Rh2SuperStrAirTrapSubBox2SizeY"  value="9990*mm" />
+<constant name="Rh2SuperStrAirTrapSubBox2SizeZ"  value="2700*mm" />
+<constant name="Rh2SuperStrAirTrapSubBoxPosX"  value= "-1050*mm" />
+<constant name="Rh2SuperStrAirTrapSubBoxRightPosX"  value= "-1050*mm" />
+<constant name="Rh2SuperStrAirTrapSubBoxLeftPosX"  value= "-1.0*Rh2SuperStrAirTrapSubBoxRightPosX" />
+
+
+<constant name="Rh2SuperStrAirBoxTopWidth"         value="Rh2StructTopWidth+30*mm"/>
+<constant name="Rh2SuperStrAirBoxTopDepth"         value="Rh2StructDepth+2*Rh2SqRodCrossSection3+5*mm"/>
+
+<constant name="Rh2SuperStrAirBoxTopHeight"        value="Rh2TopHeight+Rh2SqRodCrossSection3+5*mm"/>
+<constant name="Rh2SuperStrAirBoxBotHeight"        value="Rh2TopHeight+Rh2SqRodCrossSection3+5*mm"/>
+
+<constant name="Rh2SuperStrAirBoxTopPosX"   value="0.0*mm" />
+<constant name="Rh2SuperStrAirBoxTopPosY"          value="0.5*Rh2StructHeight+0.5*Rh2SqRodCrossSection3+0.5*Rh2SuperStrAirBoxTopHeight"/>
+<constant name="Rh2SuperStrAirBoxTopPosZ"   value="0.0*mm" />
+
+<constant name="Rh2SuperStrAirBoxBotWidth"         value="Rh2TotalBotWidth+220*mm"/>
+<constant name="Rh2SuperStrAirBoxBotDepth"         value="Rh2StructDepth+2*Rh2SqRodCrossSection3+5*mm"/>
+<constant name="Rh2SuperStrAirBoxBotPosY"   value="-0.5*Rh2StructHeight-0.5*Rh2SqRodCrossSection3-0.5*Rh2SuperStrAirBoxBotHeight"/>
+<constant name="Rh2SuperStrAirBoxBotPosX"   value="0.0*mm" />
+<constant name="Rh2SuperStrAirBoxBotPosZ"   value="0.0*mm" />
+
+
+
+<constant name="Rh2AirTrapDepth"           value="Rh2SuperStrAirBoxTopDepth+5*mm"/>
+<constant name="Rh2AirTrapFrontWidth"      value="Rh2AirTrapBackWidth+1416.7474*mm"/>
+<constant name="Rh2SuperStrAirTrapFrontWidth"  value="Rh2AirTrapFrontWidth"  />
+<constant name="Rh2SuperStrAirTrapDepth"   value="Rh2AirTrapDepth" />
+
+<constant name="Rh2AirTrap__X"             value="-0.5*Rh2StructTopWidth+1.5*Rh2SqRodCrossSection3+176*mm"/>
+<constant name="Rh2SuperStrAirTrapPosX"            value="Rh2AirTrap__X-0.5*Rh2AirTrapBackWidth+35*mm"/>
+<constant name="Rh2SuperStrAirTrapPosY"    value="0.0*mm" />
+<constant name="Rh2SuperStrAirTrapPosZ"    value="0.0*mm" />
+<constant name="Rh2SuperStrAirTrapPositivePosX"  value="Rh2SuperStrAirTrapPosX" />
+<constant name="Rh2SuperStrAirTrapNegativePosX"  value="-1.0*Rh2SuperStrAirTrapPosX" />
+
+
+<!-- Long Horizontal Rod parameters (H=high, L=low; F=Front, B=Back) -->
+<constant name="Rh2SqRodTopFLPosZ"         value="0.5*Rh2StructDepth-0.5*Rh2SqRodCrossSection2"/>
+<constant name="Rh2SqRodTopFLPosY"         value="-0.5*Rh2TopHeight"/>
+<constant name="Rh2SqRodTopBLPosZ"         value="-0.5*Rh2StructDepth+0.5*Rh2SqRodCrossSection2"/>
+<constant name="Rh2SqRodTopFHPosY"         value="Rh2SqRodTopFLPosY+Rh2TopHeight"/>
+
+<constant name="Rh2SqRodBotFHPosZ"         value="Rh2SqRodTopFLPosZ"/>
+<constant name="Rh2SqRodBotFHPosY"         value="0.5*Rh2TopHeight"/>
+<constant name="Rh2SqRodBotFLPosY"         value="Rh2SqRodBotFHPosY-Rh2TopHeight"/>
+
+<constant name="Rh2SqRodTopFLPosX"         value="0.0*mm" />
+<constant name="Rh2SqRodTopBLPosX"         value="0.0*mm" />
+<constant name="Rh2SqRodTopBLPosY"         value="Rh2SqRodTopFLPosY" />
+<constant name="Rh2SqRodTopFHPosX"         value="0.0*mm" />
+<constant name="Rh2SqRodTopFLZL1PosX"      value="1340.0*mm" />
+<constant name="Rh2SqRodTopFLZH1PosX"      value="1340.0*mm" />
+<constant name="Rh2SqRodTopFLZL2PosX"      value="2600.0*mm" />
+<constant name="Rh2SqRodTopFLZH2PosX"      value="2600.0*mm" />
+<constant name="Rh2SqRodTopFLZH3PosX"      value="3125.0*mm" />
+<constant name="Rh2SqRodTopFLZH4PosX"      value="3746.0*mm" />
+<constant name="Rh2SqRodTopFLZL5PosX"      value="4117.0*mm"  />
+<constant name="Rh2SqRodTopFLZH5PosX"      value="4117.0*mm"  />
+<constant name="Rh2SqRodBotFHPosX"         value="1340.0*mm" />
+<constant name="Rh2SqRodBotFLZL2PosX"      value="2600.0*mm" />
+<constant name="Rh2SqRodBotZL3PosX"        value="3644.0*mm" />
+
+<constant name="Rh2SqRodTopFLZLMinus1PosX"      value="-1340.0*mm" />
+<constant name="Rh2SqRodTopFLZHMinus1PosX"      value="-1340.0*mm" />
+<constant name="Rh2SqRodTopFLZLMinus2PosX"      value="-2600.0*mm" />
+<constant name="Rh2SqRodTopFLZHMinus2PosX"      value="-2600.0*mm" />
+<constant name="Rh2SqRodTopFLZHMinus3PosX"      value="-3125.0*mm" />
+<constant name="Rh2SqRodTopFLZHMinus4PosX"      value="-3746.0*mm" />
+<constant name="Rh2SqRodTopFLZLMinus5PosX"      value="-4117.0*mm" />
+<constant name="Rh2SqRodTopFLZHMinus5PosX"      value="-4117.0*mm" />
+<constant name="Rh2SqRodTopBLPosTopR1FPosX"     value="-695.0*mm" />
+<constant name="Rh2SqRodTopBLPosTopR1BPosX"     value="-695.0*mm" />
+<constant name="Rh2SqRodTopFLTopR2FPosX"        value="-2035.0*mm" />
+<constant name="Rh2SqRodTopFLTopR2BPosX"        value="-2035.0*mm" />
+<constant name="Rh2SqRodTopFLTopR3FPosX"        value="-3475.0*mm" />
+<constant name="Rh2SqRodTopFLTopR3BPosX"        value="-3475.0*mm" />
+<constant name="Rh2SqRodTopBLTopL1FPosX"        value="695.0*mm" />
+<constant name="Rh2SqRodTopBLTopL1BPosX"        value="695.0*mm" />
+<constant name="Rh2SqRodTopFLTopL2FPosX"        value="2035.0*mm"/>
+<constant name="Rh2SqRodTopFLTopL2BPosX"        value="2035.0*mm"/>
+<constant name="Rh2SqRodTopFLTopL3FPosX"        value="3475.0*mm"/>
+<constant name="Rh2SqRodTopFLTopL3BPosX"        value="3475.0*mm"/>
+
+<constant name="Rh2SqRodBotFLZLMinus1PosX"      value="-1340.0*mm" />
+<constant name="Rh2SqRodBotFLZLMinus2PosX"      value="-2600.0*mm" />
+<constant name="Rh2SqRodBotZLMinus3PosX"        value="-3644.0*mm" />
+<constant name="Rh2RodZJoinXBotR1FPosX"         value="-1340.0*mm" />
+<constant name="Rh2RodZJoinXBotR2FPosX"         value="-2600.0*mm" />
+<constant name="Rh2RodZJoinXBotR3BPosX"         value="-3644.0*mm" />
+<constant name="Rh2RodZJoinXBotL1FPosX"         value="1340.0*mm" />
+<constant name="Rh2RodZJoinXBotL2FPosX"         value="2600.0*mm" />
+<constant name="Rh2RodZJoinXBotL3BPosX"         value="3644.0*mm" />
+<constant name="Rh2RodZJoinXBotR1fPosX"        value="-3644.0*mm" />
+<constant name="Rh2RodZJoinXBotL1fPosX"        value="3644.0*mm" />
+<constant name="Rh2RodXJoin3RPosX"             value="-670.0*mm" />
+<constant name="Rh2RodXJoin3RPosZ"             value="576.0*mm" />
+<constant name="Rh2RodXJoin3LPosX"             value="670.0*mm" />
+<constant name="Rh2RodXJoin3LPosZ"             value="576.0*mm" />
+<constant name="Rh2RodXJoin4RPosX"             value="-1970.0*mm" />
+<constant name="Rh2RodXJoin4LPosX"             value="1970.0*mm" />
+<constant name="Rh2RodXJoin5LPosZ"             value="-646.0*mm" />
+<constant name="Rh2RodXJoin6LHFPosZ"           value="-509.5*mm" />
+<constant name="Rh2RodXJoin6LHBPosZ"           value="509.5*mm" />
+<constant name="Rh2RodBotAngJoinRPosX"         value="-3210.0*mm" />
+<constant name="Rh2RodBotAngJoinRRotY"         value="-17.2*degree" />
+<constant name="Rh2RodBotAngJoinLPosX"         value="3210.0*mm" />
+<constant name="Rh2RodBotAngJoinLRotY"         value="17.2*degree" />
+<constant name="Rh2RodBotAngJoinInRPosX"       value="-670.0*mm" />
+<constant name="Rh2RodBotAngJoinInRPosZ"       value="-260.0*mm" />
+<constant name="Rh2RodBotAngJoinInRRotY"       value="-38.4*degree" />
+<constant name="Rh2RodBotAngJoinInLPosX"       value="670.0*mm" />
+<constant name="Rh2RodBotAngJoinInLPosZ"       value="-260.0*mm" />
+<constant name="Rh2RodBotAngJoinInLRotY"       value="38.4*degree" />
+<constant name="Rh2RodBotAngJoinOutRPosX"      value="-1970.0*mm" />
+<constant name="Rh2RodBotAngJoinOutRPosZ"      value="235.0*mm" />
+<constant name="Rh2RodBotAngJoinOutRRotY"      value="34.5*degree" />
+<constant name="Rh2RodBotAngJoinOutLPosX"      value="1970.0*mm" />
+<constant name="Rh2RodBotAngJoinOutLPosZ"      value="235.0*mm" />
+<constant name="Rh2RodBotAngJoinOutLRotY"      value="-34.5*degree" />
+<!-- Small Y-direction Connectors between Z-direction Beams on Top and Bottom parameters -->
+<constant name="Rh2RodZJoinHeight"         value="Rh2TopHeight-Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodZJoinZPosF"          value="-367.0*mm"/>
+<constant name="Rh2RodZJoinZPosB"          value="-1*Rh2RodZJoinZPosF"/>
+<constant name="Rh2RodZJoinZBotPosF"       value="-509.5*mm"/>
+<constant name="Rh2RodZJoinZBotPosB"       value="-1*Rh2RodZJoinZBotPosF"/>
+
+
+<constant name="Rh2RodZJoinFPosZ"          value="Rh2RodZJoinZPosF"/>
+<constant name="Rh2RodZJoinBPosZ"          value="Rh2RodZJoinZPosB"/>
+
+<constant name="Rh2SqRodZJoinTopF1PosX"         value="1340.0*mm" />
+<constant name="Rh2SqRodZJoinTopB1PosX"         value="1340.0*mm" />
+<constant name="Rh2SqRodZJoinTopF2PosX"         value="2600.0*mm" />
+<constant name="Rh2SqRodZJoinTopB2PosX"         value="2600.0*mm" />
+<constant name="Rh2SqRodZJoinTopF3PosX"         value="4117.0*mm" />
+<constant name="Rh2SqRodZJoinTopB3PosX"         value="4117.0*mm" />
+<constant name="Rh2SqRodZJoinTopFMinus1PosX"    value="-1340.0*mm" />
+<constant name="Rh2SqRodZJoinTopBMinus1PosX"    value="-1340.0*mm" />
+<constant name="Rh2SqRodZJoinTopFMinus2PosX"    value="-2600.0*mm" />
+<constant name="Rh2SqRodZJoinTopBMinus2PosX"    value="-2600.0*mm" />
+<constant name="Rh2SqRodZJoinTopFMinus3PosX"    value="-4117.0*mm" />
+<constant name="Rh2SqRodZJoinTopBMinus3PosX"    value="-4117.0*mm" />
+<constant name="Rh2SqRodZJoinTopJoin1RPosX"     value="-670.0*mm" />
+<constant name="Rh2SqRodZJoinTopJoin1LPosX"     value="670.0*mm" />
+<constant name="Rh2SqRodZJoinTopJoin2RPosX"     value="-1970.0*mm" />
+<constant name="Rh2SqRodZJoinTopJoin2LPosX"     value="1970.0*mm" />
+<constant name="Rh2SqRodZJoinTopJoin1RPosZ"     value="0.5*Rh2SqRodCrossSection2-626.0*mm" />
+<constant name="Rh2SqRodZJoinTopJoin1LPosZ"     value="0.5*Rh2SqRodCrossSection2-626.0*mm" />
+
+<constant name="Rh2SqRodZJoinTopJoin2RPosZ"     value="Rh2SqRodCrossSection2+620.0*mm" />
+<constant name="Rh2SqRodZJoinTopJoin2LPosZ"     value="Rh2SqRodCrossSection2+620.0*mm" />
+<constant name="Rh2SqRodZJoinTopAngJoinRPosX"   value="-3410.0*mm" />
+<constant name="Rh2SqRodZJoinTopAngJoinLPosX"   value="3410.0*mm" />
+<constant name="Rh2SqRodZJoinTopAngJoinRRotY"    value= "-17.2*degree" />
+<constant name="Rh2SqRodZJoinTopAngJoinLRotY"    value= "17.2*degree" />
+
+<!-- X-direction connectors between "Z" beam parameters -->
+<constant name="Rh2RodXJoin1Length"        value="1340*mm-Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodXJoin2Length"        value="1260*mm-Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodXJoin3Length"        value="1340*mm-Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodXJoin4Length"        value="1260*mm+Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodXJoin5Length"        value="1260*mm-Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodXJoin6Length"        value="Rh2StructBotLeftXPos-3644*mm-Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodXJoin6Xpos"          value="3644*mm+0.5*Rh2SqRodCrossSection2+0.5*Rh2RodXJoin6Length"/>
+<constant name="Rh2RodXJoin6PosX"          value="Rh2RodXJoin6Xpos" />
+
+
+<!-- Side parameters -->
+<constant name="Rh2RodRightFRLength"          value="6260*mm-2*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightFRZPos"            value="-1126*mm+0.5*Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodRightFRXPos"            value="-0.5*Rh2StructTopWidth+0.5*Rh2SqRodCrossSection3-Rh2SuperStrAirTrapPosX"/>
+<constant name="Rh2RodRightFMXPos"            value="-0.5*Rh2StructTopWidth+1.5*Rh2SqRodCrossSection3+176*mm-Rh2SuperStrAirTrapPosX" />
+<constant name="Rh2RodRightFLXPos"            value="-0.5*Rh2StructTopWidth+2.5*Rh2SqRodCrossSection3+692*mm-Rh2SuperStrAirTrapPosX"/>
+
+<!-- Top and Bottom X-direction Rod parameters -->
+<constant name="Rh2RodRightXTopFLength"       value="3.0*Rh2SqRodCrossSection3+692*mm"/>
+<constant name="Rh2RodRightXTopBLength"       value="176*mm+2*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightXTopFXPos"         value="-0.5*Rh2StructTopWidth+0.5*Rh2RodRightXTopFLength-Rh2SuperStrAirTrapPosX"/>
+<constant name="Rh2RodRightXTopFYPos"         value="3130*mm-0.5*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightXTopBXPos"         value="-0.5*Rh2StructTopWidth+1*Rh2SqRodCrossSection3+88*mm-Rh2SuperStrAirTrapPosX"/>
+<constant name="Rh2RodRightXTopBYPos"         value="Rh2RodRightXTopFYPos"/>
+
+<!-- Smallest X-direction connector parameters -->
+<constant name="Rh2RodRightSmallJoin1Length"  value="176.0*mm"/>
+<constant name="Rh2RodRightSmallJoin1XPos"    value="Rh2RodRightFRXPos+0.5*Rh2SqRodCrossSection3+88*mm"/>
+<constant name="Rh2RodRightSmallJoin1YPos1"   value="Rh2RodRightXTopFYPos-1.0*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightSmallJoin1YPos2"   value="Rh2RodRightXTopFYPos-2*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightSmallJoin1YPos3"   value="Rh2RodRightXTopFYPos-3*Rh2SqRodCrossSection3-118*mm"/>
+<constant name="Rh2RodRightSmallJoin1YPos4"   value="Rh2RodRightXTopFYPos-4*Rh2SqRodCrossSection3-1296*mm"/>
+<constant name="Rh2RodRightSmallJoin1YPos5"   value="Rh2SqRodCrossSection3-75*mm"/>
+<constant name="Rh2RodRightSmallJoin1YPos6"   value="-1183*mm-1.0*Rh2SqRodCrossSection3"/>
+
+<!-- Less Small X-direction connector parameters -->
+<constant name="Rh2RodRightSmallJoin2Length"  value="516.0*mm"/>
+<constant name="Rh2RodRightSmallJoin2XPos"    value="-0.5*Rh2StructTopWidth+2*Rh2SqRodCrossSection3+Rh2RodRightSmallJoin1Length+0.5*Rh2RodRightSmallJoin2Length-Rh2SuperStrAirTrapPosX"/>
+<constant name="Rh2RodRightSmallJoin2YPos1"   value="Rh2RodRightXTopFYPos-1.0*Rh2SqRodCrossSection3-60*mm"/>
+<constant name="Rh2RodRightSmallJoin2YPos2"   value="Rh2RodRightXTopFYPos-2.0*Rh2SqRodCrossSection3-393*mm"/>
+<constant name="Rh2RodRightSmallJoin2YPos3"   value="Rh2RodRightXTopFYPos-3.0*Rh2SqRodCrossSection3-655*mm"/>
+<constant name="Rh2RodRightSmallJoin2YPos4"   value="Rh2RodRightSmallJoin1YPos4"/>
+<constant name="Rh2RodRightSmallJoin2YPos5"   value="Rh2RodRightSmallJoin1YPos5"/>
+<constant name="Rh2RodRightSmallJoin2YPos6"   value="Rh2RodRightSmallJoin1YPos6"/>
+<constant name="Rh2RodRightSmallJoin2YPos7"   value="-1.0*Rh2RodRightXTopFYPos+Rh2SqRodCrossSection3+60*mm"/>
+
+<!-- Medium Z-direction connector parameters -->
+<constant name="Rh2RodRightBigJoin1Length"    value="Rh2StructDepth-2*Rh2SqRodCrossSection2-4*mm"/>
+<constant name="Rh2RodRightBigJoin1YPos6"     value="Rh2RodRightSmallJoin1YPos6-Rh2SqRodCrossSection3"/>
+
+<!--Medium Y-direction connector parameters -->
+<constant name="Rh2RodRightVertJoin1Length"   value="Rh2RodRightSmallJoin1YPos6+Rh2RodRightXTopFYPos-Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightVertJoin2Length"   value="Rh2RodRightSmallJoin1YPos6+Rh2RodRightXTopFYPos-2*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightVertJoin1YPos"     value="Rh2RodRightBigJoin1YPos6-0.5*Rh2RodRightVertJoin1Length-0.5*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightVertJoin2YPos"     value="Rh2RodRightBigJoin1YPos6-0.5*Rh2RodRightVertJoin2Length-0.5*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightVertJoin1ZPos"     value="292.0*mm"/>
+
+<!-- Angled side connector parameters -->
+<constant name="Rh2RodRightAngleJoin1Length"  value= "2175*mm"/>
+<constant name="Rh2RodRightAngleJoin1Rot"     value= "-16*degree"/>
+<constant name="Rh2RodRightVertAngJoin1YPos"  value= "0.5*Rh2RodRightSmallJoin1YPos6-0.5*Rh2RodRightXTopFYPos"/>
+<constant name="Rh2RodRightAngleJoin2Length"  value= "1296*mm+3*Rh2SqRodCrossSection3"/>
+<constant name="Rh2RodRightVertAngJoin2YPos"  value= "0.5*Rh2RodRightSmallJoin1YPos4+0.5*Rh2RodRightXTopFYPos"/>
+
+<!-- X-rotated connectors in bottom part parameters -->
+<constant name="Rh2RodRightVertAngJoinLength" value= "1700*mm"/>
+<constant name="Rh2RodRightVertAngJoinRot"    value= "22*degree"/>
+<constant name="Rh2RodRightVertAngJoinYPos"   value= "0.5*Rh2RodRightSmallJoin1YPos6-0.5*Rh2RodRightXTopFYPos-37*mm"/>
+<constant name="Rh2RodRightVertAngJoinZPos"   value= "0.5*Rh2RodRightVertJoin1ZPos+0.5*Rh2RodRightFRZPos-295*mm"/>
+
+<!-- Y-rotated Horizontal rods forming bit sticking out at bottom of side assembly -->
+<constant name="Rh2RodRightHorAngEdgeLength"  value= "Rh2RodBotAngledEdgeLength"/>
+<constant name="Rh2RodRightHorAngEdgeRot"     value= "Rh2RodBotAngledEdgeRot"/>
+<constant name="Rh2RodRightHorAngEdgeXPos"    value= "Rh2RodBotAngledEdgeXPos-Rh2SuperStrAirTrapPosX"/>
+<constant name="Rh2RodRightHorAngEdgeZPos"    value= "Rh2RodBotAngledEdgeZPos"/>
+<constant name="Rh2RodRightHorAngEdgeYPos"    value= "-1*Rh2RodRightXTopFYPos"/>
+
+<!-- Y-rotated Vertical connectors in bit sticking out at bottom of side assembly -->
+<constant name="AngEdgeLengthSINAngEdgerot"   value= "678*mm"/>
+<constant name="AngEdgeLengthCOSAngEdgerot"   value= "1085*mm"/>
+<constant name="Rh2RodRightVertJoinEdgeXPosR" value= "Rh2RodRightHorAngEdgeXPos+0.5*AngEdgeLengthSINAngEdgerot-30*mm"/>
+<constant name="Rh2RodRightVertJoinEdgeXPosL" value= "Rh2RodRightHorAngEdgeXPos-0.5*AngEdgeLengthSINAngEdgerot+30*mm"/>
+<constant name="Rh2RodRightVertJoinEdgeZPosF" value= "-1*Rh2RodRightHorAngEdgeZPos-0.5*AngEdgeLengthCOSAngEdgerot+45*mm"/>
+<constant name="Rh2RodRightVertJoinEdgeZPosB" value= "-1*Rh2RodRightHorAngEdgeZPos+0.5*AngEdgeLengthCOSAngEdgerot-45*mm"/>
+
+<!-- Shield Support parameters (1=longest 4=shortest) -->
+<constant name="Rh2RodRightShieldSupLength1"  value= "1800*mm"/>
+<constant name="Rh2RodRightShieldSupLength2"  value= "1570*mm"/>
+<constant name="Rh2RodRightShieldSupLength3"  value= "1365*mm"/>
+<constant name="Rh2RodRightShieldSupLength4"  value= "1130*mm"/>
+<constant name="Rh2RodRightShieldSupYPos"     value= "Rh2RodRightSmallJoin2YPos6+0.5*Rh2SqRodCrossSection3+0.5*Rh2SqRodCrossSection2"/>
+<constant name="Rh2RodRightShieldSupZPos1"    value= "-282*mm"/>
+<constant name="Rh2RodRightShieldSupZPos2"    value= "-40*mm"/>
+<constant name="Rh2RodRightShieldSupZPos3"    value= "169*mm"/>
+<constant name="Rh2RodRightShieldSupZPos4"    value= "418*mm"/>
+<constant name="Rh2RodRightShieldSupXPos1"    value= "Rh2RodRightFMXPos-275*mm"/>
+<constant name="Rh2RodRightShieldSupXPos2"    value= "Rh2RodRightFMXPos-265*mm"/>
+<constant name="Rh2RodRightShieldSupXPos3"    value= "Rh2RodRightFMXPos-240*mm"/>
+<constant name="Rh2RodRightShieldSupXPos4"    value= "Rh2RodRightFMXPos-220*mm"/>
+<constant name="Rh2RodRightShieldSupRot"      value= "-32.0*degree"/>
+
+<constant name="Rh2RodRightSpacer1ZPos"       value= "-292*mm"/>
+<constant name="Rh2RodRightSpacer2ZPos"       value= "Rh2RodRightSpacer1ZPos+233*mm"/>
+<constant name="Rh2RodRightSpacer3ZPos"       value= "Rh2RodRightSpacer2ZPos+233*mm"/>
+<constant name="Rh2RodRightSpacer4ZPos"       value= "Rh2RodRightSpacer3ZPos+233*mm"/>
+<constant name="Rh2RodRightSpacer1LZPos"      value= "-434*mm"/>
+<constant name="Rh2RodRightSpacer2LZPos"      value= "Rh2RodRightSpacer1LZPos+233*mm"/>
+<constant name="Rh2RodRightSpacer3LZPos"      value= "Rh2RodRightSpacer2LZPos+233*mm"/>
+<constant name="Rh2RodRightSpacer4LZPos"      value= "Rh2RodRightSpacer3LZPos+233*mm"/>
+
+<constant name="Rh2RodRightHorDiagLength1"    value= "1840*mm"/>
+<constant name="Rh2RodRightHorDiagLength2"    value= "755*mm"/>
+<constant name="Rh2RodRightHorDiag1XPos"      value= "Rh2RodRightFMXPos-244*mm"/>
+<constant name="Rh2RodRightHorDiag1ZPos"      value= "-523*mm"/>
+<constant name="Rh2RodRightHorDiag2XPos"      value= "Rh2RodRightFMXPos-213*mm"/>
+<constant name="Rh2RodRightHorDiag2ZPos"      value= "684*mm"/>
+
+
+
+
+<constant name="Rh2SubtractBoxHeight"      value="-2*Rh2RodRightShieldSupYPos-2*Rh2SqRodCrossSection2"/>
+<constant name="Rh2SubtractBoxDepth"       value="-2*Rh2RodRightFRZPos-Rh2SqRodCrossSection2-10*mm"/>
+<constant name="Rh2SubtractBoxWidth"       value="Rh2AirTrapFrontWidth+250*mm"/>
+
+
+
+
+  </define>
+</lccdd>

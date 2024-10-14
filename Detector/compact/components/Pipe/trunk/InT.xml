@@ -1,0 +1,77 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe inside the T region                      -->
+<!--===========================================================================-->
+<!--================================== Pipe In   T=============================-->
+<!--===========================================================================-->
+<lccdd>
+
+  <detectors>
+    <detector name="PipeInT" type="DD4hep_VolumeAssembly" parent="${PipeInT:parent}" vis="Pipe:Vis">
+      <!-- UX85-3 Cone 10 mrad of Beryllium 1.6 mm thick - Split Magnet/T -->
+      <volume name="lvUX853Cone05B" material="Pipe:BeTV56" vis="Pipe:InT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-05B"
+               dz="UX853Cone05BLenght/2"
+               rmin2="UX853Cone05BRadiusZmax"
+               rmin1="UX853Cone05BRadiusZmin"
+               rmax2="UX853Cone05BRadiusZmax + UX853Cone05BThick"
+               rmax1="UX853Cone05BRadiusZmin + UX853Cone05BThick"/>
+      </volume>
+      <!-- UX85-3 Cone 10 mrad of Beryllium 1.7 mm thick -->
+      <volume name="lvUX853Cone06" material="Pipe:BeTV56" vis="Pipe:InT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-06"
+               dz="UX853Cone06Lenght/2"
+               rmin2="UX853Cone06RadiusZmax"
+               rmin1="UX853Cone06RadiusZmin"
+               rmax2="UX853Cone06RadiusZmax + UX853Cone06Thick"
+               rmax1="UX853Cone06RadiusZmin + UX853Cone06Thick"/>
+      </volume>
+      <!-- UX85-3 Cone 10 mrad of Beryllium 1.9 mm thick - Split T/Rich2 -->
+      <volume name="lvUX853Cone07A" material="Pipe:BeTV56" vis="Pipe:InT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-07A"
+               dz="UX853Cone07ALenght/2"
+               rmin2="UX853Cone07ARadiusZmax"
+               rmin1="UX853Cone07ARadiusZmin"
+               rmax2="UX853Cone07ARadiusZmax + UX853Cone07AThick"
+               rmax1="UX853Cone07ARadiusZmin + UX853Cone07AThick"/>
+      </volume>
+      <!-- Vacuum in UX85-3 in T whole lenght -->
+      <volume name="lvUX853Vacuum05B" material="Vacuum" vis="Pipe:InT">
+        <shape type="ConeSegment" name="UX85-3-Vacuum-05B"
+               dz="UX853InTLenght/2"
+               rmax1="UX853Cone05BRadiusZmin"
+               rmax2="UX853Cone07ARadiusZmax"/>
+      </volume>
+
+      <!-- For the moment assume sections put at 0.0 of this (set with center at split  -->
+      <envelope type="Assembly" name="lvUX853InT" vis="Pipe:InT">
+        <!-- Pipe of Be -->
+        <physvol name="pvUX853Cone05B"           volume="lvUX853Cone05B">
+          <position z="UX853Cone05BZpos"/>
+        </physvol>
+        <physvol name="pvUX853Cone06"            volume="lvUX853Cone06">
+          <position z="UX853Cone06Zpos"/>
+        </physvol>
+        <physvol name="pvUX853Cone07A"           volume="lvUX853Cone07A">
+          <position z="UX853Cone07AZpos"/>
+        </physvol>
+        <!-- Now the vacuum inside -->
+        <physvol name="pvUX853Vacuum05B"         volume="lvUX853Vacuum05B">
+          <position z="0.5*UX853InTLenght"/>
+        </physvol>
+
+      </envelope>
+        <position z="UX853MagnetTSplitZposIP - Regions:TZPos"/>
+    </detector>
+
+  </detectors>
+</lccdd>

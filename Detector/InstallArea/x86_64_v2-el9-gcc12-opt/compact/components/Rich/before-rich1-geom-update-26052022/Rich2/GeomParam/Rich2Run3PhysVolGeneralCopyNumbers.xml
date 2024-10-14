@@ -1,0 +1,65 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/01/2021                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--                                                                            -->
+<!-- This file contains the copy parameters for                                 -->
+<!--     Rich2 Physical volumes, which are not part of Rich2Pmt structure.      -->
+<!--     The copy numbers for Rich2 Pmt related volumes are in a separete file  -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+   <constant name="pvRich2GasEnclosureCopyNumber"  value="10"/>
+   <constant name="pvRich2TubeCopyNumber"          value="11" />
+   <constant name="pvRich2GasContWallTopCopyNumber"           value="12" />
+   <constant name="pvRich2GasContWallBotCopyNumber"           value="13" />
+   <constant name="pvRich2GasContWallSide0CopyNumber"         value="14" />
+   <constant name="pvRich2GasContWallSide1CopyNumber"         value="15" />
+   <constant name="pvRich2EntryWindowSkinDnsCopyNumber"       value="30" />
+   <constant name="pvRich2EntryWindowSkinUpsCopyNumber"       value="31" />
+   <constant name="pvRich2EntryWindowPMICopyNumber"           value="32" />
+   <constant name="pvRich2EntryWinTubeLockCopyNumber"         value="33" />
+   <constant name="pvRich2ExitWindowSkinDnsCopyNumber"        value="40" />
+   <constant name="pvRich2ExitWindowSkinUpsCopyNumber"        value="41" />
+   <constant name="pvRich2ExitWindowPMICopyNumber"            value="42" />
+   <constant name="pvRich2ExitWinTubeLockCopyNumber"          value="43" />
+   <constant name="pvRich2QuartzWindow0CopyNumber"            value="60" />
+   <constant name="pvRich2QuartzWindow1CopyNumber"            value="61" />
+   <constant name="pvRich2MagShFront0CopyNumber"              value="80" />
+   <constant name="pvRich2MagShTop0CopyNumber"                value="81" />
+   <constant name="pvRich2MagShBottom0CopyNumber"             value="82" />
+   <constant name="pvRich2MagShSideBack0CopyNumber"           value="83" />
+   <constant name="pvRich2MagShSideFront0CopyNumber"          value="84" />
+   <constant name="pvRich2MagShFront1CopyNumber"              value="85" />
+   <constant name="pvRich2MagShTop1CopyNumber"                value="86" />
+   <constant name="pvRich2MagShBottom1CopyNumber"             value="87" />
+   <constant name="pvRich2MagShSideBack1CopyNumber"           value="88" />
+   <constant name="pvRich2MagShSideFront1CopyNumber"          value="89" />
+   <constant name="pvRich2SphMirrorMaster0CopyNumber"          value="100" />
+   <constant name="pvRich2SphMirrorMaster1CopyNumber"          value="101" />
+   <constant name="pvRich2SphMSupport0CopyNumber"              value="102" />
+   <constant name="pvRich2SphMSupport1CopyNumber"              value="103" />
+   <constant name="pvRich2SecMirrorMaster0CopyNumber"          value="110" />
+   <constant name="pvRich2SecMirrorMaster1CopyNumber"          value="111" />
+   <constant name="pvRich2SecMSupport0CopyNumber"              value="112" />
+   <constant name="pvRich2SecMSupport1CopyNumber"              value="113" />
+   <constant name="pvRich2PhDetGasEncl0CopyNumber"             value="200" />
+   <constant name="pvRich2PhDetGasEncl1CopyNumber"             value="210" />
+   <constant name="pvRich2PhDetPanel0CopyNumber"               value="0" />
+   <constant name="pvRich2PhDetPanel1CopyNumber"               value="1" />
+   <constant name="pvRichSystemCopyNumber"                     value="300" />
+   <constant name="pvRich2SuperStrAirBoxTopCopyNumber"         value="400" />
+   <constant name="pvRich2SuperStrAirBoxBotCopyNumber"         value="401" />
+   <constant name="pvRich2SuperStrAirTrapRightCopyNumber"      value="402" />
+   <constant name="pvRich2SuperStrAirTrapLeftCopyNumber"       value="403" />
+
+
+  </define>
+</lccdd>

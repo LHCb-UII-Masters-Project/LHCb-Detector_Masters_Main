@@ -1,0 +1,35 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 master in  Run3 configuration                  -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+<!-- Rich2 Master Volume Geometry constants  -->
+<!-- The Rich2 envelope along z is from 9450 to 11900 EDMS doc 316447 -->
+<!--  Currently Rich2Master extends from 9450 to 11884, which is enough -->
+
+<constant name="Rich2MasterXSize" value="10*m"/>
+<constant name="Rich2MasterYSize" value="8*m"/>
+<constant name="Rich2MasterZSize" value="2434*mm"/>
+
+<!-- survey data parameters EDMS doc 751268 -->
+<constant name="Rich2MasterX" value="0.27*mm"/>
+<constant name="Rich2MasterY" value="-4.32*mm"/>
+<constant name="Rich2MasterZ" value="10664.35*mm"/>
+<constant name="Rich2MasterTilt" value="2.935*mrad"/>
+<constant name="Rich2MasterRotY" value="0.12*mrad"/>
+<constant name="Rich2MasterRotZ" value="0.03*mrad"/>
+
+  </define>
+</lccdd>
+

@@ -1,0 +1,83 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+
+  <detectors>
+    <detector name="PipeMagnet" type="DD4hep_VolumeAssembly" parent="${PipeMagnet:parent}" vis="Pipe:Vis">
+      <!-- ************************************************************** -->
+      <!-- * BEAM PIPE                                                  * -->
+      <!-- * Sections in MagnetRegion                                   * -->
+      <!-- *   from z=2270 mm to z=7620 mm                              * -->
+      <!-- *                                                            * -->
+      <!-- * UX85-1, Compensator at 2800mm, UX85-2, Bellow connection   * -->
+      <!-- * at 6900 and UX85-3                                         * -->
+      <!-- *                                                            * -->
+      <!-- * Author: Gloria Corti                                       * -->
+      <!-- *                                                            * -->
+      <!-- * Consists of                                                * -->
+      <!-- *   UX85-1:                                                  * -->
+      <!-- *     - conical sections of 10 mrad of different thickness   * -->
+      <!-- *       and materials                                        * -->
+      <!-- *     - flange                                               * -->
+      <!-- *   Compensator:                                             * -->
+      <!-- *     - two bellows                                          * -->
+      <!-- *     - conical sections of 10 mrad                          * -->
+      <!-- *     - two flanges                                          * -->
+      <!-- *   UX85-2:                                                  * -->
+      <!-- *     - conical sections of 10 mrad of different thickness   * -->
+      <!-- *     - two flanges                                          * -->
+      <!-- *   Bellow at 6900:                                          * -->
+      <!-- *     - one bellows                                          * -->
+      <!-- *     - conical section of 10 mrad                           * -->
+      <!-- *     - two flanges                                          * -->
+      <!-- *   UX85-3:                                                  * -->
+      <!-- *     - one flange                                           * -->
+      <!-- *     - conical section of 10 mrad                           * -->
+      <!-- *   and corresponding vaccum conical sections                * -->
+      <!-- ************************************************************** -->
+
+      <include ref="Magnet-UX851.xml"/>
+      <include ref="Magnet-UX852.xml"/>
+      <include ref="Magnet-UX853.xml"/>
+      <include ref="Magnet-Bellows.xml"/>
+      <include ref="Magnet-Compensator.xml"/>
+
+      <!--==================================================================================-->
+      <!--===================================Final  Assembly================================-->
+      <!--==================================================================================-->
+      <!-- For the moment assume sections put at 0.0 of this (set with center
+	   at start of MagnetRegion (=2700 mm) -->
+      <envelope type="Assembly" name="lvUX85InMagnet" vis="Pipe:Magnet">
+	<physvol name="pvUX851InMagnet"		 volume="lvUX851InMagnet">
+	  <position z="0.0*mm"/>
+	</physvol>
+	<physvol name="pvUX85Compensator2800"    volume="lvUX85Compensator2800">
+	  <position z="UX851InMagnetLenght"/>
+	</physvol>
+	<physvol name="pvUX852"  		 volume="lvUX852">
+	  <position z="UX851InMagnetLenght + UX85C2800Lenght"/>
+	</physvol>
+	<physvol name="pvUX85Bellow6900"	 volume="lvUX85Bellow6900">
+	  <position z="UX851InMagnetLenght + UX85C2800Lenght + UX852Lenght"/>
+	</physvol>
+	<physvol name="pvUX853" 		 volume="lvUX853InMagnet">
+	  <position z="UX851InMagnetLenght + UX85C2800Lenght + UX852Lenght + UX85B6900Lenght"/>
+	</physvol>
+      </envelope>
+      <!-- Central position of the pipe in the magnet region  -->
+      <position z= "0.5*Regions:BeforeMagnetZSize - Regions:MagnetRegionZPos" />
+      <nodebug/>
+    </detector>
+  </detectors>
+</lccdd>

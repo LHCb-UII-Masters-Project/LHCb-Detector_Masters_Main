@@ -1,0 +1,619 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--==================================UX853====================================-->
+<!--===========================================================================-->
+<pipe>
+
+  <!-- UX85-4 Flange  -->
+  <volume name="lvUX854Flange01" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-4-Flange01"
+           dz="0.5*UX854Flange01Lenght"
+           rmin1="UX854Flange01RadiusZmin"
+           rmin2="UX854Flange01RadiusZmax"
+           rmax1="UX854Flange01OuterRadius"
+           rmax2="UX854Flange01OuterRadius"/>
+  </volume>
+
+  <!-- UX85-4 Cone 10 mrad St.Steel 4 mm thick -->
+  <volume name="lvUX854Cone02" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-4-Cone10mrad-02"
+           dz="0.5*UX854Cone02Lenght"
+           rmin1="UX854Cone02RadiusZmin"
+           rmin2="UX854Cone02RadiusZmax"
+           rmax1="UX854Cone02RadiusZmin + UX854Cone02Thick"
+           rmax2="UX854Cone02RadiusZmax + UX854Cone02Thick"/>
+  </volume>
+
+  <!-- UX85-4 Support flange around pipe -->
+  <volume name="lvUX854SupportFlange" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-4-SupportFlange"
+           dz="0.5*UX854SupportFlangeLenght"
+           rmin1="UX854SupportFlangeRadiusZmin"
+           rmin2="UX854SupportFlangeRadiusZmax"
+           rmax1="UX854SupportFlangeOuterRadius"
+           rmax2="UX854SupportFlangeOuterRadius"/>
+  </volume>
+
+  <!-- UX85-4 Cone 10 mrad St.Steel 4 mm thick -->
+  <volume name="lvUX854Cone03" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-4-Cone10mrad-03"
+           dz="0.5*UX854Cone03Lenght"
+           rmin1="UX854Cone03RadiusZmin"
+           rmin2="UX854Cone03RadiusZmax"
+           rmax1="UX854Cone03RadiusZmin + UX854Cone03Thick"
+           rmax2="UX854Cone03RadiusZmax + UX854Cone03Thick"/>
+  </volume>
+
+  <!-- UX85-4 Cone 10 mrad St.Steel connection to window thick -->
+  <volume name="lvUX854Cone04" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-4-Cone10mrad-04"
+           dz="0.5*UX854Cone04Lenght"
+           rmin1="UX854Cone04RadiusZmin"
+           rmin2="UX854Cone04RadiusZmax"
+           rmax1="UX854Cone04RadiusZmin + UX854Cone04Thick"
+           rmax2="UX854Cone04RadiusZmax + UX854Cone04Thick"/>
+  </volume>
+
+  <!-- UX85-4 Window -15 degree St.Steel 3 mm thick -->
+  <volume name="lvUX854Win05Cone" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Sub">
+      <shape type="ConeSegment" name="UX85-4-Window15degree-05"
+             dz="0.5*UX854Win05Lenght"
+             rmin1="UX854Win05RadiusZmin"
+             rmin2="UX854Win05RadiusZmax"
+             rmax1="UX854Win05RadiusZmin + UX854Win05Thick"
+             rmax2="UX854Win05RadiusZmax + UX854Win05Thick"/>
+      <shape type="Tube" name="UX85-4-Win05-Hole-1"
+             dz="0.5*UX854Win05Hole1Length"
+             rmax="UX854Win05Hole1Radius"/>
+      <transformation>
+        <position z="UX854Win05Hole1PosZ"/>
+        <rotation x="UX854Win05Hole1RotX"/>
+        <position/>
+        <rotation z="UX854Win05Hole1RotZ"/>
+        <posRPhiZ r="UX854Win05Hole1PosR" phi="UX854Win05Hole1PosPhi"/>
+      </transformation>
+      <shape type="Tube" name="UX85-4-Win05-Hole-2"
+             dz="0.5*UX854Win05Hole2Length"
+             rmax="UX854Win05Hole2Radius"/>
+      <transformation>
+        <position/>
+        <rotation x="UX854Win05Hole2RotX"/>
+        <position y="UX854Win05Hole2PosY" z="UX854Win05Hole2PosZ"/>
+      </transformation>
+      <shape type="Tube" name="UX85-4-Win05-Hole-3"
+             dz="0.5*UX854Win05Hole3Length"
+             rmax="UX854Win05Hole3Radius"/>
+      <transformation>
+        <position/>
+        <rotation y="UX854Win05Hole3RotY"/>
+        <position x="UX854Win05Hole3PosX" z="UX854Win05Hole3PosZ"/>
+      </transformation>
+      <shape type="Tube" name="UX85-4-Win05-Hole-4"
+             dz="0.5*UX854Win05Hole4Length"
+             rmax="UX854Win05Hole4Radius"/>
+      <transformation>
+        <position/>
+        <rotation y="UX854Win05Hole4RotY"/>
+        <position x="UX854Win05Hole4PosX" z="UX854Win05Hole4PosZ"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <!-- UX85-4 Window, Pipe for hole 1 -->
+  <volume name="lvUX854Win05Pipe1" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe1Sub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-1"
+             dz="0.5*UX854Win05Pipe1Length"
+             rmin="UX854Win05Hole1Radius"
+             rmax="UX854Win05Hole1Radius+UX854Win05Pipe1Thick"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-1-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + UX854Win05Thick + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + UX854Win05Thick + 0.01*mm"/>
+      <transformation>
+        <position y="UX854Win05Hole1PosR" z="-UX854Win05Hole1PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="UX854Win05Hole1RotX"/>
+        <position z="-UX854Win05Pipe1Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe1Vac" material="Vacuum" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe1VacSub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-1Vac"
+             dz="0.5*UX854Win05Pipe1Length"
+             rmax="UX854Win05Hole1Radius-0.01*mm"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-1Vac-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + 0.01*mm"/>
+      <transformation>
+        <position y="UX854Win05Hole1PosR" z="-UX854Win05Hole1PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="UX854Win05Hole1RotX"/>
+        <position z="-UX854Win05Pipe1Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe1Flange" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX854Win05Pipe1Flange"
+           dz="0.5*UX854Win05Pipe1FlangeThick"
+           rmin="UX854Win05Hole1Radius + UX854Win05Pipe1Thick + 0.01*mm"
+           rmax="UX854Win05Pipe1FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe1Lid" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX854Win05Pipe1Lid"
+           dz="0.5*UX854Win05Pipe1FlangeThick"
+           rmax="UX854Win05Pipe1FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe1Ass" vis="Pipe:Downstream">
+    <physvol name="pvUX854Win05Pipe1"             volume="lvUX854Win05Pipe1"/>
+    <physvol name="pvUX854Win05Pipe1Vac"          volume="lvUX854Win05Pipe1Vac"/>
+    <physvol name="pvUX854Win05Pipe1Flange"       volume="lvUX854Win05Pipe1Flange">
+      <position z="UX854Win05Pipe1Length/2 - UX854Win05Pipe1FlangeThick/2"/>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe1Lid"          volume="lvUX854Win05Pipe1Lid">
+      <position z="UX854Win05Pipe1Length/2 + UX854Win05Pipe1FlangeThick - UX854Win05Pipe1FlangeThick/2"/>
+    </physvol>
+  </volume>
+
+  <!-- UX85-4 Window, Pipe for hole 2 -->
+  <volume name="lvUX854Win05Pipe2" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe2Sub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-2"
+             dz="0.5*UX854Win05Pipe2Length"
+             rmin="UX854Win05Hole2Radius"
+             rmax="UX854Win05Hole2Radius+UX854Win05Pipe2Thick"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-2-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + UX854Win05Thick + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + UX854Win05Thick + 0.01*mm"/>
+      <transformation>
+        <position y="-UX854Win05Hole2PosY" z="-UX854Win05Hole2PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="UX854Win05Hole2RotX"/>
+        <position z="-UX854Win05Pipe2Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+      <shape type="Box" name="UX85-4-Win05-Pipe-2-Cut2"
+             dx="0.5*UX854Win05Hole2Radius*4"
+             dy="0.5*UX854Win05Hole2Radius*10"
+             dz="0.5*UX854Win05Hole2Radius*4"/>
+      <transformation>
+        <position z="UX854Win05Hole2Radius*2"/>
+        <rotation/>
+        <position/>
+        <rotation x="45.0*degree"/>
+        <position z="UX854Win05Pipe2Length/2 - UX854Win05Pipe2CutLength"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe2Vac" material="Vacuum" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe2VacSub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-2Vac"
+             dz="0.5*UX854Win05Pipe2Length"
+             rmax="UX854Win05Hole2Radius-0.01*mm"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-2Vac-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + 0.01*mm"/>
+      <transformation>
+        <position y="-UX854Win05Hole2PosY" z="-UX854Win05Hole2PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="UX854Win05Hole2RotX"/>
+        <position z="-UX854Win05Pipe2Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+      <shape type="Box" name="UX85-4-Win05-Pipe-2Vac-Cut2"
+             dx="0.5*UX854Win05Hole2Radius*4"
+             dy="0.5*UX854Win05Hole2Radius*10"
+             dz="0.5*UX854Win05Hole2Radius*4"/>
+      <transformation>
+        <position z="UX854Win05Hole2Radius*2"/>
+        <rotation/>
+        <position/>
+        <rotation x="45.0*degree"/>
+        <position z="UX854Win05Pipe2Length/2 - UX854Win05Pipe2CutLength"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe2Extend" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe2ExtendSub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-2Ext"
+             dz="0.5*UX854Win05Pipe2ExtendLength"
+             rmin="UX854Win05Hole2Radius"
+             rmax="UX854Win05Hole2Radius+UX854Win05Pipe2Thick"/>
+      <shape type="Box" name="UX85-4-Win05-Pipe-2Ext-Cut"
+             dx="0.5*UX854Win05Hole2Radius*4"
+             dy="0.5*UX854Win05Hole2Radius*10"
+             dz="0.5*UX854Win05Hole2Radius*4"/>
+      <transformation>
+        <position z="UX854Win05Hole2Radius*2"/>
+        <rotation/>
+        <position/>
+        <rotation x="45.0*degree"/>
+        <position z="UX854Win05Pipe2ExtendLength/2 - UX854Win05Pipe2CutLength"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe2ExtendVac" material="Vacuum" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe2ExtendVacSub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-2ExtVac"
+             dz="0.5*UX854Win05Pipe2ExtendLength"
+             rmax="UX854Win05Hole2Radius-0.01*mm"/>
+      <shape type="Box" name="UX85-4-Win05-Pipe-2ExtVac-Cut"
+             dx="0.5*UX854Win05Hole2Radius*4"
+             dy="0.5*UX854Win05Hole2Radius*10"
+             dz="0.5*UX854Win05Hole2Radius*4"/>
+      <transformation>
+        <position z="UX854Win05Hole2Radius*2"/>
+        <rotation/>
+        <position/>
+        <rotation x="45.0*degree"/>
+        <position z="UX854Win05Pipe2ExtendLength/2 - UX854Win05Pipe2CutLength"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe2Flange" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX854Win05Pipe2Flange"
+           dz="0.5*UX854Win05Pipe2FlangeThick"
+           rmin="UX854Win05Hole2Radius + UX854Win05Pipe3Thick + 0.01*mm"
+           rmax="UX854Win05Pipe2FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe2Lid" material="Pipe:Steel316LN">
+    <shape type="Tube" name="UX854Win05Pipe2Lid"
+           dz="0.5*UX854Win05Pipe2FlangeThick"
+           rmax="UX854Win05Pipe2FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe2Ass" vis="Pipe:Downstream">
+    <physvol name="pvUX854Win05Pipe2"                volume="lvUX854Win05Pipe2"/>
+    <physvol name="pvUX854Win05Pipe2Vac"             volume="lvUX854Win05Pipe2Vac"/>
+    <physvol name="pvUX854Win05Pipe2Extend"          volume="lvUX854Win05Pipe2Extend">
+      <transformation>
+        <position/>
+        <rotation x="-90.0*degree" z="180.0*degree"/>
+        <position z="UX854Win05Pipe2Length/2 - UX854Win05Pipe2CutLength + 0.01*mm" y="-UX854Win05Pipe2ExtendLength/2 + UX854Win05Pipe2CutLength - 0.01*mm"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe2ExtendVac"       volume="lvUX854Win05Pipe2ExtendVac">
+      <transformation>
+        <position/>
+        <rotation x="-90.0*degree" z="180.0*degree"/>
+        <position z="UX854Win05Pipe2Length/2 - UX854Win05Pipe2CutLength + 0.01*mm" y="-UX854Win05Pipe2ExtendLength/2 + UX854Win05Pipe2CutLength - 0.01*mm"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe2Flange"          volume="lvUX854Win05Pipe2Flange">
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position z="UX854Win05Pipe2Length/2 - UX854Win05Pipe2CutLength + 0.01*mm" y="-UX854Win05Pipe2ExtendBasicLength - 0.01*mm + UX854Win05Pipe2FlangeThick/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe2Lid"             volume="lvUX854Win05Pipe2Lid">
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position z="UX854Win05Pipe2Length/2 - UX854Win05Pipe2CutLength + 0.01*mm" y="-UX854Win05Pipe2ExtendBasicLength - 0.01*mm - UX854Win05Pipe2FlangeThick + UX854Win05Pipe2FlangeThick/2"/>
+      </transformation>
+    </physvol>
+  </volume>
+
+  <!-- UX85-4 Window, Pipe for hole 3 -->
+  <volume name="lvUX854Win05Pipe3" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe3Sub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-3"
+             dz="0.5*UX854Win05Pipe3Length"
+             rmin="UX854Win05Hole3Radius"
+             rmax="UX854Win05Hole3Radius+UX854Win05Pipe3Thick"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-3-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + UX854Win05Thick + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + UX854Win05Thick + 0.01*mm"/>
+      <transformation>
+        <position y="UX854Win05Hole3PosX" z="-UX854Win05Hole3PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="-UX854Win05Hole3RotY"/>
+        <position z="-UX854Win05Pipe3Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe3Vac" material="Vacuum" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe3VacSub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-3Vac"
+             dz="0.5*UX854Win05Pipe3Length"
+             rmax="UX854Win05Hole3Radius-0.01*mm"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-3Vac-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + 0.01*mm"/>
+      <transformation>
+        <position y="UX854Win05Hole3PosX" z="-UX854Win05Hole3PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="-UX854Win05Hole3RotY"/>
+        <position z="-UX854Win05Pipe3Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe3Extend" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="union" name="UX854Win05Pipe3ExtendUnion">
+      <shape type="Tube" name="UX854Win05Pipe3ExtendPlate"
+             dz="0.5*UX854Win05Pipe3Thick"
+             rmin="UX854Win05Pipe3Rad"
+             rmax="UX854Win05Hole3Radius + UX854Win05Pipe3Thick"/>
+      <shape type="Tube" name="UX854Win05Pipe3ExtendTubs"
+             dz="0.5*(UX854Win05Pipe3ExtendLength - UX854Win05Pipe3Thick)"
+             rmin="UX854Win05Pipe3Rad"
+             rmax="UX854Win05Pipe3Rad + UX854Win05Pipe3Thick"/>
+      <position z="UX854Win05Pipe3ExtendLength/2 + 0.01*mm"/>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe3ExtendVac" material="Vacuum" vis="Pipe:Vacuum">
+    <shape type="Tube" name="UX854Win05Pipe3ExtendVacTubs"
+           dz="0.5*UX854Win05Pipe3ExtendLength"
+           rmax="UX854Win05Pipe3Rad - 0.01*mm"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe3Flange" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX854Win05Pipe3Flange"
+           dz="0.5*UX854Win05Pipe3FlangeThick"
+           rmin="UX854Win05Pipe3Rad + UX854Win05Pipe3Thick + 0.01*mm"
+           rmax="UX854Win05Pipe3FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe3Lid" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX854Win05Pipe3Lid"
+           dz="0.5*UX854Win05Pipe3FlangeThick"
+           rmax="UX854Win05Pipe3FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe3Ass" vis="Pipe:Downstream">
+    <physvol name="pvUX854Win05Pipe3"             volume="lvUX854Win05Pipe3"/>
+    <physvol name="pvUX854Win05Pipe3Vac"          volume="lvUX854Win05Pipe3Vac"/>
+    <physvol name="pvUX854Win05Pipe3Extend"       volume="lvUX854Win05Pipe3Extend">
+      <position z="UX854Win05Pipe3Length/2 + UX854Win05Pipe3Thick/2 + 0.01*mm"/>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe3ExtendVac"    volume="lvUX854Win05Pipe3ExtendVac">
+      <position z="UX854Win05Pipe3Length/2 + UX854Win05Pipe3ExtendLength/2 + 0.01*mm"/>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe3Flange"       volume="lvUX854Win05Pipe3Flange">
+      <position z="UX854Win05Pipe3Length/2 + UX854Win05Pipe3ExtendLength - UX854Win05Pipe3FlangeThick/2"/>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe3Lid"          volume="lvUX854Win05Pipe3Lid">
+      <position z="UX854Win05Pipe3Length/2 + UX854Win05Pipe3ExtendLength + UX854Win05Pipe3FlangeThick - UX854Win05Pipe3FlangeThick/2"/>
+    </physvol>
+  </volume>
+
+  <!-- UX85-4 Window, Pipe for hole 4 -->
+  <volume name="lvUX854Win05Pipe4" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe4Sub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-4"
+             dz="0.5*UX854Win05Pipe4Length"
+             rmin="UX854Win05Hole4Radius"
+             rmax="UX854Win05Hole4Radius+UX854Win05Pipe4Thick"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-4-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + UX854Win05Thick + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + UX854Win05Thick + 0.01*mm"/>
+      <transformation>
+        <position y="UX854Win05Hole4PosX" z="-UX854Win05Hole4PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="-UX854Win05Hole4RotY"/>
+        <position z="-UX854Win05Pipe4Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe4Vac" material="Vacuum" vis="Pipe:Vacuum">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05Pipe4VacSub">
+      <shape type="Tube" name="UX85-4-Win05-Pipe-4Vac"
+             dz="0.5*UX854Win05Pipe4Length"
+             rmax="UX854Win05Hole4Radius - 0.01*mm"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Pipe-4Vac-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + 0.01*mm"/>
+      <transformation>
+        <position y="UX854Win05Hole4PosX" z="-UX854Win05Hole4PosZ"/>
+        <rotation/>
+        <position/>
+        <rotation x="-UX854Win05Hole4RotY"/>
+        <position z="-UX854Win05Pipe4Length/2 + UX854Win05PipeExtra"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe4Flange" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX854Win05Pipe4Flange"
+           dz="0.5*UX854Win05Pipe4FlangeThick"
+           rmin="UX854Win05Hole4Radius + UX854Win05Pipe4Thick + 0.01*mm"
+           rmax="UX854Win05Pipe4FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe4Lid" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX854Win05Pipe4Lid"
+           dz="0.5*UX854Win05Pipe4FlangeThick"
+           rmax="UX854Win05Pipe4FlangeRad"/>
+  </volume>
+
+  <volume name="lvUX854Win05Pipe4Ass" vis="Pipe:Downstream">
+    <physvol name="pvUX854Win05Pipe4"             volume="lvUX854Win05Pipe4"/>
+    <physvol name="pvUX854Win05Pipe4Vac"          volume="lvUX854Win05Pipe4Vac"/>
+    <physvol name="pvUX854Win05Pipe4Flange"       volume="lvUX854Win05Pipe4Flange">
+      <position z="UX854Win05Pipe4Length/2 - UX854Win05Pipe4FlangeThick/2"/>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe4Lid"          volume="lvUX854Win05Pipe4Lid">
+      <position z="UX854Win05Pipe4Length/2 - UX854Win05Pipe4FlangeThick/2 + UX854Win05Pipe4FlangeThick"/>
+    </physvol>
+  </volume>
+
+  <!-- UX85-4 Window, Mount -->
+  <volume name="lvUX854Win05Mount" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="BooleanShape" operation="subtraction" name="UX854Win05MountSub">
+      <shape type="Box" name="UX85-4-Win05-Mount"
+             dx="0.5*66.0*mm"                dy="0.5*100.0*mm"             dz="0.5*120.0*mm"/>
+      <shape type="ConeSegment" name="UX85-4-Win05-Mount-Cut"
+             dz="0.5*UX854Win05Lenght"
+             rmax1="UX854Win05RadiusZmin + UX854Win05Thick + 0.01*mm"
+             rmax2="UX854Win05RadiusZmax + UX854Win05Thick + 0.01*mm"/>
+      <position y="100.0*mm/2" z="-599.0*mm/2+54.4*mm+120.0*mm/2"/>
+      <shape type="Box" name="UX85-4-Win05-Mount-Cut2"
+             dx="0.5*(66.0*mm-4.0*mm)"       dy="0.5*(100.0*mm-4.0*mm)"    dz="0.5*(120.0*mm+4.0*mm)"/>
+    </shape>
+  </volume>
+
+
+  <!-- UX85-4 Window, With pipes -->
+  <volume name="lvUX854Win05" vis="Pipe:Downstream">
+    <physvol name="pvUX854Win05Main"          volume="lvUX854Win05Cone"/>
+    <physvol name="pvUX854Win05Pipe1Ass"      volume="lvUX854Win05Pipe1Ass">
+      <transformation>
+        <position z="-UX854Win05PipeExtra + UX854Win05Pipe1Length/2"/>
+        <rotation/>
+        <position z="UX854Win05Hole1PosZ"/>
+        <rotation x="UX854Win05Hole1RotX" z="180.0*degree"/>
+        <position/>
+        <rotation z="UX854Win05Hole1RotZ"/>
+        <posRPhiZ r="UX854Win05Hole1PosR" phi="UX854Win05Hole1PosPhi"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe2Ass"      volume="lvUX854Win05Pipe2Ass">
+      <transformation>
+        <position z="-UX854Win05PipeExtra + UX854Win05Pipe2Length/2"/>
+        <rotation/>
+        <position/>
+        <rotation x="-UX854Win05Hole2RotX"/>
+        <position y="UX854Win05Hole2PosY" z="UX854Win05Hole2PosZ"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe3Ass"      volume="lvUX854Win05Pipe3Ass">
+      <transformation>
+        <position z="-UX854Win05PipeExtra + UX854Win05Pipe3Length/2"/>
+        <rotation/>
+        <position/>
+        <rotation y="UX854Win05Hole3RotY" z="90.0*degree"/>
+        <position x="UX854Win05Hole3PosX" z="UX854Win05Hole3PosZ"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvUX854Win05Pipe4Ass"      volume="lvUX854Win05Pipe4Ass">
+      <transformation>
+        <position z="-UX854Win05PipeExtra + UX854Win05Pipe4Length/2"/>
+        <rotation/>
+        <position/>
+        <rotation y="UX854Win05Hole4RotY" z="90.0*degree"/>
+        <position x="UX854Win05Hole4PosX" z="UX854Win05Hole4PosZ"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvUX854Win05Mount"         volume="lvUX854Win05Mount">
+      <position y="-100.0*mm/2" z="599.0*mm/2-54.4*mm-120.0*mm/2"/>
+    </physvol>
+  </volume>
+
+
+  <!-- UX85-4 Cylinder 3 mm thick -->
+  <volume name="lvUX854Cyl06" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX85-4-Cylinder-06"
+           dz="0.5*UX854Cyl06Lenght"          rmin="UX854Cyl06InnerRadius"      rmax="UX854Cyl06InnerRadius + UX854Cyl06Thick"/>
+  </volume>
+
+  <!-- UX85-4 Cylinder 1.5 mm thick -->
+  <volume name="lvUX854Cyl07" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX85-4-Cylinder-07"
+           dz="0.5*UX854Cyl07Lenght"          rmin="UX854Cyl07InnerRadius"      rmax="UX854Cyl07OuterRadius"/>
+  </volume>
+
+  <!-- UX85-4 Flange -->
+  <volume name="lvUX854Flange08" material="Pipe:Steel316LN" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX85-4-Flange08"
+           dz="0.5*UX854Flange08Lenght"       rmin="UX854Flange08InnerRadius"   rmax="UX854Flange08OuterRadius"/>
+  </volume>
+
+  <!-- Vacuum in 10 mrad -->
+  <volume name="lvUX854Vacuum01" material="Vacuum" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-4-Vacuum-01"
+           dz="0.5*UX854Vacuum01Lenght"       rmax1="UX854Flange01RadiusZmin"   rmax2="UX854Cone04RadiusZmax"/>
+  </volume>
+
+  <!-- Vacuum in -15 degree window -->
+  <volume name="lvUX854Vacuum05" material="Vacuum" vis="Pipe:Downstream">
+    <shape type="ConeSegment" name="UX85-4-Vacuum-05"
+           dz="0.5*UX854Vacuum05Lenght"       rmax1="UX854Win05RadiusZmin"     rmax2="UX854Win05RadiusZmax"/>
+  </volume>
+
+  <!-- Vacuum in cylinders -->
+  <volume name="lvUX854Vacuum06" material="Vacuum" vis="Pipe:Downstream">
+    <shape type="Tube" name="UX85-4-Vacuum-06"
+           dz="0.5*UX854Vacuum06Lenght"       rmax="UX854Cyl06InnerRadius"/>
+  </volume>
+
+  <!-- UX85-4 Pipes St.Steel -->
+  <volume name="lvUX854" vis="Pipe:Downstream">
+    <physvol name="pvUX854Flange01"           volume="lvUX854Flange01">
+      <position z="UX854Flange01Zpos"/>
+    </physvol>
+    <physvol name="pvUX854Cone02"             volume="lvUX854Cone02">
+      <position z="UX854Cone02Zpos"/>
+    </physvol>
+    <physvol name="pvUX854SupportFlange"      volume="lvUX854SupportFlange">
+      <position z="UX854SupportFlangeZpos"/>
+    </physvol>
+    <physvol name="pvUX854Cone03"             volume="lvUX854Cone03">
+      <position z="UX854Cone03Zpos"/>
+    </physvol>
+    <physvol name="pvUX854Cone04"             volume="lvUX854Cone04">
+      <position z="UX854Cone04Zpos"/>
+    </physvol>
+    <physvol name="pvUX854Win05"              volume="lvUX854Win05">
+      <position z="UX854Win05Zpos"/>
+    </physvol>
+    <physvol name="pvUX854Cyl06"              volume="lvUX854Cyl06">
+      <position z="UX854Cyl06Zpos"/>
+    </physvol>
+    <physvol name="pvUX854Cyl07"              volume="lvUX854Cyl07">
+      <position z="UX854Cyl07Zpos"/>
+    </physvol>
+    <physvol name="pvUX854Flange08"           volume="lvUX854Flange08">
+      <position z="UX854Flange08Zpos"/>
+    </physvol>
+    <physvol name="pvUX854Vacuum01"           volume="lvUX854Vacuum01">
+      <position z="0.5*UX854Vacuum01Lenght"/>
+    </physvol>
+    <physvol name="pvUX854Vacuum05"           volume="lvUX854Vacuum05">
+      <position z="UX854Vacuum01Lenght + 0.5*UX854Vacuum05Lenght"/>
+    </physvol>
+    <physvol name="pvUX854Vacuum06"
+             volume="lvUX854Vacuum06">
+      <position z="UX854Vacuum01Lenght + UX854Vacuum05Lenght+ 0.5*UX854Vacuum06Lenght"/>
+    </physvol>
+
+  </volume>
+</pipe>

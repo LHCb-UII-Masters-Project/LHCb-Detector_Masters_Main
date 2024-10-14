@@ -1,0 +1,65 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/07/2020                                                      -->
+<!--  First version:   02-02-2016 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for Std MAPMT Array in a Module -->
+<!-- This refers to the small MaPMTS and large PMTS                             -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+<!--  Now for Rich1 -->
+
+
+
+<constant name = "RhPMTMasterGapInStdECR" value="1.6*mm" />
+<constant name = "RhPMTMasterGapToStdECREdge" value="0.6*mm" />
+
+
+<constant name = "RhPMTMasterDeltaAbs" value="RhPMTMasterLengthSize+RhPMTMasterGapInStdECR" />
+
+<constant name ="RhPMTRotY" value="pi*rad"  />
+
+<constant name ="RhPMTRotationZInECRP0" value="pi*rad"  />
+<constant name ="RhPMTRotationZInECRP1" value="-0.5*pi*rad"  />
+<constant name ="RhPMTRotationZInECRP2" value="0.5*pi*rad"  />
+<constant name ="RhPMTRotationZInECRP3" value="0.0*rad"  />
+
+<constant name = "RhPMTMasterXLocationInECRBegin" value="-0.5*(RhPMTMasterLengthSize+RhPMTMasterGapInStdECR)" />
+<constant name = "RhPMTMasterYLocationInECRBegin" value="-0.5*(RhPMTMasterLengthSize+RhPMTMasterGapInStdECR)" />
+
+<constant name = "RhPMTMasterXLocationInECRP0"    value="RhPMTMasterXLocationInECRBegin" />
+<constant name = "RhPMTMasterXLocationInECRP1"    value="RhPMTMasterXLocationInECRP0+RhPMTMasterDeltaAbs" />
+<constant name = "RhPMTMasterXLocationInECRP2"    value="RhPMTMasterXLocationInECRP0" />
+<constant name = "RhPMTMasterXLocationInECRP3"    value="RhPMTMasterXLocationInECRP2+RhPMTMasterDeltaAbs" />
+
+<constant name = "RhPMTMasterYLocationInECRP0"    value="RhPMTMasterYLocationInECRBegin" />
+<constant name = "RhPMTMasterYLocationInECRP1"    value="RhPMTMasterYLocationInECRBegin" />
+<constant name = "RhPMTMasterYLocationInECRP2"    value="RhPMTMasterYLocationInECRP0+RhPMTMasterDeltaAbs" />
+<constant name = "RhPMTMasterYLocationInECRP3"    value="RhPMTMasterYLocationInECRP1+RhPMTMasterDeltaAbs" />
+
+<constant name = "RhPMTMasterZLocationInECR"      value="5.0*mm" />
+
+
+<!--   Now for Grand PMT in ECH -->
+
+<constant name ="RhPMTRotationZInECH" value="0.0*rad"  />
+
+<constant name = "RhGrandPMTMasterXLocationInECH" value="0.0*mm" />
+<constant name = "RhGrandPMTMasterYLocationInECH" value="0.0*mm" />
+<constant name = "RhGrandPMTMasterZLocationInECH" value= "RhPMTMasterZLocationInECR"  />
+
+
+<constant name = "RhPMTZLocationInModule"  value="-10.0*mm" />
+
+
+  </define>
+
+</lccdd>

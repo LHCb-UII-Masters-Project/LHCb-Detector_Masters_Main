@@ -1,0 +1,6 @@
+VPSystem: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+VPLeft: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+VPRight: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]

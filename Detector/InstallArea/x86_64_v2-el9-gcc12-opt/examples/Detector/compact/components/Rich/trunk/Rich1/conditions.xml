@@ -1,0 +1,61 @@
+<!-- ========================================================================== -->
+<!--  LHCb Rich1 Detector Conditions                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    20/10/2021                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_Rich1_cond_XML_reader" type="xml">
+
+      <conditions_config prefix="Conditions/Rich1"/>
+
+      <alignment detector="Rich1" path="Alignment/Detectors.yml" name="Rich1System"/>
+      <alignment_pattern path_regex=".*Rich1PmtPanel(\d)$" path="Alignment/PDPanels.yml" name="PDPanel${1}"/>
+      <alignment_pattern path_regex=".*Rich1Mirror2Master(Top|Bot)$" path="Alignment/Mirrors.yml" name="R1M2Master${1}"/>
+      <alignment_pattern path_regex=".*Rich1Mirror1QuadrantModuleQ(\d)$" path="Alignment/Mirrors.yml" name="R1M1Seg0${1}"/>
+      <alignment_pattern path_regex=".*Rich1Mirror2Seg(\d\d)$" path="Alignment/Mirrors.yml" name="R1M2Seg${1}"/>
+
+      <conditions path="ReadoutConf/PMT_R_PDMDB_DecodeMap.yml">
+        <condition name="PDMDB_R_DecodePixelMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/PMT_R_PDMDB_EncodeMap.yml">
+        <condition name="PDMDB_R_EncodePixelMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/R1D_Tel40CablingMap.yml">
+        <condition name="R1D_Tel40CablingMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/R1U_Tel40CablingMap.yml">
+        <condition name="R1U_Tel40CablingMap"/>
+      </conditions>
+
+      <conditions path="Environment/Gas.yml">
+        <condition name="RefractivityScaleFactor"/>
+      </conditions>
+
+      <conditions path="Online.yml">
+        <condition name="GasParameters"/>
+      </conditions>
+
+      <conditions path="HardwareProperties/PDProperties.yml">
+        <condition name="PDProperties"/>
+      </conditions>
+
+       <conditions path="HardwareProperties/ReadoutTimeInfo.yml">
+        <condition name="ReadoutTimeInfo" optional="1"/>
+	</conditions>
+
+      <conditions path="HardwareProperties/ChargeSharingAndCrossTalk.yml">
+        <condition name="ChargeSharingAndCrossTalk" optional="1"/>
+	</conditions>
+
+    </plugin>
+  </plugins>
+
+</lccdd>

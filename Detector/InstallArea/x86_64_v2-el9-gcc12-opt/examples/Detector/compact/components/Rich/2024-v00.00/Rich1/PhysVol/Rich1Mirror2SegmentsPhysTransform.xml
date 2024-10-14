@@ -1,0 +1,244 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  The  Rich1Mirror2Segments 0-7 are inside lvRich1Mirror2MasterTop  -->
+<!--  The  Rich1Mirror2Segments 8-15 are inside lvRich1Mirror2MasterBot  -->
+<!--   Rich1Mirror2Segments -  Top segments followed by the Bottom segments         -->
+<!--   The old names are kept for reference                                -->
+<!-- <physvol name="pvRich1Mirror2Seg00:0"     logvol="lvRich1Mirror2Seg00"> -->
+<!-- <physvol name="pvRich1Mirror2Seg01:0"     logvol="lvRich1Mirror2Seg01"> -->
+<!-- <physvol name="pvRich1Mirror2Seg02:0"     logvol="lvRich1Mirror2Seg02"> -->
+<!-- <physvol name="pvRich1Mirror2Seg03:0"     logvol="lvRich1Mirror2Seg03"> -->
+<!-- <physvol name="pvRich1Mirror2Seg04:0"     logvol="lvRich1Mirror2Seg04"> -->
+<!-- <physvol name="pvRich1Mirror2Seg05:0"     logvol="lvRich1Mirror2Seg05"> -->
+<!-- <physvol name="pvRich1Mirror2Seg06:0"     logvol="lvRich1Mirror2Seg06"> -->
+<!-- <physvol name="pvRich1Mirror2Seg07:0"     logvol="lvRich1Mirror2Seg07"> -->
+<!-- <physvol name="pvRich1Mirror2Seg08:0"     logvol="lvRich1Mirror2Seg08"> -->
+<!-- <physvol name="pvRich1Mirror2Seg09:0"     logvol="lvRich1Mirror2Seg09"> -->
+<!-- <physvol name="pvRich1Mirror2Seg010:0"     logvol="lvRich1Mirror2Seg10"> -->
+<!-- <physvol name="pvRich1Mirror2Seg11:0"     logvol="lvRich1Mirror2Seg11"> -->
+<!-- <physvol name="pvRich1Mirror2Seg12:0"     logvol="lvRich1Mirror2Seg12"> -->
+<!-- <physvol name="pvRich1Mirror2Seg13:0"     logvol="lvRich1Mirror2Seg13"> -->
+<!-- <physvol name="pvRich1Mirror2Seg14:0"     logvol="lvRich1Mirror2Seg14"> -->
+<!-- <physvol name="pvRich1Mirror2Seg15:0"     logvol="lvRich1Mirror2Seg15"> -->
+
+<!-- ======================================================================= -->
+<Rich1>
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg00" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg00Transform">
+     <transformation>
+        <position x ="Rh1Mirror2XCCShift00"
+                 y ="Rh1Mirror2YCCShift00"
+                 z ="Rh1Mirror2ZCCShift00"/>
+       <rotation y ="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg01" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg01Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift01"
+                 y ="Rh1Mirror2YCCShift01"
+                 z ="Rh1Mirror2ZCCShift01"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg02" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg02Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift02"
+                 y ="Rh1Mirror2YCCShift02"
+                 z ="Rh1Mirror2ZCCShift02"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg03" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg03Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift03"
+                 y ="Rh1Mirror2YCCShift03"
+                 z ="Rh1Mirror2ZCCShift03"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg04" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg04Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift04"
+                 y ="Rh1Mirror2YCCShift04"
+                 z ="Rh1Mirror2ZCCShift04"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg05" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg05Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift05"
+                 y ="Rh1Mirror2YCCShift05"
+                 z ="Rh1Mirror2ZCCShift05"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg06" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg06Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift06"
+                 y ="Rh1Mirror2YCCShift06"
+                 z ="Rh1Mirror2ZCCShift06"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg07" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg07Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift07"
+                 y ="Rh1Mirror2YCCShift07"
+                 z ="Rh1Mirror2ZCCShift07"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg08" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg08Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift08"
+                 y ="Rh1Mirror2YCCShift08"
+                 z ="Rh1Mirror2ZCCShift08"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg09" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg09Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift09"
+                 y ="Rh1Mirror2YCCShift09"
+                 z ="Rh1Mirror2ZCCShift09"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg10" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg10Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift10"
+                 y ="Rh1Mirror2YCCShift10"
+                 z ="Rh1Mirror2ZCCShift10"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg11" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg11Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift11"
+                 y ="Rh1Mirror2YCCShift11"
+                 z ="Rh1Mirror2ZCCShift11"/>
+       <rotation y="Rh1Mirror2YRot" />
+     </transformation>
+ </item>
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg12" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg12Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift12"
+                 y ="Rh1Mirror2YCCShift12"
+                 z ="Rh1Mirror2ZCCShift12"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg13" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg13Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift13"
+                 y ="Rh1Mirror2YCCShift13"
+                 z ="Rh1Mirror2ZCCShift13"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg14" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg14Transform">
+     <transformation>
+
+       <position x ="Rh1Mirror2XCCShift14"
+                 y ="Rh1Mirror2YCCShift14"
+                 z ="Rh1Mirror2ZCCShift14"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+
+
+
+ <item name="PhysVolName"    value="pvRich1Mirror2Seg15" />
+ <item name="TransformName"  value="pvRich1Mirror2Seg15Transform">
+     <transformation>
+
+       <position  x ="Rh1Mirror2XCCShift15"
+                  y ="Rh1Mirror2YCCShift15"
+                  z ="Rh1Mirror2ZCCShift15"/>
+       <rotation y="Rh1Mirror2YRot" />
+
+     </transformation>
+ </item>
+
+</Rich1>

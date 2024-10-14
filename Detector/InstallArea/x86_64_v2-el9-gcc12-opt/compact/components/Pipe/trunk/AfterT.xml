@@ -1,0 +1,116 @@
+<!--========================================================================== -->
+<!--  LHCb Detector Description                                                -->
+<!--========================================================================== -->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--========================================================================== -->
+<!-- XML description of the Beam Pipe after T                                  -->
+<!--========================================================================== -->
+<lccdd>
+
+  <detectors>
+    <!--==================================================================================-->
+    <!--==================================PiperAfter T====================================-->
+    <!--==================================================================================-->
+    <detector name="PipeAfterT" type="DD4hep_VolumeAssembly" parent="${PipeAfterT:parent}" vis="Pipe:Vis">
+      <!-- UX85-3 Cone 10 mrad of Beryllium 1.9 mm thick - Split T/Rich2 -->
+      <volume name="lvUX853Cone07B" material="Pipe:BeTV56" vis="Pipe:AfterT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-07B"
+              dz="UX853Cone07BLenght/2"
+              rmin2="UX853Cone07BRadiusZmax"
+              rmin1="UX853Cone07BRadiusZmin"
+              rmax2="UX853Cone07BRadiusZmax + UX853Cone07BThick"
+              rmax1="UX853Cone07BRadiusZmin + UX853Cone07BThick"/>
+      </volume>
+      <!-- UX85-3 Cone 10 mrad of Beryllium 2.0 mm thick -->
+      <volume name="lvUX853Cone08" material="Pipe:BeTV56" vis="Pipe:AfterT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-08"
+              dz="UX853Cone08Lenght/2"
+              rmin2="UX853Cone08RadiusZmax"
+              rmin1="UX853Cone08RadiusZmin"
+              rmax2="UX853Cone08RadiusZmax + UX853Cone08Thick"
+              rmax1="UX853Cone08RadiusZmin + UX853Cone08Thick"/>
+      </volume>
+      <!-- UX85-3 Cone 10 mrad of Beryllium 2.1 mm thick -->
+      <volume name="lvUX853Cone09" material="Pipe:BeTV56" vis="Pipe:AfterT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-09"
+              dz="UX853Cone09Lenght/2"
+              rmin2="UX853Cone09RadiusZmax"
+              rmin1="UX853Cone09RadiusZmin"
+              rmax2="UX853Cone09RadiusZmax + UX853Cone09Thick"
+              rmax1="UX853Cone09RadiusZmin + UX853Cone09Thick"/>
+      </volume>
+      <!-- UX85-3 Cone 10 mrad of Beryllium 2.3 mm thick -->
+      <volume name="lvUX853Cone10" material="Pipe:BeTV56" vis="Pipe:AfterT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-10"
+              dz="UX853Cone10Lenght/2"
+              rmin2="UX853Cone10RadiusZmax"
+              rmin1="UX853Cone10RadiusZmin"
+              rmax2="UX853Cone10RadiusZmax + UX853Cone10Thick"
+              rmax1="UX853Cone10RadiusZmin + UX853Cone10Thick"/>
+      </volume>
+      <!-- UX85-3 Cone 10 mrad of Beryllium 2.4 mm thick -->
+      <volume name="lvUX853Cone11" material="Pipe:BeTV56" vis="Pipe:AfterT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-11"
+              dz="UX853Cone11Lenght/2"
+              rmin2="UX853Cone11RadiusZmax"
+              rmin1="UX853Cone11RadiusZmin"
+              rmax2="UX853Cone11RadiusZmax + UX853Cone11Thick"
+              rmax1="UX853Cone11RadiusZmin + UX853Cone11Thick"/>
+      </volume>
+      <!-- UX85-3 Cone 10 mrad of Beryllium cylindrical part for support -->
+      <!-- Split Rich2/Downstream                                        -->
+      <volume name="lvUX853Cone12A" material="Pipe:BeTV56" vis="Pipe:AfterT">
+        <shape type="ConeSegment" name="UX85-3-Cone10mrad-12A"
+              dz="UX853Cone12ALenght/2"
+              rmin2="UX853Cone12ARadiusZmax"
+              rmin1="UX853Cone12ARadiusZmin"
+              rmax2="UX853Cone12AOuterRadius"
+              rmax1="UX853Cone12AOuterRadius"/>
+      </volume>
+      <!-- Vacuum in UX85-3 in whole AfterT lenght -->
+      <volume name="lvUX853Vacuum07B" material="Vacuum" vis="Pipe:AfterT">
+        <shape type="ConeSegment" name="UX85-3-Vacuum-07B"
+              dz="UX853AfterTLenght/2"
+              rmax1="UX853Cone07BRadiusZmin"
+              rmax2="UX853Cone12ARadiusZmax"/>
+      </volume>
+
+      <!-- Whole section: combination of sections -->
+      <envelope type="Assembly" name="lvUX853AfterT" vis="Pipe:AfterT">
+        <!-- Pipe of Be -->
+        <physvol name="pvUX853Cone07B" volume="lvUX853Cone07B">
+          <position z="UX853Cone07BZpos"/>
+        </physvol>
+        <physvol name="pvUX853Cone08" volume="lvUX853Cone08">
+          <position z="UX853Cone08Zpos"/>
+        </physvol>
+        <physvol name="pvUX853Cone09" volume="lvUX853Cone09">
+          <position z="UX853Cone09Zpos"/>
+        </physvol>
+        <physvol name="pvUX853Cone10" volume="lvUX853Cone10">
+          <position z="UX853Cone10Zpos"/>
+        </physvol>
+        <physvol name="pvUX853Cone11" volume="lvUX853Cone11">
+          <position z="UX853Cone11Zpos"/>
+        </physvol>
+        <physvol name="pvUX853Cone12A" volume="lvUX853Cone12A">
+          <position z="UX853Cone12AZpos"/>
+        </physvol>
+        <!-- Now the vacuum inside -->
+        <physvol name="pvUX853Vacuum07B" volume="lvUX853Vacuum07B">
+          <position z="0.5*UX853AfterTLenght"/>
+        </physvol>
+      </envelope>
+      <!-- Pipe log volume center AfterT is at split between T and Rich2 -->
+      <position z="UX853TRich2SplitZposIP - Regions:AfterMagnetZPos"/>
+      <nodebug/>
+    </detector>
+  </detectors>
+
+</lccdd>

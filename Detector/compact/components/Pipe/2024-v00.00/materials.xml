@@ -1,0 +1,280 @@
+<lccdd>
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+  <materials>
+    <!-- ### Pipe Aluminium ### -->
+    <element  name="Pipe:Al" formula="Al" Z="13.0">
+      <atom type="A" value="26.98" unit="g/mole"/>
+    </element>
+    <material formula="Pipe:Al" name="Pipe:Aluminum" state="solid" >
+      <D type="density" unit="g/cm3" value="2.699" />
+      <fraction n="1.0" ref="Pipe:Al" />
+    </material>
+
+    <!-- ### Pipe Copper ### -->
+    <element Z="29" formula="Pipe:Cu" name="Pipe:Cu" >
+      <atom type="A" unit="g/mol" value="63.5456" />
+    </element>
+
+    <material formula="Pipe:Cu" name="Pipe:Copper" state="solid" >
+      <RL type="X0" unit="cm" value="1.43558" />
+      <NIL type="lambda" unit="cm" value="15.5141"/>
+      <D type="density" unit="g/cm3" value="8.96"/>
+      <composite n="1" ref="Pipe:Cu"/>
+    </material>
+
+    <!-- ### Pipe Beryllium ### -->
+    <element  name="Pipe:Be" formula="Be" Z="4.0">
+      <atom type="A" value="9.01" unit="g/mole"/>
+    </element>
+
+    <!-- ### Pipe Beryllium ### -->
+    <material name="Pipe:Beryllium">
+      <D name="density" value="1.848" unit="g/cm3"/>
+      <fraction n="1.0" ref="Pipe:Be"/>
+    </material>
+
+    <!-- ### Pipe Aluminium Beryllium Alloy ### -->
+    <material name="Pipe:AlBe">
+      <D name="density" value="2.104" unit="g/cm3"/>
+      <fraction ref="Pipe:Al"    n="0.40"/>
+      <fraction ref="Pipe:Be"    n="0.60"/>
+    </material>
+
+    <!-- ### Pipe Aluminium Copper Alloy ### -->
+    <material name ="Pipe:AlCu">
+      <D name="density" value="2.83" unit="g/cm3"/>
+      <fraction ref="Pipe:Al"    n="0.93"/>
+      <fraction ref="Cu"         n="0.07"/>
+    </material>
+
+    <!-- ### Pipe Steel ### -->
+    <material name ="Pipe:Steel">
+      <D name="density" value="7.87" unit="g/cm3"/>
+      <fraction ref="Fe"    n="1.0"/>
+      <fraction ref="C"     n="0.0"/>
+    </material>
+
+    <!-- ### Pipe Al6061 ### -->
+    <material name ="Pipe:Al6061">
+      <D name="density" value="2.7" unit="g/cm3"/>
+      <fraction ref="Al" n="0.9762"/>
+      <fraction ref="Si" n="0.0070"/>
+      <fraction ref="Fe" n="0.0010"/>
+      <fraction ref="Cu" n="0.0026"/>
+      <fraction ref="Mg" n="0.0012"/>
+      <fraction ref="Mg" n="0.0090"/>
+      <fraction ref="Cr" n="0.0026"/>
+      <fraction ref="Zn" n="0.0001"/>
+      <fraction ref="Ti" n="0.0003"/>
+    </material>
+
+    <!-- ### Pipe Al2219 forging ### -->
+    <material name ="Pipe:Al2219F">
+      <D name="density" value="2.84" unit="g/cm3"/>
+      <fraction ref="Al" n="0.93288"/>
+      <fraction ref="Si" n="0.0006"/>
+      <fraction ref="Fe" n="0.0011"/>
+      <fraction ref="Cu" n="0.0590"/>
+      <fraction ref="Mn" n="0.0029"/>
+      <fraction ref="Mg" n="0.0010"/>
+      <fraction ref="Zr" n="0.0011"/>
+      <fraction ref="Ti" n="0.00052"/>
+      <fraction ref="Zn" n="0.0001"/>
+      <fraction ref="V"  n="0.0008"/>
+    </material>
+
+    <!-- ### Pipe Al2219 standard ### -->
+    <material name ="Pipe:Al2219S">
+      <D name="density" value="2.84" unit="g/cm3"/>
+      <fraction ref="Al" n="0.9168"/>
+      <fraction ref="Si" n="0.0020"/>
+      <fraction ref="Fe" n="0.0030"/>
+      <fraction ref="Cu" n="0.0680"/>
+      <fraction ref="Mn" n="0.0040"/>
+      <fraction ref="Mg" n="0.0002"/>
+      <fraction ref="Zr" n="0.0025"/>
+      <fraction ref="Ti" n="0.0010"/>
+      <fraction ref="Zn" n="0.0010"/>
+      <fraction ref="V"  n="0.0015"/>
+    </material>
+
+    <!-- ### Pipe Be TV56 ### -->
+    <material name ="Pipe:BeTV56">
+      <D name="density" value="1.85" unit="g/cm3"/>
+      <fraction ref="Be" n="0.9780"/>
+      <fraction ref="O"  n="0.0066"/>
+      <fraction ref="C"  n="0.01251"/>
+      <fraction ref="Si" n="0.00026"/>
+      <fraction ref="Fe" n="0.0015"/>
+      <fraction ref="Al" n="0.00018"/>
+      <fraction ref="Ti" n="0.00019"/>
+      <fraction ref="Cr" n="0.00027"/>
+      <fraction ref="Cu" n="0.00013"/>
+      <fraction ref="Mn" n="0.00012"/>
+      <fraction ref="Mg" n="0.00012"/>
+      <fraction ref="Ni" n="0.00012"/>
+    </material>
+
+    <!-- ### Pipe Stainless Steel 316LN ### -->
+    <material name ="Pipe:Steel316LN">
+      <D name="density" value="8.0" unit="g/cm3"/>
+      <fraction ref="Fe" n="0.61195"/>
+      <fraction ref="Cr" n="0.185"/>
+      <fraction ref="Mn" n="0.020"/>
+      <fraction ref="Ni" n="0.140"/>
+      <fraction ref="N"  n="0.002"/>
+      <fraction ref="Mo" n="0.030"/>
+      <fraction ref="P"  n="0.00045"/>
+      <fraction ref="C"  n="0.0003"/>
+      <fraction ref="S"  n="0.0003"/>
+      <fraction ref="Si" n="0.0100"/>
+    </material>
+
+
+    <!-- ### Pipe Aluminium EN AW-6082 ### -->
+    <material name="Pipe:Al6082">
+      <D name="density" value="2.70" unit="g/cm3"/>
+      <fraction ref="Al" n="0.9445"/>
+      <fraction ref="Si" n="0.0130"/>
+      <fraction ref="Fe" n="0.0050"/>
+      <fraction ref="Cu" n="0.0100"/>
+      <fraction ref="Mn" n="0.0100"/>
+      <fraction ref="Mg" n="0.0120"/>
+      <fraction ref="Zr" n="0.0020"/>
+      <fraction ref="Ti" n="0.0010"/>
+      <fraction ref="Cr" n="0.0025"/>
+    </material>
+
+    <!-- ### Pipe Aluminium EN AW-7075 ### -->
+    <material name="Pipe:AW7075">
+      <D name="density" value="2.70" unit="g/cm3"/>
+      <fraction ref="Al" n="0.8865"/>
+      <fraction ref="Si" n="0.004"/>
+      <fraction ref="Fe" n="0.0050"/>
+      <fraction ref="Cu" n="0.0160"/>
+      <fraction ref="Mn" n="0.0030"/>
+      <fraction ref="Mg" n="0.0250"/>
+      <fraction ref="Zr" n="0.0010"/>
+      <fraction ref="Ti" n="0.0010"/>
+      <fraction ref="Cr" n="0.0025"/>
+      <fraction ref="Zn" n="0.056"/>
+    </material>
+
+    <!-- ### Pipe Aerogel for bakeout ### -->
+    <material name="Pipe:BakeOutAerogel">
+      <D type="density" value="0.11" unit="g/cm3"/>
+      <composite ref="Si" n="1" />
+      <composite ref="O"  n="2" />
+    </material>
+
+    <!-- ### Pipe Mount Brass ### -->
+    <material name    = "Pipe:Brass">
+      <D type="density" value="8.53" unit="g/cm3"/>
+      <fraction ref = "Cu" n = "0.70"/>
+      <fraction ref = "Zn"   n = "0.30"/>
+    </material>
+
+    <!-- ### Pipe Mount AW2219 ### -->
+    <material name    = "Pipe:AW2219">
+      <D type="density" value="2.84" unit="g/cm3"/>
+      <fraction ref = "Al" n = "0.9168"/>
+      <fraction ref = "Cu" n = "0.0680"/>
+      <fraction ref = "Fe" n = "0.0030"/>
+      <fraction ref = "Mg" n = "0.0002"/>
+      <fraction ref = "Mn" n = "0.0040"/>
+      <fraction ref = "Si" n = "0.0020"/>
+      <fraction ref = "Ti" n = "0.0010"/>
+      <fraction ref = "V"  n = "0.0015"/>
+      <fraction ref = "Zn" n = "0.0010"/>
+      <fraction ref = "Zr" n = "0.0025"/>
+    </material>
+
+    <!-- ### Cables  FutureFibre ### -->
+
+    <material name="Pipe:CarbonForFibre">
+      <D type="density" value="1.76" unit="g/cm3"/>
+      <composite ref="C" n="1" />
+    </material>
+    <material name="Pipe:CarbonFibreResin">
+      <D type="density" value="1.21" unit="g/cm3"/>
+      <composite ref="C" n="36" />
+      <composite ref="H" n="4" />
+      <composite ref="O" n="10" />
+      <composite ref="N" n="1" />
+    </material>
+
+    <material name="Pipe:FutureFibre">
+      <D type="density" value="1.84" unit="g/cm3"/>
+      <fraction ref="Pipe:CarbonForFibre"   n="0.62" />
+      <fraction ref="Pipe:CarbonFibreResin" n="0.38" />
+    </material>
+
+    <!-- ### Cables  Technora ### -->
+    <material name="Pipe:Technora">
+      <D type="density" value="1.39" unit="g/cm3"/>
+      <composite ref="C"  n="8"/>
+      <composite ref="H"  n="4"/>
+      <composite ref="Cl" n="2"/>
+      <composite ref="O"  n="2"/>
+    </material>
+
+    <!-- ### Pipe Supports Celazole ### -->
+    <material name   ="Pipe:Celazole">
+      <D type="density" value="1.3" unit="g/cm3"/>
+      <composite ref="C" n="20"/>
+      <composite ref="H" n="12"/>
+      <composite ref="N" n="4"/>
+    </material>
+
+    <!-- ### Pipe Supports Titanium small pins ### -->
+    <material name   ="Pipe:PipeTitaniumG5">
+      <D type="density" value="4.42" unit="g/cm3"/>
+      <fraction ref="Al" n="0.06"/>
+      <fraction ref="Fe" n="0.0025"/>
+      <fraction ref="Ti" n="0.8955"/>
+      <fraction ref="V"  n="0.04"/>
+      <fraction ref="O"  n="0.0020"/>
+
+    </material>
+
+    <!-- ### Pipe Supports Sintimid ### -->
+    <material name   ="Pipe:Sintimid">
+      <D type="density" value="1.43" unit="g/cm3"/>
+      <composite ref="C"   n="18"/>
+      <composite ref="O"   n="5"/>
+      <composite ref="N" n="2"/>
+    </material>
+
+    <!--### Pipe Supports Sintimid15G ###-->
+    <material name   ="Pipe:Sintimid15G">
+      <D type="density" value="1.42" unit="g/cm3"/>
+      <fraction ref="Pipe:Sintimid" n="0.85"/>
+      <fraction ref="C"        n="0.15"/>
+    </material>
+
+    <!-- ### Cu OFE ### -->
+    <material name   ="Pipe:CuOFE">
+      <D type="density" value="8.96" unit="g/cm3"/>
+      <fraction ref="Cu" n="1.0"/>
+    </material>
+
+    <!-- ### Cu-Be 17410 ### -->
+    <material name   ="Pipe:CuBe17410">
+      <D type="density" value="8.80" unit="g/cm3"/>
+      <fraction ref="Cu" n="0.99"/>
+      <fraction ref="Be" n="0.004"/>
+      <fraction ref="Co"    n="0.006"/>
+    </material>
+  </materials>
+
+</lccdd>

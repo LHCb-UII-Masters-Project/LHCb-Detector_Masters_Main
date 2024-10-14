@@ -1,0 +1,92 @@
+<!--
+
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<lccdd>
+
+  <comment>Global definitions and parameters</comment>
+  <define>
+
+    <!-- These are the unique detector identifiers (volid=system) max range: 8 bits  -->
+    <constant name="BcmUp:ID"       value="1"/>
+    <constant name="BcmDown:ID"     value="2"/>
+    <constant name="Bls:ID"         value="3"/>
+    <constant name="NeutronShielding:ID"         value="4"/>
+    <constant name="VP:ID"          value="10"/>
+    <constant name="TV:ID"          value="10"/>
+    <constant name="UT:ID"          value="20"/>
+    <constant name="UP:ID"          value="20"/>
+    <constant name="FT:ID"          value="30"/>
+    <constant name="Rich1:ID"       value="40"/>
+    <constant name="Rich2:ID"       value="50"/>
+    <constant name="Ecal:ID"        value="60"/>
+    <constant name="Hcal:ID"        value="70"/>
+    <constant name="UT:Ecal"        value="100"/>
+    <constant name="UT:Hcal"        value="110"/>
+    <constant name="UT:Muon"        value="120"/>
+    <constant name="MP:ID"          value="130"/>
+    <constant name="Muon:ID"        value="200"/>
+    <constant name="M2Station:ID"        value="202"/>
+    <constant name="M3Station:ID"        value="203"/>
+    <constant name="M4Station:ID"        value="204"/>
+    <constant name="M5Station:ID"        value="205"/>
+
+    <!-- default parent volumes  for the sub-detectors-->
+    <constant name="Bls:parent"     value="/world/BeforeMagnetRegion/BeforeVelo" type="string"/>
+    <constant name="BcmUp:parent"   value="/world/BeforeMagnetRegion/BeforeVelo" type="string"/>
+    <constant name="BcmDown:parent" value="/world/DownstreamRegion/AfterMuon"    type="string"/>
+    <constant name="GValve:parent"  value="/world/BeforeMagnetRegion/BeforeVelo" type="string"/>
+    <constant name="MBXWUp:parent"  value="/world/UpstreamRegion"                type="string"/>
+    <constant name="Cavern:parent"  value="/world/Infrastructure"                type="string"/>
+    <constant name="Tunnel:parent"  value="/world/Infrastructure"                type="string"/>
+    <constant name="Bunker:parent"  value="/world/Infrastructure"                type="string"/>
+    <constant name="VP:parent"      value="/world/BeforeMagnetRegion"            type="string"/>
+    <constant name="TV:parent"      value="/world/BeforeMagnetRegion"            type="string"/>
+    <constant name="UT:parent"      value="/world/BeforeMagnetRegion"            type="string"/>
+    <constant name="UP:parent"      value="/world/BeforeMagnetRegion"            type="string"/>
+    <constant name="FT:parent"      value="/world/AfterMagnetRegion/T"           type="string"/>
+    <constant name="MP:parent"      value="/world/AfterMagnetRegion/T"           type="string"/>
+    <constant name="Rich1:parent"   value="/world/BeforeMagnetRegion"            type="string"/>
+    <constant name="Rich2:parent"   value="/world/AfterMagnetRegion"             type="string"/>
+    <constant name="Muon:parent"    value="/world/DownstreamRegion"              type="string"/>
+    <constant name="Magnet:parent"  value="/world/MagnetRegion"                  type="string"/>
+    <constant name="Ecal:parent"    value="/world/DownstreamRegion"              type="string"/>
+    <constant name="Hcal:parent"    value="/world/DownstreamRegion"              type="string"/>
+    <constant name="NeutronShielding:parent"     value="/world/DownstreamRegion" type="string"/>
+
+  </define>
+
+  <comment>Common Generic visualization attributes</comment>
+  <display>
+    <vis name="BlackVis"  alpha="1.0"  r="0.1" g="0.1" b="0.1" showDaughters="false"  visible="true"/>
+    <vis name="Red"       alpha="1.0"  r="1.0" g="0.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="Blue"      alpha="1.0"  r="0.0" g="0.0" b="1.0" showDaughters="true" visible="true"/>
+    <vis name="Green"     alpha="1.0"  r="0.0" g="1.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="Yellow"    alpha="1.0"  r="1.0" g="1.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="LightGrey" alpha="0.3"  r="0.3" g="0.3" b="0.3" showDaughters="true"  visible="true"/>
+    <vis name="InvisibleNoDaughters"   alpha="0.3" showDaughters="false" visible="false"/>
+    <vis name="InvisibleWithDaughters" alpha="0.3" showDaughters="true"  visible="false"/>
+  </display>
+
+
+    <!-- Invokes plugin that computes all alignments -->
+  <include ref="conditions.xml"/>
+
+  <comment>The region parameters are THE ONLY ONES we want to allow any subdetector to depend on</comment>
+  <define>
+    <!-- we can disable certain regions if desired.  -->
+    <constant name="Magnet:ignore"             value="0"/>
+    <constant name="UpstreamRegion:ignore"     value="0"/>
+    <constant name="BeforeMagnetRegion:ignore" value="0"/>
+    <constant name="MagnetRegion:ignore"       value="0"/>
+    <constant name="AfterMagnetRegion:ignore"  value="0"/>
+    <constant name="DownstreamRegion:ignore"   value="0"/>
+  </define>
+</lccdd>

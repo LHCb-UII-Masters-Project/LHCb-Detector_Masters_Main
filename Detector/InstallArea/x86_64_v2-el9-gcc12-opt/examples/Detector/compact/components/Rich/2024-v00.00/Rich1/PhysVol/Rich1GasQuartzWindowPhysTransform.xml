@@ -1,0 +1,50 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+
+<!--    Begin Rich1 Gas Quartz Window Phys          -->
+<!--                                                -->
+<!--     Rich1 Gas Quartz Window Volumes  are inside  -->
+<!--     LOGVOL lvRich1MagShH0 (Top) and lvRich1MagShH1 (bottom) -->
+<!--     The copy number is 10 for the top and 11 for the bottom. -->
+<!--     Old names kept for reference    -->
+<!--      <physvol  name="pvRich1GQuartzWH0:10"      -->
+<!--         volume="lvRich1GQuartzW" >             -->
+<!--       <physvol  name="pvRich1GQuartzWH1:11"     -->
+<!--        volume="lvRich1GQuartzW" >              -->
+
+<Rich1>
+
+
+    <item name="PhysVolName"    value="pvRich1GQuartzWH0" />
+    <item name="TransformName"  value="pvRich1GQuartzWH0Transform">
+      <transformation>
+           <position  x = "Rh1QuartzWindowX"
+                      y = "Rh1QuartzWindowYH0"
+                      z = "Rh1QuartzWindowZ" />
+           <rotation  x = "Rh1QuartzWRotXH0" />
+
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1GQuartzWH1" />
+    <item name="TransformName"  value="pvRich1GQuartzWH1Transform">
+      <transformation>
+           <position  x = "Rh1QuartzWindowX"
+                      y = "Rh1QuartzWindowYH1"
+                      z = "Rh1QuartzWindowZ" />
+           <rotation  x = "Rh1QuartzWRotXH1" />
+      </transformation>
+
+    </item>
+
+
+ </Rich1>

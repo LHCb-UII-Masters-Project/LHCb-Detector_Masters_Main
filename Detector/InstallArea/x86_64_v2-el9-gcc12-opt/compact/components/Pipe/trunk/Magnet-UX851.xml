@@ -1,0 +1,118 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<pipe>
+
+  <!-- ************************************************************** -->
+  <!-- * BEAM PIPE                                                  * -->
+  <!-- * Sections in MagnetRegion                                   * -->
+  <!-- *   from z=2270 mm to z=7620 mm                          * -->
+  <!-- *                                                            * -->
+  <!-- * UX85-1, Compensator at 2800mm, UX85-2, Bellow connection   * -->
+  <!-- * at 6900 and UX85-3                                         * -->
+  <!-- *                                                            * -->
+  <!-- * Author: Gloria Corti                                       * -->
+  <!-- *                                                            * -->
+  <!-- * Consists of                                                * -->
+  <!-- *   UX85-1:                                                  * -->
+  <!-- *     - conical sections of 10 mrad of different thickness   * -->
+  <!-- *       and materials                                        * -->
+  <!-- *     - flange                                               * -->
+  <!-- *   and corresponding vaccum conical sections                * -->
+  <!-- ************************************************************** -->
+
+  <!-- UX85-1 Cone 10 mrad of Beryllium 1mm thick   -->
+  <!-- Start at end of BeforeMagnet Region          -->
+  <!-- <volume vis="UT:PipeHeater" material="UT:PipeHeater" name="lvUTPipeHeaterDownstreamInMagnet">
+		<shape name="utPipeHeaterInUT" operation="subtraction" type="BooleanShape">
+			<shape dz="UTPipeHeaterDownstreamLength/2" name="UTPipeHeaterDownstream" rmax2="UTPipeHeaterDownstreamRadiusZmax+UTPipeHeaterDownstreamThick" rmax1="UTPipeHeaterDownstreamRadiusZmin+UTPipeHeaterDownstreamThick" rmin2="UTPipeHeaterDownstreamRadiusZmax" rmin1="UTPipeHeaterDownstreamRadiusZmin" type="ConeSegment" />
+			<shape rmax="UTPipeHeaterDownstreamRadiusZmax+UTPipeHeaterDownstreamThick+UTEpsilon" dz="UTPipeHeaterDownstreamLengthInUT/2+UTEpsilon" name="UTPipeHeaterDownstreamInUTSubMagnet" type="Tube" />
+			<position z="UTPipeHeaterDownstreamZmin+UTPipeHeaterDownstreamLengthInUT/2-UTPipeHeaterDownstreamPos-UTSystemZ-UTEpsilon" />
+		</shape>
+	</volume> -->
+
+  <volume name="lvUX851Cone08B" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-1-Cone10mrad-08B"
+           dz="0.5*UX851Cone08BLenght"
+           rmin1="UX851Cone08BRadiusZmin"
+           rmin2="UX851Cone08BRadiusZmax"
+           rmax1="UX851Cone08BRadiusZmin+UX851Cone08BThick"
+           rmax2="UX851Cone08BRadiusZmax+UX851Cone08BThick"/>
+  </volume>
+
+  <!-- UX85-1 Cone 10 mrad of Beryllium 1.5mm thick for welding  -->
+  <volume name="lvUX851Cone09" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-1-Cone10mrad-09"
+           dz="0.5*UX851Cone09Lenght"
+           rmin1="UX851Cone09RadiusZmin"
+           rmin2="UX851Cone09RadiusZmax"
+           rmax1="UX851Cone09RadiusZmin+UX851Cone09Thick"
+           rmax2="UX851Cone09RadiusZmax+UX851Cone09Thick"/>
+  </volume>
+
+  <!-- UX85-1 Cone 10 mrad of Alumimium 1.5mm thick for flange  -->
+  <volume name="lvUX851Cone10" material="Pipe:Al2219F" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-1-Cone10mrad-10"
+           dz="0.5*UX851Cone10Lenght"
+           rmin1="UX851Cone10RadiusZmin"
+           rmin2="UX851Cone10RadiusZmax"
+           rmax1="UX851Cone10RadiusZmin+UX851Cone10Thick"
+           rmax2="UX851Cone10RadiusZmax+UX851Cone10Thick"/>
+  </volume>
+
+  <!-- UX85-1 Flange  -->
+  <volume name="lvUX851Flange11" material="Pipe:Al2219F" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-1-Flange11"
+           dz="0.5*UX851Flange11Lenght"
+           rmin1="UX851Flange11RadiusZmin"
+           rmin2="UX851Flange11RadiusZmax"
+           rmax1="UX851Flange11OuterRadius"
+           rmax2="UX851Flange11OuterRadius"/>
+  </volume>
+
+  <!-- Vacuum in UX851InMagnet -->
+  <volume name="lvUX851Vacuum08B" material="Vacuum" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-1-Vacuum-08B"
+           dz="0.5*UX851Vacuum08BLenght"
+           rmax1="UX851Cone08BRadiusZmin"
+           rmax2="UX851Flange11RadiusZmax"/>
+  </volume>
+
+  <volume name="lvUX851InMagnet" vis="Pipe:Magnet">
+    <!-- <physvol name="pvUTPipeHeaterDownstreamInMagnet" volume="lvUTPipeHeaterDownstreamInMagnet">
+      <position z="UTPipeHeaterDownstreamLengthInMagnet-UTPipeHeaterDownstreamLength/2"/>
+    </physvol> -->
+
+    <physvol name="pvUX851Cone08B"               volume="lvUX851Cone08B">
+      <position z="UX851Cone08BZpos"/>
+    </physvol>
+
+    <physvol name="pvUX851Cone09"                volume="lvUX851Cone09">
+      <position z="UX851Cone09Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX851Cone10"                volume="lvUX851Cone10">
+      <position z="UX851Cone10Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX851Flange11"              volume="lvUX851Flange11">
+      <position z="UX851Flange11Zpos"/>
+    </physvol>
+
+    <!-- Now the vacuum inside -->
+    <physvol name="pvUX851Vacuum08B"             volume="lvUX851Vacuum08B">
+      <position z="0.5*UX851Vacuum08BLenght"/>
+    </physvol>
+
+  </volume>
+</pipe>

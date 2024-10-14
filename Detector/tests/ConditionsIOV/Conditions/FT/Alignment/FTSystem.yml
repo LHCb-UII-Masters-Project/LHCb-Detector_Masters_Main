@@ -1,0 +1,138 @@
+###############################################################################
+# (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration           #
+#                                                                             #
+# This software is distributed under the terms of the GNU General Public      #
+# Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".   #
+#                                                                             #
+# In applying this licence, CERN does not waive the privileges and immunities #
+# granted to it by virtue of its status as an Intergovernmental Organization  #
+# or submit itself to any jurisdiction.                                       #
+###############################################################################
+FTSystem: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X1Q0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X1Q1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X1Q2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X1Q3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1U: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1UQ0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1UQ1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1UQ2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1UQ3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1V: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1VQ0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1VQ1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1VQ2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1VQ3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X2Q0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X2Q1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X2Q2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T1X2Q3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X1Q0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X1Q1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X1Q2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X1Q3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2U: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2UQ0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2UQ1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2UQ2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2UQ3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2V: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2VQ0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2VQ1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2VQ2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2VQ3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X2Q0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X2Q1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X2Q2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T2X2Q3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X1Q0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X1Q1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X1Q2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X1Q3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3U: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3UQ0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3UQ1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3UQ2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3UQ3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3V: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3VQ0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3VQ1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3VQ2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3VQ3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X2Q0: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X2Q1: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X2Q2: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+T3X2Q3: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]

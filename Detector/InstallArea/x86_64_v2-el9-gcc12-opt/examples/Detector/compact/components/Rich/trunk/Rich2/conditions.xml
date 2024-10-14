@@ -1,0 +1,60 @@
+<!-- ========================================================================== -->
+<!--  LHCb Rich1 Detector Conditions                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    20/10/2021                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_Rich2_cond_XML_reader" type="xml">
+
+      <conditions_config prefix="Conditions/Rich2"/>
+
+      <alignment detector="Rich2" path="Alignment/Detectors.yml" name="Rich2System"/>
+      <alignment_pattern path_regex=".*Rich2PhDetPanel(\d)$" path="Alignment/PDPanels.yml" name="PDPanel${1}"/>
+      <alignment_pattern path_regex=".*Rich2SphMirrorMaster(\d)$" path="Alignment/Mirrors.yml" name="R2M1Master${1}"/>
+      <alignment_pattern path_regex=".*Rich2SecMirrorMaster(\d)$" path="Alignment/Mirrors.yml" name="R2M2Master${1}"/>
+      <alignment_pattern path_regex=".*Rich2SphMirror.*HexSeg(\d\d)$" path="Alignment/Mirrors.yml" name="R2M1Seg${1}"/>
+      <alignment_pattern path_regex=".*Rich2SecMirrorSeg(\d\d)$" path="Alignment/Mirrors.yml" name="R2M2Seg${1}"/>
+
+      <conditions path="ReadoutConf/PMT_R_PDMDB_DecodeMap.yml">
+        <condition name="PDMDB_R_DecodePixelMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/PMT_R_PDMDB_EncodeMap.yml">
+        <condition name="PDMDB_R_EncodePixelMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/PMT_H_PDMDB_DecodeMap.yml">
+        <condition name="PDMDB_H_DecodePixelMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/PMT_H_PDMDB_EncodeMap.yml">
+        <condition name="PDMDB_H_EncodePixelMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/R2A_Tel40CablingMap.yml">
+        <condition name="R2A_Tel40CablingMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/R2C_Tel40CablingMap.yml">
+        <condition name="R2C_Tel40CablingMap"/>
+      </conditions>
+
+      <conditions path="Environment/Gas.yml">
+        <condition name="RefractivityScaleFactor"/>
+      </conditions>
+
+      <conditions path="Online.yml">
+        <condition name="GasParameters"/>
+      </conditions>
+
+      <conditions path="HardwareProperties/PDProperties.yml">
+        <condition name="PDProperties"/>
+      </conditions>
+
+    </plugin>
+  </plugins>
+
+</lccdd>

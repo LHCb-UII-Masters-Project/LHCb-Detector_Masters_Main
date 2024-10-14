@@ -1,0 +1,54 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Main parameter file with references to the XML descriptions of            -->
+<!--  various components of LHCb-RICH1                                          -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+  </define>
+
+  <include ref="RichRun3GeneralGeomParam.xml"/>
+  <include ref="Rich1Run3MasterGeomParam.xml"/>
+
+<!--  The following line commented out assuming it is activated before Rich1 files -->
+<!--  <include ref="../../PipeGeomParams.xml"/>  -->
+
+  <include ref="Rich1Run3PhotDetSupFrameBasicGeomParam.xml" />
+  <include ref="RichPmtGeomParam/RichDBConfigParam.xml" />
+  <include ref="RichPmtGeomParam/RichPMTNumberingSchemeBasicParam.xml" />
+  <include ref="RichPmtGeomParam/RichPMTComponentGeomParam.xml" />
+  <include ref="RichPmtGeomParam/RichStdECRHGeomParam.xml" />
+  <include ref="RichPmtGeomParam/RichPMTModuleComponentGeomParam.xml" />
+  <include ref="RichPmtGeomParam/Rich1PMTStdModuleArrayGeomParam.xml" />
+  <include ref="RichPmtGeomParam/RichStdPMTArrayGeomParam.xml" />
+  <include ref="RichPmtGeomParam/RichPmtShieldingGeomParam.xml" />
+  <include ref="RichPmtGeomParam/RichGrandPMTComponentGeomParam.xml" />
+  <include ref="RichPmtGeomParam/Rich2PMTModuleArrayGeomParam.xml" />
+  <include ref="Rich1Run3MagShGeomParam.xml"/>
+  <include ref="Rich1Run3PhotDetSupFrameDerivedGeomParam.xml" />
+  <include ref="Rich1Run3VeloTankGeomParam.xml"/>
+  <include ref="Rich1Run3TTGeomParam.xml"/>
+  <include ref="Rich1Run3BeamPipeGeomParam.xml"/>
+  <include ref="Rich1Run3ExitWallGeomParam.xml" />
+  <include ref="Rich1Run3ExitWindowDiapGeomParam.xml"/>
+  <include ref="Rich1Run3SphMirrorGeomParam.xml"/>
+  <include ref="Rich1Run3FlatMirrorGeomParam.xml"/>
+  <include ref="Rich1Run3QuartzWindowGeomParam.xml" />
+  <include ref="Rich1Run3PhysVolGeneralCopyNumbers.xml" />
+  <include ref="../DetElem/Rich1DetUserParam.xml" />
+  <include ref="Rich1Run3TestGeomParam.xml" />
+
+  <materials>
+
+
+  </materials>
+</lccdd>

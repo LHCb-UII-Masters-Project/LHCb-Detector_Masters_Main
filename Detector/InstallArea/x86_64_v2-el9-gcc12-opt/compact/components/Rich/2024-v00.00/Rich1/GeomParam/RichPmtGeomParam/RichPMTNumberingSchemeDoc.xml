@@ -1,0 +1,317 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/07/2020                                                      -->
+<!--  First version:   31-10-2017 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains documentation for Rich PMT numbering scheme for easy reference -->
+<!--  ==========================================================================-->
+
+<!-- Numbering RICH PMTS in Rich1 and RICH2
+
+  For now same coverage as that of the HPD is given.
+  The scheme is completely re-made in January 2016.
+  The PMTs are inside EC and EC is inside the Module
+  There are two types of EC, one for standard PMT (called ECR) and other for large PMT  (called ECH)
+  Each ECR has a 2X2 array of standard (small) PMTs of type R11265 (R13742)
+  Each ECH has 1 large PMT  (R13743)
+
+  The following description is for the array of standard PMTs
+
+  Each ECR is such that it is symmetric along its X and Y directions.
+
+  In the following:  P  = 26.4 mm = size of PMT
+                     GA = 1.6 mm  = gap between adjacent pmt in ECR
+                     EA = 1.2/2 = 0.6 mm = gap between pmt and edge of ECR
+                     GE = 0.4 mm = gap between adjacent ECR
+                     ECRS= 26.4*2+1.6+1.2 = 55.6 mm
+                     Effective size of EC= ECRS+gap between ECRS = 55.6+0.4 = 56 mm
+                     EB= 0.1 mm = gap between Module edge and ECR edge along the length of module
+                     GM= 0.2 mm =gap between Module edge and ECR edge along the width  of module
+
+       ______________________________________Module_________________________________________________________   ______
+       |       GM                                                                                          |   |
+       |   ____________________________    _____________________    _________________    _______________   |   |
+       |   |                          |    |                    |   |                |   |              |  |   |
+       |   |  _____          ______   |    |                    |   |                |   |              |  |   |
+       |   |EA| P  |         |    |   |    |                    |   |                |   |              |  |   |
+       |   |  |    |   GA    |    |   |    |    ECRS            |   |                |   |              |  |   |
+       |EB |  _____          ______   |    |                    |   |                |   |              |  |   |
+       |   |                          |    |                    |   |                |   |              |  |   |
+       |   |                          |    |                    |   |                |   |              |  |   |
+       |   |  ______         ______   |    |                    |   |                |   |              |  |   |
+       |   |  |    |         |    |   |    |                    |   |                |   |              |  |   |
+       |   |  |    |         |    |   |    |                    |   |                |   |              |  |   |
+       |   |  ______         ______   |GE  |                    |   |                |   |              |  |LG |
+       |   |                          |    |                    |   |                |   |              |  |   |
+       |   ___________________________     ______________________   __________________   ________________  |   |
+       ____________________________________________________________________________________________________|   |
+                                                                                                    WG         |
+        ____________________________________________________________________________________________________   |_____
+       |                                                                                                   |
+       |                                                                                                   |
+    Pitch between adjacent PMTs in an ECR= 26.4+1.6=28 mm
+    Pitch between adjacent PMTs in nearby ECR in a module= 26.4+1.2+0.4=28 mm
+    Length size of a Module = ECR size*4 + gap between ECR*3 + Edge(EB) * 2 = 55.6*4 + 0.4*3 + 0.1*2 = 223.8 mm
+    Width of a module = Width of ECR + Edge (GM)*2 = 55.6 + 0.2*2 = 56 mm
+
+    Gap between adjacent modules along its length= LG = 0.2 mm
+    Gap between adjacent modules along its width = WG =0.5 mm
+
+     Hence
+      Pitch between adjancet PMTs in nearby modules along the module length (X)=
+                          P + EA*2 +EB*2 + LG = 26.4 + 1.2+ 0.1*2 + 0.2= 28 mm
+      Pitch between adjacent PMTs in nearby modules along the module width (Y) =
+                          P + EA*2 + GM*2 + WG = 26.4+ 1.2 + 0.2*2 + 0.5 = 28.5 mm
+
+     In RICH1 along X there are 6 Modules, the middle 4 have four ECR and the 2 edge ones have 3 ECR
+
+
+     Total length long X in RICH1 =LT= ( 55.6* 6 + LG*5 ) = 223.8*6 +  0.2*5 = 1343.8 mm
+     Total active length along X= 1343.8 - (55.6 *2 + EB*2 + GE*2 + EA*2 ) = 1343.8 - (55.6 *2 + 0.1*2 + 0.4*2 + 1.2) =
+                                             1343.8 - 113.4 = 1230.4 mm
+
+
+    In Rich1 along Y there are 11 Modules
+     Total active width along Y = 56 * 11 + 0.5* (11-1) = 621 mm
+
+ ____________________________________________________________________________________________________
+
+
+
+
+ PMT Numbering scheme
+
+
+   PMTs are numbered in a Module for convenience.
+
+     PMT CopyNumber = (ModuleCopyNumber * 16) + PmtCopyNumberInModule0.
+
+
+   Hence a  given pmt in the RICH system can be
+   identified by its  (a)Module Number and PMT number in its module. These are stored in smartid
+                      (b) Global PMT number by converting it into the format in (a)
+                           For this one uses ModuleNumber= Global PMTNumber/16
+                                             PMTNumber in module= GlobalPmtNumber -ModuleNumber*16
+
+
+
+
+    The EC number for a given PMT is made available by the appropriate  methods
+
+    In the following, it is assumed that one looks from the interaction action point to downstream
+
+    PMT numbers inside an EC
+                                Y
+       c1    c0
+    ____________|                ^
+ r1 |  P3    P2|                |
+    |     EC   |                |
+ r0 |  P1    P0|       X <_______
+    ____________
+
+    PMT Numbers and EC numbers inside a Module
+
+        c7     c6   c5     c4   c3     c2   c1     c0
+    _____________________________________________________
+    | |___________|___________|___________|___________| |
+    | |           |           |           |           | |
+ r1 | | P15   P14 | P11   P10 |P07    P06 |P03    P02 | |
+    | |    EC3    |    EC2    |    EC1    |    EC0    | |
+ r0 | | P13   P12 | P09   P08 |P05    P04 |P01    P00 | |
+    | |           |           |           |           | |
+    | ____________|___________|___________|____________ |
+    |___________________________________________________|
+
+
+Module numbers inside RICH1 TOP and RICH1 Bottom
+The modules in Umc0, Umc5, Bmc0 and Bmc5  have only 3 ECRs
+This means the Umc0 and Bmc5 have only EC1, EC2 and EC3 as these set of modules are on the C side edge.
+The umc5 and Bmc0 have only EC0,EC1,EC2 as these set of modules are on the A side edge.
+
+The top row in Umc0 and bottom row in Bmc5 have only  EC1, EC2.
+The top row in  umc5 and bottom row in Bmc0 have only EC3 and EC4
+
+Version as of May25 -2022  for the Rich1  Modules
+
+The Modules in Bottom panel are upside down locally. (ie. rotated by 180 degrees)
+
+      Umc0  Umc1  Umc2  Umc3 Umc4  Umc5
+
+
+  Umr0    M5    M4    M3    M2   M1   M0
+
+  Umr1    M11   M10   M9    M8   M7   M6
+
+  Umr2    M17   M16   M15   M14  M13  M12
+
+  Umr3    M23   M22   M21   M20  M19  M18
+
+  Umr4    M29   M28   M27   M26  M25  M24
+
+  Umr5    M35   M34   M33   M32  M31  M30
+
+  Umr6    M41   M40   M39   M38  M37  M36
+
+  Umr7    M47   M46   M45   M44  M43  M42
+
+  Umr8    M53   M52   M51   M50  M49  M48
+
+  Umr9    M59   M58   M57   M56  M55  M54
+
+  Umr10   M65   M64   M63   M62  M61  M60
+
+ A side            Beam           C side
+                                         ----------
+  Bmr10   M126  M127  M128  M129 M130 M131        |
+
+  Bmr9    M120  M121  M122  M123 M124 M125        |
+
+  Bmr8    M114  M115  M116  M117 M118 M119        |
+
+  Bmr7    M108  M109  M110  M111 M112 M113        |
+
+  Bmr6    M102  M103  M104  M105 M106 M107        |--- Upside down locally
+                                                       (rotated by 180 degrees)
+  Bmr5    M96   M97   M98   M99  M100 M101        |
+
+  Bmr4    M90   M91   M92   M93  M94  M95         |
+
+  Bmr3    M84   M85   M86   M87  M88  M89         |
+
+  Bmr2    M78   M79   M80   M81  M82  M83         |
+
+  Bmr1    M72   M73   M74   M75  M76  M77         |
+
+  Bmr0    M66   M67   M68   M69  M70  M71         |
+                                            -------
+          Bmc5  Bmc4  Bmc3  Bmc2 Bmc1  Bmc0
+
+
+The following part to be updated with the latest version of the scheme.  10-07-2020
+Update made in May 2022
+_______________________________________________________
+ PMT Numbers in RICH1 Top and Bottom detector panels
+
+Work in progress.
+
+Umr0 Upmr0    | /0095 0094/ 0093 0092 0091 0090 0089 0088 0087 0086 |__________|0007 0006 0005 0004 0003 0002 /0001 0000/ |
+
+Umr10 Upmr10  | 0960 0961 0964 0965 /0968 0969 0972 0973/0976 0977 0980 0981 0984 0985 0988 0989 |__________| 1040 1041 1044 1045 /1048 1049 1052 1053 / |
+
+
+
+End of parts to be updated with latest version of the scheme.
+
+  The pmt numbers between / / are non-existant. The vertical | are Module boundaries.
+
+             Number of        Number of      Num Panels   NumModules            Max NumPmts              Pmts Not filled                     Actual NumPmts Used
+             Module Rows      Module Col
+             in a Panel       in a Panel
+
+  RICH1        11                 6              2        11*6*2 = 132         11*6*2*16 = 2112(std)       (2+2) * 2 * 11 *2  + 4*2*2 = 192       2112-192= 1920
+
+  RICH2   6=2std)+                12             2        12*2*2= 48(std)+     12*(2*16)*2 =768(std)+
+            4(Grand)                                      12*4*2=96(Grand)     12*(4*4)*2  =384 (Grand)
+                                                         Total RICH2=144       Total RICH2=  1152               nil                                 1152
+
+
+  In RICH1, the Modules at the left and right edges have only 3 ECR. The Modules in the rows farthest from beamline
+            and at left/right edges have all ECRs  removed.
+
+
+
+___________________________________________________________________________________________________________________________________________________
+
+
+ Now for Rich2 the module copy numbers are as follows as one looks from interaction Point towards downstream along Z axis.
+
+Now for the Mixed array of standard PMTs and large PMTs. The middle 2 rows are set for standard PMT. The
+other 2 + 2 rows are set for large PMT. The Large PMTs are given a label 'L' in the list below. The standard
+PMTS have the label S. There are  a total of 12 vertical columns. Each Module is made of 4X1 EC-H.
+
+The module numbers are given the label M.
+
+
+                 LC11                              LC1       LC0                    RC11                    RC1     RC0
+
+       LR5      M198L                 ________    M138L      M132L                   M270L   ________M210L   M204L  RR0
+
+       LR4      M199L                 ________    M139L      M133L                   M2711L   ________M211L   M205L  RR1
+
+       LR3      M200S                 ________    M140S      M134S                   M272S   ________M212S   M206S  RR2
+A side                                                                 beam                                                C Side
+       LR2      M201S                 ________    M141S      M135S                   M273S   _______ M213S   M207S  RR3
+
+       LR1      M202L                 _________   M142L      M136L                   M274L   ________M214L   M208L  RR4
+
+       LR0      M203L                 _________   M143L      M137L                   M275L   ________M215L   M209L  RR5
+
+
+
+
+
+
+
+Now for the PMT numbers in Left and Right panels of RICH2.
+
+   Std-PMT Numbers and EC-R numbers inside a Module  (same as that in RICH1)
+
+
+        c7     c6   c5     c4   c3     c2   c1     c0
+    _____________________________________________________
+    | |___________|___________|___________|___________| |
+    | |           |           |           |           | |
+ r1 | | P15   P14 | P11   P10 |P07    P06 |P03    P02 | |
+    | |    EC3    |    EC2    |    EC1    |    EC0    | |
+ r0 | | P13   P12 | P09   P08 |P05    P04 |P01    P00 | |
+    | |           |           |           |           | |
+    | ____________|___________|___________|__________ |
+    |___________________________________________________|
+
+
+
+
+  Grand-PMT numbers inside an EC-H
+                                        Y
+         EC-H
+    _____________|                      ^
+    |            |                      |
+    |    G-P0    |                      |
+    |            }             X <_______
+    ______________
+
+
+
+  Grand PMT numbers and EC-H numbers inside a Module
+
+
+          H-c3           H-c2      H-c1         H-c0
+      _____________________________________________________
+      | |___________|___________|___________|___________| |
+      | |           |           |           |           | |
+      | |           |           |           |           | |
+      | |    ECH-3  |    ECH-2  |    ECH-1  |   ECH-0   | |
+ H-r0 | |     GP-3  |    GP-2   |    G-P1   |   G-P0    | |
+      | |           |           |           |           | |
+      | |___________|___________|___________|___________| |
+      |___________________________________________________|
+
+
+
+
+
+__________________________________________________________________________________________________________________________________________________
+
+
+-->
+
+<lccdd>
+  <define>
+  <!--   Rich1 and Rich2 MaPMT numbering scheme description   -->
+  </define>
+</lccdd>

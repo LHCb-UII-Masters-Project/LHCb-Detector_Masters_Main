@@ -1,0 +1,54 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/07/2020                                                      -->
+<!--  First version:   02-02-2016 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for MAPMT Module Array          -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+<constant name = "Rh1PMTModuleDeltaAbsInX" value= "RhPmtStdModuleLengthSize+RhPmtStdModuleAdjacentGapAlongLength" />
+<constant name = "Rh1PMTModuleDeltaAbsInY" value= "RhPmtStdModuleWidthSize+RhPmtStdModuleAdjacentGapAlongWidth" />
+<constant name = "Rh1PMTNumModulesInX"    value="Rh1NumPMTModulesInRow"  />
+<constant name = "Rh1PMTNumModulesInY"    value="Rh1NumPMTModulesInColumn" />
+<constant name = "Rich1TotalNumberofModules" value= "Rh1TotalNumPMTModules" />
+<constant name = "RhNumPmtsInECR"  value="RhNumPMTInECR" />
+<constant name = "RhNumECRInModule"  value="RhNumECRInStdModule" />
+<constant name = "Rich1MaxNumberofPmts"  value="Rich1TotalNumberofModules*RhNumPmtsInECR*RhNumECRInModule" />
+
+
+<constant name="Rh1PMTModuleXLocationStartTop"  value="-0.5*Rh1PMTModuleDeltaAbsInX*(Rh1PMTNumModulesInX-1)" />
+<constant name="Rh1PMTModuleYLocationStartTop"  value="0.5*Rh1PMTModuleDeltaAbsInY*(Rh1PMTNumModulesInY-1)" />
+<constant name="Rh1PMTModuleXLocationStartBot"  value="-1.0*Rh1PMTModuleXLocationStartTop" />
+<constant name="Rh1PMTModuleYLocationStartBot"  value="-1.0*Rh1PMTModuleYLocationStartTop" />
+<constant name="Rh1PMTModuleZShift"  value="0.0*mm" /> 
+<constant name="Rh1PMTModuleMasterZ"  value="-0.5*Rh1PhDetSupZSize+0.5*RhPMTModuleZSize +Rh1PhDetSupTolerence+Rh1PMTModuleZShift" />
+<constant name = "Rh1PMTModuleTopShiftX"  value="Rh1PMTModuleDeltaAbsInX" />
+<constant name = "Rh1PMTModuleTopShiftY"  value="-1.0*Rh1PMTModuleDeltaAbsInY" />
+<constant name = "Rh1PMTModuleBotShiftX"  value="-1.0*Rh1PMTModuleDeltaAbsInX" />
+<constant name = "Rh1PMTModuleBotShiftY"  value="Rh1PMTModuleDeltaAbsInY" />
+
+<constant name ="RhPMTModuleRotZ" value="pi*rad" />
+
+<!-- for use in Brunel for the size of the detector plane -->
+
+<constant name = "Rh1PMTModulePlaneXEdgeTop" value ="Rh1PMTModuleXLocationStartTop-0.5*Rh1PMTModuleDeltaAbsInX"  />
+<constant name = "Rh1PMTModulePlaneYEdgeTop" value ="Rh1PMTModuleYLocationStartBot-0.5*Rh1PMTModuleDeltaAbsInY"  />
+<constant name = "Rh1PMTModulePlaneXEdgeBot" value ="-1*Rh1PMTModulePlaneXEdgeTop"  />
+<constant name = "Rh1PMTModulePlaneYEdgeBot" value ="-1*Rh1PMTModulePlaneYEdgeTop"  />
+
+
+<constant name = "Rh1PMTModuleDeltaAbsHalfInX" value="-0.5*Rh1PMTModuleDeltaAbsInX" />
+<constant name = "Rh1PMTModuleDeltaAbsHalfInY" value="-0.5*Rh1PMTModuleDeltaAbsInY" />
+
+  </define>
+
+</lccdd>
+ 

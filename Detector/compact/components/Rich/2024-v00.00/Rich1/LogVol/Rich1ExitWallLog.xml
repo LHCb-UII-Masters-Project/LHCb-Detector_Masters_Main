@@ -1,0 +1,114 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1 ExitWall logVols.                                                    -->
+<!--  ========================================================================== -->
+
+<!--     Rich1Exit wall has two G10 and PMI plates. They are in Rich1SubMaster.  -->
+<!--      The beampipe flange tube  and beampipe cone are                        -->
+<!--      subtracted.                                                            -->
+<!--      All the parts of the ExitWal are inside the ExitwallMaster.           -->
+<!--  ==========================================================================-->
+<Rich1>
+
+  <volume name="lvRich1ExitWallMaster" material="Rich:R1RadiatorGas" vis="Rich:VisRich1ExitWall"  >
+     <shape type="BooleanShape" operation="subtraction" name="Rich1ExitWallMasterBeamPipeFlangeHole">
+       <shape type="Box" name="Rich1ExitWallMaster"
+         dx="Rh1ExitWallMasterXSize*RhHalfSize"
+         dy="Rh1ExitWallMasterYSize*RhHalfSize"
+         dz="Rh1ExitWallMasterZSize*RhHalfSize" />
+      <shape type="Tube" name="Rich1ExitWallBeamPipeTubeHoleSubEx"
+                 dz   = "Rh1BeamPipeHoleInExitWindowZLargeValue*RhHalfSize"
+                 rmax = "Rh1BeamPipeHoleRadiusInExitWindow" />
+       <position  z   = "Rh1BeamPipeHoleInExitWallMasterZ" />
+     </shape>
+
+  </volume>     <!-- end lvRich1ExitWallMaster -->
+
+  <volume name="lvRich1ExitG10Upstr" material="Rich:Rich1G10"  vis="Rich:VisRich1ExitG10Upstr"  >
+     <shape type="BooleanShape" operation="subtraction" name="Rich1ExitUpG10BeamPipeHole">
+           <shape type="Box" name="Rich1ExitG10UpstrBox"
+               dx="Rh1ExitG10XSize*RhHalfSize"
+               dy="Rh1ExitG10YSize*RhHalfSize"
+               dz="Rh1ExitG10ZSize*RhHalfSize" />
+           <shape type="Tube"  name="Rich1ExitUpG10HoleSub"
+               dz="Rh1BeamPipeHoleInExitWindowZLargeValue*RhHalfSize"
+               rmax ="Rh1BeamPipeHoleRadiusInExitWindow" />
+           <position  z="Rh1BeamPipeHoleInExitWallUpstrG10Z" />
+     </shape>
+
+ </volume>     <!-- end lvRich1ExitG10Upstr -->
+
+
+  <volume name="lvRich1ExitG10Dnstr" material="Rich:Rich1G10"  vis="Rich:VisRich1ExitG10Dnstr" >
+     <shape type="BooleanShape" operation="subtraction" name="Rich1ExitDnG10BeamPipeHole">
+           <shape type="Box" name="Rich1ExitG10DnstrBox"
+               dx="Rh1ExitG10XSize*RhHalfSize"
+               dy="Rh1ExitG10YSize*RhHalfSize"
+               dz="Rh1ExitG10ZSize*RhHalfSize" />
+           <shape type="Tube"  name="Rich1ExitDnG10HoleSub"
+               dz="Rh1BeamPipeHoleInExitWindowZLargeValue*RhHalfSize"
+               rmax  ="Rh1BeamPipeHoleRadiusInExitWindow" />
+           <position z="Rh1BeamPipeHoleInExitWallDnstrG10Z" />
+     </shape>
+
+ </volume>     <!-- end lvRich1ExitG10Dnstr -->
+
+  <volume name="lvRich1ExitPMI" material="Rich:Rich1PMI" vis="Rich:VisRich1ExitPMI"   >
+     <shape type="BooleanShape" operation="subtraction"  name="Rich1ExitPMIBeamPipeHole">
+            <shape type="Box" name="Rich1ExitPMIBox"
+               dx ="Rh1ExitPMIXSize*RhHalfSize"
+               dy ="Rh1ExitPMIYSize*RhHalfSize"
+               dz="Rh1ExitPMIZSize*RhHalfSize" />
+           <shape type="Tube" name="Rich1ExitPMIHoleSub"
+               dz="Rh1BeamPipeHoleInExitWindowZLargeValue*RhHalfSize"
+               rmax ="Rh1BeamPipeHoleRadiusInExitWindow" />
+           <position  z="Rh1BeamPipeHoleInExitWallPMIZ" />
+     </shape>
+
+  </volume>     <!-- end lvRich1ExitPMI -->
+
+  <volume name="lvRich1ExitDiaphramCentral" material="Rich:Rich1DiaphramMaterial" vis="Rich:VisRich1ExitDiaphramCentral" >
+           <shape type="Tube" name="Rich1ExitDiapCentral"
+                    dz="Rh1DiaphramCentralZSize*RhHalfSize"
+                    rmax ="Rh1DiaphramCentralOuterRad"
+                    rmin ="Rh1DiaphramCentralInnerRad" />
+
+  </volume>     <!-- end lvRich1ExitDiaphramcentral -->
+
+  <volume name="lvRich1ExitDiaphramCentralPlugUps" material="Rich:Rich1DiaphramMaterial" vis="Rich:VisRich1ExitDiaphramPlug" >
+           <shape type="Tube"  name="Rich1ExitDiapCentralPlugUps"
+              dz   = "Rh1DiaphramCentralPlugZSize*RhHalfSize"
+              rmax = "Rh1DiaphramCentralPlugOuterRadUps"
+              rmin = "Rh1DiaphramCentralPlugInnerRadUps" />
+  </volume>     <!-- end lvRich1ExitDiaphramcentralPlug Ups -->
+
+  <volume name="lvRich1ExitDiaphramCentralPlugDns" material="Rich:Rich1DiaphramMaterial" vis="Rich:VisRich1ExitDiaphramPlug">
+           <shape type="Tube"  name="Rich1ExitDiapCentralPlugDns"
+              dz  = "Rh1DiaphramCentralPlugZSize*RhHalfSize"
+              rmax= "Rh1DiaphramCentralPlugOuterRadDns"
+              rmin= "Rh1DiaphramCentralPlugInnerRadDns" />
+  </volume>     <!-- end lvRich1ExitDiaphramcentralPlug Ups -->
+
+  <volume name="lvRich1ExitDiaphramMiddle" material="Rich:Rich1DiaphramMaterial"  vis="Rich:VisRich1ExitDiaphramPlug">
+           <shape type="Tube"   name="Rich1ExitDiapMid"
+               dz  = "Rh1DiaphramMidPartZSize*RhHalfSize"
+               rmax= "Rh1DiaphramMidPartOuterRad"
+               rmin= "Rh1DiaphramMidPartInnerRad" />
+  </volume>     <!-- end lvRich1ExitDiaphramMidPart -->
+
+   <volume name="lvRich1ExitDiaphramPeriphery" material="Rich:Rich1DiaphramMaterial"  vis="Rich:VisRich1ExitDiaphramCentral">
+           <shape type="Tube"  name="Rich1ExitDiapPerh"
+                 dz   = "Rh1DiaphramPerhZSize*RhHalfSize"
+                 rmax = "Rh1DiaphramPerhOuterRad"
+                 rmin ="Rh1DiaphramPerhInnerRad" />
+  </volume>     <!-- end lvRich1ExitDiaphramPeriphery -->
+
+</Rich1>

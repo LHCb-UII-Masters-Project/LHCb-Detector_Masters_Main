@@ -1,0 +1,36 @@
+#!/bin/bash -e
+#####################################################################################
+# (c) Copyright 1998-2020 CERN for the benefit of the LHCb and ATLAS collaborations #
+#                                                                                   #
+# This software is distributed under the terms of the Apache version 2 licence,     #
+# copied verbatim in the file "LICENSE".                                            #
+#                                                                                   #
+# In applying this licence, CERN does not waive the privileges and immunities       #
+# granted to it by virtue of its status as an Intergovernmental Organization        #
+# or submit itself to any jurisdiction.                                             #
+#####################################################################################
+
+# Check for warnings in build logs passed on the command line
+
+summary=
+
+# Collect warnings and print full logs if there are any
+for log in "$@"; do
+  warnings=$(grep 'warning:' "${log}") || test $? -le 1
+
+  if [ -n "$warnings" ]; then
+    echo -e "\nFull build log for ${log}:\n"
+    cat "${log}"
+    summary+="Found $(wc -l <<<"${warnings}") compilation warnings in ${log}:"
+    summary+=$'\n'
+    summary+=$(sort <<< "${warnings}" | uniq -c | sort -bg)
+    summary+=$'\n\n'
+  fi
+done
+
+# Print a summary of warnings, if any, and fail
+if [ -n "$summary" ]; then
+  echo ''
+  echo "$summary"
+  exit 1
+fi

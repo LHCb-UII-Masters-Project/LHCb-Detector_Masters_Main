@@ -1,0 +1,558 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!-- Modif with survey parameters 12/04/2023  Sajan Easo                        -->
+<!--  ==========================================================================-->
+<!-- This file has the geometry parameters for Rich1Mirror1 which are the spherical mirrors -->
+<!--     which within the acceptance of LHCb  and are near the beampipe  -->  
+<!--  Begin   Rich1Mirror1GeomParameters     -->
+<!--  This is for the Vertical Rich1.            -->
+<!-- Mirror1 from CMA:  There 4 quadrants with 1 mirrorsegment in each quadrant -->
+<!--       The mirrors are positioned using their Center of curvature and tilt angle. -->
+<!--       There is a gap between Mirror1 mirrors in adjacent quadrants. These gaps are  -->
+<!--      implemented along phi and theta.   -->
+<!--       The Mirror1 copy numbers for the G4 physical volume are as follows. Looking  -->
+<!--       downstream from the interaction point along positive Z axis:                 -->
+
+
+<!--        Q0      0               Q1      1            -->
+
+
+<!--                      beam                          -->
+
+
+<!--        Q3     3                Q2      2          -->
+
+
+
+<!--       The Mirror1 has various  spherical segments.   -->
+<!--       There is  a Rich1Mirror1Master which contains all the volumes associated to the Mirror1. This is -->
+<!--       made of c4f10 and is a rectangular box.                                                          -->
+<!--       There is a rectangular frame named Rich1Mirror1Frame which goes around -->
+<!--        all the four segments and it is                                       -->
+<!--       made of Aluminium.                                                     -->
+<!--       There are four spherical volumes named Rich1Mirror1QuadrantModule      -->
+<!--       which contain the components of the mirror1 in                         -->
+<!--       each quadrant and it is made of c4f10. In each   Rich1Mirror1QuadrantModule there are three spherical -->
+<!--       segments, one for the glasscoating, second for the innerCarbonFibre segment and the third for the     -->
+<!--       outerCarbonfibre segment. Each of the Rich1Mirror1QuadrantModule also -->
+<!--       contains a set of reinforement cylinders which                        -->
+<!--      join the innerCarbonFibreSegment and the outerCarbonfibreSegment.      -->
+
+<!--      The hole for the beampipe is cut away using boolean subtraction from all the  -->
+<!--      relevent modules. ie. from the  Rich1Mirror1Master,                           -->
+<!--      Rich1Mirror1QuadrantModule and the spherical segments inside the Rich1Mirror1QuadrantModule.  -->
+
+<!--      Since we are using the survey measurements of the real mirrors and since each mirror  -->
+<!--      segment is slightly different                                                         -->
+<!--      than the other segments, all volumes are unique in the sense that there is a single   -->
+<!--      phyical volume for each logical                                                        -->
+<!--      volume for all the components of Mirror1. The copy numbering scheme indicated above   -->
+<!--     is still used when placing the  volumes.                                               -->
+
+<!--       The convention of copy numbers here is different than that in the survey measurements. --> 
+<!--       The survey uses the convention              --> 
+<!--             2 1                                   -->
+
+
+<!--             beam                                 -->
+<!--            4 3                                   --> 
+<!--      from EDMS document 860274 as one looks downstream from the interaction point. -->
+
+<!--      SE Jan-2008.                               -->
+
+<!--      Latest modification from the survey measurements of Dave Websdale in August11-2008-SE -->
+<!-- In 2023 Marco survey the Mirrors are labelled as follows and the numbers from these are converted --> 
+<!-- to the convention listed -->
+<!-- above (EDMS 2607404) . In the survey, looking along the postive Z axis:    -->
+
+<!--           M1                      M2     -->
+
+<!--                     beam                 -->
+
+<!--           M3                      M4     -->
+<!-- In this case surveyM1=LHCbQ0, surveyM2=LHCbQ1, surveyM3=LHCbQ3, surveyM4=LHCbQ2    --> 
+
+<!--  In the Marco Survey in the LHCb cavern (EDMS EDMS 2643842.v1), the survey measurements of the RICH1 mirrors are -->
+<!--  listed. These are used from now onwards.  ( April-2023)    -->
+<!-- The ROC of the spherical mirrors are listed in EDMS2175891/1 -->
+<!-- In this version, the mirror tilts are reversed to their nominal values -->
+
+
+
+
+<!--  Begin of Rich1 Mirror1 parameter inputs -->
+
+<lccdd>
+  <define>
+
+<!-- The following parameter is set to 2 since the spherical and flat mirror systems constitute 2 systems -->
+<!--  Not used for now. Hence commented out                      -->
+<!-- <constant name="Rh1NumberOfMirrorSystems"  value="2" />     -->
+
+<!-- Listing the quadrant module, carbnfibre innerlayer and outerlayer. They constitute 3 systems -->
+<!-- They are listed in the sequence quadrantModule,carbnfibreInnerlayer  carbnfibreOuterlayer  -->
+<!-- the systems for detector element are only 2 which are the quadrant module and carbon fibre inner layer -->
+<!-- The carbon fibre cylinders are listed separately    -->
+
+<constant name="Rh1NumberOfMirror1SubSystems" value="3" />
+<constant name="Rh1NumberOfMirror1DetSubSystems" value="2" />
+
+<!--  ROC of the spherical mirror used in Run3 -->
+
+<constant name="Rh1Mirror1InnerR" value="3650.0*mm"/>
+
+<constant name="Rh1Mirror1CaFiThickness" value="1.5*mm"/>
+
+<!-- values from survey done by Marco Adinolfi et.al. and later  were provided to software in April 2023 -->
+<!-- The survey results in different COC in the four quadrants whereas the old nominal values were same in top and Bottom parts -->
+<!-- In this version the following switched back to nominal values. July29-2023 -->
+
+<!-- <constant name="Rh1Mirror1CCLHCbQ0XTop" value="0.08*mm"/>  -->     <!-- wrt the LHCborigin -->
+<!--
+<constant name="Rh1Mirror1CCLHCbQ1XTop" value="0.08*mm"/>       
+<constant name="Rh1Mirror1CCLHCbQ2XBot" value="-0.4*mm"/>       
+<constant name="Rh1Mirror1CCLHCbQ3XBot" value="-0.4*mm"/>
+
+<constant name="Rh1Mirror1CCLHCbQ0YTop" value="932.82*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ1YTop" value="932.82*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ2YBot" value="-932.98*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ3YBot" value="-932.98*mm"/>
+
+<constant name="Rh1Mirror1CCLHCbQ0ZTop" value="-1502.55*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ1ZTop" value="-1502.55*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ2ZBot" value="-1500.10*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ3ZBot" value="-1500.10*mm"/>
+-->
+<!-- test values old nominal-->
+
+<constant name="Rh1Mirror1CCLHCbQ0XTop" value="0.0*mm"/>       <!-- wrt the LHCborigin -->
+<constant name="Rh1Mirror1CCLHCbQ1XTop" value="0.0*mm"/>       
+<constant name="Rh1Mirror1CCLHCbQ2XBot" value="0.0*mm"/>       
+<constant name="Rh1Mirror1CCLHCbQ3XBot" value="0.0*mm"/>
+
+<constant name="Rh1Mirror1CCLHCbQ0YTop" value="932.89711*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ1YTop" value="932.89711*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ2YBot" value="-932.89711*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ3YBot" value="-932.89711*mm"/>
+
+<constant name="Rh1Mirror1CCLHCbQ0ZTop" value="-1493.28601*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ1ZTop" value="-1493.28601*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ2ZBot" value="-1493.28601*mm"/>
+<constant name="Rh1Mirror1CCLHCbQ3ZBot" value="-1493.28601*mm"/>
+
+
+<!-- Nominal values for top and bottom -->
+<!-- These not used in the future. However the parameters are kept in the interim period to avoid -->
+<!-- potential crashes in some applications             -->
+<!-- The actual mirrors are created using the survey info listed above  -->
+<constant name="Rh1Mirror1CCLHCbXTop" value="Rh1Mirror1CCLHCbQ0XTop"/>   <!-- wrt the LHCborigin -->
+<constant name="Rh1Mirror1CCLHCbYTop" value="Rh1Mirror1CCLHCbQ0YTop"/>
+<constant name="Rh1Mirror1CCLHCbZTop" value="Rh1Mirror1CCLHCbQ0ZTop"/>
+
+<constant name="Rh1Mirror1CCLHCbXBot" value="Rh1Mirror1CCLHCbQ2XBot"/>    
+<constant name="Rh1Mirror1CCLHCbYBot" value="Rh1Mirror1CCLHCbQ2YBot"/>
+<constant name="Rh1Mirror1CCLHCbZBot" value="Rh1Mirror1CCLHCbQ2ZBot"/>
+
+<constant name="Rh1Mirror1CCLHCbX" value="Rh1Mirror1CCLHCbXTop"/>      <!-- wrt the LHCborigin the top values is kept for backward compatibility-->
+<constant name="Rh1Mirror1CCLHCbY" value="Rh1Mirror1CCLHCbYTop"/>      <!-- these three lines can be removed in the future -->
+<constant name="Rh1Mirror1CCLHCbZ" value="Rh1Mirror1CCLHCbZTop"/>   
+
+<!-- Nominal values until April 2023 -->
+<!-- These not used in the future. However the parameters were kept to avoid -->
+<!-- potential crashes in some applications             -->
+<!-- <constant name="Rh1Mirror1CCLHCbXTop" value="0.0*mm"/>   -->    <!-- wrt the LHCborigin -->
+<!-- <constant name="Rh1Mirror1CCLHCbYTop" value="932.89711*mm"/> --> 
+<!-- <constant name="Rh1Mirror1CCLHCbZTop" value="-1493.28601*mm"/> --> 
+<!-- <constant name="Rh1Mirror1CCLHCbXBot" value="0.0*mm"/>   -->     <!-- wrt the LHCborigin -->
+<!-- <constant name="Rh1Mirror1CCLHCbYBot" value="-1.0*Rh1Mirror1CCLHCbYTop"/> --> 
+<!-- <constant name="Rh1Mirror1CCLHCbZBot" value="Rh1Mirror1CCLHCbZTop"/>  --> 
+<!-- End of old values -->
+
+
+
+<!-- now for the radial sizes -->
+
+<constant name="Rh1Mirror1CaFiInnerSegInnerR" value="Rh1Mirror1InnerR"/>
+<constant name="Rh1Mirror1CaFiInnerSegOuterR" value="Rh1Mirror1CaFiInnerSegInnerR+Rh1Mirror1CaFiThickness"/>
+
+<constant name="Rh1Mirror1CaFiCylinderLength" value= "20.0*mm"/>
+
+<constant name="Rh1Mirror1CaFiCylinderToSegmentGap" value="5.0*mm"/> 
+
+<constant name="Rh1Mirror1CaFiOuterSegInnerR" value = "Rh1Mirror1CaFiInnerSegOuterR+Rh1Mirror1CaFiCylinderLength+2.0*Rh1Mirror1CaFiCylinderToSegmentGap"/>
+<constant name="Rh1Mirror1CaFiOuterSegOuterR" value = "Rh1Mirror1CaFiOuterSegInnerR+Rh1Mirror1CaFiThickness"/>
+
+
+<!-- the following is nominally 33 mm  composed of 2 layers 1.5 thickness each and the cylider of 20 mm and the two gaps 5 mm each.-->
+<constant name="Rh1Mirror1NominalThickness" value="Rh1Mirror1CaFiOuterSegOuterR-Rh1Mirror1InnerR"/>
+
+<constant name="Rh1Mirror1CaFiCylinderThickness" value ="0.5*mm"/>
+<constant name="Rh1Mirror1CaFiCylinderInnerRadius" value  ="25.0*mm"/>
+<constant name="Rh1Mirror1CaFiCylinderOuterRadius" value  ="Rh1Mirror1CaFiCylinderInnerRadius+Rh1Mirror1CaFiCylinderThickness"/>
+
+<!-- Now for the quadrant module radial sizes -->
+<constant name= "Rh1Mirror1QuadrantModuleRadialTolerence" value="1.0*mm"/>
+
+<constant name="Rh1Mirror1QuadrantModuleInnerRadius" value= "Rh1Mirror1InnerR-Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleOuterRadius" value= "Rh1Mirror1CaFiOuterSegOuterR+Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleRadialThickness" value="Rh1Mirror1QuadrantModuleOuterRadius-Rh1Mirror1QuadrantModuleInnerRadius"/>
+
+
+<!-- the default radius is same for all four quadrants. but for safety four different number created to adapt
+     to  any future changes. Indeed from the RICH1 mirror survey each quadrant has a differnt ROC and hence modified in April 2023 -->
+<!-- In this version resversed to nominal values -->
+
+<constant name="Rh1Mirror1InnerRQ0" value="Rh1Mirror1InnerR"/>
+<!-- <constant name="Rh1Mirror1InnerRQ0" value="3661.5354*mm"/> -->
+
+<constant name="Rh1Mirror1CaFiInnerSegInnerRQ0" value="Rh1Mirror1InnerRQ0"/>
+<constant name="Rh1Mirror1CaFiInnerSegOuterRQ0" value="Rh1Mirror1CaFiInnerSegInnerRQ0+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1CaFiOuterSegInnerRQ0" value = "Rh1Mirror1CaFiInnerSegOuterRQ0+Rh1Mirror1CaFiCylinderLength+2.0*Rh1Mirror1CaFiCylinderToSegmentGap"/>
+<constant name="Rh1Mirror1CaFiOuterSegOuterRQ0" value = "Rh1Mirror1CaFiOuterSegInnerRQ0+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1QuadrantModuleInnerRadiusQ0" value= "Rh1Mirror1InnerRQ0-Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleOuterRadiusQ0" value= "Rh1Mirror1CaFiOuterSegOuterRQ0+Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleRadialThicknessQ0" value="Rh1Mirror1QuadrantModuleOuterRadiusQ0-Rh1Mirror1QuadrantModuleInnerRadiusQ0"/>
+
+<constant name="Rh1Mirror1InnerRQ1" value="Rh1Mirror1InnerR"/>
+
+<!-- <constant name="Rh1Mirror1InnerRQ1" value="3660.9110*mm"/> -->
+
+<constant name="Rh1Mirror1CaFiInnerSegInnerRQ1" value="Rh1Mirror1InnerRQ1"/>
+<constant name="Rh1Mirror1CaFiInnerSegOuterRQ1" value="Rh1Mirror1CaFiInnerSegInnerRQ1+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1CaFiOuterSegInnerRQ1" value = "Rh1Mirror1CaFiInnerSegOuterRQ1+Rh1Mirror1CaFiCylinderLength+2.0*Rh1Mirror1CaFiCylinderToSegmentGap"/>
+<constant name="Rh1Mirror1CaFiOuterSegOuterRQ1" value = "Rh1Mirror1CaFiOuterSegInnerRQ1+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1QuadrantModuleInnerRadiusQ1" value= "Rh1Mirror1InnerRQ1-Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleOuterRadiusQ1" value= "Rh1Mirror1CaFiOuterSegOuterRQ1+Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleRadialThicknessQ1" value="Rh1Mirror1QuadrantModuleOuterRadiusQ1-Rh1Mirror1QuadrantModuleInnerRadiusQ1"/>
+
+<constant name="Rh1Mirror1InnerRQ2" value="Rh1Mirror1InnerR"/>
+
+<!-- <constant name="Rh1Mirror1InnerRQ2" value="3659.6003*mm"/> -->
+
+<constant name="Rh1Mirror1CaFiInnerSegInnerRQ2" value="Rh1Mirror1InnerRQ2"/>
+<constant name="Rh1Mirror1CaFiInnerSegOuterRQ2" value="Rh1Mirror1CaFiInnerSegInnerRQ2+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1CaFiOuterSegInnerRQ2" value = "Rh1Mirror1CaFiInnerSegOuterRQ2+Rh1Mirror1CaFiCylinderLength+2.0*Rh1Mirror1CaFiCylinderToSegmentGap"/>
+<constant name="Rh1Mirror1CaFiOuterSegOuterRQ2" value = "Rh1Mirror1CaFiOuterSegInnerRQ2+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1QuadrantModuleInnerRadiusQ2" value= "Rh1Mirror1InnerRQ2-Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleOuterRadiusQ2" value= "Rh1Mirror1CaFiOuterSegOuterRQ2+Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleRadialThicknessQ2" value="Rh1Mirror1QuadrantModuleOuterRadiusQ2-Rh1Mirror1QuadrantModuleInnerRadiusQ2"/>
+
+<constant name="Rh1Mirror1InnerRQ3" value="Rh1Mirror1InnerR"/>
+
+<!-- <constant name="Rh1Mirror1InnerRQ3" value="3658.1540*mm"/> -->
+
+<constant name="Rh1Mirror1CaFiInnerSegInnerRQ3" value="Rh1Mirror1InnerRQ3"/>
+<constant name="Rh1Mirror1CaFiInnerSegOuterRQ3" value="Rh1Mirror1CaFiInnerSegInnerRQ3+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1CaFiOuterSegInnerRQ3" value = "Rh1Mirror1CaFiInnerSegOuterRQ3+Rh1Mirror1CaFiCylinderLength+2.0*Rh1Mirror1CaFiCylinderToSegmentGap"/>
+<constant name="Rh1Mirror1CaFiOuterSegOuterRQ3" value = "Rh1Mirror1CaFiOuterSegInnerRQ3+Rh1Mirror1CaFiThickness"/>
+<constant name="Rh1Mirror1QuadrantModuleInnerRadiusQ3" value= "Rh1Mirror1InnerRQ3-Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleOuterRadiusQ3" value= "Rh1Mirror1CaFiOuterSegOuterRQ3+Rh1Mirror1QuadrantModuleRadialTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleRadialThicknessQ3" value="Rh1Mirror1QuadrantModuleOuterRadiusQ3-Rh1Mirror1QuadrantModuleInnerRadiusQ3"/>
+
+<!--  Now for the mirror tilts nominal values in top and bottom -->
+<constant name="Rh1Mirror1TopVertTilt" value="(asin(Rh1Mirror1CCLHCbYTop/Rh1Mirror1InnerR))*rad"/>
+<constant name="Rh1Mirror1TopHorizTilt" value="(asin(Rh1Mirror1CCLHCbXTop/Rh1Mirror1InnerR))*rad"/>
+<constant name="Rh1Mirror1BotVertTilt" value="(asin(Rh1Mirror1CCLHCbYBot/Rh1Mirror1InnerR))*rad"/>
+<constant name="Rh1Mirror1BotHorizTilt" value="(asin(Rh1Mirror1CCLHCbXBot/Rh1Mirror1InnerR))*rad"/>
+
+
+<!-- Mirror tilts in each quadrant -->
+<constant name="Rh1Mirror1VertTiltQ0" value="(asin(Rh1Mirror1CCLHCbQ0YTop/Rh1Mirror1InnerRQ0))*rad"/>
+<constant name="Rh1Mirror1VertTiltQ1" value="(asin(Rh1Mirror1CCLHCbQ1YTop/Rh1Mirror1InnerRQ1))*rad"/>
+<constant name="Rh1Mirror1HorizTiltQ0" value="(asin(Rh1Mirror1CCLHCbQ0XTop/Rh1Mirror1InnerRQ0))*rad"/>
+<constant name="Rh1Mirror1HorizTiltQ1" value="(asin(Rh1Mirror1CCLHCbQ1XTop/Rh1Mirror1InnerRQ1))*rad"/>
+<constant name="Rh1Mirror1VertTiltQ2" value="(asin(Rh1Mirror1CCLHCbQ2YBot/Rh1Mirror1InnerRQ2))*rad"/>
+<constant name="Rh1Mirror1VertTiltQ3" value="(asin(Rh1Mirror1CCLHCbQ3YBot/Rh1Mirror1InnerRQ3))*rad"/>
+<constant name="Rh1Mirror1HorizTiltQ2" value="(asin(Rh1Mirror1CCLHCbQ2XBot/Rh1Mirror1InnerRQ2))*rad"/>
+<constant name="Rh1Mirror1HorizTiltQ3" value="(asin(Rh1Mirror1CCLHCbQ3XBot/Rh1Mirror1InnerRQ3))*rad"/>
+
+<!-- <constant name="Rh1Mirror1SizeAlongXAxis" value="750.0*mm"/> -->
+<!-- <constant name="Rh1Mirror1SizeAlongYAxis" value="650.0*mm"/> -->
+<!-- Updated below based on EDMS 2881935-v1 of 05-02-2018 from J.Kariuki.         -->
+<constant name="Rh1Mirror1SizeAlongXAxis" value="740.1*mm"/>
+<constant name="Rh1Mirror1SizeAlongYAxis" value="650.4*mm"/>
+
+
+<constant name="Rh1NumberofMirror1Segments" value="4"/>
+<constant name="Rh1Mirror1NumRows" value="2"/>
+<constant name="Rh1Mirror1NumColumns" value="2"/>
+
+<constant name="Rh1Mirror1MasterXSize" value   = "1600.0*mm"/>
+
+
+<constant name="Rh1Mirror1MasterYSize" value   = "1580.0*mm"/>
+<constant name="Rh1Mirror1MasterZSize" value   = "300.0*mm"/>
+<constant name="Rh1Mirror1MasterXLocationInLHCb" value = "0.0*mm"/>
+<constant name="Rh1Mirror1MasterYLocationInLHCb" value = "0.0*mm"/>
+<!-- The following updated in the dd4hep version to avoid some overlaps -->
+<!-- <constant name="Rh1Mirror1MasterZLocationInLHCb" value = "2000*mm"/> -->
+<constant name="Rh1Mirror1MasterZLocationInLHCb" value = "2050*mm"/>
+
+<constant name="Rh1Mirror1MasterXLocationInRich1SubMaster" value="Rh1Mirror1MasterXLocationInLHCb-Rich1MasterX-Rh1SubMasterX"/>
+<constant name="Rh1Mirror1MasterYLocationInRich1SubMaster" value="Rh1Mirror1MasterYLocationInLHCb-Rich1MasterY-Rh1SubMasterY"/>
+<constant name="Rh1Mirror1MasterZLocationInRich1SubMaster" value="Rh1Mirror1MasterZLocationInLHCb-Rich1MasterZ-Rh1SubMasterZ"/>
+
+<constant name="Rh1Mirror1QuadrantModuleLateralTolerence" value="0.5*mm"/>
+
+<!-- Now for the quadrant module sizes . Using the same radius, for now in all four quadrants for the angular sizes -->
+<constant name="Rh1Mirror1QuadrantModuleSizeAlongXAxis" value="Rh1Mirror1SizeAlongXAxis+2*Rh1Mirror1QuadrantModuleLateralTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleSizeAlongYAxis" value="Rh1Mirror1SizeAlongYAxis+2*Rh1Mirror1QuadrantModuleLateralTolerence"/>
+<constant name="Rh1Mirror1QuadrantModuleDeltaTheta" value= "(2.0*asin(Rh1Mirror1QuadrantModuleSizeAlongXAxis/(2.0*Rh1Mirror1QuadrantModuleInnerRadius)))*rad"/>
+<constant name="Rh1Mirror1QuadrantModuleDeltaPhi" value="(2.0*asin(Rh1Mirror1QuadrantModuleSizeAlongYAxis/(2.0*Rh1Mirror1QuadrantModuleInnerRadius)))*rad"/>
+
+<!-- the quadrant is made with a larger than actual phi angular size and then a boolean subtraction is applied to cut away the
+     extra part. This is to get straight edge of the spherical segment along the phi edge. -->
+<constant name="Rh1Mirror1QuadrantModuleDeltaThetaExtended"
+	   value = "2.0*asin(sin(0.5*Rh1Mirror1QuadrantModuleDeltaTheta)/cos(0.5*Rh1Mirror1QuadrantModuleDeltaPhi))*rad"/>
+<constant name="Rh1Mirror1QuadrantModuleThetaSegmentStart" value= "(pi/2.0)*rad-(0.5*Rh1Mirror1QuadrantModuleDeltaThetaExtended)*rad"/>
+<constant name="Rh1Mirror1QuadrantModulePhiSegmentStart" value = "-0.5*Rh1Mirror1QuadrantModuleDeltaPhi"/>
+<constant name="Rh1Mirror1LargeSizeValue" value="20000.0*mm"/>
+<constant name="Rh1Mirror1QuadrantBoxSubtractXSize" value="Rh1Mirror1LargeSizeValue"/>
+<constant name="Rh1Mirror1QuadrantBoxSubtractYSize" value="Rh1Mirror1LargeSizeValue"/>
+<constant name="Rh1Mirror1QuadrantBoxSubtractZSize" value="Rh1Mirror1LargeSizeValue"/>
+<!-- only the non-zero values from the following 5 lines are used in creating the log vol -->
+<constant name="Rh1Mirror1QuadrantBoxSubtractXLocation" value="0.0*mm"/>
+
+<constant name="Rh1Mirror1QuadrantBoxSubtractYLocationA" value="0.5*(Rh1Mirror1QuadrantModuleSizeAlongYAxis+Rh1Mirror1QuadrantBoxSubtractYSize)"/>
+<constant name="Rh1Mirror1QuadrantBoxSubtractYLocationB" value="-1.0*Rh1Mirror1QuadrantBoxSubtractYLocationA"/>
+<constant name="Rh1Mirror1QuadrantBoxSubtractZLocationV" value="0.0*mm"/>
+
+<constant name="Rh1Mirror1QuadrantBoxSubtractZLocationHA" value="0.5*(Rh1Mirror1QuadrantModuleSizeAlongXAxis+Rh1Mirror1QuadrantBoxSubtractZSize)"/>
+<constant name="Rh1Mirror1QuadrantBoxSubtractZLocationHB" value="-1.0*Rh1Mirror1QuadrantBoxSubtractZLocationHA"/>
+
+<!--
+<constant name="Rh1Mirror1XGapBetQuad" value="0.5*mm"/>
+<constant name="Rh1Mirror1YGapBetQuad" value="2.0*mm"/>
+-->
+<!--  The gap between the quadrants to be modified and tuned after receiving the survey measurements -->
+<!-- For now a value is used to avoid overlaps. The gap is increased in dd4hep since the convertor seems to result in  -->
+<!-- reduced precison and thus overlap with the previous value listed above -->
+<!-- From April 2023 effective gap in X is 3 mm. This is from ( 2.6/2 )(gap) + 0.2 (tolerence) = 1,5 mm and hence total gap= 2 *1.5 = 3 mm  -->
+<!-- From April 2023 effective gap in Y is 3 mm. This is from ( 2.6/2 )(gap) + 0.2 (tolerence) = 1,5 mm and hence total gap= 2 *1.5 = 3 mm  -->
+<!-- However this causes overlap between top and bottom quadrants. Hence the gap increased back to the original value -->
+<!-- Reference EDMS 2881935-v1 of 05-02-2018 from J.Kariuki -->
+<!-- <constant name="Rh1Mirror1XGapBetQuad" value="1.5*mm"/> -->
+<!-- <constant name="Rh1Mirror1YGapBetQuad" value="7.0*mm"/> -->
+<!--<constant name="Rh1Mirror1YGapBetQuad" value="2.6*mm"/> -->
+
+<constant name="Rh1Mirror1XGapBetQuad" value="2.6*mm"/>
+<constant name="Rh1Mirror1YGapBetQuad" value="7.0*mm"/>
+
+
+
+<!-- the following tolerences are to avoid overlap between nearby Quadrant modules due to small gaps. -->
+<!--     A  2.5 mm tolerence is sufficient for the nominal orientation. -->
+<!--     Increased to 3 mm to enable misalignments of the mirrors.      -->
+<!--     For large misalignments of mirrors, one should increase the gap between these quadrant modules to -->
+<!--     avoid overlap between nearby modules. SE Jan 2008.  -->
+
+
+
+<!-- <constant name="Rh1Mirror1GapTolerenceInX" value="0.25*mm"/> -->
+<!-- <constant name="Rh1Mirror1GapTolerenceInY" value="1.0*mm"/>  -->
+
+<constant name="Rh1Mirror1GapTolerenceInX" value="0.2*mm"/>
+<constant name="Rh1Mirror1GapTolerenceInY" value="0.2*mm"/>
+
+<constant name="Rh1Mirror1XHalfGapFromThickness" value="sin(0.5*Rh1Mirror1QuadrantModuleDeltaThetaExtended)*(Rh1Mirror1QuadrantModuleRadialThickness)"/>
+<constant name="Rh1Mirror1YHalfGapFromThickness" value="sin(0.5*Rh1Mirror1QuadrantModuleDeltaPhi)*(Rh1Mirror1QuadrantModuleRadialThickness)"/>
+
+<constant name="Rh1Mirror1PhiGap" value="(2.0*asin(((0.5*Rh1Mirror1YGapBetQuad)+Rh1Mirror1YHalfGapFromThickness+Rh1Mirror1GapTolerenceInY)/(Rh1Mirror1QuadrantModuleInnerRadius)))*rad"/>
+
+<constant name="Rh1Mirror1ThetaGap" value="(2.0*asin(((0.5*Rh1Mirror1XGapBetQuad)+ 0.5*Rh1Mirror1XHalfGapFromThickness+Rh1Mirror1GapTolerenceInX)/(Rh1Mirror1QuadrantModuleInnerRadius)))*rad"/>
+
+
+<!-- now for the beampipe hole: using survey measurement of the real mirror segment for the beam hole.  -->
+<!--     It is considered as a cylindrical part near the mirror and is cut away using boolean subtraction -->
+<!-- The beampipe hole increased in dd4hep version to avoid apparant overlaps. This may be tuned later after the -->
+<!-- survey measurements are available -->
+<!-- Updated below in April2023 based on EDMS 2881935-v1 on 05-02-2018 from J.Kariuki -->
+
+<constant name="Rh1Mirror1NominalBeamHoleRadialSize" value= "63.98*mm"/>
+<!-- <constant name="Rh1Mirror1NominalBeamHoleRadialSize" value= "57.0*mm"/> -->
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSize" value= "41.0*mm"/> -->
+<!-- <constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForQuadrant" value= "1.0*mm"/> -->
+<!-- <constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerence" value= "2.0*mm"/>  -->
+
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForQuadrant" value= "1.0*mm"/> -->
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerence" value= "2.0*mm"/> -->
+
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForQuadrant" value= "2.0*mm"/> -->
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerence" value= "2.0*mm"/> -->
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForMirror1Master" value="2.0*mm" />-->
+
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForQuadrant" value= "1.0*mm"/> -->
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerence" value= "1.0*mm"/> -->
+<!--<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForMirror1Master" value="1.0*mm" />-->
+
+<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForQuadrant" value= "0.0*mm"/>
+<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerence" value= "0.0*mm"/>
+<constant name="Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForMirror1Master" value="0.0*mm" />
+
+<constant name="Rh1Mirror1BeamHoleRadialSizeForMirror1Master" value="Rh1Mirror1NominalBeamHoleRadialSize+Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForMirror1Master" />
+<constant name="Rh1Mirror1BeamHoleRadialSizeForQuadrant" value="Rh1Mirror1NominalBeamHoleRadialSize+Rh1Mirror1NominalBeamHoleRadialSizeTolerenceForQuadrant"/>
+<constant name="Rh1Mirror1BeamHoleRadialSizeForQuadrantComponents" value="Rh1Mirror1NominalBeamHoleRadialSize+Rh1Mirror1NominalBeamHoleRadialSizeTolerence"/>
+
+<constant name="Rh1Mirror1BeamHoleLength" value= "Rh1Mirror1LargeSizeValue"/>
+<constant name="Rh1Mirror1BeamHoleLocationZ" value="0.0*mm"/>
+<constant name="Rh1Mirror1BeamHoleYRotationAngle" value="(pi/2)*rad"/>
+
+<constant name="Rh1Mirror1BeamHoleLocationYQ0" value="-0.5*Rh1Mirror1QuadrantModuleSizeAlongYAxis"/>
+<constant name="Rh1Mirror1BeamHoleLocationYQ1" value="-0.5*Rh1Mirror1QuadrantModuleSizeAlongYAxis"/>
+<constant name="Rh1Mirror1BeamHoleLocationYQ2" value="0.5*Rh1Mirror1QuadrantModuleSizeAlongYAxis"/>
+<constant name="Rh1Mirror1BeamHoleLocationYQ3" value="0.5*Rh1Mirror1QuadrantModuleSizeAlongYAxis"/>
+<constant name="Rh1Mirror1BeamHoleLocationZQ0" value="0.5*Rh1Mirror1QuadrantModuleSizeAlongXAxis"/>
+<constant name="Rh1Mirror1BeamHoleLocationZQ1" value="-0.5*Rh1Mirror1QuadrantModuleSizeAlongXAxis"/>
+<constant name="Rh1Mirror1BeamHoleLocationZQ2" value="-0.5*Rh1Mirror1QuadrantModuleSizeAlongXAxis"/>
+<constant name="Rh1Mirror1BeamHoleLocationZQ3" value="0.5*Rh1Mirror1QuadrantModuleSizeAlongXAxis"/>
+
+
+<!-- now to place the quadrants -->
+<constant name = "Rh1Mirror1QuadrantPhiShiftNominal" value="0.5*(Rh1Mirror1QuadrantModuleDeltaPhi+Rh1Mirror1PhiGap)"/>
+
+
+<!-- the Rh1Mirror1VertTilt and Rh1Mirror1HorizTilt already has the signs for the corresponding positive and negative rotations -->
+<constant name = "Rh1Mirror1QuadrantZRotQ0" value="Rh1Mirror1QuadrantPhiShiftNominal-Rh1Mirror1VertTiltQ0"/>
+<constant name = "Rh1Mirror1QuadrantZRotQ1" value="Rh1Mirror1QuadrantPhiShiftNominal-Rh1Mirror1VertTiltQ1"/>
+<constant name = "Rh1Mirror1QuadrantZRotQ2" value="-1.0*Rh1Mirror1QuadrantPhiShiftNominal-Rh1Mirror1VertTiltQ2"/>
+<constant name = "Rh1Mirror1QuadrantZRotQ3" value="-1.0*Rh1Mirror1QuadrantPhiShiftNominal-Rh1Mirror1VertTiltQ3"/>
+
+
+<constant name =  "Rh1Mirror1QuadrantThetaShiftNominal" value="0.5*(Rh1Mirror1QuadrantModuleDeltaThetaExtended+Rh1Mirror1ThetaGap)"/>
+
+<constant name =  "Rh1Mirror1QuadrantYRotQ0" value="(-(pi/2)*rad)+Rh1Mirror1QuadrantThetaShiftNominal-Rh1Mirror1HorizTiltQ0"/>
+<constant name =  "Rh1Mirror1QuadrantYRotQ1" value="(-(pi/2)*rad)-Rh1Mirror1QuadrantThetaShiftNominal-Rh1Mirror1HorizTiltQ1"/>
+<constant name =  "Rh1Mirror1QuadrantYRotQ2" value="(-(pi/2)*rad)-Rh1Mirror1QuadrantThetaShiftNominal-Rh1Mirror1HorizTiltQ2"/>
+<constant name =  "Rh1Mirror1QuadrantYRotQ3" value="(-(pi/2)*rad)+Rh1Mirror1QuadrantThetaShiftNominal-Rh1Mirror1HorizTiltQ3"/>
+
+<!-- the following estimate for quadrant  X rotation is only a first approximation -->
+
+
+<constant name = "Rh1Mirror1QuadrantXRotNominalFactor" value= "(1.0-cos(Rh1Mirror1QuadrantPhiShiftNominal))"/>
+<constant name = "Rh1Mirror1QuadrantXRotTolerence" value="-2.0*mrad"/>
+
+
+<constant name = "Rh1Mirror1QuadrantXRotQ0" value= "-1.0*(Rh1Mirror1QuadrantXRotNominalFactor*Rh1Mirror1QuadrantYRotQ0+Rh1Mirror1QuadrantXRotTolerence)"/>
+<constant name = "Rh1Mirror1QuadrantXRotQ1" value= "(Rh1Mirror1QuadrantXRotNominalFactor*Rh1Mirror1QuadrantYRotQ1+Rh1Mirror1QuadrantXRotTolerence)"/>
+<constant name = "Rh1Mirror1QuadrantXRotQ2" value="-1.0*(Rh1Mirror1QuadrantXRotNominalFactor*Rh1Mirror1QuadrantYRotQ2 +Rh1Mirror1QuadrantXRotTolerence )"/>
+<constant name = "Rh1Mirror1QuadrantXRotQ3" value= "(Rh1Mirror1QuadrantXRotNominalFactor*Rh1Mirror1QuadrantYRotQ3+Rh1Mirror1QuadrantXRotTolerence )"/>
+
+
+<!-- The following was to test the effect of gap. It is commented out since the gap is already implemented above -->
+<!--<constant name="Rh1Mirror1QuadrantModuleCOCYinQ0" value  ="Rh1Mirror1CCLHCbQ0YTop+(0.5*Rh1Mirror1YGapBetQuad)-Rich1MasterY-Rh1SubMasterY-Rh1Mirror1MasterYLocationInRich1SubMaster"/> -->
+<constant name="Rh1Mirror1QuadrantModuleCOCXinQ0" value= "Rh1Mirror1CCLHCbQ0XTop-Rich1MasterX-Rh1SubMasterX-Rh1Mirror1MasterXLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCYinQ0" value= "Rh1Mirror1CCLHCbQ0YTop-Rich1MasterY-Rh1SubMasterY-Rh1Mirror1MasterYLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCZinQ0" value= "Rh1Mirror1CCLHCbQ0ZTop-Rich1MasterZ-Rh1SubMasterZ-Rh1Mirror1MasterZLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCXinQ1" value= "Rh1Mirror1CCLHCbQ1XTop-Rich1MasterX-Rh1SubMasterX-Rh1Mirror1MasterXLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCYinQ1" value= "Rh1Mirror1CCLHCbQ1YTop-Rich1MasterY-Rh1SubMasterY-Rh1Mirror1MasterYLocationInRich1SubMaster"/> 
+<constant name="Rh1Mirror1QuadrantModuleCOCZinQ1" value= "Rh1Mirror1CCLHCbQ1ZTop-Rich1MasterZ-Rh1SubMasterZ-Rh1Mirror1MasterZLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCXinQ2" value= "Rh1Mirror1CCLHCbQ2XBot-Rich1MasterX-Rh1SubMasterX-Rh1Mirror1MasterXLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCYinQ2" value= "Rh1Mirror1CCLHCbQ2YBot-Rich1MasterY-Rh1SubMasterY-Rh1Mirror1MasterYLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCZinQ2" value= "Rh1Mirror1CCLHCbQ2ZBot-Rich1MasterZ-Rh1SubMasterZ-Rh1Mirror1MasterZLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCXinQ3" value= "Rh1Mirror1CCLHCbQ3XBot-Rich1MasterX-Rh1SubMasterX-Rh1Mirror1MasterXLocationInRich1SubMaster"/>
+<constant name="Rh1Mirror1QuadrantModuleCOCYinQ3" value= "Rh1Mirror1CCLHCbQ3YBot-Rich1MasterY-Rh1SubMasterY-Rh1Mirror1MasterYLocationInRich1SubMaster"/> 
+<constant name="Rh1Mirror1QuadrantModuleCOCZinQ3" value= "Rh1Mirror1CCLHCbQ3ZBot-Rich1MasterZ-Rh1SubMasterZ-Rh1Mirror1MasterZLocationInRich1SubMaster"/> 
+
+
+<!-- now the parts inside the quadrant modules . First the two carbonfibre layers -->
+<constant name="Rh1Mirror1CaFiDeltaTheta" value="(2.0*asin(Rh1Mirror1SizeAlongXAxis/(2.0*Rh1Mirror1InnerR)))*rad"/>
+<constant name="Rh1Mirror1CaFiDeltaPhi" value="(2.0*asin(Rh1Mirror1SizeAlongYAxis/(2.0*Rh1Mirror1InnerR)))*rad"/>
+<constant name="Rh1Mirror1CaFiDeltaThetaExtended" value="2.0*asin(sin(0.5*Rh1Mirror1CaFiDeltaTheta)/cos(0.5*Rh1Mirror1CaFiDeltaPhi))*rad"/>
+<constant name="Rh1Mirror1CaFiThetaSegmentStart" value="(pi/2.0)*rad-(0.5*Rh1Mirror1CaFiDeltaThetaExtended)"/>
+<constant name="Rh1Mirror1CaFiPhiSegmentStart" value="-0.5*Rh1Mirror1CaFiDeltaPhi"/>
+
+<constant name="Rh1Mirror1CaFiBoxSubtractYLocationA" value="0.5*(Rh1Mirror1SizeAlongYAxis+Rh1Mirror1QuadrantBoxSubtractYSize)"/>
+<constant name="Rh1Mirror1CaFiBoxSubtractYLocationB" value="-1.0*Rh1Mirror1CaFiBoxSubtractYLocationA"/>
+
+<constant name="Rh1Mirror1CaFiBoxSubtractZLocationHA" value="0.5*(Rh1Mirror1SizeAlongXAxis+Rh1Mirror1QuadrantBoxSubtractZSize)"/>
+<constant name="Rh1Mirror1CaFiBoxSubtractZLocationHB" value="-1.0*Rh1Mirror1CaFiBoxSubtractZLocationHA"/>
+
+<constant name="Rh1Mirror1CaFiInnerSegDeltaTheta" value="Rh1Mirror1CaFiDeltaTheta "/>
+<constant name="Rh1Mirror1CaFiInnerSegDeltaPhi" value="Rh1Mirror1CaFiDeltaPhi"/>
+<constant name="Rh1Mirror1CaFiInnerSegDeltaThetaExtended" value="Rh1Mirror1CaFiDeltaThetaExtended"/>
+<constant name="Rh1Mirror1CaFiInnerSegThetaStart" value="Rh1Mirror1CaFiThetaSegmentStart"/>
+<constant name="Rh1Mirror1CaFiInnerSegPhiStart" value="Rh1Mirror1CaFiPhiSegmentStart"/>
+<constant name="Rh1Mirror1CaFiInnerSegBoxSubtractYLocationA" value="Rh1Mirror1CaFiBoxSubtractYLocationA"/>
+<constant name="Rh1Mirror1CaFiInnerSegBoxSubtractYLocationB" value="Rh1Mirror1CaFiBoxSubtractYLocationB"/>
+<constant name="Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHA" value="Rh1Mirror1CaFiBoxSubtractZLocationHA"/>
+<constant name="Rh1Mirror1CaFiInnerSegBoxSubtractZLocationHB" value="Rh1Mirror1CaFiBoxSubtractZLocationHB"/>
+
+<constant name="Rh1Mirror1CaFiDeltaThetaOuter" value="(2.0*asin(Rh1Mirror1SizeAlongXAxis/(2.0*Rh1Mirror1CaFiOuterSegInnerR)))*rad"/>
+<constant name="Rh1Mirror1CaFiDeltaPhiOuter" value="(2.0*asin(Rh1Mirror1SizeAlongYAxis/(2.0*Rh1Mirror1CaFiOuterSegInnerR)))*rad"/>
+<constant name="Rh1Mirror1CaFiDeltaThetaExtendedOuter" value="2.0*asin(sin(0.5*Rh1Mirror1CaFiDeltaThetaOuter)/cos(0.5*Rh1Mirror1CaFiDeltaPhiOuter))*rad"/>
+<constant name="Rh1Mirror1CaFiThetaSegmentStartOuter" value="(pi/2.0)*rad-(0.5*Rh1Mirror1CaFiDeltaThetaExtendedOuter)"/>
+<constant name="Rh1Mirror1CaFiPhiSegmentStartOuter" value="-0.5*Rh1Mirror1CaFiDeltaPhiOuter"/>
+
+<constant name="Rh1Mirror1CaFiOuterSegDeltaTheta" value="Rh1Mirror1CaFiDeltaThetaOuter"/>
+<constant name="Rh1Mirror1CaFiOuterSegDeltaPhi" value="Rh1Mirror1CaFiDeltaPhiOuter"/>
+<constant name="Rh1Mirror1CaFiOuterSegDeltaThetaExtended" value="Rh1Mirror1CaFiDeltaThetaExtendedOuter"/>
+<constant name="Rh1Mirror1CaFiOuterSegThetaStart" value="Rh1Mirror1CaFiThetaSegmentStartOuter"/>
+<constant name="Rh1Mirror1CaFiOuterSegPhiStart" value="Rh1Mirror1CaFiPhiSegmentStartOuter"/>
+
+<constant name="Rh1Mirror1CaFiOuterSegBoxSubtractYLocationA" value="Rh1Mirror1CaFiBoxSubtractYLocationA"/>
+<constant name="Rh1Mirror1CaFiOuterSegBoxSubtractYLocationB" value="Rh1Mirror1CaFiBoxSubtractYLocationB"/>
+<constant name="Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHA" value="Rh1Mirror1CaFiBoxSubtractZLocationHA"/>
+<constant name="Rh1Mirror1CaFiOuterSegBoxSubtractZLocationHB" value="Rh1Mirror1CaFiBoxSubtractZLocationHB"/>
+
+
+<!-- Now for placing the cylinders between the layers. a Set of 11 by 8   -->
+<!-- (11 along X and 8 along Y)  are placed                                -->
+<!--     with an approximate pitch of 60 mm in each quadrant along the inner segment layer  . -->
+<!--     It is asymmetric due to the beampipe  -->
+<!--     hence the  Rh1Mirror1NumCylAlongX is set as 10 and  Rh1Mirror1NumCylAlongY is set as 7. -->
+
+<constant name = "Rh1Mirror1NumCylAlongX" value="10"/>
+<constant name = "Rh1Mirror1NumCylAlongY" value="7"/>
+<constant name = "Rh1Mirror1CylPitch" value="60*mm"/>
+
+<constant name = "Rh1Mirror1CylRadialLocationQ0" value="Rh1Mirror1CaFiInnerSegOuterRQ0+Rh1Mirror1CaFiCylinderToSegmentGap+0.5*Rh1Mirror1CaFiCylinderLength"/>
+<constant name = "Rh1Mirror1CylRadialLocationQ1" value="Rh1Mirror1CaFiInnerSegOuterRQ1+Rh1Mirror1CaFiCylinderToSegmentGap+0.5*Rh1Mirror1CaFiCylinderLength"/>
+<constant name = "Rh1Mirror1CylRadialLocationQ2" value="Rh1Mirror1CaFiInnerSegOuterRQ2+Rh1Mirror1CaFiCylinderToSegmentGap+0.5*Rh1Mirror1CaFiCylinderLength"/>
+<constant name = "Rh1Mirror1CylRadialLocationQ3" value="Rh1Mirror1CaFiInnerSegOuterRQ3+Rh1Mirror1CaFiCylinderToSegmentGap+0.5*Rh1Mirror1CaFiCylinderLength"/>
+<constant name =  "Rh1Mirror1CylThetaStartQ0" value="((pi/2)*rad)-((0.5*Rh1Mirror1NumCylAlongX*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ0)*rad"/>
+<constant name =  "Rh1Mirror1CylThetaStartQ1" value="((pi/2)*rad)-((0.5*Rh1Mirror1NumCylAlongX*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ1)*rad"/>
+<constant name =  "Rh1Mirror1CylThetaStartQ2" value="((pi/2)*rad)-((0.5*Rh1Mirror1NumCylAlongX*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ2)*rad"/>
+<constant name =  "Rh1Mirror1CylThetaStartQ3" value="((pi/2)*rad)-((0.5*Rh1Mirror1NumCylAlongX*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ3)*rad"/>
+<constant name =  "Rh1Mirror1CylPhiStartQ0" value="((-0.5*Rh1Mirror1NumCylAlongY*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ0)*rad"/>
+<constant name =  "Rh1Mirror1CylPhiStartQ1" value="((-0.5*Rh1Mirror1NumCylAlongY*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ1)*rad"/>
+<constant name =  "Rh1Mirror1CylPhiStartQ2" value="((-0.5*Rh1Mirror1NumCylAlongY*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ2)*rad"/>
+<constant name =  "Rh1Mirror1CylPhiStartQ3" value="((-0.5*Rh1Mirror1NumCylAlongY*Rh1Mirror1CylPitch)/Rh1Mirror1CylRadialLocationQ3)*rad"/>
+<constant name =  "Rh1Mirror1CylDeltaThetaQ0" value="(Rh1Mirror1CylPitch/Rh1Mirror1CylRadialLocationQ0)*rad"/>
+<constant name =  "Rh1Mirror1CylDeltaThetaQ1" value="(Rh1Mirror1CylPitch/Rh1Mirror1CylRadialLocationQ1)*rad"/>
+<constant name =  "Rh1Mirror1CylDeltaThetaQ2" value="(Rh1Mirror1CylPitch/Rh1Mirror1CylRadialLocationQ2)*rad"/>
+<constant name =  "Rh1Mirror1CylDeltaThetaQ3" value="(Rh1Mirror1CylPitch/Rh1Mirror1CylRadialLocationQ3)*rad"/>
+<constant name =  "Rh1Mirror1CylDeltaPhiQ0" value="Rh1Mirror1CylDeltaThetaQ0"/>
+<constant name =  "Rh1Mirror1CylDeltaPhiQ1" value="Rh1Mirror1CylDeltaThetaQ1"/>
+<constant name =  "Rh1Mirror1CylDeltaPhiQ2" value="Rh1Mirror1CylDeltaThetaQ2"/>
+<constant name =  "Rh1Mirror1CylDeltaPhiQ3" value="Rh1Mirror1CylDeltaThetaQ3"/>
+
+<!-- Copy numbers for Rich1 Mirror1 -->
+<constant name="pvRich1Mirror1QuadrantModuleQ0CopyNumber" value="0"/>
+<constant name="pvRich1Mirror1QuadrantModuleQ1CopyNumber" value="1"/>
+<constant name="pvRich1Mirror1QuadrantModuleQ2CopyNumber" value="2"/>
+<constant name="pvRich1Mirror1QuadrantModuleQ3CopyNumber" value="3"/>
+<constant name="Rh1Mirror1CaFiInnerSegCopyNum" value="0"/>
+<constant name="Rh1Mirror1CaFiOuterSegCopyNum" value="1"/>
+<constant name="pvRich1Mirror1CarbonFibreInnerLayerQ0CopyNumber" value="Rh1Mirror1CaFiInnerSegCopyNum"/>
+<constant name="pvRich1Mirror1CarbonFibreOuterLayerQ0CopyNumber" value="Rh1Mirror1CaFiOuterSegCopyNum"/>
+<constant name="pvRich1Mirror1CarbonFibreInnerLayerQ1CopyNumber" value="Rh1Mirror1CaFiInnerSegCopyNum"/>
+<constant name="pvRich1Mirror1CarbonFibreOuterLayerQ1CopyNumber" value="Rh1Mirror1CaFiOuterSegCopyNum"/>
+<constant name="pvRich1Mirror1CarbonFibreInnerLayerQ2CopyNumber" value="Rh1Mirror1CaFiInnerSegCopyNum"/>
+<constant name="pvRich1Mirror1CarbonFibreOuterLayerQ2CopyNumber" value="Rh1Mirror1CaFiOuterSegCopyNum"/>
+<constant name="pvRich1Mirror1CarbonFibreInnerLayerQ3CopyNumber" value="Rh1Mirror1CaFiInnerSegCopyNum"/>
+<constant name="pvRich1Mirror1CarbonFibreOuterLayerQ3CopyNumber" value="Rh1Mirror1CaFiOuterSegCopyNum"/>
+
+<!--        End   Rich1MirrorGeomParameters    -->
+<!--   Now for user parameters -->
+<constant name="Rh1MaxExtentAlongX" value= "0.5*Rh1Mirror1MasterXSize"/>
+<constant name="Rh1MaxExtentAlongY" value="0.5*Rh1Mirror1MasterYSize"/>
+
+  </define>
+</lccdd>

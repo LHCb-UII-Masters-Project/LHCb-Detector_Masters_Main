@@ -1,0 +1,110 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1SubMaster logvol                                                     -->
+<!--  ==========================================================================-->
+<!-- <Rich1  xmlns:xi="http://www.w3.org/2001/XInclude">  -->
+
+<Rich1>
+
+  <volume name="lvRich1SubMaster" material="Rich:R1RadiatorGas" vis="Rich:VisRich1SubMaster"  >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1SubMasterWithSubtract"> 
+       <shape type="Box" name="Rich1SubMasterBox"
+   	   dx="Rh1SubMasterXSize*RhHalfSize"
+	   dy="Rh1SubMasterYSize*RhHalfSize"
+	   dz="Rh1SubMasterZSize*RhHalfSize" />
+
+      <!-- Now the volumes to subtract from Rich1SubMaster -->
+
+     <!-- The following lines does not work in dd4hep and hence replaced by the old-fashioned  -->
+     <!-- way in the lines that follow . SE 20-07-2020                                         --> 
+     <!-- <include  ref="../PhysVol/Rich1SubMasterSubtr.xml" /> -->
+     <!--  <xi:include href="../PhysVol/Rich1SubMasterSubtr.xml" />     -->   
+
+<!-- This is for the boolean subtraction of the Velo tank and Velo flange from the
+    Rich1 submaster used for the upgrade -->
+
+      <shape type="Tube" name="Rich1SMVeloTankCylSubRM"
+             dz="Rh1VeloTankCylZSize*RhHalfSize"
+             rmax="Rh1VeloTankRadius" />
+             <position  z="Rh1VeloTankCylZInRh1SubM" />
+
+      <shape type="Tube" name="Rich1SMVeloTankFlangeSubRM"
+             dz="Rh1VeloTankFlangeZSize*RhHalfSize"
+             rmin="Rh1VeloTankFlangeIR"
+             rmax="Rh1VeloTankFlangeOR"/>
+             <position  z="Rh1VeloTankFlangeZInRh1SubM" />
+
+      <shape  type="Tube" name="Rich1SMBeamHoleAfterMagSh"
+              dz="Rh1SubMasterHoleZSizeAfterMagSh*RhHalfSize"
+              rmax="Rh1SubMasterHoleRadiusAfterMagSh"  />
+             <position z="Rh1SubMasterHoleZLocationAfterMagSh"  />
+
+      <shape type="Box" name="Rich1SMTTCentralPartBoxSubRM"
+            dx="Rh1TTXSize*RhHalfSize*RhHalfSize"
+            dy="Rh1TTCentralPartYSize*RhHalfSize"
+            dz="Rh1TTZSize*RhHalfSize*RhHalfSize" />
+            <position  z="Rh1TTCentralPartZInRh1SubM" />
+
+     <shape type="BooleanShape" operation="subtraction" name="Rich1SMTTPeripheralPartBoxSubRMSub">
+       <shape type="Box" name="Rich1SMTTPeripheralPartBoxSubRMHBox"
+            dx="Rh1TTXSize*RhHalfSize"
+            dy="Rh1TTPerpheralPartYSize*RhHalfSize"
+            dz="Rh1TTZSize*RhHalfSize" />
+       <shape type="Box" name="Rich1SMTTPeripheralPartBoxSubRMCentral"
+            dx="Rh1TTXSizeDouble*RhHalfSize"
+            dy="Rh1TTPeripheralPartYSizeInSubMSubtr*RhHalfSize"
+            dz="Rh1TTZSizeDouble*RhHalfSize" />
+            <position />
+
+      </shape>
+      <position z="Rh1TTPeripheralPartZInRh1SubM" />
+
+ 
+ </shape> 
+
+    <!--       Now for the physical volumes inside this Logical Volume -->
+    <!-- The following includes do not work in dd4hep and hence replaced by  having -->
+    <!--  transforms uploaded in Rich1_geo.cpp and physvol created  -->
+    <!--  in that file SE 10-08-2020   -->
+    <!--  <include  ref="../PhysVol/Rich1Run3MagShPhys.xml" /> -->
+    <!--  <include  ref="../PhysVol/Rich1Mirror1MasterPhys.xml" /> -->
+    <!-- &Rich1Mirror2Phys;  -->
+    <!-- &Rich1ExitWallOverallPhys; -->
+  
+<!--    Rich1MagShPhys volumes are          -->
+<!--    kept in the Rich1SubMaster logical volume -->
+<!--    except for the part above and below TT  -->
+<!--    Begin Rich1SubMasterBeamPipe   -->
+<!--    This is the part of the beampipe inside Rich1 submaster  -->
+<!--    It is commented out since it is now activated in Rich1_geo SE 13-03-2021 -->
+<!--
+    <physvol name="pvUX851InRich1SubMaster" volume="lvUX851InRich1SubMaster" >
+      <position z= "Rh1BeamPipeAssemblyZ" />
+    </physvol>
+-->
+
+
+
+
+
+
+  </volume>     <!-- end lvRich1SubMaster -->
+ 
+</Rich1>
+
+
+
+
+
+
+
+
+

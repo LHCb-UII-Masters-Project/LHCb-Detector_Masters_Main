@@ -1,0 +1,572 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 Spherical Mirror parameters in  Run3 configuration -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+<!-- In this file the parameters of a single hexagonal mirror and
+  halfhexagonal mirror for Rich2 are described. SE 28-03-2003 -->
+
+<!-- Spherical mirror component parameters
+
+  This makes a Hexagon and HalfHexagon with and without beam hole.
+  There are two types of HalfHexagons. One with left Half only and one with
+  Right half only.
+
+  The Hexagon has a Spherical segment made at pi/2,  to have rectangular edges.
+  From this a large box is subtracted at 4 corners to make the hexagonal shape for
+  the edges.
+  For the HalfHexagon, the Box is subtracted at the two corners and through the middle.
+  The original rectangular segment is considered to have 4 quadrants for the subtraction
+  purposes. Looking at the segment from the centre of curvature, they are
+
+  Q1   Q0
+
+
+  Q2    Q3.
+
+  The box to be subtracted is rotated at different angles for each of these quadrants.
+-->
+<!-- The mirror numbers start at 0 for the lowest x lowest y segment of the
+     positive x half and increase by increasing first x (row) and then y.
+     The numbers continue in the negative x half in the same way. Spherical
+     segment numbers 0-27  are in the positive x half, and 28-55 in the
+     negative x half. -->
+
+<!--
+    27    26    25  24          55  54    53    52
+                          Y
+  23  22    21    20      ^       51    50    49  48
+                          |
+    19    18    17  16    |     47  46    45    44
+
+  15  14    13    12     beam     43    42    41  40
+
+    11    10    09  08    |     39  38    37    36
+                          |
+  07  06    05    04      |       35    34    33  32
+                          |
+    03    02    01  00    |     31  30    29    28
+                          |
+        X  <===============
+-->
+<!-- The centre of curvature for Rich2 was defined at x=3269.62, y=0, z=3290.78
+     This was when the Rich2 and LHCb coordinate systems was the same. When the
+     3.601 mrad tilt was introduced it was decided to keep the optical
+     geometry the same in the Rich2 coordinate system -->
+
+
+<!-- First the basic parameters -->
+
+<!-- <constant name="Rh2SphMirrorInnerR"  value="8600.0*mm" /> Defined in Rich2Run3MirrorRadiiGeomParam.xml -->
+
+<constant name="Rh2SphMirrorInnerR"  value="Rh2SphMirrorNomInnerROC" />
+
+<constant name="Rh2SphMirrorThickness" value="6.0*mm" />
+<constant name="Rh2SPhMirrorSegHexDiagSize" value="510.0*mm" />
+
+<!-- For the box for boolean subtraction to make hexagon, the sizes are set to large numbers -->
+<constant name="Rh2SPhMirrHexSubBoxLargeXSize"   value="200000.0*mm" />
+<constant name="Rh2SPhMirrHexSubBoxLargeYSize"   value="200000.0*mm" />
+<constant name="Rh2SPhMirrHexSubBoxLargeZSize"   value="400000.0*mm" />
+
+<!-- Number of Rich2 Sph Mirror segments -->
+<constant name="Rh2NumSphMirrorSegments"   value="56" />
+
+
+<!-- Outer radius of curvature of the mirror -->
+<constant name="Rh2SphMirrorOuterR"  value="Rh2SphMirrorInnerR+Rh2SphMirrorThickness" />
+
+<!-- parameters for defining the hexagons -->
+<constant name="Rh2SPhMirrorHexParam60" value="(pi/3.0)*rad" />
+<constant name="Rh2SPhMirrorHexParam30" value="(pi/6.0)*rad" />
+<constant name="Rh2SPhMirrorHexCos60" value="cos(Rh2SPhMirrorHexParam60)" />
+<constant name="Rh2SPhMirrorHexCos30" value="cos(Rh2SPhMirrorHexParam30)" />
+<constant name="Rh2SPhMirrorHexSin60" value="sin(Rh2SPhMirrorHexParam60)" />
+<constant name="Rh2SPhMirrorHexSin30" value="sin(Rh2SPhMirrorHexParam30)" />
+
+<constant name="Rh2SphMirrHexSegVertSize" value="Rh2SPhMirrorSegHexDiagSize" />
+<constant name="Rh2SphMirrHexSegHorizSize" value="Rh2SPhMirrorSegHexDiagSize*Rh2SPhMirrorHexSin60" />
+<constant name="Rh2SphMirrHexSegFlatHalfSize" value="0.5*Rh2SPhMirrorSegHexDiagSize*Rh2SPhMirrorHexSin60" />
+<constant name="Rh2SphMirrHexSegDiagHalfSize" value="0.5*Rh2SPhMirrorSegHexDiagSize" />
+
+
+<constant name="Rh2SphMirrHexSubBoxRotX" value="Rh2SPhMirrorHexParam60"  />
+<constant name="Rh2SphMirrHexSubBoxShiftX" value="Rh2SphMirrorOuterR" />
+<constant name="Rh2SphMirrHexSubBoxShiftY" value="(0.5*Rh2SPhMirrorSegHexDiagSize*Rh2SPhMirrorHexSin60+0.5*Rh2SPhMirrHexSubBoxLargeZSize)*Rh2SPhMirrorHexSin60" />
+<constant name="Rh2SphMirrHexSubBoxShiftZ" value="(0.5*Rh2SPhMirrorSegHexDiagSize*Rh2SPhMirrorHexSin60+0.5*Rh2SPhMirrHexSubBoxLargeZSize)*Rh2SPhMirrorHexCos60" />
+
+<constant name="Rh2SphMirrHexSubBoxRotXQ02" value="-Rh2SphMirrHexSubBoxRotX" />
+<constant name="Rh2SphMirrHexSubBoxRotXQ13" value="Rh2SphMirrHexSubBoxRotX" />
+<constant name="Rh2SphMirrHexSubBoxShiftYQ0" value="Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrHexSubBoxShiftYQ1" value="Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrHexSubBoxShiftYQ2" value="-Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrHexSubBoxShiftYQ3" value="-Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrHexSubBoxShiftZQ0" value="Rh2SphMirrHexSubBoxShiftZ" />
+<constant name="Rh2SphMirrHexSubBoxShiftZQ1" value="-Rh2SphMirrHexSubBoxShiftZ" />
+<constant name="Rh2SphMirrHexSubBoxShiftZQ2" value="-Rh2SphMirrHexSubBoxShiftZ" />
+<constant name="Rh2SphMirrHexSubBoxShiftZQ3" value="Rh2SphMirrHexSubBoxShiftZ" />
+
+<!--  Now for the Half Hexagons -->
+<constant name="Rh2SphMirrLeftHalfHexSubBoxShiftX" value="Rh2SphMirrorOuterR" />
+<constant name="Rh2SphMirrLeftHalfHexSubBoxShiftZ" value="0.5*Rh2SPhMirrHexSubBoxLargeZSize"  />
+<constant name="Rh2SphMirrLeftHalfHexSubBoxRotXQ1" value="Rh2SphMirrHexSubBoxRotX" />
+<constant name="Rh2SphMirrLeftHalfHexSubBoxRotXQ2" value="-Rh2SphMirrHexSubBoxRotX" />
+<constant name="Rh2SphMirrLeftHalfHexSubBoxShiftYQ1" value="Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrLeftHalfHexSubBoxShiftYQ2" value="-Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrLeftHalfHexSubBoxShiftZQ1" value="-Rh2SphMirrHexSubBoxShiftZ" />
+<constant name="Rh2SphMirrLeftHalfHexSubBoxShiftZQ2" value="-Rh2SphMirrHexSubBoxShiftZ" />
+
+<constant name="Rh2SphMirrRightHalfHexSubBoxShiftX" value="Rh2SphMirrorOuterR" />
+<constant name="Rh2SphMirrRightHalfHexSubBoxShiftZ" value="-(0.5*Rh2SPhMirrHexSubBoxLargeZSize)"  />
+<constant name="Rh2SphMirrRightHalfHexSubBoxRotXQ0" value="-Rh2SphMirrHexSubBoxRotX" />
+<constant name="Rh2SphMirrRightHalfHexSubBoxRotXQ3" value="Rh2SphMirrHexSubBoxRotX" />
+<constant name="Rh2SphMirrRightHalfHexSubBoxShiftYQ0" value="Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrRightHalfHexSubBoxShiftYQ3" value="-Rh2SphMirrHexSubBoxShiftY"  />
+<constant name="Rh2SphMirrRightHalfHexSubBoxShiftZQ0" value="Rh2SphMirrHexSubBoxShiftZ" />
+<constant name="Rh2SphMirrRightHalfHexSubBoxShiftZQ3" value="Rh2SphMirrHexSubBoxShiftZ" />
+
+<!-- cylider cut out for the segments around the beam pipe -->
+<constant name="Rh2SphMirCutOutBPipeCylinderRadius" value="178*mm" />
+<constant name="Rh2SphMirCutOutBPipeCylinderSizeZ" value="50*mm" />
+<constant name="Rh2SphMirCutOutBPipeCylinderHalfSizeZ" value="Rh2SphMirCutOutBPipeCylinderSizeZ*RhHalfSize" />
+<!-- Shifts are in the local coord system of the mirror -->
+<constant name="Rh2SphMir12CutOutBPipeCylinderPosZ" value="207*mm" />
+<constant name="Rh2SphMir43CutOutBPipeCylinderPosZ" value="-207*mm" />
+<constant name="Rh2SphMirCutOutBPipeCylindnerPosY" value="0*mm" />
+<constant name="Rh2SphMirCutOutBPipeCylinderRotY" value="((pi/2.0)*rad)" />
+
+<!-- corner cut out for the segments above and below the beam pipe -->
+<constant name="Rh2SphMirCutOutBPipeCornerBoxSizeX" value="100*mm" />
+<constant name="Rh2SphMirCutOutBPipeCornerBoxSizeZ" value="300*mm" />
+
+<constant name="Rh2SphMirCutOutBPipeCornerBoxTopPosY" value="0.5*Rh2SPhMirrorSegHexDiagSize" />
+<constant name="Rh2SphMirCutOutBPipeCornerBoxBotPosY" value="-1.0*Rh2SphMirCutOutBPipeCornerBoxTopPosY" />
+<constant name="Rh2SphMirCutOutBPipeCornerBoxPosZ" value="0*mm" />
+<constant name="Rh2SphMirCutOutBPipeCornerBoxRotX" value="10*degree" />
+<constant name="Rh2SphMirCutOutBPipeCornerBoxPosRotX" value="Rh2SphMirCutOutBPipeCornerBoxRotX" />
+<constant name="Rh2SphMirCutOutBPipeCornerBoxNegRotX" value="-1.0*Rh2SphMirCutOutBPipeCornerBoxRotX" />
+<constant name="Rh2SphMirCutOutBPipeCornerBoxSizeY" value="110.0*mm * cos(Rh2SphMirCutOutBPipeCornerBoxRotX)"/>
+
+<!-- Parameters for the container of the spherical mirrors which is labelled are SphMirrorMaster -->
+<constant name="Rh2SphMirrorMasterSizeX"  value= "1608*mm"/>
+<constant name="Rh2SphMirrorMasterSizeY"  value= "6202*mm"/>
+<constant name="Rh2SphMirrorMasterSizeZ"  value= "750*mm"/>
+<constant name="Rh2SphMirrorMaster0PosX"  value= "0.5*Rh2SphMirrorMasterSizeX+3.5*mm"/>
+<constant name="Rh2SphMirrorMaster0PosY"  value= "0.0*mm"/>
+<constant name="Rh2SphMirrorMaster0PosZ"  value= "0.5*(Rh2MainGasSizeZ-Rh2SphMirrorMasterSizeZ)-15*mm"/>
+<constant name="Rh2SphMirrorMaster1PosX"  value= "-1.0*Rh2SphMirrorMaster0PosX"/>
+<constant name="Rh2SphMirrorMaster1PosY"  value= "Rh2SphMirrorMaster0PosY"/>
+<constant name="Rh2SphMirrorMaster1PosZ"  value= "Rh2SphMirrorMaster0PosZ"/>
+
+<constant name="Rh2SphMirrorMasterHoleSizeZ"  value= "Rh2GasHoleConZSize"/>
+<constant name="Rh2SphMirrorMasterHoleRUpsSize"  value= "Rh2GasHoleConUpsRad + 3*mm"/>
+<constant name="Rh2SphMirrorMasterHoleRDnsSize"  value= "Rh2GasHoleConDnsRad + 3*mm"/>
+<constant name="Rh2SphMirrorMasterHolePosZ"  value= "Rh2GasHoleConsZPos-Rh2SphMirrorMaster0PosZ"/>
+<constant name="Rh2SphMirrorMasterHole0PosX" value="-0.5*Rh2SphMirrorMasterSizeX" />
+<constant name="Rh2SphMirrorMasterHole1PosX" value="0.5*Rh2SphMirrorMasterSizeX" />
+
+
+
+<!-- Spherical Mirror Support; see EDMS doc 390531-->
+<constant name="Rh2SphMSupportSizeX" value = "1480*mm" />
+<constant name="Rh2SphMSupportSizeY" value = "6200*mm" />
+<constant name="Rh2SphMSupportSizeZ" value = "40*mm" />
+
+<constant name="Rh2SphMSupBeamHoleRad" value = "187*mm" />
+<constant name="Rh2SphMSupBeamHoleSizeZ" value = "Rh2SphMSupportSizeZ + (200*mm)" />
+<constant name="Rh2SphMSupBeamHolePosX" value="(-0.5*Rh2SphMSupportSizeX)+(0.3*mm)" />
+
+
+<constant name="Rh2SphMSupportAngle" value = "-0.28*rad" />
+<constant name="Rh2SphMSupportPosX" value = "0.5*Rh2SphMSupportSizeX*cos(Rh2SphMSupportAngle) + 10*mm - Rh2SphMirrorMaster0PosX"/>
+<constant name="Rh2SphMSupportPosY" value = "0*mm" />
+<constant name="Rh2SphMSupportPosZ" value = "910*mm-Rh2SphMirrorMaster0PosZ" />
+<constant name="Rh2SphMSupportPositivePosX" value="Rh2SphMSupportPosX" />
+<constant name="Rh2SphMSupportNegativePosX" value="-1.0*Rh2SphMSupportPosX" />
+<constant name="Rh2SphMSupportPositiveAngleRotY" value="Rh2SphMSupportAngle" />
+<constant name="Rh2SphMSupportNegativeAngleRotY" value="-1.0*Rh2SphMSupportAngle" />
+<constant name="Rh2SphMSupportNegativeAngleRotZ" value="(pi*rad)" />
+
+
+
+<!--  Now the parameters for the placement of Rich2 Sph mirrors   -->
+<!-- The centre of curvature in the coordinate system of Rich2 -->
+<constant name="Rh2SphMirrorRich2CoCX" value="3269.62*mm"/>
+<constant name="Rh2SphMirrorRich2CoCY" value="0.0*mm"/>
+<constant name="Rh2SphMirrorRich2CoCZ" value="-7376.22*mm"/>
+
+<constant name="Rh2SphMirrPositiveMaxCopyNum" value="27" />
+
+
+<!-- The centre of curvature for the placing of the mirrors inside the gas -->
+<constant name="Rh2SphMirrorCoCX" value="Rh2SphMirrorRich2CoCX"/>
+<constant name="Rh2SphMirrorCoCXPositiveInRich2" value="Rh2SphMirrorCoCX"/>
+<constant name="Rh2SphMirrorCoCXNegativeInRich2" value="-1.0*Rh2SphMirrorCoCX"/>
+<constant name="Rh2SphMirrorCoCXPositiveInGasEncl" value="Rh2SphMirrorCoCXPositiveInRich2-Rh2MainGasEnclosurePosX" />
+<constant name="Rh2SphMirrorCoCXNegativeInGasEncl" value="Rh2SphMirrorCoCXNegativeInRich2-Rh2MainGasEnclosurePosX" />
+<constant name="Rh2SphMirrorCoCYinGasEncl" value="Rh2SphMirrorRich2CoCY - Rh2MainGasEnclosurePosY" />
+<constant name="Rh2SphMirrorCoCZinGasEncl" value="Rh2SphMirrorRich2CoCZ - Rh2MainGasEnclosurePosZ"/>
+
+
+<!-- The centre of curvature in the coordinate system of LHCb -->
+
+<constant name="Rh2SphMirrorCoCY" value="Rh2SphMirrorCoCYinGasEncl"/>
+<constant name="Rh2SphMirrorCoCZ" value="Rh2SphMirrorCoCZinGasEncl"/>
+
+<constant name="Rh2SphMirrorLHCbCoCX" value="Rh2SphMirrorRich2CoCX + Rich2MasterX"/>
+<constant name="Rh2SphMirrorLHCbNegativeCoCX"  value="Rh2SphMirrorCoCXNegativeInRich2+Rich2MasterX"/>
+
+<constant name="Rh2SphMirrorLHCbCoCY" value="-1.0*Rh2SphMirrorRich2CoCZ*sin(Rich2MasterTilt) + Rh2SphMirrorRich2CoCY + Rich2MasterY"/>
+<constant name="Rh2SphMirrorLHCbCoCZ" value="Rh2SphMirrorRich2CoCZ*cos(Rich2MasterTilt) + Rich2MasterZ"/>
+
+
+<!-- The following constants are used in Rich2BeamPipeGeomParam.xml -->
+<constant name="Rh2SphMirrorHorizTilt"   value="0.39005*rad" />
+<constant name="Rh2SphMirrArrayAdjHorizShift" value="445.67*mm"/>
+<constant name="Rh2SphMirrArrayAdjVertShift" value="389.65*mm" />
+<constant name="Rh2SphMirrArrayMinHorizShift" value="4.56*mm"/>
+
+<!-- Lower half of positive x mirror array. These number are taken from EDMS doc 380417 v1 -->
+<constant name="Rh2SphMirrorCentreSeg00PosX" value="12.57*mm"/>
+<constant name="Rh2SphMirrorCentreSeg00PosY" value="-1148.46*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg01PosX" value="434.86*mm"/>
+<constant name="Rh2SphMirrorCentreSeg01PosY" value="-1160.01*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg02PosX" value="858.09*mm"/>
+<constant name="Rh2SphMirrorCentreSeg02PosY" value="-1161.48*mm"/>
+
+<constant name="Rh2SphMirrorCentreSeg03PosX" value="1287.73*mm"/>
+<constant name="Rh2SphMirrorCentreSeg03PosY" value="-1158.11*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg04PosX" value="217.60*mm"/>
+<constant name="Rh2SphMirrorCentreSeg04PosY" value="-772.73*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg05PosX" value="637.22*mm"/>
+<constant name="Rh2SphMirrorCentreSeg05PosY" value="-775.82*mm"/>
+
+<constant name="Rh2SphMirrorCentreSeg06PosX" value="1063.85*mm"/>
+<constant name="Rh2SphMirrorCentreSeg06PosY" value="-774.06*mm"/>
+
+<constant name="Rh2SphMirrorCentreSeg07PosX" value="1496.40*mm"/>
+<constant name="Rh2SphMirrorCentreSeg07PosY" value="-772.31*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg08PosX" value="6.07*mm"/>
+<constant name="Rh2SphMirrorCentreSeg08PosY" value="-384.47*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg09PosX" value="421.74*mm"/>
+<constant name="Rh2SphMirrorCentreSeg09PosY" value="-388.69*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg10PosX" value="845.03*mm"/>
+<constant name="Rh2SphMirrorCentreSeg10PosY" value="-388.04*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg11PosX" value="1274.80*mm"/>
+<constant name="Rh2SphMirrorCentreSeg11PosY" value="-387.40*mm"/>
+
+<constant name="Rh2SphMirrorCentreSeg12PosX" value="212.40*mm"/>
+<constant name="Rh2SphMirrorCentreSeg12PosY" value="0.0*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg13PosX" value="631.98*mm"/>
+<constant name="Rh2SphMirrorCentreSeg13PosY" value="0.0*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg14PosX" value="1058.60*mm"/>
+<constant name="Rh2SphMirrorCentreSeg14PosY" value="0.0*mm"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg15PosX" value="1491.14*mm"/>
+<constant name="Rh2SphMirrorCentreSeg15PosY" value="0.0*mm"/>
+
+
+<!-- upper half of positive x mirror array. These are mirror images with -y -> + y -->
+<constant name="Rh2SphMirrorCentreSeg16PosX" value="Rh2SphMirrorCentreSeg08PosX"/>
+<constant name="Rh2SphMirrorCentreSeg16PosY" value="-1.0*Rh2SphMirrorCentreSeg08PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg17PosX" value="Rh2SphMirrorCentreSeg09PosX"/>
+<constant name="Rh2SphMirrorCentreSeg17PosY" value="-1.0*Rh2SphMirrorCentreSeg09PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg18PosX" value="Rh2SphMirrorCentreSeg10PosX"/>
+<constant name="Rh2SphMirrorCentreSeg18PosY" value="-1.0*Rh2SphMirrorCentreSeg10PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg19PosX" value="Rh2SphMirrorCentreSeg11PosX"/>
+<constant name="Rh2SphMirrorCentreSeg19PosY" value="-1.0*Rh2SphMirrorCentreSeg11PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg20PosX" value="Rh2SphMirrorCentreSeg04PosX"/>
+<constant name="Rh2SphMirrorCentreSeg20PosY" value="-1.0*Rh2SphMirrorCentreSeg04PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg21PosX" value="Rh2SphMirrorCentreSeg05PosX"/>
+<constant name="Rh2SphMirrorCentreSeg21PosY" value="-1.0*Rh2SphMirrorCentreSeg05PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg22PosX" value="Rh2SphMirrorCentreSeg06PosX"/>
+<constant name="Rh2SphMirrorCentreSeg22PosY" value="-1.0*Rh2SphMirrorCentreSeg06PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg23PosX" value="Rh2SphMirrorCentreSeg07PosX"/>
+<constant name="Rh2SphMirrorCentreSeg23PosY" value="-1.0*Rh2SphMirrorCentreSeg07PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg24PosX" value="Rh2SphMirrorCentreSeg00PosX"/>
+<constant name="Rh2SphMirrorCentreSeg24PosY" value="-1.0*Rh2SphMirrorCentreSeg00PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg25PosX" value="Rh2SphMirrorCentreSeg01PosX"/>
+<constant name="Rh2SphMirrorCentreSeg25PosY" value="-1.0*Rh2SphMirrorCentreSeg01PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg26PosX" value="Rh2SphMirrorCentreSeg02PosX"/>
+<constant name="Rh2SphMirrorCentreSeg26PosY" value="-1.0*Rh2SphMirrorCentreSeg02PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg27PosX" value="Rh2SphMirrorCentreSeg03PosX"/>
+<constant name="Rh2SphMirrorCentreSeg27PosY" value="-1.0*Rh2SphMirrorCentreSeg03PosY"/>
+
+
+<!-- values for the negative x  -->
+<constant name="Rh2SphMirrorCentreSeg28PosX" value="-1.0*Rh2SphMirrorCentreSeg03PosX"/>
+<constant name="Rh2SphMirrorCentreSeg28PosY" value="Rh2SphMirrorCentreSeg03PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg29PosX" value="-1.0*Rh2SphMirrorCentreSeg02PosX"/>
+<constant name="Rh2SphMirrorCentreSeg29PosY" value="Rh2SphMirrorCentreSeg02PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg30PosX" value="-1.0*Rh2SphMirrorCentreSeg01PosX"/>
+<constant name="Rh2SphMirrorCentreSeg30PosY" value="Rh2SphMirrorCentreSeg01PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg31PosX" value="-1.0*Rh2SphMirrorCentreSeg00PosX"/>
+<constant name="Rh2SphMirrorCentreSeg31PosY" value="Rh2SphMirrorCentreSeg00PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg32PosX" value="-1.0*Rh2SphMirrorCentreSeg07PosX"/>
+<constant name="Rh2SphMirrorCentreSeg32PosY" value="Rh2SphMirrorCentreSeg07PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg33PosX" value="-1.0*Rh2SphMirrorCentreSeg06PosX"/>
+<constant name="Rh2SphMirrorCentreSeg33PosY" value="Rh2SphMirrorCentreSeg06PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg34PosX" value="-1.0*Rh2SphMirrorCentreSeg05PosX"/>
+<constant name="Rh2SphMirrorCentreSeg34PosY" value="Rh2SphMirrorCentreSeg05PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg35PosX" value="-1.0*Rh2SphMirrorCentreSeg04PosX"/>
+<constant name="Rh2SphMirrorCentreSeg35PosY" value="Rh2SphMirrorCentreSeg04PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg36PosX" value="-1.0*Rh2SphMirrorCentreSeg11PosX"/>
+<constant name="Rh2SphMirrorCentreSeg36PosY" value="Rh2SphMirrorCentreSeg11PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg37PosX" value="-1.0*Rh2SphMirrorCentreSeg10PosX"/>
+<constant name="Rh2SphMirrorCentreSeg37PosY" value="Rh2SphMirrorCentreSeg10PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg38PosX" value="-1.0*Rh2SphMirrorCentreSeg09PosX"/>
+<constant name="Rh2SphMirrorCentreSeg38PosY" value="Rh2SphMirrorCentreSeg09PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg39PosX" value="-1.0*Rh2SphMirrorCentreSeg08PosX"/>
+<constant name="Rh2SphMirrorCentreSeg39PosY" value="Rh2SphMirrorCentreSeg08PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg40PosX" value="-1.0*Rh2SphMirrorCentreSeg15PosX"/>
+<constant name="Rh2SphMirrorCentreSeg40PosY" value="Rh2SphMirrorCentreSeg15PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg41PosX" value="-1.0*Rh2SphMirrorCentreSeg14PosX"/>
+<constant name="Rh2SphMirrorCentreSeg41PosY" value="Rh2SphMirrorCentreSeg14PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg42PosX" value="-1.0*Rh2SphMirrorCentreSeg13PosX"/>
+<constant name="Rh2SphMirrorCentreSeg42PosY" value="Rh2SphMirrorCentreSeg13PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg43PosX" value="-1.0*Rh2SphMirrorCentreSeg12PosX"/>
+<constant name="Rh2SphMirrorCentreSeg43PosY" value="Rh2SphMirrorCentreSeg12PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg44PosX" value="-1.0*Rh2SphMirrorCentreSeg19PosX"/>
+<constant name="Rh2SphMirrorCentreSeg44PosY" value="Rh2SphMirrorCentreSeg19PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg45PosX" value="-1.0*Rh2SphMirrorCentreSeg18PosX"/>
+<constant name="Rh2SphMirrorCentreSeg45PosY" value="Rh2SphMirrorCentreSeg18PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg46PosX" value="-1.0*Rh2SphMirrorCentreSeg17PosX"/>
+<constant name="Rh2SphMirrorCentreSeg46PosY" value="Rh2SphMirrorCentreSeg17PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg47PosX" value="-1.0*Rh2SphMirrorCentreSeg16PosX"/>
+<constant name="Rh2SphMirrorCentreSeg47PosY" value="Rh2SphMirrorCentreSeg16PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg48PosX" value="-1.0*Rh2SphMirrorCentreSeg23PosX"/>
+<constant name="Rh2SphMirrorCentreSeg48PosY" value="Rh2SphMirrorCentreSeg23PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg49PosX" value="-1.0*Rh2SphMirrorCentreSeg22PosX"/>
+<constant name="Rh2SphMirrorCentreSeg49PosY" value="Rh2SphMirrorCentreSeg22PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg50PosX" value="-1.0*Rh2SphMirrorCentreSeg21PosX"/>
+<constant name="Rh2SphMirrorCentreSeg50PosY" value="Rh2SphMirrorCentreSeg21PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg51PosX" value="-1.0*Rh2SphMirrorCentreSeg20PosX"/>
+<constant name="Rh2SphMirrorCentreSeg51PosY" value="Rh2SphMirrorCentreSeg20PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg52PosX" value="-1.0*Rh2SphMirrorCentreSeg27PosX"/>
+<constant name="Rh2SphMirrorCentreSeg52PosY" value="Rh2SphMirrorCentreSeg27PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg53PosX" value="-1.0*Rh2SphMirrorCentreSeg26PosX"/>
+<constant name="Rh2SphMirrorCentreSeg53PosY" value="Rh2SphMirrorCentreSeg26PosY"/>
+
+<constant name="Rh2SphMirrorCentreSeg54PosX" value="-1.0*Rh2SphMirrorCentreSeg25PosX"/>
+<constant name="Rh2SphMirrorCentreSeg54PosY" value="Rh2SphMirrorCentreSeg25PosY"/>
+
+
+<constant name="Rh2SphMirrorCentreSeg55PosX" value="-1.0*Rh2SphMirrorCentreSeg24PosX"/>
+<constant name="Rh2SphMirrorCentreSeg55PosY" value="Rh2SphMirrorCentreSeg24PosY"/>
+
+
+<!-- Rotations to get the segments in the right positions -->
+<!-- The rotation around Z (elevation) is calculated from the y position of the segment.  -->
+<constant name="Rh2SphMirrorSeg00RotX" value="-38.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg01RotX" value="-23.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg02RotX" value="-16.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg03RotX" value="-9.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg04RotX" value="-21.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg05RotX" value="-17.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg06RotX" value="-12.5*mrad"/>
+
+<constant name="Rh2SphMirrorSeg07RotX" value="-8.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg08RotX" value="-16.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg09RotX" value="-14.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg10RotX" value="-11.5*mrad"/>
+
+<constant name="Rh2SphMirrorSeg11RotX" value="-9.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg12RotX" value="0.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg13RotX" value="0.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg14RotX" value="0.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg15RotX" value="0.0*mrad"/>
+
+<constant name="Rh2SphMirrorSeg16RotX" value="-1.0*Rh2SphMirrorSeg08RotX"/>
+
+<constant name="Rh2SphMirrorSeg17RotX" value="-1.0*Rh2SphMirrorSeg09RotX"/>
+
+<constant name="Rh2SphMirrorSeg18RotX" value="-1.0*Rh2SphMirrorSeg10RotX"/>
+
+<constant name="Rh2SphMirrorSeg19RotX" value="-1.0*Rh2SphMirrorSeg11RotX"/>
+
+<constant name="Rh2SphMirrorSeg20RotX" value="-1.0*Rh2SphMirrorSeg04RotX"/>
+
+<constant name="Rh2SphMirrorSeg21RotX" value="-1.0*Rh2SphMirrorSeg05RotX"/>
+
+<constant name="Rh2SphMirrorSeg22RotX" value="-1.0*Rh2SphMirrorSeg06RotX"/>
+
+<constant name="Rh2SphMirrorSeg23RotX" value="-1.0*Rh2SphMirrorSeg07RotX"/>
+
+<constant name="Rh2SphMirrorSeg24RotX" value="-1.0*Rh2SphMirrorSeg00RotX"/>
+
+<constant name="Rh2SphMirrorSeg25RotX" value="-1.0*Rh2SphMirrorSeg01RotX"/>
+
+<constant name="Rh2SphMirrorSeg26RotX" value="-1.0*Rh2SphMirrorSeg02RotX"/>
+
+<constant name="Rh2SphMirrorSeg27RotX" value="-1.0*Rh2SphMirrorSeg03RotX"/>
+
+
+<!-- The rotations for the segments in the negative x are  -->
+
+<constant name="Rh2SphMirrorSeg28RotX" value="-1.0*Rh2SphMirrorSeg03RotX"/>
+
+<constant name="Rh2SphMirrorSeg29RotX" value="-1.0*Rh2SphMirrorSeg02RotX"/>
+
+<constant name="Rh2SphMirrorSeg30RotX" value="-1.0*Rh2SphMirrorSeg01RotX"/>
+
+<constant name="Rh2SphMirrorSeg31RotX" value="-1.0*Rh2SphMirrorSeg00RotX"/>
+
+<constant name="Rh2SphMirrorSeg32RotX" value="-1.0*Rh2SphMirrorSeg07RotX"/>
+
+<constant name="Rh2SphMirrorSeg33RotX" value="-1.0*Rh2SphMirrorSeg06RotX"/>
+
+<constant name="Rh2SphMirrorSeg34RotX" value="-1.0*Rh2SphMirrorSeg05RotX"/>
+
+<constant name="Rh2SphMirrorSeg35RotX" value="-1.0*Rh2SphMirrorSeg04RotX"/>
+
+<constant name="Rh2SphMirrorSeg36RotX" value="-1.0*Rh2SphMirrorSeg11RotX"/>
+
+<constant name="Rh2SphMirrorSeg37RotX" value="-1.0*Rh2SphMirrorSeg10RotX"/>
+
+<constant name="Rh2SphMirrorSeg38RotX" value="-1.0*Rh2SphMirrorSeg09RotX"/>
+
+<constant name="Rh2SphMirrorSeg39RotX" value="-1.0*Rh2SphMirrorSeg08RotX"/>
+
+<constant name="Rh2SphMirrorSeg40RotX" value="-1.0*Rh2SphMirrorSeg15RotX"/>
+
+<constant name="Rh2SphMirrorSeg41RotX" value="-1.0*Rh2SphMirrorSeg14RotX"/>
+
+<constant name="Rh2SphMirrorSeg42RotX" value="-1.0*Rh2SphMirrorSeg13RotX"/>
+
+<constant name="Rh2SphMirrorSeg43RotX" value="-1.0*Rh2SphMirrorSeg12RotX"/>
+
+<constant name="Rh2SphMirrorSeg44RotX" value="-1.0*Rh2SphMirrorSeg19RotX"/>
+
+<constant name="Rh2SphMirrorSeg45RotX" value="-1.0*Rh2SphMirrorSeg18RotX"/>
+
+<constant name="Rh2SphMirrorSeg46RotX" value="-1.0*Rh2SphMirrorSeg17RotX"/>
+
+<constant name="Rh2SphMirrorSeg47RotX" value="-1.0*Rh2SphMirrorSeg16RotX"/>
+
+<constant name="Rh2SphMirrorSeg48RotX" value="-1.0*Rh2SphMirrorSeg23RotX"/>
+
+<constant name="Rh2SphMirrorSeg49RotX" value="-1.0*Rh2SphMirrorSeg22RotX"/>
+
+<constant name="Rh2SphMirrorSeg50RotX" value="-1.0*Rh2SphMirrorSeg21RotX"/>
+
+<constant name="Rh2SphMirrorSeg51RotX" value="-1.0*Rh2SphMirrorSeg20RotX"/>
+
+<constant name="Rh2SphMirrorSeg52RotX" value="-1.0*Rh2SphMirrorSeg27RotX"/>
+
+<constant name="Rh2SphMirrorSeg53RotX" value="-1.0*Rh2SphMirrorSeg26RotX"/>
+
+<constant name="Rh2SphMirrorSeg54RotX" value="-1.0*Rh2SphMirrorSeg25RotX"/>
+
+<constant name="Rh2SphMirrorSeg55RotX" value="-1.0*Rh2SphMirrorSeg24RotX"/>
+
+
+
+
+  </define>
+</lccdd>

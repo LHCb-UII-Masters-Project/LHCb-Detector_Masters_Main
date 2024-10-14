@@ -1,0 +1,78 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+
+  <detectors>
+    <detector name="PipeAfterMuon" type="DD4hep_VolumeAssembly" parent="${PipeAfterMuon:parent}" vis="Pipe:Vis">
+
+      <!-- Pipe segment replacement of VVSSH  (LHCb_Pipe_Section_Type_1) -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvVVSSH">
+	<param name="vis"                value="Pipe:AfterMuon"/>
+	<param name="Material"           value="Pipe:Steel316LN"/>
+	<param name="Length"             value="DownStr:VVSSHPipeZ"/>
+	<param name="Radius"             value="DownStr:VVSSHPipeRad"/>
+	<param name="Thick"              value="DownStr:VVSSHPipeThick"/>
+	<param name="FlangeLength"       value="19.7*mm"/>
+	<param name="FlangeThick"        value="76.0*mm - (DownStr:VVSSHPipeRad + DownStr:VVSSHPipeThick + 0.01*mm)"/>
+	<param name="FlangeMaterial"     value="Pipe:Steel316LN"/>
+      </volume>
+
+      <!-- Pipe in DownStr:MBXWS  (LHCb_Pipe_Section_Type_1)  -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvMBXWSPipe">
+	<param name="vis"                value="Pipe:AfterMuon"/>
+	<param name="Material"           value="Pipe:CuOFE"/>
+	<param name="Length"             value="DownStr:MBXWSPipeLength"/>
+	<param name="Radius"             value="DownStr:MBXWSPipeRadius"/>
+	<param name="Thick"              value="DownStr:MBXWSPipeThick"/>
+	<param name="FlangeUpLength"     value="19.8*mm"/>
+	<param name="FlangeUpThick"      value="48.0*mm"/>
+	<param name="FlangeUpMaterial"   value="Pipe:Steel316LN"/>
+	<param name="FlangeDownLength"   value="17.4*mm"/>
+	<param name="FlangeDownThick"    value="29.0*mm"/>
+	<param name="FlangeDownMaterial" value="Pipe:Steel316LN"/>
+      </volume>
+      <include ref="AfterMuon-VVSGF.xml"/>
+      <include ref="AfterMuon-BPMSW.xml"/>
+      <include ref="AfterMuon-Vax.xml"/>
+
+      <!--==================================================================================-->
+      <!--===================================Final  Assembly================================-->
+      <!--==================================================================================-->
+      <envelope type="Assembly" name="lvPipeAfterMuon" vis="Pipe:AfterMuon">
+	<physvol name="pvVVSGF"		  volume="lvVVSGF">
+	  <position z="75.0*mm/2 - 2500.0*mm/2"/>
+	  <rotation z="-30.0*degree"/>
+	</physvol>
+	<physvol name="pvVVSSH"		  volume="lvVVSSH">
+	  <position z="75.0*mm + 280*mm + 80.0*mm/2 - 2500.0*mm/2"/>
+	</physvol>
+	<physvol name="pvMBXWSPipe"       volume="lvMBXWSPipe">
+	  <position z="75.0*mm + 280*mm + 80.0*mm + 1274.6*mm/2 - 2500.0*mm/2"/>
+	</physvol>
+	<physvol name="pvBPMSWDownStr"	  volume="lvDownStrBPMSW">
+	  <position z="75.0*mm + 280*mm + 80.0*mm + 1274.6*mm + 17.4*mm/2 - 2500.0*mm/2"/>
+	</physvol>
+	<physvol name="pvVaxDownStr" 	  volume="lvDownStrVax">
+	  <position z="75.0*mm + 280*mm + 80.0*mm + 1274.6*mm + 285.0*mm + 180.0*mm + 67.0*mm - 2500.0*mm/2"/>
+	</physvol>
+	<physvol name="pvVVSGF2"	  volume="lvVVSGF">
+	  <position z="75.0*mm + 280*mm + 80.0*mm + 1274.6*mm + 285.0*mm + 180.0*mm + 190.0*mm + 75.0*mm/2 - 2500.0*mm/2"/>
+	</physvol>
+      </envelope>
+
+      <position z="- Regions:AfterMuonHoleZSize/2"/>
+    </detector>
+
+  </detectors>
+</lccdd>

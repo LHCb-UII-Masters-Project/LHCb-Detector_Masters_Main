@@ -1,0 +1,52 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the BlockWall parameter definitions                     -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <define>
+    <!-- The general parameters for Infrastructure Box -->
+    <constant name="Infra:xPos"              value="0.0*m"/>
+    <constant name="Infra:yPos"              value="0.0*m"/>
+    <constant name="Infra:zPos"              value="0.0*m"/>
+    <constant name="Infra:Rotate"            value="0.003601*rad" />
+  </define>
+
+  <materials>
+    <!-- Concrete -->
+    <material name="Infrastructure:Concrete" state="solid">
+      <D type="density" value="2.5" unit="g/cm3"/>
+      <component fraction="0.520" name="Oxygen"/>
+      <component fraction="0.325" name="Silicon"/>
+      <component fraction="0.060" name="Calcium"/>
+      <component fraction="0.015" name="Sodium"/>
+      <component fraction="0.020" name="Iron"/>
+      <component fraction="0.040" name="Aluminium"/>
+    </material>
+    <material name="Infrastructure:Steel">
+      <D type="density" value="7.87" unit="g/cm3"/>
+      <component name="Iron"      fraction="0.97" />
+      <component name="Carbon"    fraction="0.03" />
+    </material>
+  </materials>
+
+  <display>
+    <vis name="Infrastructure:Vis"         alpha="0.1" r="0.9" g="0.9" b="0.9" showDaughters="true" visible="false"/>
+    <vis name="Infrastructure:ConcreteVis" alpha="1.0" r="0.8" g="0.8" b="0.8" showDaughters="false" visible="true"/>
+    <vis name="Infrastructure:BunkerVis"   alpha="1.0" r="0.4" g="0.4" b="0.4" showDaughters="false" visible="true"/>
+    <vis name="Infrastructure:GantryVis"   alpha="1.0" r="0.0" g="0.2" b="1.0" showDaughters="false" visible="true"/>
+
+    <vis name="Infrastructure:SteelVis"          alpha="1.0" r="0.0" g="0.2" b="1.0" showDaughters="false" visible="true"/>
+    <vis name="Infrastructure:SteelStructureVis" alpha="1.0" r="0.0" g="0.2" b="1.0" showDaughters="false" visible="true"/>
+    <vis name="Infrastructure:VertexPlatformVis" alpha="1.0" r="0.0" g="0.2" b="1.0" showDaughters="false" visible="true"/>
+  </display>
+</lccdd>

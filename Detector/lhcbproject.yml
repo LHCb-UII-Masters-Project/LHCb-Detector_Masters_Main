@@ -1,0 +1,5 @@
+---
+name: Detector
+license: GPL-3.0-only
+dependencies:
+  - LCG

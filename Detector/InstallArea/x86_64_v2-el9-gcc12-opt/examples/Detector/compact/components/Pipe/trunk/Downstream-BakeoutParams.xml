@@ -1,0 +1,107 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+
+
+    <!-- ***************************************************************** -->
+    <!-- *  BeamPipe bakeout geometry parameters                         * -->
+    <!-- *                                                               * -->
+    <!-- *  Date: 2006-03-20                                             * -->
+    <!-- *  Author: Gloria Corti                                         * -->
+    <!-- *  Modified by Daria Savrina, Oct. 2008 to include bakeout      * -->
+    <!-- *  around the end window and switch off part under M1, ECAL     * -->
+    <!-- *  as installed                                                 * -->
+    <!-- *                                                               * -->
+    <!-- ***************************************************************** -->
+
+
+    <!-- UX85-4 bakeout -->
+    <constant  name="UX854BakeoutStartIP"
+               value="UX854ZStartIP + UX854Flange01Lenght"/>
+    <constant  name="UX854BakeoutLenght"
+               value="UX854Cone02Lenght + UX854Cone03Lenght + UX854Cone04Lenght"/>
+    <constant  name="UX854BakeoutDeltaPipeInner"      value="4.00*mm + 0.10*mm"/>
+    <constant  name="UX854BakeoutRadiusZmin"
+               value="UX854BakeoutStartIP * tan(UX851to4Angle)
+                      + UX854BakeoutDeltaPipeInner"/>
+    <constant  name="UX854BakeoutRadiusZmax"
+               value="(UX854BakeoutStartIP + UX854BakeoutLenght)*
+                      tan(UX851to4Angle) + UX854BakeoutDeltaPipeInner"/>
+    <constant  name="UX854BakeoutThick"               value="10.00*mm"/>
+    <constant  name="UX854BakeoutZPos"
+               value="UX853DownstreamLenght + UX85C13100Lenght + UX854Flange01Lenght + 0.5*UX854BakeoutLenght"/>
+
+    <!-- UX85-4 Win05 bakeout -->
+    <constant name="UX854Win05BakeoutLenght"        value="599.00*mm"/>
+    <constant name="UX854Win05BakeoutRadiusZmin"    value="UX854Win05RadiusZmin + UX854Win05Thick"/>
+    <constant name="UX854Win05BakeoutRadiusZmax"    value="UX854Win05RadiusZmax + UX854Win05Thick"/>
+    <constant name="UX854Win05BakeoutThick"         value="10.00*mm"/>
+    <constant name="UX854Win05BakeoutZpos"
+              value="UX853DownstreamLenght + UX85C13100Lenght + UX854Flange01Lenght + UX854BakeoutLenght + 0.5*UX854Win05BakeoutLenght"/>
+
+    <constant name="UX854Win05BakeoutHole1Length"   value="300.0*mm"/>
+    <constant name="UX854Win05BakeoutHole1Radius"   value="19.0*mm + UX854Win05Pipe1Thick"/>
+    <constant name="UX854Win05BakeoutHole1PosZ"     value="-119.0*mm"/>
+    <constant name="UX854Win05BakeoutHole1RotX"     value="-15.0*degree"/>
+    <constant name="UX854Win05BakeoutHole1RotZ"     value="45.0*degree"/>
+    <constant name="UX854Win05BakeoutHole1PosR"     value="145.3*mm"/>
+    <constant name="UX854Win05BakeoutHole1PosPhi"   value="135.0*degree"/>
+
+    <constant name="UX854Win05BakeoutHole2Length"   value="100.0*mm"/>
+    <constant name="UX854Win05BakeoutHole2Radius"   value="31.75*mm + UX854Win05Pipe2Thick"/>
+    <constant name="UX854Win05BakeoutHole2RotX"     value="90.0*degree"/>
+    <constant name="UX854Win05BakeoutHole2PosY"     value="95.0*mm"/>
+    <constant name="UX854Win05BakeoutHole2PosZ"     value="69.0*mm"/>
+
+    <constant name="UX854Win05BakeoutHole3Length"   value="300.0*mm"/>
+    <constant name="UX854Win05BakeoutHole3Radius"   value="30.0*mm + UX854Win05Pipe3Thick"/>
+    <constant name="UX854Win05BakeoutHole3RotY"     value="-20.0*degree"/>
+    <constant name="UX854Win05BakeoutHole3PosX"     value="-122.0*mm"/>
+    <constant name="UX854Win05BakeoutHole3PosZ"     value="-32.76*mm"/>
+
+    <constant name="UX854Win05BakeoutHole4Length"   value="200.0*mm"/>
+    <constant name="UX854Win05BakeoutHole4Radius"   value="9.5*mm + UX854Win05Pipe4Thick"/>
+    <constant name="UX854Win05BakeoutHole4RotY"     value="45.0*degree"/>
+    <constant name="UX854Win05BakeoutHole4PosX"     value="64.0*mm"/>
+    <constant name="UX854Win05BakeoutHole4PosZ"     value="191.6*mm"/>
+
+    <constant name="UX854Win05BakeoutPipeExtra"     value="50.0*mm"/> <!-- To accomodate cuts -->
+
+    <constant name="UX854Win05BakeoutPipe1BasicLength"   value="226.7*mm"/>
+    <constant name="UX854Win05BakeoutPipe1Length"   value="UX854Win05BakeoutPipe1BasicLength + UX854Win05BakeoutPipeExtra"/>
+    <constant name="UX854Win05BakeoutPipe1Thick"    value="10.0*mm"/>
+
+    <constant name="UX854Win05BakeoutPipe2CutLength" value="UX854Win05BakeoutHole2Radius*2"/>
+    <constant name="UX854Win05BakeoutPipe2BasicLength" value="135.0*mm"/>
+    <constant name="UX854Win05BakeoutPipe2Length"   value="UX854Win05BakeoutPipe2BasicLength + UX854Win05BakeoutPipeExtra
+							   + UX854Win05BakeoutPipe2CutLength"/>
+    <constant name="UX854Win05BakeoutPipe2Thick"    value="10.0*mm"/>
+    <constant name="UX854Win05BakeoutPipe2ExtendBasicLength" value="142.5*mm"/>
+    <constant name="UX854Win05BakeoutPipe2ExtendLength" value="UX854Win05BakeoutPipe2ExtendBasicLength + UX854Win05BakeoutPipe2CutLength"/>
+
+    <constant name="UX854Win05BakeoutPipe3BasicLength"   value="79.5*mm"/>
+    <constant name="UX854Win05BakeoutPipe3Length"   value="UX854Win05BakeoutPipe3BasicLength + UX854Win05BakeoutPipeExtra"/> <!--"182.0*mm"/>-->
+    <constant name="UX854Win05BakeoutPipe3Thick"    value="2.0*mm"/>
+    <constant name="UX854Win05BakeoutPipe3ExtendLength" value="50.5*mm"/>
+    <constant name="UX854Win05BakeoutPipe3Rad"      value="17.0*mm + UX854Win05Pipe3Thick"/>
+
+    <constant name="UX854Win05BakeoutPipe4BasicLength"   value="31.5*mm"/>
+    <constant name="UX854Win05BakeoutPipe4Length"   value="UX854Win05BakeoutPipe4BasicLength + UX854Win05BakeoutPipeExtra"/>
+    <constant name="UX854Win05BakeoutPipe4Thick"    value="10.0*mm"/>
+
+  </define>
+
+</lccdd>

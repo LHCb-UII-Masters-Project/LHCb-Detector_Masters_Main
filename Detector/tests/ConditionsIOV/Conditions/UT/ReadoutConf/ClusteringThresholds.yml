@@ -1,0 +1,6 @@
+ClusteringThresholds:
+  tag: Data11,
+  HitThreshold: 3.5
+  CMSThreshold: 4.0
+  ConfirmationThreshold: 3.5
+  SpilloverThreshold: 10.0

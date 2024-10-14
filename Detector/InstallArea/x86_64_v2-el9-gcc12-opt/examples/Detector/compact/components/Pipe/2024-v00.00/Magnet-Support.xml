@@ -1,0 +1,2769 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+
+  <materials>
+    <!-- ### Pipe Supports Titanium small pins ### -->
+    <material name    = "Pipe:TitaniumG5">
+      <D name="density" value="4.42" unit="g/cm3"/>
+      <fraction ref = "Al" n="0.06"/>
+      <fraction ref = "Fe" n="0.0025"/>
+      <fraction ref = "Ti" n="0.8955"/>
+      <fraction ref = "V"  n="0.04"/>
+      <fraction ref = "O"  n="0.0020"/>
+    </material>
+  </materials>
+
+  <detectors>
+    <detector name="PipeMagnet-Support" type="DD4hep_VolumeAssembly" parent="${PipeMagnet:parent}" vis="Pipe:Vis">
+      <position z="-0.5*Regions:MagnetRegionZSize"/>
+      <!-- *************************************************************************** -->
+      <!-- * UX85-1 Support                                                          * -->
+      <!-- *************************************************************************** -->
+      <!-- UX85-1 Support: Collar -->
+      <volume name="lvUX851Collar" material="Pipe:Al2219F">
+        <shape type="Tube" name="UX85-1-Collar"
+               dz="0.5*UX851CollarLenght"
+               rmin="UX851CollarRadius"
+               rmax="UX851CollarRadius+UX851CollarThick"/>
+      </volume>
+
+      <!-- UX85-1 Support: Cables -->
+      <volume name="lvUX851Cable" material="Pipe:Steel316LN">
+        <shape type="Tube" name="UX85-1-Cable"
+               dz="0.5*UX851CableLenght"
+               rmax="UX851CableRadius"/>
+      </volume>
+
+      <!-- *************************************************************************** -->
+      <!-- UX85-2 Fixed Point                                                          -->
+      <!-- *************************************************************************** -->
+      <volume name="lvUX852InnerRing" material="Pipe:Beryllium">
+        <shape type="Tube" name="UX85-2-InnerRing"
+               dz="0.5*UX852FixCollarRingLength"
+               rmin="UX852FixCollarRingInnerRad"
+               rmax="UX852FixCollarRingOuterRad"/>
+      </volume>
+
+      <volume name="lvUX852BigRingSect1" material="Pipe:Beryllium">
+        <shape type="Tube" name="UX85-2-BigRingSect1"
+               dz="0.5*UX852FixCollarLength"
+               rmin="UX852FixCollarInnerRad"
+               rmax="UX852FixCollarAttOuterRad"
+               deltaPhiAngle="UX852FixCollarSect1DelthaAngle"/>
+      </volume>
+
+      <volume name="lvUX852BigRingSect2" material="Pipe:Beryllium">
+        <shape type="BooleanShape" operation="subtraction" name="UX852Sect2Sub">
+          <shape type="Tube" name="UX85-2-BigRingSect2"
+                 dz="0.5*UX852FixCollarLength"
+                 rmin="UX852FixCollarInnerRad"
+                 rmax="UX852FixCollarAttOuterRad"
+                 startPhiAngle="UX852FixCollarSect1DelthaAngle"
+                 deltaPhiAngle="UX852FixCollarSect2DelthaAngle"/>
+          <shape type="Box" name="UX85-2-BigRingSect2-Slope"
+                 dx="0.5*UX852BigRingSect2SlopeXsize"
+                 dy="0.5*UX852BigRingSect2SlopeYsize"
+                 dz="0.5*(UX852FixCollarLength+0.5*mm)"/>
+          <transformation>
+            <position/>
+            <rotation z="UX852BigRingSect2SlopeZrot"/>
+            <position/>
+            <rotation/>
+            <positionRPhiZ r="0.5*(UX852FixCollarAttOuterRad+UX852FixCollarOuterRad+UX852BigRingSect2SlopeYsize)" phi="UX852BigRingSect2SlopePhipos"/>
+          </transformation>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852BigRingSect3" material="Pipe:Beryllium">
+        <shape type="BooleanShape" operation="subtraction" name="UX852Sect3Sub">
+          <shape type="Tube" name="UX85-2-BigRingSect3"
+                 dz="0.5*UX852FixCollarLength"
+                 rmin="UX852FixCollarInnerRad"
+                 rmax="UX852FixCollarOuterRad"
+                 startPhiAngle="UX852FixCollarSect1DelthaAngle + UX852FixCollarSect2DelthaAngle"
+                 deltaPhiAngle="UX852FixCollarSect3DelthaAngle"/>
+          <shape type="Tube" name="UX852BigRingTransHole1"
+                 dz="0.5*UX852FixCollarHoleSect3Length"
+                 rmax="UX852FixCollarHoleSect3Rad"/>
+          <transformation>
+            <positionRPhiZ/>
+            <rotation y="90*degree"/>
+            <positionRPhiZ r="UX852FixCollarHoleSect3Rpos" phi="UX852FixCollarHoleSect3Phipos"/>
+            <rotation z="45*degree-UX852FixCollarSect1Rot"/>
+          </transformation>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852BigRingSect4" material="Pipe:Beryllium">
+        <shape type="BooleanShape" operation="subtraction" name="UX852Sect4Sub">
+          <shape type="Tube" name="UX85-2-BigRingSect4"
+                 dz="0.5*UX852FixCollarLength"
+                 rmin="UX852FixCollarInnerRad"
+                 rmax="UX852FixCollarAttOuterRad"
+                 startPhiAngle="UX852FixCollarSect1DelthaAngle + UX852FixCollarSect2DelthaAngle + UX852FixCollarSect3DelthaAngle"
+                 deltaPhiAngle="UX852FixCollarSect2DelthaAngle"/>
+          <shape type="Box" name="UX85-2-BigRingSect4-Slope"
+                 dx="0.5*UX852BigRingSect2SlopeXsize"
+                 dy="0.5*UX852BigRingSect2SlopeYsize"
+                 dz="0.5*(UX852FixCollarLength+0.5*mm)"/>
+          <transformation>
+            <position/>
+            <rotation z="UX852BigRingSect2SlopeZrot - 5*degree"/>
+            <position/>
+            <rotation/>
+            <positionRPhiZ r="0.5*(UX852FixCollarAttOuterRad+UX852FixCollarOuterRad+UX852BigRingSect2SlopeYsize)" phi="UX852BigRingSect4SlopePhipos"/>
+          </transformation>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852BigRingQuarter">
+        <physvol name="pvUX852BigRingSect1"                 volume="lvUX852BigRingSect1">
+        </physvol>
+        <physvol name="pvUX852BigRingSect2"                 volume="lvUX852BigRingSect2">
+        </physvol>
+        <physvol name="pvUX852BigRingSect3"                 volume="lvUX852BigRingSect3">
+        </physvol>
+        <physvol name="pvUX852BigRingSect4"                 volume="lvUX852BigRingSect4">
+        </physvol>
+      </volume>
+
+      <!-- UX825 Fix Collar -->
+      <volume name="lvUX852FixCollar">
+        <physvol name="pvUX852InnerRing"                 volume="lvUX852InnerRing">
+          <position z="UX852FixCollarZpos"/>
+        </physvol>
+
+        <physvol name="pvUX852BigRingQuarter1"           volume="lvUX852BigRingQuarter">
+          <position z="UX852FixCollarZpos"/>
+          <rotation z="UX852FixCollarSect1Rot"/>
+        </physvol>
+
+        <physvol name="pvUX852BigRingQuarter2"           volume="lvUX852BigRingQuarter">
+          <position z="UX852FixCollarZpos"/>
+          <rotation z="UX852FixCollarSect1Rot+UX852FixCollarQuarterRot"/>
+        </physvol>
+
+        <physvol name="pvUX852BigRingQuarter3"           volume="lvUX852BigRingQuarter">
+          <position z="UX852FixCollarZpos"/>
+          <rotation z="UX852FixCollarSect1Rot+2*UX852FixCollarQuarterRot"/>
+        </physvol>
+
+        <physvol name="pvUX852BigRingQuarter4"           volume="lvUX852BigRingQuarter">
+          <position z="UX852FixCollarZpos"/>
+          <rotation z="UX852FixCollarSect1Rot+3*UX852FixCollarQuarterRot"/>
+        </physvol>
+      </volume>
+
+      <!-- Attachments -->
+      <volume name="lvUX852CollarAtt" material="Pipe:Beryllium">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-2-CollarAttMainSub">
+          <shape type="Box" name="UX85-2-CollarAttMain"
+                 dx="0.5*UX852CollarAttMainPartXsize"
+                 dy="0.5*UX852CollarAttMainPartYsize"
+                 dz="0.5*UX852CollarAttMainPartZsize"/>
+          <shape type="Box" name="UX85-2-CollarAttMainSub1"
+                 dx="0.5*UX852CollarAttMainPartXsize"
+                 dy="0.5*UX852CollarAttMainPartYsize+100*mm"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttSlope1RPos"/>
+            <rotation z="UX852CollarAttSlope1YRot"/>
+            <position/>
+            <rotation y="180*degree"/>
+            <positionRPhiZ/>
+          </transformation>
+          <shape type="Box" name="UX85-2-CollarAttMainSub2"
+                 dx="0.5*UX852CollarAttMainPartXsize"
+                 dy="0.5*UX852CollarAttMainPartYsize"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttSlope2RPos"/>
+            <rotation/>
+            <position y="UX852CollarAttSlope2ZPos"/>
+            <rotation/>
+            <positionRPhiZ/>
+          </transformation>
+          <shape type="Box" name="UX85-2-CollarAttMainSub3"
+                 dx="0.5*UX852CollarAttMainPartXsize"
+                 dy="0.5*(UX852CollarAttMainPartYsize-5*mm)"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttSlope3RPos"/>
+            <rotation z="UX852CollarAttSlope3YRot"/>
+            <position/>
+            <rotation/>
+            <positionRPhiZ/>
+          </transformation>
+          <shape type="Tube" name="UX85-2-CollarAttMain-Hole1"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"
+                 rmax="UX852CollarAttMainHole1Rad"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttMainHole1RadPos"/>
+            <rotation/>
+            <position/>
+            <position y="UX852CollarAttMainHole1ZPos"/>
+            <rotation y="180*degree"/>
+            <positionRPhiZ/>
+          </transformation>
+          <shape type="Tube" name="UX85-2-CollarAttMain-Hole2"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"
+                 rmax="UX852CollarAttMainHole2Rad"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttMainHole2RadPos"/>
+            <rotation/>
+            <position y="UX852CollarAttMainHole2ZPos"/>
+            <rotation/>
+            <positionRPhiZ/>
+          </transformation>
+          <shape type="Tube" name="UX85-2-CollarAttMain-RoundEdge1"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"
+                 rmin="UX852CollarAttMainPartEdge1InnerRad"
+                 rmax="UX852CollarAttMainPartEdge1InnerRad+10*mm"
+                 startPhiAngle="UX852CollarAttMainPartEdge1StartPhi"
+                 deltaPhiAngle="UX852CollarAttMainPartEdge1DeltaPhi"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttMainHole1RadPos"/>
+            <rotation/>
+            <position y="UX852CollarAttMainHole1ZPos"/>
+            <rotation y="180*degree"/>
+            <positionRPhiZ/>
+          </transformation>
+          <shape type="Tube" name="UX85-2-CollarAttMain-RoundEdge2"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"
+                 rmin="UX852CollarAttMainPartEdge2InnerRad"
+                 rmax="UX852CollarAttMainPartEdge2InnerRad+10*mm"
+                 startPhiAngle="UX852CollarAttMainPartEdge2StartPhi"
+                 deltaPhiAngle="UX852CollarAttMainPartEdge2DeltaPhi"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttMainHole2RadPos"/>
+            <rotation/>
+            <position y="UX852CollarAttMainHole2ZPos"/>
+            <rotation/>
+            <positionRPhiZ/>
+          </transformation>
+          <shape type="Tube" name="UX85-2-CollarAttMain-RoundEdge2b"
+                 dz="0.5*(UX852CollarAttMainPartZsize+0.5*mm)"
+                 rmin="UX852CollarAttMainPartEdge2InnerRad"
+                 rmax="UX852CollarAttMainPartEdge2InnerRad+10*mm"
+                 startPhiAngle="UX852CollarAttMainPartEdge2bStartPhi"
+                 deltaPhiAngle="UX852CollarAttMainPartEdge2bDeltaPhi"/>
+          <transformation>
+            <positionRPhiZ r="UX852CollarAttMainHole2RadPos"/>
+            <rotation/>
+            <position y="UX852CollarAttMainHole2ZPos"/>
+            <rotation/>
+            <positionRPhiZ/>
+          </transformation>
+        </shape>
+      </volume>
+
+      <!-- Cable attachments -->
+      <!-- New Cable attachment from 2015 June -->
+      <volume name="lvUX852CollarForkAttachProngCyl" material="Pipe:AW7075">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-2-CollarForkAttachProngSub" >
+          <shape type="Tube" name="UX85-2-CollarForkAttachCyl"
+                 dz="0.5*UX852CollarForkAttachProngThickness"
+                 rmax="UX852CollarForkAttachProngOuterRadius"
+                 rmin="UX852CollarForkAttachProngInnerRadius"/>
+          <shape type="Box" name="UX85-2-CollarForkAttachProngSubBox"
+                 dx="0.5*UX852CollarForkAttachProngSubBoxLargeXSize"
+                 dy="0.5*UX852CollarForkAttachProngSubBoxLargeYSize"
+                 dz="0.5*UX852CollarForkAttachProngSubBoxLargeZSize"/>
+          <position  y="UX852CollarForkAttachProngSubBoxShiftY"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852CollarForkAttachProngTrap" material="Pipe:AW7075">
+        <shape type="Trapezoid" name="UX85-2-CollarForkAttachTrd"
+               z="0.5*UX852CollarForkAttachProngTrapZSize"
+               x1="0.5*UX852CollarForkAttachProngTrapX1Size"
+               x2="0.5*UX852CollarForkAttachProngTrapX2Size"
+               y1="0.5*UX852CollarForkAttachProngTrapY1Size"
+               y2="0.5*UX852CollarForkAttachProngTrapY2Size"/>
+      </volume>
+      <volume name="lvUX852CollarForkAttachProngBox" material="Pipe:AW7075">
+        <shape type="Box" name="UX85-2-CollarForkAttachBox"
+               dx="0.5*UX852CollarForkAttachProngBoxXSize"
+               dy="0.5*UX852CollarForkAttachProngBoxYSize"
+               dz="0.5*UX852CollarForkAttachProngBoxZSize"/>
+      </volume>
+
+      <volume name="lvUX852CollarForkAttachStemTrap" material="Pipe:AW7075">
+        <shape type="BooleanShape" operation="subtraction" name="UX852CollarForkAttachStemSub" >
+          <shape type="Trapezoid" name="UX852CollarForkAttachTrd"
+                 z="0.5*UX852CollarForkAttachStemTrapZSize"
+                 x1="0.5*UX852CollarForkAttachStemTrapX1Size"
+                 x2="0.5*UX852CollarForkAttachStemTrapX2Size"
+                 y1="0.5*UX852CollarForkAttachStemTrapY1Size"
+                 y2="0.5*UX852CollarForkAttachStemTrapY2Size"/>
+
+          <shape type="BooleanShape" operation="subtraction" name="UX852CollarForkAttachStemCylSub" >
+            <shape type="Tube" name="UX852CollarStemLargeCylSub"
+                   dz="0.5*UX852CollarForkAttachStemLargeCylZSize"
+                   rmax="UX852CollarForkAttachStemLargeCylRadius"
+                   startPhiAngle="UX852CollarForkAttachStemCylStartPhi"
+                   deltaPhiAngle="UX852CollarForkAttachStemCylDeltaPhi"/>
+            <shape type="Tube" name="UX852CollarStemCylSub"
+                   dz="0.5*UX852CollarForkAttachStemCylZSize"
+                   rmax="UX852CollarForkAttachStemCylRadius"/>
+            <position/>
+          </shape>
+          <position z="UX852CollarForkAttachStemCylCenterZFromTrapCenter"/>
+          <rotation  x="UX852CollarForkAttachStemCylRotX"/>
+
+          <shape type="Tube"  name="UX852CollarForkStemCylHoleSub"
+                 dz="0.5*UX852CollarForkAttachStemHoleLargeZSize"
+                 rmax="UX852CollarForkAttachStemHoleRadius"/>
+          <position  z="UX852CollarForkAttachStemCylCenterZFromTrapCenter"/>
+          <rotation  x="UX852CollarForkAttachStemCylRotX"/>
+
+          <shape type="Trapezoid" name="UX852CollarForkStemTrdholeSub"
+                 z="0.5*UX852CollarForkStemTrdholeLargeZSize"
+                 x1="0.5*UX852CollarForkStemTrdholeX1Size"
+                 x2="0.5*UX852CollarForkStemTrdholeX2Size"
+                 y1="0.5*UX852CollarForkStemTrdholeY1LargeSize"
+                 y2="0.5*UX852CollarForkStemTrdholeY2LargeSize"/>
+          <position z="UX852CollarForkStemTrdholeZPos"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852CollarForkAttachProng" >
+        <physvol name="pvUX852CollarForkAttachProngCylUps"                 volume="lvUX852CollarForkAttachProngCyl" >
+          <position z="UX852CollarForkAttachProngUpsPosZ"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngCylDns"                 volume="lvUX852CollarForkAttachProngCyl" >
+          <position z="UX852CollarForkAttachProngDnsPosZ"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngTrapUps"                volume="lvUX852CollarForkAttachProngTrap" >
+          <position y="UX852CollarForkAttachProngTrapPosY"
+                    z="UX852CollarForkAttachProngTrapUpsPosZ"/>
+          <rotation x="UX852CollarForkAttachProngTrapRotX"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngTrapDns"                volume="lvUX852CollarForkAttachProngTrap" >
+          <position y="UX852CollarForkAttachProngTrapPosY"
+                    z="UX852CollarForkAttachProngTrapDnsPosZ"/>
+          <rotation x="UX852CollarForkAttachProngTrapRotX"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngBoxUps"                 volume="lvUX852CollarForkAttachProngBox" >
+          <position y="UX852CollarForkAttachProngBoxYPos"
+                    z="UX852CollarForkAttachProngBoxUpsPosZ"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngBoxDns"                 volume="lvUX852CollarForkAttachProngBox" >
+          <position y="UX852CollarForkAttachProngBoxYPos"
+                    z="UX852CollarForkAttachProngBoxDnsPosZ"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachStemTrap"                    volume="lvUX852CollarForkAttachStemTrap" >
+          <transformation>
+            <position/>
+            <rotation x="UX852CollarForkStemRotX"/>
+            <position y="UX852CollarForkStemPosY"/>
+            <rotation y="UX852CollarForkStemRotY"/>
+          </transformation>
+        </physvol>
+
+      </volume>
+
+
+      <volume name="lvUX852TechnoraCableHeadTypeACyl"  material="Pipe:Celazole">
+        <shape type="Tube" name="UX85-2-TechnoraCableHeadTypeATub"
+               dz="0.5*UX852TechnoraCableHeadThickness"
+               rmax="UX852TechnoraCableHeadTypeAOuterRadius"
+               rmin="UX852TechnoraCableHeadInnerRadius"/>
+      </volume>
+
+      <volume name="lvUX852TechnoraCableHeadTypeBCyl"  material="Pipe:Celazole">
+        <shape type="Tube" name="UX85-2-TechnoraCableHeadTypeBTub"
+               dz="0.5*UX852TechnoraCableHeadThickness"
+               rmax="UX853TechnoraCableHeadTypeBOuterRadius"
+               rmin="UX852TechnoraCableHeadInnerRadius"/>
+      </volume>
+
+      <volume name="lvUX852TechnoraCableHeadDemiCable" material="Pipe:Technora">
+        <shape type="Tube" name="UX85-2-TechnoraCableHeadDemiCableTub"
+               dz="0.5*UX852TechnoraCableHeadDemiCableLength"
+               rmax="UX852TechnoraCableHeadDemiCableRadius"/>
+      </volume>
+
+      <volume name="lvUX852TechnoraCableHeadTypeAWithoutPin" >
+        <physvol name="pvUX852TechnoraCableHeadCylTypeAWithoutPin"       volume="lvUX852TechnoraCableHeadTypeACyl"/>
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideATypeAWithoutPin"
+                 volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideAPosX"
+                    y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideBTypeAWithoutPin"
+                 volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideBPosX"
+                    y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+
+      </volume>
+
+      <volume name="lvUX852TechnoraCableHeadTypeBWithoutPin" >
+        <physvol name="pvUX852TechnoraCableHeadCylTypeBWithoutPin"       volume="lvUX852TechnoraCableHeadTypeBCyl"/>
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideATypeBWithoutPin"
+                 volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideAPosX"
+                    y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideBTypeBWithoutPin"
+                 volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideBPosX"
+                    y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+      </volume>
+
+      <volume name="lvUX852FutureFibreCableHeadOuterCyl"  material="Pipe:Celazole">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-2-FutureFibreCableHeadTubSub" >
+          <shape type="Tube" name="UX85-2-FutureFibreCableHeadTub"
+                 dz="0.5*UX852CableHeadBasicThickness"
+                 rmax="UX852CableHeadOuterRadius"
+                 rmin="UX852CableHeadOuterPartInnerRadius"/>
+
+          <shape type="Tube" name="UX85-2-FutureFibreCableHeadSubTub"
+                 dz="0.5*UX852CableHeadHoleLargeZSize"
+                 rmax="UX852CableHeadOuterHoleOuterRadius"
+                 startPhiAngle="UX852CableHeadOuterHoleBeginPhi"
+                 deltaPhiAngle="UX852CableHeadOuterHoleDeltaPhi"/>
+          <position/>
+        </shape>
+      </volume>
+
+
+      <volume name="lvUX852FutureFibreCableHeadFittingBoreSph" material="Pipe:Celazole">
+        <shape type="BooleanShape" operation="subtraction" name="UX852FutureFibreCableHeadFittingBoreSphSub">
+          <sphere name="UX852FutureFibreCableHeadFittingBoreSph"
+                  rmax="UX852CableHeadSphereRadius"/>
+          <shape type="Tube" name="UX852FutureFibreCableHeadTubsSub"
+                 rmax="UX852CableHeadInnerRadius"
+                 dz="0.5*UX852CableHeadHoleLargeZSize"/>
+          <position/>
+        </shape>
+      </volume>
+
+
+      <!-- start  place holder. not used -->
+      <!--
+          <volume name="lvUX852FutureFibreCableHeadCentralPinCyl" material="Pipe:Celazole">
+
+<shape type="Tube" name="UX852CableHeadCentralPinTub"
+dz="0.5*UX852CableHeadCentralPinThickness"
+rmax="UX852CableHeadCentralPinRadius"/>
+
+</volume>
+      -->
+      <!-- end  place holder. not used -->
+
+      <volume name="lvUX852FutureFibreCableHeadDemiCableCylSideA" material="Pipe:FutureFibre">
+        <shape type="BooleanShape" operation="subtraction" name="UX852FutureFibreCableHeadDemiCableSubSideA" >
+          <shape type="Tube" name="UX852FutureFibreCableHeadDemiCableTubSideA"
+                 dz="0.5*UX852CableHeadDemiCableLength"
+                 rmax="UX852CableHeadDemiCableRadius"/>
+          <shape type="Box" name="UX852FutureFibreCableHeadDemiCableBoxSubSideA"
+                 dx="0.5*UX852CableHeadDemiCableSubBoxLargeXSize"
+                 dy="0.5*UX852CableHeadDemiCableSubBoxLargeYSize"
+                 dz="0.5*UX852CableHeadDemiCableSubBoxLargeZSize"/>
+          <position z="UX852CableHeadDemiCableSubBoxPosZ"/>
+          <rotation y="UX852CableHeadDemiCableSubBoxTilt"/>
+          <shape type="Box" name="UX852FutureFibreCableHeadDemiCableBoxSubFarEndSideA"
+                 dx="0.5*UX852CableHeadDemiCableSubBoxLargeXSize"
+                 dy="0.5*UX852CableHeadDemiCableSubBoxLargeYSize"
+                 dz="0.5*UX852CableHeadDemiCableSubBoxLargeZSize"/>
+          <position z="UX852CableHeadDemiCableSubBoxFarEndPosZ"/>
+          <rotation y="-UX852CableHeadDemiCableSubBoxTilt"/>
+        </shape>
+      </volume>
+      <volume name="lvUX852FutureFibreCableHeadDemiCableCylSideB" material="Pipe:FutureFibre">
+        <shape type="BooleanShape" operation="subtraction" name="UX852FutureFibreCableHeadDemiCableSubSideB" >
+          <shape type="Tube" name="UX852FutureFibreCableHeadDemiCableTubSideB"
+                 dz="0.5*UX852CableHeadDemiCableLength"
+                 rmax="UX852CableHeadDemiCableRadius"/>
+          <shape type="Box" name="UX852FutureFibreCableHeadDemiCableBoxSubSideB"
+                 dx="0.5*UX852CableHeadDemiCableSubBoxLargeXSize"
+                 dy="0.5*UX852CableHeadDemiCableSubBoxLargeYSize"
+                 dz="0.5*UX852CableHeadDemiCableSubBoxLargeZSize"/>
+          <position z="UX852CableHeadDemiCableSubBoxPosZ"/>
+          <rotation y="-UX852CableHeadDemiCableSubBoxTilt"/>
+
+          <shape type="Box" name="UX852FutureFibreCableHeadDemiCableBoxSubFarEndSideB"
+                 dx="0.5*UX852CableHeadDemiCableSubBoxLargeXSize"
+                 dy="0.5*UX852CableHeadDemiCableSubBoxLargeYSize"
+                 dz="0.5*UX852CableHeadDemiCableSubBoxLargeZSize"/>
+          <position z="UX852CableHeadDemiCableSubBoxFarEndPosZ"/>
+          <rotation y="UX852CableHeadDemiCableSubBoxTilt"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852FutureFibreCableHeadWithoutPin">
+        <physvol name="pvUX852FutureFibreCableHeadOuterCylWithoutPin"        volume="lvUX852FutureFibreCableHeadOuterCyl"/>
+        <physvol name="pvUX852FutureFibreCableHeadFittingBoreSphWithoutPin"  volume="lvUX852FutureFibreCableHeadFittingBoreSph"/>
+        <physvol name="pvUX852FutureFibreCableHeadDemiCableCylSideAWithoutPin"
+                 volume="lvUX852FutureFibreCableHeadDemiCableCylSideA" >
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadDemiCableSideBRotX"/>
+
+            <position x="UX852CableHeadDemiCableSideAPosX"
+                      y="UX852CableHeadDemiCablePosY"/>
+            <rotation z="UX852CableHeadDemiCableTiltAngle"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadDemiCableCylSideBWithoutPin"
+                 volume="lvUX852FutureFibreCableHeadDemiCableCylSideB" >
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadDemiCableSideBRotX"/>
+            <position x="UX852CableHeadDemiCableSideBPosX"
+                      y="UX852CableHeadDemiCablePosY"/>
+            <rotation z="-UX852CableHeadDemiCableTiltAngle"/>
+          </transformation>
+
+        </physvol>
+      </volume>
+
+
+      <!-- End Cable attachment from 2015 June -->
+
+      <!-- UX852 Cables from 2015 -->
+
+      <!-- UX852 backward -->
+      <volume name="lvUX852FutureFibreCable03" material="Pipe:FutureFibre">
+        <shape type="Tube" name="UX85-2-FutureFibre-Cable-03-Tub"
+               dz="0.5*UX852FutureFibreCable03ReducedLength"
+               rmax="UX852FutureFibreCable03Radius"/>
+      </volume>
+
+      <!-- UX852 Forward -->
+      <volume name="lvUX852TechnoraCable04" material="Pipe:Technora">
+        <shape type="Tube" name="UX85-2-Technora-Cable-04-Tub"
+               dz="0.5*UX852TechnoraCable04ReducedLength"
+               rmax="UX852TechnoraCable04Radius"/>
+      </volume>
+
+      <!-- UX853 Backward  Vertical -->
+      <volume name="lvUX853FutureFibreCable05"  material="Pipe:FutureFibre">
+        <shape type="Tube" name="UX85-3-FutureFibre-Cable-05-Tub"
+               dz="0.5*UX853FutureFibreCable05ReducedLength"
+               rmax="UX853FutureFibreCable05Radius"/>
+      </volume>
+
+
+      <!-- UX853 Backward  Horizontal -->
+      <volume name="lvUX853FutureFibreCable06"  material="Pipe:FutureFibre">
+        <shape type="Tube" name="UX85-3-FutureFibre-Cable-06-Tub"
+               dz="0.5*UX853FutureFibreCable06ReducedLength"
+               rmax="UX853FutureFibreCable06Radius"/>
+      </volume>
+
+
+
+      <!-- UX853 Forward Vertical -->
+      <volume name="lvUX853TechnoraCable07"  material="Pipe:Technora">
+        <shape type="Tube" name="UX85-3-Technora-Cable-07-Tub"
+               dz="0.5*UX853TechnoraCable07ReducedLength"
+               rmax="UX853TechnoraCable07Radius"/>
+      </volume>
+
+      <!-- UX853 Forward Horizontal -->
+      <volume name="lvUX853TechnoraCable08"  material="Pipe:Technora">
+        <shape type="Tube" name="UX85-3-Technora-Cable-08-Tub"
+               dz="0.5*UX853TechnoraCable08ReducedLength"
+               rmax="UX853TechnoraCable08Radius"/>
+      </volume>
+
+      <!-- End UX852 Cables from 2015 -->
+      <volume name="lvUX852FwdAttRod" material="Pipe:Al6082">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-2-FwdAttRodSub">
+          <shape type="Tube" name="UX85-2-FwdAttRod"
+                 dz="0.5*UX852FwdCableAttRodLength"
+                 rmax="UX852FwdCableAttRodHeadRad"
+                 rmin="UX852FwdCableAttRodInnerHoleRad"/>
+          <shape type="Tube" name="UX85-2-FwdAttRod-CutLeft"
+                 dz="0.5*UX852FwdCableAttRodCutLength"
+                 rmin="UX852FwdCableAttRodCutRad"
+                 rmax="UX852FwdCableAttRodRad + 10.00*mm"/>
+          <position z="0.5*(UX852FwdCableAttRodLength + UX852FwdCableAttRodCutLength) - UX852FwdCableAttRodCutZpos"/>
+          <rotation/>
+
+          <shape type="Tube" name="UX85-2-FwdAttRod-MainPart"
+                 dz="0.5*UX852FwdCableAttRodManPartLargeLength"
+                 rmax="UX852FwdCableAttRodRad + 10*mm"
+                 rmin="UX852FwdCableAttRodRad"/>
+
+          <position z="UX852FwdCableAttRodManPartPosZ"/>
+          <rotation/>
+
+        </shape>
+      </volume>
+
+      <volume name="lvUX852BckAttRod" material="Pipe:Al6082">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-2-BckAttRodSub">
+          <shape type="Tube" name="UX85-2-BckAttRod"
+                 dz="0.5*UX852BckCableAttRodLength"
+                 rmax="UX852BckCableAttRodHeadRad"
+                 rmin="UX852BckCableAttRodInnerHoleRad"/>
+          <shape type="Tube" name="UX85-2-BckAttRod-CutLeft"
+                 dz="0.5*UX852BckCableAttRodCutLength"
+                 rmin="UX852BckCableAttRodCutRad"
+                 rmax="UX852BckCableAttRodRad + 10.00*mm"/>
+
+          <position z="0.5*(UX852BckCableAttRodLength + UX852BckCableAttRodCutLength) - UX852BckCableAttRodCutZpos"/>
+          <rotation/>
+
+
+          <shape type="Tube" name="UX85-2-BckAttRod-MainPart"
+                 dz="0.5*UX852BckCableAttRodManPartLargeLength"
+                 rmax="UX852BckCableAttRodRad + 10*mm"
+                 rmin="UX852BckCableAttRodRad"/>
+
+          <position z="UX852BckCableAttRodManPartPosZ"/>
+          <rotation/>
+
+
+        </shape>
+      </volume>
+
+      <volume name="lvUX852BckFAAttRod" material="Pipe:Al6082">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-2-BckFAAttRodSub">
+          <shape type="Tube" name="UX85-2-BckFAAttRod"
+                 dz="0.5*UX852BckFACableAttRodLength"
+                 rmax="UX852BckFACableAttRodHeadRad"
+                 rmin="UX852BckFACableAttRodInnerHoleRad"/>
+          <shape type="Tube" name="UX85-2-BckFAAttRod-CutLeft"
+                 dz="0.5*UX852BckFACableAttRodCutLength"
+                 rmin="UX852BckFACableAttRodCutRad"
+                 rmax="UX852BckFACableAttRodRad + 10.00*mm"/>
+
+          <position z="0.5*(UX852BckFACableAttRodLength + UX852BckFACableAttRodCutLength) - UX852BckFACableAttRodCutZpos"/>
+          <rotation/>
+          <shape type="Tube" name="UX85-2-BckFAAttRod-MainPart"
+                 dz="0.5*UX852BckFACableAttRodManPartLargeLength"
+                 rmax="UX852BckFACableAttRodRad + 10*mm"
+                 rmin="UX852BckFACableAttRodRad"/>
+
+          <position z="UX852BckFACableAttRodManPartPosZ"/>
+          <rotation/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852TechnoraCableHeadTypeA" >
+        <physvol name="pvUX852TechnoraCableHeadCylTypeA"                 volume="lvUX852TechnoraCableHeadTypeACyl"/>
+        <physvol name="pvUX852TechnoraCableHeadCentralPinCylTypeA"       volume="lvUX852BckFAAttRod"/>
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideATypeA"      volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideAPosX"         y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideBTypeA"      volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideBPosX"         y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+      </volume>
+
+      <volume name="lvUX852TechnoraCableHeadTypeB" >
+        <physvol name="pvUX852TechnoraCableHeadTypeBCyl"                 volume="lvUX852TechnoraCableHeadTypeBCyl"/>
+        <physvol name="pvUX852TechnoraCableHeadCentralPinCylTypeB"       volume="lvUX852BckFAAttRod"/>
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideATypeB"      volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideAPosX"         y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCableHeadDemiCableSideBTypeB"      volume="lvUX852TechnoraCableHeadDemiCable" >
+          <position x="UX852TechnoraCableHeadDemiCableSideBPosX"         y="UX852TechnoraCableHeadDemiCableSidePosY"/>
+          <rotation x="UX852TechnoraCableHeadDemiCableRotX"/>
+        </physvol>
+      </volume>
+
+      <volume name="lvUX852FutureFibreCableHead">
+        <physvol name="pvUX852FutureFibreCableHeadOuterCyl"                 volume="lvUX852FutureFibreCableHeadOuterCyl"/>
+        <physvol name="pvUX852FutureFibreCableHeadFittingBoreSph"           volume="lvUX852FutureFibreCableHeadFittingBoreSph"/>
+        <physvol name="pvUX852FutureFibreCableHeadCentralPinCyl"            volume="lvUX852BckFAAttRod"/>
+        <physvol name="pvUX852FutureFibreCableHeadDemiCableCylSideA"        volume="lvUX852FutureFibreCableHeadDemiCableCylSideA">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadDemiCableSideBRotX"/>
+            <position x="UX852CableHeadDemiCableSideAPosX"
+                      y="UX852CableHeadDemiCablePosY"/>
+            <rotation z="UX852CableHeadDemiCableTiltAngle"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadDemiCableCylSideB"        volume="lvUX852FutureFibreCableHeadDemiCableCylSideB">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadDemiCableSideBRotX"/>
+            <position x="UX852CableHeadDemiCableSideBPosX"                  y="UX852CableHeadDemiCablePosY"/>
+            <rotation z="-UX852CableHeadDemiCableTiltAngle"/>
+          </transformation>
+        </physvol>
+      </volume>
+
+
+      <!-- UX852 Collar Clips -->
+      <!-- Now for the collar clips from June 2015 -->
+      <volume name="lvUX852CollarClipSmallSectSF" material="Pipe:Celazole">
+        <shape type="BooleanShape" operation="subtraction" name="ClipSmallSectSubSF">
+          <shape type="Tube" name="UX85-2-CollarClipSmallSectSF"
+                 dz="0.5*UX852CollarClipRing1Length"
+                 rmin="UX852CollarClipRing1InnerRad"
+                 rmax="UX852CollarClipRing1OuterRad"
+                 deltaPhiAngle="UX852CollarClipSFDeltaPhi-0.5*UX852CollarGapSFDeltaPhi"
+                 startPhiAngle="UX852CollarClipSFStartPhi"/>
+          <shape type="Tube" name="UX85-2-CollarClipSmallHole1SF"
+                 dz="0.5*UX852CollarClipHolesLength"
+                 rmax="UX852CollarClipHolesRad"/>
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="-1.0*UX852CollarClipHolesSFDeltaPhi"/>
+          <shape type="Tube" name="UX85-2-CollarClipSmallHole2SF"
+                 dz="0.5*UX852CollarClipHolesLength"
+                 rmax="UX852CollarClipHolesRad"/>
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="0.0*rad"/>
+          <shape type="Tube" name="UX85-2-CollarClipSmallHole3SF"
+                 dz="0.5*UX852CollarClipHolesLength"
+                 rmax="UX852CollarClipHolesRad"/>
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="1.0*UX852CollarClipHolesSFDeltaPhi"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852CollarClipBigSectSF" material="Pipe:Celazole">
+        <shape type="BooleanShape" operation="subtraction" name="ClipBigSectSubSF">
+          <shape type="Tube" name="UX85-2-CollarClipBigSectSF"
+                 dz="0.5*UX852CollarClipRing2Length"
+                 rmin="UX852CollarClipRing2InnerRad"
+                 rmax="UX852CollarClipRing2OuterRad"
+                 deltaPhiAngle="UX852CollarClipSFDeltaPhi-0.5*UX852CollarGapSFDeltaPhi"
+                 startPhiAngle="UX852CollarClipSFStartPhi"/>
+
+          <shape type="Tube" name="UX85-2-CollarClipBigHole1SF"
+                 dz="0.5*UX852CollarClipHolesLength"
+                 rmax="UX852CollarClipHolesRad"/>
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="-1.0*UX852CollarClipHolesSFDeltaPhi"/>
+
+          <shape type="Tube" name="UX85-2-CollarClipBigHole2SF"
+                 dz="0.5*UX852CollarClipHolesLength"
+                 rmax="UX852CollarClipHolesRad"/>
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="0.0*rad"/>
+
+          <shape type="Tube" name="UX85-2-CollarClipBigHole3SF"
+                 dz="0.5*UX852CollarClipHolesLength"
+                 rmax="UX852CollarClipHolesRad"/>
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="1.0*UX852CollarClipHolesSFDeltaPhi"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852CollarClipScrew"  material="Pipe:TitaniumG5" >
+        <shape type="BooleanShape" operation="subtraction" name="UX852CollarClipScrewSubSF" >
+          <shape type="Tube" name="UX852CollarClipScrewSFTubs"
+                 dz="0.5*UX852CollarClipHoleScrewLength"
+                 rmax="UX852CollarClipHoleScrewHeadRad"/>
+          <shape type="Tube" name="UX852CollarClipScrewSFSubtractTubs"
+                 dz="0.5*UX852CollarClipHoleScrewSubLargeLength"
+                 rmin="UX852CollarClipHoleScrewRad"
+                 rmax="UX852CollarClipHoleScrewSubLargeRadius"/>
+          <position z="UX852CollarClipHoleScrewSubPosZ"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX852CollarClip">
+        <physvol name="pvUX852CollarClipSmallSect1SF"                 volume="lvUX852CollarClipSmallSectSF">
+          <position z="- 0.5*UX852CollarClipRing1Length "/>
+          <rotation z="UX852CollarClipSFPosStartPhi"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarClipSmallSect2SF"                 volume="lvUX852CollarClipSmallSectSF">
+          <position z="- 0.5*UX852CollarClipRing1Length"/>
+          <rotation z="UX852CollarClipSFPosStartPhi+ UX852CollarClipSFDeltaPhi"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarClipSmallSect3SF"                 volume="lvUX852CollarClipSmallSectSF">
+          <position z="- 0.5*UX852CollarClipRing1Length"/>
+          <rotation z="UX852CollarClipSFPosStartPhi+  2*UX852CollarClipSFDeltaPhi"/>
+        </physvol>
+
+
+        <physvol name="pvUX852CollarClipBigSect1SF"                   volume="lvUX852CollarClipBigSectSF">
+          <position z="- UX852CollarClipRing1Length - 0.5*UX852CollarClipRing2Length"/>
+          <rotation z="UX852CollarClipSFPosStartPhi"/>
+        </physvol>
+
+
+        <physvol name="pvUX852CollarClipBigSect2SF"                   volume="lvUX852CollarClipBigSectSF">
+          <position z="- UX852CollarClipRing1Length - 0.5*UX852CollarClipRing2Length"/>
+          <rotation z="UX852CollarClipSFPosStartPhi + UX852CollarClipSFDeltaPhi"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarClipBigSect3SF"                   volume="lvUX852CollarClipBigSectSF">
+          <position z="- UX852CollarClipRing1Length - 0.5*UX852CollarClipRing2Length"/>
+          <rotation z="UX852CollarClipSFPosStartPhi + 2*UX852CollarClipSFDeltaPhi"/>
+        </physvol>
+      </volume>
+
+      <!-- UX852Cables -->
+      <!--
+          <volume name="lvUX852FixCollarCable03" material="Pipe:Steel316LN">
+          <shape type="Tube" name="UX85-2-FixCollar-Cable-03"
+          dz="0.5*UX852FixCollarCable03Lenght"
+          rmax="UX852FixCollarCable03Radius"/>
+          </volume>
+
+<volume name="lvUX852FixCollarCable04" material="Pipe:Steel316LN">
+<shape type="Tube" name="UX85-3-FixCollar-Cable-04"
+dz="0.5*UX852FixCollarCable04Lenght"
+rmax="UX852FixCollarCable04Radius"/>
+</volume>
+
+<volume name="lvUX852FixCollarCable08" material="Pipe:Steel316LN">
+<shape type="Tube" name="UX85-2-FixCollar-Cable-08"
+dz="0.5*UX852FixCollarCable08Lenght"
+rmax="UX852FixCollarCable08Radius"/>
+</volume>
+      -->
+
+      <!-- *************************************************************************** -->
+      <!-- UX85-3 Fixed Point                                                          -->
+      <!-- *************************************************************************** -->
+      <volume name="lvUX853BigRingQuarter" material="Pipe:Beryllium">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-3-BigRingQuarter-Sub">
+          <shape type="Tube" name="UX853BigRingQuarter"
+                 dz="0.5*UX853FixCollarLength"
+                 rmin="UX853FixCollarInnerRad"
+                 rmax="UX853FixCollarAttOuterRad"
+                 deltaPhiAngle="UX853FixCollarDeltaPhi"
+                 startPhiAngle="UX853FixCollarPhiStart"/>
+          <shape type="Box" name="UX85-3-BigRingQuarter-Slope"
+                 dx="0.5*UX853BigRingQuarterSlopeXsize"
+                 dy="0.5*UX853BigRingQuarterSlopeYsize"
+                 dz="0.5*(UX853FixCollarLength+0.5*mm)"/>
+          <transformation>
+            <position/>
+            <rotation z="UX853BigRingQuarterSlopeZrot"/>
+            <position/>
+            <rotation/>
+            <positionRPhiZ r="0.5*(UX853FixCollarAttOuterRad+UX853FixCollarOuterRad+UX853BigRingQuarterSlopeYsize)-4.5*mm" phi="UX853BigRingQuarterSlopePhipos"/>
+          </transformation>
+          <shape type="Box" name="UX85-3-BigRingQuarter-Slope2"
+                 dx="0.5*UX853BigRingQuarterSlopeXsize"
+                 dy="0.5*UX853BigRingQuarterSlopeYsize"
+                 dz="0.5*(UX853FixCollarLength+0.5*mm)"/>
+          <transformation>
+            <position/>
+            <rotation z="UX853BigRingQuarterSlopeZrot+5*degree"/>
+            <position/>
+            <rotation/>
+            <positionRPhiZ r="0.5*(UX853FixCollarAttOuterRad+UX853FixCollarOuterRad+UX853BigRingQuarterSlopeYsize)-9.5*mm" phi="UX853BigRingQuarterSlope2Phipos"/>
+          </transformation>
+          <shape type="Tube" name="UX853BigRingCircleCut1"
+                 dz="0.5*(UX853FixCollarLength + 0.5*mm)"
+                 rmin="UX853FixCollarOuterRad"
+                 rmax="UX853FixCollarAttOuterRad + 5*mm"
+                 startPhiAngle="UX853FixCollarPhiStart - 1*degree"
+                 deltaPhiAngle="0.25*UX853FixCollarCircleCutDeltaPhi + 1*degree"/>
+          <shape type="Tube" name="UX853BigRingCircleCut2"
+                 dz="0.5*(UX853FixCollarLength + 0.5*mm)"
+                 rmin="UX853FixCollarOuterRad"
+                 rmax="UX853FixCollarAttOuterRad + 5*mm"
+                 startPhiAngle="UX853FixCollarPhiStart +UX853FixCollarDeltaPhi - 0.75*UX853FixCollarCircleCutDeltaPhi "
+                 deltaPhiAngle="0.75*UX853FixCollarCircleCutDeltaPhi + 1*degree"/>
+          <shape type="Tube" name="UX853BigRingTransHole1"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 rmax="UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarTransHolePhipos"/>
+            <rotation z="45*degree"/>
+          </transformation>
+          <shape type="Tube" name="UX853BigRingTransHole2a"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 rmax="UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarTransHolePhipos+7*degree"/>
+            <rotation z="45*degree+7*degree"/>
+          </transformation>
+          <shape type="Box" name="UX853BigRingTransHole2b"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 dx="0.5*2*UX853FixCollarTransHoleRad"
+                 dy="0.5*2*UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarTransHolePhipos+9.5*degree"/>
+            <rotation z="45*degree+9.5*degree"/>
+          </transformation>
+          <shape type="Tube" name="UX853BigRingTransHole2c"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 rmax="UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarTransHolePhipos+13*degree"/>
+            <rotation z="45*degree+13*degree"/>
+          </transformation>
+          <shape type="Tube" name="UX853BigRingTransHole2d"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 rmax="UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarPhiStart+1*degree"/>
+            <rotation z="90*degree+45*degree+13*degree"/>
+          </transformation>
+          <shape type="Tube" name="UX853BigRingTransHole3a"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 rmax="UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarTransHolePhipos-7*degree"/>
+            <rotation z="45*degree-7*degree"/>
+          </transformation>
+          <shape type="Box" name="UX853BigRingTransHole3b"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 dx="0.5*2*UX853FixCollarTransHoleRad"
+                 dy="0.5*2*UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarTransHolePhipos-9.5*degree"/>
+            <rotation z="45*degree-9.5*degree"/>
+          </transformation>
+          <shape type="Tube" name="UX853BigRingTransHole3c"
+                 dz="0.5*UX853FixCollarTransHoleLength"
+                 rmax="UX853FixCollarTransHoleRad"/>
+          <transformation>
+            <position/>
+            <rotation x="90*degree"/>
+            <positionRPhiZ r="UX853FixCollarTransHoleRpos" phi="UX853FixCollarTransHolePhipos-13*degree"/>
+            <rotation z="45*degree-13*degree"/>
+          </transformation>
+        </shape>
+      </volume>
+
+      <volume name="lvUX853InnerRing" material="Pipe:Beryllium">
+        <shape type="Tube" name="UX85-3-InnerRing"
+               dz="0.5*UX853FixCollarRingLength"
+               rmin="UX853FixCollarRingInnerRad"
+               rmax="UX853FixCollarRingOuterRad"/>
+      </volume>
+
+      <!-- UX853 Fix Collar -->
+      <volume name="lvUX853FixCollar">
+        <physvol name="pvUX853InnerRing"                       volume="lvUX853InnerRing">
+          <position z="UX853FixCollarZpos"/>
+        </physvol>
+
+        <physvol name="pvUX853BigRingQuarter1"                 volume="lvUX853BigRingQuarter">
+          <position z="UX853FixCollarZpos"/>
+          <rotation/>
+        </physvol>
+
+        <physvol name="pvUX853BigRingQuarter2"                 volume="lvUX853BigRingQuarter">
+          <position z="UX853FixCollarZpos"/>
+          <rotation z="UX853FixCollarQuarterRot"/>
+        </physvol>
+
+        <physvol name="pvUX853BigRingQuarter3"                 volume="lvUX853BigRingQuarter">
+          <position z="UX853FixCollarZpos"/>
+          <rotation z="2*UX853FixCollarQuarterRot"/>
+        </physvol>
+
+        <physvol name="pvUX853BigRingQuarter4"                 volume="lvUX853BigRingQuarter">
+          <position z="UX853FixCollarZpos"/>
+          <rotation z="3*UX853FixCollarQuarterRot"/>
+        </physvol>
+      </volume>
+
+      <!-- UX853 Collar Clips -->
+      <volume name="lvUX853CollarClipSmallSectSF" material="Pipe:Celazole">
+        <shape type="BooleanShape" operation="subtraction" name="UX853ClipSmallSectSubSF">
+          <shape type="Tube" name="UX85-3-CollarClipSmallSect"
+                 dz="0.5*UX853CollarClipRing1Length"
+                 rmin="UX853CollarClipRing1InnerRad"
+                 rmax="UX853CollarClipRing1OuterRad"
+                 deltaPhiAngle="UX853CollarClipSFDeltaPhi-0.5*UX853CollarGapSFDeltaPhi"
+                 startPhiAngle="UX853CollarClipSFStartPhi"/>
+          <shape type="Tube" name="UX85-3-CollarClipSmallHole1SF"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="-1.5*UX853CollarClipHolesDeltaPhiSF"/>
+          <shape type="Tube" name="UX85-3-CollarClipSmallHole2SF"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="-0.5*UX853CollarClipHolesDeltaPhiSF"/>
+          <shape type="Tube" name="UX85-3-CollarClipSmallHole3SF"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="0.5*UX853CollarClipHolesDeltaPhiSF"/>
+          <shape type="Tube" name="UX85-3-CollarClipSmallHole4"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="1.5*UX853CollarClipHolesDeltaPhiSF"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX853CollarClipBigSectSF" material="Pipe:Celazole">
+        <shape type="BooleanShape" operation="subtraction" name="UX853ClipBigSectSubSF">
+          <shape type="Tube" name="UX85-3-CollarClipBigSect"
+                 dz="0.5*UX853CollarClipRing2Length"
+                 rmin="UX853CollarClipRing2InnerRad"
+                 rmax="UX853CollarClipRing2OuterRad"
+                 deltaPhiAngle="UX853CollarClipSFDeltaPhi-0.5*UX853CollarGapSFDeltaPhi"
+                 startPhiAngle="UX853CollarClipSFStartPhi"/>
+
+          <shape type="Tube" name="UX85-3-CollarClipBigHole1SF"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="-1.5*UX853CollarClipHolesDeltaPhiSF"/>
+
+          <shape type="Tube" name="UX85-3-CollarClipBigHole2SF"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ   r="UX853CollarClipHolesRpos"
+                           phi="-0.5*UX853CollarClipHolesDeltaPhiSF"/>
+
+          <shape type="Tube" name="UX85-3-CollarClipBigHole3SF"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="0.5*UX853CollarClipHolesDeltaPhiSF"/>
+          <shape type="Tube" name="UX85-3-CollarClipBigHole4SF"
+                 dz="0.5*UX853CollarClipHolesLength"
+                 rmax="UX853CollarClipHolesRad"/>
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="1.5*UX853CollarClipHolesDeltaPhiSF"/>
+
+        </shape>
+      </volume>
+
+      <volume name="lvUX853CollarClipScrew"  material="Pipe:TitaniumG5" >
+        <shape type="BooleanShape" operation="subtraction" name="UX853CollarClipScrewSubSF" >
+          <shape type="Tube" name="UX853CollarClipScrewSFTubs"
+                 dz="0.5*UX853CollarClipHoleScrewLength"
+                 rmax="UX853CollarClipHoleScrewHeadRad"/>
+          <shape type="Tube" name="UX853CollarClipScrewSFSubtractTubs"
+                 dz="0.5*UX853CollarClipHoleScrewSubLargeLength"
+                 rmin="UX853CollarClipHoleScrewRad"
+                 rmax="UX853CollarClipHoleScrewSubLargeRadius"/>
+          <position z="UX853CollarClipHoleScrewSubPosZ"/>
+        </shape>
+      </volume>
+
+      <volume name="lvUX853CollarClip">
+        <physvol name="pvUX853CollarClipSmallSect1SF"                 volume="lvUX853CollarClipSmallSectSF">
+          <position z="- 0.5*UX853CollarClipRing1Length"/>
+          <rotation z="UX853CollarClipHolesDeltaPhiSF"/>
+        </physvol>
+        <physvol name="pvUX853CollarClipSmallSect2SF"                 volume="lvUX853CollarClipSmallSectSF">
+          <position z="- 0.5*UX853CollarClipRing1Length"/>
+          <rotation z="UX853CollarClipSFDeltaPhi+UX853CollarClipHolesDeltaPhiSF"/>
+        </physvol>
+        <physvol name="pvUX853CollarClipSmallSect3SF"                 volume="lvUX853CollarClipSmallSectSF">
+          <position z="- 0.5*UX853CollarClipRing1Length"/>
+          <rotation z="2*UX853CollarClipSFDeltaPhi+UX853CollarClipHolesDeltaPhiSF"/>
+        </physvol>
+        <physvol name="pvUX853CollarClipBigSect1SF"                   volume="lvUX853CollarClipBigSectSF">
+          <position z="- UX853CollarClipRing1Length - 0.5*UX853CollarClipRing2Length"/>
+          <rotation z="UX853CollarClipHolesDeltaPhiSF"/>
+        </physvol>
+        <physvol name="pvUX853CollarClipBigSect2SF"                   volume="lvUX853CollarClipBigSectSF">
+          <position z="- UX853CollarClipRing1Length - 0.5*UX853CollarClipRing2Length"/>
+          <rotation z="UX853CollarClipSFDeltaPhi+UX853CollarClipHolesDeltaPhiSF"/>
+        </physvol>
+        <physvol name="pvUX853CollarClipBigSect3SF"                   volume="lvUX853CollarClipBigSectSF">
+          <position z="- UX853CollarClipRing1Length - 0.5*UX853CollarClipRing2Length"/>
+          <rotation z="2*UX853CollarClipSFDeltaPhi+UX853CollarClipHolesDeltaPhiSF"/>
+        </physvol>
+      </volume>
+
+      <!-- UX85-3 Cable Attacments -->
+      <!-- In the Collar Part -->
+      <volume name="lvUX853CollarAtt" material="Pipe:Beryllium">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-3-CollarAttMainSub">
+          <shape type="Box" name="UX85-3-CollarAttMain"
+                 dx="0.5*UX853CollarAttMainPartXsize"
+                 dy="0.5*UX853CollarAttMainPartYsize"
+                 dz="0.5*UX853CollarAttMainPartZsize"/>
+          <shape type="Box" name="UX85-3-CollarAttMainSub1"
+                 dx="0.5*UX853CollarAttMainPartXsize"
+                 dy="0.5*(UX853CollarAttMainPartYsize+200*mm)"
+                 dz="0.5*(UX853CollarAttMainPartZsize+0.5*mm)"/>
+          <transformation>
+            <positionRPhiZ r="UX853CollarAttSlope1RPos"/>
+            <rotation/>
+            <position y="UX853CollarAttSlope1Zpos"/>
+            <rotation y="0*degree" z="UX853CollarAttSlope1YRot"/>
+            <position/>
+          </transformation>
+          <shape type="Box" name="UX85-3-CollarAttMainSub2"
+                 dx="0.5*UX853CollarAttMainPartXsize"
+                 dy="0.5*UX853CollarAttMainPartYsize"
+                 dz="0.5*(UX853CollarAttMainPartZsize+0.5*mm)"/>
+          <transformation>
+            <positionRPhiZ r="UX853CollarAttSlope2RPos"/>
+            <rotation/>
+            <position/>
+            <rotation z="UX853CollarAttSlope2YRot"/>
+            <position y="UX853CollarAttSlope2ZPos"/>
+          </transformation>
+          <shape type="Tube" name="UX85-3-CollarAttMain-Hole1"
+                 dz="0.5*(UX853CollarAttMainPartZsize+0.5*mm)"
+                 rmax="UX853CollarAttMainHole1Rad"/>
+          <transformation>
+            <positionRPhiZ r="UX853CollarAttMainHole1RadPos"/>
+            <rotation/>
+            <position/>
+            <position y="UX853CollarAttMainHole1ZPos"/>
+            <rotation y="180*degree"/>
+            <position/>
+          </transformation>
+          <shape type="Tube" name="UX85-3-CollarAttMain-Hole2"
+                 dz="0.5*(UX853CollarAttMainPartZsize+0.5*mm)"
+                 rmax="UX853CollarAttMainHole2Rad"/>
+          <transformation>
+            <positionRPhiZ r="UX853CollarAttMainHole2RadPos"/>
+            <rotation/>
+            <position y="UX853CollarAttMainHole2ZPos"/>
+          </transformation>
+          <shape type="Tube" name="UX85-3-CollarAttMain-RoundEdge1"
+                 dz="0.5*(UX853CollarAttMainPartZsize+0.5*mm)"
+                 rmin="UX853CollarAttMainPartEdge1InnerRad"
+                 rmax="UX853CollarAttMainPartEdge1InnerRad+10*mm"
+                 startPhiAngle="UX853CollarAttMainPartEdge1StartPhi"
+                 deltaPhiAngle="UX853CollarAttMainPartEdge1DeltaPhi"/>
+          <transformation>
+            <positionRPhiZ r="UX853CollarAttMainHole1RadPos"/>
+            <rotation/>
+            <position y="UX853CollarAttMainHole1ZPos"/>
+            <rotation y="180*degree"/>
+          </transformation>
+          <shape type="Tube" name="UX85-3-CollarAttMain-RoundEdge2"
+                 dz="0.5*(UX853CollarAttMainPartZsize+0.5*mm)"
+                 rmin="UX853CollarAttMainPartEdge2InnerRad"
+                 rmax="UX853CollarAttMainPartEdge2InnerRad+10*mm"
+                 startPhiAngle="UX853CollarAttMainPartEdge2StartPhi"
+                 deltaPhiAngle="UX853CollarAttMainPartEdge2DeltaPhi"/>
+          <transformation>
+            <positionRPhiZ r="UX853CollarAttMainHole2RadPos"/>
+            <rotation/>
+            <position y="UX853CollarAttMainHole2ZPos"/>
+          </transformation>
+        </shape>
+      </volume>
+
+      <!-- Forward Cable Att -->
+      <volume name="lvUX853FwdCableAtt" material="Pipe:AW2219">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-3-FwdCableAttMain-Sub">
+          <shape type="Tube" name="UX85-3-FwdCableAttMain"
+                 dz="0.5*UX853FwdCableAttMainLength"
+                 rmax="UX853FwdCableAttMainRad"/>
+          <shape type="Tube" name="UX85-3-FwdCableAttMainLongHole"
+                 dz="0.5*UX853FwdCableAttLongHoleLength"
+                 rmax="UX853FwdCableAttLongHoleRad"/>
+          <transformation>
+            <position z="0.5*(UX853FwdCableAttMainLength - UX853FwdCableAttLongHoleLength) + 1.00*mm"/>
+          </transformation>
+          <shape type="Box" name="UX85-3-FwdCableAttMainCut1-Left"
+                 dx="0.5*UX853FwdCableAttCut1SizeX"
+                 dy="0.5*UX853FwdCableAttCut1SizeY"
+                 dz="0.5*UX853FwdCableAttCut1SizeZ"/>
+          <transformation>
+            <position z="0.5*(-UX853FwdCableAttMainLength + UX853FwdCableAttCut1SizeZ) - 1.00*mm"
+                      x="UX853FwdCableAttMainRad - 0.5*UX853FwdCableAttCut1SizeX"/>
+          </transformation>
+          <shape type="Box" name="UX85-3-FwdCableAttMainCut1-Right"
+                 dx="0.5*UX853FwdCableAttCut1SizeX"
+                 dy="0.5*UX853FwdCableAttCut1SizeY"
+                 dz="0.5*UX853FwdCableAttCut1SizeZ"/>
+          <transformation>
+            <position z="0.5*(-UX853FwdCableAttMainLength + UX853FwdCableAttCut1SizeZ) - 1.00*mm"
+                      x="-UX853FwdCableAttMainRad + 0.5*UX853FwdCableAttCut1SizeX"/>
+          </transformation>
+          <shape type="Box" name="UX85-3-FwdCableAttMainCut2-Left"
+                 dx="0.5*UX853FwdCableAttCut2SizeX"
+                 dy="0.5*UX853FwdCableAttCut2SizeY"
+                 dz="0.5*UX853FwdCableAttCut2SizeZ"/>
+          <transformation>
+            <position z="0.5*(UX853FwdCableAttMainLength - UX853FwdCableAttCut2SizeZ) - UX853FwdCableAttCut2posZ"
+                      x="UX853FwdCableAttMainRad - 0.5*UX853FwdCableAttCut2SizeX"/>
+          </transformation>
+          <shape type="Box" name="UX85-3-FwdCableAttMainCut2-Right"
+                 dx="0.5*UX853FwdCableAttCut2SizeX"
+                 dy="0.5*UX853FwdCableAttCut2SizeY"
+                 dz="0.5*UX853FwdCableAttCut2SizeZ"/>
+          <transformation>
+            <position z="0.5*(UX853FwdCableAttMainLength - UX853FwdCableAttCut2SizeZ) - UX853FwdCableAttCut2posZ"
+                      x="-UX853FwdCableAttMainRad + 0.5*UX853FwdCableAttCut2SizeX"/>
+          </transformation>
+          <shape type="Tube" name="UX85-3-FwdCableAttMainHole"
+                 dz="0.5*2*UX853FwdCableAttMainRad"
+                 rmax="UX853FwdCableAttRingInnerRad"/>
+          <transformation>
+            <position/>
+            <rotation y="90*degree"/>
+            <position z="- 0.5*UX853FwdCableAttMainLength + UX853FwdCableAttRingOuterRad"/>
+          </transformation>
+          <shape type="Tube" name="UX85-3-FwdCableAttMainRing"
+                 dz="0.5*2*UX853FwdCableAttMainRad"
+                 rmin="UX853FwdCableAttRingOuterRad"
+                 rmax="UX853FwdCableAttRingOuterRad + 10.00*mm"
+                 deltaPhiAngle="UX853FwdCableAttRingDeltaAng"
+                 startPhiAngle="-0.5*UX853FwdCableAttRingDeltaAng"/>
+          <transformation>
+            <position/>
+            <rotation y="90*degree"/>
+            <position z="-0.5*UX853FwdCableAttMainLength + UX853FwdCableAttRingOuterRad"/>
+          </transformation>
+        </shape>
+      </volume>
+
+      <volume name="lvUX853FwdAttRod" material="Pipe:Al6082">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-3-FwdAttRodSub">
+          <shape type="Tube" name="UX85-3-FwdAttRod"
+                 dz="0.5*UX853FwdCableAttRodLength"
+                 rmax="UX853FwdCableAttRodHeadRad"
+                 rmin="UX853FwdCableAttRodInnerHoleRad"/>
+          <shape type="Tube" name="UX85-3-FwdAttRod-CutLeft"
+                 dz="0.5*UX853FwdCableAttRodCutLength"
+                 rmin="UX853FwdCableAttRodCutRad"
+                 rmax="UX853FwdCableAttRodRad + 10.00*mm"/>
+          <position z="0.5*(UX853FwdCableAttRodLength + UX853FwdCableAttRodCutLength) - UX853FwdCableAttRodCutZpos"/>
+          <rotation/>
+
+          <shape type="Tube" name="UX85-3-FwdAttRod-MainPart"
+                 dz="0.5*UX853FwdCableAttRodManPartLargeLength"
+                 rmax="UX853FwdCableAttRodRad + 10*mm"
+                 rmin="UX853FwdCableAttRodRad"/>
+
+          <position z="UX853FwdCableAttRodManPartPosZ"/>
+          <rotation/>
+
+        </shape>
+      </volume>
+
+      <!-- Backward Cable Att -->
+      <volume name="lvUX853BckAttRod" material="Pipe:Al6082">
+        <shape type="BooleanShape" operation="subtraction" name="UX85-3-BckAttRodSub">
+          <shape type="Tube" name="UX85-3-BckAttRod"
+                 dz="0.5*UX853BckCableAttRodLength"
+                 rmax="UX853BckCableAttRodHeadRad"
+                 rmin="UX853BckCableAttRodInnerHoleRad"/>
+          <shape type="Tube" name="UX85-3-BckAttRod-CutLeft"
+                 dz="0.5*UX853BckCableAttRodCutLength"
+                 rmin="UX853BckCableAttRodCutRad"
+                 rmax="UX853BckCableAttRodRad + 10.00*mm"/>
+
+          <position z="0.5*(UX853BckCableAttRodLength + UX853BckCableAttRodCutLength) - UX853BckCableAttRodCutZpos"/>
+          <rotation/>
+
+
+          <shape type="Tube" name="UX85-3-BckAttRod-MainPart"
+                 dz="0.5*UX853BckCableAttRodManPartLargeLength"
+                 rmax="UX853BckCableAttRodRad + 10*mm"
+                 rmin="UX853BckCableAttRodRad"/>
+
+          <position z="UX853BckCableAttRodManPartPosZ"/>
+          <rotation/>
+
+
+        </shape>
+      </volume>
+
+      <envelope type="Assembly" name="lvUX85SupportsInMagnet" vis="Pipe:Magnet">
+        <!-- UX85-1 Support -->
+        <physvol name="pvUX851Collar"                 volume="lvUX851Collar">
+          <position z="UX851CollarZpos"/>
+        </physvol>
+
+        <physvol name="pvUX851Cable01"                volume="lvUX851Cable">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="UX851CablePhiAngle" z="0.0*degree"/>
+            <position x="-UX851CableXYpos" y="UX851CableXYpos" z="UX851CableZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX851Cable02"                volume="lvUX851Cable">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="-UX851CablePhiAngle" z="0.0*degree"/>
+            <position x="UX851CableXYpos" y="UX851CableXYpos" z="UX851CableZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX851Cable03"                volume="lvUX851Cable">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="UX851CablePhiAngle" z="0.0*degree"/>
+            <position x="UX851CableXYpos" y="-UX851CableXYpos" z="UX851CableZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX851Cable04"                 volume="lvUX851Cable">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="-UX851CablePhiAngle"
+                      z="0.0*degree"/>
+            <position x="-UX851CableXYpos" y="-UX851CableXYpos" z="UX851CableZpos"/>
+          </transformation>
+        </physvol>
+
+        <!-- UX85-2 Fixed point -->
+        <physvol name="pvUX852FixCollar"               volume="lvUX852FixCollar">
+          <transformation>
+            <position/>
+            <rotation z="UX852FixCollarZrot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852CollarClip1"             volume="lvUX852CollarClip">
+          <position z="UX852FixCollarZpos"/>
+        </physvol>
+
+        <physvol name="pvUX852CollarClip2"             volume="lvUX852CollarClip">
+          <transformation>
+            <position/>
+            <rotation y="180*degree"/>
+            <position z="UX852FixCollarZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="lvUX852CollarClipScrew11"       volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi-UX852CollarClipHolesSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+        </physvol>
+
+        <physvol name="lvUX852CollarClipScrew12"       volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX852CollarClipScrew13"       volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi+UX852CollarClipHolesSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+
+        </physvol>
+
+        <physvol name="lvUX852CollarClipScrew21"       volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi+ UX852CollarClipSFDeltaPhi-UX852CollarClipHolesSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+        </physvol>
+
+        <physvol name="lvUX852CollarClipScrew22"       volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi+ UX852CollarClipSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX852CollarClipScrew23"       volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi+ UX852CollarClipSFDeltaPhi +UX852CollarClipHolesSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+        </physvol>
+
+
+        <physvol name="lvUX852CollarClipScrew31"        volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi+2* UX852CollarClipSFDeltaPhi-UX852CollarClipHolesSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+        </physvol>
+
+        <physvol name="lvUX852CollarClipScrew32"        volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi+ 2* UX852CollarClipSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX852CollarClipScrew33"        volume="lvUX852CollarClipScrew">
+          <positionRPhiZ r="UX852CollarClipHolesRpos"
+                         phi="UX852CollarClipSFPosStartPhi+2* UX852CollarClipSFDeltaPhi +UX852CollarClipHolesSFDeltaPhi"
+                         z="UX852FixCollarZpos+UX852CollarClipHoleScrewPosZ"/>
+
+        </physvol>
+
+
+
+        <physvol name="pvUX852CollarAtt-1a"             volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                     y="45*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot-0.5*UX852FixCollarSect1DelthaAngle+UX852CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX852CollarAtt-1b"              volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                      y="45*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot+0.5*UX852FixCollarSect1DelthaAngle-UX852CollarAttMainPartPhiShift"/>
+            <rotation/>
+            <position/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX852CollarAtt-2a"              volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                      y="135*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot-0.5*UX852FixCollarSect1DelthaAngle+UX852FixCollarQuarterRot+UX852CollarAttMainPartPhiShift"/>
+            <rotation/>
+            <position/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX852CollarAtt-2b"              volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                      y="135*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot+0.5*UX852FixCollarSect1DelthaAngle+UX852FixCollarQuarterRot-UX852CollarAttMainPartPhiShift"/>
+            <rotation/>
+            <position/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX852CollarAtt-3a"              volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                      y="225*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot-0.5*UX852FixCollarSect1DelthaAngle+2*UX852FixCollarQuarterRot+UX852CollarAttMainPartPhiShift"/>
+            <rotation/>
+            <position/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX852CollarAtt-3b"              volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                      y="225*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot+0.5*UX852FixCollarSect1DelthaAngle+2*UX852FixCollarQuarterRot-UX852CollarAttMainPartPhiShift"/>
+            <rotation/>
+            <position/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX852CollarAtt-4a"               volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                       y="315*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot-0.5*UX852FixCollarSect1DelthaAngle+3*UX852FixCollarQuarterRot+UX852CollarAttMainPartPhiShift"/>
+            <rotation/>
+            <position/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX852CollarAtt-4b"               volume="lvUX852CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree"                       y="315*degree"/>
+            <positionRPhiZ z="UX852FixCollarZpos"
+                           r="UX852CollarAttMainPartRPos"
+                           phi="UX852FixCollarZrot+0.5*UX852FixCollarSect1DelthaAngle+3*UX852FixCollarQuarterRot-UX852CollarAttMainPartPhiShift"/>
+            <rotation/>
+            <position/>
+          </transformation>
+        </physvol>
+
+        <!--  Now placing the new back collar attachments modifications in June 2015 at UX852 -->
+        <physvol name="pvUX852CollarForkAttachProngBck-1" volume="lvUX852CollarForkAttachProng">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852FixCollarZrot"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngBck-2" volume="lvUX852CollarForkAttachProng">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852FixCollarZrot +UX852FixCollarQuarterRot "/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence - UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngBck-3" volume="lvUX852CollarForkAttachProng">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852FixCollarZrot + 2*UX852FixCollarQuarterRot "/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence - 2*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852CollarForkAttachProngBck-4" volume="lvUX852CollarForkAttachProng">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852FixCollarZrot + 3*UX852FixCollarQuarterRot "/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence - 3*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <!-- Now placing the cable heads in UX852 Bck in June 2015 -->
+        <physvol name="pvUX852FutureFibreCableHeadBeamPipeEndBck-1"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852BckCollarForkAttachPhiPos"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadMagnetFaceEndBck-1"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachMagnetFaceZpos"
+                           r="UX852BckCollarForkAttachMagnetFaceRpos"
+                           phi="UX852BckCollarForkAttachMagnetFacePhiPos"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadBeamPipeEndBck-2"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852BckCollarForkAttachPhiPos+ UX852FixCollarQuarterRot"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence- UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadMagnetFaceEndBck-2"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachMagnetFaceZpos"
+                           r="UX852BckCollarForkAttachMagnetFaceRpos"
+                           phi="UX852BckCollarForkAttachMagnetFacePhiPos+ UX852FixCollarQuarterRot"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence- UX852FixCollarQuarterRot-UX852FutureFibreCableHeadPhiPosTolerence"/>
+          </transformation>
+        </physvol>
+
+
+        <physvol name="pvUX852FutureFibreCableHeadBeamPipeEndBck-3"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852BckCollarForkAttachPhiPos+ 2.0*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence- 2.0*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadMagnetFaceEndBck-3"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachMagnetFaceZpos"
+                           r="UX852BckCollarForkAttachMagnetFaceRpos"
+                           phi="UX852BckCollarForkAttachMagnetFacePhiPos+ 2*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence- 2*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadBeamPipeEndBck-4"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachZpos"
+                           r="UX852BckCollarForkAttachRpos"
+                           phi="UX852BckCollarForkAttachPhiPos+ 3.0*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence- 3.0*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCableHeadMagnetFaceEndBck-4"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852BckCollarForkAttachRotX"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <positionRPhiZ z="UX852BckCollarForkAttachMagnetFaceZpos"
+                           r="UX852BckCollarForkAttachMagnetFaceRpos"
+                           phi="UX852BckCollarForkAttachMagnetFacePhiPos+ 3*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852FutureFibreCableHeadCommonRotZWithBckTolerence- 3*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <!-- Now placing the cable heads in UX852 fwd -->
+        <physvol name="pvUX852TechnoraCableHeadBeamPipeEndFwd-1"
+                 volume="lvUX852TechnoraCableHeadTypeAWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="-UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852TechnoraCable04ZShift"
+                           r="UX852TechnoraCable04RShift"
+                           phi="UX852FwdTechnoraCableHeadPhiPos"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCableHeadMagnetFaceEndFwd-1"
+                 volume="lvUX852TechnoraCableHeadTypeA">
+
+          <transformation>
+            <position/>
+            <rotation x="-1.0*UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="-UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852FwdCableHeadMagnetFaceZpos"
+                           r="UX852FwdCableHeadMagnetFaceRpos"
+                           phi="UX852FwdCableHeadMagnetFacePhiPos"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCableHeadBeamPipeEndFwd-2"
+                 volume="lvUX852TechnoraCableHeadTypeAWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852TechnoraCable04ZShift"
+                           r="UX852TechnoraCable04RShift"
+                           phi="UX852FwdTechnoraCableHeadPhiPos +  UX852FixCollarQuarterRot"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence - UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+
+
+        <physvol name="pvUX852TechnoraCableHeadMagnetFaceEndFwd-2"
+                 volume="lvUX852TechnoraCableHeadTypeA">
+
+          <transformation>
+            <position/>
+            <rotation x="-1.0*UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852FwdCableHeadMagnetFaceZpos"
+                           r="UX852FwdCableHeadMagnetFaceRpos"
+                           phi="UX852FwdCableHeadMagnetFacePhiPos+  UX852FixCollarQuarterRot"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence- UX852FixCollarQuarterRot-UX852TechnoraCableHeadPhiPosTolerence "/>
+
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCableHeadBeamPipeEndFwd-3"
+                 volume="lvUX852TechnoraCableHeadTypeAWithoutPin">
+
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="-UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852TechnoraCable04ZShift"
+                           r="UX852TechnoraCable04RShift"
+                           phi="UX852FwdTechnoraCableHeadPhiPos+  2*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence - 2*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCableHeadMagnetFaceEndFwd-3"
+                 volume="lvUX852TechnoraCableHeadTypeA">
+          <transformation>
+            <position/>
+            <rotation x="-1.0*UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="-UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852FwdCableHeadMagnetFaceZpos"
+                           r="UX852FwdCableHeadMagnetFaceRpos"
+                           phi="UX852FwdCableHeadMagnetFacePhiPos+  2*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence- 2*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCableHeadBeamPipeEndFwd-4"
+                 volume="lvUX852TechnoraCableHeadTypeAWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852TechnoraCable04ZShift"
+                           r="UX852TechnoraCable04RShift"
+                           phi="UX852FwdTechnoraCableHeadPhiPos+  3*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence- 3*UX852FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCableHeadMagnetFaceEndFwd-4"
+                 volume="lvUX852TechnoraCableHeadTypeA">
+          <transformation>
+            <position/>
+            <rotation x="-1.0*UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation x="UX852TechnoraCable04XRot"/>
+            <positionRPhiZ z="UX852FwdCableHeadMagnetFaceZpos"
+                           r="UX852FwdCableHeadMagnetFaceRpos"
+                           phi="UX852FwdCableHeadMagnetFacePhiPos+  3*UX852FixCollarQuarterRot"/>
+            <rotation z="UX852TechnoraCableHeadCommonRotZWithTolerence- 3*UX852FixCollarQuarterRot"/>
+
+          </transformation>
+        </physvol>
+
+        <!-- Now placing the cables in UX852 Bck -->
+        <physvol name="pvUX852FutureFibreCable03BottomLeft"
+                 volume="lvUX852FutureFibreCable03">
+          <transformation>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation z="UX852FutureFibreCable03ZRot"/>
+            <positionRPhiZ r="UX852FutureFibreCable03RPos"
+                           z="UX852FutureFibreCable03ZPos"
+                           phi="-UX852FutureFibreCable03ZRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCable03TopLeft"
+                 volume="lvUX852FutureFibreCable03">
+          <transformation>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation z="UX852FutureFibreCable03ZRot - 90.0 *degree "/>
+            <positionRPhiZ r="UX852FutureFibreCable03RPos"
+                           z="UX852FutureFibreCable03ZPos"
+                           phi="UX852FutureFibreCable03ZRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCable03TopRight"
+                 volume="lvUX852FutureFibreCable03">
+          <transformation>
+            <position/>
+            <rotation x="UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation z="UX852FutureFibreCable03ZRot - 180.0 *degree "/>
+            <positionRPhiZ r="UX852FutureFibreCable03RPos"
+                           z="UX852FutureFibreCable03ZPos"
+                           phi="-UX852FutureFibreCable03PhiPos - UX852FutureFibreCable03PhiPosTolerence + 180*degree"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FutureFibreCable03BottomRight"
+                 volume="lvUX852FutureFibreCable03">
+          <transformation>
+            <position/>
+            <rotation x="-UX852FutureFibreCable03XRot"/>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position/>
+            <rotation z="UX852FutureFibreCable03ZRot + 90.0 *degree "/>
+            <positionRPhiZ r="UX852FutureFibreCable03RPos"
+                           z="UX852FutureFibreCable03ZPos"
+                           phi="-UX852FutureFibreCable03PhiPos - UX852FutureFibreCable03PhiPosTolerence  -90*degree"/>
+          </transformation>
+        </physvol>
+
+        <!-- Now placing the cables in UX852 fwd -->
+        <physvol name="pvUX852TechnoraCable04BottomLeft"
+                 volume="lvUX852TechnoraCable04">
+          <transformation>
+            <position/>
+            <rotation x="UX852TechnoraCable04XRot"/>
+            <position/>
+            <rotation z="UX852TechnoraCable04ZRot"/>
+            <positionRPhiZ r="UX852TechnoraCable04RPos"
+                           z="UX852TechnoraCable04ZPos"
+                           phi="-UX852TechnoraCable04ZRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCable04TopLeft"
+                 volume="lvUX852TechnoraCable04">
+          <transformation>
+            <position/>
+            <rotation x="-UX852TechnoraCable04XRot"/>
+            <position/>
+            <rotation z="UX852TechnoraCable04ZRot - 90.0 *degree "/>
+            <positionRPhiZ r="UX852TechnoraCable04RPos"
+                           z="UX852TechnoraCable04ZPos"
+                           phi="UX852TechnoraCable04ZRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCable04TopRight"
+                 volume="lvUX852TechnoraCable04">
+          <transformation>
+            <position/>
+            <rotation x="UX852TechnoraCable04XRot"/>
+            <position/>
+            <rotation z="UX852TechnoraCable04ZRot - 180.0 *degree "/>
+            <positionRPhiZ r="UX852TechnoraCable04RPos"
+                           z="UX852TechnoraCable04ZPos"
+                           phi="-UX852TechnoraCable04PhiPos - UX852TechnoraCable04PhiPosTolerence + 180*degree"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852TechnoraCable04BottomRight"
+                 volume="lvUX852TechnoraCable04">
+          <transformation>
+            <position/>
+            <rotation x="-UX852TechnoraCable04XRot"/>
+            <position/>
+            <rotation z="UX852TechnoraCable04ZRot + 90.0 *degree "/>
+            <positionRPhiZ r="UX852TechnoraCable04RPos"
+                           z="UX852TechnoraCable04ZPos"
+                           phi="-UX852TechnoraCable04PhiPos - UX852TechnoraCable04PhiPosTolerence  -90*degree"/>
+          </transformation>
+        </physvol>
+
+        <!-- End modifications in June 2015 for UX852 -->
+        <physvol name="pvUX852FwdAttRod1"
+                 volume="lvUX852FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="UX852FixCollarCable03XRot" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852FwdCableAttRodZpos"
+                           r="UX852FwdCableAttRodRpos"
+                           phi="UX852FixCollarZrot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - 40.2*degree"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FwdAttRod2"
+                 volume="lvUX852FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852FwdCableAttRodZpos"
+                           r="UX852FwdCableAttRodRpos"
+                           phi="UX852FixCollarZrot+UX852FixCollarQuarterRot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - UX852FixCollarQuarterRot-40.2*degree"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FwdAttRod3"
+                 volume="lvUX852FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852FwdCableAttRodZpos"
+                           r="UX852FwdCableAttRodRpos"
+                           phi="UX852FixCollarZrot+2*UX852FixCollarQuarterRot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - 2*UX852FixCollarQuarterRot -40.2*degree"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852FwdAttRod4"
+                 volume="lvUX852FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852FwdCableAttRodZpos"
+                           r="UX852FwdCableAttRodRpos"
+                           phi="UX852FixCollarZrot+3*UX852FixCollarQuarterRot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - 3*UX852FixCollarQuarterRot -40.2*degree"/>
+          </transformation>
+        </physvol>
+
+
+        <physvol name="pvUX852BckAttRod1"
+                 volume="lvUX852BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852BckCableAttRodZpos"
+                           r="UX852BckCableAttRodRpos"
+                           phi="UX852FixCollarZrot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot -40.2*degree"/> <!--- UX852FixCollarZrot-0.2*degree"/>-->
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852BckAttRod2"
+                 volume="lvUX852BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852BckCableAttRodZpos"
+                           r="UX852BckCableAttRodRpos"
+                           phi="UX852FixCollarZrot+UX852FixCollarQuarterRot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - UX852FixCollarQuarterRot -40.2*degree"/> <!-- - UX852FixCollarZrot-0.2*degree"/>-->
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852BckAttRod3"
+                 volume="lvUX852BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852BckCableAttRodZpos"
+                           r="UX852BckCableAttRodRpos"
+                           phi="UX852FixCollarZrot+2*UX852FixCollarQuarterRot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - 2*UX852FixCollarQuarterRot - 40.2*degree"/> <!-- - UX852FixCollarZrot-0.2*degree"/>-->
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX852BckAttRod4"
+                 volume="lvUX852BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX852BckCableAttRodZpos"
+                           r="UX852BckCableAttRodRpos"
+                           phi="UX852FixCollarZrot+3*UX852FixCollarQuarterRot"/>
+            <rotation z="-UX852FixCollarSect1DelthaAngle - UX852FixCollarSect1Rot - 3*UX852FixCollarQuarterRot -40.2*degree"/> <!-- - UX852FixCollarZrot -0.2*degree"/>-->
+          </transformation>
+        </physvol>
+
+
+        <!-- UX85-3 Fixed point -->
+        <physvol name="pvUX853FixCollar"
+                 volume="lvUX853FixCollar">
+        </physvol>
+
+        <physvol name="pvUX853CollarClip1"
+                 volume="lvUX853CollarClip">
+          <position z="UX853FixCollarZpos"/>
+        </physvol>
+
+
+
+
+        <physvol name="pvUX853CollarClip2"
+                 volume="lvUX853CollarClip">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="180*degree"/>
+            <position z="UX853FixCollarZpos"/>
+          </transformation>
+        </physvol>
+
+
+
+        <physvol name="lvUX853CollarClipScrew11"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF-1.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew12"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF-0.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew13"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+0.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew14"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+1.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+
+        <physvol name="lvUX853CollarClipScrew21"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+UX853CollarClipSFDeltaPhi-1.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew22"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+UX853CollarClipSFDeltaPhi-0.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew23"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+UX853CollarClipSFDeltaPhi+0.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew124"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+UX853CollarClipSFDeltaPhi+1.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+
+        <physvol name="lvUX853CollarClipScrew31"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+2*UX853CollarClipSFDeltaPhi-1.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew32"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+2*UX853CollarClipSFDeltaPhi-0.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew33"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+2*UX853CollarClipSFDeltaPhi+0.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+        <physvol name="lvUX853CollarClipScrew134"
+                 volume="lvUX853CollarClipScrew">
+          <positionRPhiZ r="UX853CollarClipHolesRpos"
+                         phi="UX853CollarClipHolesDeltaPhiSF+2*UX853CollarClipSFDeltaPhi+1.5*UX853CollarClipHolesDeltaPhiSF"
+                         z="UX853FixCollarZpos+UX853CollarClipHoleScrewPosZ"/>
+        </physvol>
+
+
+        <physvol name="pvUX853CollarAtt1a"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="90*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+34*degree-UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX853CollarAtt1b"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="90*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+34*degree+UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+
+
+        <physvol name="pvUX853CollarAtt2a"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="180*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+UX853FixCollarQuarterRot+34*degree-UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX853CollarAtt2b"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="180*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+UX853FixCollarQuarterRot+34*degree+UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX853CollarAtt3a"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="270*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+2*UX853FixCollarQuarterRot+34*degree-UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX853CollarAtt3b"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="270*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+2*UX853FixCollarQuarterRot+34*degree+UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX853CollarAtt4a"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="0*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+3*UX853FixCollarQuarterRot+34*degree-UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+        <physvol name="pvUX853CollarAtt4b"
+                 volume="lvUX853CollarAtt">
+          <transformation>
+            <position/>
+            <rotation x="90*degree" y="0*degree"/>
+            <positionRPhiZ z="UX853CollarAttMainPartZPos"
+                           r="UX853CollarAttMainPartRPos"
+                           phi="UX853FixCollarPhiStart+3*UX853FixCollarQuarterRot+34*degree+UX853CollarAttMainPartPhiShift"/>
+          </transformation>
+        </physvol>
+
+
+        <!-- Now placing the new Cable head in UX853 from June 2015 -->
+
+
+        <physvol name="pvUX853FutureCableHeadBeamPipeEndBck-1"
+                 volume="lvUX852FutureFibreCableHeadWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation y="180.0*degree"  x="UX853FixCollarCableBckTheta"/>
+            <positionRPhiZ z="UX853BckCableHeadZpos"
+                           r="UX853BckCableHeadRpos"
+                           phi="UX853BckCableHeadCommonPhipos"/>
+
+          </transformation>
+
+        </physvol>
+
+        <physvol name="pvUX853FutureCableHeadMagnetFaceEndBck-1"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+
+            <position/>
+            <rotation y="180.0*degree"  x="UX853FixCollarCableBckTheta"/>
+
+            <positionRPhiZ z="UX853BckCable05HeadMagnetFaceZpos"
+                           r="UX853BckCable05HeadMagnetFaceRpos"
+                           phi="UX853BckCable05HeadMagnetFaceCommonPhipos"/>
+
+          </transformation>
+
+        </physvol>
+
+        <physvol name="pvUX853FutureCableHeadBeamPipeEndBck-2"
+                 volume="lvUX852FutureFibreCableHeadWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90.0*degree"/>
+
+            <position/>
+            <rotation y="180*degree"/>
+
+            <position/>
+            <rotation z="UX853FixCollarCableBckPlaneRotZHorizRight"/>
+            <positionRPhiZ z="UX853BckCableHeadZpos"
+                           r="UX853BckCableHeadRpos"
+                           phi="UX853BckCableHeadCommonPhipos +UX853FixCollarQuarterRot"/>
+
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizRight"
+                     angle="-UX853FixCollarCableBckTheta"/>
+
+          </transformation>
+
+        </physvol>
+
+        <physvol name="pvUX853FutureCableHeadMagnetFaceEndBck-2"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90.0*degree"/>
+
+            <position/>
+            <rotation y="180*degree"/>
+
+            <position/>
+            <rotation z="UX853FixCollarCableBckPlaneRotZHorizRight"/>
+            <positionRPhiZ z="UX853BckCable06HeadMagnetFaceZpos"
+                           r="UX853BckCable06HeadMagnetFaceRpos"
+                           phi="UX853BckCable06HeadMagnetFaceCommonPhipos +UX853FixCollarQuarterRot"/>
+
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizRight"
+                     angle="-UX853FixCollarCableBckTheta"/>
+
+          </transformation>
+
+        </physvol>
+
+
+
+
+        <physvol name="pvUX853FutureCableHeadBeamPipeEndBck-3"
+                 volume="lvUX852FutureFibreCableHeadWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+
+            <position/>
+            <rotation z="90.0*degree"/>
+
+            <position/>
+            <rotation y="180.0*degree"  x="-UX853FixCollarCableBckTheta"/>
+            <positionRPhiZ z="UX853BckCableHeadZpos"
+                           r="UX853BckCableHeadRpos"
+                           phi="UX853BckCableHeadCommonPhipos + 2*UX853FixCollarQuarterRot "/>
+
+          </transformation>
+
+        </physvol>
+
+        <physvol name="pvUX853FutureCableHeadMagnetFaceEndBck-3"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+
+            <position/>
+            <rotation z="90.0*degree"/>
+
+            <position/>
+            <rotation y="180.0*degree"  x="-UX853FixCollarCableBckTheta"/>
+            <positionRPhiZ z="UX853BckCable05HeadMagnetFaceZpos"
+                           r="UX853BckCable05HeadMagnetFaceRpos"
+                           phi="UX853BckCable05HeadMagnetFaceCommonPhipos + 2*UX853FixCollarQuarterRot "/>
+
+          </transformation>
+
+        </physvol>
+
+
+        <physvol name="pvUX853FutureCableHeadBeamPipeEndBck-4"
+                 volume="lvUX852FutureFibreCableHeadWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90.0*degree"/>
+
+            <position/>
+            <rotation y="180*degree"/>
+
+            <position/>
+            <rotation z="UX853FixCollarCableBckPlaneRotZHorizLeft"/>
+            <positionRPhiZ z="UX853BckCableHeadZpos"
+                           r="UX853BckCableHeadRpos"
+                           phi="UX853BckCableHeadCommonPhipos + 3*UX853FixCollarQuarterRot"/>
+
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizLeft"
+                     angle="-UX853FixCollarCableBckTheta"/>
+
+          </transformation>
+
+        </physvol>
+
+        <physvol name="pvUX853FutureCableHeadMagnetFaceEndBck-4"
+                 volume="lvUX852FutureFibreCableHead">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90.0*degree"/>
+
+            <position/>
+            <rotation y="180*degree"/>
+
+            <position/>
+            <rotation z="UX853FixCollarCableBckPlaneRotZHorizLeft"/>
+            <positionRPhiZ z="UX853BckCable06HeadMagnetFaceZpos"
+                           r="UX853BckCable06HeadMagnetFaceRpos"
+                           phi="UX853BckCableHeadCommonPhipos + 3*UX853FixCollarQuarterRot"/>
+
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizLeft"
+                     angle="-UX853FixCollarCableBckTheta"/>
+
+          </transformation>
+
+        </physvol>
+
+        <physvol name="pvUX853TechnoraCableHeadBeamPipeEndFwd-1"
+                 volume="lvUX852TechnoraCableHeadTypeBWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  x="-UX853FixCollarCableFwdTheta"
+                       z="UX853FixCollarCableFwdPlaneRotZTopVertical"/>
+            <positionRPhiZ z="UX853FwdCableHeadZpos"
+                           r="UX853FwdCableHeadRpos"
+                           phi="UX853FwdCableHeadCommonPhipos"/>
+
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853TechnoraCableHeadMagnetFaceEndFwd-1"
+                 volume="lvUX852TechnoraCableHeadTypeB">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  x="-UX853FixCollarCableFwdTheta"
+                       z="UX853FixCollarCableFwdPlaneRotZTopVertical"/>
+            <positionRPhiZ z="UX853FwdCable07HeadMagnetFaceZpos"
+                           r="UX853FwdCable07HeadMagnetFaceRpos"
+                           phi="UX853FwdCable07HeadMagnetFaceCommonPhipos"/>
+
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853TechnoraCableHeadBeamPipeEndFwd-2"
+                 volume="lvUX852TechnoraCableHeadTypeBWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  z="UX853FixCollarCableFwdPlaneRotZHorizRight"/>
+            <positionRPhiZ z="UX853FwdCableHeadZpos"
+                           r="UX853FwdCableHeadRpos"
+                           phi="UX853FwdCableHeadCommonPhipos+UX853FixCollarQuarterRot"/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizRight"
+                     angle="-UX853FixCollarCableFwdTheta"/>
+
+          </transformation>
+        </physvol>
+        <physvol name="pvUX853TechnoraCableHeadMagnetFaceEndFwd-2"
+                 volume="lvUX852TechnoraCableHeadTypeB">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation z="UX853FixCollarCableFwdPlaneRotZHorizRight"/>
+            <positionRPhiZ z="UX853FwdCable08HeadMagnetFaceZpos"
+                           r="UX853FwdCable08HeadMagnetFaceRpos"
+                           phi="UX853FwdCable08HeadMagnetFaceCommonPhipos+UX853FixCollarQuarterRot "/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizRight"
+                     angle="-UX853FixCollarCableFwdTheta"/>
+
+          </transformation>
+        </physvol>
+
+
+
+
+        <physvol name="pvUX853TechnoraCableHeadBeamPipeEndFwd-3"
+                 volume="lvUX852TechnoraCableHeadTypeBWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  x="UX853FixCollarCableFwdTheta"
+                       z="UX853FixCollarCableFwdPlaneRotZBotVertical"/>
+            <positionRPhiZ z="UX853FwdCableHeadZpos"
+                           r="UX853FwdCableHeadRpos"
+                           phi="UX853FwdCableHeadCommonPhipos + 2*UX853FixCollarQuarterRot"/>
+
+          </transformation>
+        </physvol>
+
+
+
+
+        <physvol name="pvUX853TechnoraCableHeadMagnetFaceEndFwd-3"
+                 volume="lvUX852TechnoraCableHeadTypeB">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  x="UX853FixCollarCableFwdTheta"
+                       z="UX853FixCollarCableFwdPlaneRotZBotVertical"/>
+            <positionRPhiZ z="UX853FwdCable07HeadMagnetFaceZpos"
+                           r="UX853FwdCable07HeadMagnetFaceRpos"
+                           phi="UX853FwdCable07HeadMagnetFaceCommonPhipos + 2*UX853FixCollarQuarterRot"/>
+
+          </transformation>
+        </physvol>
+
+
+        <physvol name="pvUX853TechnoraCableHeadBeamPipeEndFwd-4"
+                 volume="lvUX852TechnoraCableHeadTypeBWithoutPin">
+          <transformation>
+            <position/>
+            <rotation x="UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  z="UX853FixCollarCableFwdPlaneRotZHorizLeft"/>
+            <positionRPhiZ z="UX853FwdCableHeadZpos"
+                           r="UX853FwdCableHeadRpos"
+                           phi="UX853FwdCableHeadCommonPhipos+3*UX853FixCollarQuarterRot"/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizLeft"
+                     angle="-UX853FixCollarCableFwdTheta"/>
+
+          </transformation>
+        </physvol>
+
+
+        <physvol name="pvUX853TechnoraCableHeadMagnetFaceEndFwd-4" volume="lvUX852TechnoraCableHeadTypeB">
+          <transformation>
+            <position/>
+            <rotation x="-UX852CableHeadHRotX"/>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation z="UX853FixCollarCableFwdPlaneRotZHorizLeft"/>
+            <positionRPhiZ z="UX853FwdCable08HeadMagnetFaceZpos"
+                           r="UX853FwdCable08HeadMagnetFaceRpos"
+                           phi="UX853FwdCable08HeadMagnetFaceCommonPhipos+ 3*UX853FixCollarQuarterRot "/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizLeft"
+                     angle="-UX853FixCollarCableFwdTheta"/>
+          </transformation>
+        </physvol>
+
+        <!-- End placing the new Cable head in UX853 from June 2015 -->
+        <!-- Now place the cables in UX853 from June 2015 -->
+        <!-- Now placing the backward cables in UX853 from June 2015 -->
+        <physvol name="pvUX853FixCollarCable05BckTop"        volume="lvUX853FutureFibreCable05">
+          <transformation>
+            <position/>
+            <rotation y="180.0*degree"  x="UX853FixCollarCableBckTheta"/>
+            <positionRPhiZ z="UX853BckCable05ZPos"
+                           r="UX853BckCable05RPos"
+                           phi="UX853BckCableHeadCommonPhipos"/>
+
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FixCollarCable06BckHorizRight" volume="lvUX853FutureFibreCable06">
+          <transformation>
+            <position/>
+            <rotation z="90.0*degree"/>
+
+            <position/>
+            <rotation z="UX853FixCollarCableBckPlaneRotZHorizRight"/>
+            <positionRPhiZ z="UX853BckCable06ZPos"
+                           r="UX853BckCable06RPos"
+                           phi="UX853BckCableHeadCommonPhipos +UX853FixCollarQuarterRot"/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizRight"
+                     angle="-UX853FixCollarCableBckTheta"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FixCollarCable05BckBot"       volume="lvUX853FutureFibreCable05">
+          <transformation>
+            <position/>
+            <rotation y="180.0*degree"  x="-UX853FixCollarCableBckTheta"/>
+            <positionRPhiZ z="UX853BckCable05ZPos"
+                           r="UX853BckCable05RPos"
+                           phi="UX853BckCableHeadCommonPhipos+ 2*UX853FixCollarQuarterRot"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FixCollarCable06BckHorizLeft"  volume="lvUX853FutureFibreCable06">
+          <transformation>
+            <position/>
+            <rotation z="90.0*degree"/>
+            <position/>
+            <rotation z="UX853FixCollarCableBckPlaneRotZHorizLeft"/>
+            <positionRPhiZ z="UX853BckCable06ZPos"
+                           r="UX853BckCable06RPos"
+                           phi="UX853BckCableHeadCommonPhipos +3* UX853FixCollarQuarterRot"/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableBckSpPlaneRotPhiAxisHorizLeft"
+                     angle="-UX853FixCollarCableBckTheta"/>
+          </transformation>
+        </physvol>
+
+        <!-- Now placing the forward cables in UX853 from June 2015 -->
+        <physvol name="pvUX853FixCollarCable07FwdTop"        volume="lvUX853TechnoraCable07">
+          <transformation>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  x="-UX853FixCollarCableFwdTheta"
+                       z="UX853FixCollarCableFwdPlaneRotZTopVertical"/>
+
+            <positionRPhiZ z="UX853FwdCable07ZPos"
+                           r="UX853FwdCable07RPos"
+                           phi="UX853FwdCableHeadCommonPhipos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FixCollarCable08FwdHorizRight" volume="lvUX853TechnoraCable08">
+          <transformation>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation z="UX853FixCollarCableFwdPlaneRotZHorizRight"/>
+            <positionRPhiZ z="UX853FwdCable08ZPos"
+                           r="UX853FwdCable08RPos"
+                           phi="UX853FwdCableHeadCommonPhipos+ UX853FixCollarQuarterRot "/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizRight"
+                     angle="-UX853FixCollarCableFwdTheta"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FixCollarCable07FwdBot"        volume="lvUX853TechnoraCable07">
+          <transformation>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation  x="UX853FixCollarCableFwdTheta"
+                       z="UX853FixCollarCableFwdPlaneRotZBotVertical"/>
+            <positionRPhiZ z="UX853FwdCable07ZPos"
+                           r="UX853FwdCable07RPos"
+                           phi="UX853FwdCableHeadCommonPhipos + 2*UX853FixCollarQuarterRot "/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FixCollarCable08FwdHorizLeft"  volume="lvUX853TechnoraCable08">
+
+          <transformation>
+            <position/>
+            <rotation z="90*degree"/>
+            <position/>
+            <rotation z="UX853FixCollarCableFwdPlaneRotZHorizLeft"/>
+            <positionRPhiZ z="UX853FwdCable08ZPos"
+                           r="UX853FwdCable08RPos"
+                           phi="UX853FwdCableHeadCommonPhipos+ 3*UX853FixCollarQuarterRot "/>
+            <rotAxis axTheta="90.0*degree"
+                     axPhi="UX853FixCollarCableFwdSpPlaneRotPhiAxisHorizLeft"
+                     angle="-UX853FixCollarCableFwdTheta"/>
+          </transformation>
+        </physvol>
+
+        <!-- End  placing the cables in UX853 from June 2015 -->
+        <physvol name="pvUX853BckAttRod1"                    volume="lvUX853BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="180.0*degree"/>
+            <positionRPhiZ z="UX853BckCableAttRodZpos"
+                           r="UX853BckCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853BckAttRod2"                 volume="lvUX853BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX853BckCableAttRodZpos"
+                           r="UX853BckCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree+UX853FixCollarQuarterRot"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+2*UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853BckAttRod3"                 volume="lvUX853BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX853BckCableAttRodZpos"
+                           r="UX853BckCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree+2*UX853FixCollarQuarterRot"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+3*UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853BckAttRod4"                 volume="lvUX853BckAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX853BckCableAttRodZpos"
+                           r="UX853BckCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree+3*UX853FixCollarQuarterRot"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+4*UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FwdAttRod1"                 volume="lvUX853FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX853FwdCableAttRodZpos"
+                           r="UX853FwdCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FwdAttRod2"                 volume="lvUX853FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX853FwdCableAttRodZpos"
+                           r="UX853FwdCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree+UX853FixCollarQuarterRot"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+2*UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FwdAttRod3"                 volume="lvUX853FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX853FwdCableAttRodZpos"
+                           r="UX853FwdCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree+2*UX853FixCollarQuarterRot"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+3*UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853FwdAttRod4"                 volume="lvUX853FwdAttRod">
+          <transformation>
+            <position/>
+            <rotation x="0.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <positionRPhiZ z="UX853FwdCableAttRodZpos"
+                           r="UX853FwdCableAttRodRpos"
+                           phi="UX853FixCollarPhiStart+34*degree+3*UX853FixCollarQuarterRot"/>
+            <rotation z="-(UX853FixCollarPhiStart+34*degree+4*UX853FixCollarQuarterRot)"/>
+          </transformation>
+        </physvol>
+      </envelope>
+
+    </detector>
+  </detectors>
+</lccdd>

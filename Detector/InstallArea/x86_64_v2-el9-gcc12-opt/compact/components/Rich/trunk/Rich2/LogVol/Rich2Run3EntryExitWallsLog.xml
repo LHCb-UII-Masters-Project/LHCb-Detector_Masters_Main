@@ -1,0 +1,94 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Entry Wall and Exit Wall  Logvol  structures                        -->
+<!--  ==========================================================================-->
+
+<Rich2>
+
+ <!-- Entry window log vol-->
+
+  <volume name = "lvRich2EntryWindowSkin" material = "Rich:Rich2CarbonFibre" vis= "Rich:VisRich2EntryWindowSkin" >
+
+    <shape type="BooleanShape" operation="subtraction" name="Rich2EntryWindowSkinWithHole">
+      <shape type="Box" name = "Rh2EntrySkinBox"
+        dx  = "Rh2EntryWindowSkinSizeX*RhHalfSize"
+        dy  = "Rh2EntryWindowSkinSizeY*RhHalfSize"
+        dz  = "Rh2EntryWindowSkinSizeZ*RhHalfSize" />
+
+       <shape type="Tube" name = "Rh2EntryHole1Tube"
+        dz    = "Rh2EntryWindowHoleSizeZ*RhHalfSize"
+        rmax  = "Rh2EntryWindowLockOuterRadius" />
+       <position />
+    </shape>
+  </volume>
+
+  <volume name = "lvRich2EntryWindowPMI" material = "Rich:Rich2Rohacell51IG" vis="Rich:VisRich2EntryWindowPMI" >
+     <shape type="BooleanShape" operation="subtraction" name="Rich2EntryWindowPMIWithHole">
+      <shape type="Box" name = "Rh2EntryPMIBox"
+        dx  = "Rh2EntryWindowSkinSizeX*RhHalfSize"
+        dy  = "Rh2EntryWindowSkinSizeY*RhHalfSize"
+        dz  = "Rh2EntryWindowPMISizeZ*RhHalfSize" />
+
+      <shape type="Tube" name = "Rh2EntryHole2Tube"
+        dz    = "Rh2EntryWindowHoleSizeZ*RhHalfSize"
+        rmax  = "Rh2EntryWindowLockOuterRadius" />
+      <position />
+     </shape>
+
+  </volume>
+
+  <!-- tube carbon fibre lock -->
+  <volume name = "lvRich2EntryWinTubeLock" material = "Rich:Rich2CarbonFibre" vis="Rich:VisRich2EntryWinTube">
+    <shape type="Tube" name = "Rich2EntryWinTubeLock"
+      dz   = "Rh2EntryWindowThickness*RhHalfSize"
+      rmax = "Rh2EntryWindowLockOuterRadius"
+      rmin = "Rh2EntryWindowLockInnerRadius" />
+  </volume>
+
+
+ <!-- Exit window -->
+
+  <volume name = "lvRich2ExitWindowSkin" material = "Rich:Rich2ExitWindowSkinMaterial" vis="Rich:VisRich2ExitWindowSkin" >
+    <shape type="BooleanShape" operation="subtraction"  name="Rich2ExitWindowSkinWithHole">
+      <shape type="Box" name = "Rh2ExitWindowSkinBox"
+        dx  = "Rh2ExitWindowSkinSizeX*RhHalfSize"
+        dy  = "Rh2ExitWindowSkinSizeY*RhHalfSize"
+        dz  = "Rh2ExitWindowSkinSizeZ*RhHalfSize" />
+      <shape type="Tube" name = "Rh2ExitWindowHole1Tube"
+        dz   = "Rh2ExitWindowHoleSizeZ*RhHalfSize"
+        rmax = "Rh2ExitWindowLockOuterRadius" />
+      <position />
+    </shape>
+  </volume>
+
+  <volume name = "lvRich2ExitWindowPMI" material = "Rich:Rich2Rohacell51IG"  vis="Rich:VisRich2ExitWindowPMI">
+    <shape type="BooleanShape" operation="subtraction"  name= "Rich2ExitWindowPMIWithHole">
+      <shape type="Box" name = "Rh2ExitWallPMIBox"
+        dx  = "Rh2ExitWindowSkinSizeX*RhHalfSize"
+        dy  = "Rh2ExitWindowSkinSizeY*RhHalfSize"
+        dz  = "Rh2ExitWindowPMISizeZ*RhHalfSize" />
+
+      <shape type="Tube" name = "Rh2ExitWallHole2Tube"
+        dz    = "Rh2ExitWindowHoleSizeZ*RhHalfSize"
+        rmax  = "Rh2ExitWindowLockOuterRadius" />
+      <position />
+    </shape>
+  </volume>
+
+  <!-- tube carbon fibre lock -->
+  <volume name = "lvRich2ExitWinTubeLock" material = "Rich:Rich2CarbonFibre" vis="Rich:VisRich2ExitWinTubeLock" >
+    <shape type="Tube" name = "Rich2ExitWinTubeLock"
+      dz    = "Rh2ExitWindowThickness*RhHalfSize"
+      rmax  = "Rh2ExitWindowLockOuterRadius"
+      rmin  = "Rh2ExitWindowLockInnerRadius"/>
+  </volume>
+
+</Rich2>

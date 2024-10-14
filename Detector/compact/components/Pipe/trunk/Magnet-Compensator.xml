@@ -1,0 +1,232 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe compensator in the magnet region         -->
+<!--===========================================================================-->
+<pipe>
+
+  <!-- Compensator at 2800 - Flange -->
+  <volume name="lvUX85C2800Flange01" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Flange-01"
+           dz="0.5*UX85C2800Flange01Lenght"
+           rmin1="UX85C2800Flange01RadiusZmin"
+           rmin2="UX85C2800Flange01RadiusZmax"
+           rmax1="UX85C2800Flange01OuterRadius"
+           rmax2="UX85C2800Flange01OuterRadius"/>
+  </volume>
+
+  <!-- Compensator at 2800 cone of 10 mrad -->
+  <volume name="lvUX85C2800Cone02" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Cone10mrad-02"
+           dz="0.5*UX85C2800Cone02Lenght"
+           rmin1="UX85C2800Cone02RadiusZmin"
+           rmin2="UX85C2800Cone02RadiusZmax"
+           rmax1="UX85C2800Cone02OuterRadius"
+           rmax2="UX85C2800Cone02OuterRadius"/>
+  </volume>
+
+  <!-- Compensator at 2800 connection to bellow -->
+  <volume name="lvUX85C2800BellowCnct03" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Connection-03"
+           dz="0.5*UX85C2800BellowCnct03Lenght"
+           rmin1="UX85C2800BellowCnct03RadiusZmin"
+           rmin2="UX85C2800BellowCnct03RadiusZmax"
+           rmax1="UX85C2800BellowCnct03RadiusZmin + UX85C2800BellowCnct03Thick"
+           rmax2="UX85C2800BellowCnct03RadiusZmax + UX85C2800BellowCnct03Thick"/>
+  </volume>
+
+  <volume name="lvUX85C2800BellowBase" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Polycone" name="UX85-C2800-BellowBase-04">
+      <zplane z="-0.5*UX85C2800BellowCRLength"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowCRLength + UX85C2800BellowWallThick"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowCRLength + UX85C2800BellowWallThick"
+              rmin="UX85C2800BellowOuterRadius - UX85C2800BellowWallThick"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowCRLength + UX85C2800BellowWallThick +
+                 UX85C2800BellowStep"
+              rmin="UX85C2800BellowOuterRadius - UX85C2800BellowWallThick"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowCRLength + UX85C2800BellowWallThick +
+                 UX85C2800BellowStep"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowCRLength + 2*UX85C2800BellowWallThick +
+                 UX85C2800BellowStep"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowCRLength + 2*UX85C2800BellowWallThick +
+                 UX85C2800BellowStep"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowInnerRadius + UX85C2800BellowWallThick "/>
+      <zplane z="-0.5*UX85C2800BellowCRLength + 2*UX85C2800BellowWallThick +
+                 2*UX85C2800BellowStep"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowInnerRadius + UX85C2800BellowWallThick "/>
+    </shape>
+  </volume>
+
+  <volume name="lvUX85C2800BellowLast" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="Polycone" name="UX85-C2800-BellowLast-04">
+      <zplane z="-0.5*UX85C2800BellowLastLenght"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowLastLenght + UX85C2800BellowWallThick"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowLastLenght + UX85C2800BellowWallThick"
+              rmin="UX85C2800BellowOuterRadius - UX85C2800BellowWallThick"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowLastLenght + UX85C2800BellowWallThick +
+                 UX85C2800BellowStep"
+              rmin="UX85C2800BellowOuterRadius - UX85C2800BellowWallThick"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowLastLenght + UX85C2800BellowWallThick +
+                 UX85C2800BellowStep"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+      <zplane z="-0.5*UX85C2800BellowLastLenght + 2*UX85C2800BellowWallThick +
+                 UX85C2800BellowStep"
+              rmin="UX85C2800BellowInnerRadius"
+              rmax="UX85C2800BellowOuterRadius"/>
+    </shape>
+  </volume>
+
+  <!-- Compensator at 2800 Bellow -->
+  <volume name="lvUX85C2800BellowCR">
+    <paramphysvol number="UX85C2800BellowNConvCR-1">
+      <physvol name="pvUX85C2800BellowBaseCR"           volume="lvUX85C2800BellowBase"/>
+      <position z="UX85C2800BellowPitch"/>
+    </paramphysvol>
+    <physvol name="pvUX85C2800BellowLastCR"             volume="lvUX85C2800BellowLast">
+      <position z="-0.5*(UX85C2800BellowCRLength +
+                   (UX85C2800BellowNConvCR-1)*UX85C2800BellowPitch +
+                   0.5*UX85C2800BellowLastLenght)"/>
+    </physvol>
+  </volume>
+
+
+  <!-- Compensator at 2800 connection to bellow -->
+  <volume name="lvUX85C2800BellowCnct05" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Connection-05"
+           dz="0.5*UX85C2800BellowCnct05Lenght"
+           rmin1="UX85C2800BellowCnct05RadiusZmin"
+           rmin2="UX85C2800BellowCnct05RadiusZmax"
+           rmax1="UX85C2800BellowCnct05RadiusZmin + UX85C2800BellowCnct05Thick"
+           rmax2="UX85C2800BellowCnct05RadiusZmax + UX85C2800BellowCnct05Thick"/>
+  </volume>
+
+  <!-- Compensator at 2800 cone of 10 mrad -->
+  <volume name="lvUX85C2800Cone06" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Cone10mrad-06"
+           dz="0.5*UX85C2800Cone06Length"
+           rmin1="UX85C2800Cone06RadiusZmin"
+           rmin2="UX85C2800Cone06RadiusZmax"
+           rmax1="UX85C2800Cone06RadiusZmin + UX85C2800Cone06Thick"
+           rmax2="UX85C2800Cone06RadiusZmax + UX85C2800Cone06Thick"/>
+  </volume>
+
+  <!-- Compensator at 2800 cone of 10 mrad, slightly thicker-->
+  <volume name="lvUX85C2800Cone07" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Cone10mrad-07"
+           dz="0.5*UX85C2800Cone07Length"
+           rmin1="UX85C2800Cone07RadiusZmin"
+           rmin2="UX85C2800Cone07RadiusZmax"
+           rmax1="UX85C2800Cone07OuterRadius"
+           rmax2="UX85C2800Cone07OuterRadius"/>
+  </volume>
+
+
+  <!-- Compensator at 2800 connection to bellow -->
+
+  <!-- Compensator at 2800 cone of 10 mrad -->
+  <volume name="lvUX85C2800Cone11" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Cone10mrad-11"
+           dz="0.5*UX85C2800Cone11Lenght"
+           rmin1="UX85C2800Cone11RadiusZmin"
+           rmin2="UX85C2800Cone11RadiusZmax"
+           rmax1="UX85C2800Cone11OuterRadius"
+           rmax2="UX85C2800Cone11OuterRadius"/>
+  </volume>
+
+  <!-- Compensator at 2800 Flange -->
+  <volume name="lvUX85C2800Flange12" vis="Pipe:Magnet" material="Pipe:Al2219F">
+    <shape type="ConeSegment" name="UX85-C2800-Flange-12"
+           dz="0.5*UX85C2800Flange12Lenght"
+           rmin1="UX85C2800Flange12RadiusZmin"
+           rmin2="UX85C2800Flange12RadiusZmax"
+           rmax1="UX85C2800Flange12OuterRadius"
+           rmax2="UX85C2800Flange12OuterRadius"/>
+  </volume>
+
+  <!-- Vacuum in UX85Compensator2800 -->
+  <volume name="lvUX85C2800Vacuum01" vis="Pipe:Magnet" material="Vacuum">
+    <shape type="ConeSegment" name="UX85-C2800-Vacuum-01"
+           dz="0.5*UX85C2800Vacuum01Lenght"
+           rmax1="UX85C2800Flange01RadiusZmin"
+           rmax2="UX85C2800Flange12RadiusZmax"/>
+  </volume>
+
+  <!-- Compensator -->
+  <volume name="lvUX85Compensator2800">
+    <!--     <shape type="Tube" name="UX85Compensator2800-Cylinder"
+         dz="0.5*UX85C2800Lenght"
+         rmax="46.00*mm+1.0*mm"/>
+    -->
+
+    <physvol name="pvUX85C2800Flange01"             volume="lvUX85C2800Flange01">
+      <position z="UX85C2800Flange01Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX85C2800Cone02"               volume="lvUX85C2800Cone02">
+      <position z="UX85C2800Cone02Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX85C2800BellowCnct03"         volume="lvUX85C2800BellowCnct03">
+      <position z="UX85C2800BellowCnct03Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX85C2800BellowCR04"           volume="lvUX85C2800BellowCR">
+      <position z="UX85C2800Bellow04Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX85C2800BellowCnct05"         volume="lvUX85C2800BellowCnct05">
+      <position z="UX85C2800BellowCnct05Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX85C2800Cone06"               volume="lvUX85C2800Cone06">
+      <position z="UX85C2800Cone06Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX85C2800Cone07"               volume="lvUX85C2800Cone07">
+      <position z="UX85C2800Cone07Zpos"/>
+    </physvol>
+
+
+    <physvol name="pvUX85C2800Cone11"               volume="lvUX85C2800Cone11">
+      <position z="UX85C2800Cone11Zpos"/>
+    </physvol>
+
+    <physvol name="pvUX85C2800Flange12"             volume="lvUX85C2800Flange12">
+      <position z="UX85C2800Flange12Zpos"/>
+    </physvol>
+
+    <!-- Now the vacuum inside -->
+    <physvol name="pvUX85C2800Vacuum01"             volume="lvUX85C2800Vacuum01">
+      <position z="0.5*UX85C2800Vacuum01Lenght"/>
+    </physvol>
+
+  </volume>
+
+</pipe>

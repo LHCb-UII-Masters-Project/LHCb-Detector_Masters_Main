@@ -1,0 +1,4 @@
+MotionVPLeft: !alignment
+  position: [0.0, 0.0, 0.0]
+MotionVPRight: !alignment
+  position: [0.0, 0.0, 0.0]

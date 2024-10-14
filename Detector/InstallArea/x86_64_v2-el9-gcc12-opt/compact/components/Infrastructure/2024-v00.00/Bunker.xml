@@ -1,0 +1,98 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+
+<lccdd>
+  <define>
+    <!-- lhbiegu_0035-vAB.plt gives beam height as 6300 mm -->
+    <constant name="BeamHeight" value="6300.0*mm"/>
+
+    <!-- Values taken from lhbierm_0035-vAC.plt and lhbierm_0040-v0.plt -->
+    <constant name="Bunker:FrontBlockWidth" value="10.0*m"/>
+    <constant name="Bunker:FrontBlockDepth" value="600.0*mm"/>
+    <constant name="Bunker:FrontBlockHeight" value="2100.0*mm"/>
+
+    <constant name="Bunker:xPos" value="0.0*m"/>
+    <constant name="Bunker:yPos" value="-BeamHeight+0.5*Bunker:FrontBlockHeight"/>
+    <constant name="Bunker:zPos" value="7137.0*mm+0.5*Bunker:FrontBlockDepth"/>
+
+    <constant name="Bunker:TopBlockWidth" value="10.0*m"/>
+    <constant name="Bunker:TopBlockDepth" value="2320.0*mm+2410.0*mm"/>
+    <constant name="Bunker:TopBlockHeight" value="300.0*mm"/>
+    <constant name="Bunker:TopxPos" value="0.0*m"/>
+    <constant name="Bunker:TopyPos" value="0.5*Bunker:FrontBlockHeight+0.5*Bunker:TopBlockHeight"/>
+    <constant name="Bunker:TopzPos" value="-0.5*Bunker:FrontBlockDepth+0.5*Bunker:TopBlockDepth"/>
+
+    <!-- there are two legs - position is for positive (left) one -->
+    <constant name="Bunker:LegWidth" value="400.0*mm"/>
+    <constant name="Bunker:LegDepth" value="400.0*mm"/>
+    <constant name="Bunker:LegHeight" value="2100.0*mm"/>
+    <constant name="Bunker:LegxPos" value="0.5*7416.0*mm+0.5*Bunker:LegWidth"/>
+    <constant name="Bunker:LegyPos" value="-0.5*Bunker:FrontBlockHeight+0.5*Bunker:LegHeight"/>
+    <constant name="Bunker:LegzPos" value="0.5*Bunker:FrontBlockDepth+3330.0*mm+0.5*Bunker:LegDepth"/>
+
+    <!-- top shelf - 3 parts -->
+    <constant name="Bunker:CentreShelfWidth" value="7076.0*mm"/>
+    <constant name="Bunker:CentreShelfDepth" value="2410.0*mm"/>
+    <constant name="Bunker:CentreShelfHeight" value="100.0*mm"/>
+    <constant name="Bunker:CentreShelfxPos" value="0.0*mm"/>
+    <constant name="Bunker:CentreShelfyPos" value="0.5*Bunker:FrontBlockHeight+Bunker:TopBlockHeight+0.5*Bunker:CentreShelfHeight"/>
+    <constant name="Bunker:CentreShelfzPos" value="Bunker:TopzPos+0.5*Bunker:TopBlockDepth-0.5*Bunker:CentreShelfDepth"/>
+
+    <!-- position of side shelf is positive (left) one -->
+    <constant name="Bunker:SideShelfWidth" value="722.0*mm"/>
+    <constant name="Bunker:SideShelfDepth" value="Bunker:CentreShelfDepth"/>
+    <constant name="Bunker:SideShelfHeight" value="Bunker:CentreShelfHeight"/>
+    <constant name="Bunker:SideShelfxPos" value="0.5*Bunker:CentreShelfWidth+740.0*mm+0.5*Bunker:SideShelfWidth"/>
+    <constant name="Bunker:SideShelfyPos" value="Bunker:CentreShelfyPos"/>
+    <constant name="Bunker:SideShelfzPos" value="Bunker:CentreShelfzPos"/>
+    <!-- End of general parameters for Tunnel -->
+
+  </define>
+
+  <materials>
+  </materials>
+
+  <display>
+  </display>
+
+  <detectors>
+
+    <detector name="Bunker" type="DD4hep_VolumeAssembly" parent="${Bunker:parent}" vis="Infrastructure:Vis">
+      <!--  the main volume , you can add any component you need-->
+      <envelope name="lvBunker" material="Infrastructure:Concrete" vis="Infrastructure:BunkerVis">
+        <shape name="BunkerBox" type="BooleanShape" operation="union">
+          <shape name="BunkerFrontBox" type="Box" dx="Bunker:FrontBlockWidth/2" dy="Bunker:FrontBlockHeight/2" dz="Bunker:FrontBlockDepth/2"/>
+          <shape name="BunkerTopBox" type="Box" dx="Bunker:TopBlockWidth/2" dy="Bunker:TopBlockHeight/2" dz="Bunker:TopBlockDepth/2"/>
+          <position x="Bunker:TopxPos" y="Bunker:TopyPos" z="Bunker:TopzPos"/>
+
+          <shape name="BunkerLegBox1" type="Box" dx="Bunker:LegWidth/2" dy="Bunker:LegHeight/2" dz="Bunker:LegDepth/2"/>
+          <position x="Bunker:LegxPos" y="Bunker:LegyPos" z="Bunker:LegzPos"/>
+
+          <shape name="BunkerLegBox2" type="Box" dx="Bunker:LegWidth/2" dy="Bunker:LegHeight/2" dz="Bunker:LegDepth/2"/>
+          <position x="-Bunker:LegxPos" y="Bunker:LegyPos" z="Bunker:LegzPos"/>
+
+          <shape name="BunkerCentreShelfBox" type="Box" dx="Bunker:CentreShelfWidth/2" dy="Bunker:CentreShelfHeight/2" dz="Bunker:CentreShelfDepth/2"/>
+          <position x="Bunker:CentreShelfxPos" y="Bunker:CentreShelfyPos" z="Bunker:CentreShelfzPos"/>
+
+          <shape name="BunkerLeftShelfBox" type="Box" dx="Bunker:SideShelfWidth/2" dy="Bunker:SideShelfHeight/2" dz="Bunker:SideShelfDepth/2"/>
+          <position x="Bunker:SideShelfxPos" y="Bunker:SideShelfyPos" z="Bunker:SideShelfzPos"/>
+
+          <shape name="BunkerRightShelfBox" type="Box" dx="Bunker:SideShelfWidth/2" dy="Bunker:SideShelfHeight/2" dz="Bunker:SideShelfDepth/2"/>
+          <position x="-Bunker:SideShelfxPos" y="Bunker:SideShelfyPos" z="Bunker:SideShelfzPos"/>
+        </shape>
+      </envelope>
+
+      <position x="Bunker:xPos" y="Bunker:yPos" z="Bunker:zPos"/>
+
+    </detector>
+  </detectors>
+</lccdd>

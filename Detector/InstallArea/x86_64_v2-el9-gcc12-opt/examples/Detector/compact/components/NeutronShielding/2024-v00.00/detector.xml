@@ -1,0 +1,126 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Zehua                                                           -->
+<!--   @date    08/2022                                                         -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the NeutronShielding                                    -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <detectors>
+    <detector name="NeutronShielding" type="DD4hep_VolumeAssembly" parent="${NeutronShielding:parent}" vis="NeutronShielding:Vis">
+
+      <envelope material="Air">
+        <shape type="Assembly" name="shape-NeutronShielding"/>
+      </envelope>
+      <position x="0.0*mm" y="0.0*mm" z="12110.0*mm - Regions:DownstreamZPos"/>
+
+
+    <volume name="lvNeutronShieldingSupport" material = "NSAluminium" vis="NeutronShielding:Support">
+      <shape type="BooleanShape" operation="subtraction" name="NeutronShieldingSupport">
+        <shape type="Box" name = "SupportPanelOuter" dx = "0.5*SupportOuterSizeX" dy = "0.5*SupportOuterSizeY" dz = "0.5*SupportSizeZ"/>
+        <shape type="Box" name = "SupportPanelInner" dx = "0.5*SupportInnerSizeX" dy = "0.5*SupportInnerSizeY" dz = "SupportSizeZ"/>
+        <position x = "0*mm" y = "0*mm" z = "0*mm"/>
+      </shape>
+    </volume>
+
+
+    <volume name="lvNeutronShieldingOuterPlastic" material = "BoratedPolyethylene" vis="NeutronShielding:SubPlasticOuter">
+      <shape type="BooleanShape" operation="subtraction" name="SubPlasticOuter">
+        <shape type="Box" name = "PlasticPanelOuter"     dx = "0.5*PlasticOuterSizeX" dy = "0.5*PlasticOuterSizeY" dz = "0.5*PlasticOuterSizeZ"/>
+        <shape type="Tube" name = "PlasticPanelOuterCut" dz = "PlasticOuterSizeZ" rmin = "0.0*mm" rmax = "PlasticInnerRadius"/>
+        <position x = "0*mm" y = "0*mm" z = "0*mm"/>
+      </shape>
+    </volume>
+
+
+    <volume name="lvNeutronShieldingInnerPlastic" material = "BoratedPolyethylene" vis="">
+      <shape type="BooleanShape" operation="subtraction" name="SubPlasticInner">
+        <shape type="Box" name = "PlasticPanelInner" dx = "0.5*PlasticInnerSizeX" dy = "0.5*PlasticInnerSizeY" dz = "0.5*PlasticInnerSizeZ"/>
+        <shape type="Tube" name = "" dz = "PlasticInnerSizeZ" rmin = "0.0*mm" rmax = "PlasticInnerRadius"/>
+        <position x = "0*mm" y = "0*mm" z = "0*mm"/>
+      </shape>
+    </volume>
+
+
+    <volume name="lvNeutronShieldingOuterCover" material = "NSAluminium" vis="">
+      <shape type="BooleanShape" operation="subtraction" name="SubCoverOuter">
+        <shape type="Box" name = "CoverPlateOuter"    dx = "0.5*PlasticOuterSizeX" dy = "0.5*PlasticOuterSizeY" dz = "0.5*CoverSizeZ"/>
+        <shape type="Box" name = "CoverPlateOuterCut" dx = "0.5*PlasticInnerSizeX+0.5*Epsilon" dy = "0.5*PlasticInnerSizeY+0.5*Epsilon" dz = "CoverSizeZ"/>
+        <position x = "0*mm" y = "0*mm" z = "0*mm"/>
+      </shape>
+    </volume>
+
+
+    <volume name="lvNeutronShieldingInnerCover" material = "NSAluminium" vis="">
+      <shape type="BooleanShape" operation="subtraction" name="SubCoverInner">
+        <shape type="Box"  name = "CoverPlateInner"    dx = "0.5*PlasticInnerSizeX" dy = "0.5*PlasticInnerSizeY" dz = "0.5*CoverSizeZ"/>
+        <shape type="Tube" name = "CoverPlateInnerCut" dz = "CoverSizeZ" rmin = "0.0*mm" rmax = "PlasticInnerRadius"/>
+        <position x = "0*mm" y = "0*mm" z = "0*mm"/>
+      </shape>
+    </volume>
+
+
+    <physvol name = "pvNeutronShieldingSupportFront" logvol = "lvNeutronShieldingSupport">
+      <position x = "0*mm" y = "0*mm" z = "-1*zSupport"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    <physvol name = "pvNeutronShieldingSupportBack" logvol = "lvNeutronShieldingSupport">
+      <position x = "0*mm" y = "0*mm" z = "zSupport"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    <physvol name = "pvNeutronShieldingPlasticOuterFront" logvol = "lvNeutronShieldingOuterPlastic">
+      <position x = "0*mm" y = "0*mm" z = "-1*zPlasticOuter"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    <physvol name = "pvNeutronShieldingPlasticOuterBack" logvol = "lvNeutronShieldingOuterPlastic">
+      <position x = "0*mm" y = "0*mm" z = "zPlasticOuter"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    <physvol name = "pvNeutronShieldingPlasticInnerFront" logvol = "lvNeutronShieldingInnerPlastic">
+      <position x = "0*mm" y = "0*mm" z = "-1*zPlasticInner"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    <physvol name = "pvNeutronShieldingPlasticInnerBack" logvol = "lvNeutronShieldingInnerPlastic">
+      <position x = "0*mm" y = "0*mm" z = "zPlasticInner"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    <physvol name = "pvNeutronShieldingCoverOuterFront" logvol = "lvNeutronShieldingOuterCover">
+      <position x = "0*mm" y = "0*mm" z = "-1*zCoverOuter"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    <physvol name = "pvNeutronShieldingCoverOuterBack" logvol = "lvNeutronShieldingOuterCover">
+      <position x = "0*mm" y = "0*mm" z = "zCoverOuter"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+
+    <physvol name = "pvNeutronShieldingCoverInnerFront" logvol = "lvNeutronShieldingInnerCover">
+      <position x = "0*mm" y = "0*mm" z = "-1*zCoverInner"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+
+    <physvol name = "pvNeutronShieldingCoverInnerBack" logvol = "lvNeutronShieldingInnerCover">
+      <position x = "0*mm" y = "0*mm" z = "zCoverInner"/>
+      <rotation rotX="TiltAngle"/>
+    </physvol>
+
+    </detector>
+  </detectors>
+
+
+</lccdd>

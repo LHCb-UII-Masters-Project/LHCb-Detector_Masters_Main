@@ -1,0 +1,32 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_VP_cond_XML_reader" type="xml">
+
+      <conditions_config prefix="Conditions/VP"/>
+      <alignment_pattern regex="Module\d\d" path="Alignment/Modules.yml"/>
+      <alignment_pattern regex="VP(Left|Right)?" path="Alignment/Global.yml"/>
+      <alignment_pattern regex="MotionVP(Left|Right)?" path="Motion.yml"/>
+      <alignment_pattern path_regex=".*Module(\d\d)/ladder_(\d)$" path="Alignment/Ladders.yml" name="ladder_${1}_${2}"/>
+      <alignment detector="VP" path="Alignment/Global.yml" name="VPSystem"/>
+      <conditions path="conditions.yml">
+        <condition name="TestCond"/>
+      </conditions>
+      <conditions path="Simulation.yml">
+        <condition name="SimCond" optional="1"/>
+      </conditions>
+    </plugin>
+  </plugins>
+
+</lccdd>

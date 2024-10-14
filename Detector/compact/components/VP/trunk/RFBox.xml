@@ -1,0 +1,264 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<velo>
+
+  <!-- U1 Weld Flange -->
+  <volume material="VP:Aluminium" vis="VP:RFBox" name="lvRFBoxWeldFlange">
+    <shape type="BooleanShape" operation="subtraction" name="RFBWeldFlangeSub">
+      <shape type="Trap" name="RFBWeldFlangeTrap"
+        z  = "0.5 * VP:RFBoxFlangeYSize"
+        y1 = "0.5 * VP:RFBoxFlangeZSize"
+        x1 = "0.5 * VP:RFBoxFlangeXSize"
+        x2 = "0.5 * VP:RFBoxFlangeXSize"
+        alpha1 = "VP:RFBoxFlangeTilt"
+        y2 = "0.5 * VP:RFBoxFlangeZSize"
+        x3 = "0.5 * VP:RFBoxFlangeXSize"
+        x4 = "0.5 * VP:RFBoxFlangeXSize"
+        alpha2 = "VP:RFBoxFlangeTilt"
+        />
+      <shape type = "Box" name="RFBWeldFlangeBox"
+        dx = "0.5*(VP:RFBoxFlangeZSize * tan(VP:RFBoxFlangeTilt) + VP:RFBoxFlangeXSize)"
+        dy = "0.5*(VP:RFBoxFlangeZSize - 2*VP:RFBoxFlangeFrameThickness)"
+        dz = "0.5*(VP:RFBoxFlangeYSize - 2*VP:RFBoxFlangeFrameThickness)"
+        />
+    </shape>
+  </volume>
+
+  <!-- U1 Top Plate -->
+  <volume material="VP:Aluminium" vis="VP:RFBox" name="lvRFBoxTopPlate">
+    <shape type="BooleanShape" operation="subtraction" name="RFTopPlateSub">
+      <shape type="Trap" name="RFBTopPlateTrap"
+        z = "0.5 * VP:RFBoxTopPlateZSize"
+        theta = "atan(0.5 * tan(VP:RFBoxFlangeTilt))"
+        phi = "-90*degree"
+        y1 = "0.5 * VP:RFBoxTopPlateUpstreamXSize"
+        x1 = "0.5 * VP:RFBoxThick"
+        x2 = "0.5 * VP:RFBoxThick"
+        y2 = "0.5 * VP:RFBoxTopPlateDownstreamXSize"
+        x3 = "0.5 * VP:RFBoxThick"
+        x4 = "0.5 * VP:RFBoxThick"/>
+      <shape type="Box" name="RFBTopPlateBox"
+        dx = "VP:RFBoxThick"
+        dy = "2.0 * VP:RFBoxTopPlateDownstreamXSize"
+        dz = "VP:RFBoxTopPlateZExcess * cos(VP:RFBoxDownstreamTilt)"/>
+      <position y = "0.5*VP:RFBoxTopPlateXSizeAtCentre" z = "0.5*VP:RFBoxTopPlateZSize"/>
+      <rotation x = "-VP:RFBoxDownstreamTilt"/>
+    </shape>
+  </volume>
+
+  <!-- U1 Bottom Plate -->
+  <volume material="VP:Aluminium" vis="VP:RFBox" name="lvRFBoxBtmPlate">
+    <shape type="BooleanShape" operation="subtraction" name="RFBBtmPlateSub">
+      <shape type="Trap" name="RFBBtmPlateTrap"
+        z = "0.5 * VP:RFBoxBtmPlateZSize"
+        theta = "atan(0.5 * tan(VP:RFBoxFlangeTilt))"
+        phi = "-90*degree"
+        y1 = "0.5 * VP:RFBoxBtmPlateUpstreamXSize"
+        x1 = "0.5 * VP:RFBoxThick"
+        x2 = "0.5 * VP:RFBoxThick"
+        y2 = "0.5 * VP:RFBoxBtmPlateDownstreamXSize"
+        x3 = "0.5 * VP:RFBoxThick"
+        x4 = "0.5 * VP:RFBoxThick" />
+      <shape type="Box" name="RFBBtmPlateBox"
+        dx = "VP:RFBoxThick"
+        dy = "2.0 * VP:RFBoxBtmPlateDownstreamXSize"
+        dz = "VP:RFBoxBtmPlateZExcess * cos(VP:RFBoxDownstreamTilt)"/>
+      <position y = "0.5*VP:RFBoxBtmPlateXSizeAtCentre" z = "0.5*VP:RFBoxBtmPlateZSize"/>
+      <rotation x = "-VP:RFBoxDownstreamTilt"/>
+    </shape>
+  </volume>
+
+  <!-- U1 Downstream end plate -->
+  <volume material="VP:Aluminium" vis="VP:RFBox" name="lvRFBoxDownstreamEndPlate">
+    <shape type="BooleanShape" operation="subtraction" name="RFBDSEPSub">
+      <shape type="Box" name="RFBDSEPBox1"
+        dx="0.5 * VP:RFBoxDownstreamEndPlateXSize"
+        dy="0.5 * VP:RFBoxDownstreamEndPlateYSize"
+        dz="0.5 * VP:RFBoxThick"/>
+
+      <shape type="Box" name="RFBDSEPBox2"
+        dx="sin(VP:RFBoxFlangeTilt - VP:RFBoxDownstreamTilt) * VP:RFBoxThick"
+        dy="( VP:RFBoxFlangeInnerYSize + 2.0 * VP:RFBoxThick )"
+        dz="2.0 * VP:RFBoxThick"/>
+      <position x = "0.5*VP:RFBoxDownstreamEndPlateXSize" z = "0.5*VP:RFBoxThick"/>
+      <rotation y = "VP:RFBoxFlangeTilt - VP:RFBoxDownstreamTilt"/>
+
+      <shape type="Trd1" name="RFBDSEPTrap12"
+        x1="VP:RFBoxDSEPTrap12X1Size"
+        x2="VP:RFBoxDSEPTrap12X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="VP:RFBoxDSEPTrap12YSize"/>
+      <position x = "-0.5 * VP:RFBoxDownstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxDownstreamEndPlateYSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBDSEPTrap23"
+        x1="VP:RFBoxDSEPTrap23X1Size"
+        x2="VP:RFBoxDSEPTrap23X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxDSEPTrap23YSize"/>
+      <position x = "-0.5 * VP:RFBoxDownstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxDownstreamEndPlateYSize - VP:RFBoxDSEPTrap12YSize - 0.5 * VP:RFBoxDSEPTrap23YSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBDSEPTrap34"
+        x1="VP:RFBoxDSEPTrap34X1Size"
+        x2="VP:RFBoxDSEPTrap34X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxDSEPTrap34YSize"/>
+      <position x = "-0.5 * VP:RFBoxDownstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxDownstreamEndPlateYSize - VP:RFBoxDSEPTrap12YSize - VP:RFBoxDSEPTrap23YSize - 0.5 * VP:RFBoxDSEPTrap34YSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBDSEPTrap45"
+        x1="VP:RFBoxDSEPTrap45X1Size"
+        x2="VP:RFBoxDSEPTrap45X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxDSEPTrap45YSize"/>
+      <position x = "-0.5 * VP:RFBoxDownstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxDownstreamEndPlateYSize - VP:RFBoxDSEPTrap12YSize - VP:RFBoxDSEPTrap23YSize - VP:RFBoxDSEPTrap34YSize - 0.5 * VP:RFBoxDSEPTrap45YSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBDSEPTrap56"
+        x1="VP:RFBoxDSEPTrap56X1Size"
+        x2="VP:RFBoxDSEPTrap56X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxDSEPTrap56YSize"/>
+      <position x = "-0.5 * VP:RFBoxDownstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxDownstreamEndPlateYSize - VP:RFBoxDSEPTrap12YSize - VP:RFBoxDSEPTrap23YSize - VP:RFBoxDSEPTrap34YSize - VP:RFBoxDSEPTrap45YSize - 0.5 * VP:RFBoxDSEPTrap56YSize"/>
+      <rotation x = "-90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- U1 Upstream end plate -->
+  <volume material="VP:Aluminium" vis="VP:RFBox" name="lvRFBoxUpstreamEndPlate">
+    <shape type="BooleanShape" operation="subtraction" name="RFBUSEPSub">
+      <shape type="Box" name="RFBUSEPBox1"
+        dx="0.5 * VP:RFBoxUpstreamEndPlateXSize"
+        dy="0.5 * VP:RFBoxUpstreamEndPlateYSize"
+        dz="0.5 * VP:RFBoxThick"/>
+
+      <shape type="Box" name="RFBUSEPBox2"
+        dx="sin(VP:RFBoxFlangeTilt) * VP:RFBoxThick"
+        dy="( VP:RFBoxFlangeInnerYSize + 2.0 * VP:RFBoxThick )"
+        dz="2.0 * VP:RFBoxThick"/>
+      <position x = "0.5*VP:RFBoxUpstreamEndPlateXSize" z = "0.5*VP:RFBoxThick"/>
+      <rotation y = "VP:RFBoxFlangeTilt"/>
+
+      <shape type="Trd1" name="RFBUSEPTrap12"
+        x1="VP:RFBoxUSEPTrap12X1Size"
+        x2="VP:RFBoxUSEPTrap12X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="VP:RFBoxUSEPTrap12YSize"/>
+      <position x = "-0.5 * VP:RFBoxUpstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxUpstreamEndPlateYSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBUSEPTrap23"
+        x1="VP:RFBoxUSEPTrap23X1Size"
+        x2="VP:RFBoxUSEPTrap23X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxUSEPTrap23YSize"/>
+      <position x = "-0.5 * VP:RFBoxUpstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxUpstreamEndPlateYSize - VP:RFBoxUSEPTrap12YSize - 0.5 * VP:RFBoxUSEPTrap23YSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBUSEPTrap34"
+        x1="VP:RFBoxUSEPTrap34X1Size"
+        x2="VP:RFBoxUSEPTrap34X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxUSEPTrap34YSize"/>
+      <position x = "-0.5 * VP:RFBoxUpstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxUpstreamEndPlateYSize - VP:RFBoxUSEPTrap12YSize - VP:RFBoxUSEPTrap23YSize - 0.5 * VP:RFBoxUSEPTrap34YSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBUSEPTrap45"
+        x1="VP:RFBoxUSEPTrap45X1Size"
+        x2="VP:RFBoxUSEPTrap45X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxUSEPTrap45YSize"/>
+      <position x = "-0.5 * VP:RFBoxUpstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxUpstreamEndPlateYSize - VP:RFBoxUSEPTrap12YSize - VP:RFBoxUSEPTrap23YSize - VP:RFBoxUSEPTrap34YSize - 0.5 * VP:RFBoxUSEPTrap45YSize"/>
+      <rotation x = "-90*degree"/>
+
+      <shape type="Trd1" name="RFBUSEPTrap56"
+        x1="VP:RFBoxUSEPTrap56X1Size"
+        x2="VP:RFBoxUSEPTrap56X2Size"
+        y="2.0 * VP:RFBoxThick"
+        z="0.5 * VP:RFBoxUSEPTrap56YSize + VP:Epsilon"/>
+      <position x = "-0.5 * VP:RFBoxUpstreamEndPlateXSize"
+        y = "0.5 * VP:RFBoxUpstreamEndPlateYSize - VP:RFBoxUSEPTrap12YSize - VP:RFBoxUSEPTrap23YSize - VP:RFBoxUSEPTrap34YSize - VP:RFBoxUSEPTrap45YSize - 0.5 * VP:RFBoxUSEPTrap56YSize"/>
+      <rotation x = "-90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Geometry for Velo RF box excluding symmetrical parts of the RF shield -->
+  <volume name="lvRFBoxRight" vis="VP:RFBoxAssembly">
+    <physvol volume="lvRFBoxWeldFlange" name="RFBRWF">
+      <position x="-0.5 * (VP:RFBoxUpstreamFlangeSeparation + VP:RFBoxFlangeXExtent)"
+        z="VP:RFBoxZPosition"/>
+      <rotation y="180*degree" x="90*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxTopPlate" name="RFBRTP">
+      <position x="-0.5 * (VP:RFBoxUpstreamFlangeSeparation + VP:RFBoxFlangeXExtent - VP:RFBoxFlangeXSize - VP:RFBoxTopPlateXSizeAtCentre) + VP:Epsilon"
+        y="-0.5 * (VP:RFBoxFlangeInnerYSize + VP:RFBoxThick)"
+        z="VP:RFBoxZPosition"/>
+      <rotation z="-90*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxBtmPlate" name="RFBRBP">
+      <position x="-0.5 * (VP:RFBoxUpstreamFlangeSeparation + VP:RFBoxFlangeXExtent - VP:RFBoxFlangeXSize - VP:RFBoxBtmPlateXSizeAtCentre) + VP:Epsilon"
+        y="0.5 * (VP:RFBoxFlangeInnerYSize + VP:RFBoxThick)"
+        z="VP:RFBoxZPosition"/>
+      <rotation z="-90*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownstreamEndPlate" name="RFBRDEP">
+      <position x="-0.5 * VP:RFBoxUpstreamFlangeSeparation - VP:RFBoxFlangeXExtent + VP:RFBoxFlangeXSize + 0.5 * VP:RFBoxDownstreamEndPlateXSize * cos(VP:RFBoxDownstreamTilt) + ( VP:RFBoxFlangeFrameThickness - 0.5*VP:RFBoxThick ) * tan(VP:RFBoxFlangeTilt)"
+        z="VP:RFBoxZPosition + 0.5 * ( VP:RFBoxTopPlateZSize + VP:RFBoxThick ) - 0.5 * VP:RFBoxDownstreamEndPlateXSize * tan(VP:RFBoxDownstreamTilt) + VP:Epsilon"/>
+      <rotation z="180*degree" y="VP:RFBoxDownstreamTilt"/>
+    </physvol>
+    <physvol volume="lvRFBoxUpstreamEndPlate" name="RFBRUEP">
+      <position x="-0.5 * VP:RFBoxUpstreamFlangeSeparation + 0.5 * VP:RFBoxUpstreamEndPlateXSize - ( VP:RFBoxFlangeFrameThickness - 0.5*VP:RFBoxThick ) * tan(VP:RFBoxFlangeTilt)"
+        z="VP:RFBoxZPosition - 0.5 * ( VP:RFBoxTopPlateZSize + VP:RFBoxThick )"/>
+      <rotation z="180*degree"/>
+    </physvol>
+  </volume>
+
+  <volume name="lvRFBoxLeft" vis="VP:RFBoxAssembly">
+    <physvol volume="lvRFBoxWeldFlange" name="RFBLWF">
+      <position x="0.5 * (VP:RFBoxUpstreamFlangeSeparation + VP:RFBoxFlangeXExtent)"
+        z="VP:RFBoxZPosition"/>
+      <rotation x="90*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxTopPlate" name="RFBLTP">
+      <position x="0.5 * (VP:RFBoxUpstreamFlangeSeparation + VP:RFBoxFlangeXExtent - VP:RFBoxFlangeXSize - VP:RFBoxTopPlateXSizeAtCentre) - VP:Epsilon"
+        y="0.5 * (VP:RFBoxFlangeInnerYSize + VP:RFBoxThick)"
+        z="VP:RFBoxZPosition"/>
+      <rotation z="90*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxBtmPlate" name="RFBLBP">
+      <position x="0.5 * (VP:RFBoxUpstreamFlangeSeparation + VP:RFBoxFlangeXExtent - VP:RFBoxFlangeXSize - VP:RFBoxBtmPlateXSizeAtCentre) - VP:Epsilon"
+        y="-0.5 * (VP:RFBoxFlangeInnerYSize + VP:RFBoxThick)"
+        z="VP:RFBoxZPosition"/>
+      <rotation z="90*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownstreamEndPlate" name="RFBLDEP">
+      <position x="0.5 * VP:RFBoxUpstreamFlangeSeparation + VP:RFBoxFlangeXExtent - VP:RFBoxFlangeXSize - 0.5 * VP:RFBoxDownstreamEndPlateXSize * cos(VP:RFBoxDownstreamTilt) - ( VP:RFBoxFlangeFrameThickness - 0.5*VP:RFBoxThick ) * tan(VP:RFBoxFlangeTilt)"
+        z="VP:RFBoxZPosition + 0.5 * ( VP:RFBoxTopPlateZSize + VP:RFBoxThick ) - 0.5 * VP:RFBoxDownstreamEndPlateXSize * tan(VP:RFBoxDownstreamTilt) + VP:Epsilon"/>
+      <rotation y="-VP:RFBoxDownstreamTilt"/>
+    </physvol>
+    <physvol volume="lvRFBoxUpstreamEndPlate" name="RFBLUEP">
+      <position x="0.5 * VP:RFBoxUpstreamFlangeSeparation - 0.5 * VP:RFBoxUpstreamEndPlateXSize + ( VP:RFBoxFlangeFrameThickness - 0.5*VP:RFBoxThick ) * tan(VP:RFBoxFlangeTilt)"
+        z="VP:RFBoxZPosition - 0.5 * ( VP:RFBoxTopPlateZSize + VP:RFBoxThick )"/>
+    </physvol>
+  </volume>
+
+</velo>

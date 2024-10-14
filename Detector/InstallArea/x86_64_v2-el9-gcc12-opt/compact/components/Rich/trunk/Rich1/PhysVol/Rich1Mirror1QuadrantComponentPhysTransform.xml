@@ -1,0 +1,110 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+<!--    Begin Rich1Mirror1QuadrantComponentPhysQ0          -->
+<!--   Rich1Mirror1QuadrantComponentQ0 Physical Volumes are inside -->
+<!--        LOGVOL lvRich1QuadrantModuleQ0                         -->
+<!--   Rich1Mirror1QuadrantComponentQ0 Physical Volumes are inside -->
+<!--        LOGVOL lvRich1QuadrantModuleQ0                         -->
+<!--   Rich1Mirror1QuadrantComponentQ0 Physical Volumes are inside -->
+<!--        LOGVOL lvRich1QuadrantModuleQ0                         -->
+<!--   Rich1Mirror1QuadrantComponentQ0 Physical Volumes are inside -->
+<!--        LOGVOL lvRich1QuadrantModuleQ0                         -->
+     
+<!--       The Carbon fibre cylinders between the two layers of carbon fibre mirror -->
+<!--         are to be redesigned for RUN3 since their shapes have changed from those built -->
+<!--         for RUN2 mirrors. For now the old one is kept as a placeholder. -->
+<!--         It is not activated                                             -->
+<!--         since the tag for PosRThPhi not known in DD4HEP.                -->
+<!--  <physvol name="pvRich1Mirror1CarbonFibreInnerLayerQ0:0" -->
+<!--	   logvol="lvRich1Mirror1CarbonFibreInnerLayerQ0">    -->
+<!--  <physvol name="pvRich1Mirror1CarbonFibreOuterLayerQ0:1" -->
+<!--	   logvol="lvRich1Mirror1CarbonFibreOuterLayerQ0">    -->
+<!--  <physvol  name="pvRich1Mirror1CarbonFibreInnerLayerQ1:0" -->
+<!--            volume="lvRich1Mirror1CarbonFibreInnerLayerQ1"> -->
+<!--  <physvol  name="pvRich1Mirror1CarbonFibreOuterLayerQ1:1"  -->
+<!--           volume="lvRich1Mirror1CarbonFibreOuterLayerQ1">  -->
+<!--  <physvol  name="pvRich1Mirror1CarbonFibreOuterLayerQ2:0"  -->
+<!--            volume="lvRich1Mirror1CarbonFibreOuterLayerQ2"> -->
+<!--  <physvol  name="pvRich1Mirror1CarbonFibreOuterLayerQ3:1"  -->
+<!--            volume="lvRich1Mirror1CarbonFibreOuterLayerQ3"> -->
+
+
+
+<!--   ===================================================================   -->
+
+<Rich1>
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreInnerLayerQ0" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreInnerLayerQ0Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreOuterLayerQ0" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreOuterLayerQ0Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreInnerLayerQ1" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreInnerLayerQ1Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreOuterLayerQ1" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreOuterLayerQ1Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreInnerLayerQ2" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreInnerLayerQ2Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreOuterLayerQ2" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreOuterLayerQ2Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreInnerLayerQ3" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreInnerLayerQ3Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich1Mirror1CarbonFibreOuterLayerQ3" />
+    <item name="TransformName"  value="pvRich1Mirror1CarbonFibreOuterLayerQ3Transform">
+       <transformation>
+          <position />
+          <rotation />
+       </transformation>
+    </item>
+
+
+  <!--          End   Rich1Mirror1Phys      -->
+</Rich1>

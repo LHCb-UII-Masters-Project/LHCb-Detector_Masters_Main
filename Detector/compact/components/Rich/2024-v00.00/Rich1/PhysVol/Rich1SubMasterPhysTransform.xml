@@ -1,0 +1,32 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+<!-- Rich1SubMaster is inside the logvol lvRich1Master  -->
+<!--  Begin Rich1SubMasterPhys                            -->
+<!--  Old name kept for reference                         -->
+<!--      <physvol  name="pvRich1SubMaster:0"             -->
+<!--                volume="lvRich1SubMaster" >           -->
+<Rich1>
+
+    <item name="PhysVolName"    value="pvRich1SubMaster" />
+    <item name="TransformName"  value="pvRich1SubMasterTransform">
+
+      <transformation>
+                <position x = "Rh1SubMasterX"
+                          y = "Rh1SubMasterY"
+                          z = "Rh1SubMasterZ" />
+      </transformation>
+
+    </item>
+
+</Rich1>
+
+<!--  End Rich1SubMasterPhys                            -->

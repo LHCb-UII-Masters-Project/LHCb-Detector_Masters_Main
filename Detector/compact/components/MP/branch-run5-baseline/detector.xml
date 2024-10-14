@@ -1,0 +1,115 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Tai-Hua Lin, J.Koppanyi                                                      -->
+<!--   @date    29/10/2021 (last rev.)                                          -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the Mighty tracker                                      -->
+<!--==========================================================================-->
+
+<lccdd>
+
+  <detectors>
+    <detector id="MP:ID" name="MP" type="LHCb_MP_geo" parent="${MP:parent}" readout="MPHits" vis="MP:Envelope">
+
+      <!-- MP module geometry   -->
+      <volume name="lvSiMat" material="MP:SiliconTracker" sensitive="1"  vis="MP:Silicon">
+        <shape type="Box" name="SiMatBox"
+               dx="0.5*MP:MatSizeX"         dy="0.5*MP:MatSizeY"         dz="0.5*MP:MatSizeZ"/>
+      </volume>
+      <volume name="lvSiMatShort" material="MP:SiliconTracker" sensitive="1"  vis="MP:Silicon">
+        <shape type="Box" name="SiMatBoxShort"
+               dx="0.5*MP:MatSizeX"         dy="0.5*MP:ShortMatSizeY"         dz="0.5*MP:MatSizeZ"/>
+      </volume>
+      <volume name="lvSiPixel" material="MP:SiliconTracker" sensitive="1"  vis="MP:Silicon">
+        <shape type="Box" name="SiPixBox"
+               dx="0.5*MP:MatSizeX"         dy="0.5*MP:MatSizeY"         dz="0.5*MP:MatSizeZ"/>
+      </volume>
+      <!--<volume name="lvSheet" material="MP:CarbonFiber"  vis="MP:Support">-->
+      <volume name="lvSheet" material="MP:PassiveMaterial"  vis="MP:Support">
+        <shape type="Box" name="SheetBox"
+               dx="0.5*MP:MatSizeX"          dy="0.5*MP:MatSizeY"          dz="0.5*MP:SheetSizeZ"/>
+      </volume>
+      <!-- MP CFrame geometry   -->
+      <volume name="lvCFramePairIBar" material="Iron" vis="MP:CFrame">
+  <shape type="Box" name="CFramePairIBar"
+               dx="0.5*MP:CFrameIBarX"      dy="0.5*MP:CFrameIBarY"          dz="0.5*MP:CFrameIBarZ"/>
+      </volume>
+      <volume name="lvCFramePairCarrierTop" material="Iron" vis="MP:CFrame">
+  <shape type="Box" name="CFramePairCarrierTop"
+               dx="MP:CFrameCarrierTopX"    dy="0.5*MP:CFrameCarrierTopY"    dz="0.5*MP:CFrameCarrierTopZ"/>
+      </volume>
+      <volume name="lvCFramePairCarrierBottom" material="Iron" vis="MP:CFrame">
+  <shape type="Box" name="CFramePairCarrierBottom"
+               dx="MP:CFrameCarrierBottomX" dy="0.5*MP:CFrameCarrierBottomY" dz="0.5*MP:CFrameCarrierBottomZ"/>
+      </volume>
+      <volume name="lvCFramePairModuleMountTop" material="Iron" vis="MP:CFrame">
+  <shape type="Box" name="CFramePairModuleMountTop"
+               dx="MP:CFrameModuleMountX"     dy="0.5*MP:CFrameModuleMountY" dz="0.5*MP:CFrameModuleMountZTop"/>
+      </volume>
+      <volume name="lvCFramePairModuleMountBottom" material="Iron" vis="MP:CFrame">
+  <shape type="Box" name="CFramePairModuleMountBottom"
+               dx="MP:CFrameModuleMountX"   dy="0.5*MP:CFrameModuleMountY"   dz="0.5*MP:CFrameModuleMountZBottom"/>
+      </volume>
+
+      <volume name="lvCFramePair" material="Air" vis="MP:Frame">
+  <!-- Define box volume for CFrame -->
+  <shape type="BooleanShape" operation="subtraction" name="CFramePairVolumeWithHole">
+    <shape type="Box" name="CFrameBox"
+     dx="MP:CFrameSizeX"    dy="0.5*MP:CFrameSizeY"      dz="0.5*MP:CFrameSizeZ+MP:eps"/>
+    <shape type="Tube" name="BeamHole"
+     dz="0.5*MP:CFrameSizeZ+MP:eps" rmin="0.0*mm"     rmax="Regions:TBeamHoleRadius"/>
+    <position y="-0.5*MP:CFrameShiftY"/>
+  </shape>
+
+  <physvol name="pvCFramePairIBarLeft" logvol="lvCFramePairIBar">
+    <position x="-(MP:CFrameSizeX-0.5*MP:CFrameIBarX)" y="-0.5*MP:CFrameCarrierTopY"/>
+  </physvol>
+
+  <physvol name="pvCFramePairIBarRight" logvol="lvCFramePairIBar">
+    <position x="(MP:CFrameSizeX-0.5*MP:CFrameIBarX)" y="-0.5*MP:CFrameCarrierTopY"/>
+  </physvol>
+
+  <physvol name="pvCFramePairCarrierTop" logvol="lvCFramePairCarrierTop">
+    <position y="+0.5*(MP:CFrameSizeY-MP:CFrameCarrierTopY)"/>
+  </physvol>
+
+  <physvol name="pvCFramePairCarrierBottom" logvol="lvCFramePairCarrierBottom">
+    <position y="-0.5*(MP:CFrameSizeY-MP:CFrameCarrierBottomY)"/>
+  </physvol>
+
+  <physvol name="pvCFramePairModuleMountTop" logvol="lvCFramePairModuleMountTop">
+    <position y="0.5*MP:CFrameSizeY-MP:CFrameCarrierTopY-0.5*MP:CFrameModuleMountY"/>
+  </physvol>
+
+  <physvol name="pvCFramePairModuleMountBottom" logvol="lvCFramePairModuleMountBottom">
+    <position y="-0.5*MP:CFrameSizeY+MP:CFrameCarrierBottomY+0.5*MP:CFrameModuleMountY"/>
+  </physvol>
+      </volume>
+
+      <transformation>
+        <position/>
+      </transformation>
+
+      <debug>
+
+        <item name="build_passive"   value="1"/>
+        <item name="build_frames"    value="1"/>
+        <item name="local_debug"     value="1"/>
+        <item name="debug"           value="0"/>
+      </debug>
+
+    </detector>
+  </detectors>
+
+  <readouts>
+    <readout name="MPHits">
+      <id>system:8,station:4,layer:5,half:1,module:6,mat:4</id>
+    </readout>
+  </readouts>
+</lccdd>

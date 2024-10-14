@@ -1,0 +1,57 @@
+{
+  "Conditions/Alignment/Global.yml": [
+    "scope"
+  ],
+  "Conditions/Alignment/Sensors.yml": [
+    "sensor_1_0",
+    "sensor_1_1",
+    "sensor_1_2",
+    "sensor_1_3",
+    "sensor_1_4",
+    "sensor_1_5",
+    "sensor_1_6",
+    "sensor_1_7",
+    "sensor_1_8",
+    "sensor_1_9",
+    "sensor_2_0",
+    "sensor_2_1",
+    "sensor_2_2",
+    "sensor_2_3",
+    "sensor_2_4",
+    "sensor_2_5",
+    "sensor_2_6",
+    "sensor_2_7",
+    "sensor_2_8",
+    "sensor_2_9"
+  ],
+  "Conditions/Alignment/Sides.yml": [
+    "side1",
+    "side2"
+  ],
+  "Conditions/Param/Sensors.yml": [
+    "gain_1_0",
+    "gain_1_1",
+    "gain_1_2",
+    "gain_1_3",
+    "gain_1_4",
+    "gain_1_5",
+    "gain_1_6",
+    "gain_1_7",
+    "gain_1_8",
+    "gain_1_9",
+    "gain_2_0",
+    "gain_2_1",
+    "gain_2_2",
+    "gain_2_3",
+    "gain_2_4",
+    "gain_2_5",
+    "gain_2_6",
+    "gain_2_7",
+    "gain_2_8",
+    "gain_2_9"
+  ],
+  "Conditions/conditions.yml": [
+    "TestCond",
+    "TestCond2"
+  ]
+}

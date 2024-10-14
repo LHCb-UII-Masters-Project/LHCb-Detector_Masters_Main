@@ -1,0 +1,92 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/08/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--                                                                            -->
+<!-- This file contains the copy parameters for                                 -->
+<!--     Rich1 Physical volumes, which are not part of Rich1Pmt structure.      -->
+<!--     The copy numbers for Rich1 Pmt related volumes are in a separete file  -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+     <constant name="pvRich1SubMasterCopyNumber" value="0"/>
+     <constant name="pvRich1PhDetSupFrameH0CopyNumber" value="0"/>
+     <constant name="pvRich1PhDetSupFrameH1CopyNumber" value="1"/>
+     <constant name="pvRich1GQuartzWH0CopyNumber" value="10"/>
+     <constant name="pvRich1GQuartzWH1CopyNumber" value="11"/>
+     <constant name="pvRich1MagShH0CopyNumber" value="0"/>
+     <constant name="pvRich1MagShH1CopyNumber" value="1"/>
+     <constant name="pvRich1Mirror1MasterCopyNumber" value="2"/>
+     <constant name="pvRich1Mirror2MasterTopCopyNumber" value="3"/>
+     <constant name="pvRich1Mirror2MasterBotCopyNumber" value="4"/>
+     <constant name="pvRich1Mirror2SupportTopCopyNumber" value="21" />
+     <constant name="pvRich1Mirror2SupportBotCopyNumber" value="22" />
+
+     <constant name="pvRich1Mirror2Q0MasterCopyNumber" value="100"/>
+     <constant name="pvRich1Mirror2Q1MasterCopyNumber" value="101"/>
+     <constant name="pvRich1Mirror2Q2MasterCopyNumber" value="102"/>
+     <constant name="pvRich1Mirror2Q3MasterCopyNumber" value="103"/>
+ 
+     <constant name="pvRich1MgsOuterH0CopyNumber"  value="150"/>
+     <constant name="pvRich1MgsOuterH1CopyNumber"  value="151"/>
+     <constant name="pvRich1MgsUpstrH0CopyNumber"  value="152"/>
+     <constant name="pvRich1MgsUpstrH1CopyNumber"  value="153"/>
+     <constant name="pvRich1MgsSideQ0CopyNumber"  value="154"/>
+     <constant name="pvRich1MgsSideQ1CopyNumber"  value="155"/>
+     <constant name="pvRich1MgsSideQ2CopyNumber"  value="156"/>
+     <constant name="pvRich1MgsSideQ3CopyNumber"  value="157"/>
+     <constant name="pvRich1MgsUpstrCornerH0CopyNumber" value="158"/>
+     <constant name="pvRich1MgsUpstrCornerH1CopyNumber" value="159"/>
+     <constant name="pvRich1MgsTeethQ0CopyNumber"  value="160"/>
+     <constant name="pvRich1MgsTeethQ1CopyNumber"  value="161"/>
+     <constant name="pvRich1MgsTeethQ2CopyNumber"  value="162"/>
+     <constant name="pvRich1MgsTeethQ3CopyNumber"  value="163"/>
+     <constant name="pvRich1MgsMidH0CopyNumber"  value="164"/>
+     <constant name="pvRich1MgsMidH1CopyNumber"  value="165"/>
+     <constant name="pvRich1MgsDnstrUTH0CopyNumber"  value="180"/>
+     <constant name="pvRich1MgsDnstrUTH1CopyNumber"  value="181"/>
+     <constant name="pvRich1ExitWallMasterCopyNumber" value="210"/> 
+     <constant name="pvRich1ExitDiaphramCentralUpsCopyNumber" value="211"/> 
+     <constant name="pvRich1ExitDiaphramCentralDnsCopyNumber" value="212"/> 
+     <constant name="pvRich1ExitDiaphramMiddleCopyNumber" value="213"/> 
+     <constant name="pvRich1ExitDiaphramPeripheryCopyNumber" value="214"/> 
+     <constant name="pvRich1ExitDiaphramCentralPlugUpsCopyNumber" value="215"/> 
+     <constant name="pvRich1ExitDiaphramCentralPlugDnsCopyNumber" value="216"/> 
+     <constant name="pvRich1ExitG10UpstrCopyNumber"  value="0" />
+     <constant name="pvRich1ExitG10DnstrCopyNumber"  value="1" />
+     <constant name="pvRich1ExitPMICopyNumber"       value="2" />
+     <constant name="pvRichPMTSMasterCopyNumber"       value="0" />
+     <constant name="pvRichPMTAnode0000CopyNumber"     value="0" />
+     <constant name="pvRichPMTQuartzCopyNumber"        value="1" />
+     <constant name="pvRichPMTPhCathodeCopyNumber"     value="2" />
+     <constant name="pvRichPMTSideEnvelopeCopyNumber"  value="3" />
+     <constant name="pvRichPMTBackEnvelopeCopyNumber"  value="4" />
+     <constant name="pvRichPMTFrontRingCopyNumber"     value="5" />
+     <constant name="pvRichPmtSingleShieldingLongPlateCopyNumber"  value="10001" />
+     <constant name="pvRichPmtSingleShieldingSemiPlateTopCopyNumber" value="10002" />
+     <constant name="pvRichPmtSingleShieldingSemiPlateBottomCopyNumber" value="10003" /> 
+     <constant name="pvRichGrandPMTSMasterCopyNumber"       value="0" />
+     <constant name="pvRichPMTAnode0001CopyNumber"     value="0" />
+     <constant name="pvRichGrandPMTQuartzCopyNumber"        value="1" />
+     <constant name="pvRichGrandPMTPhCathodeCopyNumber"     value="2" />
+     <constant name="pvRichGrandPMTSideEnvelopeCopyNumber"  value="3" />
+     <constant name="pvRichGrandPMTBackEnvelopeCopyNumber"  value="4" />
+     <constant name="pvRichGrandPMTFrontRingCopyNumber"     value="5" />
+     <constant name="pvUX851InRich1SubMasterCopyNumber"      value="300" />
+     <constant name="pvUX851InRich1BeforeSubMCopyNumber"     value="301" />
+     <constant name="pvUX851InRich1AfterSubMCopyNumber"      value="302" />
+
+     <constant name="pvRichPMTAnodeDetIdShiftFactor"  value="10000" />
+     <constant name="pvRichPMTPhCathodeDetIdShiftFactor"  value="10000" />
+
+
+  </define>
+</lccdd>
+

@@ -1,0 +1,119 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1 Master  logvol                                                      -->
+<!--  ==========================================================================-->
+
+<Rich1>
+
+
+
+  <!-- LOGVOL lvRich1Master -->
+  <volume name="lvRich1Master" material="Rich:Air" vis="Rich:VisRich1Master" >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1MasterWithSubtract"> 
+      <shape type="Box" name="Rich1MasterBox"
+	   dx="Rich1MasterXSize*RhHalfSize"
+	   dy="Rich1MasterYSize*RhHalfSize"
+	   dz="Rich1MasterZSize*RhHalfSize" />
+
+      <!-- Now the volumes to subtract from Rich1Master -->
+
+<!--
+     This is for the Boolean subtraction of the
+     BeamPipe, BeamPipe Flange Velo Tank and  TT region from lvRich1Master
+     Now avoid subtraction and keep the beampipe inside
+     SE 17-3-2006 -->
+
+<!--
+
+      <shape type="Tube" name="Rich1BeamPipeCylSubRM"
+             dz="Rh1BeamPipeCylZSize*RhHalfSize"
+             rmax="Rh1BeamPipeCylHoleOuterRad" />
+             <position  z="Rh1BeamPipeCylRMZ" />
+
+      <shape type="ConeSegment" name="Rich1BeamPipeConeSubRM"
+           dz="Rh1BeamPipeExtendedConeHoleZSize*RhHalfSize"
+           rmax1="Rh1BeamPipeExtendedConeHoleOuterRad1"
+           rmax2="Rh1BeamPipeExtendedConeHoleOuterRad2" />
+           <position  z="Rh1BeamPipeExtendedConeHoleRMZ" />
+
+
+      <shape type="Tube" name="Rich1BeamPipeDnstFlangeSubRM"
+           dz="Rh1BeamPipeDnstFlangeHoleZSize*RhHalfSize"
+           rmax="Rh1BeamPipeDnstFlangeHoleOuterRad" />
+           <position z="Rh1BeamPipeDnstFlangeRMZ"/>
+
+-->
+
+
+      <shape type="Tube"  name="Rich1VeloTankCylSubRM"
+             dz="Rh1VeloTankCylZSize*RhHalfSize"
+             rmax="Rh1VeloTankRadius" />
+             <position  z="Rh1VeloTankCylZ" />
+      <shape type="Tube"  name="Rich1VeloTankFlangeSubRM"
+             dz="Rh1VeloTankFlangeZSize*RhHalfSize"
+             rmin="Rh1VeloTankFlangeIR"
+             rmax="Rh1VeloTankFlangeOR"/>
+             <position  z="Rh1VeloTankFlangeZ" />
+
+      <shape type="Box" name="Rich1TTCentralPartBoxSubRM"
+            dx="Rh1TTXSize*RhHalfSize"
+            dy="Rh1TTCentralPartYSize*RhHalfSize"
+            dz="Rh1TTZSize*RhHalfSize" />
+            <position  z="Rh1TTCentralPartZ" />
+      <shape type="Box" name="Rich1TTPeripheralPartBoxSubRM"
+            dx="Rh1TTXSize*RhHalfSize"
+            dy="Rh1TTPerpheralPartYSize*RhHalfSize"
+            dz="Rh1TTZSize*RhHalfSize" />
+            <position z="Rh1TTPeripheralPartZ" />
+
+
+    </shape> 
+  
+
+<!--       Now for the physical volumes inside this Logical Volume -->
+<!-- Only the beampipe part is included here. The rest is implemeted in the Rich1_geo.cpp -->
+     
+
+<!--    Begin Rich1MasterBeamPipe
+   This is the part upstream of rich1 submaster
+   and downstream of rich1 submaster -->
+<!-- They are commented out here since it is now activated from Rich1_geo.cpp SE 13-03-2021 -->
+<!--
+    <physvol name="pvUX851InRich1BeforeSubM"
+             volume="lvUX851InRich1BeforeSubM" >
+
+      <position z= "Rh1BeamPipeUpsAssemblyRMZ" />
+    </physvol>
+
+
+    <physvol name="pvUX851InRich1AfterSubM"
+             volume="lvUX851InRich1AfterSubM" >
+
+     <position z= "Rh1BeamPipeDnsAssemblyRMZ"  />
+    </physvol>
+-->
+<!--  End of Rich1MasterBeamPipe              -->
+
+
+
+
+  </volume>     <!-- end lvRich1Master -->
+
+</Rich1>
+
+
+
+
+
+
+
+
+

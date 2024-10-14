@@ -1,0 +1,1172 @@
+<!--============================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--============================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--============================================================================-->
+<!-- XML description of the BLS stations                                        -->
+<!--============================================================================-->
+<lccdd>
+  <define>
+
+    <!--==========================================================================-->
+    <!--==========GENERAL=========================================================-->
+    <!--==========================================================================-->
+    <constant name="TV:OpenX"               value="0.0*mm"/>
+    <constant name="TV:Epsilon"             value="0.01*mm"/>
+    <constant name="TV:VeloZ"               value="1670*mm"/>
+    <constant name="TV:VeloRad"             value="590*mm"/>
+    <constant name="TV:VeloDSEndStartZ"     value="TV:VeloZ/2"/>
+    <constant name="TV:VeloDSEndDeltaZ"     value="135*mm"/>
+    <constant name="TV:VeloEWFlangeZExcess" value="5*mm"/>
+
+    <constant name="TV:NoOfStations"        value="32"/>
+
+    <constant name="TV:Rotation"            value="45*degree"/>
+
+    <constant name="TV:TVEpsilon"           value="0.001*mm"/> <!-- original 0.000001 -->
+
+    <!-- Z positions of stations -->
+    <constant name="TV:Right2LeftDist"  value="12.5*mm"/>
+
+    <!--       regularised layout -->
+    <constant name="TV:Station00Z"          value="-28.125*cm"/>
+    <constant name="TV:Station01Z"          value="-25.625*cm"/>
+    <constant name="TV:Station02Z"          value="-23.125*cm"/>
+    <constant name="TV:Station03Z"          value="-20.625*cm"/>
+    <constant name="TV:Station04Z"          value="-16.125*cm"/>
+    <constant name="TV:Station05Z"          value="-12.125*cm"/>
+    <constant name="TV:Station06Z"          value="-8.85*cm"/>
+    <constant name="TV:Station07Z"          value="-6.33*cm"/>
+    <constant name="TV:Station08Z"          value="-4.29*cm"/>
+    <constant name="TV:Station09Z"          value="-2.24*cm"/>
+    <constant name="TV:Station10Z"          value="-0.21*cm"/>
+    <constant name="TV:Station11Z"          value="1.84*cm"/>
+    <constant name="TV:Station12Z"          value="3.88*cm"/>
+    <constant name="TV:Station13Z"          value="5.93*cm"/>
+    <constant name="TV:Station14Z"          value="7.97*cm"/>
+    <constant name="TV:Station15Z"          value="10.01*cm"/>
+    <constant name="TV:Station16Z"          value="12.06*cm"/>
+    <constant name="TV:Station17Z"          value="14.10*cm"/>
+    <constant name="TV:Station18Z"          value="16.14*cm"/>
+    <constant name="TV:Station19Z"          value="18.18*cm"/>
+    <constant name="TV:Station20Z"          value="20.23*cm"/>
+    <constant name="TV:Station21Z"          value="22.31*cm"/>
+    <constant name="TV:Station22Z"          value="26.36*cm"/>
+    <constant name="TV:Station23Z"          value="31.39*cm"/>
+    <constant name="TV:Station24Z"          value="41.24*cm"/>
+    <constant name="TV:Station25Z"          value="51.09*cm"/>
+    <constant name="TV:Station26Z"          value="57.17*cm"/>
+    <constant name="TV:Station27Z"          value="70.80*cm"/>
+    <constant name="TV:Station28Z"          value="72.30*cm"/>
+    <constant name="TV:Station29Z"          value="73.80*cm"/>
+    <constant name="TV:Station30Z"          value="75.30*cm"/>
+    <constant name="TV:Station31Z"          value="76.80*cm"/>
+
+    <!--==========================================================================-->
+    <!--============LADDERS=======================================================-->
+    <!--==========================================================================-->
+
+    <!-- Design references:
+      https://edms.cern.ch/document/1706379/3
+      https://edms.cern.ch/document/1706381/1
+      https://edms.cern.ch/document/2086903/1
+      https://edms.cern.ch/document/1851416/2
+      https://edms.cern.ch/document/2266981/1
+    -->
+
+    <constant name="TV:DefaultClosestPixel" value="5.115*mm"/>
+    <constant name="TV:DefaultFurthestPixel" value="32.945*mm"/>
+    <constant name="TV:DefaultRowCrossover" value="0.3*mm"/>
+    <constant name = "TV:DefaultActiveSize"    value = "14.08*mm"/>
+    <constant name = "TV:DefaultPixelSize"    value = "0.055*mm"/>
+    <constant name = "TV:DefaultSiSizeX"    value = "42.57*mm"/>
+    <!-- This won't change and can be used for scaling -->
+
+
+    <!-- ######################################################################################################################### -->
+    <!-- Guide for 'TV_U2_ParamModel'
+    Default control: Set Closest Pixel (TV:ClosestPixel) & pixel size (TV:PixelSize) -> will alter the Nrows/Columns
+    per chip to make a velo with the given inner rad, an outer rad that is shifted by the same amount as the
+    change in inner rad and with sensors "extended" such that it "completes the square"
+
+    Further Sensor layout options, to be set in addition to above, some combinations work others will not:
+      1. Also set Furthest pixel (TV:FurthestPixelOverride, mm) -> will override the automatic calculation and
+       adjust NRowsPerChip to fit between the given closest and furthest pixel, changing Ncolumns and number
+       of chips to fit in the profile.
+      2. Also set target number of chips(TV:TargetNChips, int), adjusting the width of the chips to fit the number
+       we want in.
+      3. Force Square Chip (TV:ForceSquareChip, 0/1), will make sure the number of rows == number of columns, compatible with other settings but may cause issues.
+      4. Set Number of rows per chip (TV:TargetNRowsPerChip, int), setting this turns off any FurthestPixel setting
+       as this will determine the outer radius now given the input pixel size.
+       Can be used with ForceSquareChip to get the 256x256 that is often desired.
+      5. Set Number of columns per chip (TV:TargetNColumnsPerChip, int), won't work if force square is set,
+       but can allow full control of rows and columns
+
+    Additional Options, independent of sensor layout settings:
+    - We can enable Z-optimisation (soon) which calculates the optimum z-positions for the modules
+     based on the inner and outer pixel radii as well as the shape of the cut out.
+    - Station rotation (StationNNDeltaRot) can be adjusted for each station individually using the 26 settings.
+
+    Foil Options, due to complex and changeable nature of model a cylindrical model is always used:
+    - Foil Thickness (TV:CylindRFFoilThickness, mm) thickness of cylindrical foil, default 250 um
+    - Foil Clearance from sensor ACTIVE edge (TV:CylindRFFoilClearance, mm) the distance from the
+     closest ACTIVE edge of the sensor (ignoring guard ring)
+    - If the 5.1m U1 foil is desired, overwrite the foil at /compact/trunk/TV/RFFoil/RFFoil.xml with
+      the original foil at /compact/trunk/TV/RFFoil/RFFoil_corrugated_5p1.xml
+    - If you want to set the foil's length edit "TV:RFFoilZSize" which is the parameter set to dZ when
+      constructing the cylindrical foil
+    -->
+    <!-- ######################################################################################################################### -->
+
+    <!-- DEFINING PARAMETERS -->
+
+    <constant name="TV:ClosestPixel"        value="20*mm"/>
+
+    <!-- Pixel size -->
+    <constant name = "TV:PixelSize"         value = "0.055*mm"/>
+
+    <!-- Target Number of Chips, set to 0 for auto-->
+    <constant name = "TV:TargetNChips"         value = "0"/>
+
+    <!-- Target Number of Rows, set to 0 for auto-->
+    <constant name = "TV:TargetNRowsPerChip"         value = "256"/>
+
+    <!-- The above being set will automatically adjust the number of columns -->
+    <!-- to fit the space left by the given outer radius... -->
+    <!-- If a square chip is desired (equal pixels in row/columns) -->
+    <!-- Set this to true -->
+    <constant name = "TV:ForceSquareChip"         value = "0"/>
+
+
+    <!-- Target Number of Rows, set to 0 for auto-->
+    <!-- This will be overriden by 'ForceSquareChip' if both are set -->
+    <!-- A use case for this could be if you want a very 'tall' velo -->
+    <constant name = "TV:TargetNColumnsPerChip"         value = "0"/>
+
+     <!-- If want to manually set the furthest pixel, if 'TV:TargetNRowsPerChip' is set, -->
+     <!-- this will not be taken into account... -->
+    <constant name="TV:FurthestPixelOverride"        value="0*mm"/>
+
+    <!-- Choose between which type of foil you want to simulate by commenting out one of the below lines -->
+    <!-- Foil Type 1 - corrugated, 0 - cylindrical, also change foil path below -->
+
+    <constant name="TV:FoilCorrugated" value="0"/>
+
+    <!--  Change foil path here -->
+    <constant name="TV:FoilPath" value="RFFoil/RFFoil_cylindrical.xml" type="string"/>
+    <!-- <constant name="TV:FoilPath" value="RFFoil/RFFoil_corrugated.xml" type="string"/> -->
+
+    <!-- GLOBAL FOIL SETTINGS -->
+     <!-- Radius to edge of corrugated foil/centre of cylindrical foil -->
+    <constant name="TV:RFFoilRadius" value="3.5*mm"/>
+
+    <!-- CORRUGATED FOIL SETTINGS -->
+    <!-- For the Corrugated Foil, applied to the density of the material, (will turn off if FoilCorrugated==0)-->
+    <!-- relative to 250um so if wanted 50um corrugated foil, would set this to 1/5 -->
+    <constant name="TV:CorrugRFFoilDensityScaler" value="3/10"/>
+
+    <!-- CYLINDRICAL FOIL SETTINGS -->
+    <!-- For the Cylindical Foil, placed here for convinience -->
+    <constant name="TV:CylindRFFoilThickness" value="0.075*mm"/>
+
+
+
+    <!-- More Parameters below  -->
+
+    <!-- END OF DEFINING PARAMETERS -->
+
+
+
+    <!-- overwriting if force square is set. -->
+    <constant name = "TV:TargetNColumnsPerChipTemp"         value = "TV:TargetNColumnsPerChip*0**(TV:ForceSquareChip)+TV:TargetNRowsPerChip*TV:ForceSquareChip"/>
+
+
+    <!-- Determinging whether to override furthest pixel, based on if NRowsIsSet -->
+    <!-- Simply turn it off if the NRows is set... -->
+    <constant name = "TV:FurthestPixelOverrideTemp"         value = "TV:FurthestPixelOverride*0**(TV:TargetNRowsPerChip)"/>
+
+    <constant name="TV:DeltaInnerRad"        value="TV:ClosestPixel-TV:DefaultClosestPixel"/>
+    <!-- scale inner rad no longer needed -->
+
+    <!-- DEFINING PARAMETERS CONTROLLING OUTEREDGE -->
+    <!-- If we want to set the outer edge of the pixel rows, for default set it to "TV:DefaultFurthestPixel+TV:DeltaInnerRad" -->
+    <constant name="TV:FurthestPixelTemp"        value="(TV:DefaultFurthestPixel+TV:DeltaInnerRad)*0**(TV:FurthestPixelOverrideTemp/mm) + TV:FurthestPixelOverrideTemp"/>
+    <!-- DEFINING PARAMETERS OUTEREDGE-->
+
+
+    <!-- Assuming 2 rows of square pixels, with same cross over and same outer radius.. -->
+    <constant name = "TV:NPixelRows"           value = "floor((TV:FurthestPixelTemp-TV:ClosestPixel+TV:DefaultRowCrossover)/(2*TV:PixelSize))*0**(TV:TargetNRowsPerChip)+TV:TargetNRowsPerChip"/>
+
+    <!-- Determined here to allow the X size to be determined relatively -->
+    <constant name = "TV:ChipActiveSizeY"    value = "TV:NPixelRows*TV:PixelSize"/>
+
+    <!-- Now determine how many chips we want-->
+    <constant name = "TV:NChips"    value = "round((3*TV:DefaultActiveSize+2*TV:DeltaInnerRad)/TV:ChipActiveSizeY)*0**(TV:TargetNChips)+TV:TargetNChips"/>
+
+
+    <!-- Scale for chip X in order to have integer chip number fitting -->
+    <constant name = "TV:ChipScaleX"    value = "((3*TV:DefaultActiveSize+2*TV:DeltaInnerRad)/TV:ChipActiveSizeY)/TV:NChips"/>
+
+    <constant name = "TV:NPixelColumns"           value = "(floor(TV:NPixelRows*TV:ChipScaleX)*0**(TV:TargetNColumnsPerChipTemp)+TV:TargetNColumnsPerChipTemp)*0**(TV:ForceSquareChip)+TV:ForceSquareChip*TV:NPixelRows"/>
+
+
+    <!-- Chip dimensions (active area) -->
+    <constant name = "TV:ChipThick"         value = "0.050*mm"/>
+    <!-- Chip thickness changed to 50um  -->
+    <!-- <constant name = "TV:ChipThick"         value = "0.200*mm"/>  -->
+    <constant name = "TV:ChipActiveSizeX"    value = "TV:NPixelColumns*TV:PixelSize"/>
+
+
+
+
+
+
+
+    <!-- Width of inactive edges -->
+    <constant name = "TV:ChipEdgeX"         value = "0.030*mm"/>
+    <constant name = "TV:ChipTopEdgeY"      value = "0.100*mm"/>
+    <constant name = "TV:ChipBtmEdgeY"      value = "2.420*mm"/>
+    <!-- Chip dimensions (total) -->
+    <constant name = "TV:ChipTotalSizeX"    value = "TV:ChipActiveSizeX+2*TV:ChipEdgeX"/>
+    <constant name = "TV:ChipTotalSizeY"    value = "TV:ChipActiveSizeY+TV:ChipTopEdgeY+TV:ChipBtmEdgeY"/>
+    <!-- Distance between two readout chips -->
+    <constant name = "TV:Chip2ChipDist"     value = "0.165*mm"/>
+
+    <!-- Thickness of glue layer -->
+    <constant name = "TV:GlueThick"         value = "0.040*mm"/>
+    <!-- Thickness of bump bond layer -->
+    <constant name = "TV:BumpBondsThick"    value = "0.020*mm"/>
+
+    <!-- Sensor dimensions (active area) -->
+    <constant name = "TV:SiThick"           value = "0.200*mm"/>
+    <constant name = "TV:SiSizeX"           value = "TV:NChips*TV:ChipActiveSizeX+(TV:NChips-1)*TV:Chip2ChipDist"/>
+    <constant name = "TV:SiSizeY"           value = "TV:ChipActiveSizeY"/>
+    <!-- Width of inactive edge -->
+    <constant name = "TV:SiEdge"            value = "0.450*mm"/>
+
+
+    <constant name = "TV:FurthestPixel" value="(TV:ChipActiveSizeY)*2-TV:DefaultRowCrossover+TV:ClosestPixel"/>
+
+    <!-- <constant name = "TV:FurthestPixel" value="TV:FurthestPixelCorrection #if NRows is being used else TV:FurthestPixel"/> -->
+
+    <!-- Ladder positioning on module -->
+    <!-- Distance of closest pixel row to beam line -->
+    <constant name = "TV:ClosestInnerPixelRow"    value = "TV:ClosestPixel"/>
+    <constant name = "TV:ClosestOuterPixelRow"    value = "TV:FurthestPixel-TV:ChipActiveSizeY"/>
+
+    <!-- I think this is really the pixel distance from end of modules to centre in "x" -->
+
+
+
+    <!-- Distance of first/last pixel column to beam line -->
+    <!-- These are the close two -->
+    <!-- <constant name = "TV:ClosestShortPixelColumn" value = "TV:ScaleInnerRad*(95*TV:DefaultPixelSize/TV:DefaultActiveSize)*TV:ChipActiveSize"/> -->
+
+    <!-- Calculate the overflow due to overconstraining and add it... -->
+
+    <constant name = "TV:ColumnCorrectionShift"    value = "(TV:ChipActiveSizeX-floor(TV:NPixelRows*TV:ChipScaleX)*TV:PixelSize)*TV:NChips/2"/>
+
+    <constant name = "TV:ClosestShortPixelColumn"   value = "-1*TV:ColumnCorrectionShift+(TV:SiSizeX-TV:DefaultSiSizeX)/2+(95*TV:DefaultPixelSize*TV:DefaultPixelSize/TV:PixelSize)"/>
+
+
+    <!-- this is one of the outer ones? -->
+    <!-- THis is inner row normally 73-->
+    <!-- THIS NEEDS FIXING BETTER TO MOVE WITH CHANGING SIZES, i expect it needs to be related to the SiSize x -->
+    <!-- <constant name = "TV:ClosestNLOPixelColumn"   value = "TV:ScaleInnerRad*(72*1.2*TV:DefaultPixelSize/TV:DefaultActiveSize)*TV:ChipActiveSize"/> -->
+
+    <constant name = "TV:ClosestNLOPixelColumn"   value = "-1*TV:ColumnCorrectionShift+(TV:SiSizeX-TV:DefaultSiSizeX)/2+(73*TV:DefaultPixelSize*TV:DefaultPixelSize/TV:PixelSize)"/>
+
+    <!-- This is the other outer one? -->
+    <!-- Outer row normally 98-->
+    <!-- <constant name = "TV:ClosestCLIPixelColumn"   value = "TV:ScaleInnerRad*(98*0.9*TV:DefaultPixelSize/TV:DefaultActiveSize)*TV:ChipActiveSize"/> -->
+    <constant name = "TV:ClosestCLIPixelColumn"   value = "-1*TV:ColumnCorrectionShift+(TV:SiSizeX-TV:DefaultSiSizeX)/2+(98*TV:DefaultPixelSize*TV:DefaultPixelSize/TV:PixelSize)"/>
+
+
+    <!--==========================================================================-->
+    <!--============ACTIVE AREA===================================================-->
+    <!--==========================================================================-->
+
+    <!-- TODO - could consider modifying DeTVSensor code to use the same names as TV_geo to avoid this duplication (which was necessary in DetDesc) -->
+    <constant name="TV:Thickness"          value="TV:SiThick"/>
+    <constant name="TV:ChipSize"           value="TV:ChipActiveSizeY"/>
+    <constant name="TV:InterChipDist"      value="TV:Chip2ChipDist"/>
+    <!-- set elsewhere -->
+    <!-- <constant name="TV:NChips"             value="3"/> -->
+    <constant name="TV:NColumns"           value="TV:NPixelColumns"/>
+    <constant name="TV:NRows"              value="TV:NPixelRows"/>
+    <!--
+    Already defined above
+    <constant name="TV:PixelSize"          value="0.055*mm"/>
+    -->
+    <constant name="TV:InterChipPixelSize" value="TV:PixelSize + 0.5*TV:Chip2ChipDist"/>
+
+    <constant name="TV:sensitiveVolumeCut"    value="5.0*mm"/>
+
+    <!--==========================================================================-->
+    <!--============SUPPORT=======================================================-->
+    <!--==========================================================================-->
+
+    <!-- PlanA Substrate -->
+
+    <constant name="TV:SubstrateScaleSizeX"              value="(1+(1*(TV:SiSizeX-TV:DefaultSiSizeX-2*(TV:ClosestPixel-TV:DefaultClosestPixel)))/(111.3688*mm))"/>
+    <constant name="TV:SubstrateScaleSizeY"              value="0.97*(1+(2*(TV:SiSizeX-TV:DefaultSiSizeX+2*(TV:ClosestPixel-TV:DefaultClosestPixel)))/(116.5*mm))"/>
+
+
+    <!-- <constant name="TV:SubstrateThick"                 value="0.500*mm"/> -->
+    <!-- Substrate thickness slightly reduced -->
+    <constant name="TV:SubstrateThick"                 value="0.400*mm"/>
+    <constant name="TV:SubstrateNewSizeX"              value="TV:SubstrateScaleSizeX*111.3688*mm"/>
+    <constant name="TV:SubstrateNewSizeY"              value="TV:SubstrateScaleSizeY*116.5*mm"/>
+    <constant name="TV:SubstrateNewIPXDistFromBL"      value="TV:SubstrateScaleSizeX*90.0*mm"/>
+    <constant name="TV:SubstrateNewIPYDistFromBL"      value="TV:SubstrateScaleSizeY*46.5*mm"/>
+    <constant name="TV:SubstrateNewTopInnerCutSize"    value="TV:SubstrateScaleSizeY**2*sqrt(2)*35.6417*mm - (5.005*mm)"/>
+    <constant name="TV:SubstrateNewBottomInnerCutSize" value="TV:SubstrateScaleSizeX*TV:SubstrateScaleSizeY*sqrt(2)*11.0963*mm - (5.005*mm)"/>
+
+
+    <!-- Additional Velo Rotation Values -->
+
+    <constant name="TV:Station00DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station01DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station02DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station03DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station04DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station05DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station06DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station07DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station08DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station09DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station10DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station11DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station12DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station13DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station14DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station15DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station16DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station17DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station18DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station19DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station20DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station21DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station22DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station23DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station24DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station25DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station26DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station27DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station28DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station29DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station30DeltaRot"          value="0*degree"/>
+    <constant name="TV:Station31DeltaRot"          value="0*degree"/>
+
+
+    <!-- Hybrid -->
+    <constant name="TV:HybridVFEHYB3Thick"               value="0.672*mm"/>
+    <constant name="TV:HybridVFEHYB3SizeX"               value="TV:SiSizeX"/>
+    <constant name="TV:HybridVFEHYB3SizeY"               value="2*TV:SiSizeY"/>
+    <constant name="TV:HybridVFEGBTX3Thick"              value="0.672*mm"/>
+    <constant name="TV:HybridVFEGBTX3SizeX"              value="2*TV:SiSizeY"/>
+    <constant name="TV:HybridVFEGBTX3SizeY"              value="2*TV:SiSizeY"/>
+
+    <!-- LV Harness -->
+    <!-- Transition Board -->
+    <constant name = "TV:TransitionMainX"              value = "90*mm"/>
+    <constant name = "TV:TransitionMainY"              value = "12.5*mm"/>
+    <constant name = "TV:TransitionMainThick"          value = "1*mm"/>
+    <constant name = "TV:TransitionDeliveryPipeHoleX"  value = "3*mm"/>
+    <constant name = "TV:TransitionDeliveryPipeHoleY"  value = "3.5*mm"/>
+    <constant name = "TV:TransitionDeliveryPipeOffset" value = "8*mm"/>
+
+    <constant name = "TV:TransitionWingLX"             value = "38.07*mm"/>
+    <constant name = "TV:TransitionWingRX"             value = "37.75*mm"/>
+    <constant name = "TV:TransitionWingY"              value = "7*mm"/>
+
+    <constant name = "TV:TransitionX"                  value = "-118.3*mm"/>
+
+    <!-- LV cables -->
+
+    <!-- Part 45501 -->
+    <constant name = "TV:LVCableBigR" value = "1.45*mm"/>
+    <!-- Part 45401 -->
+    <constant name = "TV:LVCableMediumR" value = "1.3*mm"/>
+    <!-- Part 45101 -->
+    <constant name = "TV:LVCableSmallR" value = "0.95*mm"/>
+
+    <!-- LV Cables for Hybrids to Transition Board -->
+
+    <constant name = "TV:LVCableThick"  value = "2*TV:LVCableBigR"/>
+
+    <constant name = "TV:LVLongFrontX" value = "TV:SiSizeX / sqrt(2)"/>
+    <constant name = "TV:LVLongFrontY" value = "abs(TV:TransitionX) - 12.5*mm"/>
+
+    <constant name = "TV:LVShortFrontX" value = "TV:SiSizeX / sqrt(2)"/>
+    <constant name = "TV:LVShortFrontY" value = "abs(TV:TransitionX) - 47.25*mm"/>
+    <constant name = "TV:LVShortFrontExtY" value = "TV:SiSizeY*0.5"/>
+
+    <constant name = "TV:LVLongBackX" value = "TV:SiSizeX / sqrt(2)"/>
+    <constant name = "TV:LVLongBackY" value = "abs(TV:TransitionX) - 21.5*mm"/>
+
+    <constant name = "TV:LVShortBackX" value = "TV:SiSizeX / sqrt(2)"/>
+    <constant name = "TV:LVShortBackY" value = "abs(TV:TransitionX) - 47.25*mm"/>
+    <constant name = "TV:LVShortBackExtY" value = "TV:SiSizeY*1.5"/>
+
+    <!-- End of LV Harness -->
+
+    <!-- Cooling Connector (also known as CO2 manifold) -->
+    <constant name="TV:CoolingConnectorDistFromSubstrateBase" value="1.9*mm"/>
+    <constant name="TV:CoolingConnectorSizeX"                 value="28.1*mm"/>
+    <constant name="TV:CoolingConnectorSizeY"                 value="8.2*mm"/>
+    <constant name="TV:CoolingConnectorThickness"             value="3.0*mm"/>
+    <constant name="TV:CoolingConnectorIndentX1"              value="3.55*mm"/>
+    <constant name="TV:CoolingConnectorIndentX2"              value="12.45*mm"/>
+    <constant name="TV:CoolingConnectorIndentX3"              value="15.65*mm"/>
+    <constant name="TV:CoolingConnectorIndentX4"              value="24.55*mm"/>
+    <constant name="TV:CoolingConnectorIndentY1"              value="3.7*mm"/>
+    <constant name="TV:CoolingConnectorIndentY2"              value="4.5*mm"/>
+    <constant name="TV:CoolingConnectorIndentSizeX"           value="TV:CoolingConnectorIndentX2-TV:CoolingConnectorIndentX1"/>
+    <constant name="TV:CoolingConnectorIndentSizeY"           value="TV:CoolingConnectorIndentY2-TV:CoolingConnectorIndentY1"/>
+    <constant name="TV:CoolingConnectorIndentDepth"           value="2.1*mm"/>
+    <constant name="TV:CoolingConnectorIndentRadius"          value="0.4*mm"/>
+    <constant name="TV:CoolingConnectorDistFromSideToIndentX" value="15.9*mm"/>
+    <constant name="TV:CoolingConnectorIndentShiftX"          value="TV:CoolingConnectorDistFromSideToIndentX - TV:CoolingConnectorSizeX/2"/>
+    <constant name="TV:CoolingConnectorBigTubeRadiusRight"    value="(1.65/2)*mm"/>
+    <constant name="TV:CoolingConnectorBigTubeRadiusLeft"     value="(1.70/2)*mm"/>
+    <constant name="TV:CoolingConnectorBigTubeZ"              value="TV:CoolingConnectorSizeY-5.0*mm"/>
+    <constant name="TV:CoolingConnectorSmallTubeRadius"       value="(1.10/2)*mm"/>
+    <constant name="TV:CoolingConnectorSmallTubeZ"            value="TV:CoolingConnectorSizeY-(TV:CoolingConnectorIndentY2-0.1*mm)"/>
+    <constant name="TV:CoolingConnectorTubeCentreFromEdge"    value="6.1*mm"/>
+    <constant name="TV:CoolingConnectorCornerRadius"          value="2.0*mm"/>
+
+    <!-- Cooling Connector Foil -->
+    <constant name="TV:CoolingConnectorFoilThickness"	      value="0.2*mm"/>
+
+    <!-- Delivery Pipe Lengths -->
+    <constant name="TV:DeliveryPipeInnerRadiusL"                        value="(0.8/2)*mm"/>
+    <constant name="TV:DeliveryPipeInnerRadiusR"                        value="(0.5/2)*mm"/>
+    <constant name="TV:DeliveryPipeOuterRadiusL"                        value="(1.62/2)*mm"/>
+    <constant name="TV:DeliveryPipeOuterRadiusR"                        value="(1.59/2)*mm"/>
+
+    <constant name="TV:DeliveryPipeTorusDiameter"                       value="30*mm"/>
+
+    <constant name="TV:DeliveryPipeLength1Z"                        value="100.1*mm"/>
+    <constant name="TV:DeliveryPipeLength2Z"                        value="20*mm"/>
+    <constant name="TV:DeliveryPipeLength2X"                        value="5.4*mm"/>
+    <constant name="TV:DeliveryPipeLength3Z"                        value="5.0*mm"/>
+    <constant name="TV:DeliveryPipeLength4Z"                        value="(0.5*pi - 1.0) * 0.5*TV:DeliveryPipeTorusDiameter"/>
+    <constant name="TV:DeliveryPipeLength5Y"                        value="TV:DeliveryPipeTorusDiameter"/>
+    <constant name="TV:DeliveryPipeDirection5"                      value="-1"/>
+    <constant name="TV:DeliveryPipeLength6Z"                        value="TV:DeliveryPipeLength4Z"/>
+    <constant name="TV:DeliveryPipeLength7Z"                        value="35.6*mm"/>
+    <constant name="TV:DeliveryPipeLength7Y"                        value="2.05*mm"/>
+    <constant name="TV:DeliveryPipeLength8Z"                        value="TV:DeliveryPipeLength4Z"/>
+    <constant name="TV:DeliveryPipeLength9Y"                        value="TV:DeliveryPipeTorusDiameter"/>
+    <constant name="TV:DeliveryPipeLength10Z"                       value="TV:DeliveryPipeLength4Z"/>
+    <constant name="TV:DeliveryPipeDirection10"                     value="1"/>
+    <constant name="TV:DeliveryPipeLength11Z"                       value="15.0*mm"/>
+    <constant name="TV:DeliveryPipeLength12Z"                       value="20*mm"/>
+    <constant name="TV:DeliveryPipeLength12X"                       value="5.4*mm"/>
+    <constant name="TV:DeliveryPipeLength13Z"                       value="27.3*mm"/>
+
+    <constant name="TV:DeliveryPipeXpos"                        value="-(TV:SubstrateNewIPXDistFromBL - TV:CoolingConnectorDistFromSubstrateBase - TV:CoolingConnectorBigTubeZ)"/>
+    <constant name="TV:DeliveryPipeYpos"                        value="TV:CoolingConnectorSizeX/2 - TV:CoolingConnectorTubeCentreFromEdge"/>
+    <constant name="TV:DeliveryPipeZpos"                        value="-(TV:SubstrateThick/2 + TV:CoolingConnectorFoilThickness + TV:CoolingConnectorThickness/2)"/>
+
+    <!-- Delivery Pipe Torus Switch -->
+    <constant name="TV:DeliveryPipeBuildTori"			value="1"/>
+
+    <!-- Delivery Pipe Cut Swaps -->
+    <constant name ="TV:DeliveryPipeSwapFE1"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapBE2"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapFE5"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapBE5"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapFE6"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapBE6"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapBE7"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapFE8"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapBE8"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapFE11"			value="1"/>
+    <constant name ="TV:DeliveryPipeSwapBE12"			value="1"/>
+
+    <!-- Support hurdle -->
+    <constant name="TV:SupportPipeDistFromSubstrateBase"        value="1.5*mm"/>
+    <constant name="TV:SupportPipeLength"                        value="180.5*mm"/>
+    <constant name="TV:SupportPipeInnerRadius"                value="8.0*mm/2"/>
+    <constant name="TV:SupportPipeOuterRadius"                value="9.8*mm/2"/>
+    <constant name="TV:SupportPipeGrooveDepth"                value="1.65*mm"/>
+    <constant name="TV:SupportPipeGrooveLength"                value="15.5*mm"/>
+    <constant name="TV:SupportPipeGrooveDistFromEnd"        value="17.5*mm"/>
+    <constant name="TV:SupportPipeGrooveDistFromCentre" value="TV:SupportPipeOuterRadius-TV:SupportPipeGrooveDepth"/>
+    <constant name="TV:SupportPipeGlueDepth" value="TV:CoolingConnectorFoilThickness"/>
+    <constant name="TV:SupportPipeGlueInnerY" value="sqrt(TV:SupportPipeInnerRadius*TV:SupportPipeInnerRadius-TV:SupportPipeGrooveDistFromCentre*TV:SupportPipeGrooveDistFromCentre)"/>
+    <constant name="TV:SupportPipeGlueOuterY" value="sqrt(TV:SupportPipeOuterRadius*TV:SupportPipeOuterRadius-TV:SupportPipeGrooveDistFromCentre*TV:SupportPipeGrooveDistFromCentre)"/>
+    <constant name="TV:SupportPipeGlueWidth" value="TV:SupportPipeGlueOuterY-TV:SupportPipeGlueInnerY"/>
+    <constant name="TV:SupportMidPlateSizeX"                value="29.0*mm"/>
+    <constant name="TV:SupportMidPlateSizeY"                value="50.0*mm"/>
+    <constant name="TV:SupportMidPlateThick"                value="1.0*mm"/>
+    <constant name="TV:SupportMidPlateCornerSizeX"        value="14.0*mm"/>
+    <constant name="TV:SupportMidPlateCornerSizeY"        value="15.0*mm"/>
+    <constant name="TV:SupportMidPlateCornerRadius"        value="5.0*mm"/>
+
+    <!-- BrazeSocket -->
+    <constant name="TV:BrazeSocketInnerRadius"        value="1.27*mm/2"/>
+    <constant name="TV:BrazeSocketOuterRadius"        value="6.4*mm/2"/>
+    <constant name="TV:BrazeSocketLength"             value="17.8*mm"/>"
+    <constant name="TV:BrazeSocketCut1Radius"         value="5.0*mm/2"/>
+    <constant name="TV:BrazeSocketCut1Zpos"           value="2.5*mm"/>"
+    <constant name="TV:BrazeSocketCut2Radius"         value="3.3*mm/2"/>
+    <constant name="TV:BrazeSocketCut2Zpos"           value="14.8*mm"/>"
+    <constant name="TV:BrazeSocketPipeCutRadiusR"     value="1.65*mm/2"/>"
+    <constant name="TV:BrazeSocketPipeCutRadiusL"     value="1.70*mm/2"/>"
+    <constant name="TV:BrazeSocketPipeCutZpos"        value="13.3*mm"/>"
+    <constant name="TV:BrazeSocketConeLength"         value="0.5*mm"/>"
+    <constant name="TV:BrazeSocketConeZpos"           value="TV:BrazeSocketCut2Zpos+(-TV:BrazeSocketLength/2+TV:BrazeSocketConeLength)"/>"
+    <constant name="TV:BrazeSocketCO2Length"          value="13.3*mm"/>"
+    <constant name="TV:BrazeSocketPosX"               value="TV:DeliveryPipeXpos - (TV:DeliveryPipeLength1Z + TV:DeliveryPipeLength2Z + TV:DeliveryPipeLength3Z - TV:DeliveryPipeLength7Z + TV:DeliveryPipeLength11Z + TV:DeliveryPipeLength12Z + TV:DeliveryPipeLength13Z) + TV:BrazeSocketLength/2 - TV:BrazeSocketPipeCutZpos"/>
+    <constant name="TV:BrazeSocketPosY"               value="TV:DeliveryPipeYpos + TV:DeliveryPipeLength5Y + TV:DeliveryPipeLength7Y + TV:DeliveryPipeLength9Y"/>
+    <constant name="TV:BrazeSocketPosZ"               value="TV:DeliveryPipeZpos - TV:DeliveryPipeLength2X - TV:DeliveryPipeLength12X"/>
+
+    <!-- VCR Connectors -->
+    <constant name = "TV:VCRTopOuterRadius"		value = "4.988*mm"/>
+    <constant name = "TV:VCRInnerRadius"		value = "2.65*mm"/>
+    <constant name = "TV:VCRTopLength"			value = "4.8*mm"/>
+    <constant name = "TV:VCRBottomOuterRadius"		value = "3.95*mm"/>
+    <constant name = "TV:VCRBottomLength"		value = "7.9*mm"/>
+    <constant name = "TV:VCRTopPosX"			value = "TV:DeliveryPipeXpos - (TV:DeliveryPipeLength1Z + TV:DeliveryPipeLength2Z + TV:DeliveryPipeLength3Z - TV:DeliveryPipeLength7Z + TV:DeliveryPipeLength11Z + TV:DeliveryPipeLength12Z)"/>
+    <constant name = "TV:VCRPosY"			value = "TV:BrazeSocketPosY"/>
+    <constant name = "TV:VCRPosZ"			value = "TV:BrazeSocketPosZ"/>
+
+    <!-- Support foot and LV clamp -->
+    <constant name="TV:FootCentreLength"     value="152*mm"/>
+    <constant name="TV:FootLongEndLength"    value="27*mm"/>
+    <constant name="TV:FootShortEndLength"   value="17*mm"/>
+    <constant name="TV:FootLongHalfLength"   value="0.5*TV:FootCentreLength + TV:FootLongEndLength"/>
+    <constant name="TV:FootShortHalfLength"  value="0.5*TV:FootCentreLength + TV:FootShortEndLength"/>
+    <constant name="TV:FootLength"           value="TV:FootLongHalfLength + TV:FootShortHalfLength"/>
+    <constant name="TV:LVClampLength"        value="92.0*mm"/>
+
+    <constant name="TV:FootEndWidth"         value="24*mm"/>
+    <constant name="TV:FootCentreWidth"      value="12*mm"/>
+    <constant name="TV:LVClampSideWidth"     value="6.05*mm"/>
+    <constant name="TV:LVClampTopWidth"      value="12.4*mm"/>
+
+    <constant name="TV:FootTopBumpHeight"    value="4*mm"/>
+    <constant name="TV:FootCentreHeight"     value="8*mm"/>
+    <constant name="TV:FootEndHeight"        value="9*mm"/>
+    <constant name="TV:FootBottomBumpHeight" value="3*mm"/>
+    <constant name="TV:LVClampSideHeight"    value="12.0*mm"/>
+    <constant name="TV:LVClampTopHeight"     value="TV:LVClampSideHeight - TV:FootCentreHeight - TV:Epsilon"/>
+
+    <constant name="TV:FootShortEndYOffset"  value="-0.5*(TV:FootCentreLength + TV:FootShortEndLength)"/>
+    <constant name="TV:FootLongEndYOffset"   value=" 0.5*(TV:FootCentreLength + TV:FootLongEndLength )"/>
+
+    <constant name="TV:FootBigHoleYOffset"         value="20*mm"/>
+    <constant name="TV:FootBigHoleSmallerRadius"   value="5*mm/2"/>
+    <constant name="TV:FootBigHoleLargerRadius"    value="10*mm/2"/>
+    <constant name="TV:FootBigHoleExtrusionRadius" value="15*mm/2"/>
+    <constant name="TV:FootBigHoleTotalDepth"      value="10*mm"/>
+    <constant name="TV:FootBigHoleSubDepth"        value="TV:FootBigHoleTotalDepth - TV:FootTopBumpHeight"/>
+
+    <constant name="TV:FootBottomBumpYSize" value="10.0*mm"/>
+    <constant name="TV:FootBottomBumpZSize" value="14.0*mm"/>
+    <constant name="TV:FootBottomBumpRoundingRadius" value="4.0*mm"/>
+
+    <constant name="TV:FootSmallHoleYOffset" value="37.3*mm"/>
+    <constant name="TV:FootSmallHoleRadius" value="3.3*mm/2"/>
+
+    <constant name="TV:FootShortEndLargeHoleY" value="5*mm"/>
+    <constant name="TV:FootShortEndLargeHoleRadius" value="6.5*mm/2"/>
+
+    <constant name="TV:FootLongEndRidgeLength" value="20.0*mm"/>
+    <constant name="TV:FootLongEndRidgeWidth" value="5.0*mm"/>
+
+    <constant name="TV:FootEndCurveOffset" value="0.7*mm"/>
+    <constant name="TV:FootEndCurveRadius" value="5.3*mm"/>
+
+    <constant name="TV:FootLongEndLargeHoleY1" value="6*mm"/>
+    <constant name="TV:FootLongEndLargeHoleY2" value="TV:FootLongEndLargeHoleY1 + 9*mm"/>
+    <constant name="TV:FootLongEndLargeHoleRadius1" value="6*mm/2"/>
+    <constant name="TV:FootLongEndLargeHoleRadius2" value="6.5*mm/2"/>
+
+    <constant name="TV:FootSideHoleRadius" value="4*mm/2"/>
+    <constant name="TV:FootSideHoleDepth" value="4*mm"/>
+
+    <constant name="TV:FootEnvelopeLength"   value="2*TV:FootLongHalfLength"/>
+    <constant name="TV:FootEnvelopeWidth"    value="TV:FootBottomBumpZSize"/>
+    <constant name="TV:FootEnvelopeHeight"   value="TV:FootTopBumpHeight + TV:FootEndHeight + TV:FootBottomBumpHeight"/>
+
+    <!-- Have to put these below the foot description because they rely on that to know where to end! -->
+    <!-- LV Cable Boxes for the foot-to-transition board cables -->
+
+    <constant name = "TV:LVFootOffsetX" value = "8*mm"/>
+    <constant name = "TV:LVFootEndX" value = "-TV:SubstrateNewIPXDistFromBL - TV:SupportPipeDistFromSubstrateBase - TV:SupportPipeLength + TV:FootBigHoleTotalDepth + 0.5*TV:LVClampTopHeight"/>
+    <constant name = "TV:LVFootTransitionStartX" value = "TV:TransitionX - 0.5*TV:TransitionMainThick"/>
+    <constant name = "TV:LVFootX" value = "TV:LVFootTransitionStartX - TV:LVFootEndX"/>
+    <constant name = "TV:LVFootPosX" value = "TV:LVFootTransitionStartX - 0.5*TV:LVFootX"/>
+
+    <!-- LV Cable Box for foot to Long, Back positions -->
+
+    <constant name = "TV:LVLongBackFootSeparation" value = "(-27.98 + 42.3)*mm"/>
+    <constant name = "TV:LVLongBackFootY" value = "TV:LVLongBackFootSeparation + 2*TV:LVCableBigR"/>
+    <constant name = "TV:LVLongBackFootPosY" value = "-42.3*mm + 0.5*TV:LVLongBackFootSeparation"/>
+    <constant name = "TV:LVLongBackFootPosZ" value = "4.24*mm"/>
+
+    <!-- LV Cable Box for foot to Long, Front positions -->
+
+    <constant name = "TV:LVLongFrontFootSeparation" value = "(-28.01 + 42.25)*mm"/>
+    <constant name = "TV:LVLongFrontFootY" value = "TV:LVLongFrontFootSeparation + 2*TV:LVCableBigR"/>
+    <constant name = "TV:LVLongFrontFootPosY" value = "-42.25*mm + 0.5*TV:LVLongFrontFootSeparation"/>
+    <constant name = "TV:LVLongFrontFootPosZ" value = "-4.2*mm"/>
+
+    <!-- LV Cable Box for foot to Short, Back positions -->
+
+    <constant name = "TV:LVShortBackFootSeparation" value = "(42.23 - 27.18)*mm"/>
+    <constant name = "TV:LVShortBackFootY" value = "TV:LVShortBackFootSeparation + 2*TV:LVCableBigR"/>
+    <constant name = "TV:LVShortBackFootPosY" value = "27.18*mm + 0.5*TV:LVShortBackFootSeparation"/>
+    <constant name = "TV:LVShortBackFootPosZ" value = "4.24*mm"/>
+
+    <!-- LV Cable Box for foot to Short, Front positions -->
+
+    <constant name = "TV:LVShortFrontFootSeparation" value = "(41.28 - 27.21)*mm"/>
+    <constant name = "TV:LVShortFrontFootY" value = "TV:LVShortFrontFootSeparation + 2*TV:LVCableBigR"/>
+    <constant name = "TV:LVShortFrontFootPosY" value = "27.21*mm + 0.5*TV:LVShortFrontFootSeparation"/>
+    <constant name = "TV:LVShortFrontFootPosZ" value = "-4.2*mm"/>
+
+    <!-- LV Cables for the GBTX Transition to the Foot -->
+
+    <constant name = "TV:LVGBTXFootOffsetAngle" value = "1.5*degree"/>
+    <constant name = "TV:LVGBTXFootOffsetX" value = "0.5*TV:LVFootX*(1-cos(TV:LVGBTXFootOffsetAngle)) + 0.5*TV:LVCableBigR*cos(TV:LVGBTXFootOffsetAngle)"/>
+    <constant name = "TV:LVGBTXFootOffsetZ" value = "0.5*TV:LVFootX*sin(TV:LVGBTXFootOffsetAngle)"/>
+
+    <!-- Cooling Clamp -->
+    <constant name="TV:ClampWidth" value="82*mm"/>
+    <constant name="TV:ClampHeight" value="17.94*mm"/>
+    <constant name="TV:ClampDepth" value="5*mm"/>
+
+    <constant name="TV:LegHoleRadius" value="5.15*mm"/>
+    <constant name="TV:LegHoleSkirtWidth" value="1*mm"/><!--TODO change to Freek's specification-->
+    <constant name="TV:LegHolePositionX" value="20*mm"/>
+    <constant name="TV:LegHolePositionY" value="-TV:ClampHeight/2+TV:LegHoleRadius+TV:LegHoleSkirtWidth"/>
+
+    <constant name="TV:PipeHoleDistanceFromTop" value="4.5*mm"/><!--TODO change to Freek's specification, measured from top-->
+    <constant name="TV:ClampCentralCutawayWidth" value="(TV:LegHolePositionX-TV:LegHoleRadius-TV:LegHoleSkirtWidth)*2"/>
+    <constant name="TV:ClampCentralCutawayHeight" value="TV:ClampHeight-TV:PipeHoleDistanceFromTop-2.5*mm"/><!--TODO change to Freek's specification, the magic number is the distance from the pipe hole line to the top of the central cutaway -->
+    <constant name="TV:PipeHoleWidth" value="3*mm"/>
+    <constant name="TV:PipeHoleHeight" value="2*mm"/>
+    <constant name="TV:ClampTopDiagonalAngle" value="12.5*degree"/><!--TODO change to Freek's specification. = ArcTan[(PipeHoleDistanceFromTop-PipeHoleExtraLip-PipeHoleWidth/2)/(21-5.2)] -->
+    <constant name="TV:ClampCosTopDiagonalAngle" value="0.976"/>
+    <constant name="TV:ClampTopDiagonalHeight" value="15.4*mm"/><!--"(ClampEdgeToLegHoleDistance - ClampTopHoleSeparation)*ClampCosTopDiagonalAngle" -->
+    <constant name="TV:ClampTopDiagonalLength" value="3.4*mm"/><!--"ClampTopDiagonalHeight*(PipeHoleDistanceFromTop-ClampPipeHoleExtraLip)/(ClampEdgeToLegHoleDistance-ClampTopHoleSeparation)" -->
+    <constant name="TV:ClampEdgeToLegHoleDistance" value="21*mm"/>
+    <constant name="TV:ClampPipeHoleBottomClearance" value="1*mm"/>
+    <constant name="TV:ClampPositionFromLegTop" value="87.8*mm"/>
+
+    <!--==========================================================================-->
+    <!--============RFBOX=========================================================-->
+    <!--==========================================================================-->
+
+    <constant name="TV:RFBoxThick"           value="0.5*mm"/>
+    <constant name="TV:RFBoxSidePlateThick"  value="0.3*mm"/>
+
+    <constant name="TV:RFBoxAvgZDistToFoil"  value="25*mm"/>
+    <constant name="TV:RFBoxXOffsetFromBeamAxis" value="1.2*mm"/>
+
+    <constant name="TV:RFBoxWeldFlangeOuterZ" value="1177.63*mm"/>
+    <constant name="TV:RFBoxWeldFlangeInnerZ" value="1128.90*mm"/>
+    <constant name="TV:RFBoxWeldFlangeOuterY" value="270.0*mm"/>
+    <constant name="TV:RFBoxWeldFlangeInnerY" value="220.0*mm"/>
+    <constant name="TV:RFBoxWeldFlangeThickX" value="20.0*mm"/>
+
+    <constant name="TV:RFBoxSidePlateSizeX"                 value="264.4*mm"/>
+    <constant name="TV:RFBoxSidePlateSizeZ"                 value="1115.0*mm"/>
+
+    <constant name="TV:RFBoxZPosition"       value="TV:Station00Z-TV:RFBoxAvgZDistToFoil+TV:RFBoxSidePlateSizeZ/2"/>
+
+    <constant name="TV:RFBoxSidePlateSlopeSectionLength"    value="29*mm"/>
+    <constant name="TV:RFBoxSidePlateSlopeSectionTiltAngle" value="30*degree"/>
+    <constant name="TV:RFBoxSidePlateFoilSectionSizeX"      value="5.1*mm"/>
+    <constant name="TV:RFBoxSidePlateFoilSectionSizeY"      value="3.8*mm"/>
+    <constant name="TV:RFBoxSidePlateSlopeSectionSizeX"     value="TV:RFBoxSidePlateSlopeSectionLength*cos(TV:RFBoxSidePlateSlopeSectionTiltAngle)"/>
+    <constant name="TV:RFBoxSidePlateSlopeSectionSizeY"     value="TV:RFBoxSidePlateSlopeSectionLength*sin(TV:RFBoxSidePlateSlopeSectionTiltAngle)"/>
+    <constant name="TV:RFBoxSidePlateFlatSectionSizeX"      value="TV:RFBoxSidePlateSizeX-TV:RFBoxSidePlateSlopeSectionSizeX-TV:RFBoxSidePlateFoilSectionSizeX"/>
+    <constant name="TV:RFBoxSidePlateCutout1Angle"          value="9*degree"/>
+    <constant name="TV:RFBoxSidePlateCutout1SizeX"          value="TV:RFBoxSidePlateSizeZ*tan(TV:RFBoxSidePlateCutout1Angle)"/>
+    <constant name="TV:RFBoxSidePlateCutout2Angle"          value="3.59*degree"/>
+    <constant name="TV:RFBoxSidePlateCutout2XOffset"        value="25*mm"/>
+    <constant name="TV:RFBoxSidePlateCutout2SizeX"          value="TV:RFBoxSidePlateSizeX-TV:RFBoxSidePlateCutout2XOffset"/>
+    <constant name="TV:RFBoxSidePlateCutout2SizeZ"          value="TV:RFBoxSidePlateCutout2SizeX*tan(TV:RFBoxSidePlateCutout2Angle)"/>
+
+    <constant name="TV:RFBoxEndPlateSizeY"            value="219.4*mm"/>
+    <constant name="TV:RFBoxEndPlateFoilSectionSizeX" value="5.15*mm"/>
+    <constant name="TV:RFBoxEndPlateFoilSectionSizeY" value="190.4*mm"/>
+
+    <constant name="TV:RFBoxUpstreamEndPlateSizeX"             value="88.0*mm"/>
+    <constant name="TV:RFBoxUpstreamEndPlateFlatSectionSizeX"  value="57.65*mm"/>
+    <constant name="TV:RFBoxUpstreamEndPlateSlopeSectionSizeX" value="TV:RFBoxUpstreamEndPlateSizeX-TV:RFBoxUpstreamEndPlateFlatSectionSizeX-TV:RFBoxEndPlateFoilSectionSizeX"/>
+
+    <constant name="TV:RFBoxDownstreamEndPlateSlopeSectionSizeX"  value="25.15*mm"/>
+    <constant name="TV:RFBoxDownstreamEndPlateTiltSectionSizeX"   value="TV:RFBoxSidePlateCutout2XOffset"/>
+    <constant name="TV:RFBoxDownstreamEndPlateActualSizeX"        value="264.0*mm"/>
+    <constant name="TV:RFBoxDownstreamEndPlateMainSectionSizeX"   value="(TV:RFBoxDownstreamEndPlateActualSizeX-TV:RFBoxDownstreamEndPlateTiltSectionSizeX)/cos(TV:RFBoxSidePlateCutout2Angle)"/>
+    <constant name="TV:RFBoxDownstreamEndPlateFlatSectionSizeX"   value="TV:RFBoxDownstreamEndPlateMainSectionSizeX-TV:RFBoxDownstreamEndPlateSlopeSectionSizeX-TV:RFBoxEndPlateFoilSectionSizeX"/>
+    <constant name="TV:RFBoxDownstreamEndPlateXDistToRaisedCentre" value="148.45*mm"/>
+    <constant name="TV:RFBoxDownstreamEndPlateRaisedTubeLength"    value="1.5*mm"/>
+    <constant name="TV:RFBoxDownstreamEndPlateRaisedRadius"        value="TV:RFBoxDownstreamEndPlateMainSectionSizeX-TV:RFBoxDownstreamEndPlateXDistToRaisedCentre"/>
+    <constant name="TV:RFBoxDownstreamEndPlateRaisedInnerRadius"   value="449.8*mm"/>
+    <constant name="TV:RFBoxDownstreamEndPlateRaisedOuterRadius"   value="450.3*mm"/>
+    <constant name="TV:RFBoxDownstreamEndPlateRaisedAngle"         value="asin(TV:RFBoxDownstreamEndPlateRaisedRadius/TV:RFBoxDownstreamEndPlateRaisedOuterRadius)"/>
+
+    <!--==========================================================================-->
+    <!--============RFFOIL========================================================-->
+    <!--==========================================================================-->
+
+    <constant name="RFThickness" value="0.250*mm"/>
+    <constant name="TV:RFThickness" value="0.250*mm"/>
+    <constant name="TV:RFFoilYSize" value="198*mm"/>
+    <constant name="TV:RFFoilZSize" value="1100*mm"/>
+    <constant name="TV:RFWidth"     value="180.8*mm"/>
+
+
+    <!--This is the width of the unit size of the foil-->
+    <constant name="TV:Station2Station" value="24*mm"/>
+    <constant name="Station2Station" value="24*mm"/>
+
+    <constant name="TV:RFFoilLeftPosZ"  value="0.5*TV:Right2LeftDist"/>
+    <constant name="TV:RFFoilRightPosZ" value="-0.5*TV:Right2LeftDist"/>
+
+    <!--==========================================================================-->
+    <!--============VacuumTank====================================================-->
+    <!--==========================================================================-->
+
+    <!-- Parameters for the improved Velo Tank description -->
+    <constant name="TV:vTankMainZ" value="1330*mm"/>
+    <constant name="TV:vTankInnerR" value="475*mm"/>
+    <constant name="TV:vTankOuterR" value="481*mm"/>
+    <constant name="TV:vTankAngle" value="129*degree"/>
+    <constant name="TV:vTankStartAngle" value="25.5*degree"/>
+    <constant name="TV:vTankMain2Ends" value="15*mm"/>
+    <constant name="TV:vTankMainCutY" value="(TV:vTankOuterR-TV:vTankInnerR)*sin(TV:vTankStartAngle)"/>
+    <constant name="TV:vTankMainCutPosY" value="TV:vTankInnerR*sin(TV:vTankStartAngle)"/>
+    <!-- Parameters for the side boxes -->
+    <constant name="TV:vTankSideX" value="38*mm"/>
+    <constant name="TV:vTankSideY" value="540*mm"/>
+    <constant name="TV:vTankSideZ" value="1260*mm"/>
+    <constant name="TV:vTankCutY" value="256*mm"/>
+    <constant name="TV:vTankCutZ" value="1180*mm"/>
+    <constant name="TV:vTankSideExtra1X" value="71.5*mm"/>
+    <constant name="TV:vTankSideExtra1Y" value="22*mm"/>
+    <constant name="TV:vTankSideExtra1Z" value="1330*mm"/>
+    <constant name="TV:vTankSideExtra2X" value="10*mm"/>
+    <constant name="TV:vTankSideExtra2Y" value="414*mm"/>
+    <constant name="TV:vTankSideExtra2Z" value="35*mm"/>
+    <!-- Parameters for the end flanges -->
+    <constant name="TV:vTankDownEndInnerR" value="402.5*mm"/>
+    <constant name="TV:vTankDownEndOuterR" value="555*mm"/>
+    <constant name="TV:vTankDownEndZ" value="40*mm"/>
+    <constant name="TV:vTankUpEndInnerR" value="475*mm"/>
+    <constant name="TV:vTankUpEndZ" value="35*mm"/>
+    <!-- Total length of the main tank (i.e. not including the exit window flange) -->
+    <constant name="TV:vTankTotalZ" value="TV:vTankMainZ+TV:vTankDownEndZ+TV:vTankUpEndZ+2*TV:vTankMain2Ends"/>
+    <!-- Parameters of the exit window and its flange -->
+    <constant name="TV:vTankDownEWFlangeZExcess" value="5*mm"/>
+    <constant name="TV:vTankDownEWFlangeZ" value="30*mm"/>
+    <constant name="TV:vTankDownEWFlangeIR" value="401.0*mm"/>
+    <constant name="TV:vTankDownEWFlangeOR" value="455*mm"/>
+    <constant name="TV:vTankDownExitWindowIR" value="978*mm"/>
+    <constant name="TV:vTankDownExitWindowOR" value="980*mm"/>
+    <constant name="TV:vTankDownExitWindowAngle" value="asin(TV:vTankDownEndInnerR/TV:vTankDownExitWindowOR)"/>
+    <constant name="TV:vTankDownExitWindowHoleR" value="49.2*mm"/>
+    <constant name="TV:vTankDownExitWindowZSize" value="TV:vTankDownExitWindowOR-TV:vTankDownExitWindowIR*cos(TV:vTankDownExitWindowAngle)"/>
+
+    <!-- Parameters for the new detector supports-->
+    <constant name="TV:DetSupMotherCutX" value="199.1*mm"/>
+    <constant name="TV:DetSupMotherCutY" value="1257.5*mm"/>
+
+    <constant name="TV:DetSupBoxX" value="187*mm"/>
+    <constant name="TV:DetSupBoxY" value="3*mm"/>
+    <constant name="TV:DetSupBoxZ" value="62.5*mm"/>
+
+    <constant name="TV:DetSupTrapX1" value="0.01*mm"/>
+    <constant name="TV:DetSupTrapY1" value="1180.7*mm"/>
+
+    <constant name="TV:DetSupTopY" value="386*mm"/>
+    <constant name="TV:DetSupTopZ" value="1271.2*mm"/>
+    <constant name="TV:DetSupTopCutY" value="220*mm"/>
+    <constant name="TV:DetSupTopCutZ" value="1124*mm"/>
+    <constant name="TV:DetSupTopPosX" value="99.43*mm"/>
+    <constant name="TV:DetSupTopPosZ" value="7.761*mm"/>
+
+    <constant name="TV:DetSupBaseX" value="28.26*mm"/>
+    <constant name="TV:DetSupBaseY" value="390*mm"/>
+    <constant name="TV:DetSupBaseZ" value="1320*mm"/>
+    <constant name="TV:DetSupBaseXZPos" value="1*mm"/>
+    <constant name="TV:DetSupBaseCut1X" value="4*mm"/>
+    <constant name="TV:DetSupBaseCut1Y" value="384*mm"/>
+    <constant name="TV:DetSupBaseCut1Z" value="1314*mm"/>
+    <constant name="TV:DetSupBaseCut2X" value="10*mm"/>
+    <constant name="TV:DetSupBaseCut2Y" value="370*mm"/>
+    <constant name="TV:DetSupBaseCut2Z" value="1300*mm"/>
+    <constant name="TV:DetSupBaseCut3Y" value="256*mm"/>
+    <constant name="TV:DetSupBaseCut3Z" value="1180*mm"/>
+    <constant name="TV:DetSupBaseCut4X1" value="0.01*mm"/>
+    <constant name="TV:DetSupBaseCut4X2" value="12.2*mm"/>
+    <constant name="TV:DetSupBaseCut4Y1" value="76.8*mm"/>
+
+    <constant name="TV:DetSupBackY" value="380*mm"/>
+
+    <constant name="TV:DetSupTrimX" value="70*mm"/>
+    <!--Adjustment to prevent overlaps-->
+    <constant name="TV:DetSupAdjustX" value="0.14*mm"/>
+    <constant name="TV:DetSupX" value="TV:DetSupBoxX+TV:DetSupBoxY+TV:DetSupBaseX+TV:DetSupTrimX+TV:DetSupAdjustX+0.1*mm"/>
+
+
+    <!--==========================================================================-->
+    <constant name="TV:vTankPosZ" value="945*mm-TV:vTankTotalZ/2"/>
+    <constant name="TV:DetSupLeftPosX" value="243*mm"/>
+    <constant name="TV:DetSupLeftPosZ" value="195*mm"/>
+    <constant name="TV:DetSupRightPosX" value="-243*mm"/>
+    <constant name="TV:DetSupRightPosZ" value="195*mm"/>
+
+    <!--==========================================================================-->
+    <!--======Wake field cones===================================================-->
+    <!--==========================================================================-->
+    <constant name="TV:UpStrWakeFieldConePosZ"   value="-319.9*mm-194.001*mm/2"/>
+    <constant name="TV:DownStrWakeFieldConePosZ" value="760*mm+75.001*mm/2"/>
+
+
+    <!--==========================================================================-->
+    <!--======The section within the exit window "sphere"========================-->
+    <!--==========================================================================-->
+    <constant name="TV:ExitWindow2BellowsZSize" value="55.54*mm"/>
+    <constant name="TV:DSTubeZSize" value="9.56*mm"/>
+    <constant name="TV:DSTubeInnerRadius" value="34*mm"/>
+    <constant name="TV:DSTubeThickness" value="2.5*mm"/>
+    <constant name="TV:BellowsEndZ" value="-TV:vTankDownExitWindowIR*cos(TV:vTankDownExitWindowAngle)-TV:DSTubeZSize"/>
+    <constant name="TV:BellowsZSize" value="21.3*mm"/>
+    <constant name="TV:BellowsInnerRadius" value="TV:DSTubeInnerRadius"/>
+    <constant name="TV:BellowsOuterRadius" value="46*mm"/>
+    <constant name="TV:BellowsThickness" value="0.3*mm"/>
+    <constant name="TV:BellowsSpacing" value="2.7*mm"/>
+  </define>
+
+
+  <!-- Material mixtures -->
+  <materials>
+    <!-- Renaming of Aluminium-->
+    <material name="TV:Aluminium" state="solid" >
+      <D type="density" unit="g/cm3" value="2.699"/>
+      <fraction n="1" ref="Aluminum"/>
+    </material>
+
+    <!-- Specific foil Aluminium for changing foil density-->
+    <material name="TV:FoilAluminium" state="solid" >
+      <D type="density" unit="g/cm3" value="2.699*(TV:CorrugRFFoilDensityScaler**(TV:FoilCorrugated))"/>
+      <fraction n="1" ref="Aluminum"/>
+    </material>
+
+    <!-- Adding different silicon types for optimisation -->
+    <material name = "TV:SensorSilicon" state="solid" >
+      <D type="density" unit="g/cm3" value="2.3300"/>
+      <fraction n="1" ref = "Silicon"/>
+    </material>
+
+    <material name = "TV:GuardRingSilicon" state="solid" >
+      <D type="density" unit="g/cm3" value="2.3300"/>
+      <fraction n="1" ref = "Silicon"/>
+    </material>
+
+    <material name = "TV:ChipSilicon" state="solid" >
+      <D type="density" unit="g/cm3" value="2.3300"/>
+      <fraction n="1" ref = "Silicon"/>
+    </material>
+
+    <material name = "TV:SubstrateSilicon" state="solid" >
+      <D type="density" unit="g/cm3" value="2.3300"/>
+      <fraction n="1" ref = "Silicon"/>
+    </material>
+
+    <!-- Support hurdle materials -->
+    <!-- Carbon fibre -->
+    <material name="TV:CarbonFibre" state="solid" >
+      <D type="density" unit="g/cm3" value="1.72"/>
+      <composite n="10" ref="Carbon"   />
+      <composite n="6"  ref="Hydrogen" />
+      <composite n="1"  ref="Oxygen"   />
+    </material>
+    <material name="TV:CarbonFibreSupportPipe" state="solid" >
+      <D type="density" unit="g/cm3" value="2.5"/>
+      <composite n="10" ref="Carbon"   />
+      <composite n="6"  ref="Hydrogen" />
+      <composite n="1"  ref="Oxygen"   />
+    </material>
+    <!-- BoroFloat glass -->
+    <!-- First define its components, then the material itself -->
+    <material name="TV:SiO2" state="solid" >
+      <D type="density" unit="g/cm3" value="2.2"/>
+      <composite n="1" ref="Silicon" />
+      <composite n="2" ref="Oxygen"  />
+    </material>
+    <material name="TV:B2O3" state="solid" >
+      <D type="density" unit="g/cm3" value="1.812"/>
+      <composite n="2" ref="Boron"  />
+      <composite n="3" ref="Oxygen" />
+    </material>
+    <material name="TV:Na2O" state="solid" >
+      <D type="density" unit="g/cm3" value="2.27"/>
+      <composite n="2" ref="Sodium" />
+      <composite n="1" ref="Oxygen" />
+    </material>
+    <material name="TV:Al2O3" state="solid" >
+      <D type="density" unit="g/cm3" value="3.97"/>
+      <composite n="2" ref="Aluminum" />
+      <composite n="3" ref="Oxygen"    />
+    </material>
+    <material name="TV:Borofloat" state="solid" >
+      <D type="density" unit="g/cm3" value="2.2"/>
+      <fraction n="0.81" ref="TV:SiO2"/>
+      <fraction n="0.13" ref="TV:B2O3"/>
+      <fraction n="0.04" ref="TV:Na2O"/>
+      <fraction n="0.02" ref="TV:Al2O3"/>
+    </material>
+
+    <!-- Glues -->
+    <material name="TV:Epoxy" state="solid" >
+      <D type="density" unit="g/cm3" value="1.3"/>
+      <fraction n="0.07" ref="Hydrogen" />
+      <fraction n="0.76" ref="Carbon"   />
+      <fraction n="0.17" ref="Oxygen"   />
+    </material>
+    <material name="TV:Stycast" state="solid" >
+      <D type="density" unit="g/cm3" value="2.29"/>
+      <fraction n="0.07" ref="Hydrogen" />
+      <fraction n="0.76" ref="Carbon"   />
+      <fraction n="0.17" ref="Oxygen"   />
+    </material>
+
+    <!-- Average material (estimated 10% coverage) of bump bond layer between sensor and chips -->
+    <material name="TV:BumpBonds" state="solid" >
+      <D type="density" unit="g/cm3" value="0.1*8.433"/>
+      <fraction n="0.63" ref="Tin"  />
+      <fraction n="0.37" ref="Lead" />
+    </material>
+
+    <!-- Hybrid and components materials -->
+    <material name="TV:LCP" state="solid" >
+      <D type="density" unit="g/cm3" value="1.7"/>
+      <fraction n="0.7" ref="Carbon"   />
+      <fraction n="0.2" ref="Oxygen"   />
+      <fraction n="0.1" ref="Hydrogen" />
+    </material>
+    <material name="TV:Kapton" state="solid" >
+      <D type="density" unit="g/cm3" value="1.39"/>
+      <composite n="8" ref="Hydrogen" />
+      <composite n="5" ref="Carbon"   />
+      <composite n="2" ref="Oxygen"   />
+    </material>
+    <!-- Change the density slightly to better match the actual measured mass -->
+    <material name="TV:CopperKaptonMix" state="solid">
+      <D type="density" unit="g/cm3" value="2.35"/>
+      <fraction n="0.423" ref="Copper"    /> <!-- = 0.75/1.773 -->
+      <fraction n="0.577" ref="TV:Kapton" /> <!-- = 1.023/1.773 -->
+    </material>
+
+    <!-- Slightly different density to better match the measured mass -->
+    <!-- Add also a some silicon to make up for the missing chip -->
+    <material name="TV:GBTXCopperKaptonSiliconMix" state="solid">
+      <D type="density" unit="g/cm3" value="6.95"/>
+      <fraction n="(3.72-1.0)/3.72" ref="TV:CopperKaptonMix"/>
+      <fraction n="1.0/3.72"        ref="Silicon"           />
+    </material>
+
+    <!-- Transition Board and LV Cable Materials -->
+	<!-- Transition board is made of FR4 rather than Kapton so make a similar mix -->
+    <material name="TV:MgO" state="solid">
+      <D type="density" unit="g/cm3" value="3.58"/>
+		<composite n="1" ref="Magnesium"/>
+		<composite n="1" ref="Oxygen"/>
+	</material>
+
+    <material name="TV:CaO" state="solid">
+      <D type="density" unit="g/cm3" value="3.34"/>
+		<composite n="1" ref="Calcium"/>
+		<composite n="1" ref="Oxygen"/>
+    </material>
+
+    <material name="TV:Fe2O3" state="solid">
+      <D type="density" unit="g/cm3" value="5.25"/>
+        <composite n="2" ref="Iron"/>
+        <composite n="3" ref="Oxygen"/>
+    </material>
+
+	<!-- e-glass, density from https://www.sciencedirect.com/science/article/pii/B9780323395007000046 -->
+	<!-- Composition approx. from Das, Kalobaran & Kamaruzzaman, Sm & Middya, Tapas & Datta, Siddhartha. (2009). Thermal diffusivity of advanced composite materials of e-glass fiber reinforced plastic in the temperature range 5-120K. Indian Journal of Pure and Applied Physics. 47.  -->
+    <material name="TV:FibreGlass" state="solid">
+      <D type="density" unit="g/cm3" value="2.543"/>
+		<fraction n="0.552" ref="TV:SiO2" />
+		<fraction n="0.148" ref="TV:Al2O3"/>
+		<fraction n="0.073" ref="TV:B2O3" />
+        <fraction n="0.033" ref="TV:MgO"  />
+		<fraction n="0.187" ref="TV:CaO"  />
+        <fraction n="0.007" ref="TV:Fe2O3"/>
+	</material>
+
+    <material name="TV:FR4" state="solid">
+      <D type="density" ubit="g/cm3" value="1.85"/>
+        <fraction n="0.6" ref="TV:Epoxy"     />
+		<fraction n="0.4" ref="TV:FibreGlass"/>
+	</material>
+
+	<!-- "Standard" PCBs have 1oz of Copper per layer, transition board has 4 layers -->
+	<!-- So have 0.0348mm thick layer of Copper per layer (from https://pcbprime.com/pcb-tips/how-thick-is-1oz-copper/) -->
+    <material name="TV:CopperFR4Mix" state="solid">
+      <D type="density" unit="g/cm3" value="(((8.96*4*0.00348)+(1.85*(0.1-(4*0.00348))))/(0.1))"/> <!-- =2.839712g/cm3 -->
+        <fraction n="0.439" ref="Copper" />
+		<fraction n="0.561" ref="TV:FR4" />
+	</material>
+
+	<!-- Cable datasheet implies the Copper has a density of 9.6g/cm3 instead of the usual 8.96 g/cm3 -->
+    <material name="TV:CableCopper" state="solid">
+      <D type="density" ubit="g/cm3" value="9.6"/>
+		<fraction n="1.0" ref="Copper"/>
+	</material>
+
+	<!-- Silicone insulation for LV cables -->
+	<!-- density from 0.901 to 2.3 -->
+    <material name="TV:Silicone" state="solid">
+      <D type="density" unit="g/cm3" value="1.3"/>
+		<composite n="1" ref="Silicon"  />
+		<composite n="2" ref="Carbon"   />
+		<composite n="6" ref="Hydrogen" />
+		<composite n="1" ref="Oxygen"   />
+	</material>
+
+	<!-- Silicone/Copper mix for LV Cables -->
+	<!-- (((9.6*0.015)+(1.3*((pi*0.145*0.145)-(0.015))))/(pi*0.145*0.145)) = 3.18488 -->
+    <material name="TV:SiliCopper" state="solid">
+      <D type="density" unit="g/cm3" value="0.453*3.18488"/>
+		<fraction n="14.4/19"      ref="TV:CableCopper"/>
+		<fraction n="(19-14.4)/19" ref="TV:Silicone"   />
+	</material>
+
+	<!-- Silicone/Copper mix for the LV Cable Boxes between the transition board and the foot -->
+	<!-- Density need to be lighter because volume of box is bigger than cables so weight by ratio of 4-cables (length is the same so cancels) -->
+	<!-- ((4*pi*1.45*1.45)/(2.9*17.22))*(3.18488) = 1.68503 -->
+	<!-- Again, small amount added to account for cooling clamp -->
+    <material name="TV:SiliCopperFoot" state="solid">
+      <D type="density" unit="g/cm3" value="1.82364"/>
+		<fraction n="1.0" ref="TV:SiliCopper"/>
+	</material>
+
+	<!-- S=Short, L=Long, G=GBTX, B=Back and F=Front -->
+    <material name="TV:SiliCopperGF" state="solid">
+      <D type="density" unit="g/cm3" value="0.504*(3.18488)"/>
+		<fraction n="1.0" ref="TV:SiliCopper"/>
+	</material>
+
+    <material name="TV:SiliCopperGB" state="solid">
+      <D type="density" unit="g/cm3" value="0.561*(3.18488)"/>
+		<fraction n="1.0" ref="TV:SiliCopper"/>
+	</material>
+
+    <material name="TV:SiliCopperSB" state="solid">
+      <D type="density" unit="g/cm3" value="2.55507"/>
+		<fraction n="1.0" ref="TV:SiliCopper"/>
+	</material>
+
+    <material name="TV:SiliCopperLB" state="solid">
+      <D type="density" unit="g/cm3" value="2.59866"/>
+		<fraction n="1.0" ref="TV:SiliCopper"/>
+	</material>
+
+    <material name="TV:SiliCopperSF" state="solid">
+      <D type="density" unit="g/cm3" value="2.55542"/>
+		<fraction n="1.0" ref="TV:SiliCopper"/>
+      </material>
+
+    <material name="TV:SiliCopperLF" state="solid">
+      <D type="density" unit="g/cm3" value="2.58075"/>
+		<fraction n="1.0" ref="TV:SiliCopper"/>
+	</material>
+
+
+
+    <!-- Cooling connector -->
+    <material name="TV:Invar" state="solid" >
+      <D type="density" unit="g/cm3" value="8.1"/>
+      <fraction n="0.6367" ref="Iron"      />
+      <fraction n="0.3580" ref="Nickel"    />
+      <fraction n="0.0033" ref="Manganese" />
+      <fraction n="0.0011" ref="Silicon"   />
+      <fraction n="0.0005" ref="Chromium"  />
+      <fraction n="0.0002" ref="Copper"    />
+      <fraction n="0.0002" ref="Cobalt"    />
+    </material>
+
+    <!-- Cooling pipes and vacuum tank -->
+    <material name="TV:StainlessSteel" state="solid" >
+      <D type="density" unit="g/cm3" value="7.99"/>
+      <fraction n="0.6530"  ref="Iron"       />
+      <fraction n="0.16325" ref="Chromium"   />
+      <fraction n="0.1270"  ref="Nickel"     />
+      <fraction n="0.0272"  ref="Molybdenum" />
+      <fraction n="0.0200"  ref="Manganese"  />
+      <fraction n="0.0010"  ref="Nitrogen"   />
+      <fraction n="0.0003"  ref="Sulfur"     />
+      <fraction n="0.0003"  ref="Carbon"     />
+      <fraction n="0.0075"  ref="Silicon"    />
+      <fraction n="0.00045" ref="Phosphorus" />
+    </material>
+
+    <!-- Cooling fluid -->
+    <!-- Currently saturated liquid CO2 at -30 degrees Celcius -->
+    <material name="TV:Coolant" state="liquid" >
+      <D type="density" unit="g/cm3" value="1.077"/>
+      <composite n="1" ref="Carbon"/>
+      <composite n="2" ref="Oxygen"/>
+    </material>
+
+    <!-- Solder (between cooling connector and substrate) -->
+    <material name="TV:Solder" state="solid">
+      <D type="density" unit="g/cm3" value="8.433"/>
+      <fraction n="0.62" ref="Tin"    />
+      <fraction n="0.36" ref="Lead"   />
+      <fraction n="0.02" ref="Silver" />
+    </material>
+
+    <!-- Cooling clamp -->
+    <material name="TV:PEEK" state="solid" >
+      <D type="density" unit="g/cm3" value="1.32"/>
+      <composite n="19" ref="Carbon"   />
+      <composite n="12" ref="Hydrogen" />
+      <composite n="3"  ref="Oxygen"   />
+    </material>
+
+    <!-- LV clamp -->
+    <!-- Polyetherimide (the clamp itself) -->
+    <material name="TV:LVClampPlastic" state="solid" >
+      <D type="density" unit="g/cm3" value="1.31"/>
+      <composite n="37" ref="Carbon"   />
+      <composite n="24" ref="Hydrogen" />
+      <composite n="6"  ref="Oxygen"   />
+      <composite n="2"  ref="Nitrogen" />
+    </material>
+    <!-- A mixture of polyetherimide (the clamp itself) and copper (the plugs) -->
+    <material name="TV:LVClampPlugs" state="solid" >
+      <D type="density" unit="g/cm3" value="4.22"/>
+      <fraction n="0.808" ref="Copper"   />
+      <fraction n="0.192" ref="TV:LVClampPlastic" />
+    </material>
+
+    <!-- Wakefield suppressor -->
+    <material name="TV:BerylliumCopper" state="solid" >
+      <D type="density" unit="g/cm3" value="8.931"/>
+      <fraction n="0.978" ref="Copper"    />
+      <fraction n="0.018" ref="Nickel"    />
+      <fraction n="0.004" ref="Beryllium" />
+    </material>
+  </materials>
+</lccdd>

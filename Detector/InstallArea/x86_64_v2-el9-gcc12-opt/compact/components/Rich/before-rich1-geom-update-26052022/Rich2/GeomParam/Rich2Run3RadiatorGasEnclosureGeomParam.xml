@@ -1,0 +1,155 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- Geometry parameters for Rich2 Gas volume                                   -->
+<!-- Main gas volume                                                            -->
+<!-- The radiator starts at z=9500 and ends at z=11832                          -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+   <constant name="Rh2MainGasSizeZ"   value="2332.0*mm"/>
+   <constant name="Rh2MainGasSizeX1"  value="6000.0*mm"/>
+   <constant name="Rh2MainGasSizeY1"  value="6370.0*mm"/>
+   <constant name="Rh2MainGasSizeX2" value="7400.0*mm"/>
+   <constant name="Rh2MainGasSizeY2" value="6370.0*mm"/>
+
+   <constant name="Rh2MainGasEnclosurePosX"   value="0.0*mm"/>
+   <constant name="Rh2MainGasEnclosurePosY"   value="0.0*mm"/>
+   <constant name="Rh2MainGasEnclosurePosZ"   value="-1.0*mm"/>
+
+<!-- The gas volume in front of the quartz window -->
+   <constant name="Rh2SideGasSizeZ" value="1310*mm"/>
+   <constant name="Rh2SideGasSizeX1" value="1042*mm"/>
+   <constant name="Rh2SideGasSizeY1" value="1752*mm"/>
+   <constant name="Rh2SideGasSizeX2" value="720*mm"/>
+   <constant name="Rh2SideGasSizeY2" value="1477*mm"/>
+
+   <constant name="Rh2SideGasPosX" value="3276.7*mm"/>
+   <constant name="Rh2SideGasPosZ" value="-246.1*mm"/>
+   <constant name="Rh2SideGasAngle" value="1.065*rad"/>
+   <constant name="Rh2SideGasPosY" value="0.0*mm"/>
+   <constant name="Rh2SideGasNegX" value="-1.0*Rh2SideGasPosX"/>
+   <constant name="Rh2SideGasNegZ" value="Rh2SideGasPosZ"/>
+   <constant name="Rh2SideGasNegY" value="Rh2SideGasPosY" />
+   <constant name="Rh2SideGasNegAngle" value="-1.0*Rh2SideGasAngle"/>
+   <constant name="Rh2SideGasPosAngle" value="Rh2SideGasAngle"/>
+ 
+
+<!-- Parameters for the hole in the middle -->
+   <constant name="Rh2GasHoleUpstream" value="144*mm"/>
+   <constant name="Rh2GasHoleDownstream" value="177*mm"/>
+   <constant name="Rh2TubeThickness" value = "2*mm"/>
+   <constant name="Rh2CentralTubeUpstreamInnerRad" value="Rh2GasHoleUpstream-Rh2TubeThickness" />
+   <constant name="Rh2CentralTubeUpstreamOuterRad" value="Rh2GasHoleUpstream" />
+   <constant name="Rh2CentralTubeDnstreamInnerRad" value="Rh2GasHoleDownstream-Rh2TubeThickness" />
+   <constant name="Rh2CentralTubeDnstreamOuterRad" value="Rh2GasHoleDownstream" />
+
+   <constant name="Rh2BeamHoleDnsLargeZSize" value="5000000.0*mm"/>
+   <constant name="Rh2BeamHoleUpsLargeZSize" value="100.0*mm"/>
+   <constant name="Rh2GasHoleRadialTolerence" value="5*mm" />
+   <constant name="Rh2GasHoleLengthTolerence" value="5*mm" />
+   <constant name="Rh2GasHoleUpstreamWithTolerence" value="Rh2GasHoleUpstream-Rh2GasHoleRadialTolerence"/>
+   <constant name="Rh2GasHoleDownstreamWithTolerence" value="Rh2GasHoleDownstream-Rh2GasHoleRadialTolerence"/>
+   <constant name="Rh2GasHoleLengthWithTolerence" value="Rich2MasterZSize + Rh2GasHoleLengthTolerence" />
+   <constant name="Rh2BeamPipeHolePosZ" value="0.0*mm" />
+ 
+
+
+<!-- Entrance window -->
+   <constant name="Rh2EntryWindowSkinSizeZ" value = "1.4*mm"/>
+   <constant name="Rh2EntryWindowSkinSizeX" value = "Rh2MainGasSizeX1"/>
+   <constant name="Rh2EntryWindowSkinSizeY" value = "Rh2MainGasSizeY1"/>
+   <constant name="Rh2EntryWindowPMISizeZ" value = "36.0*mm"/>
+   <constant name="Rh2EntryWindowThickness" value= "2*Rh2EntryWindowSkinSizeZ + Rh2EntryWindowPMISizeZ"/>
+   <constant name="Rh2EntryWindowHoleSizeZ"  value="Rh2EntryWindowThickness+20*mm" />
+ 
+
+   <constant name="Rh2EntryWindowSkinDnsPosZ" value = "Rh2MainGasEnclosurePosZ-0.5*(Rh2MainGasSizeZ+Rh2EntryWindowSkinSizeZ)"/>
+   <constant name="Rh2EntryWindowPMIPosZ" value = "Rh2EntryWindowSkinDnsPosZ-0.5*(Rh2EntryWindowSkinSizeZ+Rh2EntryWindowPMISizeZ)"/>
+   <constant name="Rh2EntryWindowSkinUpsPosZ" value = "Rh2EntryWindowPMIPosZ-0.5*(Rh2EntryWindowSkinSizeZ+Rh2EntryWindowPMISizeZ)"/>
+
+   <!-- this is the locking carbon fibre part around the tube -->
+   <constant name="Rh2EntryWindowLockOuterRadius" value = "230.0*mm"/>
+   <constant name="Rh2EntryWindowLockInnerRadius" value ="Rh2GasHoleUpstream+2.0*mm"/>
+
+<!-- Exit window -->
+   <constant name="Rh2ExitWindowSkinSizeZ" value = "1.0*mm"/>
+   <constant name="Rh2ExitWindowSkinSizeX" value = "Rh2MainGasSizeX2"/>
+   <constant name="Rh2ExitWindowSkinSizeY" value = "Rh2MainGasSizeY2"/>
+   <constant name="Rh2ExitWindowPMISizeZ" value = "40*mm"/>
+   <constant name="Rh2ExitWindowThickness" value = "2*Rh2ExitWindowSkinSizeZ + Rh2ExitWindowPMISizeZ"/>
+   <constant name="Rh2ExitWindowHoleSizeZ" value="Rh2ExitWindowThickness+ ( 20*mm )" />
+
+
+   <constant name="Rh2ExitWindowSkinDnsPosZ" value = "Rh2MainGasEnclosurePosZ+0.5*(Rh2MainGasSizeZ+Rh2ExitWindowSkinSizeZ)"/>
+   <constant name="Rh2ExitWindowPMIPosZ" value = "Rh2ExitWindowSkinDnsPosZ+0.5*(Rh2ExitWindowSkinSizeZ+Rh2ExitWindowPMISizeZ)"/>
+   <constant name="Rh2ExitWindowSkinUpsPosZ" value = "Rh2ExitWindowPMIPosZ+0.5*(Rh2ExitWindowSkinSizeZ+Rh2ExitWindowPMISizeZ)"/>
+   <!-- this is the locking carbon fibre part around the tube -->
+   <constant name="Rh2ExitWindowLockOuterRadius" value = "262.0*mm"/>
+   <constant name="Rh2ExitWindowLockInnerRadius" value ="Rh2GasHoleDownstream"/>
+
+<!-- Constants for the Tube in the middle -->
+   <constant name="Rh2CentralTubeConZ" value="Rh2MainGasSizeZ+Rh2EntryWindowThickness+Rh2ExitWindowThickness"/>
+   <constant name="Rh2CentralTubeConeSizeZ" value="Rh2CentralTubeConZ" />
+
+
+<!--  Now for the BeamPipe Hole of the Gas Volume -->
+   <constant name="Rh2GasHoleConZSize" value="Rh2CentralTubeConeSizeZ+Rh2BeamHoleUpsLargeZSize+Rh2BeamHoleDnsLargeZSize"/>
+   <constant name="Rh2GasHoleConSlope" value="(Rh2GasHoleDownstream-Rh2GasHoleUpstream)/Rh2CentralTubeConZ"/>
+   <constant name="Rh2GasHoleConUpsRad" value="Rh2GasHoleUpstream-Rh2GasHoleConSlope*Rh2BeamHoleUpsLargeZSize"/>
+   <constant name="Rh2GasHoleConDnsRad" value="Rh2GasHoleDownstream+Rh2GasHoleConSlope*Rh2BeamHoleDnsLargeZSize"/>
+
+   <constant name="Rh2GasHoleConsZPos" value="0.5*(Rh2BeamHoleDnsLargeZSize-Rh2BeamHoleUpsLargeZSize)"/>
+
+<!-- Gas containment -->
+   <constant name="Rh2GasContThickness" value = "20.0*mm"/>
+   <constant name="Rh2GasContTopPosY" value = "0.5*(Rh2MainGasSizeY1+Rh2GasContThickness)"/>
+   <constant name="Rh2GasContBotPosY" value = "-1.0*Rh2GasContTopPosY"/>
+
+   <constant name="Rh2GasContSideExcess" value = "0.5*(Rh2MainGasSizeX2-Rh2MainGasSizeX1)"/>
+   <constant name="Rh2GasContSideAngle" value = "(atan(Rh2GasContSideExcess/Rh2MainGasSizeZ))*rad"/>
+   <constant name="Rh2GasContSideZsize" value = "Rh2MainGasSizeZ/cos(Rh2GasContSideAngle)"/>
+   <constant name="Rh2GasContSidePosX" value = "0.5*Rh2GasContThickness*cos(Rh2GasContSideAngle)+0.5*(Rh2MainGasSizeX1+Rh2GasContSideExcess)"/>
+   <constant name="Rh2GasContSidePosZ" value = "Rh2MainGasEnclosurePosZ - 0.5*Rh2GasContThickness*sin(Rh2GasContSideAngle)"/>
+   <constant name="Rh2GasContSide0PosX" value="Rh2GasContSidePosX"  />
+   <constant name="Rh2GasContSide1PosX" value="-1.0*Rh2GasContSidePosX"  />
+   <constant name="Rh2GasContSide0Angle" value="Rh2GasContSideAngle" />
+   <constant name="Rh2GasContSide1Angle" value="-1.0*Rh2GasContSideAngle" />
+
+
+   <constant name="Rh2GasContSideHoleAngle" value = "Rh2SideGasAngle-Rh2GasContSideAngle"/>
+   <constant name="Rh2GasContSideHoleOffsetX" value = "Rh2SideGasPosX-Rh2GasContSidePosX"/>
+   <constant name="Rh2GasContSideHoleOffsetZ" value = "Rh2SideGasPosZ+0.5*Rh2GasContThickness*sin(Rh2GasContSideAngle)"/>
+
+   <constant name="Rh2GasContSideHoleAngleAtSide0" value="Rh2GasContSideHoleAngle" />
+   <constant name="Rh2GasContSideHoleAngleAtSide1" value="-1.0*Rh2GasContSideHoleAngle" />
+
+
+   <constant name="Rh2GasContSideHoleXpos" value = "Rh2GasContSideHoleOffsetX*cos(Rh2GasContSideAngle)-Rh2GasContSideHoleOffsetZ*sin(Rh2GasContSideAngle)"/>
+   <constant name="Rh2GasContSideHoleZpos" value = "Rh2GasContSideHoleOffsetZ*cos(Rh2GasContSideAngle)+Rh2GasContSideHoleOffsetX*sin(Rh2GasContSideAngle)"/>
+
+   <constant name="Rh2GasContSide0HolePosX" value="Rh2GasContSideHoleXpos" />
+   <constant name="Rh2GasContSide1HolePosX" value="-1.0*Rh2GasContSideHoleXpos" />
+
+
+<!-- End of Rich2 Gas parameters -->
+<!-- Now for the imaginary volume named RichSystem which was created just for having a -->
+<!-- Detector element with that name -->
+<constant name="RichSystemImagCubeSize" value="1*mm" />
+<constant name="RichSystemImagXSize" value="RichSystemImagCubeSize" />
+<constant name="RichSystemImagYSize" value="RichSystemImagCubeSize" />
+<constant name="RichSystemImagZSize" value="RichSystemImagCubeSize" />
+
+<constant name="RichSystemImagPosX" value="(0.5*Rich2MasterXSize)-2*mm" />
+<constant name="RichSystemImagPosY" value="(0.5*Rich2MasterYSize)-2*mm" />
+
+  </define>
+</lccdd>

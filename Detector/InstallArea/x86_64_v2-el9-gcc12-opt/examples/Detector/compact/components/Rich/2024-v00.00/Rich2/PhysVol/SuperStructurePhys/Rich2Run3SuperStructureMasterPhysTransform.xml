@@ -1,0 +1,67 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Super structure  Master PhysVol definitions                         -->
+<!--  ==========================================================================-->
+<!--   Rich2 Super structure  Master LogVol are placed in lvRich2Master         -->
+<!--   Old Names listed for reference                                           -->
+<!--   <physvol  name="pvRich2AirBoxTop"  <volume name ="lvRich2AirBoxTop">      -->
+<!--   <physvol  name="pvRich2AirBoxBot"  <volume name ="lvRich2AirBoxBot">      -->
+<!--   <physvol  name="pvRich2AirTrapRight"  <volume name ="lvRich2AirTrapRight">  -->
+<!--   <physvol  name="pvRich2AirTrapLeft"   <volume name ="lvRich2AirTrapLeft">   -->
+<!--   New Names   of the volumes                                               -->
+<!--   <physvol  name="pvRich2SuperStrAirBoxTop"  <volume name="lvRich2SuperStrAirBoxTop"> -->
+<!--   <physvol  name="pvRich2SuperStrAirBoxBot"  <volume name="lvRich2SuperStrAirBoxBot"> -->
+<!--   <physvol  name="pvRich2SuperStrAirTrapRight" <volume name="lvRich2SuperStrAirTrapRight"> -->
+<!--   <physvol  name="pvRich2SuperStrAirTrapLeft"  <volume name="lvRich2SuperStrAirTrapLeft"> -->
+
+<!--  =================================================================================  -->
+<Rich2>
+
+
+<item name="PhysVolName"  value="pvRich2SuperStrAirBoxTop"/>
+<item name="TransformName"  value="pvRich2SuperStrAirBoxTopTransform">
+<transformation>
+  <position x = "Rh2SuperStrAirBoxTopPosX"
+            y = "Rh2SuperStrAirBoxTopPosY"
+            z = "Rh2SuperStrAirBoxTopPosZ" />
+</transformation>
+</item>
+
+
+
+<item name="PhysVolName"  value="pvRich2SuperStrAirBoxBot" />
+<item name="TransformName"  value="pvRich2SuperStrAirBoxBotTransform">
+<transformation>
+   <position x = "Rh2SuperStrAirBoxBotPosX"
+             y = "Rh2SuperStrAirBoxBotPosY"
+             z = "Rh2SuperStrAirBoxBotPosZ" />
+</transformation>
+</item>
+
+<item name="PhysVolName"  value="pvRich2SuperStrAirTrapRight" />
+<item name="TransformName"  value="pvRich2SuperStrAirTrapRightTransform">
+ <transformation>
+   <position x = "Rh2SuperStrAirTrapPositivePosX"
+             y = "Rh2SuperStrAirTrapPosY"
+             z = "Rh2SuperStrAirTrapPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName"  value="pvRich2SuperStrAirTrapLeft" />
+<item name="TransformName"  value="pvRich2SuperStrAirTrapLeftTransform">
+ <transformation>
+   <position x = "Rh2SuperStrAirTrapNegativePosX"
+             y = "Rh2SuperStrAirTrapPosY"
+             z = "Rh2SuperStrAirTrapPosZ" />
+ </transformation>
+</item>
+
+</Rich2>

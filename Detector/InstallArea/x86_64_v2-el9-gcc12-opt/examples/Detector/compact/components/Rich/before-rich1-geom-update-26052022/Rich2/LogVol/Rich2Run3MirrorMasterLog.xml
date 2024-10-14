@@ -1,0 +1,145 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Mirror Master  LogVols in RUN3 configuration                        -->
+<!--  ==========================================================================-->
+
+
+<Rich2>
+
+
+<!-- The spherical mirror supports are also inside the spherical mirror master volumes -->
+<!-- The arrays of spheircal and secondary mirror segments are inside the corresponding     -->
+<!-- mirror master volumes which are essentially the containers of mirror segments    -->
+<!-- In the following the label 0 corresponds to the positive side (A Side ) and    -->
+<!-- the label 1 corresponds to negative (C side )                                -->
+
+
+
+  <!-- Spherical mirror container 0 -->
+
+  <volume name="lvRich2SphMirrorMaster0" material="Rich:R2RadiatorGas" vis= "Rich:VisRich2SphMirrMaster">
+      <shape type="BooleanShape" operation="subtraction" name="Rich2SphMirrorCont0">
+
+        <shape type="Box" name="Rich2SphMirrorMasterBox0"
+   	   dx = "Rh2SphMirrorMasterSizeX*RhHalfSize"
+	   dy = "Rh2SphMirrorMasterSizeY*RhHalfSize"
+	   dz = "Rh2SphMirrorMasterSizeZ*RhHalfSize" />
+        <shape type="ConeSegment" name="Rich2SphMirrorMasterBeamPipeHole0"
+           dz     = "Rh2SphMirrorMasterHoleSizeZ*RhHalfSize"
+           rmax1  = "Rh2SphMirrorMasterHoleRUpsSize"
+           rmax2  = "Rh2SphMirrorMasterHoleRDnsSize" />
+
+           <position x="Rh2SphMirrorMasterHole0PosX"
+	             z="Rh2SphMirrorMasterHolePosZ"/>
+
+      </shape>
+
+  </volume>
+
+  <!-- Spherical mirror container 1 -->
+  <volume name="lvRich2SphMirrorMaster1" material="Rich:R2RadiatorGas" vis="Rich:VisRich2SphMirrMaster" >
+      <shape type="BooleanShape" operation="subtraction" name="Rich2SphMirrorCont1">
+         <shape type="Box" name="Rich2SphMirrorMasterBox1"
+   	   dx = "Rh2SphMirrorMasterSizeX*RhHalfSize"
+	   dy = "Rh2SphMirrorMasterSizeY*RhHalfSize"
+	   dz = "Rh2SphMirrorMasterSizeZ*RhHalfSize" />
+
+        <shape type="ConeSegment" name="Rich2SphMirrorMasterBeamPipeHole1"
+           dz     = "Rh2SphMirrorMasterHoleSizeZ*RhHalfSize"
+           rmax1  = "Rh2SphMirrorMasterHoleRUpsSize"
+           rmax2  = "Rh2SphMirrorMasterHoleRDnsSize"/>
+
+          <position x="Rh2SphMirrorMasterHole1PosX"
+	            z="Rh2SphMirrorMasterHolePosZ"/>
+
+      </shape>
+
+  </volume>
+
+
+  <!-- Spherical mirror support -->
+  <volume name = "lvRich2SphMSupport" material = "Rich:Rich2MirrSupportMaterial" vis="Rich:VisRich2MirrSupport"  >
+     <shape type="BooleanShape" operation="subtraction" name= "Rich2SphMirrorSupport">
+         <shape type="Box" name= "Rich2SphMirrSupportBox"
+          dx = "Rh2SphMSupportSizeX*RhHalfSize"
+          dy = "Rh2SphMSupportSizeY*RhHalfSize"
+          dz = "Rh2SphMSupportSizeZ*RhHalfSize" />
+         <shape type="Tube" name= "Rich2SphSupportHole"
+          dz   = "Rh2SphMSupBeamHoleSizeZ*RhHalfSize"
+          rmax = "Rh2SphMSupBeamHoleRad" />
+         <position x="Rh2SphMSupBeamHolePosX" />
+
+    </shape>
+  </volume>
+
+
+  <!-- Secondary mirror container 0 -->
+  <volume name = "lvRich2SecMirrorMaster0" material = "Rich:R2RadiatorGas" vis="Rich:VisRich2SecMirrMaster" >
+   <shape type="BooleanShape" operation="subtraction" name= "Rich2SecMirrorMasterContBox0">
+    <shape type="Box" name="Rich2SecMirrorContBox0Full"
+      dx = "Rh2SecMirrorMasterSizeX*RhHalfSize"
+      dy = "Rh2SecMirrorMasterSizeY*RhHalfSize"
+      dz = "Rh2SecMirrorMasterSizeZ*RhHalfSize" />
+      <shape type="Box" name= "Rich2SecMirrMasterSubBox0"
+        dx="Rh2SecMirrorMasterSubLargeSizeX*RhHalfSize"
+        dy="Rh2SecMirrorMasterSubLargeSizeY*RhHalfSize"
+        dz="Rh2SecMirrorMasterSubLargeSizeZ*RhHalfSize" />
+      <position  x="Rh2SecMirrorMasterSubLargePosXPosSide"
+                 y="Rh2SecMirrorMasterSubLargePosY"
+                 z="Rh2SecMirrorMasterSubLargePosZ" />
+    </shape>
+  </volume>
+
+  <!-- Secondary mirror container 1 -->
+
+  <volume name = "lvRich2SecMirrorMaster1" material = "Rich:R2RadiatorGas" vis="Rich:VisRich2SecMirrMaster" >
+ 
+   <shape type="BooleanShape" operation="subtraction" name= "Rich2SecMirrorMasterContBox1">
+
+      <shape type="Box" name= "Rich2SecMirrorContBox1Full"
+       dx = "Rh2SecMirrorMasterSizeX*RhHalfSize"
+       dy = "Rh2SecMirrorMasterSizeY*RhHalfSize"
+       dz = "Rh2SecMirrorMasterSizeZ*RhHalfSize" />
+
+       <shape type="Box" name= "Rich2SecMirrMasterSubBox1"
+         dx="Rh2SecMirrorMasterSubLargeSizeX*RhHalfSize"
+         dy="Rh2SecMirrorMasterSubLargeSizeY*RhHalfSize"
+         dz="Rh2SecMirrorMasterSubLargeSizeZ*RhHalfSize" />
+      <position  x="Rh2SecMirrorMasterSubLargePosXNegSide"
+                 y="Rh2SecMirrorMasterSubLargePosY"
+                 z="Rh2SecMirrorMasterSubLargePosZ" />
+    </shape>
+
+  </volume>
+
+  <!-- Secondary mirror support -->
+  <volume name = "lvRich2SecMSupport" material = "Rich:Rich2MirrSupportMaterial" vis="Rich:VisRich2MirrSupport" >
+
+  <shape type="BooleanShape" operation="subtraction" name= "Rich2SecMSupportBox" >
+
+    <shape type="Box" name= "Rich2SecMSupportBoxFull"
+      dx = "Rh2SecMSupportSizeX*RhHalfSize"
+      dy = "Rh2SecMSupportSizeY*RhHalfSize"
+      dz = "Rh2SecMSupportSizeZ*RhHalfSize" />
+
+      <shape type="Box" name= "Rich2SecMSupportSubBox" 
+             dx = "Rh2SecMirrorSupportSubLargeSizeX*RhHalfSize"
+             dy = "Rh2SecMirrorSupportSubLargeSizeY*RhHalfSize"
+             dz = "Rh2SecMirrorSupportSubLargeSizeZ*RhHalfSize" />
+      <position  x="Rh2SecMirrorSupportSubPosX"
+                 y="Rh2SecMirrorSupportSubPosY"
+                 z="Rh2SecMirrorSupportSubPosZ"/>
+
+  </shape>
+
+  </volume>
+
+</Rich2>

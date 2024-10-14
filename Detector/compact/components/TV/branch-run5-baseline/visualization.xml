@@ -1,0 +1,37 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+  <display>
+    <vis name="TV"                alpha="1.0"  r="0.50" g="0.50" b="0.50"  showDaughters="true"  visible="false"/>
+    <vis name="TV:Chip"           alpha="1.0"  r="0.00" g="0.00" b="1.00"  showDaughters="false" visible="true"/>
+    <vis name="TV:Glue"           alpha="1.0"  r="0.80" g="0.80" b="0.00"  showDaughters="false" visible="true"/>
+    <vis name="TV:BumpBonds"      alpha="1.0"  r="0.70" g="0.70" b="0.00"  showDaughters="false" visible="true"/>
+    <vis name="TV:Sensor"         alpha="0.6"  r="0.90" g="0.00" b="0.00"  showDaughters="true"  visible="true"/>
+    <vis name="TV:GuardRing"      alpha="0.6"  r="0.00" g="0.90" b="0.90"  showDaughters="true"  visible="true"/>
+    <vis name="TV:Module"         alpha="1.0"  r="0.50" g="0.50" b="0.50"  showDaughters="true"  visible="true"/>
+    <vis name="TV:Hybrid"         alpha="0.8"  r="0.00" g="0.70" b="0.00"  showDaughters="true"  visible="true"/>
+    <vis name="TV:Clamp"          alpha="0.8"  r="0.90" g="0.00" b="0.20"  showDaughters="false" visible="true"/>
+    <vis name="TV:Foot"           alpha="1.0"  r="0.75" g="0.75" b="0.75"  showDaughters="true"  visible="true"/>
+    <vis name="TV:LVClamp"        alpha="1.0"  r="0.83" g="0.68" b="0.21"  showDaughters="true"  visible="true"/>
+    <vis name="TV:ModuleGBT"      alpha="0.9"  r="0.30" g="0.30" b="0.80"  showDaughters="false" visible="true"/>
+    <vis name="TV:ModuleSupport"  alpha="1.0"  r="0.60" g="0.60" b="1.00"  showDaughters="true"  visible="true"/>
+    <vis name="TV:LVCable"        alpha="0.8"  r="0.10" g="0.10" b="0.10"  showDaughters="true"  visible="true"/>
+    <vis name="TV:Assembly"       alpha="1.0"  r="0.60" g="0.60" b="1.00"  showDaughters="true"  visible="false"/>
+    <vis name="TV:RFBox"          alpha="0.5"  r="1.00" g="0.30" b="0.30"  showDaughters="true"  visible="true"/>
+    <vis name="RFFoil"            alpha="0.5"  r="0.50" g="0.50" b="0.00"  showDaughters="true"  visible="true"/>
+    <vis name="TV:RFBoxAssembly"  alpha="1.0"  r="1.00" g="0.30" b="0.30"  showDaughters="true"  visible="true"/>
+    <vis name="TV:Support"        alpha="0.7"  r="0.70" g="0.70" b="0.70"  showDaughters="true"  visible="true"/>
+    <vis name="TV:VacuumTank"     alpha="0.2"  r="0.30" g="0.70" b="1.00"  showDaughters="true"  visible="true"/>
+    <vis name="TV:WFCone"         alpha="1.0"  r="1.00" g="0.60" b="0.60"  showDaughters="true"  visible="false"/>
+  </display>
+
+</lccdd>

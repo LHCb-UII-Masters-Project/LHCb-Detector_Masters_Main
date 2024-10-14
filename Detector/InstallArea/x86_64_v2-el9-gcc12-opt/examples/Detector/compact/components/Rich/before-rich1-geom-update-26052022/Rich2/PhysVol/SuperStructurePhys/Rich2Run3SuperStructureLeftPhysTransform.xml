@@ -1,0 +1,874 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!-- Begin Rich2 super structure Left physvols                                   -->
+<!-- They are placed in the volume lvRich2SuperStrAirTrapLeft                    -->
+<!-- Names of volumes                                                           -->
+<!--  <physvol  name="pvRich2RodLeftFL" volume name="lvRich2RodRightFR">      -->
+<!--  <physvol  name="pvRich2RodLeftFM" volume name="lvRich2RodRightFR">      -->
+<!--  <physvol  name="pvRich2RodLeftFR" volume name="lvRich2RodRightFR">      -->
+<!--  <physvol  name="pvRich2RodLeftBL" volume name="lvRich2RodRightFR">      -->
+<!--  <physvol  name="pvRich2RodLeftBR" volume name="lvRich2RodRightFR">      -->
+<!--                                                                          -->
+
+<!--<physvol  name="pvRich2RodLeftXTopF" volume name="lvRich2RodRightXTopF">    -->
+<!--<physvol  name="pvRich2RodLeftXBotF" volume name="lvRich2RodRightXTopF">    -->
+<!--<physvol  name="pvRich2RodLeftXTopB" volume name="lvRich2RodRightXTopB">   -->
+<!-- <physvol  name="pvRich2RodLeftXBotB"       <volume name="lvRich2RodRightXTopB"  -->  
+<!--                                                                                 -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_1F"  <volume name="lvRich2RodRightSmallJoin1"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_1B"  <volume name="lvRich2RodRightSmallJoin1"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_2F"  <volume name="lvRich2RodRightSmallJoin1"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_2B"  <volume name="lvRich2RodRightSmallJoin1"  --> 
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_3B"  <volume name="lvRich2RodRightSmallJoin1"  --> 
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_4F"  <volume name="lvRich2RodRightSmallJoin1"  -->  
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_4B"  <volume name="lvRich2RodRightSmallJoin1"  --> 
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_5B"  <volume name="lvRich2RodRightSmallJoin1"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_6F"  <volume name="lvRich2RodRightSmallJoin1"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin1_6B"  <volume name="lvRich2RodRightSmallJoin1"  -->
+<!--                                                                                         -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin2_1"   <volume name="lvRich2RodRightSmallJoin2"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin2_2"   <volume name="lvRich2RodRightSmallJoin2"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin2_3"   <volume name="lvRich2RodRightSmallJoin2"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin2_4"   <volume name="lvRich2RodRightSmallJoin2"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin2_5"   <volume name="lvRich2RodRightSmallJoin2"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin2_6"   <volume name="lvRich2RodRightSmallJoin2"  -->
+<!-- <physvol  name="pvRich2RodLeftSmallJoin2_7"   <volume name="lvRich2RodRightSmallJoin2"  -->
+<!--                                                                                 -->
+<!-- <physvol  name="pvRich2RodLeftBigJoin1_T"     <volume name="lvRich2RodRightBigJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftBigJoin1_MT"    <volume name="lvRich2RodRightBigJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftBigJoin1_MBR"   <volume name="lvRich2RodRightBigJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftBigJoin1_MBL"   <volume name="lvRich2RodRightBigJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftBigJoin1_BR"    <volume name="lvRich2RodRightBigJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftBigJoin1_BL"    <volume name="lvRich2RodRightBigJoin1" --> 
+<!--                                                                                      -->
+<!-- <physvol  name="pvRich2RodLeftVertJoin2_FR"  <volume name="lvRich2RodRightVertJoin2">  -->
+<!-- <physvol  name="pvRich2RodLeftVertJoin2_FL"  <volume name="lvRich2RodRightVertJoin2">  -->
+<!-- <physvol  name="pvRich2RodLeftVertJoin2_BR"  <volume name="lvRich2RodRightVertJoin2">  -->
+<!-- <physvol  name="pvRich2RodLeftVertJoin2_BL"  <volume name="lvRich2RodRightVertJoin2">  -->
+<!--                                                                                        -->
+<!-- <physvol  name="pvRich2RodLeftAngleJoin1_1"   <volume name="lvRich2RodRightAngleJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftAngleJoin1_2"   <volume name="lvRich2RodRightAngleJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftAngleJoin1_3"   <volume name="lvRich2RodRightAngleJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftAngleJoin1_4"   <volume name="lvRich2RodRightAngleJoin1" -->
+<!--                                                                                        -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin1_F"  <volume name="lvRich2RodRightVertJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin1_B"  <volume name="lvRich2RodRightVertJoin1" -->
+<!--                                                                                        -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin2_F"  <volume name="lvRich2RodRightAngleJoin2" -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin2_B"  <volume name="lvRich2RodRightAngleJoin2" -->
+<!--                                                                                        -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin_FR"  <volume name="lvRich2RodRightVertAngJoin" -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin_FL"  <volume name="lvRich2RodRightVertAngJoin" -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin_BR"  <volume name="lvRich2RodRightVertAngJoin" -->
+<!-- <physvol  name="pvRich2RodLeftVertAngJoin_BL"  <volume name="lvRich2RodRightVertAngJoin" -->
+<!--                                                                                        -->
+<!-- <physvol  name="pvRich2RodLeftHorAngEdge_FH"   <volume name="lvRich2RodRightHorAngEdge" -->
+<!-- <physvol  name="pvRich2RodLeftHorAngEdge_FL"   <volume name="lvRich2RodRightHorAngEdge" -->
+<!-- <physvol  name="pvRich2RodLeftHorAngEdge_BH"   <volume name="lvRich2RodRightHorAngEdge" --> 
+<!-- <physvol  name="pvRich2RodLeftHorAngEdge_BL"   <volume name="lvRich2RodRightHorAngEdge" -->
+<!--                                                                                        -->
+<!-- <physvol  name="pvRich2RodLeftVertJoinEdge_FL" <volume name="lvRich2RodRightVertJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftVertJoinEdge_FR" <volume name="lvRich2RodRightVertJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftVertJoinEdge_BR" <volume name="lvRich2RodRightVertJoin1" -->
+<!-- <physvol  name="pvRich2RodLeftVertJoinEdge_BL" <volume name="lvRich2RodRightVertJoin1" -->
+<!--                                                                                        -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_R1"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_R2"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_R3"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_R4"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_L1"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_L2"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_L3"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--  <physvol  name="pvRich2RodLeftSpacer_L4"  <volume name="lvRich2RodRightShieldSupSpacer" -->
+<!--                                                                                        -->
+<!--  <physvol  name="pvRich2RodLeftShieldSup_1"  <volume name="lvRich2RodRightShieldSup1"  --> 
+<!--  <physvol  name="pvRich2RodLeftShieldSup_2"  <volume name="lvRich2RodRightShieldSup2"  --> 
+<!--  <physvol  name="pvRich2RodLeftShieldSup_3"  <volume name="lvRich2RodRightShieldSup3"  --> 
+<!--  <physvol  name="pvRich2RodLeftShieldSup_4"  <volume name="lvRich2RodRightShieldSup4"  --> 
+<!--                                                                                        -->
+<!--  <physvol  name="pvRich2RodLeftHorDiag_1"   <volume name="lvRich2RodRightHorDiag1"  --> 
+<!--  <physvol  name="pvRich2RodLeftHorDiag_2"   <volume name="lvRich2RodRightHorDiag2"  --> 
+
+
+
+<Rich2>
+
+<!-- Long Vertical Rods -->
+<item name="PhysVolName"   value="pvRich2RodLeftFL" />
+<item name="LogVolName"   value="lvRich2RodRightFR"/>
+<item name="TransformName"  value="pvRich2RodLeftFLTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "0.0*mm"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftFM" />
+<item name="LogVolName"   value="lvRich2RodRightFR"/>
+<item name="TransformName"  value="pvRich2RodLeftFMTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFMXPos"
+            y = "0.0*mm"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftFR" />
+<item name="LogVolName"   value="lvRich2RodRightFR"/>
+<item name="TransformName"  value="pvRich2RodLeftFRTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFLXPos"
+            y = "0.0*mm"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftBL" />
+<item name="LogVolName"   value="lvRich2RodRightFR"/>
+<item name="TransformName"  value="pvRich2RodLeftBLTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "0.0*mm"
+            z = "-1.0*Rh2RodRightFRZPos" /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftBR" />
+<item name="LogVolName"   value="lvRich2RodRightFR"/>
+<item name="TransformName"  value="pvRich2RodLeftBRTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFMXPos"
+            y = "0.0*mm"
+            z = "-1.0*Rh2RodRightFRZPos" /> 
+ </transformation>
+
+</item>
+
+
+
+<!-- Medium Horizontal Rods on Top and Bottom, Front and Back -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftXTopF"/>
+<item name="LogVolName"   value="lvRich2RodRightXTopF"/>
+<item name="TransformName"  value="pvRich2RodLeftXTopFTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightXTopFXPos"
+            y = "Rh2RodRightXTopFYPos"
+            z = "Rh2RodRightFRZPos" />
+ </transformation> 
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftXBotF" />
+<item name="LogVolName"   value="lvRich2RodRightXTopF"/>
+<item name="TransformName"  value="pvRich2RodLeftXBotFTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightXTopFXPos"
+            y = "-1.0*Rh2RodRightXTopFYPos"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftXTopB" />
+<item name="LogVolName"   value="lvRich2RodRightXTopB"/>
+<item name="TransformName"  value="pvRich2RodLeftXTopBTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightXTopBXPos"
+            y = "Rh2RodRightXTopBYPos"
+            z = "-1.0*Rh2RodRightFRZPos" /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftXBotB" />
+<item name="LogVolName"   value="lvRich2RodRightXTopB"/>
+<item name="TransformName"  value="pvRich2RodLeftXBotBTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightXTopBXPos"
+            y = "-1.0*Rh2RodRightXTopBYPos"
+            z = "-1.0*Rh2RodRightFRZPos" /> 
+ </transformation>
+</item>
+
+ <!-- Small horizontal connectors between Long Vertical Rods (Number Increases going down e.g. 1=top 6=bottom) -->
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_1F" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_1FTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos1"
+            z = "Rh2RodRightFRZPos" />  
+ </transformation>
+
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_1B" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_1BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos1"
+            z = "-1.0*Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_2F" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_2FTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos2"
+            z = "Rh2RodRightFRZPos" />  
+ </transformation>
+</item>
+
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_2B" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_2BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos2"
+            z = "-1.0*Rh2RodRightFRZPos" />  
+ </transformation>
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_3B" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_3BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos3"
+            z = "-1.0*Rh2RodRightFRZPos" /> 
+ </transformation> 
+
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_4F"/>
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_4FTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos4"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_4B" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_4BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos4"
+            z = "-1.0*Rh2RodRightFRZPos" />  
+ </transformation>
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_5B" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_5BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos5"
+            z = "-1.0*Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_6F" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_6FTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos6"
+            z = "Rh2RodRightFRZPos" />  
+ </transformation>
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin1_6B" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin1_6BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin1XPos"
+            y = "Rh2RodRightSmallJoin1YPos6"
+            z = "-1.0*Rh2RodRightFRZPos" />  
+ </transformation>
+</item>
+
+ <!-- Small/Medium Horizontal connectors between Long Vertical Rods (Number Increases going down e.g. 1=top 7=bottom) -->
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin2_1" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin2_1Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos1"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin2_2" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin2_2Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos2"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin2_3" />
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin2_3Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos3"
+            z = "Rh2RodRightFRZPos" />  
+ </transformation>
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin2_4"/>
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin2_4Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos4"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin2_5"/>
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin2_5Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos5"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin2_6"/>
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin2_6Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightFRZPos" /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"  value="pvRich2RodLeftSmallJoin2_7"/>
+<item name="LogVolName"   value="lvRich2RodRightSmallJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftSmallJoin2_7Transform">
+ <transformation>
+  <position  x = "-1.0*Rh2RodRightSmallJoin2XPos"
+             y = "Rh2RodRightSmallJoin2YPos7"
+             z = "Rh2RodRightFRZPos" />   
+ </transformation>
+</item>
+ <!-- Medium Z-direction connectors between Long Vertical Rods (T=top MT=middle/top MB=middle/bottom B=bottom) -->
+<item name="PhysVolName"   value="pvRich2RodLeftBigJoin1_T" />
+<item name="LogVolName"   value="lvRich2RodRightBigJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftBigJoin1_TTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "Rh2RodRightXTopFYPos"
+            z = "0.0*mm"  />   
+ </transformation>
+</item>
+
+
+<item name="PhysVolName"   value="pvRich2RodLeftBigJoin1_MT" />
+<item name="LogVolName"   value="lvRich2RodRightBigJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftBigJoin1_MTTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "Rh2RodRightSmallJoin1YPos4"
+            z = "0.0*mm"  /> 
+ </transformation>
+</item>
+  
+<item name="PhysVolName"   value="pvRich2RodLeftBigJoin1_MBR" />
+<item name="LogVolName"   value="lvRich2RodRightBigJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftBigJoin1_MBRTransform">
+
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "Rh2RodRightBigJoin1YPos6"
+            z = "0.0*mm"  />   
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftBigJoin1_MBL" />
+<item name="LogVolName"   value="lvRich2RodRightBigJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftBigJoin1_MBLTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFMXPos"
+            y = "Rh2RodRightBigJoin1YPos6"
+            z = "0.0*mm"  /> 
+ </transformation> 
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftBigJoin1_BR" />
+<item name="LogVolName"   value="lvRich2RodRightBigJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftBigJoin1_BRTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "-1.0*Rh2RodRightXTopFYPos"
+            z = "0.0*mm"  />   
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftBigJoin1_BL" />
+<item name="LogVolName"   value="lvRich2RodRightBigJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftBigJoin1_BLTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFMXPos+60*mm"
+            y = "-1.0*Rh2RodRightXTopFYPos"
+            z = "0.0*mm"  />   
+ </transformation>
+</item>
+
+ <!-- Medium Y-direction connectors between Medium Z-direction connectors (F=front B=back) -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoin2_FR" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoin2_FRTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "Rh2RodRightVertJoin2YPos"
+            z = "-1.0*Rh2RodRightVertJoin1ZPos"  />
+ </transformation> 
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoin2_FL" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoin2_FLTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFMXPos"
+            y = "Rh2RodRightVertJoin2YPos"
+            z = "-1.0*Rh2RodRightVertJoin1ZPos"  /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoin2_BR" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoin2_BRTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFRXPos"
+            y = "Rh2RodRightVertJoin2YPos"
+            z = "Rh2RodRightVertJoin1ZPos"  /> 
+ </transformation>
+</item>
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoin2_BL" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoin2_BLTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightFMXPos"
+            y = "Rh2RodRightVertJoin2YPos"
+            z = "Rh2RodRightVertJoin1ZPos"  /> 
+ </transformation>
+</item>
+
+ <!-- Medium Z/X-angled connectors between Long Vertical Rods (1=top 4=bottom) -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftAngleJoin1_1" />
+<item name="LogVolName"   value="lvRich2RodRightAngleJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftAngleJoin1_1Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightXTopFYPos"
+            z = "0.0*mm"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" />   
+ </transformation>
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftAngleJoin1_2" />
+<item name="LogVolName"   value="lvRich2RodRightAngleJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftAngleJoin1_2Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos4"
+            z = "0.0*mm"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" />   
+ </transformation>
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftAngleJoin1_3" />
+<item name="LogVolName"   value="lvRich2RodRightAngleJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftAngleJoin1_3Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "0.0*mm"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" />   
+ </transformation>
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftAngleJoin1_4" />
+<item name="LogVolName"   value="lvRich2RodRightAngleJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftAngleJoin1_4Transform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos"
+            y = "-1.0*Rh2RodRightXTopFYPos"
+            z = "0.0*mm"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" />
+ </transformation>   
+
+</item> 
+
+
+ <!-- Medium Vertical Y-rotated connectors between Medium Z/X-angled Rods (F=front B=back) (Only lower pairs) -->
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin1_F" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin1_FTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos-84*mm"
+            y = "Rh2RodRightVertAngJoin1YPos"
+            z = "-1.0*Rh2RodRightVertJoin1ZPos"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" />  
+ </transformation> 
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin1_B" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin1_BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos+84*mm"
+            y = "Rh2RodRightVertAngJoin1YPos"
+            z = "Rh2RodRightVertJoin1ZPos"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" /> 
+ </transformation> 
+</item> 
+
+ <!-- Medium Vertical Y-rotated connectors between Medium Z/X-angled Rods (F=front B=back) (Only higher pairs) -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin2_F" />
+<item name="LogVolName"   value="lvRich2RodRightAngleJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin2_FTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos-84*mm"
+            y = "Rh2RodRightVertAngJoin2YPos"
+            z = "-1.0*Rh2RodRightVertJoin1ZPos"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" />   
+ </transformation>
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin2_B" />
+<item name="LogVolName"   value="lvRich2RodRightAngleJoin2"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin2_BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2RodRightSmallJoin2XPos+84*mm"
+            y = "Rh2RodRightVertAngJoin2YPos"
+            z = "Rh2RodRightVertJoin1ZPos"  />
+  <rotation y = "-1.0*Rh2RodRightAngleJoin1Rot" />  
+ </transformation> 
+</item> 
+
+ <!-- Medium Vertical X-rotated connectors in bottom section (F=front B=back) -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin_FR" />
+<item name="LogVolName"   value="lvRich2RodRightVertAngJoin"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin_FRTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFRXPos"
+            y = "Rh2RodRightVertAngJoinYPos"
+            z = "-1*Rh2RodRightVertAngJoinZPos"  />
+  <rotation x = "-1.0*Rh2RodRightVertAngJoinRot" /> 
+ </transformation>  
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin_FL" />
+<item name="LogVolName"   value="lvRich2RodRightVertAngJoin"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin_FLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFMXPos"
+            y = "Rh2RodRightVertAngJoinYPos"
+            z = "-1*Rh2RodRightVertAngJoinZPos"  />
+  <rotation x = "-1.0*Rh2RodRightVertAngJoinRot" />  
+ </transformation>
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin_BR" />
+<item name="LogVolName"   value="lvRich2RodRightVertAngJoin"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin_BRTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFRXPos"
+            y = "Rh2RodRightVertAngJoinYPos"
+            z = "Rh2RodRightVertAngJoinZPos"  />
+  <rotation x = "Rh2RodRightVertAngJoinRot" />   
+ </transformation>
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertAngJoin_BL" />
+<item name="LogVolName"   value="lvRich2RodRightVertAngJoin"/>
+<item name="TransformName"  value="pvRich2RodLeftVertAngJoin_BLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFMXPos"
+            y = "Rh2RodRightVertAngJoinYPos"
+            z = "Rh2RodRightVertAngJoinZPos"  />
+  <rotation x = "Rh2RodRightVertAngJoinRot" />   
+ </transformation>
+</item> 
+
+<!-- Y-rotated Horizontal rods forming bit sticking out at bottom of side assembly -->
+<item name="PhysVolName"   value="pvRich2RodLeftHorAngEdge_FH" />
+<item name="LogVolName"   value="lvRich2RodRightHorAngEdge"/>
+<item name="TransformName"  value="pvRich2RodLeftHorAngEdge_FHTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightHorAngEdgeXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "-1*Rh2RodRightHorAngEdgeZPos"  />
+  <rotation y = "Rh2RodRightHorAngEdgeRot" />   
+ </transformation>
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftHorAngEdge_FL" />
+<item name="LogVolName"   value="lvRich2RodRightHorAngEdge"/>
+<item name="TransformName"  value="pvRich2RodLeftHorAngEdge_FLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightHorAngEdgeXPos"
+            y = "Rh2RodRightHorAngEdgeYPos"
+            z = "-1*Rh2RodRightHorAngEdgeZPos"  />
+  <rotation y = "Rh2RodRightHorAngEdgeRot" />  
+ </transformation> 
+</item> 
+
+<item name="PhysVolName"   value="pvRich2RodLeftHorAngEdge_BH" />
+<item name="LogVolName"   value="lvRich2RodRightHorAngEdge"/>
+<item name="TransformName"  value="pvRich2RodLeftHorAngEdge_BHTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightHorAngEdgeXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightHorAngEdgeZPos"  />
+  <rotation y = "-1*Rh2RodRightHorAngEdgeRot" /> 
+ </transformation>
+</item> 
+  
+<item name="PhysVolName"   value="pvRich2RodLeftHorAngEdge_BL" />
+<item name="LogVolName"   value="lvRich2RodRightHorAngEdge"/>
+<item name="TransformName"  value="pvRich2RodLeftHorAngEdge_BLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightHorAngEdgeXPos"
+            y = "Rh2RodRightHorAngEdgeYPos"
+            z = "Rh2RodRightHorAngEdgeZPos"  />
+  <rotation y = "-1*Rh2RodRightHorAngEdgeRot" /> 
+ </transformation>  
+</item> 
+<!-- Y-rotated Vertical connectors in bit sticking out at bottom of side assembly -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoinEdge_FL" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoinEdge_FLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightVertJoinEdgeXPosR"
+            y = "Rh2RodRightVertJoin1YPos+Rh2SqRodCrossSection3"
+            z = "Rh2RodRightVertJoinEdgeZPosF"  />
+  <rotation y = "Rh2RodRightHorAngEdgeRot" />
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoinEdge_FR" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoinEdge_FRTransform">
+
+ <transformation>
+  <position x = "-1*Rh2RodRightVertJoinEdgeXPosL"
+            y = "Rh2RodRightVertJoin1YPos+Rh2SqRodCrossSection3"
+            z = "Rh2RodRightVertJoinEdgeZPosB"  />
+  <rotation y = "Rh2RodRightHorAngEdgeRot" />  
+ </transformation>
+</item>   
+ 
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoinEdge_BR" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoinEdge_BRTransform">
+ <transformation>
+  <position x = "-1*Rh2RodRightVertJoinEdgeXPosL"
+            y = "Rh2RodRightVertJoin1YPos+Rh2SqRodCrossSection3"
+            z = "-1*Rh2RodRightVertJoinEdgeZPosB"  />
+  <rotation y = "-1*Rh2RodRightHorAngEdgeRot" />   
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftVertJoinEdge_BL" />
+<item name="LogVolName"   value="lvRich2RodRightVertJoin1"/>
+<item name="TransformName"  value="pvRich2RodLeftVertJoinEdge_BLTransform">
+ <transformation>
+
+  <position x = "-1*Rh2RodRightVertJoinEdgeXPosR"
+            y = "Rh2RodRightVertJoin1YPos+Rh2SqRodCrossSection3"
+            z = "-1*Rh2RodRightVertJoinEdgeZPosF"  />
+  <rotation y = "-1*Rh2RodRightHorAngEdgeRot" />   
+ </transformation>
+</item>   
+
+ <!-- Shield Support spacers (Count from Front to Back) -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_R1" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_R1Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFRXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer1ZPos"  />   
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_R2" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_R2Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFRXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer2ZPos"  /> 
+ </transformation>  
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_R3" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_R3Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFRXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer3ZPos"  />  
+ </transformation> 
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_R4" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_R4Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFRXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer4ZPos"  />  
+ </transformation> 
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_L1" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_L1Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFMXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer1LZPos"  />   
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_L2" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_L2Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFMXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer2LZPos"  />  
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_L3" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_L3Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFMXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer3LZPos"  />  
+ </transformation> 
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftSpacer_L4" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSupSpacer"/>
+<item name="TransformName"  value="pvRich2RodLeftSpacer_L4Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightFMXPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightSpacer4LZPos"  />   
+ </transformation>
+
+</item>   
+
+ <!-- Shield Support Rods (Count from Front to Back; 1=longest 4=shortest) -->
+
+<item name="PhysVolName"   value="pvRich2RodLeftShieldSup_1" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSup1"/>
+<item name="TransformName"  value="pvRich2RodLeftShieldSup_1Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightShieldSupXPos1"
+            y = "Rh2RodRightShieldSupYPos"
+            z = "Rh2RodRightShieldSupZPos1"  />
+  <rotation y = "Rh2RodRightShieldSupRot" />
+ </transformation>
+</item>   
+   
+<item name="PhysVolName"   value="pvRich2RodLeftShieldSup_2" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSup1"/>
+<item name="TransformName"  value="pvRich2RodLeftShieldSup_2Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightShieldSupXPos2"
+            y = "Rh2RodRightShieldSupYPos"
+            z = "Rh2RodRightShieldSupZPos2"  />
+  <rotation y  = "Rh2RodRightShieldSupRot" />   
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftShieldSup_3" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSup1"/>
+<item name="TransformName"  value="pvRich2RodLeftShieldSup_3Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightShieldSupXPos3"
+            y = "Rh2RodRightShieldSupYPos"
+            z = "Rh2RodRightShieldSupZPos3"  />
+  <rotation y = "Rh2RodRightShieldSupRot"  />  
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftShieldSup_4" />
+<item name="LogVolName"   value="lvRich2RodRightShieldSup1"/>
+<item name="TransformName"  value="pvRich2RodLeftShieldSup_4Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightShieldSupXPos4"
+            y = "Rh2RodRightShieldSupYPos"
+            z = "Rh2RodRightShieldSupZPos4"  />
+  <rotation y = "Rh2RodRightShieldSupRot" />   
+ </transformation>
+</item>   
+ <!-- Medium Horizontal Diagonal connectors on top of bottom of side (1=long, 2=short) -->
+<item name="PhysVolName"   value="pvRich2RodLeftHorDiag_1" />
+<item name="LogVolName"   value="lvRich2RodRightHorDiag1"/>
+<item name="TransformName"  value="pvRich2RodLeftHorDiag_1Transform">
+ <transformation>
+  <position x = "-1*Rh2RodRightHorDiag1XPos"
+            y = "Rh2RodRightSmallJoin2YPos6"
+            z = "Rh2RodRightHorDiag1ZPos"  />
+  <rotation y = "Rh2RodRightShieldSupRot" />  
+ </transformation>
+</item>   
+
+<item name="PhysVolName"   value="pvRich2RodLeftHorDiag_2" />
+<item name="LogVolName"   value="lvRich2RodRightHorDiag2"/>
+<item name="TransformName"  value="pvRich2RodLeftHorDiag_2Transform">
+ <transformation>
+
+  <position  x  = "-1*Rh2RodRightHorDiag2XPos"
+             y  = "Rh2RodRightSmallJoin2YPos6"
+             z  = "Rh2RodRightHorDiag2ZPos"  />
+  <rotation  y  = "Rh2RodRightShieldSupRot" />  
+ </transformation>  
+</item>   
+
+
+
+
+
+
+
+</Rich2>

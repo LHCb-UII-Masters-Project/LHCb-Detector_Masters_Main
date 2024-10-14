@@ -1,0 +1,45 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--    Begin Rich2 quartz window physvols  -->
+<!--  They are inside the lvRich2Master volume -->
+<!--  The label 0 is for the positive X side which is the A side -->
+<!--  The label 1 is for the negative X side which is the C side -->
+
+<!-- old names of physvol and logvol                   -->
+<!-- <physvol  name="pvRich2QuartzWindow:0   <volume name="lvRich2QuartzWindow"-->
+<!-- <physvol  name="pvRich2QuartzWindow:1   <volume name="lvRich2QuartzWindow"-->
+<!-- new  names of physvol and logvol                   -->
+<!-- <physvol  name="pvRich2QuartzWindow0   <volume name="lvRich2QuartzWindow"-->
+<!-- <physvol  name="pvRich2QuartzWindow1   <volume name="lvRich2QuartzWindow"-->
+<Rich2>
+
+    <item name="PhysVolName"    value="pvRich2QuartzWindow0" />
+    <item name="TransformName"  value="pvRich2QuartzWindow0Transform">
+      <transformation>
+           <position  x = "Rh2QuartzWindowPositivePosX"
+                      y = "Rh2QuartzWindowPosY"
+                      z = "Rh2QuartzWindowPosZ" />
+           <rotation  y = "Rh2SideGasAngle" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2QuartzWindow1" />
+    <item name="TransformName"  value="pvRich2QuartzWindow1Transform">
+      <transformation>
+           <position  x = "Rh2QuartzWindowNegativePosX"
+                      y = "Rh2QuartzWindowPosY"
+                      z = "Rh2QuartzWindowPosZ" />
+           <rotation  y = "Rh2SideGasNegAngle" />
+      </transformation>
+    </item>
+</Rich2>

@@ -1,0 +1,129 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe downstream support                       -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+
+    <constant name="UX854SlSupRodLength" value="154.0*mm"/>
+    <constant name="UX854SlSupRailBaseThick" value="15.0*mm"/>
+    <constant name="UX854SlSupFootBaseY" value="230.0*mm"/>
+    <constant name="UX854SlSupFootBaseX" value="220.0*mm"/>
+    <constant name="UX854SlSupRailBaseHoleOffset" value="10.0*mm"/>
+    <constant name="UX854SlSupTrolleyWheelThick" value="8.0*mm"/>
+    <constant name="UX854SlSupTopHoleInnerRad" value="4.0*mm + 0.01*mm"/>
+    <constant name="UX854SlSupFootTopHoleOffset" value="15.0*mm"/>
+    <constant name="UX854SlSupFootTopThick" value="15.0*mm"/>
+    <constant name="UX854SlSupTopHolePosY" value="80.0*mm"/>
+    <constant name="UX854SlSupTopHolePosX" value="90.0*mm"/>
+    <constant name="UX854SlSupFootTubeLength" value="157.0*mm"/>
+    <constant name="UX854SlSupFootTubeThick" value="4.5*mm"/>
+    <constant name="UX854SlSupFootShimWidth" value="50.0*mm"/>
+    <constant name="UX854SlSupTopHoleCentRad" value="6.5*mm"/>
+    <constant name="UX854SlSupTrolleyPlateCutPosY" value="6.5*mm"/>
+    <constant name="UX854SlSupTopHoleInnerPosY" value="66.0*mm"/>
+    <constant name="UX854SlSupTopHoleCentOffset" value="12.0*mm"/>
+    <constant name="UX854SlSupRailCoverWidth" value="5.0*mm"/>
+    <constant name="UX854SlSupTrolleyPlateHeight" value="30.7*mm"/>
+    <constant name="UX854SlSupTopThick" value="15.0*mm"/>
+    <constant name="UX854SlSupWasherThick" value="6.0*mm"/>
+    <constant name="UX854SlSupTopX" value="220.0*mm"/>
+    <constant name="UX854SlSupTopY" value="200.0*mm"/>
+    <constant name="UX854SlSupFootTopHolePosY" value="80.0*mm"/>
+    <constant name="UX854SlSupTrolleyPinLength" value="83.5*mm"/>
+    <constant name="UX854SlSupFootShimThick" value="10.0*mm"/>
+    <constant name="UX854SlSupNutLength" value="10.0*mm"/>
+    <constant name="UX854SlSupRailCoverThick" value="19.9*mm"/>
+    <constant name="UX854SlSupRodRad" value="6.0*mm"/>
+    <constant name="UX854SlSupTrolleyPlateHolePosY" value="5.35*mm"/>
+    <constant name="UX854SlSupRailBlockHeight" value="28.2*mm"/>
+    <constant name="UX854SlSupLowSeparation" value="80.0*mm"/>
+    <constant name="UX854SlSupTrolleyPlateWidth" value="68.0*mm"/>
+    <constant name="UX854SlSupRailBaseY" value="152.0*mm"/>
+    <constant name="UX854SlSupRailBaseX" value="120.0*mm"/>
+    <constant name="UX854SlSupNutThick" value="4.0*mm"/>
+    <constant name="UX854SlSupRailBaseHoleRad" value="4.5*mm"/>
+    <constant name="UX854SlSupRailScrewHeadLength" value="7.0*mm"/>
+    <constant name="UX854SlSupRailPosY" value="49.0*mm"/>
+    <constant name="UX854SlSupTrolleyPinRad" value="6.0*mm"/>
+    <constant name="UX854SlSupWasherLenght" value="7.0*mm"/>
+    <constant name="UX854SlSupRailBlockWidth" value="11.75*mm"/>
+    <constant name="UX854SlSupTrolleyWheelWidth" value="8.0*mm"/>
+    <constant name="UX854SlSupFootTopCentralHoleRad" value="28.0*mm"/>
+    <constant name="UX854SlSupFootBaseThick" value="20.0*mm"/>
+    <constant name="UX854SlSupFootTubeWidth" value="110.0*mm"/>
+    <constant name="UX854SlSupFootTopX" value="220.0*mm"/>
+    <constant name="UX854SlSupFootTopY" value="230.0*mm"/>
+    <constant name="UX854SlSupTrolleyPlateBlockLength" value="30.0*mm"/>
+    <constant name="UX854SlSupTopHoleInnerPosX" value="30.0*mm"/>
+    <constant name="UX854SlSupFootTopHoleRad" value="6.5*mm"/>
+    <constant name="UX854SlSupRailRodLength" value="70.0*mm"/>
+    <constant name="UX854SlSupRailBaseHolePosX" value="30.0*mm"/>
+    <constant name="UX854SlSupRailBaseHolePosY" value="66.0*mm"/>
+    <constant name="UX854SlSupFootTopHolePosX" value="90.0*mm"/>
+    <constant name="UX854SlSupRailScrewHeadRad" value="7.0*mm"/>
+    <constant name="UX854SlSupRailBaseHoleLength" value="UX854SlSupRailBaseHoleOffset*2 + 0.1*mm"/>
+    <constant name="UX854SlSupRailScrewRad" value="UX854SlSupTopHoleInnerRad - 0.01*mm"/>
+    <constant name="UX854SlSupFootTopHoleLength" value="UX854SlSupFootTopHoleOffset*2 + 0.1*mm"/>
+    <constant name="UX854SlSupRodAssPosY" value="UX854SlSupTopHolePosY"/>
+    <constant name="UX854SlSupRodAssPosX" value="UX854SlSupTopHolePosX"/>
+    <constant name="UX854SlSupFootTubePosZ" value="-UX854SlSupFootTopThick/2 - UX854SlSupFootTubeLength/2 - 0.01*mm"/>
+    <constant name="UX854SlSupFootShimPosX" value="UX854SlSupFootBaseX/2 - UX854SlSupFootShimWidth/2"/>
+    <constant name="UX854SlSupFootShimPosY" value="UX854SlSupFootBaseY/2 - UX854SlSupFootShimWidth/2"/>
+    <constant name="UX854SlSupTopHoleCentWidth" value="UX854SlSupTopHoleCentRad*2"/>
+    <constant name="UX854SlSupTopHoleCentLength" value="UX854SlSupTopHoleCentOffset*2 + 0.1*mm"/>
+    <constant name="UX854SlSupRailScrewLength" value="UX854SlSupTopThick + UX854SlSupRailBaseThick"/>
+    <constant name="UX854SlSupLowPosZ" value="UX854SlSupTopThick + 0.01*mm"/>
+    <constant name="UX854SlSupRodAssPosZ" value="UX854SlSupRodLength/2 - UX854SlSupTopThick/2"/>
+    <constant name="UX854SlSupRodAssNut1PosZ" value="UX854SlSupRodLength/2 - UX854SlSupNutLength/2 - UX854SlSupTopThick - 0.01*mm"/>
+    <constant name="UX854SlSupRailNut1PosZ" value="-UX854SlSupRailBaseThick/2 - UX854SlSupFootTopThick - UX854SlSupNutLength/2 - 5.0*mm"/>
+    <constant name="UX854SlSupWasherRad" value="UX854SlSupRodRad + 0.01*mm"/>
+    <constant name="UX854SlSupNutRad" value="UX854SlSupRodRad + 0.01*mm"/>
+    <constant name="UX854SlSupRailRodRad" value="UX854SlSupRodRad"/>
+    <constant name="UX854SlSupTopHoleRad" value="UX854SlSupRodRad + 0.01*mm"/>
+    <constant name="UX854SlSupTrolleyHolePosY" value="UX854SlSupTrolleyPlateHolePosY"/>
+    <constant name="UX854SlSupRailPosZ" value="UX854SlSupRailBaseThick/2 + UX854SlSupRailBlockHeight/2 + 0.01*mm"/>
+    <constant name="UX854SlSupFootPosZ" value="UX854SlSupLowSeparation + UX854SlSupTopThick/2 + UX854SlSupFootTopThick/2"/>
+    <constant name="UX854SlSupTrolleyPlateLength" value="UX854SlSupRailBaseX"/>
+    <constant name="UX854SlSupRailBlockLength" value="UX854SlSupRailBaseX"/>
+    <constant name="UX854SlSupRailBaseHoleWidth" value="UX854SlSupRailBaseHoleRad*2"/>
+    <constant name="UX854SlSupRailScrewPosZ" value="UX854SlSupTopThick/2 + UX854SlSupRailScrewHeadLength/2 + 0.01*mm"/>
+    <constant name="UX854SlSupTrolleyWheelRad" value="UX854SlSupTrolleyPinRad + 0.01*mm"/>
+    <constant name="UX854SlSupTrolleyPlateHoleRad" value="UX854SlSupTrolleyPinRad + 0.01*mm"/>
+    <constant name="UX854SlSupRailCoverPosY" value="UX854SlSupRailPosY + UX854SlSupRailBlockWidth/2 - UX854SlSupRailCoverThick/2"/>
+    <constant name="UX854SlSupTrolleyWheelPosZ" value="UX854SlSupTrolleyPlateWidth/2 + UX854SlSupTrolleyWheelWidth/2 + 0.01*mm"/>
+    <constant name="UX854SlSupFootTopHoleWidth" value="UX854SlSupFootTopHoleRad*2"/>
+    <constant name="UX854SlSupRailRodPosZ" value="UX854SlSupRailBaseThick/2 - UX854SlSupRailRodLength/2"/>
+    <constant name="UX854SlSupRailScrewPosX" value="UX854SlSupRailBaseHolePosX"/>
+    <constant name="UX854SlSupRailScrewPosY" value="UX854SlSupRailBaseHolePosY"/>
+    <constant name="UX854SlSupFootBasePosZ" value="UX854SlSupFootTubePosZ - UX854SlSupFootTubeLength/2 - UX854SlSupFootBaseThick/2 - 0.01*mm"/>
+    <constant name="UX854SlSupRodAssWasher1PosZ" value="UX854SlSupRodAssNut1PosZ + UX854SlSupNutLength/2 - UX854SlSupLowSeparation + UX854SlSupWasherLenght/2 + 0.01*mm"/>
+    <constant name="UX854SlSupRailNut2PosZ" value="UX854SlSupRailNut1PosZ - UX854SlSupNutLength - 0.01*mm"/>
+    <constant name="UX854SlSupRailBaseCentralHoleRad" value="UX854SlSupRailRodRad + 0.01*mm"/>
+    <constant name="UX854SlSupRailCoverPosZ" value="UX854SlSupRailPosZ + UX854SlSupRailBlockHeight/2 + UX854SlSupRailCoverWidth/2 + 0.01*mm "/>
+    <constant name="UX854SlSupTrolleyPlateCutPosX" value="UX854SlSupTrolleyPlateLength/2 + UX854SlSupTrolleyPlateBlockLength/2 "/>
+    <constant name="UX854SlSupRailCoverLength" value="UX854SlSupRailBlockLength"/>
+    <constant name="UX854SlSupRailTrollPosZ" value="UX854SlSupRailBaseThick/2 + UX854SlSupTrolleyPlateHolePosY + UX854SlSupTrolleyWheelRad + UX854SlSupTrolleyWheelThick + 0.01*mm"/>
+    <constant name="UX854SlSupFootShimPosZ" value="UX854SlSupFootBasePosZ - UX854SlSupFootBaseThick/2 - UX854SlSupFootShimThick/2 - 0.01*mm"/>
+    <constant name="UX854SlSupRodAssWasher2PosZ" value="UX854SlSupRodAssWasher1PosZ - UX854SlSupFootTopThick - UX854SlSupWasherLenght - 0.02*mm"/>
+    <constant name="UX854SlSupRodAssNut2PosZ" value="UX854SlSupRodAssWasher1PosZ + UX854SlSupNutLength/2 + UX854SlSupWasherLenght/2 + 0.01*mm"/>
+    <constant name="UX854SlSupRodAssNut3PosZ" value="UX854SlSupRodAssWasher2PosZ - UX854SlSupWasherLenght/2 - UX854SlSupNutLength/2 -0.01*mm"/>
+    <constant name="UX853CollarDownstreamSize"    value="UX853CollarSize - UX853CollarRich2Size"/>
+
+    <constant name="UX853CableDownstreamLenght"   value="3700.00*mm"/>
+    <constant name="UX853CableDownstreamRadius"   value="2.50*mm"/>
+    <constant name="UX853CableDownstreamZpos"     value="UX853CableZposIP - UX853Rich2DownSplitZposIP"/>
+    <constant name="UX853CableDownstreamXYpos"    value="(UX853CollarOuterRadius + 0.5*UX853CableDownstreamLenght)"/>
+  </define>
+
+</lccdd>

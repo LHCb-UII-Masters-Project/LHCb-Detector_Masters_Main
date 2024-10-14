@@ -1,0 +1,27 @@
+---
+M2ASide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M2CSide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M2Station: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M3ASide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M3CSide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M3Station: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M4ASide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M4CSide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M4Station: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M5ASide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M5CSide: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+M5Station: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+MuonSystem: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]

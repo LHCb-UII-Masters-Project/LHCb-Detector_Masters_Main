@@ -1,0 +1,114 @@
+###############################################################################
+# (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration           #
+#                                                                             #
+# This software is distributed under the terms of the GNU General Public      #
+# Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".   #
+#                                                                             #
+# In applying this licence, CERN does not waive the privileges and immunities #
+# granted to it by virtue of its status as an Intergovernmental Organization  #
+# or submit itself to any jurisdiction.                                       #
+###############################################################################
+Module00: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module01: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module02: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module03: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module04: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module05: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module06: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module07: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module08: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module09: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module10: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module11: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module12: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module13: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module14: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module15: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module16: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module17: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module18: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module19: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module20: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module21: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module22: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module23: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module24: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module25: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module26: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module27: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module28: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module29: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module30: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module31: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module32: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module33: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module34: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module35: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module36: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module37: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module38: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module39: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module40: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module41: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module42: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module43: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module44: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module45: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module46: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module47: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module48: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module49: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module50: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+Module51: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]

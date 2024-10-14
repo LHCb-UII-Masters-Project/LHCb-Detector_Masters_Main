@@ -1,0 +1,34 @@
+<!--
+
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<lccdd>
+
+  <std_conditions type="STP"/>
+  <include ref="../../../common/global/definitions.xml"/>
+
+  <includes>
+    <gdmlFile ref="elements.xml"/>
+    <gdmlFile ref="materials.xml"/>
+    <gdmlFile ref="PipeMaterials.xml"/>
+    <gdmlFile ref="RichRun3PropertySpecParam.xml"/>
+    <gdmlFile ref="RichMaterials.xml"/>
+  </includes>
+
+  <comment>Global definitions and parameters</comment>
+  <define>
+    <!--  Define the world box  -->
+    <constant name="world_side"     value="50000*mm"/>
+    <constant name="world_x"        value="world_side"/>
+    <constant name="world_y"        value="world_side"/>
+    <constant name="world_z"        value="world_side"/>
+  </define>
+
+</lccdd>

@@ -1,0 +1,31 @@
+<lccdd>
+<!--
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+  <define>
+    <constant name="path:BlockWall" value="../../components/BlockWall/trunk" type="string"/>
+    <constant name="path:GValve" value="../../components/GValve/trunk" type="string"/>
+    <constant name="path:Bls" value="../../components/Bls/trunk" type="string"/>
+    <constant name="path:Bcm" value="../../components/Bcm/trunk" type="string"/>
+    <constant name="path:MBXW" value="../../components/MBXW/trunk" type="string"/>
+    <constant name="path:Pipe" value="../../components/Pipe/trunk" type="string"/>
+    <constant name="path:Rich" value="../../components/Rich/before-rich1-geom-update-26052022" type="string"/>
+    <constant name="path:VP" value="../../components/VP/trunk" type="string"/>
+    <constant name="path:UT" value="../../components/UT/trunk" type="string"/>
+    <constant name="path:Magnet" value="../../components/Magnet/trunk" type="string"/>
+    <constant name="path:FT" value="../../components/FT/trunk" type="string"/>
+    <constant name="path:NeutronShielding" value="../../components/NeutronShielding/trunk" type="string"/>
+    <constant name="path:Muon" value="../../components/Muon/trunk" type="string"/>
+    <constant name="path:ECAL" value="../../components/ECAL/trunk" type="string"/>
+    <constant name="path:HCAL" value="../../components/HCAL/trunk" type="string"/>
+    <constant name="path:Regions" value="../../components/Regions/trunk" type="string"/>
+    <constant name="path:Materials" value="../../components/Materials/trunk" type="string"/>
+  </define>
+</lccdd>

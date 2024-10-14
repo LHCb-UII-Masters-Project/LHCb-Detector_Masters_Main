@@ -1,0 +1,42 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1 Photon detector support frame logvols                               -->
+<!--  ==========================================================================-->
+<Rich1>
+
+<!-- <volume name="lvRich1PhDetSupFrameH0" material="Rich:R1RadiatorGas"> -->
+
+ <volume name="lvRich1PhDetSupFrameH0" material="Rich:Rich1Nitrogen" vis="Rich:VisRich1PhDetSupFrame" >
+       <shape type="Box" name  = "Rich1PhDetSupFrameH0"
+              dx = "Rh1PhDetSupXSize*RhHalfSize"
+              dy = "Rh1PhDetSupYSize*RhHalfSize"
+              dz = "Rh1PhDetSupZSize*RhHalfSize" />
+
+<!--    Now position the PMTSs in the PhDetSupportFrameH0 which is the Top Half   -->
+     <!--      &Rich1PMTModuleArrayH0Phys;  -->
+
+ </volume>
+<!-- <volume name="lvRich1PhDetSupFrameH1" material="Rich:R1RadiatorGas"> -->
+
+ <volume name="lvRich1PhDetSupFrameH1" material="Rich:Rich1Nitrogen" vis="Rich:VisRich1PhDetSupFrame" >
+
+       <shape type="Box" name  = "Rich1PhDetSupFrameH1"
+              dx = "Rh1PhDetSupXSize*RhHalfSize"
+              dy = "Rh1PhDetSupYSize*RhHalfSize"
+              dz = "Rh1PhDetSupZSize*RhHalfSize" />
+
+<!--    Now position the PMTS in the PhDetSupportFrameH1 which is the Bottom Half   -->
+     <!--   &Rich1PMTModuleArrayH1Phys; -->
+
+ </volume>
+
+
+</Rich1>

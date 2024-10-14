@@ -1,0 +1,65 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich1 master in  Run3 configuration                  -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+<!-- this file contains the geometry parameters for Rich1 Master -->
+<!--  The Rich1Master is made of Air material. It contains
+      the Rich1SubMaster which is a box made of C4F10 and has the dimensions
+      of the outer part of the magnetic shielding box. All the major
+      components of RICH1 are placed inside the Rich1SubMaster. 
+      Nominally the Rich1SubMaster goes from Rh1SubMasterUpstrZLim till Rh1SubMasterDnstrZLim 
+     
+      In order to have upstream end of RICH1 to be next to the end of Velo region, 
+      the upstream end of Rich1SubMaster is extended until 
+      Rh1VeloTankCylDnstrEndZ+ Rh1VeloTankFlangeZSize (977= 970+7) 
+      in Rich1Run3VeloTankGeomParam.xml. The Velo downstream endplate has the shape of a spherical 
+      segment and a cylinder. These regions are filled with Rich1Gas and the Cherenkov photons created in them
+      go into RICH1. The corresponding volumes are named lvVelo2Rich1Gas1 and lvVelo2Rich1Gas2 and they
+      are part of Velo Master.
+     -->
+
+   <!-- Begin Rich 1 Master Volume Geometry parameters  -->
+   <constant name="Rich1MasterX" value="0.0*mm" />
+   <constant name="Rich1MasterY" value="0.0*mm" />
+   <constant name="Rich1MasterZ" value="1.50*m" />
+   <constant name="Rich1MasterXSize" value="2.50*m" />
+   <constant name="Rich1MasterYSize" value="5.0*m" />
+   <constant name="Rich1MasterZSize" value="2.30*m" />
+   <!-- End Rich1 Master Volume Geometry parameters  -->
+
+   <!-- Now start Rich1SubMaster Volume Geometry Parameters -->
+   <constant name="Rh1SubMasterUpstrZLim" value="990.0*mm"  />
+   <constant name="Rh1ExtendedSubMasterUpstrZLim" value="600*mm" />
+   <constant name="Rh1SubMasterDnstrZLim" value="2260.0*mm"  />
+   <constant name="Rh1SubMasterYLim"  value="2500.0*mm" />
+   <constant name="Rh1SubMasterXSize" value="2050.0*mm" />
+   <constant name="Rh1SubMasterXLim"  value="0.5*Rh1SubMasterXSize" />
+   <constant name="Rh1SubMasterYSize" value="2.0*Rh1SubMasterYLim" />
+
+   <constant name="Rh1SubMasterZSize" value="(Rh1SubMasterDnstrZLim-Rh1ExtendedSubMasterUpstrZLim)" />
+   <constant name="Rh1SubMasterX" value="0.0*mm-Rich1MasterX" />
+   <constant name="Rh1SubMasterY" value="0.0*mm-Rich1MasterY" />
+   <constant name="Rh1SubMasterZ" value="0.5*(Rh1SubMasterUpstrZLim+Rh1SubMasterDnstrZLim)-Rich1MasterZ" />
+  <!-- End of Rich1SubMaster Geometry Parameters -->
+
+  </define>
+</lccdd>
+
+
+
+
+
+
+

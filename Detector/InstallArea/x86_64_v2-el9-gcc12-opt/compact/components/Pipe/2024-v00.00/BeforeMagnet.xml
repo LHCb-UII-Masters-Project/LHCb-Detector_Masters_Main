@@ -1,0 +1,94 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Pipe in the BeforeMagnetRegion area                -->
+<!--===========================================================================-->
+<lccdd>
+  <define>
+    <constant name="Pipe:JuncSteelCyl4Z" value="20*mm"/>
+    <constant name="Pipe:JuncSteelCyl4InnerR" value="40*mm"/>
+    <constant name="Pipe:JuncSteelCyl4OuterR" value="76*mm"/>
+  </define>
+
+
+  <detectors>
+    <!--=================================Supports==============================-->
+    <!-- Beam pipe in the BeforeMagnet region                                  -->
+    <!--=======================================================================-->
+    <detector name="PipeBeforeMagnet" type="DD4hep_VolumeAssembly" parent="${PipeBeforeMagnet:parent}" vis="Pipe:Vis">
+
+      <!-- Whole section: combination of sections -->
+      <volume name="lvPipeJunctionBeforeVeloSteel" vis="Pipe:BeforeMagnet" material="Pipe:Steel316LN">
+        <shape type="BooleanShape" operation="union" name="PipeJuncB4VeloSteelUnion">
+          <shape type="Tube" name="Pipe:JuncSteelCyl4"
+                 dz="0.5*Pipe:JuncSteelCyl4Z"
+                 rmin="Pipe:JuncSteelCyl4InnerR"
+                 rmax="Pipe:JuncSteelCyl4OuterR"/>
+          <shape type="ConeSegment" name="JuncSteelCone"
+                 dz="0.5*30*mm"
+                 rmin2="(35*(38-27)/65)*mm+27*mm"
+                 rmin1="38*mm"
+                 rmax2="(35*(40-29)/65)*mm+29*mm"
+                 rmax1="40*mm"/>
+          <position z="Pipe:JuncSteelCyl4Z/2+30*mm/2"/>
+        </shape>
+      </volume>
+
+      <volume name="lvPipeJunctionBeforeVeloVacuum" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="BooleanShape" operation="union" name="PipeJuncB4VeloVacuumUnion">
+          <shape type="Tube" name="JuncVacuumCyl4"
+                 dz="0.5*Pipe:JuncSteelCyl4Z"
+                 rmax="Pipe:JuncSteelCyl4InnerR"
+                 rmin="0*mm"/>
+          <shape type="ConeSegment" name="JuncVacuumCone"
+                 dz="0.5*30*mm"
+                 rmin2="0*mm"
+                 rmin1="0*mm"
+                 rmax2="(35*(38-27)/65)*mm+27*mm"
+                 rmax1="(35*(40-29)/65)*mm+29*mm"/>
+          <position z="Pipe:JuncSteelCyl4Z/2+30*mm/2"/>
+        </shape>
+      </volume>
+
+      <!-- This is a temporay volume to join velo to upstream beam pipe -->
+      <volume name="lvPipeJunctionBeforeVeloCuPipe" material="Copper" vis="Pipe:BeforeMagnet">
+        <shape type="Tube" name="JuncCuPipe"
+               dz="0.5*14*mm"      rmin="39.9*mm"       rmax="40*mm"/>
+      </volume>
+      <volume name="lvPipeJunctionBeforeVeloVacuumPipe" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="Tube" name="JuncVacPipe"
+               dz="0.5*14*mm"      rmin="0*mm"          rmax="39.9*mm"/>
+      </volume>
+      <!-- Assembly volume  -->
+      <volume name="lvPipeJunctionBeforeVelo" vis="Pipe:BeforeMagnet">
+        <physvol name="pvPipeJunctionB4VeloSteel"       volume="lvPipeJunctionBeforeVeloSteel" >
+        </physvol>
+        <physvol name="pvPipeJunctionB4VeloVacuum"      volume="lvPipeJunctionBeforeVeloVacuum" >
+        </physvol>
+        <physvol name="pvPipeJunctionB4VeloCuPipe"      volume="lvPipeJunctionBeforeVeloCuPipe" >
+          <position z="-Pipe:JuncSteelCyl4Z/2-14*mm/2"/>
+        </physvol>
+        <physvol name="pvPipeJunctionB4VeloVacPipe"     volume="lvPipeJunctionBeforeVeloVacuumPipe" >
+          <position z="-Pipe:JuncSteelCyl4Z/2-14*mm/2"/>
+        </physvol>
+      </volume>
+
+      <envelope type="Assembly" name="lvPipeBeforeVelo" vis="Pipe:BeforeMagnet">
+        <physvol name="pvPipeJunctionBeforeVelo"       volume="lvPipeJunctionBeforeVelo" >
+          <position z="-885*mm+20*mm/2"/>
+        </physvol>
+      </envelope>
+
+      <comment> Pipe position before in the region  </comment>
+      <position/>
+    </detector>
+  </detectors>
+</lccdd>

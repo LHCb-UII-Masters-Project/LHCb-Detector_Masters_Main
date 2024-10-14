@@ -1,0 +1,254 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<lccdd>
+
+  <!--                 PARAMETERs DEFINITION                    -->
+
+  <define>
+    <constant name="PlateformMagnetxPos" value="-5800*mm"/>
+    <constant name="PlateformMagnetyPos" value="-6300*mm+2550*mm"/>
+    <constant name="PlateformMagnetzPos" value="4389.5*mm+2400*mm"/>
+
+    <!--
+	<constant name="PlateformMagnetxPos" value="0*mm"/>
+	<constant name="PlateformMagnetyPos" value="0*mm"/>
+	<constant name="PlateformMagnetzPos" value="0*mm"/> -->
+
+    <constant name="PlateformLength" value="5800*mm"/>
+    <constant name="PlateformHeight" value="130*mm"/>
+    <constant name="PlateformWidth" value="1570*mm"/>
+
+    <constant name="Plateform2Length" value="2300*mm"/>
+    <constant name="Plateform2Height" value="130*mm"/>
+    <constant name="Plateform2Width" value="1480*mm"/>
+
+    <constant name="TopPlateform" value="5100*mm"/>
+  </define>
+
+
+  <detectors>
+    <detector name="SteelStructure" type="DD4hep_VolumeAssembly" parent="${SteelStructure:parent}">
+      <!--  the main volume , you can add any component you need-->
+      <envelope name="lvSteelStructure" material="Infrastructure:Steel" vis="Infrastructure:SteelStructureVis">
+        <shape name="PlateformsMagnet" type="BooleanShape" operation="union">
+          <!-- Plateform -->
+          <shape type="BooleanShape" operation="union" name="Plateforms">
+
+            <!--lhbiep 009  -->
+            <!-- Plateforms  -->
+                   dx="0.5*10*mm"                 dy="0.5*1*mm"                  dz="0.5*1*mm"/>
+            <shape type="Box" name="FrontTall"
+                   dx="0.5*220*mm"                dy="0.5*TopPlateform"          dz="0.5*240*mm"/>
+
+            <shape type="Box" name="MiddleSmall"
+                   dx="0.5*220*mm"                dy="0.5*2600*mm"               dz="0.5*240*mm"/>
+            <position x="1902*mm"                 y="-TopPlateform/2+1300*mm"    z="-PlateformWidth+240*mm"/>
+
+            <shape type="Box" name="BackTall"
+                   dx="0.5*110*mm"                dy="0.5*TopPlateform"          dz="0.5*240*mm"/>
+            <position x="3445*mm"                 y="0*mm"                       z="0*mm"/>
+
+            <shape type="Box" name="PlateHigh"
+                   dx="0.5*PlateformLength"       dy="0.5*PlateformHeight"       dz="0.5*PlateformWidth"/>
+            <position x="PlateformLength/2-110*mm"   y="TopPlateform/2"          z="-PlateformWidth/2+120*mm"/>
+
+            <shape type="Box" name="Plate2"
+                   dx="0.5*Plateform2Length"      dy="0.5*Plateform2Height"      dz="0.5*Plateform2Width"/>
+            <position x="-Plateform2Length/2-110*mm+PlateformLength" y="TopPlateform/2"  z="PlateformWidth/2+80*mm"/>
+
+            <shape type="Box" name="PlateBottomLarge"
+                   dx="0.5*(PlateformLength-1902*mm)" dy="0.5*PlateformHeight"   dz="0.5*PlateformWidth"/>
+            <position x="PlateformLength/2+951*mm" y="-TopPlateform/2+2600*mm"   z="-PlateformWidth/2"/>
+
+            <shape type="Box" name="PlateBottomSmall"
+                   dx="0.5*1902*mm"               dy="0.5*PlateformHeight"       dz="0.5*584*mm"/>
+            <position x="951*mm"                  y="-TopPlateform/2+2600*mm"    z="-PlateformWidth/2+492*mm"/>
+
+            <shape type="Box" name="PlateBottom"
+                   dx="0.5*920*mm"                dy="0.5*160*mm"                dz="0.5*1350*mm"/>
+            <position x="700*mm-230*mm"           y="-TopPlateform/2+2600*mm"    z="-PlateformWidth/2"/>
+
+            <shape type="Box" name="FrontLeftDown"
+                   dx="0.5*250*mm"                dy="0.5*3400*mm"               dz="0.5*16.5*mm"/>
+            <position x="950*mm"                  y="-TopPlateform/2+1300*mm"    z="-1310*mm"/>
+            <rotation z="-35.0*degree"/>
+
+            <shape type="Box" name="FrontRightDown"
+                   dx="0.5*250*mm"                dy="0.5*3400*mm"               dz="0.5*16.5*mm"/>
+            <position x="950*mm"
+                      y="-TopPlateform/2+1300*mm" z="-750*mm"/>
+            <rotation z="-35.0*degree"/>
+
+            <shape type="Box" name="FrontLeftUp"
+                   dx="0.5*250*mm"                dy="0.5*3300*mm"               dz="0.5*16.5*mm"/>
+            <position x="1650*mm"                 y="1300*mm"                    z="-1310*mm"/>
+            <rotation z="-35.0*degree"/>
+
+            <shape type="Box" name="FrontRightUp"
+                   dx="0.5*250*mm"                dy="0.5*3300*mm"               dz="0.5*16.5*mm"/>
+            <position x="1650*mm"                 y="1300*mm"                    z="-750*mm"/>
+            <rotation z="-35.0*degree"/>
+          </shape>
+
+
+          <!-- Stairs -->
+          <shape type="BooleanShape" operation="union" name="Stair">
+
+            <!--lhbiep 009 -->
+
+            <shape type="Box" name="Stair0"
+                   dx="0.5*10*mm"                 dy="0.5*1*mm"                  dz="0.5*1*mm"/>
+
+            <shape type="Box" name="Stair12up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="2560*mm"                 y="-TopPlateform/2+5000*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair11up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="2420*mm"                 y="-TopPlateform/2+4800*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair10up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="2280*mm"                 y="-TopPlateform/2+4600*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair9up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="2140*mm"                 y="-TopPlateform/2+4400*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair8up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="2000*mm"                y="-TopPlateform/2+4200*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair7up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1860*mm"                 y="-TopPlateform/2+4000*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair6up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1720*mm"                 y="-TopPlateform/2+3800*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair5up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1580*mm"                 y="-TopPlateform/2+3600*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair4up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1440*mm"                 y="-TopPlateform/2+3400*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair3up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1300*mm"                 y="-TopPlateform/2+3200*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair2up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1160*mm"                 y="-TopPlateform/2+3000*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair1up"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1020*mm"                 y="-TopPlateform/2+2800*mm"    z="-1010*mm"/>
+
+
+            <shape type="Box" name="Stair12"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1860*mm"                 y="-TopPlateform/2+2400*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair11"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1720*mm"                 y="-TopPlateform/2+2200*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair10"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1580*mm"                 y="-TopPlateform/2+2000*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair9"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1440*mm"                 y="-TopPlateform/2+1800*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair8"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1300*mm"                 y="-TopPlateform/2+1600*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair7"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1160*mm"                 y="-TopPlateform/2+1400*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair6"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="1020*mm"                 y="-TopPlateform/2+1200*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair5"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="880*mm"                  y="-TopPlateform/2+1000*mm"    z="-1050*mm"/>
+
+            <shape type="Box" name="Stair4"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="740*mm"                  y="-TopPlateform/2+800*mm"     z="-1050*mm"/>
+
+            <shape type="Box" name="Stair3"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="600*mm"                  y="-TopPlateform/2+600*mm"     z="-1050*mm"/>
+
+            <shape type="Box" name="Stair2"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="460*mm"                  y="-TopPlateform/2+400*mm"     z="-1050*mm"/>
+
+            <shape type="Box" name="Stair1"
+                   dx="0.5*300*mm"                dy="0.5*30*mm"                 dz="0.5*600*mm"/>
+            <position x="320*mm"                  y="-TopPlateform/2+200*mm"     z="-1050*mm"/>
+          </shape>
+
+          <position x="0*mm"                  y="0*mm"                  z="0*mm"/>
+
+
+          <!-- sidePz -->
+          <shape type="BooleanShape" operation="union" name="PlateformsPz">
+
+            <!--lhbiep 060  -->
+            <!-- Plateforms  -->
+
+            <shape type="Box" name="FrontLeft"
+                   dx="0.5*166*mm"                dy="0.5*3932*mm"               dz="0.5*166*mm"/>
+
+            <shape type="Box" name="FrontRight"
+                   dx="0.5*166*mm"                dy="0.5*3932*mm"               dz="0.5*166*mm"/>
+            <position x="0*mm"                    y="0*mm"                       z="2080*mm"/>
+
+            <shape type="Box" name="BackLeft"     dx="0.5*166*mm"                dy="0.5*3932*mm"                 dz="0.5*166*mm"/>
+            <position x="-3585*mm"                y="0*mm"                       z="0*mm"/>
+
+            <shape type="Box" name="BackRight"
+                   dx="0.5*166*mm"                dy="0.5*3932*mm"               dz="0.5*166*mm"/>
+            <position x="-3585*mm"                y="0*mm"                       z="2080*mm"/>
+
+            <shape type="Box" name="Plate3"
+                   dx="0.5*5904*mm"               dy="0.5*200*mm"                dz="0.5*2623*mm"/>
+            <position x="-716*mm"                 y="1866*mm"                    z="1040*mm"/>
+
+            <shape type="Box" name="Plate4"
+                   dx="0.5*1300*mm"               dy="0.5*200*mm"                dz="0.5*4000*mm"/>
+            <position x="524*mm"                  y="1866*mm"                    z="-2000*mm"/>
+
+            <shape type="Box" name="Plate5"
+                   dx="0.5*1161*mm"               dy="0.5*200*mm"                dz="0.5*4800*mm"/>
+            <position x="1685*mm"                 y="1866*mm"                    z="-2400*mm"/>
+          </shape>
+
+          <position x="3500*mm"                  y="0*mm"                  z="13640*mm"/>
+        </shape>
+      </envelope>
+
+      <position   x="PlateformMagnetxPos"  y="PlateformMagnetyPos"  z="PlateformMagnetzPos"/>
+      <rotation y="90.0*degree"/>
+
+    </detector>
+  </detectors>
+</lccdd>

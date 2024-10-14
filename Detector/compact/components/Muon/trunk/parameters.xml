@@ -1,0 +1,954 @@
+<lccdd>
+<!--
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+	<define>
+        <!-- GENERAL INFO -->
+	<constant name="MUON:beamAngle" value="3.601*mrad"/>
+
+        <constant name="MUON:BoxX" value="12500*mm"/>
+        <constant name="MUON:BoxY" value="12000*mm"/>
+        <constant name="MUON:BoxZ" value="4820*mm"/>
+        <constant name="MUON:Epsilon" value="0.000001*mm"/>
+
+        <constant name="MUON:NumberOfStations" value="4"/>
+        <constant name="MUON:NumberOfRegions" value="4"/>
+        <constant name="MUON:NumberOfFilters" value="4"/>
+        <constant name="MUON:NChambersR1" value="12"/>
+        <constant name="MUON:NChambersR2" value="24"/>
+        <constant name="MUON:NChambersR3" value="48"/>
+        <constant name="MUON:NChambersR4" value="192"/>
+
+        <!--Plugs-->
+        <!--M2-->
+        <constant name="MUON:M2PlugBoxSizeX" value="227.05*mm"/>
+        <constant name="MUON:M2PlugBoxSizeY" value="395*mm"/>
+        <constant name="MUON:M2PlugBoxSizeZ" value="395*mm"/>
+        <constant name="MUON:M2PlugHoleSizeZ" value="420*mm"/>
+        <constant name="MUON:M2PlugHoleOuterRad" value="174*mm"/>
+        <constant name="MUON:M2PlugHoleInnerRad" value="171*mm"/>
+
+        <!--M3-->
+        <constant name="MUON:M3PlugBoxSizeX" value="250.1*mm"/>
+        <constant name="MUON:M3PlugBoxSizeY" value="434.8*mm"/>
+        <constant name="MUON:M3PlugBoxSizeZ" value="395*mm"/>
+        <constant name="MUON:M3PlugHoleSizeZ" value="420*mm"/>
+        <constant name="MUON:M3PlugHoleOuterRad" value="185*mm"/>
+        <constant name="MUON:M3PlugHoleInnerRad" value="173*mm"/>
+
+        <!--M4-->
+        <constant name="MUON:M4PlugBoxSizeX" value="274.7*mm"/>
+        <constant name="MUON:M4PlugBoxSizeY" value="456.4*mm"/>
+        <constant name="MUON:M4PlugBoxSizeZ" value="395*mm"/>
+        <constant name="MUON:M4PlugHoleSizeZ" value="420*mm"/>
+        <constant name="MUON:M4PlugHoleOuterRad" value="197*mm"/>
+        <constant name="MUON:M4PlugHoleInnerRad" value="195*mm"/>
+
+        <!--M5-->
+        <constant name="MUON:M5PlugBoxSizeX" value="298.5*mm"/>
+        <constant name="MUON:M5PlugBoxSizeY" value="474.0*mm"/>
+        <constant name="MUON:M5PlugBoxSizeZ" value="395*mm"/>
+        <constant name="MUON:M5PlugHoleSizeZ" value="420*mm"/>
+        <constant name="MUON:M5PlugHoleOuterRad" value="209*mm"/>
+        <constant name="MUON:M5PlugHoleInnerRad" value="207*mm"/>
+
+        <!--Filters-->
+
+        <constant name="MUON:Filter1BeamHoleSizeZ"    value="0.82*m"/>
+        <constant name="MUON:Filter1BeamHoleOuterRad" value="182*mm"/>
+        <constant name="MUON:Filter1BeamHoleInnerRad" value="173*mm"  />
+        <constant name="MUON:Filter1VerticalShift"    value="200.0*mm"/>
+
+        <!--Supports-->
+        <constant name="MUON:PanelZShift" value="20.25*mm"/>
+
+        <!--Chambers-->
+        <constant name="MUON:NGaps" value="4"/>
+        <!--Gap positions-->
+        <constant name="MUON:Gap1PositionZ" value="21.090000*mm"/>
+        <constant name="MUON:Gap2PositionZ" value="7.030000*mm"/>
+        <constant name="MUON:Gap3PositionZ" value="-7.030000*mm"/>
+        <constant name="MUON:Gap4PositionZ" value="-21.090000*mm"/>
+        <constant name="MUON:EndCap3PositionZ" value="30.385000*mm"/>
+        <constant name="MUON:EndCap6PositionZ" value="-30.385000*mm"/>
+        <constant name="MUON:GapLayer1PositionZ" value="5.580000*mm"/>
+        <constant name="MUON:GapLayer3PositionZ" value="3.315000*mm"/>
+        <constant name="MUON:GapLayer5PositionZ" value="0.000000*mm"/>
+        <constant name="MUON:GapLayer7PositionZ" value="-3.315000*mm"/>
+        <constant name="MUON:GapLayer9PositionZ" value="-5.580000*mm"/>
+
+        <!---->
+        <!--Gap Elements thickness-->
+        <constant name="MUON:CopperLayerThickness" value="0.030000*mm"/>
+        <constant name="MUON:G10LayerThickness" value="1.600000*mm"/>
+        <constant name="MUON:PolyurethaneThickness" value="2.900000*mm"/>
+        <constant name="MUON:GasGapThickness" value="5.000000*mm"/>
+        <!-- <constant name="MUON:" value=""/> -->
+
+        <!--GapEndGap positions-->
+
+        <!--Chamber sizes-->
+        <!--M2-->
+        <constant name="MUON:M2R1ChamberBoxSizeX" value="390.000000*mm"/>
+        <constant name="MUON:M2R2ChamberBoxSizeX" value="694.000000*mm"/>
+        <constant name="MUON:M2R3ChamberBoxSizeX" value="1306.000000*mm"/>
+        <constant name="MUON:M2R4ChamberBoxSizeX" value="1306.000000*mm"/>
+
+        <constant name="MUON:M2ChamberBoxSizeY" value="335.000000*mm"/>
+        <constant name="MUON:M2ChamberBoxSizeZ" value="67.000000*mm"/>
+
+        <!--M3-->
+        <constant name="MUON:M3R1ChamberBoxSizeX" value="414.000000*mm"/>
+        <constant name="MUON:M3R2ChamberBoxSizeX" value="742.000000*mm"/>
+        <constant name="MUON:M3R3ChamberBoxSizeX" value="1402.000000*mm"/>
+        <constant name="MUON:M3R4ChamberBoxSizeX" value="1402.000000*mm"/>
+
+        <constant name="MUON:M3ChamberBoxSizeY" value="355.000000*mm"/>
+        <constant name="MUON:M3ChamberBoxSizeZ" value="67.000000*mm"/>
+
+        <!--M4-->
+        <constant name="MUON:M4R1ChamberBoxSizeX" value="438.000000*mm"/>
+        <constant name="MUON:M4R2ChamberBoxSizeX" value="790.000000*mm"/>
+        <constant name="MUON:M4R3ChamberBoxSizeX" value="1498.000000*mm"/>
+        <constant name="MUON:M4R4ChamberBoxSizeX" value="1498.000000*mm"/>
+
+        <constant name="MUON:M4ChamberBoxSizeY" value="375.000000*mm"/>
+        <constant name="MUON:M4ChamberBoxSizeZ" value="67.000000*mm"/>
+
+        <!--M5-->
+        <constant name="MUON:M5R1ChamberBoxSizeX" value="462.000000*mm"/>
+        <constant name="MUON:M5R2ChamberBoxSizeX" value="838.000000*mm"/>
+        <constant name="MUON:M5R3ChamberBoxSizeX" value="1594.000000*mm"/>
+        <constant name="MUON:M5R4ChamberBoxSizeX" value="1594.000000*mm"/>
+
+        <constant name="MUON:M5ChamberBoxSizeY" value="395.000000*mm"/>
+        <constant name="MUON:M5ChamberBoxSizeZ" value="67.000000*mm"/>
+
+        <!--GasGap sizes-->
+        <!--M2-->
+        <constant name="MUON:M2R1GasGapBoxSizeX" value="308.000000*mm"/>
+        <constant name="MUON:M2R2GasGapBoxSizeX" value="612.000000*mm"/>
+        <constant name="MUON:M2R3GasGapBoxSizeX" value="1224.000000*mm"/>
+        <constant name="MUON:M2R4GasGapBoxSizeX" value="1224.000000*mm"/>
+
+        <constant name="MUON:M2GasGapBoxSizeY" value="252.800000*mm"/>
+        <constant name="MUON:M2GasGapBoxSizeZ" value="14.06*mm"/>
+
+        <!--M3-->
+        <constant name="MUON:M3R1GasGapBoxSizeX" value="332.000000*mm"/>
+        <constant name="MUON:M3R2GasGapBoxSizeX" value="660.000000*mm"/>
+        <constant name="MUON:M3R3GasGapBoxSizeX" value="1320.000000*mm"/>
+        <constant name="MUON:M3R4GasGapBoxSizeX" value="1320.000000*mm"/>
+
+        <constant name="MUON:M3GasGapBoxSizeY" value="272.800000*mm"/>
+        <constant name="MUON:M3GasGapBoxSizeZ" value="14.06*mm"/>
+
+        <!--M4-->
+        <constant name="MUON:M4R1GasGapBoxSizeX" value="356.000000*mm"/>
+        <constant name="MUON:M4R2GasGapBoxSizeX" value="708.000000*mm"/>
+        <constant name="MUON:M4R3GasGapBoxSizeX" value="1416.000000*mm"/>
+        <constant name="MUON:M4R4GasGapBoxSizeX" value="1416.000000*mm"/>
+
+        <constant name="MUON:M4GasGapBoxSizeY" value="292.800000*mm"/>
+        <constant name="MUON:M4GasGapBoxSizeZ" value="14.06*mm"/>
+
+        <!--M5-->
+        <constant name="MUON:M5R1GasGapBoxSizeX" value="380.000000*mm"/>
+        <constant name="MUON:M5R2GasGapBoxSizeX" value="756.000000*mm"/>
+        <constant name="MUON:M5R3GasGapBoxSizeX" value="1512.000000*mm"/>
+        <constant name="MUON:M5R4GasGapBoxSizeX" value="1512.000000*mm"/>
+
+        <constant name="MUON:M5GasGapBoxSizeY" value="312.800000*mm"/>
+        <constant name="MUON:M5GasGapBoxSizeZ" value="14.06*mm"/>
+
+
+        <!--Frame sizes (not needed)-->
+        <constant name="MUON:M2R1OuterFrameSizeX" value="390.000000*mm"/>
+        <constant name="MUON:M2R1OuterFrameSizeY" value="335.000000*mm"/>
+        <constant name="MUON:M2R1OuterFrameSizeZ" value="67.000000*mm"/>
+        <constant name="MUON:M2R1InnerFrameSizeX" value="308.000000*mm"/>
+        <constant name="MUON:M2R1InnerFrameSizeY" value="252.800000*mm"/>
+        <constant name="MUON:M2R1InnerFrameSizeZ" value="67.000000*mm"/>
+
+        <!--Stations-->
+        <!-- M2 -->
+        <constant name="MUON:M2PositionZ" value="-2209*mm" />
+
+        <constant name="MUON:M2XOuterSize" value="11010*mm" />
+        <constant name="MUON:M2YOuterSize" value="10010*mm" />
+        <constant name="MUON:M2ZOuterSize" value="356*mm" />
+        <constant name="MUON:M2XInnerSize" value="506*mm" />
+        <constant name="MUON:M2YInnerSize" value="405*mm" />
+        <constant name="MUON:M2ZInnerSize" value="357*mm" />
+        <constant name="MUON:M2SideXOuterSize" value="4900*mm" />
+        <constant name="MUON:M2SideYOuterSize" value="8200*mm" />
+        <constant name="MUON:M2SideZOuterSize" value="355*mm"/>
+        <constant name="MUON:M2SideXInnerSize" value="MUON:M2XInnerSize/2" />
+        <constant name="MUON:M2SideYInnerSize" value="MUON:M2YInnerSize" />
+        <constant name="MUON:M2SideZInnerSize" value="356*mm"/>
+        <constant name="MUON:M2ASideXOffset" value="7.0*mm"/>
+        <constant name="MUON:M2ASideYOffset" value="0.5*mm"/>
+        <constant name="MUON:M2ASideZOffset" value="-7.5*mm"/>
+        <constant name="MUON:M2CSideXOffset" value="-8.2*mm"/>
+        <constant name="MUON:M2CSideYOffset" value="-0.5*mm"/>
+        <constant name="MUON:M2CSideZOffset" value="-9.4*mm"/>
+
+        <!-- M3 -->
+        <constant name="MUON:M3PositionZ" value="-1009*mm" />
+
+        <constant name="MUON:M3XOuterSize" value="11910*mm" />
+        <constant name="MUON:M3YOuterSize" value="10010*mm" />
+        <constant name="MUON:M3ZOuterSize" value="356*mm" />
+        <constant name="MUON:M3XInnerSize" value="550*mm" />
+        <constant name="MUON:M3YInnerSize" value="445*mm" />
+        <constant name="MUON:M3ZInnerSize" value="357*mm" />
+        <constant name="MUON:M3SideXOuterSize" value="5300*mm" />
+        <constant name="MUON:M3SideYOuterSize" value="8900*mm" />
+        <constant name="MUON:M3SideZOuterSize" value="355*mm"/>
+        <constant name="MUON:M3SideXInnerSize" value="MUON:M3XInnerSize/2" />
+        <constant name="MUON:M3SideYInnerSize" value="MUON:M3YInnerSize" />
+        <constant name="MUON:M3SideZInnerSize" value="356*mm"/>
+        <constant name="MUON:M3ASideXOffset" value="8.1*mm"/>
+        <constant name="MUON:M3ASideYOffset" value="0.3*mm"/>
+        <constant name="MUON:M3ASideZOffset" value="-0.2*mm"/>
+        <constant name="MUON:M3CSideXOffset" value="-9.4*mm"/>
+        <constant name="MUON:M3CSideYOffset" value="-5.0*mm"/>
+        <constant name="MUON:M3CSideZOffset" value="-5.2*mm"/>
+
+        <!-- M4 -->
+        <constant name="MUON:M4PositionZ" value="191*mm" />
+
+        <constant name="MUON:M4XOuterSize" value="11910*mm" />
+        <constant name="MUON:M4YOuterSize" value="10010*mm" />
+        <constant name="MUON:M4ZOuterSize" value="356*mm" />
+        <constant name="MUON:M4XInnerSize" value="600*mm" />
+        <constant name="MUON:M4YInnerSize" value="484*mm" />
+        <constant name="MUON:M4ZInnerSize" value="357*mm" />
+        <constant name="MUON:M4SideXOuterSize" value="5300*mm" />
+        <constant name="MUON:M4SideYOuterSize" value="9500*mm" />
+        <constant name="MUON:M4SideZOuterSize" value="355*mm"/>
+        <constant name="MUON:M4SideXInnerSize" value="MUON:M4XInnerSize/2" />
+        <constant name="MUON:M4SideYInnerSize" value="MUON:M4YInnerSize" />
+        <constant name="MUON:M4SideZInnerSize" value="356*mm"/>
+        <constant name="MUON:M4ASideXOffset" value="10.5*mm"/>
+        <constant name="MUON:M4ASideYOffset" value="1.5*mm"/>
+        <constant name="MUON:M4ASideZOffset" value="-6.6*mm"/>
+        <constant name="MUON:M4CSideXOffset" value="-11.4*mm"/>
+        <constant name="MUON:M4CSideYOffset" value="-1.6*mm"/>
+        <constant name="MUON:M4CSideZOffset" value="-12.4*mm"/>
+
+        <!-- M5 -->
+        <constant name="MUON:M5PositionZ" value="1391*mm" />
+
+        <constant name="MUON:M5XOuterSize" value="12310*mm" />
+        <constant name="MUON:M5YOuterSize" value="11010*mm" />
+        <constant name="MUON:M5ZOuterSize" value="356*mm" />
+        <constant name="MUON:M5XInnerSize" value="645*mm" />
+        <constant name="MUON:M5YInnerSize" value="524*mm" />
+        <constant name="MUON:M5ZInnerSize" value="357*mm" />
+        <constant name="MUON:M5SideXOuterSize" value="6150*mm" />
+        <constant name="MUON:M5SideYOuterSize" value="10000*mm" />
+        <constant name="MUON:M5SideZOuterSize" value="355*mm"/>
+        <constant name="MUON:M5SideXInnerSize" value="MUON:M5XInnerSize/2" />
+        <constant name="MUON:M5SideYInnerSize" value="MUON:M5YInnerSize" />
+        <constant name="MUON:M5SideZInnerSize" value="356*mm"/>
+        <constant name="MUON:M5ASideXOffset" value="11.1*mm"/>
+        <constant name="MUON:M5ASideYOffset" value="-0.2*mm"/>
+        <constant name="MUON:M5ASideZOffset" value="2.3*mm"/>
+        <constant name="MUON:M5CSideXOffset" value="-11.5*mm"/>
+        <constant name="MUON:M5CSideYOffset" value="0.2*mm"/>
+        <constant name="MUON:M5CSideZOffset" value="-4.3*mm"/>
+
+
+        <!-- Filters -->
+        <!-- Blocks-->
+        <constant name="MUON:nBlocks" value="4"/>
+        <constant name="MUON:Block1SizeX" value="1.6*m"/>
+        <constant name="MUON:Block1SizeY" value="0.8*m"/>
+        <constant name="MUON:Block1SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Block2SizeX" value="1.6*m"/>
+        <constant name="MUON:Block2SizeY" value="0.4*m"/>
+        <constant name="MUON:Block2SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Block3SizeX" value="0.8*m"/>
+        <constant name="MUON:Block3SizeY" value="0.4*m"/>
+        <constant name="MUON:Block3SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Block4SizeX" value="0.4*m"/>
+        <constant name="MUON:Block4SizeY" value="0.4*m"/>
+        <constant name="MUON:Block4SizeZ" value="0.8*m"/>
+
+        <!-- Plates-->
+        <constant name="MUON:nPlates" value="12"/>
+        <constant name="MUON:Plate1SizeX" value="4.815*m"/>
+        <constant name="MUON:Plate1SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate1SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate2SizeX" value="0.4*m"/>
+        <constant name="MUON:Plate2SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate2SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate3SizeX" value="5.215*m"/>
+        <constant name="MUON:Plate3SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate3SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate4SizeX" value="5.22*m"/>
+        <constant name="MUON:Plate4SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate4SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate5SizeX" value="0.005*m"/>
+        <constant name="MUON:Plate5SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate5SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate6SizeX" value="0.4*m"/>
+        <constant name="MUON:Plate6SizeY" value="0.025*m"/>
+        <constant name="MUON:Plate6SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate7SizeX" value="3.609*m"/>
+        <constant name="MUON:Plate7SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate7SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate8SizeX" value="0.805*m"/>
+        <constant name="MUON:Plate8SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate8SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate9SizeX" value="5.62*m"/>
+        <constant name="MUON:Plate9SizeY" value="0.015*m"/>
+        <constant name="MUON:Plate9SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate10SizeX" value="0.005*m"/>
+        <constant name="MUON:Plate10SizeY" value="0.025*m"/>
+        <constant name="MUON:Plate10SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate11SizeX" value="0.015*m"/>
+        <constant name="MUON:Plate11SizeY" value="4.165*m"/>
+        <constant name="MUON:Plate11SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Plate12SizeX" value="0.015*m"/>
+        <constant name="MUON:Plate12SizeY" value="4.58*m"/>
+        <constant name="MUON:Plate12SizeZ" value="0.8*m"/>
+
+        <!-- Concretes-->
+        <constant name="MUON:nConcretes" value="7"/>
+        <constant name="MUON:Concrete1SizeX" value="0.4*m"/>
+        <constant name="MUON:Concrete1SizeY" value="0.005*m"/>
+        <constant name="MUON:Concrete1SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Concrete2SizeX" value="4.815*m"/>
+        <constant name="MUON:Concrete2SizeY" value="0.015*m"/>
+        <constant name="MUON:Concrete2SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Concrete3SizeX" value="5.22*m"/>
+        <constant name="MUON:Concrete3SizeY" value="0.015*m"/>
+        <constant name="MUON:Concrete3SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Concrete4SizeX" value="5.62*m"/>
+        <constant name="MUON:Concrete4SizeY" value="0.015*m"/>
+        <constant name="MUON:Concrete4SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Concrete5SizeX" value="5.215*m"/>
+        <constant name="MUON:Concrete5SizeY" value="0.015*m"/>
+        <constant name="MUON:Concrete5SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Concrete6SizeX" value="3.609*m"/>
+        <constant name="MUON:Concrete6SizeY" value="0.015*m"/>
+        <constant name="MUON:Concrete6SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Concrete7SizeX" value="0.8*m"/>
+        <constant name="MUON:Concrete7SizeY" value="0.015*m"/>
+        <constant name="MUON:Concrete7SizeZ" value="0.8*m"/>
+
+        <!--Filter Air Gaps-->
+        <constant name="MUON:nFilterAirGaps" value="7"/>
+        <constant name="MUON:FilterAirGap1SizeX" value="5*mm"/>
+        <constant name="MUON:FilterAirGap1SizeY" value="0.8*m"/>
+        <constant name="MUON:FilterAirGap1SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:FilterAirGap2SizeX" value="1*mm"/>
+        <constant name="MUON:FilterAirGap2SizeY" value="0.8*m"/>
+        <constant name="MUON:FilterAirGap2SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:FilterAirGap3SizeX" value="1*mm"/>
+        <constant name="MUON:FilterAirGap3SizeY" value="1.63*m"/>
+        <constant name="MUON:FilterAirGap3SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:FilterAirGap4SizeX" value="5*mm"/>
+        <constant name="MUON:FilterAirGap4SizeY" value="1.63*m"/>
+        <constant name="MUON:FilterAirGap4SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:FilterAirGap5SizeX" value="5*mm"/>
+        <constant name="MUON:FilterAirGap5SizeY" value="0.415*m"/>
+        <constant name="MUON:FilterAirGap5SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:FilterAirGap6SizeX" value="5*mm"/>
+        <constant name="MUON:FilterAirGap6SizeY" value="1.635*m"/>
+        <constant name="MUON:FilterAirGap6SizeZ" value="0.8*m"/>
+
+        <constant name="MUON:FilterAirGap7SizeX" value="5*mm"/>
+        <constant name="MUON:FilterAirGap7SizeY" value="1.645*m"/>
+        <constant name="MUON:FilterAirGap7SizeZ" value="0.8*m"/>
+
+        <!-- Block assembly -->
+        <!-- Row1 -->
+        <constant name="MUON:Row1SteelPlate6PosX" value="-2.4075*m"/>
+        <constant name="MUON:Row1SteelPlate6PosY" value="-0.8175*m"/>
+
+        <constant name="MUON:Row1Block2PosX" value="-2.4075*m"/>
+        <constant name="MUON:Row1Block2PosY" value="-0.5*cm"/>
+        <constant name="MUON:Row1Block2RotZ" value="90*degree"/>
+
+        <constant name="MUON:Row1AirGapPosX" value="-2.205*m"/>
+        <constant name="MUON:Row1AirGapPosY" value="-0.43*m"/>
+        <constant name="MUON:Row1AirGapShiftX" value="1.605*m"/>
+        <constant name="MUON:Row1AirGapShiftY" value="0.83*m"/>
+        <constant name="MUON:Row1AirGapNumber1" value="3"/>
+        <constant name="MUON:Row1AirGapNumber2" value="2"/>
+
+        <constant name="MUON:Row1Concrete2PosX" value="0.2*m"/>
+        <constant name="MUON:Row1Concrete2PosY" value="-2.25*cm"/>
+
+        <constant name="MUON:Row1Plate1PosX" value="0.2*m"/>
+        <constant name="MUON:Row1Plate1PosY" value="-0.75*cm"/>
+
+        <constant name="MUON:Row1Concrete1PosX" value="-2.4075*m"/>
+        <constant name="MUON:Row1Concrete1PosY" value="0.7975*m"/>
+
+        <constant name="MUON:Row1Concrete5PosY" value="0.8075*m"/>
+
+        <constant name="MUON:Row1Plate5PosY" value="0.8225*m"/>
+
+        <constant name="MUON:Row1Block1PosX" value="-1.4025*m"/>
+        <constant name="MUON:Row1Block1PosY" value="-0.430*m"/>
+        <constant name="MUON:Row1Block1ShiftX" value="1.605*m"/>
+        <constant name="MUON:Row1Block1ShiftY" value="0.830*m"/>
+        <constant name="MUON:Row1Block1Number1" value="3"/>
+        <constant name="MUON:Row1Block1Number2" value="2"/>
+
+
+        <!-- Row2 -->
+        <constant name="MUON:Row2Row1PosX" value="0.2*m"/>
+
+        <constant name="MUON:Row2SteelPlate6PosX" value="-2.6075*m"/>
+        <constant name="MUON:Row2SteelPlate6PosY" value="-0.8175*m"/>
+
+        <constant name="MUON:Row2Block2PosX" value="-2.6075*m"/>
+        <constant name="MUON:Row2Block2PosY" value="-0.5*cm"/>
+        <constant name="MUON:Row2Block2RotZ" value="90*degree"/>
+
+        <constant name="MUON:Row2Concrete1PosX" value="-2.6075*m"/>
+        <constant name="MUON:Row2Concrete1PosY" value="0.7975*m"/>
+        <constant name="MUON:Row2Concrete1ShiftY" value="0.5*cm"/>
+        <constant name="MUON:Row2Concrete1Number1" value="4"/>
+
+        <constant name="MUON:Row2SteelPlate2PosX" value="-2.6075*m"/>
+        <constant name="MUON:Row2SteelPlate2PosY" value="0.8225*m"/>
+
+
+        <!-- Center1-->
+        <constant name="MUON:Center1SteelPlate6PosX" value="-2.410*m"/>
+        <constant name="MUON:Center1SteelPlate6PosY" value="-0.81*m"/>
+        <constant name="MUON:Center1SteelPlate6Shift1X" value="0.401*m"/>
+        <constant name="MUON:Center1SteelPlate6Number1" value="2"/>
+
+        <constant name="MUON:Center1Block2PosX" value="-2.410*m"/>
+        <constant name="MUON:Center1Block2PosY" value="2.5*mm"/>
+        <constant name="MUON:Center1Block2RotZ" value="90*degree"/>
+        <constant name="MUON:Center1Block2Shift1X" value="0.401*m"/>
+        <constant name="MUON:Center1Block2Number1" value="2"/>
+
+        <constant name="MUON:Center1AirGap3PosX" value="-2.2095*m"/>
+        <constant name="MUON:Center1AirGap3PosY" value="-0.75*cm"/>
+
+        <constant name="MUON:Center1Block1Number1" value="2"/>
+        <constant name="MUON:Center1Block1Number2" value="2"/>
+        <constant name="MUON:Center1Block1PosX" value="-0.602*m"/>
+        <constant name="MUON:Center1Block1PosY" value="-0.4225*m"/>
+        <constant name="MUON:Center1Block1Shift1X" value="1.605*m"/>
+        <constant name="MUON:Center1Block1Shift2X" value="-0.402*m"/>
+        <constant name="MUON:Center1Block1Shift2Y" value="0.83*m"/>
+
+        <constant name="MUON:Center1AirGap1Number1" value="2"/>
+        <constant name="MUON:Center1AirGap1PosX" value="0.2005*m"/>
+        <constant name="MUON:Center1AirGap1PosY" value="-0.4225*m"/>
+        <constant name="MUON:Center1AirGap1Shift1X" value="-0.402*m"/>
+        <constant name="MUON:Center1AirGap1Shift1Y" value="0.83*m"/>
+
+        <constant name="MUON:Center1AirGap2Number1" value="2"/>
+        <constant name="MUON:Center1AirGap2Number2" value="2"/>
+        <constant name="MUON:Center1AirGap2PosX" value="-1.4035*m"/>
+        <constant name="MUON:Center1AirGap2PosY" value="-0.4225*m"/>
+        <constant name="MUON:Center1AirGap2Shift1X" value="1*mm"/>
+        <constant name="MUON:Center1AirGap2Shift2X" value="3.207*m"/>
+
+        <constant name="MUON:Center1AirGap2bNumber1" value="4"/>
+        <constant name="MUON:Center1AirGap2bPosX" value="1.4015*m"/>
+        <constant name="MUON:Center1AirGap2bPosY" value="0.4075*m"/>
+
+        <constant name="MUON:Center1SteelPlate7PosX" value="0.5*mm"/>
+
+        <constant name="MUON:Center1Concrete6PosX" value="0.5*mm"/>
+        <constant name="MUON:Center1Concrete6PosY" value="-1.5*cm"/>
+
+        <constant name="MUON:Center1AirGap4PosX" value="-1.8065*m"/>
+        <constant name="MUON:Center1AirGap4PosY" value="-0.75*cm"/>
+
+        <constant name="MUON:Center1Block3PosX" value="-1.604*m"/>
+        <constant name="MUON:Center1Block3PosY" value="-0.4225*m"/>
+        <constant name="MUON:Center1Block3RotZ" value="90*degree"/>
+        <constant name="MUON:Center1Block3Shift1X" value="3.609*m"/>
+        <constant name="MUON:Center1Block3Shift1Y" value="0.43*m"/>
+        <constant name="MUON:Center1Block3Number1" value="2"/>
+
+        <constant name="MUON:Center1Block4PosX" value="1.605*m"/>
+        <constant name="MUON:Center1Block4PosY" value="0.2075*m"/>
+
+        <constant name="MUON:Center1SteelPlate8PosX" value="2.2075*m"/>
+        <constant name="MUON:Center1SteelPlate8PosY" value="-0.4*m"/>
+
+        <constant name="MUON:Center1Concrete7PosX" value="2.205*m"/>
+        <constant name="MUON:Center1Concrete7PosY" value="-0.415*m"/>
+
+        <constant name="MUON:Center1Block3bPosX" value="2.205*m"/>
+        <constant name="MUON:Center1Block3bPosY" value="-0.6225*m"/>
+        <constant name="MUON:Center1Block3bShift1X" value="-0.4*m"/>
+        <constant name="MUON:Center1Block3bShift1Y" value="1.23*m"/>
+        <constant name="MUON:Center1Block3bNumber1" value="2"/>
+
+        <constant name="MUON:Center1AirGap5PosX" value="2.6075*m"/>
+        <constant name="MUON:Center1AirGap5PosY" value="-0.615*m"/>
+
+        <constant name="MUON:Center1SteelPlate4PosY" value="0.815*m"/>
+
+        <constant name="MUON:Center1Concrete1PosX" value="-2.410*m"/>
+        <constant name="MUON:Center1Concrete1PosY" value="0.805*m"/>
+        <constant name="MUON:Center1Concrete1Shift1X" value="0.401*m"/>
+        <constant name="MUON:Center1Concrete1Number1" value="2"/>
+
+        <!-- Center2-->
+        <constant name="MUON:Center2Block1Number1" value="3"/>
+        <constant name="MUON:Center2Block1Number2" value="2"/>
+        <constant name="MUON:Center2Block1PosX" value="-2.01*m"/>
+        <constant name="MUON:Center2Block1PosY" value="-0.43*m"/>
+        <constant name="MUON:Center2Block1Shift1X" value="1.605*m"/>
+        <constant name="MUON:Center2Block1Shift2X" value="0.405*m"/>
+        <constant name="MUON:Center2Block1Shift2Y" value="0.83*m"/>
+
+        <constant name="MUON:Center2Block3Number1" value="2"/>
+        <constant name="MUON:Center2Block3PosX" value="2.405*m"/>
+        <constant name="MUON:Center2Block3PosY" value="-0.63*m"/>
+        <constant name="MUON:Center2Block3Shift1X" value="-5.015*m"/>
+        <constant name="MUON:Center2Block3Shift1Y" value="1.03*m"/>
+        <constant name= "MUON:Center2Block3RotZ" value="90*degree"/>
+
+        <constant name="MUON:Center2Block4PosX" value="2.205*m"/>
+        <constant name="MUON:Center2Block4PosY" value="-0.2*m"/>
+
+        <constant name="MUON:Center2AirGap1Number1" value="3"/>
+        <constant name="MUON:Center2AirGap1Number2" value="2"/>
+        <constant name="MUON:Center2AirGap1PosX" value="-1.2075*m"/>
+        <constant name="MUON:Center2AirGap1PosY" value="-0.43*m"/>
+        <constant name="MUON:Center2AirGap1Shift1X" value="1.605*m"/>
+        <constant name="MUON:Center2AirGap1Shift2X" value="-1.2*m"/>
+        <constant name="MUON:Center2AirGap1Shift2Y" value="0.83*m"/>
+
+        <constant name="MUON:Center2Concrete2PosX" value="-0.4025*m"/>
+        <constant name="MUON:Center2Concrete2PosY" value="-2.25*cm"/>
+
+        <constant name="MUON:Center2Concrete5PosX" value="-0.2025*m"/>
+        <constant name="MUON:Center2Concrete5PosY" value="0.8075*m"/>
+
+        <constant name="MUON:Center2SteelPlate1PosX" value="-0.4025*m"/>
+        <constant name="MUON:Center2SteelPlate1PosY" value="-0.75*cm"/>
+
+        <constant name="MUON:Center2SteelPlate9PosY" value="0.8225*m"/>
+
+        <constant name="MUON:Center2Concrete7PosX" value="2.405*m"/>
+        <constant name="MUON:Center2Concrete7PosY" value="-0.4225*m"/>
+
+        <constant name="MUON:Center2SteelPlate8PosX" value="2.4075*m"/>
+        <constant name="MUON:Center2SteelPlate8PosY" value="-0.4075*m"/>
+
+        <constant name="MUON:Center2AirGap5PosX" value="2.8075*m"/>
+        <constant name="MUON:Center2AirGap5PosY" value="-0.6225*m"/>
+
+        <!-- HalfFilter1-->
+
+        <constant name="MUON:HalfFilter1Row1Number1" value="2"/>
+        <constant name="MUON:HalfFilter1Row1PosX" value="-1*cm"/>
+        <constant name="MUON:HalfFilter1Row1PosY" value="-4.1425*m"/>
+        <constant name="MUON::HalfFilter1Row1RotY" value="180*degree"/>
+        <constant name="MUON:HalfFilter1Row1Shift1Y" value="1.66*m"/>
+
+        <constant name="MUON:HalfFilter1Row1bNumber1" value="2"/>
+        <constant name="MUON:HalfFilter1Row1bPosX" value="-1*cm"/>
+        <constant name="MUON:HalfFilter1Row1bPosY" value="4.1425*m"/>
+        <constant name="MUON::HalfFilter1Row1bRotY" value="180*degree"/>
+        <constant name="MUON:HalfFilter1Row1bShift1Y" value="-1.66*m"/>
+
+        <constant name="MUON:HalfFilter1Block1Number1" value="2"/>
+        <constant name="MUON:HalfFilter1Block1Number2" value="2"/>
+        <constant name="MUON:HalfFilter1Block1PosX" value="1.7975*m"/>
+        <constant name="MUON:HalfFilter1Block1PosY" value="-1.2525*m"/>
+        <constant name="MUON:HalfFilter1Block1Shift1X" value="-1.605*m"/>
+        <constant name="MUON:HalfFilter1Block1Shift2Y" value="2.475*m"/>
+
+        <constant name="MUON:HalfFilter1AirGap1Number1" value="3"/>
+        <constant name="MUON:HalfFilter1AirGap1Number2" value="2"/>
+        <constant name="MUON:HalfFilter1AirGap1PosX" value="2.6*m"/>
+        <constant name="MUON:HalfFilter1AirGap1PosY" value="-1.2525*m"/>
+        <constant name="MUON:HalfFilter1AirGap1Shift1X" value="-1.605*m"/>
+        <constant name="MUON:HalfFilter1AirGap1Shift2Y" value="2.475*m"/>
+
+        <constant name="MUON:HalfFilter1AirGap1bNumber1" value="2"/>
+        <constant name="MUON:HalfFilter1AirGap1bPosX" value="-2.215*m"/>
+        <constant name="MUON:HalfFilter1AirGap1bPosY" value="-1.2525*m"/>
+        <constant name="MUON:HalfFilter1AirGap1bShift1X" value="1.2*m"/>
+        <constant name="MUON:HalfFilter1AirGap1bShift1Y" value="2.475*m"/>
+
+        <constant name="MUON:HalfFilter1Block3Number1" value="2"/>
+        <constant name="MUON:HalfFilter1Block3PosX" value="-2.4175*m"/>
+        <constant name="MUON:HalfFilter1Block3PosY" value="-1.2525*m"/>
+        <constant name="MUON:HalfFilter1Block3Shift1X" value="1.605*m"/>
+        <constant name="MUON:HalfFilter1Block3Shift1Y" value="2.475*m"/>
+        <constant name="MUON:HalfFilter1Block3RotZ" value="90*degree"/>
+
+        <constant name="MUON:HalfFilter1Block1bNumber1" value="2"/>
+        <constant name="MUON:HalfFilter1Block1bPosX" value="-1.4125*m"/>
+        <constant name="MUON:HalfFilter1Block1bPosY" value="-1.2525*m"/>
+        <constant name="MUON:HalfFilter1Block1bShift1X" value="-0.405*m"/>
+        <constant name="MUON:HalfFilter1Block1bShift1Y" value="2.475*m"/>
+
+        <constant name="MUON:HalfFilter1Concrete3Number1" value="2"/>
+        <constant name="MUON:HalfFilter1Concrete3PosX" value="-0.75*cm"/>
+        <constant name="MUON:HalfFilter1Concrete3PosY" value="-0.845*m"/>
+        <constant name="MUON:HalfFilter1Concrete3Shift1Y" value="2.475*m"/>
+
+        <constant name="MUON:HalfFilter1SteelPlate4Number1" value="2"/>
+        <constant name="MUON:HalfFilter1SteelPlate4PosX" value="-0.75*cm"/>
+        <constant name="MUON:HalfFilter1SteelPlate4PosY" value="-0.83*m"/>
+        <constant name="MUON:HalfFilter1SteelPlate4Shift1Y" value="2.475*m"/>
+
+        <constant name="MUON:HalfFilter1Center1PosX" value="-0.75*cm"/>
+
+        <constant name="MUON:HalfFilter1AirGap6Number1" value="2"/>
+        <constant name="MUON:HalfFilter1AirGap6Number2" value="2"/>
+        <constant name="MUON:HalfFilter1AirGap6PosX" value="2.6*m"/>
+        <constant name="MUON:HalfFilter1AirGap6PosY" value="-4.13*m"/>
+        <constant name="MUON:HalfFilter1AirGap6Shift1Y" value="1.66*m"/>
+        <constant name="MUON:HalfFilter1AirGap6Shift2Y" value="6.6*m"/>
+
+        <constant name="MUON:HalfFilter1SteelPlate10Number1" value="2"/>
+        <constant name="MUON:HalfFilter1SteelPlate10Number2" value="2"/>
+        <constant name="MUON:HalfFilter1SteelPlate10PosX" value="2.6*m"/>
+        <constant name="MUON:HalfFilter1SteelPlate10PosY" value="-4.96*m"/>
+        <constant name="MUON:HalfFilter1SteelPlate10Shift1Y" value="1.66*m"/>
+        <constant name="MUON:HalfFilter1SteelPlate10Shift2Y" value="8.26*m"/>
+
+        <constant name="MUON:HalfFilter1SteelPlate12PosX" value="2.61*m"/>
+        <constant name="MUON:HalfFilter1SteelPlate12PosY" value="-2.6825*m"/>
+
+        <constant name="MUON:HalfFilter1SteelPlate11PosX" value="2.61*m"/>
+        <constant name="MUON:HalfFilter1SteelPlate11PosY" value="2.89*m"/>
+
+        <!-- HalfFilter2 -->
+        <constant name="MUON:HalfFilter2Row2Number1" value="2"/>
+        <constant name="MUON:HalfFilter2Row2PosX" value="-1.*cm"/>
+        <constant name="MUON:HalfFilter2Row2PosY" value="-4.15*m"/>
+        <constant name="MUON::HalfFilter2Row2RotY" value="180*degree"/>
+        <constant name="MUON:HalfFilter2Row2Shift1Y" value="1.66*m"/>
+
+        <constant name="MUON:HalfFilter2Row2bNumber1" value="2"/>
+        <constant name="MUON:HalfFilter2Row2bPosX" value="-1.*cm"/>
+        <constant name="MUON:HalfFilter2Row2bPosY" value="4.15*m"/>
+        <constant name="MUON:HalfFilter2Row2bShift1Y" value="-1.66*m"/>
+
+        <constant name="MUON:HalfFilter2Block1Number1" value="3"/>
+        <constant name="MUON:HalfFilter2Block1PosX" value="1.9975*m"/>
+        <constant name="MUON:HalfFilter2Block1PosY" value="-1.26*m"/>
+        <constant name="MUON:HalfFilter2Block1Shift1X" value="-1.605*m"/>
+
+        <constant name="MUON:HalfFilter2Block3Number1" value="2"/>
+        <constant name="MUON:HalfFilter2Block3PosX" value="-2.4175*m"/>
+        <constant name="MUON:HalfFilter2Block3PosY" value="-1.46*m"/>
+        <constant name="MUON:HalfFilter2Block3Shift1Y" value="0.4*m"/>
+
+        <constant name="MUON:HalfFilter2AirGap1Number1" value="4"/>
+        <constant name="MUON:HalfFilter2AirGap1PosX" value="2.8*m"/>
+        <constant name="MUON:HalfFilter2AirGap1PosY" value="-1.26*m"/>
+        <constant name="MUON:HalfFilter2AirGap1Shift1X" value="-1.605*m"/>
+
+        <constant name="MUON:HalfFilter2Block1bNumber1" value="3"/>
+        <constant name="MUON:HalfFilter2Block1bPosX" value="-2.0175*m"/>
+        <constant name="MUON:HalfFilter2Block1bPosY" value="1.23*m"/>
+        <constant name="MUON:HalfFilter2Block1bShift1X" value="2.008*m"/>
+
+        <constant name="MUON:HalfFilter2Block3bNumber1" value="2"/>
+        <constant name="MUON:HalfFilter2Block3bPosX" value="-1.0135*m"/>
+        <constant name="MUON:HalfFilter2Block3bPosY" value="1.23*m"/>
+        <constant name="MUON:HalfFilter2Block3bShift1X" value="2.008*m"/>
+        <constant name="MUON:HalfFilter2Block3bRotZ" value="90*degree"/>
+
+        <constant name="MUON:HalfFilter2AirGap2Number1" value="4"/>
+        <constant name="MUON:HalfFilter2AirGap2Number2" value="2"/>
+        <constant name="MUON:HalfFilter2AirGap2Number3" value="2"/>
+        <constant name="MUON:HalfFilter2AirGap2PosX" value="-1.217*m"/>
+        <constant name="MUON:HalfFilter2AirGap2PosY" value="1.23*m"/>
+        <constant name="MUON:HalfFilter2AirGap2Shift1X" value="1*mm"/>
+        <constant name="MUON:HalfFilter2AirGap2Shift2X" value="0.404*m"/>
+        <constant name="MUON:HalfFilter2AirGap2Shift3X" value="2.008*m"/>
+
+        <constant name="MUON:HalfFilter2Concrete4Number1" value="2"/>
+        <constant name="MUON:HalfFilter2Concrete4PosX" value="-0.75*cm"/>
+        <constant name="MUON:HalfFilter2Concrete4PosY" value="-0.8525*m"/>
+        <constant name="MUON:HalfFilter2Concrete4Shift1Y" value="2.49*m"/>
+
+        <constant name="MUON:HalfFilter2SteelPlate9Number1" value="2"/>
+        <constant name="MUON:HalfFilter2SteelPlate9PosX" value="-0.75*cm"/>
+        <constant name="MUON:HalfFilter2SteelPlate9PosY" value="-0.8375*m"/>
+        <constant name="MUON:HalfFilter2SteelPlate9Shift1Y" value="2.49*m"/>
+
+        <constant name="MUON:HalfFilter2AirGap2bNumber1" value="4"/>
+        <constant name="MUON:HalfFilter2AirGap2bPosX" value="2.799*m"/>
+        <constant name="MUON:HalfFilter2AirGap2bPosY" value="1.23*m"/>
+        <constant name="MUON:HalfFilter2AirGap2bShift1X" value="1*mm"/>
+
+        <constant name="MUON:HalfFilter2Center2PosX" value="-0.75*cm"/>
+
+        <constant name="MUON:HalfFilter2AirGap7Number1" value="2"/>
+        <constant name="MUON:HalfFilter2AirGap7Number2" value="2"/>
+        <constant name="MUON:HalfFilter2AirGap7PosX" value="2.8*m"/>
+        <constant name="MUON:HalfFilter2AirGap7PosY" value="-4.1575*m"/>
+        <constant name="MUON:HalfFilter2AirGap7Shift1Y" value="1.66*m"/>
+        <constant name="MUON:HalfFilter2AirGap7Shift2Y" value="6.64*m"/>
+
+        <constant name="MUON:HalfFilter2SteelPlate5Number1" value="2"/>
+        <constant name="MUON:HalfFilter2SteelPlate5Number2" value="2"/>
+        <constant name="MUON:HalfFilter2SteelPlate5PosX" value="2.8*m"/>
+        <constant name="MUON:HalfFilter2SteelPlate5PosY" value="-3.3275*m"/>
+        <constant name="MUON:HalfFilter2SteelPlate5Shift1Y" value="1.66*m"/>
+        <constant name="MUON:HalfFilter2SteelPlate5Shift2Y" value="6.64*m"/>
+
+        <constant name="MUON:HalfFilter2SteelPlate11PosX" value="2.81*m"/>
+        <constant name="MUON:HalfFilter2SteelPlate11PosY" value="2.8975*m"/>
+
+        <constant name="MUON:HalfFilter2SteelPlate12PosX" value="2.81*m"/>
+        <constant name="MUON:HalfFilter2SteelPlate12PosY" value="-2.69*m"/>
+
+        <constant name="MUON:Filter1XOuterSize" value="11.37*m"/>
+        <constant name="MUON:Filter1YOuterSize" value="9.945*m"/>
+        <constant name="MUON:Filter1ZOuterSize" value="0.8*m"/>
+
+        <constant name="MUON:Filter2XOuterSize" value="11.37*m"/>
+        <constant name="MUON:Filter2YOuterSize" value="9.96*m"/>
+        <constant name="MUON:Filter2ZOuterSize" value="0.8*m"/>
+
+        <constant name="MUON:Filter3XOuterSize" value="11.37*m"/>
+        <constant name="MUON:Filter3YOuterSize" value="9.96*m"/>
+        <constant name="MUON:Filter3ZOuterSize" value="0.8*m"/>
+
+        <constant name="MUON:Filter1PlugBoxSizeX" value="0.42*m"/>
+        <constant name="MUON:Filter1PlugBoxSizeY" value="1.200*m"/>
+        <constant name="MUON:Filter1PlugBoxSizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Filter2PlugBoxSizeX" value="0.42*m"/>
+        <constant name="MUON:Filter2PlugBoxSizeY" value="1.215*m"/>
+        <constant name="MUON:Filter2PlugBoxSizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Filter3PlugBoxSizeX" value="0.42*m"/>
+        <constant name="MUON:Filter3PlugBoxSizeY" value="1.215*m"/>
+        <constant name="MUON:Filter3PlugBoxSizeZ" value="0.8*m"/>
+
+        <constant name="MUON:Filter1PlugHoleSizeZ" value="0.82*m"/>
+        <constant name="MUON:Filter1PlugHoleOuterRad" value="182*mm"/>
+        <constant name="MUON:Filter1PlugHoleInnerRad" value="173*mm"/>
+
+        <constant name="MUON:Filter2PlugHoleSizeZ" value="0.88*m"/>
+        <constant name="MUON:Filter2PlugHoleOuterRad" value="194*mm"/>
+        <constant name="MUON:Filter2PlugHoleInnerRad" value="185*mm"/>
+
+        <constant name="MUON:Filter3PlugHoleSizeZ" value="0.82*m"/>
+        <constant name="MUON:Filter3PlugHoleOuterRad" value="206*mm"/>
+        <constant name="MUON:Filter3PlugHoleInnerRad" value="198*mm"/>
+
+        <constant name="MUON:FilterSideOffset" value="9*mm"/>
+
+        <constant name="MUON:Filter1PositionX" value="0*mm"/>
+        <constant name="MUON:Filter1PositionY" value="-200*mm"/>
+        <constant name="MUON:Filter1PositionZ" value="-1609*mm-200*0.0036*mm"/>
+
+        <constant name="MUON:Filter2PositionX" value="0*mm"/>
+        <constant name="MUON:Filter2PositionY" value="-200*mm"/>
+        <constant name="MUON:Filter2PositionZ" value="-409*mm-200*0.0036*mm"/>
+
+        <constant name="MUON:Filter3PositionX" value="0*mm"/>
+        <constant name="MUON:Filter3PositionY" value="-200*mm"/>
+        <constant name="MUON:Filter3PositionZ" value="791*mm-200*0.0036*mm"/>
+
+        <constant name="MUON:Filter4PositionX" value="0*mm"/>
+        <constant name="MUON:Filter4PositionY" value="-200*mm"/>
+        <constant name="MUON:Filter4PositionZ" value= "1991*mm-650*0.0036*mm"/>
+
+        <constant name="MUON:Filter4UnionPositionX" value="0*mm"/>
+        <constant name="MUON:Filter4UnionPositionY" value="- 4060.0*mm/2 - 740.0*mm/2"/> <!--"- 4060.0*mm/2 - 740.0*mm/2"/>-->
+        <constant name="MUON:Filter4UnionPositionZ" value="+ 790.0*mm/2 + 200.0*mm/2"/>
+
+        <constant name="MUON:Filter4ExtBoxSizeX" value="7200.0*mm"/>
+        <constant name="MUON:Filter4ExtBoxSizeY" value="4060.0*mm"/>
+        <constant name="MUON:Filter4ExtBoxSizeZ" value="790.0*mm"/>
+
+        <constant name="MUON:Filter4IntBoxSizeX" value="400.0*mm"/>
+        <constant name="MUON:Filter4IntBoxSizeY" value="500.0*mm"/>
+        <constant name="MUON:Filter4IntBoxSizeZ" value="820.0*mm"/>
+
+        <constant name="MUON:Filter4ExtraBoxSizeX" value="4860.0*mm"/>
+        <constant name="MUON:Filter4ExtraBoxSizeY" value="740.0*mm"/>
+        <constant name="MUON:Filter4ExtraBoxSizeZ" value="200.0*mm"/>
+
+        <constant name="MUON:HalfSideF1PosX" value= "MUON:Plate3SizeX/2.0 + MUON:Plate1SizeY/2.0"/>
+        <constant name="MUON:HalfSideF2PosX" value= "MUON:Plate2SizeX/2.0 + MUON:Plate3SizeX/2.0 + MUON:Plate1SizeY/2.0"/>
+        <constant name="MUON:HalfSideF3PosX" value= "MUON:Plate2SizeX/2.0 + MUON:Plate3SizeX/2.0 + MUON:Plate1SizeY/2.0"/>
+
+    </define>
+
+
+    <materials>
+
+        <!-- %%%%%%         G10             %%%%%%%% -->
+        <material name="MUON:G10">
+            <D type="density" unit="g/cm3" value="1.7"/>
+            <fraction n="0.853" ref="SiliconOxide"/>
+            <fraction n="0.147" ref="Epoxy"/>
+        </material>
+        <!-- %%%%%% G10 0.8mm planels with 50micron Cu cladding
+            total thickness is 0.9 mm %%%%%%%% -->
+        <material name="MUON:G10CuClad">
+            <D type="density" unit="g/cm3" value="1.7"/>
+            <fraction ref="MUON:G10" n="0.60"/>
+            <fraction ref="Copper"   n="0.40"/>
+        </material>
+        <!-- %%%%%% G10/Air mix for chamber surrounds %%%%%%%% -->
+        <material name="MUON:G10Air">
+            <D type="density" unit="g/cm3" value="0.76"/>
+            <fraction ref="MUON:G10" n="0.55"/>
+            <fraction ref="Air" n="0.45"/>
+        </material>
+        <!-- %%%%%%              Honeycomb                 %%%%%% -->
+        <material name="MUON:Honeycomb">
+            <D type="density" unit="g/cm3" value="0.00628"/>
+            <fraction ref="Air"      n="0.97"/>
+            <fraction ref="MUON:G10" n="0.03"/>
+        </material>
+        <!-- %%%%%%         Polystyrene_Foam                   %%%%%% -->
+        <material name="MUON:Polystyrene_Foam">
+            <D type="density" unit="g/cm3" value="0.00350"/>
+            <composite ref="Hydrogen" n="1"/>
+            <composite ref="Carbon"   n="1"/>
+        </material>
+
+        <material name="MUON:CO2">
+            <D type="density" unit="g/cm3" value="1.8182E-03" state="gas"/>
+            <composite ref="Carbon" n="1"/>
+            <composite ref="Oxygen" n="2"/>
+        </material>
+
+        <material name="MUON:CF4">
+            <D type="density" unit="g/cm3" value="0.003884" state="gas"/>
+            <composite ref="Carbon" n="1"/>
+            <composite ref="Fluorine" n="4"/>
+        </material>
+
+        <!-- %%%%%%              S_CPC_gas    %%%%%% -->
+        <material name="MUON:S_CPC_gas">
+            <D type="density" unit="g/cm3" value="0.002054" state="gas"/>
+            <fraction ref="Argon"    n="0.6"/>
+            <fraction ref="MUON:CF4" n="0.1"/>
+            <fraction ref="MUON:CO2" n="0.3"/>
+        </material>
+        <!-- %%%%%%             C2_H2_F4    %%%%%% -->
+        <material name="MUON:C2_H2_F4">
+            <D type="density" unit="g/cm3" value="4.0064887" state="gas"/>
+            <composite ref="Carbon"   n="2"/>
+            <composite ref="Hydrogen" n="2"/>
+            <composite ref="Fluorine" n="4"/>
+        </material>
+        <!-- %%%%%%            SF6    %%%%%% -->
+        <material name="MUON:SF6">
+            <D type="density" unit="g/cm3" value="2.0094817" state="gas"/>
+            <composite ref="Sulfur"   n="1"/>
+            <composite ref="Fluorine" n="6"/>
+        </material>
+        <!-- %%%%%%            C4_H10    %%%%%% -->
+        <material name="MUON:C4_H10">
+            <D type="density" unit="g/cm3" value="8.0008375" state="gas"/>
+            <composite ref="Carbon"   n="4"/>
+            <composite ref="Hydrogen" n="10"/>
+        </material>
+        <!-- %%%%%%              S_MRPC_gas    %%%%%% -->
+        <material name="MUON:S_MRPC_gas">
+            <D type="density" unit="g/cm3" value="0.004514" state="gas"/>
+            <fraction ref="MUON:C2_H2_F4" n="0.96"/>
+            <fraction ref="MUON:C4_H10"   n="0.03"/>
+            <fraction ref="MUON:SF6"      n="0.01"/>
+        </material>
+        <!-- %%%%%%              Phenolic    %%%%%% -->
+        <material name="MUON:Phenolic">
+            <D type="density" unit="g/cm3" value="1.25"/>
+            <fraction n="0.05744" ref="Hydrogen"/>
+            <fraction n="0.77459" ref="Carbon"/>
+            <fraction n="0.16797" ref="MUON:SF6"/>
+        </material>
+        <!-- %%%%%%              Muon Filter Iron  %%%%%%%% -->
+        <material name="MUON:FilterIron">
+            <D type="density" unit="g/cm3" value="7.5"/>
+            <fraction n="0.9851" ref="Iron"/>
+            <fraction n="0.005"  ref="Carbon"/>
+            <fraction n="0.009"  ref="Manganese"/>
+            <fraction n="0.0004" ref="Phosphorus"/>
+            <fraction n="0.0005" ref="Sulfur"/>
+        </material>
+
+        <!--steel -->
+        <material name="MUON:Steel">
+            <D type="density" unit="g/cm3" value="7.8"/>
+            <fraction n="0.7" ref="Iron"  />
+            <fraction n="0.1" ref="Carbon"/>
+            <fraction n="0.2" ref="Copper"/>
+        </material>
+
+        <!--Concrete-->
+        <material name="MUON:Concrete">
+            <D type="density" unit="g/cm3" value="2.5"/>
+            <fraction n="0.531" ref="Oxygen"  />
+            <fraction n="0.332" ref="Silicon"  />
+            <fraction n="0.061" ref="Calcium"  />
+            <fraction n="0.015" ref="Sodium"  />
+            <fraction n="0.020" ref="Iron"  />
+            <fraction n="0.041" ref="Aluminum"  />
+        </material>
+
+        <material name="MUON:Polyurethane">
+            <D type="density" unit="g/cm3" value="0.5"/>
+            <fraction n="0.0264" ref="Hydrogen"/>
+            <fraction n="0.6911" ref="Carbon"/>
+            <fraction n="0.0733" ref="Nitrogen"/>
+            <fraction n="0.2092" ref="Oxygen"/>
+        </material>
+
+        <material name="MUON:Kapton">
+            <D type="density" unit="g/cm3" value="1.42"/>
+            <fraction n="0.0264" ref="Hydrogen"/>
+            <fraction n="0.6911" ref="Carbon"/>
+            <fraction n="0.0733" ref="Nitrogen"/>
+            <fraction n="0.2092" ref="Oxygen"/>
+        </material>
+    </materials>
+
+</lccdd>

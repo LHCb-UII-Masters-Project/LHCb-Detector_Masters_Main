@@ -1,0 +1,104 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1 MagShVert logVols. They contain the PhDetSupframes                  -->
+<!--  ==========================================================================-->
+
+<Rich1>
+
+<!-- <logvol name="lvRich1MagShH0" material="RichMaterials/C4F10"> -->
+
+<volume name="lvRich1MagShH0" material="Rich:Rich1Nitrogen" vis="Rich:VisRich1MagSh"  >
+
+    <shape type="BooleanShape" operation="subtraction" name="Rh1MagSVertH0Sub" >
+
+        <shape type="Box"  name="Rich1MagShBoxVH0"
+          dx="Rh1MagSVertXSize*RhHalfSize"
+          dy="Rh1MagSVertYSize*RhHalfSize"
+          dz="Rh1MagSVertZSize*RhHalfSize" />
+        <shape type="Box"  name = "Rh1MagSVertH0SubBox"
+          dx="Rh1MagSVertSubBoxLargeXSize*RhHalfSize"
+          dy="Rh1MagSVertSubBoxLargeYSize*RhHalfSize"
+          dz="Rh1MagSVertSubBoxLargeZSize*RhHalfSize" />
+          <position y="Rh1MagSVertSubBoxH0Y"
+                    z="Rh1MagSVertSubBoxH0Z" />
+         <rotation  x ="Rh1MagSVertSubBoxXRotH0" />
+        <shape type="Box"  name = "Rh1MagSVertUpsCornerSubBoxTop"
+          dx="Rh1MagSVertSubBoxLargeXSize*RhHalfSize"
+          dy="Rh1MagSVertSubBoxLargeYSize*RhHalfSize"
+          dz="Rh1MagSVertSubBoxLargeZSize*RhHalfSize" />
+         <position y= "Rh1MagSVertSubUpsCornerYTop"
+                   z= "Rh1MagSVertSubUpsCornerZ" />
+
+        <shape type="Box"  name = "Rh1MagSVertDnsMidSubBoxTop"
+          dx="Rh1MagSVertSubBoxLargeXSize*RhHalfSize"
+          dy="Rh1MagSVertSubBoxLargeYSize*RhHalfSize"
+          dz="Rh1MagSVertSubBoxLargeZSize*RhHalfSize" />
+         <position y= "Rh1MagSVertSubDnsMidYTop"
+                   z= "Rh1MagSVertSubDnsMidZ" />
+
+    </shape>
+
+     <!-- The following includes do not work in dd4hep. Hence a workaround is found to -->
+     <!-- upload the transforms and create the physvol in  Rich1_geo.cpp                -->
+      <!--    &Rich1GasQuartzWPhysH0; -->
+    <!--   <include ref="../PhysVol/Rich1PhDetSupFramePhysH0.xml" />  -->
+
+
+ </volume>    <!-- end lvRich1MagShH0 -->
+
+<!-- <volume name="lvRich1MagShH1" material="Rich:Rich1Nitrogen"> -->
+
+
+<volume name="lvRich1MagShH1" material="Rich:Rich1Nitrogen"  vis="Rich:VisRich1MagSh"  >
+    <shape type="BooleanShape" operation="subtraction" name="Rh1MagSVertH1Sub" >
+        <shape type="Box"  name="Rich1MagShBoxVH1"
+          dx="Rh1MagSVertXSize*RhHalfSize"
+          dy="Rh1MagSVertYSize*RhHalfSize"
+          dz="Rh1MagSVertZSize*RhHalfSize" />
+
+         <shape type="Box"  name="Rh1MagSVertH1SubBox"
+          dx="Rh1MagSVertSubBoxLargeXSize*RhHalfSize"
+          dy="Rh1MagSVertSubBoxLargeYSize*RhHalfSize"
+          dz="Rh1MagSVertSubBoxLargeZSize*RhHalfSize" />
+         <position y="Rh1MagSVertSubBoxH1Y"
+                   z="Rh1MagSVertSubBoxH1Z" />
+         <rotation x="Rh1MagSVertSubBoxXRotH1" />
+
+
+        <shape type="Box"  name = "Rh1MagSVertUpsCornerSubBoxBot"
+          dx="Rh1MagSVertSubBoxLargeXSize*RhHalfSize"
+          dy="Rh1MagSVertSubBoxLargeYSize*RhHalfSize"
+          dz="Rh1MagSVertSubBoxLargeZSize*RhHalfSize" />
+         <position y= "Rh1MagSVertSubUpsCornerYBot"
+                   z= "Rh1MagSVertSubUpsCornerZ" />
+
+        <shape type="Box"  name = "Rh1MagSVertDnsMidSubBoxBot"
+          dx="Rh1MagSVertSubBoxLargeXSize*RhHalfSize"
+          dy="Rh1MagSVertSubBoxLargeYSize*RhHalfSize"
+          dz="Rh1MagSVertSubBoxLargeZSize*RhHalfSize" />
+         <position y= "Rh1MagSVertSubDnsMidYBot"
+                   z= "Rh1MagSVertSubDnsMidZ" />
+
+
+      </shape>
+
+
+<!-- The following does do not work in DD4HEP. Hence replaced with uploading the  -->
+<!-- trasforms in Rich1Geo.cpp and creating the physvol                           -->
+    <!--      &Rich1GasQuartzWPhysH1;  -->
+    <!--   <include ref="../PhysVol/Rich1PhDetSupFramePhysH1.xml" />  -->
+
+
+ </volume>    <!-- end lvRich1MagShH1 -->
+
+
+
+ </Rich1>

@@ -1,0 +1,46 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+  <detectors>
+
+    <!--==================================================================================-->
+    <!--===================================Bakeout========================================-->
+    <!--==================================================================================-->
+    <detector name="DownstreamPipe" type="DD4hep_VolumeAssembly" parent="${PipeDownstream:parent}" vis="Pipe:Vis">
+
+      <include ref="Downstream-UX853.xml"/>
+      <include ref="Downstream-UX854.xml"/>
+      <include ref="Downstream-Compensator.xml"/>
+
+      <!--==================================================================================-->
+      <!--===================================Final  Assembly================================-->
+      <!--==================================================================================-->
+      <envelope type="Assembly" name="lvUX85Downstream" vis="GreenVis">
+        <physvol name="pvUX853Downstream"      volume="lvUX853Downstream">
+          <position z="0*mm"/>
+        </physvol>
+        <physvol name="pvUX85Compensator13100" volume="lvUX85Compensator13100">
+          <position z="UX853DownstreamLenght"/>
+        </physvol>
+        <physvol name="pvUX854"                volume="lvUX854">
+          <position z="UX853DownstreamLenght + UX85C13100Lenght"/>
+        </physvol>
+      </envelope>
+      <position z="UX853Rich2DownSplitZposIP - Regions:DownstreamZPos"/>
+
+      <nodebug/>
+    </detector>
+
+  </detectors>
+</lccdd>

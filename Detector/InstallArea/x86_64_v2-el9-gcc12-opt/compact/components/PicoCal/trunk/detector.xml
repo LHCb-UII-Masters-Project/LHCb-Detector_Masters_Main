@@ -1,0 +1,38 @@
+<lccdd>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+  <info name="ECAL" title="ECAL" author="ECAL" url="http://cern.ch/lhcb" status="development" version="$Id: $">
+    <comment>
+      Test ECAL stack
+    </comment>
+  </info>
+
+  <detectors>
+    <detector id="Ecal:ID" name="Ecal" type="LHCb_Ecal_v1_0" parent="${Ecal:parent}" readout="EcalHits" vis="Ecal">
+      <include ref="parameters.xml"/>
+      <position x="0.0*mm" y="EcalYShift" z="(EcalZPosition + 0.5*EcalZSize) - Regions:DownstreamZPos"/>
+      <rotation x="EcalTiltAngle"/>
+      <debug>
+        <item name = "debug"                value = "0"/>
+        <item name = "EcalBuildFibers"      value = "1"/>
+        <item name = "EcalBuildCells"       value = "1"/>
+        <item name = "EcalBuildModules"     value = "1"/>
+      </debug>
+    </detector>
+  </detectors>
+
+  <readouts>
+    <readout name="EcalHits">
+      <id>system:8,side:1,region:2,block:6,module:5,cell:4</id>
+    </readout>
+  </readouts>
+
+</lccdd>

@@ -1,0 +1,50 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--    Begin Rich1MagShVertPhys Transforms           -->
+<!--    These are kept in the Rich1SubMaster logical volume -->
+<!--        except for the part above and below TT  -->
+<!--    Old names for reference                     -->
+<!--       <physvol  name="pvRich1MagShH0:0"        -->
+<!--          volume="lvRich1MagShH0" >             -->
+<!--      <physvol  name="pvRich1MagShH1:1"         -->
+<!--          volume="lvRich1MagShH1" >             -->
+<!--  ================================================== -->
+
+<Rich1>
+
+<!--   The Physvol copy numbers are listed in                 -->
+<!--   ../GeomParam/Rich1Run3PhysVolGeneralCopyNumbers.xml    -->
+
+
+
+    <item name="PhysVolName"    value="pvRich1MagShH0" />
+    <item name="PhysVolName"    value="pvRich1MagShH1" />
+
+    <item name="TransformName"  value="pvRich1MagShH0Transform">
+       <transformation>
+           <position  x = "Rh1MagSVertXLocation"
+                      y = "Rh1MagSVertYLocationTop"
+                      z = "Rh1MagSVertZLocation" />
+       </transformation>
+    </item>
+
+
+    <item name="TransformName"  value="pvRich1MagShH1Transform">
+       <transformation>
+           <position  x = "Rh1MagSVertXLocation"
+                      y = "Rh1MagSVertYLocationBot"
+                      z = "Rh1MagSVertZLocation" />
+       </transformation>
+    </item>
+
+
+<!--   End Rich1MagShVertPhys Transforms -->
+</Rich1>

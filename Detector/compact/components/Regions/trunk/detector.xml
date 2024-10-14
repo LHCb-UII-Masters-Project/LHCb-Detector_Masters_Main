@@ -1,0 +1,84 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the LHCb detector region definitions                    -->
+<!-- ========================================================================== -->
+<lccdd>
+  <detectors>
+
+    <detector name="UpstreamRegion" type="DD4hep_VolumeAssembly" parent="/world" ignore="UpstreamRegion:ignore" vis="Regions:Upstream">
+      <envelope name="lvUpstreamRegion" type="Box" material="Air" vis="Regions:Upstream"
+                dx="Regions:UpstreamXSize/2" dy="Regions:UpstreamYSize/2" dz="Regions:UpstreamZSize/2"/>
+      <position x="0*cm" y="0*cm" z="Regions:UpstreamZPos"/>
+    </detector>
+
+    <detector name="BeforeMagnetRegion" type="DD4hep_VolumeAssembly" parent="/world" ignore="BeforeMagnetRegion:ignore" vis="Regions:BeforeMagnet">
+      <envelope name="lvBeforeMagnetRegion" material="Air">
+        <shape name="shape-BeforeMagnetRegion" type="Box"
+               dx="Regions:BeforeMagnetXSize/2" dy="Regions:BeforeMagnetYSize/2" dz="Regions:BeforeMagnetZSize/2"/>
+      </envelope>
+      <position x="0*cm" y="0*cm" z="Regions:BeforeMagnetZPos"/>
+      <volume name="lvBeforeVelo" material="Air" vis="Regions:BeforeVelo">
+        <shape type="Box" dx="Regions:BeforeVeloXSize/2" dy="Regions:BeforeVeloYSize/2" dz="Regions:BeforeVeloZSize/2"/>
+      </volume>
+      <physvol element="BeforeVelo" volume="lvBeforeVelo">
+        <position x="0*mm" y="0*mm" z="-1792.5*mm"/>
+      </physvol>
+    </detector>
+
+    <detector name="MagnetRegion" type="DD4hep_VolumeAssembly" parent="/world" ignore="MagnetRegion:ignore" vis="Regions:Magnet">
+      <envelope name="lvMagnetRegion" type="Box" material="Air"
+                dx="Regions:MagnetRegionXSize/2" dy="Regions:MagnetRegionYSize/2" dz="Regions:MagnetRegionZSize/2"/>
+      <position x="0*cm" y="0*cm" z="Regions:MagnetRegionZPos"/>
+    </detector>
+
+    <detector name="AfterMagnetRegion" type="DD4hep_VolumeAssembly" parent="/world" ignore="AfterMagnetRegion:ignore" vis="Regions:AfterMagnet">
+      <volume name="lvT" material="Air" vis="Regions:T">
+        <shape type="BooleanShape" operation="subtraction" name="Tsolid">
+          <shape type="Box" name="TBox"
+                 dx="Regions:TTMSizeX/2" dy="Regions:TTMSizeY/2" dz="Regions:TTMSizeZ/2"/>
+          <shape type="Box" name="TShave"
+                 dx="Regions:TTMSizeX/2+Regions:Teps" dy="Regions:TTMSizeY/2+Regions:Teps" dz="20*mm/2"/>
+          <position y="-Regions:TBeamHoleRadius" z="0.5*(Regions:TTMSizeZ+20*mm)"/>
+          <rotation x="Regions:TBeamAngle"/>
+        </shape>
+      </volume>
+      <physvol element="T" volume="lvT">
+        <position x="0*mm" y="0*mm" z="Regions:TZPosInAfterMagnet"/>
+      </physvol>
+      <envelope name="lvAfterMagnetRegion" type="Box" material="Air"
+                dx="Regions:AfterMagnetXSize/2" dy="Regions:AfterMagnetYSize/2" dz="Regions:AfterMagnetZSize/2"/>
+      <position x="0*cm" y="0*cm" z="Regions:AfterMagnetZPos"/>
+    </detector>
+
+    <detector name="DownstreamRegion" type="DD4hep_VolumeAssembly" parent="/world" ignore="DownstreamRegion:ignore" vis="Regions:Downstream">
+      <volume name="lvAfterMuon" material="Air" vis="Regions:AfterMuon">
+        <shape name="shape-AfterMuon" type="BooleanShape" operation="union">
+          <shape type="Box" name="shape-AfterMuonBox1"
+                 dx="Regions:AfterMuonMainXSize/2" dy="Regions:AfterMuonMainYSize/2" dz="Regions:AfterMuonMainZSize/2"/>
+          <shape type="Box" name="shape-AfterMuonBox2"
+                 dx="Regions:AfterMuonHoleXSize/2" dy="Regions:AfterMuonHoleYSize/2" dz="Regions:AfterMuonHoleZSize"/>
+          <position z="-Regions:AfterMuonMainZSize/2"/>
+        </shape>
+      </volume>
+      <physvol element="AfterMuon" volume="lvAfterMuon">
+        <position x="0*mm" y="0*mm" z="19730.0*mm + 2000.0*mm/2 + 500.0*mm - Regions:DownstreamZPos"/>
+      </physvol>
+
+      <envelope name="lvDownstreamRegion" material="Air">
+        <shape name="shape-DownstreamRegion" type="Box"
+               dx="Regions:DownstreamXSize/2" dy="Regions:DownstreamYSize/2" dz="Regions:DownstreamZSize/2"/>
+      </envelope>
+      <position x="0*cm" y="0*cm" z="Regions:DownstreamZPos"/>
+    </detector>
+
+  </detectors>
+</lccdd>

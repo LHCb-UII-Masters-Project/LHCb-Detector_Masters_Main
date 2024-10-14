@@ -1,0 +1,56 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+default_language_version:
+  python: python
+
+repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.13.0
+    hooks:
+    - id: pyupgrade
+      args: ["--py39-plus"]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    - id: trailing-whitespace
+    - id: check-merge-conflict
+    - id: check-symlinks
+    - id: fix-byte-order-marker
+    - id: end-of-file-fixer
+      exclude: '^.*/checksums$'
+    - id: check-added-large-files
+      exclude: '^.*/RFFoil.xml$'
+    - id: check-yaml
+      # this is needed to allow custom classes in YAML
+      args: [--unsafe]
+      files: '.*.yml(/.*)?'
+      exclude: '/.condition$'
+      types: [file]
+    - id: check-ast
+    - id: check-docstring-first
+  - repo: https://gitlab.cern.ch/lhcb-core/lb-conddb-schema-check.git
+    rev: 0.2.0
+    hooks:
+    - id: schema-check
+      name: check conditions schema (tests/ConditionsIOV)
+      args: [tests/ConditionsIOV]
+      files: ^tests/ConditionsIOV/(Conditions/|\.schema\.json)
+    - id: schema-check
+      name: check conditions schema (tests/testscope)
+      args: [tests/testscope]
+      files: ^tests/testscope/(Conditions/|\.schema\.json)
+  - repo: local
+    hooks:
+    - id: check-dependency
+      name: check-dependency
+      entry: python scripts/check_dependency.py
+      language: system
+    - id: check-path-xml
+      name: check-path-xml
+      entry: python scripts/check_path_xml.py
+      language: system
+    - id: disallow-checksums-update
+      name: disallow-checksums-update
+      entry: bash -c 'if git diff --cached --name-only | grep -q "^checksums"; then echo "Changes to checksums file are not allowed!"; exit 1; fi'
+      language: system

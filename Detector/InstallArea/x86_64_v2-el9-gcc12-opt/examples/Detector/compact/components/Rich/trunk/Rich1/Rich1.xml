@@ -1,0 +1,27 @@
+<lccdd>
+<!--
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+  <include ref="RichMatDir/RichMaterialTabProperty.xml"/>
+  <include ref="RichMatDir/RichMaterials.xml"/>
+  <include ref="GeomParam/Rich1GeometryParameters.xml"/>
+  <include ref="RichVisDir/Rich1VisAttrDef.xml"/>
+  <include ref="Rich1SurfaceDir/RichSurfaceParam.xml"/>
+  <include ref="Rich1SurfaceDir/Rich1SurfaceTabProperty.xml"/>
+  <include ref="Rich1SurfaceDir/RichPMTSurfaceTabProperty.xml"/>
+  <include ref="Rich1SurfaceDir/Rich1Surfaces.xml"/>
+  <include ref="Rich1SurfaceDir/RichPMTSurfaces.xml"/>
+
+
+  <include ref="detector.xml"/>
+  <include ref="conditions.xml"/> 
+
+</lccdd>

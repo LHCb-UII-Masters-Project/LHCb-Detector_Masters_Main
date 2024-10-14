@@ -1,0 +1,255 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Tai-Hua Lin, J.Koppanyi                                                      -->
+<!--   @date    29/10/2021 (last rev.)                                          -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the Mighty tracker                                      -->
+<!--==========================================================================-->
+
+<lccdd>
+
+  <define>
+    <!-- Author: Jeroen van Tilburg & Oliver Gruenberg -->
+    <!-- Date: 2015-04-14 -->
+    <!-- Revised on: 2016-10-24 -->
+    <!-- Version: FTv63 -->
+    <!-- See https://cds.cern.ch/record/2289871 for DDDB v6.4 validation -->
+    <constant name="MP:geometryOptions"   value="1"/>                                  <!--"0":FTDR; "1":Baseline; "2":Low-->
+    <constant name="MP:includeMT"         value="1"/>
+    <constant name="MP:halfLayers"        value="1"/>
+    <constant name="MP:eps"               value="float:epsilon"/>
+
+    <!-- Global position of MightyPix Layers -->
+    <constant name="MP:L1CenterZ"         value="7694.5*mm"/>                          <!-- variable -->
+    <constant name="MP:L2CenterZ"         value="8157.0*mm"/>                          <!-- variable -->
+    <constant name="MP:L3CenterZ"         value="8317.0*mm"/>                          <!-- variable -->
+    <constant name="MP:L4CenterZ"         value="8749.0*mm"/>                          <!-- variable -->
+    <constant name="MP:L5CenterZ"         value="8909.0*mm"/>                          <!-- variable -->
+    <constant name="MP:L6CenterZ"         value="9371.5*mm"/>                          <!-- variable -->
+
+    <!-- Local position of MightyT Layers in lvT, TZPos=8529.5*mm -->
+    <constant name="MP:L1ZPos"            value="MP:L1CenterZ - Regions:TZPos"/>
+    <constant name="MP:L2ZPos"            value="MP:L2CenterZ - Regions:TZPos"/>
+    <constant name="MP:L3ZPos"            value="MP:L3CenterZ - Regions:TZPos"/>
+    <constant name="MP:L4ZPos"            value="MP:L4CenterZ - Regions:TZPos"/>
+    <constant name="MP:L5ZPos"            value="MP:L5CenterZ - Regions:TZPos"/>
+    <constant name="MP:L6ZPos"            value="MP:L6CenterZ - Regions:TZPos"/>
+
+    <!-- Stereoangles -->
+    <constant name="MP:StereoAngle"       value="5.0*degree"/>                         <!-- variable -->
+    <constant name="MP:StereoAngleX"      value="0.0*degree"/>                         <!-- variable -->
+    <constant name="MP:StereoAngleU"      value="-1.0*MP:StereoAngle"/>
+    <constant name="MP:StereoAngleV"      value="1.0*MP:StereoAngle"/>
+
+    <!-- Gap between layers -->
+    <constant name="MP:LayerPitchZ"       value="0*mm"/>                            <!-- variable -->
+
+    <constant name="MP:PixelSizeX"     value="0.1*mm"/>
+    <constant name="MP:PixelSizeY"     value="0.4*mm"/>
+    <constant name="MP:PixelSizeZ"     value="0.2*mm"/>
+
+    <!-- Dimensions for the MightyPix size -->
+    <constant name="MP:ChipSizeY"     value="20.0*mm"/>
+
+    <!-- Dimensions for the fibre mats + dead regions -->
+    <constant name="MP:MatSizeX"          value="528.0*mm"/>
+    <constant name="MP:MatSizeY"          value="13*MP:ChipSizeY"/>                       <!--201.6*mm -->
+    <constant name="MP:ShortMatSizeY"     value="13*MP:ChipSizeY"/>                       <!--261.6*mm -->
+    <constant name="MP:MatSizeZ"          value="0.200*mm"/>                              <!-- variable -->
+
+    <!-- TODO: test this... 2mm not properly implemented.  -->
+    <constant name="MP:MatGapX"          value="0*mm"/>
+    <constant name="MP:MatGapY"          value="0.5*mm"/>
+
+    <constant name="MP:MatPitchX"         value="MP:MatSizeX+MP:MatGapX"/>       <!-- variable -->
+    <constant name="MP:MatPitchY"         value="MP:MatSizeY+MP:MatGapY"/>       <!-- variable -->
+    <constant name="MP:ShortMatPitchY"    value="MP:ShortMatSizeY+MP:MatGapY"/>  <!-- variable -->
+
+    <constant name="MP:TotalPitchX"         value="2*MP:MatPitchX"/>             <!-- variable -->
+    <constant name="MP:TotalPitchY"         value="5*MP:MatPitchY"/>             <!-- variable -->
+
+    <constant name="MP:DeadSizeX"         value="0.5*mm"/>                       <!-- variable -->
+    <constant name="MP:DeadSizeY"         value="0.5*mm"/>                       <!-- variable -->
+
+    <!-- Dimensions for the module -->
+    <!-- TODO: Fix this problem with 4 mats rather than 1... -->
+    <constant name="MP:nMats"             value="1"/>
+    <constant name="MP:ModuleGapX"        value="1*mm"/>                                 <!-- variable -->
+    <constant name="MP:ModuleSizeX"       value="MP:nMats*MP:MatPitchX+2*MP:DeadSizeX"/> <!--  528.0*mm-->
+    <constant name="MP:ModuleSizeY"       value="MP:MatSizeY+MP:DeadSizeY"/>             <!-- 2425.0*mm-->
+    <constant name="MP:ShortModuleSizeY"  value="MP:ShortMatSizeY+MP:DeadSizeY"/>        <!-- 2425.0*mm-->
+    <constant name="MP:ModulePitchX"      value="MP:ModuleSizeX+MP:ModuleGapX"/>         <!-- 530.0*mm -->
+
+    <!-- Dimensions for the carbon-fibre skin  -->
+    <constant name="MP:WallThickness"     value="0.45*mm"/>                             <!-- variable -->
+    <constant name="MP:SkinSizeX"         value="MP:ModuleSizeX-2*MP:WallThickness"/>   <!--  527.1*mm-->
+    <constant name="MP:SkinSizeY"         value="2330.0*mm"/>                           <!-- variable -->
+    <constant name="MP:SkinSizeZ"         value="0.3*mm"/>                              <!-- variable -->
+    <constant name="MP:SheetSizeZ"        value="44.53*mm"/>                            <!-- variable -->
+
+    <!-- Parameters for the beam hole -->
+    <constant name="MP:HoleSizeX"         value="130.0*mm"/>
+    <constant name="MP:HoleLeftXSizeY"    value="130.0*mm"/>                            <!-- variable -->
+    <constant name="MP:HoleRightXSizeY"   value="MP:HoleLeftXSizeY"/>                   <!-- 115.0*mm -->
+    <constant name="MP:HoleLeftUSizeY"    value="(115.0-23.0)*mm"/>                     <!--  92.0*mm -->
+    <constant name="MP:HoleRightUSizeY"   value="(115.0+23.0)*mm"/>                     <!-- 138.0*mm -->
+    <!-- Not in DDDB ========================================================================   -->
+    <constant name="MP:HoleLeftVSizeY"   value="(115.0+23.0)*mm"/>                      <!-- 138.0*mm -->
+    <constant name="MP:HoleRightVSizeY"  value="(115.0-23.0)*mm"/>                      <!--  92.0*mm -->
+    <!-- ====================================================================================   -->
+    <constant name="MP:FullSizeY"         value="0.0*mm"/>                              <!--   dummy  -->
+    <constant name="MP:HoleDeltaAngle"    value="0.5*asin(MP:ModuleGapX/
+                                                 MP:HoleLeftXSizeY)*rad"/>              <!--8.7 mrad-->
+
+    <constant name="MP:ModuleSizeZ"       value="MP:MatSizeZ + 2*MP:SkinSizeZ"/>
+
+    <!-- C-Frame parameters -->
+    <constant name="MP:CFramePitchZ"             value="280.1*mm" />                    <!-- variable -->
+    <constant name="MP:CFrameIBarX"              value="640.0*mm"/>                     <!-- variable -->
+    <constant name="MP:CFrameIBarY"              value="5805.0*mm"/>                    <!-- variable -->
+    <constant name="MP:CFrameIBarZ"              value="10.958*mm"/>                    <!-- variable / approx -->
+    <constant name="MP:CFrameCarrierTopX"        value="4150.0*mm"/>                    <!-- variable -->
+    <constant name="MP:CFrameCarrierTopY"        value="320.0*mm"/>                     <!-- variable -->
+    <constant name="MP:CFrameCarrierTopZ"        value="12.209*mm"/>                    <!-- variable / approx -->
+    <constant name="MP:CFrameCarrierBottomX"     value="MP:CFrameCarrierTopX-MP:CFrameIBarX"/> <!-- 3510*mm -->
+    <constant name="MP:CFrameCarrierBottomY"     value="253.0*mm"/>                     <!-- variable -->
+    <constant name="MP:CFrameCarrierBottomZ"     value="13.579*mm"/>                    <!-- variable / approx -->
+    <constant name="MP:CFrameModuleMountX"       value="MP:CFrameCarrierBottomX"/>      <!-- 351*mm / approx -->
+    <constant name="MP:CFrameModuleMountY"       value="433.0*mm"/>                     <!-- variable / approx -->
+    <constant name="MP:CFrameModuleMountZTop"    value="19.898*mm"/>                    <!-- variable / approx -->
+    <constant name="MP:CFrameModuleMountZBottom" value="19.675*mm"/>                    <!-- variable / approx -->
+
+    <constant name="MP:CFrameShiftY"             value="67.0*mm" />                     <!-- variable -->
+    <constant name="MP:CFrameSizeX"              value="MP:CFrameCarrierTopX"/>         <!-- 4150.0*mm -->
+    <constant name="MP:CFrameSizeY"              value="MP:CFrameIBarY+MP:CFrameCarrierTopY"/>      <!-- 6125.0*mm -->
+    <constant name="MP:CFrameSizeZ"              value="25.0*mm"/>                      <!-- variable -->
+
+    <!-- Station dimensions (only needed for mother volumes) -->
+    <constant name="MP:StationSizeX"      value="2*MP:CFrameSizeX+MP:eps"/>             <!-- 8300.0*mm-->
+    <constant name="MP:StationSizeY"      value="MP:CFrameSizeY+
+                                                 MP:CFrameShiftY+MP:eps"/>              <!-- 6281.4*mm-->
+    <constant name="MP:StationSizeZ"      value="254.0*mm"/>
+
+    <!-- ############################################################################### -->
+    <!-- #################### Parameters for the detector elements ##################### -->
+    <!-- ############################################################################### -->
+
+    <constant name="MP:version"           value="64"/>
+    <constant name="MP:airGap"            value="0.080*mm"/>
+    <constant name="MP:deadRegion"        value="0.160*mm"/>
+    <constant name="MP:channelPitch"      value="0.250*mm"/>
+    <constant name="MP:dieGap"            value="0.220*mm"/>
+    <constant name="MP:nSiPMsInMat"       value="4"/>
+    <constant name="MP:nDiesInSiPM"       value="2"/>
+    <constant name="MP:nChannelsInSiPM"   value="128"/>
+    <constant name="MP:nModulesT1"        value="5"/>
+    <constant name="MP:nModulesT2"        value="5"/>
+    <constant name="MP:nModulesT3"        value="6"/>
+    <constant name="MP:nLayers"           value="4"/>
+    <constant name="MP:nHalves"         value="2"/>
+    <constant name="MP:nChannelsInModule" value="MP:nChannelsInSiPM * MP:nSiPMsInMat * MP:nMats"/>
+  </define>
+
+  <materials>
+  <material name="MP:SiliconTracker" state="solid">
+    <P unit="pascal" value="101324.946686941"/>
+    <MEE unit="eV" value="173.0"/>
+    <D unit="g/cm3" value="2.33"/>
+    <!-- SiO2 is 2.65, Si is 2.32/2.33 not sure which to go with -->
+    <fraction n="1.0" ref="Si"/>
+  </material>
+
+  <material name="MP:Kapton" >
+    <D type="density" value="1.39" unit="g/cm3"/>
+    <composite n="8" ref="Hydrogen"/>
+    <composite n="5" ref="Carbon"/>
+    <composite n="2" ref="Oxygen"/>
+  </material>
+
+  <material name="MP:CarbonFiber" >
+    <D type="density" value="1.72" unit="g/cm3"/>
+    <composite n="6" ref="Hydrogen"/>
+    <composite n="9" ref="Carbon"/>
+    <composite n="2" ref="Oxygen"/>
+    <composite n="3" ref="Nitrogen"/>
+  </material>
+
+  <material name="MP:Epoxy">
+    <D type="density" value="1.3" unit="g/cm3" />
+    <fraction n="0.07" ref="Hydrogen" />
+    <fraction n="0.76" ref="Carbon" />
+    <fraction n="0.17" ref="Oxygen" />
+  </material>
+
+  <material name="MP:CarbonFoam">
+    <D type="density" value="0.2" unit="g/cm3" />
+    <fraction n="1" ref="Carbon" />
+  </material>
+
+  <material name="MP:BoronNitride">
+        <D type="density" value="2.29" unit="g/cm3" />
+        <composite n="1" ref="Boron" />
+        <composite n="1" ref="Nitrogen" />
+  </material>
+
+  <material name="MP:HysolBN">
+        <D type="density" value="1.342" unit="g/cm3" />
+        <fraction n="0.7692" ref="MP:Epoxy" />
+        <fraction n="0.2308" ref="MP:BoronNitride" />
+  </material>
+
+  <material name="MP:FlexCable">
+        <D type="density" value="1.8092" unit="g/cm3" />
+        <fraction n="0.5751" ref="MP:Kapton" />
+        <fraction n="0.2681" ref="Copper" />
+        <fraction n="0.1568" ref="MP:HysolBN" />
+  </material>
+
+
+  <!--Material which is not certain of their property-->
+  <material name="MP:Armacell">
+        <D type="density" value="0.08" unit="g/cm3" />
+    <composite n="12" ref="Hydrogen"/>
+    <composite n="12" ref="Carbon"/>
+  </material>
+
+  <material name="MP:SiO2" state="solid" >
+    <D type="density" unit="g/cm3" value="2.2"/>
+    <composite n="1" ref="Silicon" />
+    <composite n="2" ref="Oxygen"  />
+  </material>
+
+  <material name="MP:Stesalite">
+        <D type="density" value="1.6" unit="g/cm3" />
+        <fraction n="0.7" ref="MP:SiO2" />
+        <fraction n="0.3" ref="Epoxy" />
+  </material>
+
+  <material name="MP:PCB">
+        <D type="density" value="2.44347" unit="g/cm3" />
+        <fraction n="0.04595" ref="MP:Epoxy" />
+        <fraction n="0.46654" ref="MP:SiO2" />
+        <fraction n="0.20971" ref="Copper" />
+        <fraction n="0.27306" ref="MP:Stesalite" />
+        <fraction n="0.00474" ref="MP:Stesalite" />
+  </material>
+
+  <material name="MP:PassiveMaterial" >
+    <D type="density" value="0.152" unit="g/cm3"/>
+    <fraction n="0.003" ref="MP:Kapton"/>
+    <fraction n="0.142" ref="MP:CarbonFoam"/>
+    <fraction n="0.194" ref="MP:CarbonFiber"/>
+    <fraction n="0.085" ref="MP:FlexCable"/>
+    <fraction n="0.021" ref="MP:Epoxy"/> <!--Glue-->
+    <fraction n="0.442" ref="MP:Armacell"/>
+    <fraction n="0.113" ref="MP:PCB"/>
+  </material>
+  </materials>
+
+</lccdd>

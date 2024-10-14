@@ -1,0 +1,147 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--  First version:   13-10-2011 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for MAPMT components            -->
+<!--  ==========================================================================-->
+
+
+<!--
+
+   The MAPMT has a MasterVolume which contains all its components.
+   The envelope is made as a rectangular box. The photocathode is
+   on the inside part of the PmtQuartzWindow. The geometry of the
+   details of the dynodes are not created. But the photoelectron
+   is made to travel without any focussing effects onto
+   an anode. A spread is implemented for the photoelectron arrival
+   point.
+
+
+    Each PMT has 8 X 8 array of pixels and the anode size is 23 mm X 23 mm
+
+
+   So there are
+   7 gaps between the 8 pixels in a row, each gap of size 200 micron.
+   The thickness of the anode is kept as 0.5 mm.
+
+   The overall size of each PMT is 26.4 mm X 26.4 mm * 17.4 mm. The
+   17.4mm is the thickness of the PMT.
+
+    The input quartz window is a rectangular block of Borosilicate glass
+   of thickness 0.8 mm. The other two dimensions of this are
+   25.2 X 25.2 mm.
+
+
+   The pixel size is 23/8=2.875 mmm
+
+   But the effective pixel size is kept as 23/8= 2.875 since the size of the real gap is
+   not measured yet. The current value of the size of the gap is 200 micron.
+
+   So the ring in the front is set such that it covers the
+   area from this to the edge of PMT. So the lateral thickness of the
+   ring = (26.4-23) /2 = 1.7 mm.
+   In Jan 2016 it is changed from 1.1 to 1.2 mm.
+
+   Z length of the components are
+    Backenvelope + SideEnvelope+ Phcathode Quartz + Front Ring =
+      0.8 + 14.0 + 0.1+ 0.8 +  0.5 = 16.2
+    To avoid overlaps a min gap of 0.2mm is kept between these components.
+
+   The overall size of the PMT includes the physical size and the margin on each side.
+    ie. 26.4= 25.9+0.25+0.25
+
+
+   In January 2016, the overall size of the PMT increased to 26.4 mm to take into account new specs.
+
+   The overall Z size is 19.4 mm which is 2 mm more than the actual size to
+   avoid overlaps and ease of positioning. This 2 mm can be reduced if needed.
+
+-->
+
+<lccdd>
+  <define>
+<!--    RICH MAPMT Master Volume -->
+  <constant name ="RhPMTMasterLengthSize" value="26.4*mm" />
+  <constant name ="RhPMTSMasterLengthSize" value="RhPMTMasterLengthSize" />
+  <constant name ="RhPMTMasterZSize" value="19.4*mm"  />
+  <constant name ="RhPMTSMasterZSize" value="RhPMTMasterZSize" />
+<!-- Now the component sizes -->
+  <constant name ="RhPMTAnodeXSize" value="23.0*mm" />
+  <constant name ="RhPMTAnodeYSize" value="RhPMTAnodeXSize" />
+  <constant name ="RhPMTAnodeZSize"  value="0.5*mm" />
+
+<!--
+  This is modified in Jan 2016 along with the gap size and
+  the meaning of the pixelsize which is now 23/8
+-->
+
+  <constant name ="RhPMTPixelXSize"  value="2.875*mm" />
+  <constant name ="RhPMTPixelYSize"  value="RhPMTPixelXSize" />
+  <constant name ="RhPMTPixelZSize"  value="RhPMTAnodeZSize" />
+
+<!--
+  This parameter modified in Jan 2016 since the new value is now used
+  in testbeam.
+-->
+  <constant name ="RhPMTPixelGap"    value="0.2*mm" />
+  <constant name ="RhPMTNumPixelsInRow"  value="8" />
+  <constant name ="RhPMTNumPixelsInCol"  value="8" />
+  <constant name="RichPmtTotalNumberofPixels" value="64"  />
+
+  <constant name ="RhPMTQuartzThickness" value="0.8*mm "/>
+  <constant name ="RhPMTQuartzLengthSize"   value="25.2*mm" />
+
+  <constant name ="RhPMTSideEnvelopeThickness" value="1.0*mm" />
+  <constant name ="RhPMTSideEnvelopeZLength"  value="14.0*mm" />
+
+  <constant name ="RhPMTBackEnvelopeThickness" value="0.8*mm" />
+  <constant name ="RhPMTTolerence" value="0.25*mm" />
+  <constant name = "RhPMTBackEnvelopeSize"  value= "RhPMTSMasterLengthSize-RhPMTTolerence"/>
+
+
+  <constant name = "RhPMTFrontRingLateralOuterSize" value="RhPMTSMasterLengthSize-RhPMTTolerence" />
+
+<!--  This is changed in Jan 2016 -->
+  <constant name = "RhPMTFrontRingLateralThickness" value="1.2*mm" />
+
+  <constant name = "RhPMTFrontRingZSize" value="0.5*mm" />
+  <constant name = "RhPMTZGapInComponents" value="0.2*mm" />
+ <!--  <constant name = "RhPMTPhCathodeZThickness" value="0.1*mm" /> -->
+  <constant name = "RhPMTPhCathodeZThickness" value="0.3*mm" />
+<!--  <constant name = "RhPMTPhCathodeLengthSize" value="RhPMTQuartzLengthSize" />-->
+  <constant name = "RhPMTPhCathodeLengthSize" value="RhPMTAnodeXSize" />
+  <constant name = "RhPMTQuartzToAnodeSurfaceDistance" value="10.0*mm" />
+  <constant name = "RhPMTEndToQuartzOuterSurface" value="2.7*mm" />
+<!-- Now the positions and derived quantities -->
+
+  <constant name = "RhPMTSubMasterXPos" value="0.0*mm" />
+  <constant name = "RhPMTSubMasterYPos" value="0.0*mm" />
+  <constant name = "RhPMTSubMasterZPos" value="0.0*mm" />
+  <constant name = "RhPMTQuartzZPos" value="(0.5*RhPMTMasterZSize)-RhPMTEndToQuartzOuterSurface-(0.5*RhPMTQuartzThickness)" />
+  <constant name = "RhPMTFrontRingZPos" value="(0.5*RhPMTMasterZSize)-RhPMTEndToQuartzOuterSurface+RhPMTZGapInComponents+(0.5*RhPMTFrontRingZSize)" />
+  <constant name = "RhPMTFrontRingSubHoleLargeZSize" value="1000.0*mm" />
+  <constant name = "RhPMTFrontRingSubHoleZPos" value="0.0*mm" />
+  <constant name = "RhPMTFrontRingSubHoleXSize" value="RhPMTFrontRingLateralOuterSize-(2.0*RhPMTFrontRingLateralThickness)" />
+  <constant name = "RhPMTFrontRingSubHoleYSize" value="RhPMTFrontRingSubHoleXSize" />
+
+  <constant name = "RhPMTSideEnvelopeZPos" value="RhPMTQuartzZPos-(0.5*RhPMTQuartzThickness)-RhPMTZGapInComponents-(0.5*RhPMTSideEnvelopeZLength)" />
+  <constant name ="RhPMTSideEnvelopeLateralOuterSize" value="RhPMTSMasterLengthSize-RhPMTTolerence" />
+  <constant name ="RhPMTSideEnvelopeHoleSize" value="RhPMTSideEnvelopeLateralOuterSize-(2.0*RhPMTFrontRingLateralThickness)" />
+  <constant name ="RhPMTSideEnvelopeHoleLargeZSize" value="1000.0*mm" />
+
+  <constant name ="RhPMTSideEnvelopeHoleZPos" value="0.0*mm" />
+  <constant name = "RhPMTBackEnvelopeZPos" value= "RhPMTSideEnvelopeZPos-(0.5*RhPMTSideEnvelopeZLength)-RhPMTZGapInComponents-(0.5*RhPMTBackEnvelopeThickness)" />
+  <constant name ="RhPMTAnodeZPos" value="RhPMTQuartzZPos-(0.5*RhPMTQuartzThickness)-RhPMTQuartzToAnodeSurfaceDistance-(0.5*RhPMTAnodeZSize)" />
+  <constant name ="RhPMTPhCathodeZPos" value="RhPMTQuartzZPos-(0.5*RhPMTQuartzThickness)-(0.5*RhPMTPhCathodeZThickness)" />
+
+
+
+
+  </define>
+</lccdd>

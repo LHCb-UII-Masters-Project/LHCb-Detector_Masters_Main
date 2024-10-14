@@ -1,0 +1,365 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank, B. Dey                                                 -->
+<!--   @date    14/10/2018,  06/04/2020(last rev.)                              -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the FT stations                                        -->
+<!--==========================================================================-->
+
+<lccdd>
+
+  <detectors>
+    <detector id="FT:ID" name="FT" type="LHCb_FT_geo_v1_0" parent="${FT:parent}" readout="FTHits" vis="FT:Envelope">
+
+      <!-- FT module geometry   -->
+      <volume name="lvEndplug" material="FT:PerforatedAluminium" vis="FT:Core1">
+        <shape type="Box" name="EndplugBox"
+               dx="0.5*FT:EndplugSizeX"     dy="0.5*FT:EndplugSizeY"     dz="0.5*FT:EndplugSizeZ"/>
+      </volume>
+      <volume name="lvEndpiece" material="FT:Polycarbonate"  vis="FT:Core2">
+        <shape type="Box" name="EndpieceBox"
+               dx="0.5*FT:EndpieceSizeX"    dy="0.5*FT:EndpieceSizeY"    dz="0.5*FT:EndpieceSizeZ"/>
+      </volume>
+      <volume name="lvEndpiece1" material="FT:Polycarbonate"  vis="FT:Core2">
+        <shape type="Box" name="EndpieceBox1"
+               dx="0.5*FT:HoleSizeX"        dy="0.5*FT:EndpieceSizeY"    dz="0.5*FT:EndpieceSizeZ"/>
+      </volume>
+      <volume name="lvEndpiece3" material="FT:Polycarbonate"  vis="FT:Core2">
+        <shape type="Box" name="EndpieceBox3"
+               dx="0.5*(FT:EndpieceSizeX-FT:HoleSizeX)" dy="0.5*FT:EndpieceSizeY" dz="0.5*FT:EndpieceSizeZ"/>
+      </volume>
+      <volume name="lvFibreMat" material="FT:SciFibre" sensitive="1"  vis="FT:Fibre">
+        <shape type="Box" name="FibreBox"
+               dx="0.5*FT:MatSizeX"         dy="0.5*FT:MatSizeY"         dz="0.5*FT:MatSizeZ"/>
+      </volume>
+      <volume name="lvSkin" material="FT:Skin"  vis="FT:Support">
+        <shape type="Box" name="SkinBox"
+               dx="FT:SkinSizeX/2"          dy="FT:SkinSizeY/2"          dz="FT:SkinSizeZ/2"/>
+      </volume>
+      <volume name="lvSideWall" material="FT:Skin"  vis="FT:Support">
+        <shape type="Box" name = "SideWallBox"
+               dx="FT:WallThickness/2"      dy="FT:SkinSizeY/2"          dz="FT:ModuleSizeZ/2" />
+      </volume>
+      <volume name="lvCore" material="FT:Honeycomb" vis="FT:Core">
+        <shape type="Box" name="CoreBox"
+               dx="0.5*FT:CoreSizeX"        dy="0.5*FT:CoreSizeY"        dz="0.5*FT:CoreSizeZ"/>
+        <physvol name="pvEndplug"      logvol="lvEndplug">
+          <position  y="0.5*(FT:CoreSizeY-FT:EndplugSizeY)"/>
+        </physvol>
+        <physvol name="pvEndpiece"     logvol="lvEndpiece">
+          <position  y="-0.5*(FT:CoreSizeY-FT:EndpieceSizeY)+FT:DeadSizeY"
+                     z="0.5*(FT:CoreSizeZ-FT:EndpieceSizeZ)"/>
+        </physvol>
+      </volume>
+
+      <!-- FT CFrame geometry from FTCFramePairGeometry.xml -->
+      <volume name="lvCFramePairIBar" material="Iron" vis="FT:CFrame">
+	<shape type="Box" name="CFramePairIBar"
+               dx="0.5*FT:CFrameIBarX"      dy="0.5*FT:CFrameIBarY"          dz="0.5*FT:CFrameIBarZ"/>
+      </volume>
+      <volume name="lvCFramePairCarrierTop" material="Iron" vis="FT:CFrame">
+	<shape type="Box" name="CFramePairCarrierTop"
+               dx="FT:CFrameCarrierTopX"    dy="0.5*FT:CFrameCarrierTopY"    dz="0.5*FT:CFrameCarrierTopZ"/>
+      </volume>
+      <volume name="lvCFramePairCarrierBottom" material="Iron" vis="FT:CFrame">
+	<shape type="Box" name="CFramePairCarrierBottom"
+               dx="FT:CFrameCarrierBottomX" dy="0.5*FT:CFrameCarrierBottomY" dz="0.5*FT:CFrameCarrierBottomZ"/>
+      </volume>
+      <volume name="lvCFramePairModuleMountTop" material="Iron" vis="FT:CPairModuleMountBottom">
+	<shape type="Box" name="CFramePairModuleMountTop"
+               dx="FT:CFrameModuleMountX"     dy="0.5*FT:CFrameModuleMountY" dz="0.5*FT:CFrameModuleMountZTop"/>
+      </volume>
+      <volume name="lvCFramePairModuleMountBottom" material="Iron" vis="FT:CPairModuleMountBottom">
+	<shape type="Box" name="CFramePairModuleMountBottom"
+               dx="FT:CFrameModuleMountX"   dy="0.5*FT:CFrameModuleMountY"   dz="0.5*FT:CFrameModuleMountZBottom"/>
+      </volume>
+      <volume name="lvCFramePairSupportCableCFCable" material="FT:CFRP"> <!-- needs rotation of z to y -->
+	  <shape type="Tube" name="CFramePairSupportCableCFCable"
+		 dz="0.5*FT:CFramePairSupportCableY" rmin="0.0*mm"     rmax="FT:CFramePairSupportCableCableRadius"/>
+      </volume>
+      <volume name="lvCFramePairSupportCableDowel" material="FT:Polycarbonate" vis="FT:Dowels">  <!-- needs rotation of z to y // material needs to be checked and updated!!! -->
+	<shape type="BooleanShape" operation="subtraction" name="CFramePairSupportCableDowel">
+	  <shape type="Tube" name="CFramePairSupportCableDowelBbox"
+		 dz="0.5*FT:CFramePairSupportCableDowelY" rmin="FT:CFramePairSupportCableDowelHoleRadius"   rmax="FT:CFramePairSupportCableDowelHeadRadius"/>
+	  <shape type="Tube" name="CFramePairSupportCableDowelCutout"
+		 dz="0.5*(FT:CFramePairSupportCableDowelY-FT:CFramePairSupportCableDowelHeadY+FT:eps)" rmin="FT:CFramePairSupportCableDowelRadius"   rmax="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"/>
+	  <position Z="0.5*FT:CFramePairSupportCableDowelHeadY"/>
+	</shape>
+      </volume>
+      <volume name="lvCFramePairSupportCable" material="Air">
+        <shape type="BooleanShape" operation="union">
+	  <shape type="BooleanShape" operation="subtraction" name="CFramePairSupportCable">
+	    <shape type="BooleanShape" operation="subtraction">
+              <shape type="Box"
+                     dx="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"
+                     dy="0.5*FT:CFramePairSupportCableY+FT:eps"
+		     dz="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"/>
+	      <shape type="Box"
+                     dx="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"
+                     dy="0.5*FT:CFrameSpacerBarY+FT:eps"
+                     dz="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"/>
+              <position y="FT:CFrameSpacerBarUpperYPos-FT:CFramePairSupportCableYPos"/>
+	    </shape>
+	    <shape type="Box"
+                   dx="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"
+                   dy="0.5*FT:CFrameSpacerBarY+FT:eps"
+                   dz="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"/>
+            <position y="FT:CFrameSpacerBarLowerYPos-FT:CFramePairSupportCableYPos"/>
+	  </shape>
+	  <shape type="Tube"
+                 dz="0.5*FT:CFrameSpacerBarY+2*FT:eps"
+                 rmin="0.0*mm"
+                 rmax="FT:CFramePairSupportCableDowelRadius"/>
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+	  <position y="FT:CFrameSpacerBarLowerYPos-FT:CFramePairSupportCableYPos"/>
+	  <shape type="Tube"
+                 dz="0.5*FT:CFrameSpacerBarY+2*FT:eps"
+                 rmin="0.0*mm"
+                 rmax="FT:CFramePairSupportCableDowelRadius"/>
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+          <position y="FT:CFrameSpacerBarUpperYPos-FT:CFramePairSupportCableYPos"/>
+	</shape>
+	<physvol name="pvCFramePairSupportCableCFCable" logvol="lvCFramePairSupportCableCFCable">
+          <position/>
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+	</physvol>
+        <physvol name="pvCFramePairSupportCableDowelUpper"  logvol="lvCFramePairSupportCableDowel">
+          <position/>
+          <position y="FT:CFrameSpacerBarUpperYPos-FT:CFramePairSupportCableYPos" />
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+        </physvol>
+        <physvol name="pvCFramePairSupportCableDowelLower"  logvol="lvCFramePairSupportCableDowel">
+          <position y="FT:CFrameSpacerBarLowerYPos-FT:CFramePairSupportCableYPos" />
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+        </physvol>
+      </volume>
+      <volume name="lvCFramePairSupportCablepair" material="Air" vis="FT:CFramePairSupportCablepair">
+	<shape type="BooleanShape" operation="union">
+	  <shape type="BooleanShape" operation="subtraction" name="FramePairSupportCablepair">
+            <shape type="BooleanShape" operation="subtraction">
+              <shape type="Box"
+                     dx="FT:CFramePairSupportCableDowelHeadRadius+0.5*FT:CFramePairSupportCablepairXDist+FT:eps"
+                     dy="0.5*FT:CFramePairSupportCableY+FT:eps"
+                     dz="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"/>
+	      <shape type="Box"
+		     dx="FT:CFramePairSupportCableDowelHeadRadius+0.5*FT:CFramePairSupportCablepairXDist+FT:eps"
+		     dy="0.5*FT:CFrameSpacerBarY+FT:eps"
+		     dz="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"/>
+	      <position y="FT:CFrameSpacerBarUpperYPos-FT:CFramePairSupportCableYPos"/>
+	    </shape>
+            <shape type="Box"
+                   dx="FT:CFramePairSupportCableDowelHeadRadius+0.5*FT:CFramePairSupportCablepairXDist+FT:eps"
+                   dy="0.5*FT:CFrameSpacerBarY+FT:eps"
+                   dz="FT:CFramePairSupportCableDowelHeadRadius+FT:eps"/>
+	    <position y="FT:CFrameSpacerBarLowerYPos-FT:CFramePairSupportCableYPos"/>
+          </shape>
+	  <shape type="Tube"
+                 dz="0.5*FT:CFrameSpacerBarY+2*FT:eps"
+                 rmin="0.0*mm"
+                 rmax="FT:CFramePairSupportCableDowelRadius"/>
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+          <position x="-0.5*FT:CFramePairSupportCablepairXDist"/>
+	  <position y="FT:CFrameSpacerBarUpperYPos-FT:CFramePairSupportCableYPos"/>
+	  <shape type="Tube"
+                 dz="0.5*FT:CFrameSpacerBarY+2*FT:eps"
+                 rmin="0.0*mm"
+                 rmax="FT:CFramePairSupportCableDowelRadius"/>
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+          <position x="-0.5*FT:CFramePairSupportCablepairXDist"/>
+          <position y="FT:CFrameSpacerBarLowerYPos-FT:CFramePairSupportCableYPos"/>
+	  <shape type="Tube"
+                 dz="0.5*FT:CFrameSpacerBarY+2*FT:eps"
+                 rmin="0.0*mm"
+                 rmax="FT:CFramePairSupportCableDowelRadius"/>
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+          <position x="0.5*FT:CFramePairSupportCablepairXDist"/>
+          <position y="FT:CFrameSpacerBarUpperYPos-FT:CFramePairSupportCableYPos"/>
+          <shape type="Tube"
+                 dz="0.5*FT:CFrameSpacerBarY+2*FT:eps"
+                 rmin="0.0*mm"
+                 rmax="FT:CFramePairSupportCableDowelRadius"/>
+          <rotation x="-pi/2.0"/> <!-- rotate z to y -->
+          <position x="0.5*FT:CFramePairSupportCablepairXDist"/>
+          <position y="FT:CFrameSpacerBarLowerYPos-FT:CFramePairSupportCableYPos"/>
+	</shape>
+	<physvol name="pvCFramePairSupportCableA" logvol="lvCFramePairSupportCable">
+          <position x="-0.5*FT:CFramePairSupportCablepairXDist" />
+        </physvol>
+        <physvol name="pvCFramePairSupportCableB" logvol="lvCFramePairSupportCable">
+          <position x="0.5*FT:CFramePairSupportCablepairXDist" />
+        </physvol>
+      </volume>
+      <volume name="lvCFramePairSpacerBarLeftHoneycombFill" material="FT:Honeycomb"> <!-- needs rotation of z to y -->
+        <shape type="BooleanShape" operation="subtraction" name="CFramePairSpacerBarLeftHoneycombFillNoHoles">
+          <shape type="Box" name="CFramePairSpacerBarLeftHoneycombFillBox"
+		 dx="0.5*FT:CFrameSpacerBarX"
+		 dy="0.5*FT:CFrameSpacerBarY"
+		 dz="0.5*(FT:CFrameSpacerBarZ-2.0*FT:CFrameSpacerBarSkinZ)"/>
+	  <shape type="BooleanShape" operation="union" name="CFramePairSpacerBarLeftHoneycombFillDowelholes">
+	    <shape type="Tube" name="CFramePairSpacerBarLeftHoneycombFillDowelholeInnerA"
+		   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+	    <shape type="Tube" name="CFramePairSpacerBarLeftHoneycombFillDowelholeInnerB"
+		   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+	    <position x="FT:CFramePairSupportCablepairXDist" />
+	    <shape type="Tube" name="CFramePairSpacerBarLeftHoneycombFillDowelholeOuterA"
+		   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+	    <position x="FT:CFramePairSupportCablepairOuterXPos-FT:CFramePairSupportCablepairInnerXPos" />
+	    <shape type="Tube" name="CFramePairSpacerBarLeftHoneycombFillDowelholeOuterB"
+		   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+	    <position x="FT:CFramePairSupportCablepairOuterXPos-FT:CFramePairSupportCablepairInnerXPos+FT:CFramePairSupportCablepairXDist" />
+          </shape>
+	  <rotation x="-pi/2.0"/>
+          <position x="-0.5*FT:CFrameSpacerBarX+FT:CFramePairSupportCablepairInnerXPos-0.5*FT:CFramePairSupportCablepairXDist" />
+        </shape>
+      </volume>
+      <volume name="lvCFramePairSpacerBarCFSkin" material="FT:CFRP" vis="FT:CFramePairSpacerBarCFSkin">
+	<shape type="Box" name="CFramePairSpacerBarCFSkin"
+               dx="0.5*FT:CFrameSpacerBarX"      dy="0.5*FT:CFrameSpacerBarY"      dz="0.5*FT:CFrameSpacerBarSkinZ"/>
+      </volume>
+      <volume name="lvCFramePairSpacerBarLeft" material="Air">
+	<shape type="BooleanShape" operation="subtraction" name="CFramePairSpacerBarLeft">
+	  <shape type="Box"
+		 dx="0.5*FT:CFrameSpacerBarX"      dy="0.5*FT:CFrameSpacerBarY"      dz="0.5*FT:CFrameSpacerBarZ"/>
+          <shape type="BooleanShape" operation="union" name="CFramePairSpacerBarLeftDowelholes">
+            <shape type="Tube" name="CFramePairSpacerBarLeftDowelholeInnerA"
+                   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+            <shape type="Tube" name="CFramePairSpacerBarLeftDowelholeInnerB"
+                   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+            <position x="FT:CFramePairSupportCablepairXDist" />
+            <shape type="Tube" name="CFramePairSpacerBarLeftDowelholeOuterA"
+                   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+            <position x="FT:CFramePairSupportCablepairOuterXPos-FT:CFramePairSupportCablepairInnerXPos" />
+            <shape type="Tube" name="CFramePairSpacerBarLeftDowelholeOuterB"
+                   dz="0.5*FT:CFrameSpacerBarY+5.0*mm+FT:eps" rmin="0.0*mm"   rmax="FT:CFramePairSupportCableDowelRadius+FT:eps"/>
+            <position x="FT:CFramePairSupportCablepairOuterXPos-FT:CFramePairSupportCablepairInnerXPos+FT:CFramePairSupportCablepairXDist" />
+          </shape>
+          <rotation x="-pi/2.0"/>
+          <position x="-0.5*FT:CFrameSpacerBarX+FT:CFramePairSupportCablepairInnerXPos-0.5*FT:CFramePairSupportCablepairXDist" />
+	</shape>
+	<physvol name="pvCFramePairSpacerBarLeftCFSkinFront" logvol="lvCFramePairSpacerBarCFSkin">
+          <position z="0.5*FT:CFrameSpacerBarZ-0.5*FT:CFrameSpacerBarSkinZ"/>
+        </physvol>
+        <physvol name="pvCFramePairSpacerBarLeftHoneycombFill" logvol="lvCFramePairSpacerBarLeftHoneycombFill">
+          <position/>
+        </physvol>
+        <physvol name="pvCFramePairSpacerBarLeftCFSkinBack" logvol="lvCFramePairSpacerBarCFSkin">
+          <position z="-0.5*FT:CFrameSpacerBarZ+0.5*FT:CFrameSpacerBarSkinZ"/>
+        </physvol>
+      </volume>
+
+      <volume name="lvCFramePair" material="Air" vis="FT:Frame">
+	<!-- Define box volume for CFrame -->
+	<shape type="BooleanShape" operation="subtraction" name="CFramePairVolumeWithHole">
+	  <shape type="Box" name="CFrameBox"
+		 dx="FT:CFrameSizeX"    dy="0.5*FT:CFrameSizeY"      dz="0.5*FT:CFrameSizeZ+0.5*FT:eps"/>
+	  <shape type="Tube" name="BeamHole"
+		 dz="0.5*FT:CFrameSizeZ/cos(Regions:TBeamAngle)+tan(Regions:TBeamAngle)*Regions:TBeamHoleRadius+FT:eps"
+		 rmin="0.0*mm"     rmax="Regions:TBeamHoleRadius+2*FT:eps"/>
+	  <position y="-FT:CFrameYShiftToPipecenter"/>
+	  <rotation x="-Regions:TBeamAngle"/>
+	</shape>
+
+	<physvol name="pvCFramePairIBarLeft" logvol="lvCFramePairIBar">
+	  <position x="-(FT:CFrameSizeX-0.5*FT:CFrameIBarX)" y="-0.5*FT:CFrameCarrierTopY"/>
+	</physvol>
+
+	<physvol name="pvCFramePairIBarRight" logvol="lvCFramePairIBar">
+	  <position x="(FT:CFrameSizeX-0.5*FT:CFrameIBarX)" y="-0.5*FT:CFrameCarrierTopY"/>
+	</physvol>
+
+	<physvol name="pvCFramePairCarrierTop" logvol="lvCFramePairCarrierTop">
+	  <position y="+0.5*(FT:CFrameSizeY-FT:CFrameCarrierTopY)"/>
+	</physvol>
+
+	<physvol name="pvCFramePairCarrierBottom" logvol="lvCFramePairCarrierBottom">
+	  <position y="-0.5*(FT:CFrameSizeY-FT:CFrameCarrierBottomY)"/>
+	</physvol>
+
+	<physvol name="pvCFramePairModuleMountTop" logvol="lvCFramePairModuleMountTop">
+	  <position y="0.5*FT:CFrameSizeY-FT:CFrameCarrierTopY-0.5*FT:CFrameModuleMountY"/>
+	</physvol>
+
+	<physvol name="pvCFramePairModuleMountBottom" logvol="lvCFramePairModuleMountBottom">
+	  <position y="-0.5*FT:CFrameSizeY+FT:CFrameCarrierBottomY+0.5*FT:CFrameModuleMountY"/>
+	</physvol>
+
+       <physvol name="pvCFramePairSupportCablepairRightOuter" logvol="lvCFramePairSupportCablepair">
+         <position x="-FT:CFrameGapX-FT:CFramePairSupportCablepairOuterXPos" y="FT:CFramePairSupportCableYPos"/>
+       </physvol>
+
+        <physvol name="pvCFramePairSupportCablepairRightInner" logvol="lvCFramePairSupportCablepair" >
+          <position x="-FT:CFrameGapX-FT:CFramePairSupportCablepairInnerXPos" y="FT:CFramePairSupportCableYPos"/>
+        </physvol>
+
+        <physvol name="pvCFramePairSupportCablepairLeftInner" logvol="lvCFramePairSupportCablepair">
+          <position x="FT:CFrameGapX+FT:CFramePairSupportCablepairInnerXPos" y="FT:CFramePairSupportCableYPos"/>
+        </physvol>
+
+        <physvol name="pvCFramePairSupportCablepairLeftOuter" logvol="lvCFramePairSupportCablepair">
+          <position x="FT:CFrameGapX+FT:CFramePairSupportCablepairOuterXPos" y="FT:CFramePairSupportCableYPos"/>
+        </physvol>
+
+        <physvol name="pvCFramePairSpacerBarLowerLeft" logvol="lvCFramePairSpacerBarLeft">
+          <position x= "FT:CFrameGapX+0.5*FT:CFrameSpacerBarX" y="FT:CFrameSpacerBarLowerYPos"/>
+        </physvol>
+
+        <physvol name="pvCFramePairSpacerBarLowerRight" logvol="lvCFramePairSpacerBarLeft">
+          <position x= "-FT:CFrameGapX-0.5*FT:CFrameSpacerBarX" y="FT:CFrameSpacerBarLowerYPos"/>
+          <rotation y="180*degree"/>
+        </physvol>
+
+        <physvol name="pvCFramePairSpacerBarUpperLeft" logvol="lvCFramePairSpacerBarLeft">
+          <position x= "FT:CFrameGapX+0.5*FT:CFrameSpacerBarX" y="FT:CFrameSpacerBarUpperYPos"/>
+        </physvol>
+
+        <physvol name="pvCFramePairSpacerBarUpperRight" logvol="lvCFramePairSpacerBarLeft">
+          <position x= "-FT:CFrameGapX-0.5*FT:CFrameSpacerBarX" y="FT:CFrameSpacerBarUpperYPos"/>
+          <rotation y="180*degree"/>
+        </physvol>
+      </volume>
+
+
+
+
+      <transformation>
+         <position/>
+      </transformation>
+
+      <debug>
+<!--
+        <item name="attach_volume"   value="lvLayer5X1"/>
+        <item name="attach_volume"   value="lvLayer5V"/>
+        <item name="attach_volume"   value="lvStation5"/>
+
+        <item name="attach_volume"   value="lvFTModuleFull"/>
+        <item name="attach_volume"   value="lvFTModuleHoleLeftU"/>
+        <item name="attach_volume"   value="lvFTModuleHoleRightV"/>
+        <item name="attach_volume"   value="lvFTModuleHoleRightX"/>
+        <item name="attach_volume"   value="lvFTModuleHoleRightU"/>
+        <item name="attach_volume"   value="lvFTModuleHoleLeftV"/>
+
+        <item name="attach_volume"   value="lvLayer5V"/>
+-->
+
+        <item name="attach_volume"   value=""/>
+        <item name="build_passive"   value="1"/>
+        <item name="build_frames"    value="1"/>
+        <item name="local_debug"     value="0"/>
+        <item name="debug"           value="0"/>
+      </debug>
+
+    </detector>
+  </detectors>
+
+  <readouts>
+    <readout name="FTHits">
+      <id>system:8,station:4,layer:5,halflayer:1,quarter:5,module:6,mat:3</id>
+    </readout>
+  </readouts>
+</lccdd>

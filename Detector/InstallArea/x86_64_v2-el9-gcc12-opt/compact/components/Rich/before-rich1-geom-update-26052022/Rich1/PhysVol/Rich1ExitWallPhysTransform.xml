@@ -1,0 +1,130 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+
+<!-- Rich1ExitWallMaster is inside lvRich1SubMaster                    -->
+<!--     Also the exit all diaphram components are in lvRich1SubMaster -->
+<!-- Rich1Exit Wall has lvRich1ExitG10Upstr                            -->
+<!--                        lvRich1ExitG10Dnstr                            -->
+<!--                        lvRich1ExitPMI                                 -->
+<!--                       which are inside the logvol lvRich1ExitWallmaster  -->
+
+
+
+<!-- The old names are kept for reference                              -->
+<!--      <physvol  name="pvRich1ExitWallMaster"                       -->
+<!--          volume="lvRich1ExitWallMaster" >                        -->
+<!--      <physvol name="pvRich1ExitDiaphramCentralUps:0"             -->
+<!--                logvol ="lvRich1ExitDiaphramCentral" >           -->
+<!--      <physvol name="pvRich1ExitDiaphramCentralDns:1"             -->
+<!--                 logvol ="lvRich1ExitDiaphramCentral" >           -->
+<!--      <physvol name="pvRich1ExitDiaphramMiddle"                   -->
+<!--               logvol="lvRich1ExitDiaphramMiddle" >               -->
+<!--      <physvol name="pvRich1ExitDiaphramPeriphery"                -->
+<!--               logvol="lvRich1ExitDiaphramPeriphery" >            -->
+<!--      <physvol name="pvRich1ExitDiaphramCentralPlugUps"           -->
+<!--              logvol="lvRich1ExitDiaphramCentralPlugUps" >        -->
+<!--      <physvol name="pvRich1ExitDiaphramCentralPlugDns"           -->
+<!--              logvol="lvRich1ExitDiaphramCentralPlugDns" >         -->
+<!--      <physvol  name="pvRich1ExitG10Upstr"                         -->
+<!--                logvol="lvRich1ExitG10Upstr" >                                      -->
+<!--     <physvol  name="pvRich1ExitG10Dnstr"                                            -->
+<!--                logvol="lvRich1ExitG10Dnstr" >                                      -->
+<!--      <physvol  name="pvRich1ExitPMI"                                                -->
+<!--                logvol="lvRich1ExitPMI" >                                           -->
+
+
+
+
+<Rich1>
+
+
+    <item name="PhysVolName"    value="pvRich1ExitWallMaster" />
+    <item name="TransformName"  value="pvRich1ExitWallMasterTransform">
+       <transformation>
+                <position x = "Rh1ExitWallMasterX"
+                          y = "Rh1ExitWallMasterY"
+                          z = "Rh1ExitWallMasterZ" />
+       </transformation>
+    </item>
+
+
+    <item name="PhysVolName"    value="pvRich1ExitDiaphramCentralUps" />
+    <item name="TransformName"  value="pvRich1ExitDiaphramCentralUpsTransform">
+       <transformation>
+                 <position  z="Rh1DiaphramCentralUpsZ"  />
+        </transformation>
+    </item>
+
+     <item name="PhysVolName"    value="pvRich1ExitDiaphramCentralDns" />
+     <item name="TransformName"  value="pvRich1ExitDiaphramCentralDnsTransform">
+       <transformation>    
+                 <position  z="Rh1DiaphramCentralDnsZ"  />
+        </transformation>
+     </item>
+
+     <item name="PhysVolName"    value="pvRich1ExitDiaphramMiddle" />
+     <item name="TransformName"  value="pvRich1ExitDiaphramMiddleTransform">
+       <transformation>    
+               <position z= "Rh1DiaphramMidPartZ"   />
+        </transformation>
+     </item>
+
+     <item name="PhysVolName"    value="pvRich1ExitDiaphramPeriphery" />
+     <item name="TransformName"  value="pvRich1ExitDiaphramPeripheryTransform">
+       <transformation>    
+               <position z="Rh1DiaphramPerhZ" />
+       </transformation>
+     </item>
+ 
+     <item name="PhysVolName"    value="pvRich1ExitDiaphramCentralPlugUps" />
+     <item name="TransformName"  value="pvRich1ExitDiaphramCentralPlugUpsTransform">
+       <transformation>    
+              <position z="Rh1DiaphramCentralPlugUpsZ" />
+       </transformation>
+     </item>
+
+     <item name="PhysVolName"    value="pvRich1ExitDiaphramCentralPlugDns" />
+     <item name="TransformName"  value="pvRich1ExitDiaphramCentralPlugDnsTransform">
+       <transformation>    
+              <position z="Rh1DiaphramCentralPlugDnsZ" />
+       </transformation>
+     </item>
+
+     <item name="PhysVolName"    value="pvRich1ExitG10Upstr" />
+     <item name="TransformName"  value="pvRich1ExitG10UpstrTransform">
+       <transformation>    
+                <position x = "Rh1ExitG10UpstrX"
+                          y = "Rh1ExitG10UpstrY"
+                          z = "Rh1ExitG10UpstrZ" />
+       </transformation>
+     </item>
+
+     <item name="PhysVolName"    value="pvRich1ExitG10Dnstr" />
+     <item name="TransformName"  value="pvRich1ExitG10DnstrTransform">
+       <transformation>    
+                <position x = "Rh1ExitG10DnstrX"
+                          y = "Rh1ExitG10DnstrY"
+                          z = "Rh1ExitG10DnstrZ" />
+       </transformation>
+     </item>
+
+     <item name="PhysVolName"    value="pvRich1ExitPMI" />
+     <item name="TransformName"  value="pvRich1ExitPMITransform">
+       <transformation>    
+                <position  x = "Rh1ExitPMIX"
+                           y = "Rh1ExitPMIY"
+                           z = "Rh1ExitPMIZ" />
+       </transformation>
+     </item>
+
+
+</Rich1>

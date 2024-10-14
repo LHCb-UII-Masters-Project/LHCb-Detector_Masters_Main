@@ -1,0 +1,35 @@
+<!--========================================================================== -->
+<!--  LHCb Detector Description                                                -->
+<!--========================================================================== -->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--========================================================================== -->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--========================================================================== -->
+<lccdd>
+
+  <detectors>
+    <!--==================================================================================-->
+    <!--==================================Bakeout ========================================-->
+    <!--==================================================================================-->
+    <detector name="PipeAfterMagnetBakeout" type="DD4hep_VolumeAssembly" parent="${PipeAfterMagnetBakeout:parent}" vis="Pipe:Vis">
+      <envelope name="lvUX85BakeoutAfterMagnet" material="Pipe:BakeOutAerogel">
+        <shape type="ConeSegment" name="UX85-3-Bakeout-Rich2"
+              dz="UX853BakeoutRich2Lenght/2"
+              rmin1="UX853BakeoutRich2RadiusZmin"
+              rmin2="UX853BakeoutRich2RadiusZmax"
+              rmax1="UX853BakeoutRich2RadiusZmin + UX853BakeoutRich2Thick"
+              rmax2="UX853BakeoutRich2RadiusZmax + UX853BakeoutRich2Thick"/>
+
+      </envelope>
+      <position z="(UX853BakeoutRich2StartIP + 0.5*UX853BakeoutRich2Lenght) - Regions:AfterMagnetZPos"/>
+      <nodebug/>
+    </detector>
+
+  </detectors>
+</lccdd>

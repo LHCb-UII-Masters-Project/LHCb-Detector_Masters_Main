@@ -1,0 +1,225 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    02/07/2020                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich detector property specifications parameters definitions             -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+
+<constant name="AtmospherePressure"    value="1.013*bar"/>
+<constant name="AtmosphereTemperature"    value="293.0*kelvin"/>
+
+
+<constant name="RhPmtMaxQuantumEff" value="0.60" />
+<constant name="RhMapmtMaxQuantumEff" value="0.6" />
+<constant name="Rh1Mirror1MaxReflectivity" value="0.95" />
+<constant name="Rh1Mirror2MaxReflectivity" value="0.95" />
+<constant name="Rh2Mirror1MaxReflectivity" value="0.95" />
+<constant name="Rh2Mirror2MaxReflectivity" value="0.95" />
+
+<!-- The following line moved to RichRun3GeneralGeomParam.xml -->
+<!-- <constant name="RhZBeyondDownstreamOfRich1"  value="3000.0*mm" />  -->
+
+
+<constant name="RichPhotMomWaveCnv" value="1243.125" />
+<constant name="STP_Temperature" value="273.*kelvin" />
+<constant name="STP_Pressure" value="1.01325*bar" />
+<constant name="SellLorGasFac"  value="0.3738"  />
+<constant name="C4F10Temperature" value="293.*kelvin" />
+<constant name="C4F10ReferenceTemperature" value="293.*kelvin" />
+<constant name="C4F10ReferencePressure"  value="STP_Pressure" />
+<constant name="C4F10Pressure" value="1.013*bar" />
+<!-- <constant name="C4F10ReferencePressure"  value= "C4F10Pressure" /> -->
+<constant name="C4F10Density" value="0.01195" unit="g/cm3" />
+<constant name="C4F10GasRhoFac" value="(C4F10Pressure/STP_Pressure)*(STP_Temperature/C4F10Temperature)" />
+<constant name="HeraBC4F10A" value="1.0013178"/>
+<constant name="HeraBC4F10B" value="1.723E-7" />
+<constant name="HeraBC4F10C" value="5.495E-6" />
+<constant name="SellC4F10E1" value="18.938" />
+<constant name="SellC4F10E2" value="50.0" />
+<constant name="SellC4F10F1" value="12305.3" />
+<constant name="SellC4F10F2" value="0.0"  />
+<constant name="GasMolWeightC4F10" value="138.0" />
+<constant name="RhoEffectiveSellC4F10"  value="0.00964" />
+<constant name="Rich1NitrogenDensity" value="0.0008073" unit="g/cm3" />
+<constant name="Rich1NitrogenTemperature" value="293.*kelvin" />
+<constant name="Rich1NitrogenPressure" value="1.013*bar" />
+<constant name="SellN2E1"  value="13.414"  />
+<constant name="SellN2E2"  value="23.215"  />
+<constant name="SellN2F1"  value="921.28"  />
+<constant name="SellN2F2"  value="3569.60"  />
+<constant name="GasMolWeightN2"  value="28.02"  />
+<constant name="GasRhoN2atSTP"  value="0.00125053"  />
+<constant name="N2GasRhoCur" value="GasRhoN2atSTP*(Rich1NitrogenPressure/STP_Pressure)*(STP_Temperature/Rich1NitrogenTemperature)"/>
+<constant name="CF4Temperature" value="293.*kelvin" />
+<constant name="CF4ReferenceTemperatureForSellmeirClassic" value="293.*kelvin" />
+<constant name="CF4ReferenceTemperatureForSellmeirAbjean" value="273.*kelvin" />
+<constant name="CF4Pressure" value="1.013*bar" />
+<constant name="CF4Density" value="0.003884" unit="g/cm3"/>
+<constant name="SellCF4E1"  value="20.003"  />
+<constant name="SellCF4E2"  value="50.0"  />
+<constant name="SellCF4F1"  value="7626.16"  />
+<constant name="SellCF4F2"  value="0.0"  />
+<constant name="GasMolWeightCF4"  value="88"  />
+<constant name="GasRhoCF4atSTP"  value="0.00366"  />
+<constant name="GasRhoCF4atSellClassicReference"  value="0.00366"  />
+<constant name="C3F8Temperature" value="293.*kelvin" />
+<constant name="C3F8ReferenceTemperature" value="STP_Temperature" />
+<constant name="C3F8Pressure" value="1.013*bar" />
+<constant name="C3F8ReferencePressure" value="STP_Pressure" />
+<constant name="C3F8Density" value="0.0080306" unit="g/cm3" />
+<constant name="GasMolWeightC3F8" value = "188.02" />
+<constant name="C3F8RhoAtSTP"  value= "C3F8Density" />
+<constant name="C3F8GasRhoCur" value="(C3F8Pressure/STP_Pressure)*(STP_Temperature/C3F8Temperature)" />
+<constant name="C3F8SellMeirAFactor" value="0.279337" />
+<constant name="C3F8SellMeirAMultFact" value="0.000001" />
+<constant name="C3F8SellmeirLambdaZeroFactorInNanometer"  value="64.434073096" />
+<constant name="C3F8SellmeirEphyZeroFactor" value ="RichPhotMomWaveCnv/C3F8SellmeirLambdaZeroFactorInNanometer" />
+<constant name="C3F8SellmeirEphyZeroSquaredFactor" value="C3F8SellmeirEphyZeroFactor*C3F8SellmeirEphyZeroFactor" />
+<constant name="CO2SellmeirAFactor" value ="0.0689781"  />
+<constant name="CO2SellmeirMultFacotor"  value="0.000001" />
+<constant name="CO2SellmeirLambdaZeroFactor"  value="79.9406" />
+<constant name="CO2ReferenceTemperature"  value="273.0" />
+<constant name="RichCO2Temperature"  value="293.*kelvin" />
+<constant name="RichCO2Pressure"  value="1.013*bar" />
+
+<!--
+
+  For C3F8 the Sellmeir param obtained from NIMA 381 (1996) 576-577 and converted to
+  the formula in photon energy. SE March 18-2010
+
+  parameter name="CF4GasRhoCur" value="GasRhoCF4atSTP*(CF4Pressure/STP_Pressure)*(STP_Temperature/CF4Temperature)"
+
+  The following modif is to be compatible with cdf paramtrization.
+  May2010- The sellmeir for CF4 is at the reference pressure of 1013 mbar and 293 K .
+
+   So the label for density is adjusted to reflect this.
+
+  In the above the parameter GasRhoCF4atSTP is kept for backward compatibility, although the
+  density is that at 1013bar and 293K and not at STP. To avoid confusion a new
+  parameter is introduced, namely GasRhoCF4atSellClassicReference.
+-->
+
+<constant name="CF4GasRhoCur" value="GasRhoCF4atSellClassicReference"  />
+
+
+<!--
+  Also for CF4 the second parametrization added; this is at 1013 mbar and 273K. This is
+  now used as default. Ref: Abjean etal. NIMA 292 (1990) 593-594.
+  Now for the second parametrization of CF4 refractive index in June-7-2010.
+  The parameter 0.000261154 from this reference is converted as 1/sqrt(0.000261154)=61.880192909 to
+  get the lambdazero parameter.
+
+-->
+
+<constant name="CF4SellMeirAFactor"  value="0.124523"   />
+<constant name="CF4SellMeirAMultFact" value="0.000001" />
+<constant name="CF4SellmeirLambdaZeroFactorInNanometer"  value="61.880192909" />
+<constant name="CF4SellmeirEphyZeroFactor" value ="RichPhotMomWaveCnv/CF4SellmeirLambdaZeroFactorInNanometer" />
+<constant name="CF4SellmeirEphyZeroSquaredFactor" value="CF4SellmeirEphyZeroFactor*CF4SellmeirEphyZeroFactor" />
+
+
+
+<constant name="Rich2NitrogenDensity" value="0.0008073" unit="g/cm3" />
+<constant name="Rich2NitrogenTemperature" value="293.*kelvin" />
+<constant name="Rich2NitrogenPressure" value="1.013*bar" />
+
+
+<!-- now for the photon energy ranges c4f10-->
+<!-- The following refined for the DD4HEP framework as a temporary measure. Sep 2021-->
+<!-- This may be reviewed in the future -->
+<constant name="PhotonMinEnergyC4F10" value="1.6*eV" />
+<constant name="PhotonMaxEnergyC4F10" value="6.5*eV" />
+<constant name="PhotonCkvMinEnergyC4F10" value="1.6*eV" />
+<constant name="PhotonCkvMaxEnergyC4F10" value="6.5*eV" />
+<!--
+<constant name="PhotonMinEnergyC4F10" value="1.5*eV" />
+<constant name="PhotonMaxEnergyC4F10" value="7.5*eV" />
+<constant name="PhotonCkvMinEnergyC4F10" value="1.75*eV" />
+<constant name="PhotonCkvMaxEnergyC4F10" value="7.0*eV" />
+-->
+<!-- now for the photon energy ranges  cf4  -->
+<!-- The following refined for the DD4HEP framework as a temporary measure. Sep 2021-->
+<!-- This may be reviewed in the future -->
+<constant name="PhotonMinEnergyCF4" value="1.6*eV" />
+<constant name="PhotonMaxEnergyCF4" value="6.5*eV" />
+<constant name="PhotonCkvMinEnergyCF4" value="1.6*eV" />
+<constant name="PhotonCkvMaxEnergyCF4" value="6.5*eV" />
+<!--
+<constant name="PhotonMinEnergyCF4" value="1.5*eV" />
+<constant name="PhotonMaxEnergyCF4" value="7.5*eV" />
+<constant name="PhotonCkvMinEnergyCF4" value="1.75*eV" />
+<constant name="PhotonCkvMaxEnergyCF4" value="7.0*eV" />
+-->
+<!-- now for the photon energy ranges anywhere in RICH , for example in Hpd -->
+<!-- The following refined for the DD4HEP framework as a temporary measure. Sep 2021-->
+<!-- This may be reviewed in the future -->
+<constant name="PhotonMinEnergyInRICH"   value="1.6*eV" />
+<constant name="PhotonMaxEnergyInRICH"   value="6.5*eV" />
+<!--
+<constant name="PhotonMinEnergyInRICH"   value="1.5*eV" />
+<constant name="PhotonMaxEnergyInRICH"   value="7.5*eV" />
+-->
+<!--  Now for CF4 Scintillation -->
+<constant name = "CF4ScintillationFastTimeConstantInNanoSec" value="10.0" />
+<constant name = "CF4ScintillationYieldPerMeV" value="2000.0" />
+<constant name = "CF4ScintillationResolutionScale" value="1.0" />
+
+
+<!-- End of the RichPropertySpecification Parameters -->
+<constant name="PMTSiHitDetectionEff" value="0.90"  />
+
+<!-- The following param is used only in Brunel -->
+<constant name="PMTQuartzWindowEfficiency" value="0.92"  />
+
+
+<!-- Aerogel optical parameters kept for special studies although not used in RUN3 -->
+<constant name="AgelMeasuredClarity" value="0.006" />
+<constant name="AgelDefaultClarity" value="0.006" />
+<constant name="Rich1AerogelSurfScatConstA" value="0.9368" />
+<!-- now for the photon energy ranges Aerogel-->
+<constant name="SellAgelE1" value="10.666" />
+<constant name="SellAgelE2" value="18.125" />
+<constant name="SellAgelF1" value="2.653" />
+<constant name="SellAgelF2" value="13.075" />
+
+<constant name="PhotonMinEnergyAerogel" value="1.5*eV" />
+<constant name="PhotonMaxEnergyAerogel" value="7.5*eV" />
+<constant name="PhotonCkvMinEnergyAerogel" value="1.75*eV" />
+<constant name="PhotonCkvMaxEnergyAerogel" value="4.5*eV" />
+
+
+<constant name="AerogelThickness" value="50.0*mm" />
+<constant name="AgelfixedLambdaValue" value="632.8*nanometer" />
+
+<!-- End of Aerogel parameters for special studies          -->
+
+
+
+<!-- The following kept for any special studies although not part of standard RUN3 -->
+<!-- HPD related parameters for special studies and potential backward compatibility -->
+<constant name="RhHpdMaxQuantumEff" value="0.45" />
+<constant name="HPDSiHitDetectionEff" value="0.85"  />
+<!-- The following parameter is used in Brunel only     -->
+<constant name="HPDQuartzWindowEfficiency" value="0.92"  />
+
+<!--  End of HPD related parameters for special studies -->
+
+<!-- The following used until the Rich1 QW AR coating is implemented propertly in boundary proc in Gauss -->
+<constant name="Rich1GasQWARCoatingEfficiencyFactor" value="1.0308" />
+
+
+<!-- End of  Rich detector property specifications parameters  definitions               -->
+
+  </define>
+
+</lccdd>

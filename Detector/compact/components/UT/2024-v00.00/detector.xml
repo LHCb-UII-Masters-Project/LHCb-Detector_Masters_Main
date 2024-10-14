@@ -1,0 +1,61 @@
+<!--==========================================================================-->
+<!-- LHCb Detector Description -->
+<!--==========================================================================-->
+<!--  -->
+<!-- Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!-- All rights reserved. -->
+<!--  -->
+<!-- @author  H.Wu -->
+<!-- @date    03/05/2021 -->
+<!--  -->
+<!--==========================================================================-->
+<!-- XML description of the UT stations -->
+<!--==========================================================================-->
+
+<lccdd>
+	<define>
+	</define>
+	<detectors>
+		<detector id="UT:ID" name="UT" type="LHCb_UT_v1_0" parent="${UT:parent}" readout="UTHits" vis="UT:Envelope">
+
+			<include ref="Sensor.xml"/>
+			<include ref="Module.xml"/>
+			<include ref="Stave.xml"/>
+			<include ref="UTBox.xml"/>
+			<include ref="UTaXLayer.xml"/>
+			<include ref="UTaULayer.xml"/>
+			<include ref="UTbVLayer.xml"/>
+			<include ref="UTbXLayer.xml"/>
+			<include ref="UTHalf.xml"/>
+
+			<debug>
+				<item name="debug" value="false"/>
+				<item name="Build_Sides" value="1"/>
+				<item name="Build_Aside" value="1"/>
+				<item name="Build_Aside_UTaX" value="1"/>
+				<item name="Build_Aside_UTaU" value="1"/>
+				<item name="Build_Aside_UTbV" value="1"/>
+				<item name="Build_Aside_UTbX" value="1"/>
+				<item name="Build_Cside" value="1"/>
+				<item name="Build_Cside_UTaX" value="1"/>
+				<item name="Build_Cside_UTaU" value="1"/>
+				<item name="Build_Cside_UTbV" value="1"/>
+				<item name="Build_Cside_UTbX" value="1"/>
+				<item name="Build_Frame" value="1"/>
+				<item name="Build_Jacket" value="1"/>
+				<item name="Build_PipeHeater" value="1"/>
+				<item name="Build_Box" value="1"/>
+				<item name="Build_BoxPlug" value="1"/>
+				<item name="select_volume" value="lvUT"/>
+			</debug>
+
+			<position z="2485*mm" />
+
+		</detector>
+	</detectors>
+	<readouts>
+		<readout name="UTHits">
+			<id>system:8,sensor:1,sector:1,module:3,face:1,stave:4,layer:2,side:1</id>
+		</readout>
+	</readouts>
+</lccdd>

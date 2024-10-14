@@ -1,0 +1,137 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 central region LogVols including those for Gas enclosure.            -->
+<!--  This includes Carbon tube, Gas radiator region and walls around the GasEnclosure -->
+<!--  ==========================================================================-->
+
+
+<Rich2>
+
+
+  <volume name="lvRich2GasEnclosure" material="Rich:R2RadiatorGas" vis= "Rich:VisRich2GasEnclosure">
+
+    <shape type="BooleanShape" operation="union" name="Rich2GasEnclUnion">
+
+      <shape type="BooleanShape" operation="subtraction" name="Rich2GasEnclCentralPartWithHole">
+
+         <shape type="Trd2"  name="Rich2MainGasTrap"
+          z ="Rh2MainGasSizeZ*RhHalfSize"
+	  x1 ="Rh2MainGasSizeX1*RhHalfSize"
+	  x2 ="Rh2MainGasSizeX2*RhHalfSize"
+	  y1 ="Rh2MainGasSizeY1*RhHalfSize"
+	  y2 ="Rh2MainGasSizeY2*RhHalfSize" />
+         <shape type="ConeSegment" name= "Rich2GasHoleCone"
+	  dz = "Rh2GasHoleConZSize*RhHalfSize"
+	  rmax1 = "Rh2GasHoleConUpsRad"
+	  rmax2 = "Rh2GasHoleConDnsRad" />
+          <position z="Rh2GasHoleConsZPos" />
+      </shape>
+
+
+      <shape type="Trd2"  name= "Rich2PosXSideGasTrap"
+	z = "Rh2SideGasSizeZ*RhHalfSize"
+	x1 = "Rh2SideGasSizeX1*RhHalfSize"
+	x2 = "Rh2SideGasSizeX2*RhHalfSize"
+	y1 = "Rh2SideGasSizeY1*RhHalfSize"
+	y2 = "Rh2SideGasSizeY2*RhHalfSize" />
+        <position  x = "Rh2SideGasPosX"
+  	           y = "Rh2SideGasPosY"
+	           z = "Rh2SideGasPosZ"  />
+        <rotation  y  = "Rh2SideGasAngle" />
+
+      <shape type="Trd2"  name= "Rich2NegXSideGasTrap"
+	z = "Rh2SideGasSizeZ*RhHalfSize"
+	x1 = "Rh2SideGasSizeX1*RhHalfSize"
+	x2 = "Rh2SideGasSizeX2*RhHalfSize"
+	y1 = "Rh2SideGasSizeY1*RhHalfSize"
+	y2 = "Rh2SideGasSizeY2*RhHalfSize" />
+        <position  x = "Rh2SideGasNegX"
+	           y = "Rh2SideGasNegY"
+             	   z = "Rh2SideGasNegZ"  />
+        <rotation  y = "Rh2SideGasNegAngle" />
+
+    </shape>
+  </volume>
+
+ <!-- central carbon fibre tube around the beampipe  -->
+
+  <volume name="lvRich2Tube" material="Rich:Rich2CarbonFibre" vis= "Rich:VisRich2CentralTube">
+     <shape type="ConeSegment" name="Rich2CentralTubeCons"
+        dz = "Rh2CentralTubeConeSizeZ*RhHalfSize"
+        rmin1 = "Rh2CentralTubeUpstreamInnerRad"
+        rmin2 = "Rh2CentralTubeDnstreamInnerRad"
+        rmax1 = "Rh2CentralTubeUpstreamOuterRad"
+        rmax2 = "Rh2CentralTubeDnstreamOuterRad" />
+
+  </volume>
+
+  <!-- There are 6 walls surrounding Gas enclosure. Four of them are    -->
+  <!--  at the top, bottom, left and right.                              -->
+  <!-- The logvol named lvRich2GasContTopBot will be placed at the top and bottom -->
+  <!-- The upstream and downstream sides have the entrance and exit walls. They are defined in -->
+  <!-- another file.                                                                           -->
+
+
+  <volume name = "lvRich2GasContWallTopAndBot" material = "Rich:Rich2GasContainerWallMaterial" vis= "Rich:VisRich2GasEnclWall">
+   <shape type="Trd2"  name="Rich2GasContTopAndBotTrap"
+      z   = "Rh2MainGasSizeZ*RhHalfSize"
+      x1  = "Rh2MainGasSizeX1*RhHalfSize"
+      x2  = "Rh2MainGasSizeX2*RhHalfSize"
+      y1  = "Rh2GasContThickness*RhHalfSize"
+      y2  = "Rh2GasContThickness*RhHalfSize" />
+  </volume>
+
+  <volume name = "lvRich2GasContWallSide0" material = "Rich:Rich2GasContainerWallMaterial" vis= "Rich:VisRich2GasEnclWall">
+
+     <shape type="BooleanShape" operation="subtraction" name="Rich2GasContSideWallMinusEar0">
+      <shape type="Box"  name = "Rich2GasContSide0Box"
+        dx  = "Rh2GasContThickness*RhHalfSize"
+        dy  = "Rh2MainGasSizeY1*RhHalfSize"
+        dz  = "Rh2GasContSideZsize*RhHalfSize" />
+
+      <shape type="Trd2"  name ="Rich2Side2GasSub0Trap"
+        z   = "Rh2SideGasSizeZ*RhHalfSize"
+        x1  = "Rh2SideGasSizeX1*RhHalfSize"
+        x2  = "Rh2SideGasSizeX2*RhHalfSize"
+        y1  = "Rh2SideGasSizeY1*RhHalfSize"
+        y2  = "Rh2SideGasSizeY2*RhHalfSize" />
+        <position  x = "Rh2GasContSide0HolePosX"
+                   y = "0.0*mm"
+                   z = "Rh2GasContSideHoleZpos"  />
+        <rotation  y = "Rh2GasContSideHoleAngleAtSide0" />
+
+    </shape>
+  </volume>
+
+  <volume name = "lvRich2GasContWallSide1" material = "Rich:Rich2GasContainerWallMaterial" vis= "Rich:VisRich2GasEnclWall">
+
+     <shape type="BooleanShape" operation="subtraction" name="Rich2GasContSideWallMinusEar1">
+      <shape type="Box"  name = "Rich2GasContSide1Box"
+        dx  = "Rh2GasContThickness*RhHalfSize"
+        dy  = "Rh2MainGasSizeY1*RhHalfSize"
+        dz  = "Rh2GasContSideZsize*RhHalfSize" />
+
+      <shape type="Trd2"  name ="Rich2Side2GasSub1Trap"
+        z   = "Rh2SideGasSizeZ*RhHalfSize"
+        x1  = "Rh2SideGasSizeX1*RhHalfSize"
+        x2  = "Rh2SideGasSizeX2*RhHalfSize"
+        y1  = "Rh2SideGasSizeY1*RhHalfSize"
+        y2  = "Rh2SideGasSizeY2*RhHalfSize" />
+        <position  x = "Rh2GasContSide1HolePosX"
+                   y = "0.0*mm"
+                   z = "Rh2GasContSideHoleZpos"  />
+        <rotation  y = "Rh2GasContSideHoleAngleAtSide1" />
+
+    </shape>
+  </volume>
+
+
+</Rich2>

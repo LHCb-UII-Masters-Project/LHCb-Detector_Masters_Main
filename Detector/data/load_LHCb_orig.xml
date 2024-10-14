@@ -1,0 +1,25 @@
+<lccdd>
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+  <geometry  open="false" close="false"/>
+  <define>
+    <constant name="Air"     value="/dd/Materials/Air"     type="string"/>
+    <constant name="Vacuum"  value="/dd/Materials/Vacuum"  type="string"/>
+  </define>
+  <plugins>
+    <plugin name="DD4hep_ROOTGDMLParse">
+      <arg value="-input"/>
+      <arg value="${DD4hepExamplesINSTALL}/examples/DDUpgrade/data/LHCb.gdml.orig"/>
+      <arg value="-world"/>
+    </plugin>
+  </plugins>
+  
+</lccdd>

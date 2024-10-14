@@ -1,0 +1,454 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<velo>
+
+  <!-- TVV1401 - Weld Flange -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxWeldFlange">
+    <shape type="BooleanShape" operation="subtraction" name="RFBWeldFlangeSub">
+      <shape type="Box" name="RFBWeFlBox1"
+             dx="0.5*TV:RFBoxWeldFlangeThickX"
+             dy="0.5*TV:RFBoxWeldFlangeOuterY"
+             dz="0.5*TV:RFBoxWeldFlangeOuterZ"/>
+      <shape type="Box" name="RFBWeFlBox2"
+             dx="TV:RFBoxWeldFlangeThickX"
+             dy="0.5*TV:RFBoxWeldFlangeInnerY"
+             dz="0.5*TV:RFBoxWeldFlangeInnerZ"/>
+    </shape>
+  </volume>
+
+  <!-- Part of the RF foil that connects to the box at the top and bottom -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxFoilSurround">
+    <shape type="BooleanShape" operation="subtraction" name="RFBFoilSurround">
+      <shape type="Box" name="RFBFoilSurroundBox1"
+             dx="0.5*TV:RFThickness"
+             dy="0.5*TV:RFFoilYSize"
+             dz="0.5*TV:RFFoilZSize"/>
+      <shape type="Box" name="RFBFoilSurroundBox2"
+             dx="TV:RFThickness"
+             dy="0.5*TV:RFWidth"
+             dz="TV:RFFoilZSize"/>
+    </shape>
+  </volume>
+
+  <!-- Side Plate Foil Section (part of TVV1403 and TVV1404) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxSPFoilSection">
+    <shape type="BooleanShape" operation="subtraction" name="RFBSPFoilSectionSub">
+      <shape type="Box" name="RFBSidePlate1Box1a"
+             dx="0.5*TV:RFBoxSidePlateFoilSectionSizeX"
+             dy="0.5*TV:RFBoxSidePlateThick"
+             dz="0.5*TV:RFBoxSidePlateSizeZ"/>
+      <shape type="Trap" name="RFBSPlate1Trap2b"
+            z="0.5*3*TV:RFBoxThick"
+            y1="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x1="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x2="0.5*TV:Epsilon"
+            alpha1="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"
+            y2="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x3="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x4="0.5*TV:Epsilon"
+            alpha2="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"/>
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2-TV:RFBoxSidePlateCutout2SizeX/2"
+                y="0*mm"
+                z="TV:RFBoxSidePlateSizeZ/2-TV:RFBoxSidePlateCutout2SizeZ/4+TV:Epsilon"/>
+      <rotation z="90*degree" x="90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Side Plate Foil Lip (part of TVV1403 and TVV1404) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxSPFoilLip">
+    <shape type="BooleanShape" operation="subtraction" name="RFBSPFoilLipSub">
+      <shape type="Box" name="RFBSidePlate1Box2a"
+             dx="0.5*TV:RFBoxThick"
+             dy="0.5*TV:RFBoxSidePlateFoilSectionSizeY"
+             dz="0.5*TV:RFBoxSidePlateSizeZ"/>
+      <shape type="Trap" name="RFBSPlate1Trap2c"
+            z="0.5*3*TV:RFBoxSidePlateFoilSectionSizeY"
+            y1="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x1="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x2="0.5*TV:Epsilon"
+            alpha1="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"
+            y2="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x3="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x4="0.5*TV:Epsilon"
+            alpha2="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"/>
+      <position x="TV:RFBoxThick/2-TV:RFBoxSidePlateCutout2SizeX/2"
+                y="0*mm"
+                z="TV:RFBoxSidePlateSizeZ/2-TV:RFBoxSidePlateCutout2SizeZ/4+TV:Epsilon"/>
+      <rotation z="90*degree" x="90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Side Plate Slope Section (part of TVV1403) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxSPSlopeSection1">
+    <shape type="BooleanShape" operation="subtraction" name="RFBSPSlopeSection1Sub">
+      <shape type="BooleanShape" operation="intersection" name="RFBSPSlopeSection1Inter">
+        <shape type="Box" name="RFBSPSlopeSection1Box1"
+               dx="0.5*TV:RFBoxSidePlateSlopeSectionSizeX"
+               dy="0.5*TV:RFBoxSidePlateSlopeSectionSizeY+TV:RFBoxSidePlateThick"
+               dz="0.5*TV:RFBoxSidePlateSizeZ"/>
+        <shape type="Box" name="RFBSPSlopeSection1Box2"
+               dx="0.5*1.1*TV:RFBoxSidePlateSlopeSectionLength"
+               dy="0.5*TV:RFBoxSidePlateThick"
+               dz="0.5*TV:RFBoxSidePlateSizeZ"/>
+        <position/>
+        <rotation z="-TV:RFBoxSidePlateSlopeSectionTiltAngle"/>
+      </shape>
+      <shape type="Trap" name="RFBSPSlopeSection1Trap1"
+            z="0.5*3*TV:RFBoxSidePlateSlopeSectionSizeY"
+            y1="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x1="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x2="0.5*TV:Epsilon"
+            alpha1="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"
+            y2="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x3="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x4="0.5*TV:Epsilon"
+            alpha2="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"/>
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX+TV:RFBoxSidePlateSlopeSectionSizeX/2-TV:RFBoxSidePlateCutout2SizeX/2"
+                y="0*mm"
+                z="TV:RFBoxSidePlateSizeZ/2-TV:RFBoxSidePlateCutout2SizeZ/4+TV:Epsilon"/>
+      <rotation z="90*degree" x="90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Side Plate Slope Section (part of TVV1404) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxSPSlopeSection2">
+    <shape type="BooleanShape" operation="subtraction" name="RFBSPSlopeSection2Sub">
+      <shape type="BooleanShape" operation="intersection" name="RFBSPSlopeSection2Inter">
+        <shape type="Box" name="RFBSPSlopeSection2Box1"
+               dx="0.5*TV:RFBoxSidePlateSlopeSectionSizeX"
+               dy="0.5*TV:RFBoxSidePlateSlopeSectionSizeY+TV:RFBoxSidePlateThick"
+               dz="0.5*TV:RFBoxSidePlateSizeZ"/>
+        <shape type="Box" name="RFBSPSlopeSection2Box2"
+               dx="0.5*1.1*TV:RFBoxSidePlateSlopeSectionLength"
+               dy="0.5*TV:RFBoxSidePlateThick"
+               dz="0.5*TV:RFBoxSidePlateSizeZ"/>
+        <position/>
+        <rotation z="TV:RFBoxSidePlateSlopeSectionTiltAngle"/>
+      </shape>
+      <shape type="Trap" name="RFBSPSlopeSection2Trap1"
+            z="0.5*3*TV:RFBoxSidePlateSlopeSectionSizeY"
+            y1="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x1="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x2="0.5*TV:Epsilon"
+            alpha1="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"
+            y2="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x3="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x4="0.5*TV:Epsilon"
+            alpha2="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"/>
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX+TV:RFBoxSidePlateSlopeSectionSizeX/2-TV:RFBoxSidePlateCutout2SizeX/2"
+                y="0*mm"
+                z="TV:RFBoxSidePlateSizeZ/2-TV:RFBoxSidePlateCutout2SizeZ/4+TV:Epsilon"/>
+      <rotation z="90*degree" x="90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Side Plate Flat Section (part of TVV1403 and TVV1404) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxSPFlatSection">
+    <shape type="BooleanShape" operation="subtraction" name="RFBSPFlatSectionSub">
+      <shape type="Box" name="RFBSidePlate1Box4a"
+             dx="0.5*TV:RFBoxSidePlateFlatSectionSizeX"
+             dy="0.5*TV:RFBoxSidePlateThick"
+             dz="0.5*TV:RFBoxSidePlateSizeZ"/>
+      <shape type="Trap" name="RFBSidePlate1Trap1a"
+            z="0.5*3*TV:RFBoxThick"
+            y1="0.5*TV:RFBoxSidePlateSizeZ"
+            x1="0.5*TV:RFBoxSidePlateCutout1SizeX"
+            x2="0.5*TV:Epsilon"
+            alpha1="atan(TV:RFBoxSidePlateCutout1SizeX/2/TV:RFBoxSidePlateSizeZ)"
+            y2="0.5*TV:RFBoxSidePlateSizeZ"
+            x3="0.5*TV:RFBoxSidePlateCutout1SizeX"
+            x4="0.5*TV:Epsilon"
+            alpha2="atan(TV:RFBoxSidePlateCutout1SizeX/2/TV:RFBoxSidePlateSizeZ)"/>
+      <position x="TV:RFBoxSidePlateCutout1SizeX/4-(TV:RFBoxSidePlateFlatSectionSizeX/2+5*TV:Epsilon)"
+                y="0*mm"
+                z="-2*TV:Epsilon"/>
+      <rotation z="180*degree" x="270*degree"/>
+      <shape type="Trap" name="RFBSidePlate1Trap2a"
+            z="0.5*3*TV:RFBoxThick"
+            y1="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x1="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x2="0.5*TV:Epsilon"
+            alpha1="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"
+            y2="0.5*TV:RFBoxSidePlateCutout2SizeX"
+            x3="0.5*TV:RFBoxSidePlateCutout2SizeZ"
+            x4="0.5*TV:Epsilon"
+            alpha2="atan(TV:RFBoxSidePlateCutout2SizeZ/2/TV:RFBoxSidePlateCutout2SizeX)"/>
+      <position x="-TV:RFBoxSidePlateFlatSectionSizeX/2+TV:RFBoxSidePlateCutout2SizeX/2+TV:RFBoxSidePlateCutout2XOffset"
+                y="0*mm"
+                z="TV:RFBoxSidePlateSizeZ/2-TV:RFBoxSidePlateCutout2SizeZ/4+TV:Epsilon"/>
+      <rotation z="90*degree" x="90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Upstream End Plate Foil Section (part of TVV1405) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxUpEPFoilSection">
+    <shape type="BooleanShape" operation="subtraction" name="RFBUpEndPlateSub">
+      <shape type="Box" name="RFBUpEPFoilSection"
+             dx="0.5*TV:RFBoxEndPlateFoilSectionSizeX"
+             dy="0.5*TV:RFBoxEndPlateFoilSectionSizeY"
+             dz="0.5*TV:RFBoxThick"/>
+      <shape type="Tube" name="RFBUpEPTubs1"
+             dz="0.5*2*TV:RFBoxThick"
+             rmax="6.15*mm"/>
+      <position x="-(TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxXOffsetFromBeamAxis)"/>
+    </shape>
+  </volume>
+
+  <!-- Upstream End Plate Slope Section (part of TVV1405) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxUpEPSlopeSection">
+    <shape type="Trap" name="RFBUpEPSlopeSection"
+           x1="0.5*TV:RFBoxThick"
+           y1="0.5*TV:RFBoxEndPlateSizeY"
+           x2="0.5*TV:RFBoxThick"
+           y2="0.5*TV:RFBoxEndPlateFoilSectionSizeY"
+           z="0.5*TV:RFBoxUpstreamEndPlateSlopeSectionSizeX"/>
+  </volume>
+
+  <!-- Upstream End Plate Flat Section (part of TVV1405) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxUpEPFlatSection">
+    <shape type="Box" name="RFBUpEPFlatSection"
+           dx="0.5*TV:RFBoxUpstreamEndPlateFlatSectionSizeX"
+           dy="0.5*TV:RFBoxEndPlateSizeY"
+           dz="0.5*TV:RFBoxThick"/>
+  </volume>
+
+  <!-- Downstream Endplate Foil Section (part of TVV1406) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxDownEPFoilSection">
+    <shape type="BooleanShape" operation="subtraction" name="RFBDownEPFoilSectionSub">
+      <shape type="Box" name="RFBDownEPFoilSectionBox"
+             dx="0.5*TV:RFBoxEndPlateFoilSectionSizeX"
+             dy="0.5*TV:RFBoxEndPlateFoilSectionSizeY"
+             dz="0.5*TV:RFBoxThick"/>
+      <shape type="Tube" name="RFBDownEPFoilSectionTubs"
+             dz="0.5*2*TV:RFBoxThick"
+             rmax="10*mm"/>
+      <position x="-(TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxXOffsetFromBeamAxis)"/>
+    </shape>
+  </volume>
+
+  <!-- Downstream Endplate Slope Section (part of TVV1406) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxDownEPSlopeSection">
+    <shape type="BooleanShape" operation="subtraction" name="RFBDownEPSlopeSub1">
+      <shape type="Trap" name="RFBDownEPSlopeSectionTrap"
+             x1="0.5*TV:RFBoxThick"
+             y1="0.5*TV:RFBoxEndPlateSizeY"
+             x2="0.5*TV:RFBoxThick"
+             y2="0.5*TV:RFBoxEndPlateFoilSectionSizeY"
+             z="0.5*TV:RFBoxDownstreamEndPlateSlopeSectionSizeX"/>
+      <shape type="Tube" name="RFBDownEPSlopeSectionTubs"
+             dz="0.5*5*TV:RFBoxThick"
+             rmax="10*mm"/>
+      <position z="TV:RFBoxEndPlateFoilSectionSizeX+TV:RFBoxXOffsetFromBeamAxis+TV:RFBoxDownstreamEndPlateSlopeSectionSizeX/2"/>
+      <rotation y="-90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Downstream Endplate Flat Section (part of TVV1406) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxDownEPFlatSection">
+    <shape type="BooleanShape" operation="subtraction" name="RFBDownEPFlatSub">
+      <shape type="Box" name="RFBDownEPFlatSectionBox"
+             dx="0.5*TV:RFBoxDownstreamEndPlateFlatSectionSizeX"
+             dy="0.5*TV:RFBoxEndPlateSizeY"
+             dz="0.5*TV:RFBoxThick"/>
+      <shape type="Tube" name="RFBDownEPFlatSectionTubs"
+             dz="TV:RFBoxThick"
+             rmax="TV:RFBoxDownstreamEndPlateRaisedRadius"/>
+      <position x="TV:RFBoxDownstreamEndPlateFlatSectionSizeX/2-TV:RFBoxDownstreamEndPlateRaisedRadius-TV:Epsilon"/>
+    </shape>
+  </volume>
+
+  <!-- Downstream Endplate Raised Tube Section (part of TVV1406) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxDownEPRaisedTubeSection">
+    <shape type="Tube" name="RFBDownEPRaisedSectionTubs1"
+           dz="0.5*TV:RFBoxDownstreamEndPlateRaisedTubeLength"
+           rmin="TV:RFBoxDownstreamEndPlateRaisedRadius-TV:RFBoxThick"
+           rmax="TV:RFBoxDownstreamEndPlateRaisedRadius"/>
+  </volume>
+
+  <!-- Downstream Endplate Raised Sphere Section (part of TVV1406) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxDownEPRaisedSphereSection">
+    <sphere name="RFBDownEPRaisedSectionSph"
+            rmax="TV:RFBoxDownstreamEndPlateRaisedOuterRadius"
+            rmin="TV:RFBoxDownstreamEndPlateRaisedInnerRadius"
+            deltaThetaAngle="TV:RFBoxDownstreamEndPlateRaisedAngle"/>
+  </volume>
+
+  <!-- Downstream Endplate Tilt Section (part of TVV1406) -->
+  <volume material="TV:Aluminium" vis="TV:RFBox" name="lvRFBoxDownEPTiltSection">
+    <shape type="BooleanShape" operation="subtraction" name="RFBDownEndPlateSub3">
+      <shape type="Box" name="RFBDownEPTiltSectionBox1"
+             dx="0.5*TV:RFBoxDownstreamEndPlateTiltSectionSizeX"
+             dy="0.5*TV:RFBoxEndPlateSizeY"
+             dz="0.5*TV:RFBoxThick"/>
+      <shape type="Box" name="RFBDownEPTiltSectionBox2"
+             dx="TV:RFBoxThick"
+             dy="TV:RFBoxEndPlateSizeY"
+             dz="2.5*TV:RFBoxThick"/>
+      <position x="-TV:RFBoxDownstreamEndPlateTiltSectionSizeX/2-TV:RFBoxThick/cos(TV:RFBoxSidePlateCutout2Angle)"
+                y="0*mm"
+                z="TV:RFBoxThick/2"/>
+      <rotation y="-TV:RFBoxSidePlateCutout2Angle"/>
+    </shape>
+  </volume>
+
+  <!-- TVV1403 Side Plate -->
+  <volume name="lvRFBoxSidePlate1" vis="TV:RFBoxAssembly">
+    <physvol volume="lvRFBoxSPFoilSection" name="RFBoxSP1FoilSect">
+      <position x="-TV:RFBoxSidePlateFoilSectionSizeX/2"/>
+    </physvol>
+    <physvol volume="lvRFBoxSPFoilLip" name="RFBoxSP1FoilLip">
+      <position x="-TV:RFBoxThick/2"
+                y="(TV:RFBoxSidePlateFoilSectionSizeY+TV:RFBoxSidePlateThick)/2"/>
+    </physvol>
+    <physvol volume="lvRFBoxSPSlopeSection1" name="RFBoxSP1SlopeSection">
+      <position x="-(TV:RFBoxSidePlateFoilSectionSizeX+TV:RFBoxSidePlateSlopeSectionSizeX/2)"
+                y="TV:RFBoxSidePlateSlopeSectionSizeY/2"/>
+    </physvol>
+    <physvol volume="lvRFBoxSPFlatSection" name="RFBoxSP1FlatSection">
+      <position x="-(TV:RFBoxSidePlateFoilSectionSizeX+TV:RFBoxSidePlateSlopeSectionSizeX+TV:RFBoxSidePlateFlatSectionSizeX/2)"
+                y="TV:RFBoxSidePlateSlopeSectionSizeY"/>
+    </physvol>
+  </volume>
+
+  <!-- TVV1404 Side Plate -->
+  <volume name="lvRFBoxSidePlate2" vis="TV:RFBoxAssembly">
+    <physvol volume="lvRFBoxSPFoilSection" name="RFBoxSP2FoilSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2"/>
+      <rotation z="180*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxSPFoilLip" name="RFBoxSP2FoilLip">
+      <position x="TV:RFBoxThick/2"
+                y="(TV:RFBoxSidePlateFoilSectionSizeY+TV:RFBoxSidePlateThick)/2"/>
+      <rotation z="180*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxSPSlopeSection2" name="RFBoxSP2SlopeSection">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX+TV:RFBoxSidePlateSlopeSectionSizeX/2"
+                y="TV:RFBoxSidePlateSlopeSectionSizeY/2"/>
+      <rotation z="180*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxSPFlatSection" name="RFBoxSP2FlatSection">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX+TV:RFBoxSidePlateSlopeSectionSizeX+TV:RFBoxSidePlateFlatSectionSizeX/2"
+                y="TV:RFBoxSidePlateSlopeSectionSizeY"/>
+      <rotation z="180*degree"/>
+    </physvol>
+  </volume>
+
+  <!-- TVV1405 - Upstream End Plate -->
+  <volume name="lvRFBoxUpstreamEndPlate" vis="TV:RFBoxAssembly">
+    <physvol volume="lvRFBoxUpEPFoilSection" name="RFBoxUpEPFoilSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2"/>
+    </physvol>
+    <physvol volume="lvRFBoxUpEPSlopeSection" name="RFBoxUpEPSlopeSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2+TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxUpstreamEndPlateSlopeSectionSizeX/2"/>
+      <rotation y="270*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxUpEPFlatSection" name="RFBoxUpEPFlatSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2+TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxUpstreamEndPlateSlopeSectionSizeX+TV:RFBoxUpstreamEndPlateFlatSectionSizeX/2"/>
+    </physvol>
+  </volume>
+
+  <!-- TVV1406 - Downstream End Plate -->
+  <volume name="lvRFBoxDownstreamEndPlate" vis="TV:RFBoxAssembly">
+    <physvol volume="lvRFBoxDownEPFoilSection" name="RFBoxDownEPFoilSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownEPSlopeSection" name="RFBoxDownEPSlopeSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2+TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxDownstreamEndPlateSlopeSectionSizeX/2"/>
+      <rotation y="270*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownEPFlatSection" name="RFBoxDownEPFlatSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2+TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxDownstreamEndPlateSlopeSectionSizeX+TV:RFBoxDownstreamEndPlateFlatSectionSizeX/2"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownEPRaisedTubeSection" name="RFBoxDownEPRaisedTubeSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2+TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxDownstreamEndPlateSlopeSectionSizeX+TV:RFBoxDownstreamEndPlateFlatSectionSizeX-TV:RFBoxDownstreamEndPlateRaisedRadius"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownEPRaisedSphereSection" name="RFBoxDownEPRaisedSphereSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2+TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxDownstreamEndPlateSlopeSectionSizeX+TV:RFBoxDownstreamEndPlateFlatSectionSizeX-TV:RFBoxDownstreamEndPlateRaisedRadius"
+                y="0*mm"
+                z="TV:RFBoxThick/2+TV:RFBoxDownstreamEndPlateRaisedTubeLength-TV:RFBoxDownstreamEndPlateRaisedOuterRadius*cos(TV:RFBoxDownstreamEndPlateRaisedAngle)"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownEPTiltSection" name="RFBoxDownEPTiltSect">
+      <position x="TV:RFBoxSidePlateFoilSectionSizeX/2+TV:RFBoxEndPlateFoilSectionSizeX/2+TV:RFBoxDownstreamEndPlateSlopeSectionSizeX+TV:RFBoxDownstreamEndPlateFlatSectionSizeX+TV:RFBoxDownstreamEndPlateTiltSectionSizeX/2*cos(TV:RFBoxSidePlateCutout2Angle)"
+                y="0*mm"
+                z="-TV:RFBoxDownstreamEndPlateTiltSectionSizeX/2*sin(TV:RFBoxSidePlateCutout2Angle)"/>
+      <rotation y="TV:RFBoxSidePlateCutout2Angle"/>
+    </physvol>
+  </volume>
+
+
+  <!-- Geometry for Velo RF box excluding symmetrical parts of the RF shield -->
+  <volume name="lvRFBoxRight" vis="TV:RFBoxAssembly">
+    <physvol volume="lvRFBoxSidePlate1" name="RFBRSP1">
+      <position x="-TV:RFBoxXOffsetFromBeamAxis"
+                y="(TV:RFBoxEndPlateFoilSectionSizeY+TV:RFBoxSidePlateThick)/2"
+                z="TV:RFBoxZPosition"/>
+    </physvol>
+    <physvol volume="lvRFBoxSidePlate2" name="RFBRSP2">
+      <position x="-TV:RFBoxXOffsetFromBeamAxis"
+                y="-(TV:RFBoxEndPlateFoilSectionSizeY+TV:RFBoxSidePlateThick)/2"
+                z="TV:RFBoxZPosition"/>
+      <rotation z="180*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxUpstreamEndPlate" name="RFBRUEP">
+      <position x="-TV:RFBoxXOffsetFromBeamAxis"
+                z="TV:RFBoxZPosition-(TV:RFBoxSidePlateSizeZ-TV:RFBoxThick)/2"/>
+      <rotation z="180*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownstreamEndPlate" name="RFBRDEP">
+      <position x="-TV:RFBoxXOffsetFromBeamAxis"
+                z="TV:RFBoxZPosition+(TV:RFBoxSidePlateSizeZ-TV:RFBoxThick)/2-(TV:RFBoxDownstreamEndPlateActualSizeX-TV:RFBoxDownstreamEndPlateTiltSectionSizeX)*tan(TV:RFBoxSidePlateCutout2Angle)"/>
+      <rotation z="180*degree" y="TV:RFBoxSidePlateCutout2Angle"/>
+    </physvol>
+    <physvol volume="lvRFBoxWeldFlange" name="RFBRWF">
+      <position x="-(TV:RFBoxXOffsetFromBeamAxis+TV:RFBoxSidePlateSizeX-TV:RFBoxSidePlateSizeZ/2*tan(TV:RFBoxSidePlateCutout1Angle)+(TV:RFBoxWeldFlangeThickX/2+8*TV:Epsilon)*cos(TV:RFBoxSidePlateCutout1Angle))"
+                z="TV:RFBoxZPosition-(TV:RFBoxWeldFlangeThickX/2+8*TV:Epsilon)*sin(TV:RFBoxSidePlateCutout1Angle)"/>
+      <rotation z="180*degree" y="-TV:RFBoxSidePlateCutout1Angle"/>
+    </physvol>
+    <physvol volume="lvRFBoxFoilSurround" name="RFBRFS">
+      <position x="-(TV:RFBoxXOffsetFromBeamAxis-TV:RFThickness/2)"
+                z="TV:RFBoxZPosition-TV:Right2LeftDist/2"/>
+    </physvol>
+  </volume>
+
+  <volume name="lvRFBoxLeft" vis="TV:RFBoxAssembly">
+    <physvol volume="lvRFBoxSidePlate1" name="RFBLSP1">
+      <position x="TV:RFBoxXOffsetFromBeamAxis"
+                y="-(TV:RFBoxEndPlateFoilSectionSizeY+TV:RFBoxSidePlateThick)/2"
+                z="TV:RFBoxZPosition"/>
+      <rotation z="180*degree"/>
+    </physvol>
+    <physvol volume="lvRFBoxSidePlate2" name="RFBLSP2">
+      <position x="TV:RFBoxXOffsetFromBeamAxis"
+                y="(TV:RFBoxEndPlateFoilSectionSizeY+TV:RFBoxSidePlateThick)/2"
+                z="TV:RFBoxZPosition"/>
+    </physvol>
+    <physvol volume="lvRFBoxUpstreamEndPlate" name="RFBLUEP">
+      <position x="TV:RFBoxXOffsetFromBeamAxis"
+                z="TV:RFBoxZPosition-(TV:RFBoxSidePlateSizeZ-TV:RFBoxThick)/2"/>
+    </physvol>
+    <physvol volume="lvRFBoxDownstreamEndPlate" name="RFBLDEP">
+      <position x="TV:RFBoxXOffsetFromBeamAxis"
+                z="TV:RFBoxZPosition+(TV:RFBoxSidePlateSizeZ-TV:RFBoxThick)/2-(TV:RFBoxDownstreamEndPlateActualSizeX-TV:RFBoxDownstreamEndPlateTiltSectionSizeX)*tan(TV:RFBoxSidePlateCutout2Angle)"/>
+      <rotation y="-TV:RFBoxSidePlateCutout2Angle"/>
+    </physvol>
+    <physvol volume="lvRFBoxWeldFlange" name="RFBLWF">
+      <position x="TV:RFBoxXOffsetFromBeamAxis+TV:RFBoxSidePlateSizeX-TV:RFBoxSidePlateSizeZ/2*tan(TV:RFBoxSidePlateCutout1Angle)+(TV:RFBoxWeldFlangeThickX/2+8*TV:Epsilon)*cos(TV:RFBoxSidePlateCutout1Angle)"
+                z="TV:RFBoxZPosition-(TV:RFBoxWeldFlangeThickX/2+8*TV:Epsilon)*sin(TV:RFBoxSidePlateCutout1Angle)"/>
+      <rotation y="TV:RFBoxSidePlateCutout1Angle"/>
+    </physvol>
+    <physvol volume="lvRFBoxFoilSurround" name="RFBLFS">
+      <position x="TV:RFBoxXOffsetFromBeamAxis-TV:RFThickness/2"
+                z="TV:RFBoxZPosition-TV:Right2LeftDist/2"/>
+    </physvol>
+  </volume>
+
+</velo>

@@ -1,0 +1,76 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!-- Std  Mapmt component transforms   -->
+<!--- Author  : Sajan EASO -->
+<!-- Original XML version  : 2010-10-17 -->
+<!--   Current version       : 2020-10-09 -->
+<!-- Original phys volnames kept for reference -->
+<!--  <physvol name = "pvRichPMTSMaster" logvol ="lvRichPMTSMaster">  -->
+<!-- <physvol name = "pvRichPMTAnode0000" logvol ="lvRichPMTAnode0000"> -->
+<!-- <physvol name = "pvRichPMTQuartz" logvol ="lvRichPMTQuartz"> -->
+<!-- <physvol name = "pvRichPMTPhCathode" logvol ="lvRichPMTPhCathode" > -->
+<!-- <physvol name = "pvRichPMTSideEnvelope" logvol ="lvRichPMTSideEnvelope"> -->
+<!-- <physvol name = "pvRichPMTBackEnvelope" logvol ="lvRichPMTBackEnvelope"> -->
+<!-- <physvol name = "pvRichPMTFrontRing" logvol ="lvRichPMTFrontRing"> -->
+<Rich1>
+
+    <item name="PhysVolName"    value="pvRichPMTSMaster"  />
+    <item name="PhysVolName"    value="pvRichPMTAnode0000" />
+    <item name="PhysVolName"    value="pvRichPMTQuartz" />
+    <item name="PhysVolName"    value="pvRichPMTPhCathode" />
+    <item name="PhysVolName"    value="pvRichPMTSideEnvelope" />
+    <item name="PhysVolName"    value="pvRichPMTBackEnvelope" />
+    <item name="PhysVolName"    value="pvRichPMTFrontRing" />
+
+    <item name="TransformName"  value="pvRichPMTSMasterTransform" >
+       <transformation>
+        <position  x= "RhPMTSubMasterXPos"
+                   y= "RhPMTSubMasterYPos"
+                   z= "RhPMTSubMasterZPos" /> 
+       </transformation>
+    </item>
+
+    <item name="TransformName"  value="pvRichPMTAnode0000Transform" >
+       <transformation>
+          <position  z="RhPMTAnodeZPos" />
+       </transformation>
+    </item>
+
+    <item name="TransformName"  value="pvRichPMTQuartzTransform" >
+       <transformation>
+          <position  z= "RhPMTQuartzZPos"/>
+       </transformation>
+    </item>
+
+    <item name="TransformName"  value="pvRichPMTPhCathodeTransform" >
+       <transformation>
+          <position  z= "RhPMTPhCathodeZPos"/>
+       </transformation>
+    </item>
+
+    <item name="TransformName"  value="pvRichPMTSideEnvelopeTransform" >
+       <transformation>
+          <position  z= "RhPMTSideEnvelopeZPos"/>
+       </transformation>
+    </item>
+    <item name="TransformName"  value="pvRichPMTBackEnvelopeTransform" >
+       <transformation>
+         <position  z="RhPMTBackEnvelopeZPos"/>
+       </transformation>
+    </item>
+
+    <item name="TransformName"  value="pvRichPMTFrontRingTransform" >
+       <transformation>
+         <position  z="RhPMTFrontRingZPos"/>
+       </transformation>
+    </item>
+
+</Rich1>

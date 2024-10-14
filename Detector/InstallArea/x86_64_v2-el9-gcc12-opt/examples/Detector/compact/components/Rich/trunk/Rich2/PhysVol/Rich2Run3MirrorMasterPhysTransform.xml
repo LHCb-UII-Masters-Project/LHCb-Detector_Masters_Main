@@ -1,0 +1,123 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+
+<!--    Begin Rich2 Mirror Master and support frames Physvols                   -->
+
+<!--    Old names are listed here for reference when they are different than new ones  -->
+<!--    <physvol name = "pvRich2SphMirrorCont0"  volume name= "lvRich2SphMirrorCont0" -->
+<!--    <physvol name = "pvRich2SphMirrorCont1"  volume name= "lvRich2SphMirrorCont1" -->
+<!--    <physvol name = "pvRich2SecMirrorCont0"  volume name= " lvRich2SecMirrorCont0" -->  
+<!--    <physvol name = "pvRich2SecMirrorCont1"  volume name= " lvRich2SecMirrorCont1" -->
+  
+<!--    New Names of volumes listed here                                            -->
+<!-- <physvol name = "pvRich2SphMirrorMaster0"  <volume name="lvRich2SphMirrorMaster0"  -->  
+<!-- <physvol name = "pvRich2SphMirrorMaster1"  <volume name="lvRich2SphMirrorMaster1"  -->  
+<!-- <physvol name = "pvRich2SphMSupport0        <volume name = "lvRich2SphMSupport"     -->
+<!-- <physvol name = "pvRich2SphMSupport1        <volume name = "lvRich2SphMSupport"     -->
+<!-- <physvol name = "pvRich2SecMirrorMaster0   <volume name = "lvRich2SecMirrorMaster0"  -->
+<!-- <physvol name = "pvRich2SecMirrorMaster1"  <volume name = "lvRich2SecMirrorMaster1"  -->
+<!-- <physvol name = "pvRich2SecMSupport0"       <volume name = "lvRich2SecMSupport"      -->
+<!-- <physvol name = "pvRich2SecMSupport1"       <volume name = "lvRich2SecMSupport"      -->
+<!-- Here the label 0 refers to the positive X side which the A side and is on the left side  -->
+<!--     when looking downstream from the interaction point -->
+<!-- Here the label 1 refers to the negativetive X side which the C side and is on the right side -->
+<!--     when looking downstream from the interaction point -->
+<!--   The Sph and Sec Mirror master volumes are placed inside the lvRich2GasEnclosure volume -->
+<!--   The Sph Mirror support0 (pvRich2SphMSupport0) is placed inside the lvRich2SphMirrorMaster0  -->
+<!--   The Sph Mirror support1 (pvRich2SphMSupport1) is placed inside the lvRich2SphMirrorMaster1  -->
+<!--   The pvRich2SecMSupport0 and  pvRich2SecMSupport1 are placed inside lvRich2GasEnclosure volume -->
+
+<Rich2>
+
+    <item name="PhysVolName"    value="pvRich2SphMirrorMaster0" />
+    <item name="TransformName"  value="pvRich2SphMirrorMaster0Transform">
+      <transformation>
+           <position  x = "Rh2SphMirrorMaster0PosX"
+                      y = "Rh2SphMirrorMaster0PosY"
+                      z = "Rh2SphMirrorMaster0PosZ" />
+
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2SphMirrorMaster1" />
+    <item name="TransformName"  value="pvRich2SphMirrorMaster1Transform">
+      <transformation>
+           <position  x = "Rh2SphMirrorMaster1PosX"
+                      y = "Rh2SphMirrorMaster1PosY"
+                      z = "Rh2SphMirrorMaster1PosZ" />
+
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2SphMSupport0" />
+    <item name="TransformName"  value="pvRich2SphMSupport0Transform">
+      <transformation>
+           <position  x = "Rh2SphMSupportPositivePosX"
+                      y = "Rh2SphMSupportPosY"
+                      z = "Rh2SphMSupportPosZ" />
+           <rotation  y = "Rh2SphMSupportPositiveAngleRotY"/> 
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2SphMSupport1" />
+    <item name="TransformName"  value="pvRich2SphMSupport1Transform">
+      <transformation>
+           <position  x = "Rh2SphMSupportNegativePosX"
+                      y = "Rh2SphMSupportPosY"
+                      z = "Rh2SphMSupportPosZ" />
+           <rotation  y = "Rh2SphMSupportNegativeAngleRotY"
+                      z = "Rh2SphMSupportNegativeAngleRotZ" /> 
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2SecMirrorMaster0" />
+    <item name="TransformName"  value="pvRich2SecMirrorMaster0Transform">
+      <transformation>
+           <position  x = "Rh2SecMirrorMaster0PosX"
+                      y = "Rh2SecMirrorMaster0PosY"
+                      z = "Rh2SecMirrorMaster0PosZ" />
+           <rotation  y = "Rh2SecMirrorMaster0AngleRotY" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2SecMirrorMaster1" />
+    <item name="TransformName"  value="pvRich2SecMirrorMaster1Transform">
+      <transformation>
+           <position  x = "Rh2SecMirrorMaster1PosX"
+                      y = "Rh2SecMirrorMaster1PosY"
+                      z = "Rh2SecMirrorMaster1PosZ" />
+           <rotation  y = "Rh2SecMirrorMaster1AngleRotY" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2SecMSupport0" />
+    <item name="TransformName"  value="pvRich2SecMSupport0Transform">
+      <transformation>
+           <position  x = "Rh2SecMSupportPositivePosX"
+                      y = "Rh2SecMSupportPosY"
+                      z = "Rh2SecMSupportPosZ" />
+           <rotation  y = "Rh2SecMSupportPositiveAngleRotY"/> 
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2SecMSupport1" />
+    <item name="TransformName"  value="pvRich2SecMSupport1Transform">
+      <transformation>
+           <position  x = "Rh2SecMSupportNegativePosX"
+                      y = "Rh2SecMSupportPosY"
+                      z = "Rh2SecMSupportPosZ" />
+           <rotation  y = "Rh2SecMSupportNegativeAngleRotY"/> 
+      </transformation>
+    </item>
+
+</Rich2>

@@ -1,0 +1,164 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- this file contains the geometry parameters for Rich1 BeamPipe              -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+   <!-- Begin Rich1 beampipe envelope  Volume Geometry parameters  -->
+   <!-- The following line refer to the 3 beampipe segments inside Rich1 -->
+
+   <constant name="Rh1NumBeamPipeSegments"  value="3" />
+
+   <constant name="Rh1BeamPipeHoleRadialTolerence" value="1.0*mm" />
+   <constant name="Rh1BeamPipeHoleZTolerence" value="0.1*mm" />
+
+   <constant name="Rh1BeamPipeThickness"  value= "UX851Cyl04Thick" />
+   <constant name="Rh1BeamPipeCylInnerRad" value="UX851Cyl04Radius" />
+   <constant name="Rh1BeamPipeCylOuterRad" value="Rh1BeamPipeCylInnerRad+Rh1BeamPipeThickness"  />
+   <constant name="Rh1BeamPipeCylHoleOuterRad" value="Rh1BeamPipeCylOuterRad+Rh1BeamPipeHoleRadialTolerence"  />
+
+<!--
+   The following two numbers 1080 and 2210 are compatible with
+   the pipe geom as of March 2006. The may be replaced with derived
+   parameters to give value in the future.
+-->
+   <constant name="Rh1BeamPipeCylBeginInLHCbZ" value= "UX851Rich1SplitZminIP" />
+   <constant name="Rh1BeamPipeCylEndInLHCbZ" value="1080.0*mm" />
+   <constant name="Rh1BeamPipeConeBeginInLHCbZ" value="Rh1BeamPipeCylEndInLHCbZ" />
+   <constant name="Rh1BeamPipeConeEndInLHCbZ" value="2210.0*mm" />
+
+
+   <constant name="Rh1BeamPipeCylZSize" value="Rh1BeamPipeCylEndInLHCbZ-Rh1BeamPipeCylBeginInLHCbZ"  />
+   <constant name="Rh1BeamPipeConeZSize" value="Rh1BeamPipeConeEndInLHCbZ-Rh1BeamPipeConeBeginInLHCbZ" />
+
+
+   <constant name="Rh1BeamPipeConeInnerRad1" value="Rh1BeamPipeCylInnerRad"  />
+
+   <constant name="Rh1BeamPipeConeInnerRad2" value= "UX851Cone05BRadiusZmax" />
+   <constant name="Rh1BeamPipeConeOuterRad1" value="Rh1BeamPipeConeInnerRad1+Rh1BeamPipeThickness"  />
+   <constant name="Rh1BeamPipeConeOuterRad2" value="Rh1BeamPipeConeInnerRad2+Rh1BeamPipeThickness"  />
+   <constant name="Rh1BeamPipeConeHoleOuterRad1" value="Rh1BeamPipeConeOuterRad1+Rh1BeamPipeHoleRadialTolerence"  />
+   <constant name="Rh1BeamPipeConeHoleOuterRad2" value="Rh1BeamPipeConeOuterRad2+Rh1BeamPipeHoleRadialTolerence"  />
+
+<!-- Now for the downstream flange  which is a tube with a conical subtraction . The FlangeInnerRad
+    indicated below is on the inside surface of the beampipe. The actual flange starts radially at
+    53.7+beampipethickness
+   Instead of this   use the value from the drawings of Mike Woodward EDMS TD-1026-135.
+   The Flange outer radius with this comes out to be 54.686+9.75 =64.43mm
+   The value from the beampipe param file is 63 mm = UX851Rich1FlangeOuterRadius.
+   The 63 is less than the 64.43. For now the value from Mike's drawing is
+   used when creating the boolean hole created by the flange, as  a conservtive safety
+   measure against overlaps.   March 2006.
+
+-->
+   <constant name="Rh1BeamPipeDnstFlangeZSize" value= "UX851Rich1Flange1Length"  />
+   <constant name="Rh1BeamPipeDnstFlangeInnerRad" value="UX851Rich1FlangeRadiusZMax" />
+   <constant name="Rh1BeamPipeDnstFlangeHoleZSize" value="Rh1BeamPipeDnstFlangeZSize+2.0*Rh1BeamPipeHoleZTolerence" />
+   <constant name="Rh1BeamPipeDnstFlangeRadialThickness" value="9.75*mm" />
+   <constant name="Rh1BeamPipeDnstFlangeOuterRad" value="Rh1BeamPipeDnstFlangeInnerRad+Rh1BeamPipeDnstFlangeRadialThickness" />
+   <constant name="Rh1BeamPipeDnstFlangeHoleOuterRad" value="Rh1BeamPipeDnstFlangeOuterRad+Rh1BeamPipeHoleRadialTolerence" />
+   <constant name="Rh1BeamPipeDnstFlangeZBeginInLHCb" value="UX851Rich1FlangeOffsetIP"  />
+   <constant name="Rh1BeamPipeDnstFlangeZInLHCb" value= "Rh1BeamPipeDnstFlangeZBeginInLHCb+0.5*Rh1BeamPipeDnstFlangeZSize" />
+
+<!-- Now for the boolean subtraction create extended parts to avoid problems in Gauss -->
+
+    <constant name="Rh1BeamPipeConeUpsAddtionalLargeZSize" value="300.0*mm" />
+    <constant name="Rh1BeamPipeConeDnsAddtionalLargeZSize" value="300.0*mm" />
+
+
+
+<!--   Now for the extended beampipe Hole size to avoid problems in Gauss -->
+    <constant name="Rh1BeamPipeExtendedConeHoleZSize"  value="Rh1BeamPipeConeZSize+Rh1BeamPipeConeUpsAddtionalLargeZSize+Rh1BeamPipeConeDnsAddtionalLargeZSize" />
+    <constant name="Rh1BeamPipeConeSlope"  value="(Rh1BeamPipeConeOuterRad2-Rh1BeamPipeConeOuterRad1)/Rh1BeamPipeConeZSize"  />
+    <constant name="Rh1BeamPipeExtendedConeHoleOuterRad1"  value="Rh1BeamPipeConeHoleOuterRad1-(Rh1BeamPipeConeUpsAddtionalLargeZSize*Rh1BeamPipeConeSlope)"  />
+    <constant name="Rh1BeamPipeExtendedConeHoleOuterRad2"  value="Rh1BeamPipeConeHoleOuterRad2+(Rh1BeamPipeConeDnsAddtionalLargeZSize*Rh1BeamPipeConeSlope)"  />
+    <constant name="Rh1BeamPipeExtendedConeZShift"  value="0.5*(Rh1BeamPipeConeDnsAddtionalLargeZSize-Rh1BeamPipeConeUpsAddtionalLargeZSize)" />
+
+<!-- The following two are not used to create the hole in Rich1 master anymore.
+     Instead the assembly positions are used to create daughter volumes in Rich1Master and Rich1SubMaster.  March 2006.
+     The holes corresponding to the cone part is still calculated to make holes at the
+     daughter volumes of Rich1SubMaster.
+     Now for the beam pipe positions in the Rich1Master
+-->
+
+    <constant name = "Rh1BeamPipeUpsAssemblyLHCbZ" value=  "UX851ZStartIP" />
+    <constant name = "Rh1BeamPipeUpsAssemblyRMZ" value=  "Rh1BeamPipeUpsAssemblyLHCbZ-Rich1MasterZ"  />
+    <constant name = "Rh1BeamPipeDnsAssemblyLHCbZ" value=  "UX851ZStartIP" />
+    <constant name = "Rh1BeamPipeDnsAssemblyRMZ" value=  "Rh1BeamPipeDnsAssemblyLHCbZ-Rich1MasterZ"  />
+
+    <constant name="Rh1BeamPipeConeRMZ" value="Rh1BeamPipeConeBeginInLHCbZ+(0.5*Rh1BeamPipeConeZSize)-Rich1MasterZ"  />
+    <constant name="Rh1BeamPipeExtendedConeHoleRMZ" value="Rh1BeamPipeConeRMZ+Rh1BeamPipeExtendedConeZShift" />
+    <constant name="Rh1BeamPipeDnstFlangeRMZ" value="Rh1BeamPipeDnstFlangeZInLHCb-Rich1MasterZ"  />
+
+
+<!--  Now for the beam pipe positions in the Rich1SubMaster  -->
+
+    <constant name = "Rh1BeamPipeAssemblyInSubMasterLHCbZ"  value="UX851ZStartIP" />
+    <constant name = "Rh1BeamPipeAssemblyZ"   value="Rh1BeamPipeAssemblyInSubMasterLHCbZ-Rich1MasterZ-Rh1SubMasterZ" />
+
+    <constant name="Rh1BeamPipeConeZ" value="Rh1BeamPipeConeRMZ-Rh1SubMasterZ"  />
+    <constant name="Rh1BeamPipeDnstFlangeZ" value="Rh1BeamPipeDnstFlangeRMZ-Rh1SubMasterZ"  />
+    <constant name="Rh1BeamPipeExtendedConeHoleZ" value="Rh1BeamPipeExtendedConeHoleRMZ-Rh1SubMasterZ" />
+    <constant name="Rh1BeamPipeConeBeginInRh1SubMasterZ" value="Rh1BeamPipeConeBeginInLHCbZ-Rich1MasterZ-Rh1SubMasterZ" />
+<!--  End of beampipe positions in Rich1SubMaster -->
+
+
+
+<!-- Begin beam Pipe positions in Mirror1  -->
+<!-- Since the Mirror1 is near the downstram end of Rich1, only the
+    BeamPipeCone need to be subtracted. Since the frame of the mirror is
+    rotated by 90 degrees in the horizontal plane and since the mirror is
+    tilted in the vertical plane, these needed to be taken into account.
+    Also the coordinates of the subtracted volume is wrt the CoC of the Mirror1.   -->
+<!--
+    <constant name="Rh1Mirror1BeamPipeConeOuterRad1" value="Rh1BeamPipeExtendedConeHoleOuterRad1+Rh1Mirror1BeamPipeHoleRadialTolerance"  />
+    <constant name="Rh1Mirror1BeamPipeConeOuterRad2" value="Rh1BeamPipeExtendedConeHoleOuterRad2+Rh1Mirror1BeamPipeHoleRadialTolerance" />
+
+
+    <constant name="Rh1Mirror1BeamPipeConeZSize" value="Rh1BeamPipeExtendedConeHoleZSize"  />
+
+    <constant name="Rh1Mirror1BeamPipeConeX"  value="Rh1BeamPipeExtendedConeHoleZ-Rh1Mirror1CCZ-Rh1MirrorSingleADiagDeltaZ"  />
+-->
+
+<!-- End of beamPipe hole positions in Mirror1  -->
+
+
+
+     <constant name= "Rh1SubMasterHoleRadiusAfterMagSh" value="UX851Cone05BRadiusZmax+2.0*mm" />
+     <constant name= "Rh1SubMasterHoleZSizeAfterMagSh"  value="Rh1SubMasterDnstrZLim-Rh1MagShMainPartDnsZLim" />
+
+
+     <constant name= "Rh1SubMasterHoleZLocationAfterMagSh"  value="Rh1MagShMainPartDnsZLim+0.5*Rh1SubMasterHoleZSizeAfterMagSh-Rh1SubMasterZ-Rich1MasterZ" />
+
+
+
+   <!-- End Rich1 BeamPipe Volume Geometry parameters  -->
+  </define>
+</lccdd>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

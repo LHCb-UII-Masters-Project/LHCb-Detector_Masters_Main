@@ -1,0 +1,175 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH1 Detector Description                                           -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Sajan Easo                                                      -->
+<!--   @date    01/07/2020                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML Detector description headers for RICH1                                 -->
+<!-- ========================================================================== -->
+<lccdd>
+  <define>
+  </define>
+
+  <detectors>
+    <detector id="Rich1:ID" name="Rich1" type="LHCb_Rich1_Geometry_RUN3_v1" parent="${Rich1:parent}" vis="Rich:VisRich1Master">
+
+    <!--  <position x="Rich1:xPosition" y="Rich1:yPosition" z="Rich1:zPosition"/> -->
+      <position x="Rich1MasterX" y="Rich1MasterY" z="Rich1MasterZ"/>
+
+      <include ref="../../../Pipe/trunk/InRich1Debug.xml" />
+
+      <include ref="LogVol/Rich1PhotDetSupFrameLog.xml"  />
+
+      <include ref="LogVol/Rich1Mirror1SegmentsLog.xml"  />
+
+      <include ref="LogVol/Rich1Mirror1MasterLog.xml"  />
+
+      <include ref="LogVol/Rich1Mirror2Log.xml" />
+
+      <include ref="LogVol/Rich1GasQuartzWindowLog.xml" />
+
+      <include ref="LogVol/Rich1MagShVertLog.xml"  />
+
+      <include ref="LogVol/Rich1Run3MagneticShieldLog.xml"  />
+
+      <include ref="LogVol/Rich1ExitWallLog.xml" />
+
+
+      <include ref="LogVol/Rich1Run3SubMasterLog.xml" />
+
+      <include ref="LogVol/Rich1Run3MasterLog.xml" />
+
+
+      <include ref="LogVol/RichPmtVolDescDir/RichPmtStructureLog.xml"/>
+      <include ref="LogVol/RichPmtVolDescDir/RichPmtComponentLog.xml"/>
+      <include ref="LogVol/RichPmtVolDescDir/Rich2StdPmtComponentLog.xml"/>
+
+
+      <include ref="PhysVol/RichPMTShieldingPhysTransform.xml" />
+
+      <include ref="PhysVol/RichPMTComponentPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1PhDetSupFramePhysHTransform.xml" />
+
+      <include ref="PhysVol/Rich1GasQuartzWindowPhysTransform.xml" />
+
+
+      <include ref="PhysVol/Rich1Run3MagShVertPhysTransform.xml" />
+
+
+      <include ref="PhysVol/Rich1Mirror1MasterPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1Mirror1QuadrantModulePhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1Mirror1QuadrantComponentPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1Mirror2MasterPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1Mirror2SegmentsPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1Run3MagneticShieldPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1ExitWallPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1MagShRun3UTPhysTransform.xml" />
+
+
+      <include ref="PhysVol/Rich1SubMasterPhysTransform.xml" />
+
+      <include ref="PhysVol/Rich1BeamPipeSectionTransform.xml" />
+
+   <!-- Now for debug and graphics -->
+
+    <debug>
+    <!-- <item name="select_single_volume_ForDebug"  value="lvRich1PhDetSupFrameH0" />  -->
+    <!-- <item name="select_single_volume_ForDebug"  value="lvRich1Master" />  -->
+     <item name="activate_MagneticShield_build"  value="1" />
+     <item name="activate_PhotonDetector_build"  value="1" />
+     <item name="activate_QuartzWindow_build"    value="1" />
+     <item name="activate_ExitWall_build"        value="1" />
+     <item name="activate_ExitWallDiaphram_build"  value="1" />
+     <item name="activate_Rich1Mirror1_build"      value="1" />
+     <item name="activate_Rich1Mirror1_Segment_build" value="1" />
+     <item name="activate_Rich1Mirror2_build"      value="1" />
+     <item name="activate_Rich1Mirror1_CaFiCyl_build" value="1" />
+     <item name="activate_Rich1SubMaster_build"      value="1" />
+     <item name="activate_Rich1BeamPipe_build"       value="1" />
+
+
+     <item name="debugActivate"                  value="0" />
+     <item name="VolumeBuilderDebugActivate"     value="0" />
+     <item name="debugLvListActivate"            value="0" />
+     <item name="generalutilDebugActivate"       value="0" />
+     <item name="pmtutilDebugActivate"           value="0" />
+     <item name="R1MirrorDebugActivate"          value="0" />
+     <item name="R1magShieldDebugActivate"       value="0" />
+     <item name="RichSurfaceDebugActivate"       value="0" />
+     <item name="RichPmtSurfaceDebugActivate"       value="0" />
+
+     <item name="activate_RichMatPropTable_build"  value ="1" />
+     <item name="activate_RichStd_MatPropTable_Attach" value="1" />
+     <item name="activate_RichSpecific_MatPropTable_Attach" value="1" />
+     <item name="activate_RichMatGeneralPropTable_build" value="1" />
+     <item name="activate_RichMatPmtPT_ExtraSet_build"  value="0" />
+     <item name="activate_Rich1Surface_build" value="1" />
+     <item name="activate_Rich1PmtSurface_build" value="1" />
+     <item name="activate_Rich1QWSurface_build" value="1" />
+
+     <item name="activate_RetrieveAndPrintForDebug_MatTable" value="0" />
+     <item name="activate_RetrieveAndPrintForDebug_GeneralTable" value="0" />
+     <item name="activate_Rich1_DetElem_For_CurrentAppl"  value="1" />
+     <item name="activate_Rich1_DetElem_For_PmtEcr"  value="1" />
+
+
+
+     <item name="activateVolumeDebug"            value="0" />
+
+
+
+
+     <!--
+       <item name="attachVolumeForDebug"           value="lvRich1PhDetSupFrameH0" />
+       <item name="attachVolumeForDebug"           value="lvRichPmtStdECR0InModule002" />
+       <item name="attachVolumeForDebug"           value="lvRichPmtMasterP2InECR2InModule002" />
+       <item name="attachVolumeForDebug"           value="lvRich1Mirror1QuadrantModuleQ0" />
+       <item name="attachVolumeForDebug"           value="lvRich1Mirror1Master" />
+       <item name="attachVolumeForDebug"           value="lvRich1SubMaster" />
+       <item name="attachVolumeForDebug"           value="lvRich1Mirror2Master" />
+       <item name="attachVolumeForDebug"           value="lvRichPMTSMaster"  />
+    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </debug>
+
+-->
+
+    </detector>
+  </detectors>
+<!--
+  <readouts>
+    <readout name="RichHits">
+      <id>system:8,Rich1SubMasterDet:2,Rich1PmtPanel0Det:3,MAPMT_MODULE000Det:5,MAPMT_ECR2InModule000Det:3,MAPMTP0InECR2InModule000Det:3,MAPMTP1InECR2InModule000Det:3,MAPMTP2InECR2InModule000Det:3,MAPMTP3InECR2InModule000Det:3,MAPMTAnodeDet:2</id>
+    </readout>
+  </readouts>
+-->
+
+</lccdd>

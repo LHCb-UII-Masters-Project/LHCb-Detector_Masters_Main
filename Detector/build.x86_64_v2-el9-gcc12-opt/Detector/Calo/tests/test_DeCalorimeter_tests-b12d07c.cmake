@@ -1,0 +1,5 @@
+add_test( Detector.Calo.Ecal /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector/build.x86_64_v2-el9-gcc12-opt/bin/run /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector/build.x86_64_v2-el9-gcc12-opt/bin/test_DeCalorimeter Ecal  )
+set_tests_properties( Detector.Calo.Ecal PROPERTIES WORKING_DIRECTORY /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector LABELS Detector LABELS Detector.Calo)
+add_test( Detector.Calo.Hcal /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector/build.x86_64_v2-el9-gcc12-opt/bin/run /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector/build.x86_64_v2-el9-gcc12-opt/bin/test_DeCalorimeter Hcal  )
+set_tests_properties( Detector.Calo.Hcal PROPERTIES WORKING_DIRECTORY /disk/moose/general/djdt/lhcbUII_masters/DetectorPlayground/Detector LABELS Detector LABELS Detector.Calo)
+set( test_DeCalorimeter_TESTS Detector.Calo.Ecal Detector.Calo.Hcal)

@@ -1,0 +1,124 @@
+###############################################################################
+# (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration           #
+#                                                                             #
+# This software is distributed under the terms of the GNU General Public      #
+# Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".   #
+#                                                                             #
+# In applying this licence, CERN does not waive the privileges and immunities #
+# granted to it by virtue of its status as an Intergovernmental Organization  #
+# or submit itself to any jurisdiction.                                       #
+###############################################################################
+R2M1Seg00: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg01: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg02: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg03: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg04: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg05: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg06: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg07: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg08: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg09: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg10: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg11: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg12: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg13: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg14: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg15: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg16: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg17: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg18: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg19: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg20: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg21: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg22: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg23: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg24: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg25: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg26: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg27: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg28: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg29: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg30: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg31: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg32: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg33: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg34: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg35: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg36: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg37: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg38: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg39: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg40: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg41: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg42: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg43: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg44: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg45: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg46: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg47: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg48: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg49: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg50: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg51: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg52: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg53: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg54: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+R2M1Seg55: !alignment
+  position: [0.0 * mm, 0.0 * mm, 0.0 * mm]
+
+

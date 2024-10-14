@@ -1,0 +1,22 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--      Testing features of xml parameters                                    -->
+
+<lccdd>
+  <define>
+   <constant name="Rh1TestHTA"  value="5.0*mm"/>
+   <constant name="Rh1TestBTA"  value="5.0*mm"/>
+   <constant name="Rh1TestHBAngle" value="atan2(Rh1TestHTA,Rh1TestBTA)" />
+   <constant name="Rh1TestSParam"   value="1.0" />
+   <constant name="Rh1TestSAngle"   value="asin(Rh1TestSParam)" />
+
+  </define>
+</lccdd>

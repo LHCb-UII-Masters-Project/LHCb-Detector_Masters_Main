@@ -1,0 +1,278 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<velo>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFEndPlate">
+    <shape type="BooleanShape" operation="subtraction" name="WakeFieldPlateSub">
+      <shape type="Box" name="WakeFieldPlateBox1"
+             dx = "0.5*VP:DownStrWakeFieldPlateSizeX"
+             dy = "0.5*VP:DownStrWakeFieldPlateSizeY"
+             dz = "0.5*VP:DownStrWakeFieldPlateSizeZ"/>
+      <shape type="Box" name="WakeFieldPlateBox2"
+             dx = "VP:DownStrWakeFieldPlateBoxSub1SizeX"
+             dy = "VP:DownStrWakeFieldPlateBoxSub1SizeY"
+             dz = "VP:DownStrWakeFieldPlateSizeZ"/>
+      <position x = "-0.5*VP:DownStrWakeFieldPlateSizeX"
+                y = "-0.5*VP:DownStrWakeFieldPlateSizeY"/>
+      <shape type="Tube" name="WakeFieldPlateTube1"
+             dz = "VP:DownStrWakeFieldPlateSizeZ"
+             rmin = "0*mm"
+             rmax = "VP:DownStrWakeFieldPlateRadius1"
+	     startphi="-1*degree"
+	     deltaphi="92*degree"/>
+      <position x = "-0.5*VP:DownStrWakeFieldPlateSizeX + VP:DownStrWakeFieldPlateBoxSub1SizeX"
+                y = "-0.5*VP:DownStrWakeFieldPlateSizeY + VP:DownStrWakeFieldPlateBoxSub1SizeY - VP:DownStrWakeFieldPlateRadius1"/>
+      <shape type="Box" name="WakeFieldPlateBox3"
+             dx = "VP:DownStrWakeFieldPlateBoxSub2SizeX"
+             dy = "VP:DownStrWakeFieldPlateBoxSub2SizeY"
+             dz = "VP:DownStrWakeFieldPlateSizeZ"/>
+      <position x = "-0.5*VP:DownStrWakeFieldPlateSizeX + VP:DownStrWakeFieldPlateBoxSub1SizeX"
+                y = "-0.5*VP:DownStrWakeFieldPlateSizeY"/>
+      <shape type="Tube" name="WakeFieldPlateTube2"
+             dz = "VP:DownStrWakeFieldPlateSizeZ"
+             rmin = "VP:DownStrWakeFieldPlateRadius2"
+             rmax = "2*VP:DownStrWakeFieldPlateRadius2"
+	     startphi="180*degree"
+	     deltaphi="90*degree"/>
+      <position x = "0.5*VP:DownStrWakeFieldPlateSizeX - VP:DownStrWakeFieldPlateBoxSub3SizeX"
+                y = "-0.5*VP:DownStrWakeFieldPlateSizeY + VP:DownStrWakeFieldPlateRadius2"/>
+    </shape>
+  </volume>
+
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFLip">
+    <shape type="BooleanShape" operation="subtraction" name="WakeFieldLipSub">
+      <shape type="Box" name="WakeFieldLipBox1"
+             dx = "0.5*VP:DownStrWakeFieldLipSizeX"
+             dy = "0.5*VP:DownStrWakeFieldLipSizeY"
+             dz = "0.5*VP:DownStrWakeFieldLipSizeZ"/>
+      <shape type="Box" name="WakeFieldLipBox2"
+             dx = "VP:DownStrWakeFieldPlateBoxSub1SizeX"
+             dy = "VP:DownStrWakeFieldPlateBoxSub1SizeY"
+             dz = "VP:DownStrWakeFieldLipSizeZ"/>
+      <position x = "-0.5*VP:DownStrWakeFieldLipSizeX"
+                y = "-0.5*VP:DownStrWakeFieldLipSizeY"/>
+      <shape type="Box" name="WakeFieldLipBox3"
+             dx = "VP:DownStrWakeFieldLipBoxSub2SizeX"
+             dy = "VP:DownStrWakeFieldPlateBoxSub1SizeY"
+             dz = "VP:DownStrWakeFieldLipSizeZ"/>
+      <position x = "0.5*VP:DownStrWakeFieldLipSizeX"
+                y = "0.5*VP:DownStrWakeFieldLipSizeY"/>
+      <shape type="Tube" name="WakeFieldLipTube1"
+             dz = "VP:DownStrWakeFieldLipSizeZ"
+             rmin = "0*mm"
+             rmax = "VP:DownStrWakeFieldLipRadius1"
+	     startphi="-1*degree"
+	     deltaphi="92*degree"/>
+      <position x = "-0.5*VP:DownStrWakeFieldLipSizeX + VP:DownStrWakeFieldPlateBoxSub1SizeX"
+                y = "-0.5*VP:DownStrWakeFieldLipSizeY + VP:DownStrWakeFieldPlateBoxSub1SizeY - VP:DownStrWakeFieldLipRadius1"/>
+      <shape type="Tube" name="WakeFieldLipTube2"
+             dz = "VP:DownStrWakeFieldLipSizeZ"
+	     rmin = "VP:DownStrWakeFieldLipRadius1 + VP:DownStrWakeFieldLipWidth"
+	     rmax = "VP:DownStrWakeFieldLipRadius1 + 3 * VP:DownStrWakeFieldLipWidth"
+	     startphi="0*degree"
+	     deltaphi="90*degree"/>
+      <position x = "-0.5*VP:DownStrWakeFieldLipSizeX + VP:DownStrWakeFieldPlateBoxSub1SizeX"
+                y = "-0.5*VP:DownStrWakeFieldLipSizeY + VP:DownStrWakeFieldPlateBoxSub1SizeY - VP:DownStrWakeFieldLipRadius1"/>
+      <shape type="Tube" name="WakeFieldLipTube3"
+             dz = "VP:DownStrWakeFieldLipSizeZ"
+             rmin = "0*mm"
+             rmax = "VP:DownStrWakeFieldLipRadius2 - VP:DownStrWakeFieldLipWidth"
+	     startphi="179*degree"
+	     deltaphi="92*degree"/>
+      <position x = "0.5*VP:DownStrWakeFieldLipSizeX - VP:DownStrWakeFieldLipBoxSub2SizeX"
+                y = "-0.5*VP:DownStrWakeFieldLipSizeY + VP:DownStrWakeFieldLipRadius2"/>
+      <shape type="Tube" name="WakeFieldLipTube4"
+             dz = "VP:DownStrWakeFieldLipSizeZ"
+	     rmin = "VP:DownStrWakeFieldLipRadius2"
+	     rmax = "VP:DownStrWakeFieldLipRadius2 + 3 * VP:DownStrWakeFieldLipWidth"
+	     startphi="180*degree"
+	     deltaphi="90*degree"/>
+      <position x = "0.5*VP:DownStrWakeFieldLipSizeX - VP:DownStrWakeFieldLipBoxSub2SizeX"
+                y = "-0.5*VP:DownStrWakeFieldLipSizeY + VP:DownStrWakeFieldLipRadius2"/>
+    </shape>
+  </volume>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFSidePlate1">
+      <shape type="Box" name="WakeFieldSidePlate1Box"
+             dx = "0.5*VP:DownStrWakeFieldPlateBoxSub1SizeX"
+             dy = "0.5*VP:DownStrWakeFieldConeThickness"
+             dz = "0.5*VP:DownStrWakeFieldSidePlateSizeZ"/>
+  </volume>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFSidePlate2">
+    <shape type="BooleanShape" operation="subtraction" name="WakeFieldSP2Sub">
+      <shape type="Box" name="WakeFieldSidePlate2Box1"
+             dx = "0.5*VP:DownStrWakeFieldLipBoxSub2SizeX"
+             dy = "0.5*VP:DownStrWakeFieldConeThickness"
+             dz = "0.5*VP:DownStrWakeFieldSidePlateSizeZ"/>
+      <shape type="Box" name="WakeFieldSidePlate2Box2"
+             dx = "VP:DownStrWakeFieldSidePlateSizeZ * sin(VP:DownStrWakeFieldSidePlateAngle)"
+             dy = "VP:DownStrWakeFieldConeThickness"
+             dz = "2*VP:DownStrWakeFieldSidePlateSizeZ"/>
+      <position x = "-0.5*VP:DownStrWakeFieldLipBoxSub2SizeX"
+                z = "0.5*VP:DownStrWakeFieldSidePlateSizeZ"/>
+      <rotation y="VP:DownStrWakeFieldSidePlateAngle"/>
+    </shape>
+  </volume>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFTube">
+      <shape type="Tube" name="WakeFieldConnectorTube1"
+	     dz = "0.5*VP:DownStrWakeFieldSidePlateSizeZ/cos(VP:DownStrWakeFieldSidePlateAngle)"
+             rmax = "VP:DownStrWakeFieldLipRadius2"
+             rmin = "VP:DownStrWakeFieldLipRadius2 - VP:DownStrWakeFieldConeThickness"
+	     startphi="180.5*degree"
+	     deltaphi="89.0*degree"/>
+  </volume>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFCone">
+    <shape type="ConeSegment" name="WFCone"
+    	   rmin1="VP:DownStrWakeFieldLipRadius1"
+	   rmax1="VP:DownStrWakeFieldLipRadius1 + VP:DownStrWakeFieldRingThick"
+	   rmin2="VP:DownStrWakeFieldRingInnerRadius"
+	   rmax2="VP:DownStrWakeFieldRingInnerRadius + VP:DownStrWakeFieldRingThick"
+	   startphi="-44.9*degree"
+	   deltaphi="89.8*degree"
+	   dz="0.5*VP:DownStrWakeFieldTwistedLength"/>
+  </volume>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFTwistedCone1">
+    <shape type="BooleanShape" operation="intersection" name="WakeFieldTwCone1Inter">
+      <shape type="ConeSegment" name="WFTwCone1"
+    	     rmin1="VP:DownStrWakeFieldTwistedConeSmallRadius"
+	     rmax1="VP:DownStrWakeFieldTwistedConeSmallRadius + VP:DownStrWakeFieldRingThick"
+	     rmin2="VP:DownStrWakeFieldRingInnerRadius"
+	     rmax2="VP:DownStrWakeFieldRingInnerRadius + VP:DownStrWakeFieldRingThick"
+	     startphi="45*degree"
+	     deltaphi="45*degree"
+	     dz="0.5*VP:DownStrWakeFieldTwistedConeSizeZ"/>
+      <shape type="BooleanShape" operation="subtraction" name="WakeFieldTwCone1Sub">
+        <shape type="Box" name="WFTwCone1Box1"
+	       dx="VP:DownStrWakeFieldTwistedConeSizeX"
+	       dy="10*mm"
+	       dz="0.5*VP:DownStrWakeFieldTwistedConeSizeZ"/>
+        <shape type="Box" name="WFTwCone1Box2"
+	       dx="2*VP:DownStrWakeFieldTwistedConeSizeX * cos(VP:DownStrWakeFieldTwistedConeAngle)"
+	       dy="20*mm"
+	       dz="VP:DownStrWakeFieldTwistedConeSizeZ"/>
+	<position x="-VP:DownStrWakeFieldTwistedConeSizeX" z="-0.5*VP:DownStrWakeFieldTwistedConeSizeZ"/>
+	<rotation y="-VP:DownStrWakeFieldTwistedConeAngle"/>
+      </shape>
+      <position y="VP:DownStrWakeFieldRingInnerRadius + 0.5 * VP:DownStrWakeFieldRingThick"/>
+      <rotation z="-VP:Rotation"/>
+    </shape>
+  </volume>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFTwistedCone2">
+    <shape type="BooleanShape" operation="intersection" name="WakeFieldTwCone2Inter">
+      <shape type="ConeSegment" name="WFTwCone2"
+    	     rmin1="VP:DownStrWakeFieldTwistedConeSmallRadius"
+	     rmax1="VP:DownStrWakeFieldTwistedConeSmallRadius + VP:DownStrWakeFieldRingThick"
+	     rmin2="VP:DownStrWakeFieldRingInnerRadius"
+	     rmax2="VP:DownStrWakeFieldRingInnerRadius + VP:DownStrWakeFieldRingThick"
+	     startphi="-90*degree"
+	     deltaphi="45*degree"
+	     dz="0.5*VP:DownStrWakeFieldTwistedConeSizeZ"/>
+      <shape type="BooleanShape" operation="subtraction" name="WakeFieldTwCone2Sub">
+        <shape type="Box" name="WFTwCone2Box1"
+	       dx="VP:DownStrWakeFieldTwistedConeSizeX"
+	       dy="10*mm"
+	       dz="0.5*VP:DownStrWakeFieldTwistedConeSizeZ"/>
+        <shape type="Box" name="WFTwCone2Box2"
+	       dx="2*VP:DownStrWakeFieldTwistedConeSizeX * cos(VP:DownStrWakeFieldTwistedConeAngle)"
+	       dy="20*mm"
+	       dz="VP:DownStrWakeFieldTwistedConeSizeZ"/>
+	<position x="-VP:DownStrWakeFieldTwistedConeSizeX" z="-0.5*VP:DownStrWakeFieldTwistedConeSizeZ"/>
+	<rotation y="-VP:DownStrWakeFieldTwistedConeAngle"/>
+      </shape>
+      <position y="-VP:DownStrWakeFieldRingInnerRadius + 0.5 * VP:DownStrWakeFieldRingThick"/>
+      <rotation z="VP:Rotation"/>
+    </shape>
+  </volume>
+
+  <volume vis="VP:WFCone" material="VP:BerylliumCopper" name="lvWFRing">
+    <shape type="BooleanShape" operation="union" name="WakeFieldRingUnion">
+      <shape type="Tube" name="WakeFieldRingTube1"
+             dz = "0.5*VP:DownStrWakeFieldRingLength"
+             rmin = "VP:DownStrWakeFieldRingInnerRadius"
+             rmax = "VP:DownStrWakeFieldRingInnerRadius + VP:DownStrWakeFieldRingThick"
+	     startphi="-90*degree"
+	     deltaphi="180*degree"/>
+      <shape type="Tube" name="WakeFieldRingTube2"
+             dz = "0.5*VP:DownStrWakeFieldRingThick"
+             rmin = "VP:DownStrWakeFieldRingInnerRadius"
+             rmax = "VP:DownStrWakeFieldRingOuterRadius"
+	     startphi="-90*degree"
+	     deltaphi="180*degree"/>
+      <position z="0.5*(VP:DownStrWakeFieldRingLength - VP:DownStrWakeFieldRingThick)"/>
+    </shape>
+  </volume>
+
+  <volume vis="VP:WFCone" name="lvDownstreamWakeFieldConeHalf">
+    <physvol volume="lvWFEndPlate"  name="WFEndPlate">
+      <transformation>
+        <position x = "0.5*VP:DownStrWakeFieldPlateSizeX - VP:DownStrWakeFieldPlateBoxSub1SizeX"
+                  y = "0.5*VP:DownStrWakeFieldPlateSizeY - VP:DownStrWakeFieldPlateBoxSub1SizeY + VP:DownStrWakeFieldPlateRadius1"/>
+	<rotation/>
+        <position z="0.5 * (-VP:DownStrWakeFieldConeTotalLength + VP:DownStrWakeFieldPlateSizeZ) + VP:DownStrWakeFieldLipSizeZ"/>
+        <rotation z="-VP:Rotation"/>
+      </transformation>
+    </physvol>
+    <physvol volume="lvWFLip"  name="WFLip">
+      <transformation>
+        <position x = "0.5*VP:DownStrWakeFieldLipSizeX - VP:DownStrWakeFieldPlateBoxSub1SizeX"
+                  y = "0.5*VP:DownStrWakeFieldLipSizeY - VP:DownStrWakeFieldPlateBoxSub1SizeY + VP:DownStrWakeFieldLipRadius1"/>
+	<rotation/>
+	<position z="0.5 * (-VP:DownStrWakeFieldConeTotalLength + VP:DownStrWakeFieldLipSizeZ)"/>
+        <rotation z="-VP:Rotation"/>
+      </transformation>
+    </physvol>
+    <physvol volume="lvWFCone"  name="WFCone">
+      <position z="0.5 * (VP:DownStrWakeFieldConeTotalLength - VP:DownStrWakeFieldTwistedLength) - VP:DownStrWakeFieldRingLength"/>
+    </physvol>
+    <physvol volume="lvWFSidePlate1" name="WFSidePlate1">
+      <transformation>
+        <position x = "-0.5*VP:DownStrWakeFieldPlateBoxSub1SizeX"
+                  y = "0.5*VP:DownStrWakeFieldConeThickness + VP:DownStrWakeFieldLipRadius1 + 0.5*VP:DownStrWakeFieldSidePlateSizeZ*sin(VP:DownStrWakeFieldSidePlateAngle)"/>
+	<rotation x="-VP:DownStrWakeFieldSidePlateAngle"/>
+	<position z="0.5 * (-VP:DownStrWakeFieldConeTotalLength + VP:DownStrWakeFieldSidePlateSizeZ) + VP:DownStrWakeFieldLipSizeZ - 0.5*VP:DownStrWakeFieldSidePlateSizeZ*(1-cos(VP:DownStrWakeFieldSidePlateAngle)) + 0.5*VP:DownStrWakeFieldConeThickness*sin(VP:DownStrWakeFieldSidePlateAngle)"/>
+        <rotation z="-VP:Rotation"/>
+      </transformation>
+    </physvol>
+    <physvol volume="lvWFSidePlate2" name="WFSidePlate2">
+      <transformation>
+        <position x = "0.5*VP:DownStrWakeFieldLipBoxSub2SizeX + VP:DownStrWakeFieldPlateBoxSub1SizeY"
+                  y = "0.5*VP:DownStrWakeFieldConeThickness - (VP:DownStrWakeFieldPlateBoxSub1SizeY - VP:DownStrWakeFieldLipRadius1)"/>
+	<rotation/>
+	<position z="0.5 * (-VP:DownStrWakeFieldConeTotalLength + VP:DownStrWakeFieldSidePlateSizeZ) + VP:DownStrWakeFieldLipSizeZ"/>
+        <rotation z="-VP:Rotation"/>
+      </transformation>
+    </physvol>
+    <physvol volume="lvWFTube" name="WFTube">
+      <transformation>
+	<position x="11.5*mm + 0.5*VP:DownStrWakeFieldSidePlateSizeZ*tan(VP:DownStrWakeFieldSidePlateAngle)" y="VP:DownStrWakeFieldLipRadius1 - 11.5*mm + VP:DownStrWakeFieldLipRadius2"/>
+	<rotation y="VP:DownStrWakeFieldSidePlateAngle"/>
+	<position z="0.5 * (-VP:DownStrWakeFieldConeTotalLength + VP:DownStrWakeFieldSidePlateSizeZ) + VP:DownStrWakeFieldLipSizeZ"/>
+	<rotation z="-VP:Rotation"/>
+      </transformation>
+    </physvol>
+    <physvol volume="lvWFTwistedCone1" name="WFTwCone1">
+      <position z="0.5 * (VP:DownStrWakeFieldConeTotalLength - VP:DownStrWakeFieldTwistedConeSizeZ) - VP:DownStrWakeFieldRingLength"/>
+    </physvol>
+    <physvol volume="lvWFTwistedCone2" name="WFTwCone2">
+      <position z="0.5 * (VP:DownStrWakeFieldConeTotalLength - VP:DownStrWakeFieldTwistedConeSizeZ) - VP:DownStrWakeFieldRingLength"/>
+    </physvol>
+    <physvol volume="lvWFRing"  name="WFRing">
+      <position z="0.5 * (VP:DownStrWakeFieldConeTotalLength - VP:DownStrWakeFieldRingLength)"/>
+    </physvol>
+  </volume>
+
+</velo>

@@ -1,0 +1,1118 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!-- Begin Rich2 super structure Bot physvols                                   -->
+<!-- They are placed in the volume lvRich2SuperStrAirBoxBot                     -->
+<!-- Names of volumes                                                           -->
+<!--  <physvol name="pvRich2SquareRodBotFH"   volume name="lvRich2SquareRodBotFH">  -->
+<!--  <physvol  name="pvRich2SquareRodBotBH"  volume name="lvRich2SquareRodBotFH">  -->
+<!--  <physvol  name="pvRich2SquareRodBotFL"  volume name="lvRich2SquareRodBotFH">  -->
+<!--  <physvol  name="pvRich2SquareRodBotBL"  volume name="lvRich2SquareRodBotFH">  -->
+<!--  <physvol  name="pvRich2SquareRodBotZML" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZMH" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL1" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH1" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL2" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH2" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL3" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH3" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL4" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH4" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL-1" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH-1" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL-2" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH-2" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL-3" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH-3" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZL-4" volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2SquareRodBotZH-4"  volume name="lvRich2SquareRodTopZ">   -->
+<!--  <physvol  name="pvRich2RodZJoinXBotMF"  volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotMB"  volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR1F" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR1B" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR2F" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR2B" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR3F" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR3B" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR4F" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR4MF volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR4MB" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotR4B"  volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL1F"  volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL1B  volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL2F" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL2B" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL3F" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL3B" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL4F" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL4MF" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL4MB" volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinXBotL4B"  volume name="lvRich2RodZJoinX">     -->
+<!--  <physvol  name="pvRich2RodZJoinBotM" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotR1f" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotR1m" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotR1b" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotL1f" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotL1m" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotL1b" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotR2"  volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZJoinBotL2" volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodXJoin3R"  volume name="lvRich2RodXJoin3"> -->
+<!--  <physvol  name="pvRich2RodXJoin3L"  volume name="lvRich2RodXJoin3"> -->
+<!--  <physvol  name="pvRich2RodXJoin4R"  volume name="lvRich2RodXJoin4"> -->
+<!--  <physvol  name="pvRich2RodXJoin4L"   volume name="lvRich2RodXJoin4"> -->
+<!--  <physvol  name="pvRich2RodXJoin5R" volume name= "lvRich2RodXJoin5">  -->
+<!--  <physvol  name="pvRich2RodXJoin5L" volume name= "lvRich2RodXJoin5">  -->
+<!--  <physvol  name="pvRich2RodXJoin6LHF" volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6LLF" volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6LLM" volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6LHB" volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6LLB"  volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6RHF"  volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6RLF" volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6RLM"  volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6RHB" volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodXJoin6RLB" volume name= "lvRich2RodXJoin6"> -->
+<!--  <physvol  name="pvRich2RodBotAngJoinR" volume name= "lvRich2RodTopAngJoin"> -->
+<!--  <physvol  name="pvRich2RodBotAngJoinL" volume name= "lvRich2RodTopAngJoin"> -->
+<!--  <physvol  name="pvRich2RodBotAngJoinInR"  volume name="lvRich2RodBotAngJoinIn"> -->
+<!--  <physvol  name="pvRich2RodBotAngJoinInL"  volume name="lvRich2RodBotAngJoinIn"> -->
+<!--  <physvol  name="pvRich2RodBotAngJoinOutR" volume name="lvRich2RodBotAngJoinOut"> -->
+<!--  <physvol  name="pvRich2RodBotAngJoinOutL" volume name="lvRich2RodBotAngJoinOut">   -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeRFH" volume name="lvRich2RodBotAngledEdge">  -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeRFL" volume name="lvRich2RodBotAngledEdge"> -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeRBH" volume name="lvRich2RodBotAngledEdge"> -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeRBL" volume name="lvRich2RodBotAngledEdge"> -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeLFH" volume name="lvRich2RodBotAngledEdge"> -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeLFL" volume name="lvRich2RodBotAngledEdge"> -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeLBH" volume name="lvRich2RodBotAngledEdge"> -->
+<!--  <physvol  name="pvRich2RodBotAngledEdgeLBL" volume name="lvRich2RodBotAngledEdge"> -->
+<!--  <physvol  name="pvRich2RodZAngJoinBotRF"  volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZAngJoinBotRB"  volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZAngJoinBotLF"  volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodZAngJoinBotLB  volume name="lvRich2RodZJoin"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeRFH" volume name="lvRich2RodBotXJoinEdge"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeRFL" volume name="lvRich2RodBotXJoinEdge"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeRBH"  volume name="lvRich2RodBotXJoinEdge"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeRBL"  volume name="lvRich2RodBotXJoinEdge"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeLFH"  volume name="lvRich2RodBotXJoinEdge"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeLFL"  volume name="lvRich2RodBotXJoinEdge"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeLBH" volume name="lvRich2RodBotXJoinEdge"> -->
+<!--  <physvol  name="pvRich2RodBotXJoinEdgeLBL" volume name="lvRich2RodBotXJoinEdge"> -->
+<!-- =================================================================================  -->
+
+
+<Rich2>
+
+ <!-- Long Horizontal Rods -->
+<item name="PhysVolName" value="pvRich2SquareRodBotFH"  />
+<item name="LogVolName"   value="lvRich2SquareRodBotFH"/>
+<item name="TransformName"  value="pvRich2SquareRodBotFHTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2SqRodBotFHPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotBH" />
+<item name="LogVolName"   value="lvRich2SquareRodBotFH"/>
+<item name="TransformName"  value="pvRich2SquareRodBotBHTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotFL" />
+<item name="LogVolName"   value="lvRich2SquareRodBotFH"/>
+<item name="TransformName"  value="pvRich2SquareRodBotFLTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2SqRodBotFHPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotBL" />
+<item name="LogVolName"   value="lvRich2SquareRodBotFH"/>
+<item name="TransformName"  value="pvRich2SquareRodBotBLTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+</item>
+
+
+ <!-- Medium Z-direction connectors between Long Horizontal Rods -->
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZML" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZMLTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZMH" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZMHTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZL1" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZL1Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotFHPosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZH1" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZH1Transform">
+ <transformation>
+
+  <position x = "Rh2SqRodBotFHPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZL2" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZL2Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotFLZL2PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZH2" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZH2Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotFLZL2PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZL3" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZL3Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotZL3PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZH3" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZH3Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotZL3PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZL4" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZL4Transform">
+ <transformation>
+  <position x = "Rh2StructBotLeftPosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZH4" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZH4Transform">
+ <transformation>
+  <position x = "Rh2StructBotLeftPosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZLMinus1" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZLMinus1Transform">
+ <transformation>
+  <position x ="Rh2SqRodBotFLZLMinus1PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZHMinus1" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZHMinus1Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotFLZLMinus1PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZLMinus2" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZLMinus2Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotFLZLMinus2PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZHMinus2" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZHMinus2Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotFLZLMinus2PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZLMinus3" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZLMinus3Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotZLMinus3PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZHMinus3" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZHMinus3Transform">
+ <transformation>
+  <position x = "Rh2SqRodBotZLMinus3PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZLMinus4" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZLMinus4Transform">
+ <transformation>
+  <position x = "-1.0*Rh2StructBotLeftPosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2SquareRodBotZHMinus4" />
+<item name="LogVolName"   value="lvRich2SquareRodTopZ"/>
+<item name="TransformName"  value="pvRich2SquareRodBotZHMinus4Transform">
+ <transformation>
+  <position x = "-1.0*Rh2StructBotLeftPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+
+ <!-- Small Y-direction connectors between Long Horizontal Rods (Short side = Z) -->
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotMF" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotMFTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotMB" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotMBTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR1F" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR1FTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR1FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR1B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR1BTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR1FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR2F" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR2FTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR2FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR2B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR2BTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR2FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR3F"  />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR3FTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR3BPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR3B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR3BTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR3BPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR4F" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR4FTransform">
+ <transformation>
+  <position x = "-1.0*Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR4MF" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR4MFTransform">
+ <transformation>
+  <position x = "-1.0*Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2RodZJoinZBotPosF" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR4MB" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR4MBTransform">
+ <transformation>
+  <position x = "-1.0*Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "-1.0*Rh2RodZJoinZBotPosF" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotR4B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotR4BTransform">
+ <transformation>
+  <position x = "-1.0*Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL1F" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL1FTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL1FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL1B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL1BTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL1FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL2F" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL2FTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL2FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL2B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL2BTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL2FPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL3F" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL3FTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL3BPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL3B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL3BTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL3BPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL4F" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL4FTransform">
+ <transformation>
+  <position x = "Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopFLPosZ" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL4MF" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL4MFTransform">
+ <transformation>
+  <position x = "Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2RodZJoinZBotPosF" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL4MB" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL4MBTransform">
+ <transformation>
+  <position x = "Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "-1.0*Rh2RodZJoinZBotPosF" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinXBotL4B" />
+<item name="LogVolName"   value="lvRich2RodZJoinX"/>
+<item name="TransformName"  value="pvRich2RodZJoinXBotL4BTransform">
+ <transformation>
+  <position x = "Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2SqRodTopBLPosZ" />
+ </transformation>
+ </item>
+
+
+ <!-- Small Y-direction connectors between Medium Z-direction connectors (Short side = X) -->
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotM" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotMTransform">
+ <transformation>
+  <position x = "0.0*mm"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotR1f" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotR1fTransform">
+ <transformation>
+  <position x ="Rh2RodZJoinXBotR1fPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2RodZJoinZBotPosF" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotR1m" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotR1mTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR1fPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotR1b" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotR1bTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotR1fPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2RodZJoinZBotPosB" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotL1f" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotL1fTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL1fPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2RodZJoinZBotPosF" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotL1m" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotL1mTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL1fPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotL1b" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotL1bTransform">
+ <transformation>
+  <position x = "Rh2RodZJoinXBotL1fPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "Rh2RodZJoinZBotPosB" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotR2" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotR2Transform">
+ <transformation>
+  <position x = "Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "0.0*mm" />
+ </transformation>
+ </item>
+
+<item name="PhysVolName" value="pvRich2RodZJoinBotL2" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZJoinBotL2Transform">
+ <transformation>
+  <position x = "-1.0*Rh2StructBotLeftPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "0.0*mm" />
+ </transformation>
+
+ </item>
+
+
+ <!-- Medium X-direction connectors -->
+
+<item name="PhysVolName" value="pvRich2RodXJoin3R" />
+<item name="LogVolName"   value="lvRich2RodXJoin3"/>
+<item name="TransformName"  value="pvRich2RodXJoin3RTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin3RPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodXJoin3RPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin3L" />
+<item name="LogVolName"   value="lvRich2RodXJoin3"/>
+<item name="TransformName"  value="pvRich2RodXJoin3LTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin3LPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodXJoin3LPosZ"  />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin4R" />
+<item name="LogVolName"   value="lvRich2RodXJoin4"/>
+<item name="TransformName"  value="pvRich2RodXJoin4RTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin4RPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin4L" />
+<item name="LogVolName"   value="lvRich2RodXJoin4"/>
+<item name="TransformName"  value="pvRich2RodXJoin4LTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin4LPosX"
+            y = "-1.0*Rh2RodZJoinPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin5R" />
+<item name="LogVolName"   value="lvRich2RodXJoin5"/>
+<item name="TransformName"  value="pvRich2RodXJoin5RTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin4RPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "-646.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin5L" />
+<item name="LogVolName"   value="lvRich2RodXJoin5"/>
+<item name="TransformName"  value="pvRich2RodXJoin5LTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin4LPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodXJoin5LPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6LHF" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6LHFTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodXJoin6LHFPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6LLF" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6LLFTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodXJoin6LHFPosZ"  />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6LLM" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6LLMTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6LHB" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6LHBTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodXJoin6LHBPosZ"  />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6LLB" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6LLBTransform">
+ <transformation>
+  <position x = "Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodXJoin6LHBPosZ"  />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6RHF" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6RHFTransform">
+ <transformation>
+  <position x = "-1*Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodXJoin6LHFPosZ"  />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6RLF" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6RLFTransform">
+ <transformation>
+  <position x = "-1*Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodXJoin6LHFPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6RLM" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6RLMTransform">
+ <transformation>
+  <position x = "-1*Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "0.0*mm" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6RHB" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6RHBTransform">
+ <transformation>
+  <position x = "-1*Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodXJoin6LHBPosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodXJoin6RLB" />
+<item name="LogVolName"   value="lvRich2RodXJoin6"/>
+<item name="TransformName"  value="pvRich2RodXJoin6RLBTransform">
+ <transformation>
+  <position x = "-1*Rh2RodXJoin6PosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodXJoin6LHBPosZ" />
+ </transformation>
+</item>
+
+
+
+ <!-- Medium Angled connectors -->
+
+<item name="PhysVolName" value="pvRich2RodBotAngJoinR" />
+<item name="LogVolName"   value="lvRich2RodTopAngJoin"/>
+<item name="TransformName"  value="pvRich2RodBotAngJoinRTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngJoinRPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+  <rotation y = "Rh2RodBotAngJoinRRotY" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngJoinL" />
+<item name="LogVolName"   value="lvRich2RodTopAngJoin"/>
+<item name="TransformName"  value="pvRich2RodBotAngJoinLTransform">
+
+ <transformation>
+  <position x = "Rh2RodBotAngJoinLPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "0.0*mm" />
+  <rotation y = "Rh2RodBotAngJoinLRotY" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngJoinInR" />
+<item name="LogVolName"   value="lvRich2RodBotAngJoinIn"/>
+<item name="TransformName"  value="pvRich2RodBotAngJoinInRTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngJoinInRPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotAngJoinInRPosZ" />
+  <rotation y = "Rh2RodBotAngJoinInRRotY" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngJoinInL" />
+<item name="LogVolName"   value="lvRich2RodBotAngJoinIn"/>
+<item name="TransformName"  value="pvRich2RodBotAngJoinInLTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngJoinInLPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotAngJoinInLPosZ" />
+  <rotation y = "Rh2RodBotAngJoinInLRotY"/>
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngJoinOutR" />
+<item name="LogVolName"   value="lvRich2RodBotAngJoinOut"/>
+<item name="TransformName"  value="pvRich2RodBotAngJoinOutRTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngJoinOutRPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotAngJoinOutRPosZ"  />
+  <rotation y = "Rh2RodBotAngJoinOutRRotY" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngJoinOutL" />
+<item name="LogVolName"   value="lvRich2RodBotAngJoinOut"/>
+<item name="TransformName"  value="pvRich2RodBotAngJoinOutLTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngJoinOutLPosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotAngJoinOutLPosZ" />
+  <rotation y = "Rh2RodBotAngJoinOutLRotY"  />
+ </transformation>
+
+</item>
+
+
+ <!-- Angled Edges on Base Structure Assembly -->
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeRFH" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeRFHTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "-1*Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeRFL" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeRFLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "-1*Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeRBH" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeRBHTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "-1*Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeRBL" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeRBLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "-1*Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeLFH" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeLFHTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "-1*Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "-1*Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeLFL" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeLFLTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "-1*Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "-1*Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeLBH" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeLBHTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotAngledEdgeLBL" />
+<item name="LogVolName"   value="lvRich2RodBotAngledEdge"/>
+<item name="TransformName"  value="pvRich2RodBotAngledEdgeLBLTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngledEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+
+
+ <!-- Vertical small connectors between Angled Edges (at same angle) -->
+
+<item name="PhysVolName" value="pvRich2RodZAngJoinBotRF" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZAngJoinBotRFTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotAngledEdgePosX"
+            y = "0.0*mm"
+            z = "-1*Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodZAngJoinBotRB" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZAngJoinBotRBTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotAngledEdgePosX"
+            y = "0.0*mm"
+            z = "Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "-1*Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodZAngJoinBotLF" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZAngJoinBotLFTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngledEdgePosX"
+            y = "0.0*mm"
+            z = "-1*Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "-1*Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodZAngJoinBotLB" />
+<item name="LogVolName"   value="lvRich2RodZJoin"/>
+<item name="TransformName"  value="pvRich2RodZAngJoinBotLBTransform">
+ <transformation>
+  <position x = "Rh2RodBotAngledEdgePosX"
+            y = "0.0*mm"
+            z = "Rh2RodBotAngledEdgePosZ" />
+  <rotation y = "Rh2RodBotAngledEdgeRot" />
+ </transformation>
+</item>
+
+
+
+ <!-- Small X-direction connectors between Z-direction rods and Angled Edges -->
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeRFH" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeRFHTransform">
+ <transformation>
+  <position x = "Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "-1*Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeRFL" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeRFLTransform">
+ <transformation>
+  <position x = "Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "-1*Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeRBH" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeRBHTransform">
+ <transformation>
+  <position x = "Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeRBL" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeRBLTransform">
+ <transformation>
+  <position x = "Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeLFH" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeLFHTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "-1*Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeLFL" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeLFLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "-1*Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeLBH" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeLBHTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFHPosY"
+            z = "Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+<item name="PhysVolName" value="pvRich2RodBotXJoinEdgeLBL" />
+<item name="LogVolName"   value="lvRich2RodBotXJoinEdge"/>
+<item name="TransformName"  value="pvRich2RodBotXJoinEdgeLBLTransform">
+ <transformation>
+  <position x = "-1*Rh2RodBotXJoinEdgePosX"
+            y = "Rh2SqRodBotFLPosY"
+            z = "Rh2RodBotXJoinEdgePosZ" />
+ </transformation>
+</item>
+
+
+</Rich2>

@@ -1,0 +1,31 @@
+###############################################################################
+# (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration           #
+#                                                                             #
+# This software is distributed under the terms of the GNU General Public      #
+# Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".   #
+#                                                                             #
+# In applying this licence, CERN does not waive the privileges and immunities #
+# granted to it by virtue of its status as an Intergovernmental Organization  #
+# or submit itself to any jurisdiction.                                       #
+###############################################################################
+---
+FieldMapFilesDown:
+  Files:
+  - field.v5r0.c1.down.cdf
+  - field.v5r0.c2.down.cdf
+  - field.v5r0.c3.down.cdf
+  - field.v5r0.c4.down.cdf
+FieldMapFilesUp:
+  Files:
+  - field.v5r0.c1.up.cdf
+  - field.v5r0.c2.up.cdf
+  - field.v5r0.c3.up.cdf
+  - field.v5r0.c4.up.cdf
+ScaleDown:
+  Coeffs:
+  - 0.0
+  - 1.0
+ScaleUp:
+  Coeffs:
+  - 0.0
+  - 1.0

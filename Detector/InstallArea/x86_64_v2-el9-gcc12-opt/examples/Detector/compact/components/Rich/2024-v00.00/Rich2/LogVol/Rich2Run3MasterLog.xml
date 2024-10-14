@@ -1,0 +1,42 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Master  logvol                                                      -->
+<!--  ==========================================================================-->
+
+
+<Rich2>
+
+  <!-- LOGVOL lvRich2Master  -->
+
+  <volume name="lvRich2Master" material="Rich:Air" vis="Rich:VisRich2Master">
+
+    <shape type="BooleanShape" operation="subtraction" name="Rich2MasterWithHole">
+
+     <shape type="Box" name="Rich2MasterBox"
+	   dx="Rich2MasterXSize*RhHalfSize"
+	   dy="Rich2MasterYSize*RhHalfSize"
+	   dz="Rich2MasterZSize*RhHalfSize" />
+
+      <shape type="ConeSegment" name="Rich2BeamPipeHoleConeSubRM"
+	    dz="Rh2GasHoleLengthWithTolerence*RhHalfSize"
+	    rmax1="Rh2GasHoleUpstreamWithTolerence"
+	    rmax2="Rh2GasHoleDownstreamWithTolerence" />
+
+
+      <position z= "Rh2BeamPipeHolePosZ" />
+
+    </shape>
+
+  </volume>
+
+  <!-- end lvRich2Master -->
+
+</Rich2>

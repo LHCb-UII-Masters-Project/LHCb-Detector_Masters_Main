@@ -1,0 +1,126 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 Mirror radii in  Run3 configuration            -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+
+<!-- Rich2 Spherical mirror radii -->
+<constant name="Rh2SphMirrorNomInnerROC"  value="8600*mm" />
+
+
+<constant name="Rh2SphMirror00InnerROC"  value="8608*mm" />
+<constant name="Rh2SphMirror01InnerROC"  value="8611*mm" />
+<constant name="Rh2SphMirror02InnerROC"  value="8568*mm" />
+<constant name="Rh2SphMirror03InnerROC"  value="8654*mm" />
+<constant name="Rh2SphMirror04InnerROC"  value="8592*mm" />
+<constant name="Rh2SphMirror05InnerROC"  value="8621*mm" />
+<constant name="Rh2SphMirror06InnerROC"  value="8654*mm" />
+<constant name="Rh2SphMirror07InnerROC"  value="8550*mm" />
+<constant name="Rh2SphMirror08InnerROC"  value="8513*mm" />
+<constant name="Rh2SphMirror09InnerROC"  value="8601*mm" />
+<constant name="Rh2SphMirror10InnerROC"  value="8575*mm" />
+<constant name="Rh2SphMirror11InnerROC"  value="8545*mm" />
+<constant name="Rh2SphMirror12InnerROC"  value="8531*mm" />
+<constant name="Rh2SphMirror13InnerROC"  value="8599*mm" />
+<constant name="Rh2SphMirror14InnerROC"  value="8611*mm" />
+<constant name="Rh2SphMirror15InnerROC"  value="8555*mm" />
+<constant name="Rh2SphMirror16InnerROC"  value="8543*mm" />
+<constant name="Rh2SphMirror17InnerROC"  value="8603*mm" />
+<constant name="Rh2SphMirror18InnerROC"  value="8577*mm" />
+<constant name="Rh2SphMirror19InnerROC"  value="8568*mm" />
+<constant name="Rh2SphMirror20InnerROC"  value="8596*mm" />
+<constant name="Rh2SphMirror21InnerROC"  value="8620*mm" />
+<constant name="Rh2SphMirror22InnerROC"  value="8553*mm" />
+<constant name="Rh2SphMirror23InnerROC"  value="8553*mm" />
+<constant name="Rh2SphMirror24InnerROC"  value="8567*mm" />
+<constant name="Rh2SphMirror25InnerROC"  value="8589*mm" />
+<constant name="Rh2SphMirror26InnerROC"  value="8549*mm" />
+<constant name="Rh2SphMirror27InnerROC"  value="8592*mm" />
+<constant name="Rh2SphMirror28InnerROC"  value="8622*mm" />
+<constant name="Rh2SphMirror29InnerROC"  value="8552*mm" />
+<constant name="Rh2SphMirror30InnerROC"  value="8577*mm" />
+<constant name="Rh2SphMirror31InnerROC"  value="8605*mm" />
+<constant name="Rh2SphMirror32InnerROC"  value="8555*mm" />
+<constant name="Rh2SphMirror33InnerROC"  value="8631*mm" />
+<constant name="Rh2SphMirror34InnerROC"  value="8620*mm" />
+<constant name="Rh2SphMirror35InnerROC"  value="8602*mm" />
+<constant name="Rh2SphMirror36InnerROC"  value="8633*mm" />
+<constant name="Rh2SphMirror37InnerROC"  value="8627*mm" />
+<constant name="Rh2SphMirror38InnerROC"  value="8597*mm" />
+<constant name="Rh2SphMirror39InnerROC"  value="8539*mm" />
+<constant name="Rh2SphMirror40InnerROC"  value="8557*mm" />
+<constant name="Rh2SphMirror41InnerROC"  value="8607*mm" />
+<constant name="Rh2SphMirror42InnerROC"  value="8602*mm" />
+<constant name="Rh2SphMirror43InnerROC"  value="8607*mm" />
+<constant name="Rh2SphMirror44InnerROC"  value="8565*mm" />
+<constant name="Rh2SphMirror45InnerROC"  value="8586*mm" />
+<constant name="Rh2SphMirror46InnerROC"  value="8597*mm" />
+<constant name="Rh2SphMirror47InnerROC"  value="8578*mm" />
+<constant name="Rh2SphMirror48InnerROC"  value="8607*mm" />
+<constant name="Rh2SphMirror49InnerROC"  value="8558*mm" />
+<constant name="Rh2SphMirror50InnerROC"  value="8602*mm" />
+<constant name="Rh2SphMirror51InnerROC"  value="8602*mm" />
+<constant name="Rh2SphMirror52InnerROC"  value="8590*mm" />
+<constant name="Rh2SphMirror53InnerROC"  value="8639*mm" />
+<constant name="Rh2SphMirror54InnerROC"  value="8571*mm" />
+<constant name="Rh2SphMirror55InnerROC"  value="8608*mm" />
+
+<!-- Secondary mirror radii -->
+<constant name="Rh2SecMirrorNomInnerROC"  value="80000*mm" />
+
+
+<constant name="Rh2SecMirror00InnerROC"  value="82240*mm" />
+<constant name="Rh2SecMirror01InnerROC"  value="84162*mm" />
+<constant name="Rh2SecMirror02InnerROC"  value="77133*mm" />
+<constant name="Rh2SecMirror03InnerROC"  value="88263*mm" />
+<constant name="Rh2SecMirror04InnerROC"  value="77980*mm" />
+<constant name="Rh2SecMirror05InnerROC"  value="72012*mm" />
+<constant name="Rh2SecMirror06InnerROC"  value="79502*mm" />
+<constant name="Rh2SecMirror07InnerROC"  value="82476*mm" />
+<constant name="Rh2SecMirror08InnerROC"  value="76716*mm" />
+<constant name="Rh2SecMirror09InnerROC"  value="75691*mm" />
+<constant name="Rh2SecMirror10InnerROC"  value="78409*mm" />
+<constant name="Rh2SecMirror11InnerROC"  value="74297*mm" />
+<constant name="Rh2SecMirror12InnerROC"  value="75489*mm" />
+<constant name="Rh2SecMirror13InnerROC"  value="78843*mm" />
+<constant name="Rh2SecMirror14InnerROC"  value="85913*mm" />
+<constant name="Rh2SecMirror15InnerROC"  value="75489*mm" />
+<constant name="Rh2SecMirror16InnerROC"  value="79947*mm" />
+<constant name="Rh2SecMirror17InnerROC"  value="79281*mm" />
+<constant name="Rh2SecMirror18InnerROC"  value="96387*mm" />
+<constant name="Rh2SecMirror19InnerROC"  value="83674*mm" />
+<constant name="Rh2SecMirror20InnerROC"  value="79281*mm" />
+<constant name="Rh2SecMirror21InnerROC"  value="76924*mm" />
+<constant name="Rh2SecMirror22InnerROC"  value="87996*mm" />
+<constant name="Rh2SecMirror23InnerROC"  value="82713*mm" />
+<constant name="Rh2SecMirror24InnerROC"  value="74691*mm" />
+<constant name="Rh2SecMirror25InnerROC"  value="82240*mm" />
+<constant name="Rh2SecMirror26InnerROC"  value="76716*mm" />
+<constant name="Rh2SecMirror27InnerROC"  value="84162*mm" />
+<constant name="Rh2SecMirror28InnerROC"  value="76098*mm" />
+<constant name="Rh2SecMirror29InnerROC"  value="76924*mm" />
+<constant name="Rh2SecMirror30InnerROC"  value="78409*mm" />
+<constant name="Rh2SecMirror31InnerROC"  value="83191*mm" />
+<constant name="Rh2SecMirror32InnerROC"  value="80171*mm" />
+<constant name="Rh2SecMirror33InnerROC"  value="81540*mm" />
+<constant name="Rh2SecMirror34InnerROC"  value="77980*mm" />
+<constant name="Rh2SecMirror35InnerROC"  value="80396*mm" />
+<constant name="Rh2SecMirror36InnerROC"  value="80396*mm" />
+<constant name="Rh2SecMirror37InnerROC"  value="81540*mm" />
+<constant name="Rh2SecMirror38InnerROC"  value="70736*mm" />
+<constant name="Rh2SecMirror39InnerROC"  value="84409*mm" />
+
+  </define>
+</lccdd>
+

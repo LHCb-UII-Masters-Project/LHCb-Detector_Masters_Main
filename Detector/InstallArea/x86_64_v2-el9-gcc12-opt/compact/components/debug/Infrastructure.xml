@@ -1,0 +1,36 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+  <debug>
+    <type name="includes" value="0" />
+    <type name="incguard" value="1" />
+  </debug>
+
+  <include ref="../Infrastructure/trunk/parents.xml"/>
+  <include ref="../Infrastructure/trunk/parameters.xml"/>
+  <include ref="../Infrastructure/trunk/CavernParams.xml"/>
+  <include ref="../Infrastructure/trunk/ShaftParams.xml"/>
+  <include ref="../Infrastructure/trunk/TunnelParams.xml"/>
+
+  <include ref="../Infrastructure/trunk/detector.xml"/>
+  <include ref="../Infrastructure/trunk/Tunnel.xml"/>
+  <include ref="../Infrastructure/trunk/Cavern.xml"/>
+  <include ref="../Infrastructure/trunk/Shaft.xml"/>
+  <include ref="../Infrastructure/trunk/ShieldingWall.xml"/>
+  <include ref="../Infrastructure/trunk/Bunker.xml"/>
+  <include ref="../Infrastructure/trunk/ExtensionBunker.xml"/>
+  <include ref="../Infrastructure/trunk/Gantry.xml"/>
+  <include ref="../Infrastructure/trunk/SteelStructure.xml"/>
+  <include ref="../Infrastructure/trunk/VertexPlatform.xml"/>
+  <include ref="../Infrastructure/trunk/UX85.xml"/>
+
+</lccdd>

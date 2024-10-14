@@ -1,0 +1,29 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<Rich1>
+<!--    Begin Rich1MirrorPhys          -->
+<!-- Rich1 Mirror1 Master Physical Volume is inside -->
+<!--     LOGVOL lvRich1SubMaster: -->
+<!--   Old names kept for reference    -->
+<!--      <physvol  name="pvRich1Mirror1Master"  -->
+<!--        volume="lvRich1Mirror1Master" >      -->
+
+    <item name="PhysVolName"    value="pvRich1Mirror1Master" />
+    <item name="TransformName"  value="pvRich1Mirror1MasterTransform">
+        <transformation>
+             <position x="Rh1Mirror1MasterXLocationInRich1SubMaster"
+                       y="Rh1Mirror1MasterYLocationInRich1SubMaster"
+                       z="Rh1Mirror1MasterZLocationInRich1SubMaster" />
+        </transformation>
+    </item>
+
+<!--          End   Rich1Mirror1Phys      -->
+</Rich1>

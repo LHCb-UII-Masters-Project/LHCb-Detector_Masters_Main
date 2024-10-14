@@ -1,0 +1,29 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<rffoil>
+
+  <volume vis="RFFoil" name="lvRFFoilHalfTube" material="TV:FoilAluminium">
+    <shape type="Tube" name="RFFoilHalfTube"
+          dz="TV:RFFoilZSize/2"
+          rmin="TV:RFFoilRadius-TV:CylindRFFoilThickness/2"
+          rmax="TV:RFFoilRadius+TV:CylindRFFoilThickness/2"
+          startphi="-90*degree"
+          deltaphi="180*degree"
+         />
+  </volume>
+
+  <volume vis="RFFoil" name="lvRFFoil">
+    <physvol name="pvRFFoilHalfTube" volume="lvRFFoilHalfTube">
+      <position x="0*cm" y="0*cm" z="TV:RFBoxZPosition"/>
+    </physvol>
+  </volume>
+
+</rffoil>

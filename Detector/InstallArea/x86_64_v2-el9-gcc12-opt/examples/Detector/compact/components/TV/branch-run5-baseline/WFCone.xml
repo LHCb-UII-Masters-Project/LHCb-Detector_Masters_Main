@@ -1,0 +1,119 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<velo>
+
+  <volume vis="TV:WFCone" material="Copper" name="lvWFCone1">
+    <shape type="Polycone" name="WakeFieldPolyCone1"
+           startphi="95*degree"    deltaphi="170*degree">
+      <zplane rmin="0.542400002*cm" rmax="0.550000012*cm" z="0.0*cm"/>
+      <zplane rmin="0.542400002*cm" rmax="0.550000012*cm" z="0.5*cm"/>
+      <zplane rmin="0.699522913*cm" rmax="0.707122922*cm" z="1.75*cm"/>
+      <zplane rmin="1.02466261*cm"  rmax="1.03226256*cm"  z="1.95*cm"/>
+      <zplane rmin="0.474941909*cm" rmax="0.482541919*cm" z="2.35*cm"/>
+      <zplane rmin="1.12522137*cm"  rmax="1.13282132*cm"  z="2.75*cm"/>
+      <zplane rmin="0.575500548*cm" rmax="0.583100557*cm" z="3.15*cm"/>
+      <zplane rmin="1.22577989*cm"  rmax="1.23337984*cm"  z="3.55*cm"/>
+      <zplane rmin="0.676059246*cm" rmax="0.683659256*cm" z="3.95*cm"/>
+      <zplane rmin="1.32633865*cm"  rmax="1.3339386*cm"   z="4.35*cm"/>
+      <zplane rmin="0.776617885*cm" rmax="0.784217894*cm" z="4.75*cm"/>
+      <zplane rmin="1.42689741*cm"  rmax="1.43449736*cm"  z="5.15*cm"/>
+      <zplane rmin="0.877176523*cm" rmax="0.884776533*cm" z="5.55*cm"/>
+      <zplane rmin="1.52745593*cm"  rmax="1.53505588*cm"  z="5.95*cm"/>
+      <zplane rmin="0.977735162*cm" rmax="0.985335171*cm" z="6.35*cm"/>
+      <zplane rmin="1.62801468*cm"  rmax="1.63561463*cm"  z="6.75*cm"/>
+      <zplane rmin="1.07829392*cm"  rmax="1.08589387*cm"  z="7.15*cm"/>
+      <zplane rmin="1.647288*cm"    rmax="1.65488795*cm"  z="7.50*cm"/>
+      <zplane rmin="1.647288*cm"    rmax="1.65488795*cm"  z="7.5001*cm"/>
+      <zplane rmin="1.7285732*cm"   rmax="1.73617315*cm"  z="7.55*cm"/>
+      <zplane rmin="1.17885268*cm"  rmax="1.18645263*cm"  z="7.95*cm"/>
+      <zplane rmin="1.82913196*cm"  rmax="1.83673191*cm"  z="8.35*cm"/>
+      <zplane rmin="1.2794112*cm"   rmax="1.28701115*cm"  z="8.75*cm"/>
+      <zplane rmin="1.92969072*cm"  rmax="1.93729067*cm"  z="9.15*cm"/>
+      <zplane rmin="1.37996995*cm"  rmax="1.3875699*cm"   z="9.55*cm"/>
+      <zplane rmin="2.03024912*cm"  rmax="2.03784919*cm"  z="9.95*cm"/>
+      <zplane rmin="1.48052871*cm"  rmax="1.48812866*cm"  z="10.35*cm"/>
+      <zplane rmin="2.13080788*cm"  rmax="2.13840795*cm"  z="10.75*cm"/>
+      <zplane rmin="1.58108723*cm"  rmax="1.58868718*cm"  z="11.15*cm"/>
+      <zplane rmin="2.2313664*cm"   rmax="2.23896646*cm"  z="11.55*cm"/>
+      <zplane rmin="1.68164599*cm"  rmax="1.68924594*cm"  z="11.95*cm"/>
+      <zplane rmin="2.33192515*cm"  rmax="2.33952522*cm"  z="12.35*cm"/>
+      <zplane rmin="1.78220475*cm"  rmax="1.7898047*cm"   z="12.75*cm"/>
+      <zplane rmin="2.43248391*cm"  rmax="2.44008398*cm"  z="13.15*cm"/>
+      <zplane rmin="2.15762353*cm"  rmax="2.1652236*cm"   z="13.35*cm"/>
+      <zplane rmin="2.79239988*cm"  rmax="2.79999995*cm"  z="18.40*cm"/>
+      <zplane rmin="2.79239988*cm"  rmax="2.79999995*cm"  z="19.40*cm"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:WFCone" name="lvDownstreamWakeFieldCone">
+    <physvol volume="lvWFCone1"  name="WakeCone1">
+      <position x="-1*TV:OpenX" z="-75.001*mm/2"/>
+    </physvol>
+    <physvol volume="lvWFCone1"  name="WakeCone2">
+      <position x="TV:OpenX" z="-75.001*mm/2"/>
+      <rotation z="180*degree"/>
+    </physvol>
+  </volume>
+
+  <volume vis="TV:WFCone" material="Copper" name="lvWFCone2">
+    <shape type="Polycone" name="WakeFieldPolyCone2"
+           startphi="95*degree"   deltaphi="170*degree">
+      <zplane rmin="0.542400002*cm" rmax="0.550000012*cm" z="0.0*cm"/>
+      <zplane rmin="0.542400002*cm" rmax="0.550000012*cm" z="0.5*cm"/>
+      <zplane rmin="0.699522913*cm" rmax="0.707122922*cm" z="1.75*cm"/>
+      <zplane rmin="1.02466261*cm"  rmax="1.03226256*cm"  z="1.95*cm"/>
+      <zplane rmin="0.474941909*cm" rmax="0.482541919*cm" z="2.35*cm"/>
+      <zplane rmin="1.12522137*cm"  rmax="1.13282132*cm"  z="2.75*cm"/>
+      <zplane rmin="0.575500548*cm" rmax="0.583100557*cm" z="3.15*cm"/>
+      <zplane rmin="1.22577989*cm"  rmax="1.23337984*cm"  z="3.55*cm"/>
+      <zplane rmin="0.676059246*cm" rmax="0.683659256*cm" z="3.95*cm"/>
+      <zplane rmin="1.32633865*cm"  rmax="1.3339386*cm"   z="4.35*cm"/>
+      <zplane rmin="0.776617885*cm" rmax="0.784217894*cm" z="4.75*cm"/>
+      <zplane rmin="1.42689741*cm"  rmax="1.43449736*cm"  z="5.15*cm"/>
+      <zplane rmin="0.877176523*cm" rmax="0.884776533*cm" z="5.55*cm"/>
+      <zplane rmin="1.52745593*cm"  rmax="1.53505588*cm"  z="5.95*cm"/>
+      <zplane rmin="0.977735162*cm" rmax="0.985335171*cm" z="6.35*cm"/>
+      <zplane rmin="1.62801468*cm"  rmax="1.63561463*cm"  z="6.75*cm"/>
+      <zplane rmin="1.07829392*cm"  rmax="1.08589387*cm"  z="7.15*cm"/>
+      <zplane rmin="1.647288*cm"    rmax="1.65488795*cm"  z="7.50*cm"/>
+      <zplane rmin="1.7285732*cm"   rmax="1.73617315*cm"  z="7.55*cm"/>
+      <zplane rmin="1.17885268*cm"  rmax="1.18645263*cm"  z="7.95*cm"/>
+      <zplane rmin="1.82913196*cm"  rmax="1.83673191*cm"  z="8.35*cm"/>
+      <zplane rmin="1.2794112*cm"   rmax="1.28701115*cm"  z="8.75*cm"/>
+      <zplane rmin="1.92969072*cm"  rmax="1.93729067*cm"  z="9.15*cm"/>
+      <zplane rmin="1.37996995*cm"  rmax="1.3875699*cm"   z="9.55*cm"/>
+      <zplane rmin="2.03024912*cm"  rmax="2.03784919*cm"  z="9.95*cm"/>
+      <zplane rmin="1.48052871*cm"  rmax="1.48812866*cm"  z="10.35*cm"/>
+      <zplane rmin="2.13080788*cm"  rmax="2.13840795*cm"  z="10.75*cm"/>
+      <zplane rmin="1.58108723*cm"  rmax="1.58868718*cm"  z="11.15*cm"/>
+      <zplane rmin="2.2313664*cm"   rmax="2.23896646*cm"  z="11.55*cm"/>
+      <zplane rmin="1.68164599*cm"  rmax="1.68924594*cm"  z="11.95*cm"/>
+      <zplane rmin="2.33192515*cm"  rmax="2.33952522*cm"  z="12.35*cm"/>
+      <zplane rmin="1.78220475*cm"  rmax="1.7898047*cm"   z="12.75*cm"/>
+      <zplane rmin="2.43248391*cm"  rmax="2.44008398*cm"  z="13.15*cm"/>
+      <zplane rmin="2.15762353*cm"  rmax="2.1652236*cm"   z="13.35*cm"/>
+      <zplane rmin="2.79239988*cm"  rmax="2.79999995*cm"  z="18.40*cm"/>
+      <zplane rmin="2.79239988*cm"  rmax="2.79999995*cm"  z="19.40*cm"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:WFCone" name="lvUpstreamWakeFieldCone">
+    <physvol volume="lvWFCone2"             name="WakeConeFull1">
+      <position z="194.001*mm/2"/>
+      <rotation x="180*degree"/>
+    </physvol>
+    <physvol volume="lvWFCone2"             name="WakeConeFull2">
+      <position z="194.001*mm/2"/>
+      <rotation x="180*degree" z="pi*rad"/>
+    </physvol>
+  </volume>
+
+</velo>

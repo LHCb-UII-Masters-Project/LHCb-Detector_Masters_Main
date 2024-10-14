@@ -1,0 +1,27 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the BlockWall parameter definitions                     -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <define>
+    <constant name="Cavern:parent"           value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="Tunnel:parent"           value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="Shaft:parent"            value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="Bunker:parent"           value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="ExtensionBunker:parent"  value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="Gantry:parent"           value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="SteelStructure:parent"   value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="VertexPlatform:parent"   value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+    <constant name="UX85:parent"             value="/world/InfrastructureTilt/Infrastructure" type="string"/>
+  </define>
+</lccdd>

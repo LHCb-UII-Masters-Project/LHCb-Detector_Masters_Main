@@ -1,0 +1,178 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 Secondary (almost flat ) Mirror components     -->
+<!--                                               in  Run3 configuration       -->
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+<!-- Sec mirror arrangement Looking downstream from the interaction point
+          ^ Y
+          |               19  18  17  16        39  38  37 36
+          |
+          |               15  14  13  12        35  34  33 32
+          |
+  X <======               11  10   9   8  Beam  31  30  29 28
+
+                          7    6   5   4        27  26  25 24
+
+                          3    2   1   0        23  22  21 20
+
+
+-->
+
+
+
+<!-- First the basic parameters for the secondary mirrors -->
+
+
+<constant name="Rh2SecMirrorInnerR"  value="80.0*m" />
+<constant name="Rh2SecMirrorThickness" value="6.0*mm" />
+<constant name="Rh2SecMirrorOuterR"  value="Rh2SecMirrorInnerR+Rh2SecMirrorThickness" />
+<constant name="Rh2SecMirrorSegSizeX" value="410*mm" />
+<constant name="Rh2SecMirrorSegSizeY" value="380*mm" />
+<constant name="Rh2SecMirrorDeltaTheta" value="2.0*(asin(0.5*Rh2SecMirrorSegSizeX/Rh2SecMirrorInnerR))*rad" />
+<constant name="Rh2SecMirrorDeltaPhi"   value="2.0*(asin(0.5*Rh2SecMirrorSegSizeY/Rh2SecMirrorInnerR))*rad" />
+<constant name="Rh2SecMirrorThetaStart" value="-0.5*Rh2SecMirrorDeltaTheta + ((pi/2.0)*rad)" />
+<constant name="Rh2SecMirrorPhiStart" value="-0.5*Rh2SecMirrorDeltaPhi" />
+
+<constant name="Rh2SecMirrPositiveMaxCopyNum" value="19" />
+
+
+<!-- The secondary mirror angle in the Rich2 coordinate system -->
+<constant name="Rh2SecMirrorAngle" value="0.185*rad"  />
+<constant name="Rh2SecMirrorSegRot" value="((pi/2.0)*rad)"  />
+<constant name="Rh2SecMirrorSeg0Rot" value="((pi/2.0)*rad)"  />
+<constant name="Rh2SecMirrorSeg20Rot" value="Rh2SecMirrorSeg0Rot"  />
+
+<!-- Now for defining the Array of the Sec Mirrors -->
+
+<constant name="Rh2NumSecMirrorSegments"  value="40" />
+<constant name="Rh2NumSecMirrorSegRows"   value="5" />
+<constant name="Rh2NumSecMirrorSegCols"   value="4" />
+<constant name="Rh2NumSecMirrorMasters"   value="2" />
+
+
+<constant name="Rh2SecMirrorSegStepX" value="413*mm" />
+<constant name="Rh2SecMirrorSegStepY" value="383*mm" />
+<constant name="Rh2SecMirrorSegStepZ" value="0.0*mm" />
+
+<constant name="Rh2SecMirrorArrayStartX" value="(-1.5)*Rh2SecMirrorSegStepX" />
+<constant name="Rh2SecMirrorArrayStartY" value="(-2.0)*Rh2SecMirrorSegStepY" />
+
+<constant name="Rh2SecMirrorSegStepXinGas" value="405.95*mm" />
+<constant name="Rh2SecMirrorSegStepYinGas" value="383*mm" />
+<constant name="Rh2SecMirrorSegStepZinGas" value="-75.97*mm" />
+
+<!-- The position of segment 0  was defined at x=1432.14, y=-766, z=9842.99
+     This was when the Rich2 and LHCb coordinate systems was the same. When the
+     3.601 mrad tilt was introduced it was decided to keep the optical
+     geometry the same in the Rich2 coordinate system -->
+
+<!-- The position in the Rich2 coordinate system -->
+<constant name="Rh2SecMirrorSeg0ReflSurfCentreRich2X" value="1432.14*mm" />
+<constant name="Rh2SecMirrorSeg0ReflSurfCentreRich2Y" value="-766*mm" />
+<constant name="Rh2SecMirrorSeg0ReflSurfCentreRich2Z" value="9842.99*mm - Rich2MasterZ" />
+
+
+<!-- The position for placement inside the container -->
+
+<constant name="Rh2SecMirrorSeg0CentreZ" value="Rh2SecMirrorInnerR" />
+
+<constant name="Rh2SecMirrorSeg20CentreZ" value="Rh2SecMirrorSeg0CentreZ" />
+
+<!-- The Sec mirror supports are kept inside the corresponding Sec mirror masters to avoid issues with overlaps -->
+<!-- The sec mirror master size is updated so that it contains all the mirror segments. -->
+
+<!-- Secondary mirror support; see EDMS doc 390531 -->
+<constant name="Rh2SecMSupportSizeX" value = "1450*mm" />
+<constant name="Rh2SecMSupportSizeY" value = "5250*mm" />
+<constant name="Rh2SecMSupportSizeZ" value = "40*mm" />
+<constant name="Rh2SecMSupportPosXInGasEncl" value = "2041*mm" />
+<constant name="Rh2SecMSupportPosYInGasEncl" value = "0.0*mm" />
+<constant name="Rh2SecMSupportPosZInGasEncl" value = "-979*mm" />
+<!-- In order to avoid overlap at between sec mirror support and sec mirror master at the upstream end a small -->
+<!-- amount as listed in the line below is shaved off from the support X size at the upstream most corner. -->
+<!-- This is to ensure that the  -->
+<!-- the sec mirror master and support are inside the Gas enclosure  -->
+
+<constant name="Rh2SecMirrorSupportSubPosExtent" value="20.0*mm" />
+
+<constant name="Rh2SecMirrorSupportSubLargeSizeX" value="2000.0*mm" />
+<constant name="Rh2SecMirrorSupportSubLargeSizeY" value="10000.0*mm" />
+<constant name="Rh2SecMirrorSupportSubLargeSizeZ" value="1000.0*mm" />
+
+<constant name="Rh2SecMirrorSupportSubPosX" value="0.5*(Rh2SecMSupportSizeX+Rh2SecMirrorSupportSubLargeSizeX)-Rh2SecMirrorSupportSubPosExtent" />
+<constant name="Rh2SecMirrorSupportSubPosY" value="0.0*mm" />
+<constant name="Rh2SecMirrorSupportSubPosZ" value="0.0*mm" />
+
+<!-- Define a box to put the secondary mirrors in -->
+<!--<constant name="Rh2SecMirrorMasterSizeLateralXTolerance" value="10.0*mm" /> -->
+<constant name="Rh2SecMirrorMasterSizeLateralXTolerance" value="20.0*mm" />
+<constant name="Rh2SecMirrorMasterSizeLateralYTolerance" value="20.0*mm" />
+<constant name="Rh2SecMirrorMasterSizeZTolerance"  value="100*mm" />
+<constant name="Rh2SecMirrorMasterSizeX" value="(Rh2NumSecMirrorSegCols*Rh2SecMirrorSegSizeX)+15*mm+Rh2SecMirrorMasterSizeLateralXTolerance"/>
+<constant name="Rh2SecMirrorMasterSizeY" value="Rh2SecMSupportSizeY+Rh2SecMirrorMasterSizeLateralYTolerance"/>
+<constant name="Rh2SecMirrorMasterSizeZ" value="2*Rh2SecMirrorThickness+Rh2SecMSupportSizeZ+Rh2SecMirrorMasterSizeZTolerance"/>
+<constant name="Rh2SecMirrorMasterSubLargeSizeX"  value= "2000*mm" />
+<constant name="Rh2SecMirrorMasterSubLargeSizeY"  value= "10000*mm" />
+<constant name="Rh2SecMirrorMasterSubLargeSizeZ"  value= "1000*mm" />
+<constant name="Rh2SecMirrorMasterSubLargePosXPosSide"   value="0.5*(Rh2SecMSupportSizeX+Rh2SecMirrorMasterSubLargeSizeX)-Rh2SecMirrorSupportSubPosExtent +5.0*mm"/>
+<constant name="Rh2SecMirrorMasterSubLargePosY"   value="0.0*mm" />
+<constant name="Rh2SecMirrorMasterSubLargePosZ"   value="-0.5*(Rh2SecMirrorMasterSizeZ+Rh2SecMirrorMasterSubLargeSizeZ)+Rh2SecMSupportSizeZ+0.25*Rh2SecMirrorMasterSizeZTolerance"/>
+<constant name="Rh2SecMirrorMasterSubLargePosXNegSide" value="-1.0*Rh2SecMirrorMasterSubLargePosXPosSide" />
+
+
+
+<constant name="Rh2SecMirrorMasterPosX" value="Rh2SecMirrorSeg0ReflSurfCentreRich2X + 1.5*Rh2SecMirrorSegStepXinGas" />
+<constant name="Rh2SecMirrorMaster0PosY" value="0.0*mm" />
+<constant name="Rh2SecMirrorMaster0PosZ" value="Rh2SecMirrorSeg0ReflSurfCentreRich2Z + 1.5*Rh2SecMirrorSegStepZinGas - Rh2MainGasEnclosurePosZ" />
+<constant name="Rh2SecMirrorMaster0PosX" value="Rh2SecMirrorMasterPosX" />
+<constant name="Rh2SecMirrorMaster0AngleRotY" value="Rh2SecMirrorAngle"  />
+
+
+<constant name="Rh2SecMirrorMaster1PosX" value="-1.0*Rh2SecMirrorMasterPosX" />
+<constant name="Rh2SecMirrorMaster1PosY" value="Rh2SecMirrorMaster0PosY" />
+<constant name="Rh2SecMirrorMaster1PosZ" value="Rh2SecMirrorMaster0PosZ" />
+<constant name="Rh2SecMirrorMaster1AngleRotY" value="-1.0*Rh2SecMirrorAngle"  />
+
+<constant name="Rh2SecMSupportPosX" value = "Rh2SecMSupportPosXInGasEncl-Rh2SecMirrorMasterPosX" />
+<constant name="Rh2SecMSupportPosY" value = "Rh2SecMSupportPosYInGasEncl-Rh2SecMirrorMaster0PosY" />
+<constant name="Rh2SecMSupportPosZ" value = "Rh2SecMSupportPosZInGasEncl-Rh2SecMirrorMaster0PosZ" />
+
+
+<constant name="Rh2SecMSupportAngle" value = "0.0*rad" />
+<constant name="Rh2SecMSupportPositivePosX" value="Rh2SecMSupportPosX" />
+<constant name="Rh2SecMSupportNegativePosX" value="-1.0*Rh2SecMSupportPosX" />
+<constant name="Rh2SecMSupportPositiveAngleRotY" value="Rh2SecMSupportAngle" />
+<!-- Here neg side rotated by pi to keep the boolen subtracted edge at the upstream side -->
+<constant name="Rh2SecMSupportNegativeAngleRotY" value="pi*rad - Rh2SecMSupportAngle" />
+
+
+
+
+<!-- The position of the reflective surface of secondary segment 0 in the LHCb coordinate system -->
+<constant name="Rh2SecMirrorSeg0ReflSurfCentreXLHCb" value="Rh2SecMirrorSeg0ReflSurfCentreRich2X + Rich2MasterX"/>
+<constant name="Rh2SecMirrorSeg0ReflSurfCentreYLHCb" value="Rh2SecMirrorSeg0ReflSurfCentreRich2Y*cos(Rich2MasterTilt) - Rh2SecMirrorSeg0ReflSurfCentreRich2Z*sin(Rich2MasterTilt) + Rich2MasterY"/>
+<constant name="Rh2SecMirrorSeg0ReflSurfCentreZLHCb" value="Rh2SecMirrorSeg0ReflSurfCentreRich2Z*cos(Rich2MasterTilt) + Rh2SecMirrorSeg0ReflSurfCentreYLHCb*sin(Rich2MasterTilt) + Rich2MasterZ"/>
+
+<!--  The parameters for the nominal secondary mirror plane -->
+<constant name = "Rh2SecMirrCosX" value="sin(Rh2SecMirrorAngle)"  />
+<constant name = "Rh2SecMirrCosY" value="-1.0*sin(Rich2MasterTilt)*cos(Rh2SecMirrorAngle)"  />
+<constant name = "Rh2SecMirrCosZ" value="sqrt( 1 - (Rh2SecMirrCosY*Rh2SecMirrCosY) - (Rh2SecMirrCosX*Rh2SecMirrCosX))" />
+<constant name = "Rh2SecMirrDistFromNominalOrigin" value="Rh2SecMirrorSeg0ReflSurfCentreXLHCb * Rh2SecMirrCosX +
+  Rh2SecMirrorSeg0ReflSurfCentreYLHCb * Rh2SecMirrCosY +
+  Rh2SecMirrorSeg0ReflSurfCentreZLHCb * Rh2SecMirrCosZ" />
+
+
+
+  </define>
+</lccdd>

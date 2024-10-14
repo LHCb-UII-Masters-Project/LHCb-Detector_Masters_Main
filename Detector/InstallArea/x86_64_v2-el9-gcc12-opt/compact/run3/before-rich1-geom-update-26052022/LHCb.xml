@@ -1,0 +1,71 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+  <debug>
+    <type name="includes" value="0" />
+    <type name="incguard" value="1" />
+  </debug>
+
+  <includes>
+    <file ref="../../components/Materials/trunk/common.xml" />  <!-- We cannot change the location of this file, for some reason, materials must be defined first.-->
+    <file ref="path.xml" />
+    <file ref="${path:Pipe}/PipeCommon.xml" />
+  </includes>
+
+  <!-- Notes
+    - PipeT and PipeAfterT is dependent on PipeAfterMagnet (Pipe/AfterMagnet-Params)
+    - PipeDownstream dependent on PipeAfterMagnet (Pipe/AfterMagnet-Params)
+    - PipeVP dependent on VP (region not created yet)
+    - PipeUT dependent on UT (region not created yet)
+
+    - Everything else can be independently included/excluded
+   -->
+
+  <!-- Upstream Region  -->
+  <include ref="${path:Regions}/Regions.xml"/>
+  <include ref="${path:BlockWall}/BlockWall.xml"/>
+  <include ref="${path:GValve}/GValve.xml" />
+  <include ref="${path:Bls}/Bls.xml" />
+  <include ref="${path:Bcm}/Bcm.xml" />
+  <include ref="${path:MBXW}/MBXW.xml" />
+  <include ref="${path:Pipe}/PipeUpstream.xml" />
+
+  <!-- Before Magnet Region  -->
+  <include ref="${path:Rich}/Rich1/Rich1.xml"/>
+  <include ref="${path:VP}/VP.xml" />
+  <include ref="${path:UT}/UT.xml" />
+  <include ref="${path:Pipe}/PipeBeforeVelo.xml" />
+  <include ref="${path:Pipe}/PipeBeforeMagnet.xml" />
+  <include ref="${path:Pipe}/PipeVP.xml" />
+  <include ref="${path:Pipe}/PipeUT.xml" />
+
+  <!-- Magnet Region  -->
+  <include ref="${path:Magnet}/Magnet.xml" />
+  <include ref="${path:Pipe}/PipeMagnet.xml" />
+
+  <!-- After Magnet Region  -->
+  <include ref="${path:FT}/FT.xml" />
+  <include ref="${path:Rich}/Rich2/Rich2.xml"/>
+  <include ref="${path:Pipe}/AfterMagnet-Params.xml" />
+  <include ref="${path:Pipe}/PipeAfterMagnet.xml" />
+  <include ref="${path:Pipe}/PipeT.xml" />
+  <include ref="${path:Pipe}/PipeAfterT.xml" />
+
+  <!-- Downstream Region  -->
+  <include ref="${path:NeutronShielding}/NeutronShielding.xml" />
+  <include ref="${path:Muon}/Muon.xml" />
+  <include ref="${path:ECAL}/ECAL.xml" />
+  <include ref="${path:HCAL}/HCAL.xml" />
+  <include ref="${path:Pipe}/PipeDownstream.xml" />
+  <include ref="${path:Pipe}/PipeAfterMuon.xml" />
+
+</lccdd>

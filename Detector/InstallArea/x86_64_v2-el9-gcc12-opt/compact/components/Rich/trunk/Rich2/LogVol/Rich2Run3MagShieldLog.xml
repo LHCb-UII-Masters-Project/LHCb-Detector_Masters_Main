@@ -1,0 +1,95 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Magnetic shield  LogVol  definitions                                -->
+<!--  ==========================================================================-->
+<!--  Here the Side0 label correspondonds to the Positive X side and            -->
+<!--  Side 1 corresponds to the Negative X side                                 -->
+<!--  The Positive X side is the A side and Negative X side is the C side       -->
+
+<Rich2>
+
+<!-- Magnetic Shield -->
+  <volume name = "lvRich2MagShFront0" material="Rich:Rich2SoftIron" vis="Rich:VisRich2MagSh">
+    <shape type="BooleanShape" operation="subtraction" name = "Rich2MagShFrontSide0">
+      <shape type="Box"  name =  "Rich2MagShFrontBox0"
+         dx = "Rh2MagShFrontBoxSizeX*RhHalfSize"
+         dy = "Rh2MagShFrontBoxSizeY*RhHalfSize"
+         dz = "Rh2MagShFrontBoxSizeZ*RhHalfSize" />
+
+      <shape type="Trd2"  name = "Rich2MagShFrontTrapHole0"
+         z  = "Rh2MagShFrontBoxHoleSizeZ*RhHalfSize"
+         x1 = "Rh2MagShFrontBoxHoleSizeX1*RhHalfSize"
+         x2 = "Rh2MagShFrontBoxHoleSizeX2*RhHalfSize"
+         y1 = "Rh2MagShFrontBoxHoleSizeY1*RhHalfSize"
+         y2 = "Rh2MagShFrontBoxHoleSizeY2*RhHalfSize" />
+         <position  x = "Rh2MagShFrontBoxHoleXOff"
+                    y = "Rh2MagShFrontBoxHoleYOff" />
+         <rotation  y  = "Rh2MagShFrontBoxHoleRotY" />
+
+    </shape>
+  </volume>
+
+  <volume name = "lvRich2MagShFront1"  material="Rich:Rich2SoftIron" vis="Rich:VisRich2MagSh"> 
+    <shape type="BooleanShape" operation="subtraction" name = "Rich2MagShFrontSide1">
+
+      <shape type="Box"  name =  "Rich2MagShFrontBox1"
+           dx = "Rh2MagShFrontBoxSizeX*RhHalfSize"
+           dy = "Rh2MagShFrontBoxSizeY*RhHalfSize"
+           dz = "Rh2MagShFrontBoxSizeZ*RhHalfSize" />
+
+      <shape type="Trd2"  name = "Rich2MagShFrontTrapHole1"
+           z   = "Rh2MagShFrontBoxHoleSizeZ*RhHalfSize"
+           x1  = "Rh2MagShFrontBoxHoleSizeX1*RhHalfSize"
+           x2  = "Rh2MagShFrontBoxHoleSizeX2*RhHalfSize"
+           y1  = "Rh2MagShFrontBoxHoleSizeY1*RhHalfSize"
+           y2  = "Rh2MagShFrontBoxHoleSizeY2*RhHalfSize" />
+          <position x = "Rh2MagShFrontBoxHoleNegSideXOff"
+                    y = "Rh2MagShFrontBoxHoleYOff" />
+          <rotation y = "Rh2MagShFrontBoxHoleNegSideRotY"  />
+
+    </shape>
+  </volume>
+
+  <volume name = "lvRich2MagShTopBot" material="Rich:Rich2SoftIron" vis="Rich:VisRich2MagSh">
+    <shape type="Trap"  name = "Rich2MagShTopAndBotTrap"
+      z   =  "Rh2MagShTopAndBotSizeZ*RhHalfSize"
+      y1  = "Rh2MagShTopAndBotSizeY1*RhHalfSize" 
+      x1  = "Rh2MagShTopAndBotSizeX1*RhHalfSize"
+      x2  = "Rh2MagShTopAndBotSizeX2*RhHalfSize"
+      alpha1  = "Rh2MagShTopAndBotAlp1"
+      y2  = "Rh2MagShTopAndBotSizeY1*RhHalfSize"
+      x3  = "Rh2MagShTopAndBotSizeX1*RhHalfSize" 
+      x4  = "Rh2MagShTopAndBotSizeX2*RhHalfSize"
+      alpha2  = "Rh2MagShTopAndBotAlp1" />
+
+  </volume>
+
+  <volume name = "lvRich2MagShSideBack" material="Rich:Rich2SoftIron" vis="Rich:VisRich2MagSh">
+      <shape type="Box"  name =  "Rich2MagShSideBackBox"
+        dx = "Rh2MagShSideBackSizeX*RhHalfSize"
+        dy = "Rh2MagShSideBackSizeY*RhHalfSize"
+        dz = "Rh2MagShSideBackSizeZ*RhHalfSize" />
+  </volume>
+
+  <volume name = "lvRich2MagShSideFront" material="Rich:Rich2SoftIron" vis="Rich:VisRich2MagSh">
+    <shape type="Trap"  name = "Rich2MagSideFrontTrap"
+      z   = "Rh2MagShSideFrontSizeZ*RhHalfSize"
+      y1  = "Rh2MagShSideFrontSizeY1*RhHalfSize"
+      x1  = "Rh2MagShSideFrontSizeX1*RhHalfSize"
+      x2  = "Rh2MagShSideFrontSizeX2*RhHalfSize"
+      alpha1   = "Rh2MagShSideFrontAlp1"
+      y2   = "Rh2MagShSideFrontSizeY1*RhHalfSize"
+      x3   = "Rh2MagShSideFrontSizeX1*RhHalfSize"
+      x4   = "Rh2MagShSideFrontSizeX2*RhHalfSize"
+      alpha2   = "Rh2MagShSideFrontAlp1" />
+  </volume>
+
+</Rich2>

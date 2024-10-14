@@ -1,0 +1,100 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/09/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich std Mapmt components     logvol                                     -->
+<!--  This includes the pmt phcathode  which is a sensitive volume             -->
+<!--  ==========================================================================-->
+
+<Rich1>
+
+ <!-- Rich PMT description for upgraded RICH -->
+ <!-- The PMT Master is in anoter other xml file -->
+
+<volume name="lvRichPMTSMaster"  material="Rich:RichPMTVacuum" vis="Rich:VisRichPMTSMaster" >
+
+   <shape type="Box"  name="RichPMTSMasterBox"
+       dx="RhPMTSMasterLengthSize*RhHalfSize"
+       dy="RhPMTSMasterLengthSize*RhHalfSize"
+       dz="RhPMTSMasterZSize*RhHalfSize" />
+
+</volume>
+
+<volume name="lvRichPMTQuartz" material="Rich:RichPMTQuartzMaterial" vis="Rich:VisRichPMTQuartz" >
+
+    <shape type="Box" name="RhPMTQuartzBox"
+        dx= "RhPMTQuartzLengthSize*RhHalfSize"
+        dy= "RhPMTQuartzLengthSize*RhHalfSize"
+        dz= "RhPMTQuartzThickness*RhHalfSize" />   
+
+</volume>
+
+<volume name="lvRichPMTPhCathode" material="Rich:RichPMTPhCathodeMaterial" vis="Rich:VisRichPMTPhCathode" sensitive="1" >
+
+     <shape type="Box" name="RhPMTPhCathodeBox"
+        dx = "RhPMTPhCathodeLengthSize*RhHalfSize"
+        dy = "RhPMTPhCathodeLengthSize*RhHalfSize"
+        dz = "RhPMTPhCathodeZThickness*RhHalfSize" />
+
+</volume> 
+
+<volume name="lvRichPMTSideEnvelope" material="Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichPMTEnvelope"  >
+
+  <shape type="BooleanShape" operation="subtraction" name="RichPMTSideEnvSubract" >
+    <shape type="Box" name="RhPMTSideEnvelopeBox"
+        dx="RhPMTSideEnvelopeLateralOuterSize*RhHalfSize"
+        dy="RhPMTSideEnvelopeLateralOuterSize*RhHalfSize"
+        dz="RhPMTSideEnvelopeZLength*RhHalfSize" />
+    <shape type="Box" name="RhPMTSideEnvelopeHoleBox"
+       dx="RhPMTSideEnvelopeHoleSize*RhHalfSize"  
+       dy="RhPMTSideEnvelopeHoleSize*RhHalfSize"  
+       dz="RhPMTSideEnvelopeHoleLargeZSize*RhHalfSize" />  
+     <position z= "RhPMTSideEnvelopeHoleZPos" />
+  </shape>
+
+</volume>
+
+<volume name="lvRichPMTBackEnvelope" material="Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichPMTEnvelope" >
+
+     <shape type="Box" name="RhPMTBackEnvBox" 
+      dx= "RhPMTBackEnvelopeSize*RhHalfSize"
+      dy= "RhPMTBackEnvelopeSize*RhHalfSize"
+      dz= "RhPMTBackEnvelopeThickness*RhHalfSize" />
+
+</volume> 
+
+<volume name="lvRichPMTFrontRing" material = "Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichPMTFrontRing"  >
+
+  <shape type="BooleanShape" operation="subtraction" name = "RichPMTFrontEnvSubtract" >
+      <shape type="Box" name="RichPMTFrontEnvBox"
+       dx= "RhPMTFrontRingLateralOuterSize*RhHalfSize"
+       dy= "RhPMTFrontRingLateralOuterSize*RhHalfSize"
+       dz= "RhPMTFrontRingZSize*RhHalfSize" />
+      <shape type="Box" name = "RichPMTFrontEnvHoleBox" 
+       dx ="RhPMTFrontRingSubHoleXSize*RhHalfSize"
+       dy ="RhPMTFrontRingSubHoleYSize*RhHalfSize"
+       dz="RhPMTFrontRingSubHoleLargeZSize*RhHalfSize" />
+       <position z="RhPMTFrontRingSubHoleZPos" />
+    </shape>
+
+</volume>
+
+
+<volume name="lvRichPMTAnode0000" material="Rich:RichPMTAnodeMaterial" vis = "Rich:VisRichPMTAnode" >
+
+    <shape type="Box" name="RhPMTAnodeBox0000"
+        dx = "RhPMTAnodeXSize*RhHalfSize"
+        dy = "RhPMTAnodeYSize*RhHalfSize"
+        dz = "RhPMTAnodeZSize*RhHalfSize" />
+
+</volume>
+
+
+</Rich1>
+

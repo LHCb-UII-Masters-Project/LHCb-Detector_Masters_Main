@@ -1,0 +1,76 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the Cavern's parameter definitions                      -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <define>
+    <!-- These are ESTIMATES from Gloria's overview drawing.... -->
+    <constant name="ShieldingPlugDeltaZ"  value="0.825*m"  />
+    <constant name="ShaftHorizontalLength"  value="13.2*m" />
+
+    <constant name="ShaftHorizontalLengthExtra"  value="0.0*m" />
+    <!--  FIX parameter name="ShaftHorizontalLengthExtra"  value="10.0*m" /-->
+
+    <constant name="ShaftVerticalLength"  value="50.0*m" />
+    <constant name="ShaftVerticalRadius"  value="5050*mm" />
+    <constant name="ShaftFlooryPos"  value="-1.575*m" />
+    <!-- tunnel floor=sin(startangle)*shafthorizontalradius -->
+
+    <constant name="ShaftHorizontalFloorZ"  value="5000*mm" />
+    <constant name="ShaftxPos"  value="20.0*m"  />
+    <constant name="ShaftyPos"  value="CavernBoatY+0.5*CavernWallThick+ShaftHorizontalFloorZ-0.5*CavernTrapY1+CavernyPos"  />
+    <constant name="ShaftzPos"  value="0.5*(ShaftHorizontalLength+ShaftHorizontalLengthExtra)-ShaftHorizontalLength+1.5*1.5*m"/>
+    <!--parameter name="ShaftzPos"  value="0.5*(ShaftHorizontalLength+ShaftHorizontalLengthExtra)-ShaftHorizontalLength+CavernzPos-CavernInnerRadiusHeight"/-->
+    <!--parameter name="ShaftzPos"  value="-0.5*ShaftHorizontalLength"  /-->
+    <constant name="ShaftBoatZ"  value="0.0*m"  />
+    <!--parameter name="ShaftBoatZ"  value="0.5*ShaftHorizontalLength+ShaftzPos"  /-->
+
+
+    <!-- Shafter Trapezoid/Boat parameters - semi-estimated as can't find an -->
+    <!-- engineering drawing -->
+    <constant name="ShaftTrapZ"          value="ShaftHorizontalLength+ShaftHorizontalLengthExtra"  />
+    <!--parameter name="ShaftTrapZ"          value="ShaftHorizontalLength"  /-->
+    <constant name="ShaftTrapY1"          value="3739.8598*mm"  />
+    <constant name="ShaftTrapX1"          value="7.0*m"  />
+    <constant name="ShaftTrapX2"          value="9780.5003*mm"  />
+    <constant name="ShaftTrapY2"          value="3739.8598*mm"  />
+    <constant name="ShaftTrapX3"          value="7.0*m"  />
+    <constant name="ShaftTrapX4"          value="9780.5003*mm"  />
+
+    <constant name="ShaftHorizontalRadius"  value="5050*mm" />
+
+    <constant name="Shaft:ExtraCut3"                      value="100.0*mm"/>
+    <constant name="Shaft:ExtraCut2"                      value="0.1*mm"/>
+    <constant name="Shaft:ExtraCut"                      value="5.0*mm"/>
+
+    <!--parameter name="CavernBoatY" value="-(2.67*m + 0.5*CavernTrapY1+0.5*CavernWallThick+Shaft:ExtraCut2)"/-->
+    <constant name="ShaftBoatY"  value="ShaftHorizontalRadius*sin(CavernStartAngle)-0.5*(ShaftTrapY1+CavernWallThick)" />
+
+
+    <!-- 0.0*m as it's 20m from interaction point and cavern is 35m -->
+    <!-- half-length with 15m the cryo side of the IP -->
+    <constant name="ShaftVerticalxPos"  value="0.0*m" />
+    <!-- 6.3m comes from the beam height above the floor -->
+    <!--parameter name="ShaftVerticalyPos"  value="0.5*ShaftVerticalLength-6.3*m" /-->
+    <constant name="ShaftVerticalyPos"  value="0.5*ShaftVerticalLength-ShaftHorizontalFloorZ" />
+    <!--parameter name="ShaftVerticalzPos"  value="0.5*(ShaftHorizontalLength+ShaftHorizontalLengthExtra)-ShaftVerticalRadius+15.0*m" /-->
+    <!-- +ShaftzPos because shaft entity is rotated by 180 degrees..... -->
+    <!-- 32.8m is distance from cavern axis to far wall of shaft - -->
+    <!-- measured from LHBI_EGU_0034 so an estimate... -->
+    <constant name="ShaftVerticalzPos"  value="-CavernzPos+ShaftzPos+32.8*m-ShaftVerticalRadius" />
+    <!--parameter name="ShaftVerticalzPos"  value="16.840398*m-ShaftHorizontalLength-ShaftzPos+0.5*(ShaftHorizontalLength+ShaftHorizontalLengthExtra)" /-->
+    <constant name="ShaftVerticalFloorxPos" value="0.0*m" />
+    <constant name="ShaftVerticalFlooryPos" value="-ShaftHorizontalFloorZ-0.5*CavernWallThick-Shaft:ExtraCut" />
+    <constant name="ShaftVerticalFloorzPos" value="ShaftVerticalzPos" />
+  </define>
+</lccdd>

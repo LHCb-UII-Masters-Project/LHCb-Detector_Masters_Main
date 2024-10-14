@@ -1,0 +1,194 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--    Begin Rich1MagShPhys          -->
+<!--    These are kept in the Rich1SubMaster logical volume -->
+<!--        except for the part above and below TT  -->
+<!-- Old names kept for reference                   -->
+<!--
+      <physvol  name="pvRich1MgsOuterH0:150"   volume="lvRich1MgsOuterH0" >
+      <physvol  name="pvRich1MgsOuterH1:151"   volume="lvRich1MgsOuterH1" >
+      <physvol  name="pvRich1MgsUpstrH0:152"   volume="lvRich1MgsUpstrH0" >
+      <physvol  name="pvRich1MgsUpstrH1:153"   volume="lvRich1MgsUpstrH1" >
+      <physvol  name="pvRich1MgsSideQ0:154"    volume="lvRich1MgsSide" >
+      <physvol  name="pvRich1MgsSideQ1:155"    volume="lvRich1MgsSide" >
+      <physvol  name="pvRich1MgsSideQ2:156"    volume="lvRich1MgsSide" >
+      <physvol  name="pvRich1MgsSideQ3:157"    volume="lvRich1MgsSide" >
+      <physvol  name="pvRich1MgsUpstrCornerH0:158" volume="lvRich1MgsUpstrCorner" >
+      <physvol  name="pvRich1MgsUpstrCornerH1:159"  volume="lvRich1MgsUpstrCorner" >
+       <physvol  name="pvRich1MgsTeethQ0:160"       volume="lvRich1MgsTeeth" >
+       <physvol  name="pvRich1MgsTeethQ1:161"       volume="lvRich1MgsTeeth" >
+       <physvol  name="pvRich1MgsTeethQ2:162"       volume="lvRich1MgsTeeth" >
+       <physvol  name="pvRich1MgsTeethQ3:163"       volume="lvRich1MgsTeeth" >
+       <physvol  name="pvRich1MgsMidH0:164"          volume="lvRich1MgsMidH0" >
+       <physvol  name="pvRich1MgsMidH1:165"           volume="lvRich1MgsMidH1" >
+
+
+-->
+<Rich1>
+      <item name="PhysVolName"    value="pvRich1MgsOuterH0" />
+      <item name="PhysVolName"    value="pvRich1MgsOuterH1" />
+      <item name="PhysVolName"    value="pvRich1MgsUpstrH0" />
+      <item name="PhysVolName"    value="pvRich1MgsUpstrH1" />
+      <item name="PhysVolName"    value="pvRich1MgsSideQ0"  />
+      <item name="PhysVolName"    value="pvRich1MgsSideQ1" />
+      <item name="PhysVolName"    value="pvRich1MgsSideQ2"  />
+      <item name="PhysVolName"    value="pvRich1MgsSideQ3"  />
+
+      <item name="PhysVolName"    value="pvRich1MgsUpstrCornerH0"  />
+      <item name="PhysVolName"    value="pvRich1MgsUpstrCornerH1"   />
+      <item name="PhysVolName"    value="pvRich1MgsTeethQ0"  />
+      <item name="PhysVolName"    value="pvRich1MgsTeethQ1"   />
+      <item name="PhysVolName"    value="pvRich1MgsTeethQ2"  />
+      <item name="PhysVolName"    value="pvRich1MgsTeethQ3"  />
+
+      <item name="PhysVolName"    value="pvRich1MgsMidH0"   />
+      <item name="PhysVolName"    value="pvRich1MgsMidH1"   />
+ 
+
+      <item name="TransformName"  value="pvRich1MgsOuterH0Transform">
+         <transformation>
+           <position  y="Rh1MgsOuterBoxYH0"
+                      z="Rh1MagShZLocationInRich1SubMaster" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsOuterH1Transform">
+         <transformation>
+           <position  y="Rh1MgsOuterBoxYH1"
+                      z="Rh1MagShZLocationInRich1SubMaster" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsUpstrH0Transform">
+         <transformation>
+           <position y = "Rh1MgsUpstrBoxYH0"
+                     z = "Rh1MgsUpstrBoxZ"    />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsUpstrH1Transform">
+         <transformation>
+           <position y = "Rh1MgsUpstrBoxYH1"
+                     z = "Rh1MgsUpstrBoxZ"    />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsSideQ0Transform">
+         <transformation>
+           <position x = "Rh1MgsSideBoxXQ0"
+                     y = "Rh1MgsSideBoxYQ0"
+                     z = "Rh1MgsSideBoxZ"  />
+           <rotation z="Rh1MgsSideBoxRotZQ0" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsSideQ1Transform">
+         <transformation>
+           <position x = "Rh1MgsSideBoxXQ1"
+                     y = "Rh1MgsSideBoxYQ1"
+                     z = "Rh1MgsSideBoxZ" />
+           <rotation z="Rh1MgsSideBoxRotZQ1" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsSideQ2Transform">
+         <transformation>
+           <position x = "Rh1MgsSideBoxXQ2"
+                     y = "Rh1MgsSideBoxYQ2"
+                     z = "Rh1MgsSideBoxZ"  />
+           <rotation z="Rh1MgsSideBoxRotZQ2" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsSideQ3Transform">
+         <transformation>
+           <position x = "Rh1MgsSideBoxXQ3"
+                     y = "Rh1MgsSideBoxYQ3"
+                     z = "Rh1MgsSideBoxZ"   />
+           <rotation z="Rh1MgsSideBoxRotZQ3" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsUpstrCornerH0Transform">
+         <transformation>
+           <position y = "Rh1MgsCornerYH0"
+                     z = "Rh1MgsCornerZ"    />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsUpstrCornerH1Transform">
+         <transformation>
+           <position y = "Rh1MgsCornerYH1"
+                     z = "Rh1MgsCornerZ"    />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsTeethQ0Transform">
+         <transformation>
+           <position/>
+           <rotation   z="Rh1MgsTeethRotZQ0" />
+           <position   x = "Rh1MgsTeethXQ0"
+                       y = "Rh1MgsTeethYQ0"
+                       z = "Rh1MgsTeethZQ0"   />
+           <rotation   x ="Rh1MgsTeethRotXQ0" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsTeethQ1Transform">
+         <transformation>
+           <position/>
+           <rotation   z ="Rh1MgsTeethRotZQ1" />
+           <position   x = "Rh1MgsTeethXQ1"
+                       y = "Rh1MgsTeethYQ1"
+                       z = "Rh1MgsTeethZQ1"   />
+           <rotation   x ="Rh1MgsTeethRotXQ1" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsTeethQ2Transform">
+         <transformation>
+           <position/>
+           <rotation   z ="Rh1MgsTeethRotZQ2" />
+           <position   x = "Rh1MgsTeethXQ2"
+                       y = "Rh1MgsTeethYQ2"
+                       z = "Rh1MgsTeethZQ2"   />
+           <rotation   x ="Rh1MgsTeethRotXQ2" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsTeethQ3Transform">
+         <transformation>
+           <position/>
+           <rotation   z ="Rh1MgsTeethRotZQ3" />
+           <position   x = "Rh1MgsTeethXQ3"
+                       y = "Rh1MgsTeethYQ3"
+                       z = "Rh1MgsTeethZQ3"   />
+           <rotation   x ="Rh1MgsTeethRotXQ3" />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsMidH0Transform">
+         <transformation>
+           <position y = "Rh1MgsMidPartBoxYH0"
+                     z = "Rh1MgsMidPartBoxZ"    />
+         </transformation>
+      </item>
+
+      <item name="TransformName"  value="pvRich1MgsMidH1Transform">
+         <transformation>
+           <position y = "Rh1MgsMidPartBoxYH1"
+                     z = "Rh1MgsMidPartBoxZ"    />
+         </transformation>
+      </item>
+
+
+<!--   End Rich1MagShPhys -->
+</Rich1>

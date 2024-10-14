@@ -1,0 +1,438 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+    <!-- UX85-3 Cone 10 mrad of Beryllium cylindrical part for support -->
+    <!-- Split Rich2/Downstream                                        -->
+    <constant name="UX853Cone12BLenght"
+              value="(UX85C13100ZStartIP - UX853ConeSupportFromEnd) -
+                     UX853Rich2DownSplitZposIP"/>
+    <constant name="UX853Cone12BRadiusZmin"
+              value="UX853Rich2DownSplitZposIP * tan(UX851to4Angle)"/>
+    <constant name="UX853Cone12BRadiusZmax"
+              value="(UX853Rich2DownSplitZposIP + UX853Cone12BLenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX853Cone12BOuterRadius" value="122.10*mm"/>
+    <constant name="UX853Cone12BZpos"
+              value="0.5*UX853Cone12BLenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 2.4 mm thick -->
+    <constant name="UX853Cone14Lenght"      value= "5.00*mm"/>
+
+    <constant name="UX853Cone13Lenght"
+              value="UX853ConeSupportFromEnd - UX853Cone15Flange17Lenght -
+                     UX853Cone14Lenght"/>
+    <constant name="UX853Cone13RadiusZmin"  value="UX853Cone12ARadiusZmax"/>
+    <constant name="UX853Cone13RadiusZmax"
+              value="(UX853Rich2DownSplitZposIP + UX853Cone12BLenght +
+                     UX853Cone13Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone13Thick"       value="2.40*mm"/>
+    <constant name="UX853Cone13Zpos"
+              value="UX853Cone12BLenght + 0.5*UX853Cone13Lenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 3.5 mm thick for welding -->
+    <constant name="UX853Cone14RadiusZmin"  value="UX853Cone13RadiusZmax"/>
+    <constant name="UX853Cone14RadiusZmax"
+              value="(UX853Rich2DownSplitZposIP + UX853Cone12BLenght +
+                     UX853Cone13Lenght + UX853Cone14Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone14Thick"       value="3.50*mm"/>
+    <constant name="UX853Cone14Zpos"
+              value="UX853Cone12BLenght + UX853Cone13Lenght + 0.5*UX853Cone14Lenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Aluminium 3.5 mm thick -->
+    <constant name="UX853Cone16Lenght"      value="16.00*mm"/>
+    <constant name="UX853Flange17Lenght"    value="48.00*mm"/>
+
+    <constant name="UX853Cone15Lenght"
+              value="UX853Cone15Flange17Lenght - UX853Flange17Lenght - UX853Cone16Lenght"/>
+    <constant name="UX853Cone15RadiusZmin"  value="UX853Cone14RadiusZmax"/>
+    <constant name="UX853Cone15RadiusZmax"
+              value="(UX853Rich2DownSplitZposIP + UX853Cone12BLenght +
+                     UX853Cone13Lenght + UX853Cone14Lenght + UX853Cone15Lenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX853Cone15Thick"       value="3.50*mm"/>
+    <constant name="UX853Cone15Zpos"
+              value="UX853Cone12BLenght + UX853Cone13Lenght + UX853Cone14Lenght +
+                     0.5*UX853Cone15Lenght"/>
+
+    <!-- UX85-3 Step 10 mrad of Aluminium for welding to flange -->
+    <constant name="UX853Cone16RadiusZmin"  value="UX853Cone15RadiusZmax"/>
+    <constant name="UX853Cone16RadiusZmax"
+              value="(UX853Rich2DownSplitZposIP + UX853Cone12BLenght +
+                     UX853Cone13Lenght + UX853Cone14Lenght + UX853Cone15Lenght +
+                     UX853Cone16Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone16OuterRadius" value="139.85*mm"/>
+    <constant name="UX853Cone16Zpos"
+              value="UX853Cone12BLenght + UX853Cone13Lenght + UX853Cone14Lenght +
+                     UX853Cone15Lenght + 0.5*UX853Cone16Lenght"/>
+
+    <!-- UX85-3 Bimetallic Flange - Aluminium -->
+    <constant name="UX853Flange17BLenght"   value="10.00*mm"/>
+    <constant name="UX853Flange17ALenght"
+              value="UX853Flange17Lenght - UX853Flange17BLenght"/>
+
+    <constant name="UX853Flange17ARadiusZmin"  value="UX853Cone16RadiusZmax"/>
+    <constant name="UX853Flange17ARadiusZmax"
+              value="(UX853Rich2DownSplitZposIP + UX853Cone12BLenght +
+                     UX853Cone13Lenght + UX853Cone14Lenght + UX853Cone15Lenght +
+                     UX853Cone16Lenght + UX853Flange17ALenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Flange17AOuterRadius" value="162.50*mm"/>
+    <constant name="UX853Flange17AZpos"
+              value="UX853Cone12BLenght + UX853Cone13Lenght + UX853Cone14Lenght +
+                     UX853Cone15Lenght + UX853Cone16Lenght + 0.5*UX853Flange17ALenght"/>
+
+    <!-- UX85-3 Bimetallic Flange - St.Steel -->
+    <constant name="UX853Flange17BRadiusZmin"  value="UX853Flange17ARadiusZmax"/>
+    <constant name="UX853Flange17BRadiusZmax"
+              value="(UX853Rich2DownSplitZposIP + UX853Cone12BLenght +
+                     UX853Cone13Lenght + UX853Cone14Lenght + UX853Cone15Lenght +
+                     UX853Cone16Lenght + UX853Flange17Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Flange17BOuterRadius" value="UX853Flange17AOuterRadius"/>
+    <constant name="UX853Flange17BZpos"
+              value="UX853Cone12BLenght + UX853Cone13Lenght + UX853Cone14Lenght +
+                     UX853Cone15Lenght + UX853Cone16Lenght + UX853Flange17ALenght +
+                     0.5*UX853Flange17BLenght"/>
+
+    <!-- UX85-3 Downstream and Vacuum inside for whole of it -->
+    <constant name="UX853DownstreamLenght"
+              value="UX853Cone12BLenght + UX853Cone13Lenght + UX853Cone14Lenght +
+                     UX853Cone15Lenght + UX853Cone16Lenght + UX853Flange17Lenght"/>
+
+    <!-- ***************************************************************** -->
+    <!-- Compensator at 13100mm (UX85-3 shorter by 5mm i.e. at 13095mm   * -->
+    <!-- ***************************************************************** -->
+    <!-- Compensator at 13100 Flange -->
+    <constant name="UX85C13100Flange01Lenght"      value="26.00*mm"/>
+    <constant name="UX85C13100Flange01RadiusZmin"
+              value="UX85C13100ZStartIP * tan(UX851to4Angle)"/>
+    <constant name="UX85C13100Flange01RadiusZmax"
+              value="(UX85C13100ZStartIP + UX85C13100Flange01Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX85C13100Flange01OuterRadius" value="UX853Flange17AOuterRadius"/>
+    <constant name="UX85C13100Flange01Zpos"        value="0.5*UX85C13100Flange01Lenght"/>
+
+    <!-- Compensator at 13100 cone of 10 mrad -->
+    <constant name="UX85C13100Cone02Lenght"
+              value="110.00*mm - UX85C13100Flange01Lenght"/>
+    <constant name="UX85C13100Cone02RadiusZmin"    value="UX85C13100Flange01RadiusZmax"/>
+    <constant name="UX85C13100Cone02RadiusZmax"
+              value="(UX85C13100ZStartIP + UX85C13100Flange01Lenght + UX85C13100Cone02Lenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX85C13100Cone02Thick"         value="3.00*mm"/>
+    <constant name="UX85C13100Cone02Zpos"
+              value="UX85C13100Flange01Lenght + 0.5*UX85C13100Cone02Lenght"/>
+
+    <!-- Compensator at 13100 connection to bellow -->
+    <constant name="UX85C13100BellowCnct03Lenght"     value="40.00*mm"/>
+    <constant name="UX85C13100BellowCnct03RadiusZmin" value="UX85C13100Cone02RadiusZmax"/>
+    <constant name="UX85C13100BellowCnct03RadiusZmax" value="144.00*mm"/>
+    <constant name="UX85C13100BellowCnct03Thick"      value="3.00*mm"/>
+    <constant name="UX85C13100BellowCnct03Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     0.5*UX85C13100BellowCnct03Lenght"/>
+
+    <!-- Compensator at 13100 Bellow -->
+    <!-- Pitch different then drawing to take into account pre-expantion 0.5*(10+5)*mm    -->
+    <!-- to keep non periodic number compensate in drift tube by 0.5mm                    -->
+    <constant name="UX85C13100BellowNConv"        value="10"/>
+    <constant name="UX85C13100BellowWallThick"    value="0.40*mm"/>
+    <constant name="UX85C13100BellowStep"         value="10.45*mm"/>
+
+    <constant name="UX85C13100BellowPitch"
+              value="2*(UX85C13100BellowWallThick + UX85C13100BellowStep)"/>
+
+    <constant name="UX85C13100BellowLastLenght"
+              value="2*UX85C13100BellowWallThick + UX85C13100BellowStep"/>
+
+    <constant name="UX85C13100BellowInnerRadius"  value="144.00*mm"/>
+    <constant name="UX85C13100BellowOuterRadius"  value="166.00*mm"/>
+
+    <constant name="UX85C13100BellowLenght"
+              value="(UX85C13100BellowNConv - 1)*UX85C13100BellowPitch +
+                     UX85C13100BellowLastLenght"/>
+    <constant name="UX85C13100Bellow04Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + 0.5*UX85C13100BellowLenght"/>
+
+    <!-- Compensator at 13100 connection to bellow -->
+    <constant name="UX85C13100BellowCnct05Lenght"      value="40.00*mm"/>
+    <constant name="UX85C13100BellowCnct05RadiusZmin"
+              value="UX85C13100BellowCnct03RadiusZmax"/>
+    <constant name="UX85C13100BellowCnct05RadiusZmax"  value="134.90*mm"/>
+    <constant name="UX85C13100BellowCnct05Thick"       value= "3.00*mm"/>
+    <constant name="UX85C13100BellowCnct05Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     0.5*UX85C13100BellowCnct05Lenght"/>
+
+    <!-- Compensator at 13100 cone of 10 mrad, lenght compensate for approx in bellow step -->
+    <constant name="UX85C13100Cone06Lenght"            value="526.90*mm"/>
+    <constant name="UX85C13100Cone06RadiusZmin"
+              value="UX85C13100BellowCnct05RadiusZmax"/>
+    <constant name="UX85C13100Cone06RadiusZmax"        value="140.15*mm"/>
+    <constant name="UX85C13100Cone06Thick"             value= "3.00*mm"/>
+    <constant name="UX85C13100Cone06Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + 0.5*UX85C13100Cone06Lenght"/>
+
+    <!-- Compensator at 13100 connection to bellow -->
+    <constant name="UX85C13100BellowCnct07Lenght"      value="25.00*mm"/>
+    <constant name="UX85C13100BellowCnct07RadiusZmin"
+              value="UX85C13100Cone06RadiusZmax"/>
+    <constant name="UX85C13100BellowCnct07RadiusZmax"  value="144.00*mm"/>
+    <constant name="UX85C13100BellowCnct07Thick"       value= "3.00*mm"/>
+    <constant name="UX85C13100BellowCnct07Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     0.5*UX85C13100BellowCnct07Lenght"/>
+
+    <!-- Compensator at 13100 Bellow -->
+    <constant name="UX85C13100Bellow08Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     UX85C13100BellowCnct07Lenght + 0.5*UX85C13100BellowLenght"/>
+
+    <!-- Compensator at 13100 connection to bellow -->
+    <constant name="UX85C13100BellowCnct09Lenght"       value="30.00*mm"/>
+    <constant name="UX85C13100BellowCnct09RadiusZmin"
+              value="UX85C13100BellowCnct07RadiusZmax"/>
+    <constant name="UX85C13100BellowCnct09RadiusZmax"
+              value="(UX85C13100ZStartIP + UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     UX85C13100BellowCnct07Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct09Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX85C13100BellowCnct09Thick"        value=" 3.00*mm"/>
+    <constant name="UX85C13100BellowCnct09Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     UX85C13100BellowCnct07Lenght + UX85C13100BellowLenght +
+                     0.5*UX85C13100BellowCnct09Lenght"/>
+
+    <!-- Compensator at 13100 cone of 10 mrad -->
+    <constant name="UX85C13100Flange11Lenght"    value="26.00*mm"/>
+
+    <constant name="UX85C13100Cone10Lenght"
+              value="120.00*mm - UX85C13100Flange11Lenght"/>
+    <constant name="UX85C13100Cone10RadiusZmin"
+              value="UX85C13100BellowCnct09RadiusZmax"/>
+    <constant name="UX85C13100Cone10RadiusZmax"
+              value="(UX85C13100ZStartIP + UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     UX85C13100BellowCnct07Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct09Lenght + UX85C13100Cone10Lenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX85C13100Cone10Thick"        value=" 3.00*mm"/>
+    <constant name="UX85C13100Cone10Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     UX85C13100BellowCnct07Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct09Lenght + 0.5*UX85C13100Cone10Lenght"/>
+
+    <!-- Compensator at 13100 Flange -->
+    <constant name="UX85C13100Flange11RadiusZmin"  value="UX85C13100Cone10RadiusZmin"/>
+    <constant name="UX85C13100Flange11RadiusZmax"  value="144.00*mm"/>
+    <constant name="UX85C13100Flange11OuterRadius" value="177.50*mm"/>
+    <constant name="UX85C13100Flange11Zpos"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     UX85C13100BellowCnct07Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct09Lenght + UX85C13100Cone10Lenght +
+                     0.5*UX85C13100Flange11Lenght"/>
+
+    <!-- Compensator at 13100 -->
+    <constant name="UX85C13100Lenght"
+              value="UX85C13100Flange01Lenght + UX85C13100Cone02Lenght +
+                     UX85C13100BellowCnct03Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct05Lenght + UX85C13100Cone06Lenght +
+                     UX85C13100BellowCnct07Lenght + UX85C13100BellowLenght +
+                     UX85C13100BellowCnct09Lenght + UX85C13100Cone10Lenght +
+                     UX85C13100Flange11Lenght"/>
+
+    <!-- Vacuum sections overlapping all the mechanical sections above -->
+    <!-- only segmentation due to shape or regions (ignore bellows)    -->
+    <constant name="UX85C13100Vacuum01Lenght"
+              value="UX85C13100Lenght"/>
+
+    <!-- ***************************************************************** -->
+    <!-- * UX85-4 Parameters                                             * -->
+    <!-- ***************************************************************** -->
+    <!-- UX85-4 Flange  -->
+    <constant name="UX854Flange01Lenght"         value="28.50*mm"/>
+    <constant name="UX854Flange01RadiusZmin"  value="UX85C13100Flange11RadiusZmax"/>
+    <constant name="UX854Flange01RadiusZmax"
+              value="(UX854ZStartIP + UX854Flange01Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX854Flange01OuterRadius" value="UX85C13100Flange11OuterRadius"/>
+    <constant name="UX854Flange01Zpos"        value="0.5*UX854Flange01Lenght"/>
+
+    <!-- UX85-4 Cone 10 mrad St.Steel 4 mm thick -->
+    <constant name="UX854Cone02Lenght"
+              value="2337.00*mm - (UX854Flange01Lenght - 13.00*mm)"/>
+    <constant name="UX854Cone02RadiusZmin"    value="UX854Flange01RadiusZmax"/>
+    <constant name="UX854Cone02RadiusZmax"
+              value="(UX854ZStartIP + UX854Flange01Lenght + UX854Cone02Lenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX854Cone02Thick"         value="4.00*mm"/>
+    <constant name="UX854Cone02Zpos"
+              value="UX854Flange01Lenght + 0.5*UX854Cone02Lenght"/>
+
+    <!-- UX85-4 Support flange around pipe -->
+    <constant name="UX854SupportFlangeFromStart"   value="1126.99*mm"/>
+
+    <constant name="UX854SupportFlangeLenght"      value=  "7.00*mm"/>
+    <constant name="UX854SupportFlangeRadiusZmin"
+              value="(UX854ZStartIP + UX854SupportFlangeFromStart)*tan(UX851to4Angle)"/>
+    <constant name="UX854SupportFlangeRadiusZmax"
+              value="(UX854ZStartIP + UX854SupportFlangeFromStart +
+                     UX854SupportFlangeLenght)*tan(UX851to4Angle)"/>
+    <constant name="UX854SupportFlangeOuterRadius" value="164.25*mm"/>
+    <constant name="UX854SupportFlangeZpos"
+              value="UX854SupportFlangeFromStart + 0.5*UX854SupportFlangeLenght"/>
+
+    <!-- UX85-4 Cone 10 mrad St.Steel 4 mm thick -->
+    <constant name="UX854Cone03Lenght"        value="2305.00*mm"/>
+    <constant name="UX854Cone03RadiusZmin"    value="UX854Cone02RadiusZmax"/>
+    <constant name="UX854Cone03RadiusZmax"
+              value="(UX854ZStartIP + UX854Flange01Lenght + UX854Cone02Lenght +
+                     UX854Cone03Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX854Cone03Thick"         value="4.00*mm"/>
+    <constant name="UX854Cone03Zpos"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + 0.5*UX854Cone03Lenght"/>
+
+    <!-- UX85-4 Cone 10 mrad St.Steel connection to window thick -->
+    <constant name="UX854Cone04Lenght"        value="23.50*mm"/>
+    <constant name="UX854Cone04RadiusZmin"    value="UX854Cone03RadiusZmax"/>
+    <constant name="UX854Cone04RadiusZmax"    value="190.50*mm"/>
+    <constant name="UX854Cone04Thick"         value="4.00*mm"/>
+    <constant name="UX854Cone04Zpos"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + UX854Cone03Lenght +
+                     0.5*UX854Cone04Lenght"/>
+
+    <!-- UX85-4 Window -15 degree St.Steel 3 mm thick -->
+    <constant name="UX854Win05Lenght"        value="599.00*mm"/>
+    <constant name="UX854Win05RadiusZmin"    value="UX854Cone04RadiusZmax"/>
+    <constant name="UX854Win05RadiusZmax"    value="30.00*mm"/>
+    <constant name="UX854Win05Thick"         value= "3.00*mm"/>
+    <constant name="UX854Win05Zpos"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + UX854Cone03Lenght +
+                     UX854Cone04Lenght + 0.5*UX854Win05Lenght"/>
+
+    <constant name="UX854Win05Hole1Length"   value="300.0*mm"/>
+    <constant name="UX854Win05Hole1Radius"   value="19.0*mm"/>
+    <constant name="UX854Win05Hole1PosZ"     value="-119.0*mm"/>
+    <constant name="UX854Win05Hole1RotX"     value="-15.0*degree"/>
+    <constant name="UX854Win05Hole1RotZ"     value="45.0*degree"/>
+    <constant name="UX854Win05Hole1PosR"     value="145.3*mm"/>
+    <constant name="UX854Win05Hole1PosPhi"   value="135.0*degree"/>
+
+    <constant name="UX854Win05Hole2Length"   value="100.0*mm"/>
+    <constant name="UX854Win05Hole2Radius"   value="31.75*mm"/>
+    <constant name="UX854Win05Hole2RotX"     value="90.0*degree"/>
+    <constant name="UX854Win05Hole2PosY"     value="95.0*mm"/>
+    <constant name="UX854Win05Hole2PosZ"     value="69.0*mm"/>
+
+    <constant name="UX854Win05Hole3Length"   value="300.0*mm"/>
+    <constant name="UX854Win05Hole3Radius"   value="30.0*mm"/>
+    <constant name="UX854Win05Hole3RotY"     value="-20.0*degree"/>
+    <constant name="UX854Win05Hole3PosX"     value="-122.0*mm"/>
+    <constant name="UX854Win05Hole3PosZ"     value="-32.76*mm"/>
+
+    <constant name="UX854Win05Hole4Length"   value="200.0*mm"/>
+    <constant name="UX854Win05Hole4Radius"   value="9.5*mm"/>
+    <constant name="UX854Win05Hole4RotY"     value="45.0*degree"/>
+    <constant name="UX854Win05Hole4PosX"     value="64.0*mm"/>
+    <constant name="UX854Win05Hole4PosZ"     value="191.6*mm"/>
+
+    <constant name="UX854Win05PipeExtra"     value="50.0*mm"/> <!-- To accomodate cuts -->
+
+    <constant name="UX854Win05Pipe1BasicLength"   value="226.7*mm"/>
+    <constant name="UX854Win05Pipe1Length"   value="UX854Win05Pipe1BasicLength + UX854Win05PipeExtra"/>
+    <constant name="UX854Win05Pipe1Thick"    value="2.0*mm"/>
+    <constant name="UX854Win05Pipe1FlangeRad" value="35.0*mm"/>
+    <constant name="UX854Win05Pipe1FlangeThick" value="12.7*mm"/>
+
+    <constant name="UX854Win05Pipe2CutLength" value="UX854Win05Hole2Radius*2"/>
+    <constant name="UX854Win05Pipe2BasicLength" value="135.0*mm"/>
+    <constant name="UX854Win05Pipe2Length"   value="UX854Win05Pipe2BasicLength + UX854Win05PipeExtra + UX854Win05Pipe2CutLength"/>
+    <constant name="UX854Win05Pipe2Thick"    value="2.0*mm"/>
+    <constant name="UX854Win05Pipe2ExtendBasicLength" value="142.5*mm"/>
+    <constant name="UX854Win05Pipe2ExtendLength" value="UX854Win05Pipe2ExtendBasicLength + UX854Win05Pipe2CutLength"/>
+    <constant name="UX854Win05Pipe2FlangeRad" value="57.0*mm"/>
+    <constant name="UX854Win05Pipe2FlangeThick" value="17.3*mm"/>
+
+    <constant name="UX854Win05Pipe3BasicLength"   value="79.5*mm"/>
+    <constant name="UX854Win05Pipe3Length"   value="UX854Win05Pipe3BasicLength + UX854Win05PipeExtra"/> <!--"182.0*mm"/>-->
+    <constant name="UX854Win05Pipe3Thick"    value="2.0*mm"/>
+    <constant name="UX854Win05Pipe3ExtendLength" value="50.5*mm"/>
+    <constant name="UX854Win05Pipe3Rad"      value="17.0*mm"/>
+    <constant name="UX854Win05Pipe3FlangeRad"      value="35.0*mm"/>
+    <constant name="UX854Win05Pipe3FlangeThick"    value="12.7*mm"/>
+
+    <constant name="UX854Win05Pipe4BasicLength"   value="31.5*mm"/>
+    <constant name="UX854Win05Pipe4Length"   value="UX854Win05Pipe4BasicLength + UX854Win05PipeExtra"/>
+    <constant name="UX854Win05Pipe4Thick"    value="2.0*mm"/>
+    <constant name="UX854Win05Pipe4FlangeRad"      value="17.0*mm"/>
+    <constant name="UX854Win05Pipe4FlangeThick"    value="7.0*mm"/>
+
+    <!-- UX85-4 Cylinder 3 mm thick -->
+    <constant name="UX854Cyl06Flange08Lenght"   value="52.50*mm"/>
+    <constant name="UX854Flange08Lenght"        value="19.70*mm"/>
+    <constant name="UX854Cyl07Lenght"
+              value="5.00*mm + 25.00*mm - (UX854Flange08Lenght- 8.00*mm)"/>
+
+    <constant name="UX854Cyl06Lenght"
+              value="UX854Cyl06Flange08Lenght - UX854Flange08Lenght - UX854Cyl07Lenght"/>
+    <constant name="UX854Cyl06InnerRadius"   value="UX854Win05RadiusZmax"/>
+    <constant name="UX854Cyl06Thick"         value="3.00*mm"/>
+    <constant name="UX854Cyl06Zpos"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + UX854Cone03Lenght +
+                     UX854Cone04Lenght + UX854Win05Lenght + 0.5*UX854Cyl06Lenght"/>
+
+    <!-- UX85-4 Cylinder 1.5 mm thick -->
+    <constant name="UX854Cyl07InnerRadius"   value="UX854Cyl06InnerRadius"/>
+    <constant name="UX854Cyl07OuterRadius"   value="31.50*mm"/>
+    <constant name="UX854Cyl07Zpos"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + UX854Cone03Lenght +
+                     UX854Cone04Lenght + UX854Win05Lenght + UX854Cyl06Lenght +
+                     0.5*UX854Cyl07Lenght"/>
+
+    <!-- UX85-4 Cylinder Flange -->
+    <constant name="UX854Flange08InnerRadius"   value="UX854Cyl06InnerRadius"/>
+    <constant name="UX854Flange08OuterRadius"   value="76.00*mm"/>
+    <constant name="UX854Flange08Zpos"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + UX854Cone03Lenght +
+                     UX854Cone04Lenght + UX854Win05Lenght + UX854Cyl06Lenght +
+                     UX854Cyl07Lenght + 0.5*UX854Flange08Lenght "/>
+
+    <!-- Corresponding vacuum sections segmentation due to shape -->
+    <!-- Vacuum in 10 mrad, in window, in cilinder -->
+    <constant name="UX854Vacuum01Lenght"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + UX854Cone03Lenght +
+                     UX854Cone04Lenght"/>
+    <constant name="UX854Vacuum05Lenght"    value="UX854Win05Lenght"/>
+    <constant name="UX854Vacuum06Lenght"    value="UX854Cyl06Flange08Lenght"/>
+
+    <!-- Whole UX85-4 -->
+    <constant name="UX854Lenght"
+              value="UX854Flange01Lenght + UX854Cone02Lenght + UX854Cone03Lenght +
+                     UX854Cone04Lenght + UX854Win05Lenght + UX854Cyl06Flange08Lenght"/>
+  </define>
+</lccdd>

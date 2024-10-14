@@ -1,0 +1,180 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     02/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich1 Magnetic shield logvols                                             -->
+<!--  ==========================================================================-->
+
+<Rich1>
+
+  <volume name="lvRich1MgsOuterH0" material="Rich:RichSoftIron"  vis="Rich:VisRich1MgShield">
+    <shape type="BooleanShape" operation="subtraction" name="lvRich1MgsOuterBoxBoxH0">
+       <shape type="Box" name="Rich1MgsOuterBoxH0"
+              dx = "Rh1MgsOuterBoxXSize*RhHalfSize"
+              dy = "Rh1MgsOuterBoxYSize*RhHalfSize"
+              dz = "Rh1MgsOuterBoxZSize*RhHalfSize" />
+         <shape type="Box" name="Rich1MgsInnerBoxH0"
+              dx = "Rh1MgsInnerBoxXSize*RhHalfSize"
+              dy = "Rh1MgsInnerBoxYSize*RhHalfSize"
+              dz = "Rh1MgsInnerBoxZSize*RhHalfSize" />
+         <position y = "Rh1MgsInnerBoxYH0"
+                   z = "Rh1MgsInnerBoxZ" />
+       <!--
+         The cut in the mag shield at the top is commented out for now.
+          
+         <shape type="Box" name ="Rich1MgsTopCutQ0"
+              dx ="Rh1MgsTopCutLargeBoxLargeXSize*RhHalfSize"
+              dy ="Rh1MgsTopCutLargeBoxLargeYSize*RhHalfSize"
+              dz ="Rh1MgsTopCutLargeBoxZSize*RhHalfSize" />
+         <position x="Rh1MgsTopCutLargeBoxXQ0"
+                   y="Rh1MgsTopCutLargeBoxYQ0"
+                   z="Rh1MgsTopCutLargeBoxZ"  />
+         <shape type="Box" name ="Rich1MgsTopCutQ3"
+              dx ="Rh1MgsTopCutLargeBoxLargeXSize*RhHalfSize"
+              dy ="Rh1MgsTopCutLargeBoxLargeYSize*RhHalfSize"
+              dz ="Rh1MgsTopCutLargeBoxZSize*RhHalfSize" />
+         <position x="Rh1MgsTopCutLargeBoxXQ3"
+                   y="Rh1MgsTopCutLargeBoxYQ3"
+                   z="Rh1MgsTopCutLargeBoxZ"  />
+       -->
+   </shape>
+  </volume>    <!-- end lvRich1MgsOuterH0 -->
+
+  <volume name="lvRich1MgsOuterH1" material="Rich:RichSoftIron" vis="Rich:VisRich1MgShield" >
+    <shape type="BooleanShape" operation="subtraction" name="lvRich1MgsOuterBoxBoxH1">
+         <shape type="Box" name  = "Rich1MgsOuterBoxH1"
+              dx = "Rh1MgsOuterBoxXSize*RhHalfSize"
+              dy = "Rh1MgsOuterBoxYSize*RhHalfSize"
+              dz = "Rh1MgsOuterBoxZSize*RhHalfSize" />
+         <shape type="Box"  name = "Rich1MgsInnerBoxH1"
+              dx = "Rh1MgsInnerBoxXSize*RhHalfSize"
+              dy = "Rh1MgsInnerBoxYSize*RhHalfSize"
+              dz = "Rh1MgsInnerBoxZSize*RhHalfSize" />
+         <position y = "Rh1MgsInnerBoxYH1"
+                   z =  "Rh1MgsInnerBoxZ" />
+         <!--
+
+         The cut in the mag shield at the bottom is commented out for now.
+
+         <shape type="Box" name = "Rich1MgsBotCutQ1"
+              dx ="Rh1MgsTopCutLargeBoxLargeXSize*RhHalfSize"
+              dy ="Rh1MgsTopCutLargeBoxLargeYSize*RhHalfSize"
+              dz ="Rh1MgsTopCutLargeBoxZSize*RhHalfSize" />
+         <position x="Rh1MgsTopCutLargeBoxXQ1"
+                   y="Rh1MgsTopCutLargeBoxYQ1"
+                   z="Rh1MgsTopCutLargeBoxZ"  />
+         <shape type="Box" name ="Rich1MgsBotCutQ2"
+              dx ="Rh1MgsTopCutLargeBoxLargeXSize*RhHalfSize"
+              dy ="Rh1MgsTopCutLargeBoxLargeYSize*RhHalfSize"
+              dz ="Rh1MgsTopCutLargeBoxZSize*RhHalfSize" />
+         <position x="Rh1MgsTopCutLargeBoxXQ2"
+                   y="Rh1MgsTopCutLargeBoxYQ2"
+                   z="Rh1MgsTopCutLargeBoxZ"  />
+         -->
+   </shape>
+  </volume>    <!-- end lvRich1MgsOuterH1 -->
+
+  <volume name="lvRich1MgsUpstrH0" material="Rich:RichSoftIron"  vis="Rich:VisRich1MgShield" >
+        <shape type="Box" name  = "Rich1MgsUpstrH0"
+              dx = "Rh1MgsUpstrBoxXSize*RhHalfSize"
+              dy = "Rh1MgsUpstrBoxYSize*RhHalfSize"
+              dz = "Rh1MgsUpstrBoxZSize*RhHalfSize" />
+  </volume>    <!-- end lvRich1MgsUpstrH0 -->
+  <volume name="lvRich1MgsUpstrH1" material="Rich:RichSoftIron">
+        <shape type="Box"  name  = "Rich1MgsUpstrH1"
+              dx = "Rh1MgsUpstrBoxXSize*RhHalfSize"
+              dy = "Rh1MgsUpstrBoxYSize*RhHalfSize"
+              dz = "Rh1MgsUpstrBoxZSize*RhHalfSize" />
+  </volume>    <!-- end lvRich1MgsUpstrH1 -->
+
+  <volume name="lvRich1MgsSide" material="Rich:RichSoftIron" vis="Rich:VisRich1MgShield" >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1MgsSideBoxTrap" >
+        <shape type="Box"  name = "Rich1MgsSide"
+              dx = "Rh1MgsSideBoxXSize*RhHalfSize"
+              dy = "Rh1MgsSideBoxYSize*RhHalfSize"
+              dz = "Rh1MgsSideBoxZSize*RhHalfSize" />
+        <shape type="Trd2" name="Rich1MgsSideSubTrap"
+             z="Rh1MgsSideZLargeSize*RhHalfSize"
+             x1="Rh1MgsSideSubTrapX1LargeSize*RhHalfSize"
+             x2="Rh1MgsSideSubTrapX2LargeSize*RhHalfSize"
+             y1="Rh1MgsSideSubTrapY1Size*RhHalfSize"
+             y2="Rh1MgsSideSubTrapY2SmallSize*RhHalfSize" />
+         <position y="Rh1MgsSideSubTrapY"
+                 z="Rh1MgsSideSubTrapZ" />
+        </shape>
+  </volume>    <!-- end lvRich1MgsSide -->
+  <volume name="lvRich1MgsUpstrCorner" material="Rich:RichSoftIron"  vis="Rich:VisRich1MgShield" >
+         <shape type="Box"  name="Rich1MgsUpstrCornerBox"
+              dx = "Rh1MgsCornerXSize*RhHalfSize"
+              dy = "Rh1MgsCornerYSize*RhHalfSize"
+              dz = "Rh1MgsCornerZSize*RhHalfSize"  />
+  </volume>    <!-- end lvRich1MgsCorner -->
+
+<volume name="lvRich1MgsTeeth" material= "Rich:RichSoftIron"  vis="Rich:VisRich1MgShield" >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1MgsTeethTrapBox">
+         <shape type="Trd2"  name ="Rich1MgsTeethTrap"
+              z ="Rh1MgsTeethTrapZSize*RhHalfSize"
+              x1 ="Rh1MgsTeethTrapX1Size*RhHalfSize"
+              x2 ="Rh1MgsTeethTrapX2Size*RhHalfSize"
+              y1 ="Rh1MgsTeethTrapY1Size*RhHalfSize"
+              y2 ="Rh1MgsTeethTrapY2Size*RhHalfSize"  />
+          <shape type="Box"  name = "Rich1MgsTeethSubBox"
+              dx = "Rh1MgsTeethSubBoxXLargeSize*RhHalfSize"
+              dy = "Rh1MgsTeethSubBoxYLargeSize*RhHalfSize"
+              dz = "Rh1MgsTeethSubBoxZLargeSize*RhHalfSize"  />
+          <position  y= "Rh1MgsTeethSubBoxYShift"  />
+          <rotation  x="Rh1MgsTeethSubBoxRotX" />
+     </shape>
+  </volume> <!-- end lvRich1MgsTeeth -->
+  <volume name="lvRich1MgsDnstrUTH0" material="Rich:RichSoftIron" vis="Rich:VisRich1MgShield"   >
+     <shape type="BooleanShape" operation="subtraction" name="Rich1MgsDnstrBoxBoxUTH0">
+         <shape type="Box"  name="Rich1MgsDnstrUTBoxH0"
+              dx = "Rh1MgsDnsTTXSize*RhHalfSize"
+              dy = "Rh1MgsDnsTTYSize*RhHalfSize"
+              dz = "Rh1MgsDnsTTZSize*RhHalfSize" />
+         <shape type="Box"  name="Rich1MgsDnstrUTSubBoxH0"
+              dx ="Rh1MgsDnsTTInnerSubBoxLargeXSize*RhHalfSize"
+              dy ="Rh1MgsDnsTTInnerSubBoxLargeYSize*RhHalfSize"
+              dz ="Rh1MgsDnsTTInnerSubBoxLargeZSize*RhHalfSize" />
+         <position  y="Rh1MgsDnsTTInnerSubBoxYShiftH0"
+                    z="Rh1MgsDnsTTInnerSubBoxZShift" />
+     </shape>
+  </volume>   <!-- end lvRich1MgsDnstrUTH0  -->
+
+  <volume name="lvRich1MgsDnstrUTH1" material="Rich:RichSoftIron" vis="Rich:VisRich1MgShield"  >
+    <shape type="BooleanShape" operation="subtraction" name="Rich1MgsDnstrBoxBoxUTH1">
+         <shape type="Box"  name="Rich1MgsDnstrUTBoxH1"
+              dx = "Rh1MgsDnsTTXSize*RhHalfSize"
+              dy = "Rh1MgsDnsTTYSize*RhHalfSize"
+              dz = "Rh1MgsDnsTTZSize*RhHalfSize" />
+         <shape type="Box"  name="Rich1MgsDnstrUTSubBoxH1"
+              dx ="Rh1MgsDnsTTInnerSubBoxLargeXSize*RhHalfSize"
+              dy ="Rh1MgsDnsTTInnerSubBoxLargeYSize*RhHalfSize"
+              dz ="Rh1MgsDnsTTInnerSubBoxLargeZSize*RhHalfSize" />
+         <position  y="Rh1MgsDnsTTInnerSubBoxYShiftH1"
+                    z="Rh1MgsDnsTTInnerSubBoxZShift" />
+    </shape>
+  </volume>   <!-- end lvRich1MgsDnstrUTH1  -->
+
+  <volume name="lvRich1MgsMidH0" material="Rich:RichSoftIron"  vis="Rich:VisRich1MgShield"  >
+         <shape type="Box"  name  = "Rich1MgsDnsMidPartBoxH0"
+              dx = "Rh1MgsMidPartBoxXSize*RhHalfSize"
+              dy = "Rh1MgsMidPartBoxYSize*RhHalfSize"
+              dz = "Rh1MgsMidPartBoxZSize*RhHalfSize" />
+  </volume>    <!-- end lvRich1MgsMidH0 -->
+
+  <volume name="lvRich1MgsMidH1" material="Rich:RichSoftIron" vis="Rich:VisRich1MgShield"   >
+         <shape type="Box"  name  = "Rich1MgsDnsMidPartBoxH1"
+              dx = "Rh1MgsMidPartBoxXSize*RhHalfSize"
+              dy = "Rh1MgsMidPartBoxYSize*RhHalfSize"
+              dz = "Rh1MgsMidPartBoxZSize*RhHalfSize" />
+ </volume>    <!-- end lvRich1MgsMidH1 -->
+
+
+</Rich1>

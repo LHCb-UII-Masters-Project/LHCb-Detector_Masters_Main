@@ -1,0 +1,239 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe inside the UT region                     -->
+<!--===========================================================================-->
+<!--==================================Pipe In  UT=============================-->
+<!--===========================================================================-->
+<lccdd>
+
+  <detectors>
+    <detector name="PipeInRIch1" type="DD4hep_VolumeAssembly" parent="${PipeInRich1:parent}" vis="Pipe:Vis">
+
+      <!-- UX85-1 Step to 54 mm diameter (after RF connection in Velo2Rich1 -->
+      <volume name="lvUX851Cyl01" material="Pipe:Al2219F" vis="Pipe:InRich1">
+        <shape type="Tube" name="UX85-1-Cylinder-01"
+              dz="0.5*UX851Cyl01Lenght"
+              rmin="UX851Cyl01Radius"
+              rmax="UX851Cyl01Radius+UX851Cyl01Thick"/>
+      </volume>
+
+      <!-- UX85-1 Cylinder 54 mm diamater Aluminium -->
+      <volume name="lvUX851Cyl02" material="Pipe:Al2219F" vis="Pipe:InRich1">
+        <shape type="Tube" name="UX85-1-Cylinder-02"
+              dz="0.5*UX851Cyl02Lenght"
+              rmin="UX851Cyl02Radius"
+              rmax="UX851Cyl02Radius+UX851Cyl02Thick"/>
+      </volume>
+
+      <!-- UX85-1 Cylinder 54 mm diamater Beryllium - RICH1SubMaster split -->
+      <volume name="lvUX851Cyl03A" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="Tube" name="UX85-1-Cylinder-03A"
+              dz="0.5*UX851Cyl03ALenght"
+              rmin="UX851Cyl03Radius"
+              rmax="UX851Cyl03Radius+UX851Cyl03Thick"/>
+      </volume>
+      <volume name="lvUX851Cyl03B" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="Tube" name="UX85-1-Cylinder-03B"
+              dz="0.5*UX851Cyl03BLenght"
+              rmin="UX851Cyl03Radius"
+              rmax="UX851Cyl03Radius+UX851Cyl03Thick"/>
+      </volume>
+
+      <!-- UX85-1 Cylinder 54 mm diamater Beryllium -->
+      <volume name="lvUX851Cyl04" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="Tube" name="UX85-1-Cylinder-04"
+              dz="0.5*UX851Cyl04Lenght"
+              rmin="UX851Cyl04Radius"
+              rmax="UX851Cyl04Radius+UX851Cyl04Thick"/>
+      </volume>
+
+      <!-- UX85-1 Cone 25 mrad - RICH1SubMaster split -->
+      <volume name="lvUX851Cone05A" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="ConeSegment" name="UX85-1-Cone25mrad-05A"
+              dz="0.5*UX851Cone05ALenght"
+              rmin2="UX851Cone05ARadiusZmax"
+              rmin1="UX851Cone05ARadiusZmin"
+              rmax2="UX851Cone05ARadiusZmax+UX851Cone05Thick"
+              rmax1="UX851Cone05ARadiusZmin+UX851Cone05Thick"/>
+      </volume>
+      <volume name="lvUX851Cone05B" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="ConeSegment" name="UX85-1-Cone25mrad-05B"
+              dz="0.5*UX851Cone05BLenght"
+              rmin2="UX851Cone05BRadiusZmax"
+              rmin1="UX851Cone05BRadiusZmin"
+              rmax2="UX851Cone05BRadiusZmax+UX851Cone05Thick"
+              rmax1="UX851Cone05BRadiusZmin+UX851Cone05Thick"/>
+      </volume>
+
+      <!-- UX85-1 Flange to seal to RICH1 - Around beam pipe -->
+      <!-- 10 microns is added to avoid intersections        -->
+      <volume name="lvUX851Rich1Flange" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="ConeSegment" name="UX85-1-Rich1Flange"
+              dz="0.5*UX851Rich1Flange1Length"
+              rmin2="UX851Rich1FlangeRadiusZMax+0.10*mm"
+              rmin1="UX851Rich1FlangeRadiusZmin+0.10*mm"
+              rmax2="UX851Rich1FlangeOuterRadius"
+              rmax1="UX851Rich1FlangeOuterRadius"/>
+      </volume>
+
+      <!-- UX85-1 Window of -37 degree at end of 25 mrad cone -->
+      <volume name="lvUX851Win06" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="ConeSegment" name="UX85-1-Window37degree-06"
+              dz="0.5*UX851Win06Lenght"
+              rmin2="UX851Win06RadiusZmax"
+              rmin1="UX851Win06RadiusZmin"
+              rmax2="UX851Win06RadiusZmax+UX851Win06Thick"
+              rmax1="UX851Win06RadiusZmin+UX851Win06Thick"/>
+      </volume>
+
+      <!-- UX85-1 Cylinder of 50 mm diameter -->
+      <volume name="lvUX851Cyl07A" material="Pipe:BeTV56" vis="Pipe:InRich1">
+        <shape type="Tube" name="UX85-1-Cylinder-07A"
+              dz="0.5*UX851Cyl07ALenght"
+              rmin="UX851Cyl07Radius"
+              rmax="UX851Cyl07Radius+UX851Cyl07Thick"/>
+      </volume>
+
+      <!-- Vacuum in UX851Cyl01, UX851Cyl02, UX851Cyl03A in Rich1 Master -->
+      <volume name="lvUX851Vacuum01" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="Tube" name="UX85-1-Vacuum-01"
+              dz="0.5*UX85Vacuum01Lenght"
+              rmax="UX851Cyl01Radius"/>
+      </volume>
+
+      <!-- Vacuum in UX851Cyl03B, UX851Cyl04 in Rich1 SubMaster -->
+      <volume name="lvUX851Vacuum03B" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="Tube" name="UX85-1-Vacuum-03B"
+              dz="0.5*UX85Vacuum03BLenght"
+              rmax="UX851Cyl03Radius"/>
+      </volume>
+
+      <!-- Vacuum in UX851Cone05A in Rich1 SubMaster -->
+      <volume name="lvUX851Vacuum05A" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="ConeSegment" name="UX85-1-Vacuum-05A"
+              dz="0.5*UX851Cone05ALenght"
+              rmax1="UX851Cone05ARadiusZmin"
+              rmax2="UX851Cone05ARadiusZmax"/>
+      </volume>
+
+      <!-- Vacuum in UX851Cone05B in Rich1 Master -->
+      <volume name="lvUX851Vacuum05B" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="ConeSegment" name="UX85-1-Vacuum-05B"
+              dz="0.5*UX851Cone05BLenght"
+              rmax1="UX851Cone05BRadiusZmin"
+              rmax2="UX851Cone05BRadiusZmax"/>
+      </volume>
+
+      <!-- Vacuum in UX851Win06 in Rich1 Master -->
+      <volume name="lvUX851Vacuum06" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="ConeSegment" name="UX85-1-Vacuum-06"
+              dz="0.5*UX851Win06Lenght"
+              rmax1="UX851Win06RadiusZmin"
+              rmax2="UX851Win06RadiusZmax"/>
+      </volume>
+
+      <!-- Vacuum in UX851Cyl07A in Rich1 Master -->
+      <volume name="lvUX851Vacuum07A" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="Tube" name="UX85-1-Vacuum-07A"
+              dz="0.5*UX851Cyl07ALenght"
+              rmax="UX851Cyl07Radius"/>
+      </volume>
+
+      <!-- Before SubMaster -->
+      <volume name="lvUX851InRich1BeforeSubM" vis="Pipe:InRich1">
+        <!-- Pipes of Al and Be -->
+        <physvol name="pvUX851Cyl01"                 volume="lvUX851Cyl01">
+          <position z="UX851Cyl01Zpos"/>
+        </physvol>
+        <physvol name="pvUX851Cyl02"                 volume="lvUX851Cyl02">
+          <position z="UX851Cyl02Zpos"/>
+        </physvol>
+        <physvol name="pvUX851Cyl03A"                volume="lvUX851Cyl03A">
+          <position z="UX851Cyl03AZpos"/>
+        </physvol>
+        <!-- Now the vacuum inside -->
+        <physvol name="pvUX851Vacuum01"              volume="lvUX851Vacuum01">
+          <position z="0.5*UX85Vacuum01Lenght"/>
+        </physvol>
+
+      </volume>
+
+      <!-- In SubMaster -->
+      <volume name="lvUX851InRich1SubMaster" vis="Pipe:InRich1">
+        <physvol name="pvUX851Cyl03B"                volume="lvUX851Cyl03B">
+          <position z="UX851Cyl03BZpos"/>
+        </physvol>
+        <physvol name="pvUX851Cyl04"                 volume="lvUX851Cyl04">
+          <position z="UX851Cyl04Zpos"/>
+        </physvol>
+        <physvol name="pvUX851Cone05A"               volume="lvUX851Cone05A">
+          <position z="UX851Cone05AZpos"/>
+        </physvol>
+
+        <!-- Now the vacuum inside -->
+        <physvol name="pvUX851Vacuum03B"             volume="lvUX851Vacuum03B">
+          <position z="UX85Vacuum01Lenght+0.5*UX85Vacuum03BLenght"/>
+        </physvol>
+        <physvol name="pvUX851Rich1Flange"           volume="lvUX851Rich1Flange">
+          <position z="UX851Rich1FlangeZpos"/>
+        </physvol>
+        <physvol name="pvUX851Vacuum05A"             volume="lvUX851Vacuum05A">
+          <position z="UX85Vacuum01Lenght+UX85Vacuum03BLenght+0.5*UX851Cone05ALenght"/>
+        </physvol>
+
+      </volume>
+
+      <!-- After SubMaster -->
+      <volume name="lvUX851InRich1AfterSubM" vis="Pipe:InRich1">
+        <physvol name="pvUX851Cone05B"               volume="lvUX851Cone05B">
+          <position z="UX851Cone05BZpos"/>
+        </physvol>
+        <physvol name="pvUX851Win06"                 volume="lvUX851Win06">
+          <position z="UX851Win06Zpos"/>
+        </physvol>
+        <physvol name="pvUX851Cyl07A"                volume="lvUX851Cyl07A">
+          <position z="UX851Cyl07AZpos"/>
+        </physvol>
+        <!-- Now the vacuum inside -->
+        <physvol name="pvUX851Vacuum05B"             volume="lvUX851Vacuum05B">
+          <position z="UX85Vacuum01Lenght+UX85Vacuum03BLenght+UX851Cone05ALenght+
+                       0.5*UX851Cone05BLenght"/>
+        </physvol>
+        <physvol name="pvUX851Vacuum06"              volume="lvUX851Vacuum06">
+          <position z="UX85Vacuum01Lenght+UX85Vacuum03BLenght+UX851Cone05ALenght+
+                       UX851Cone05BLenght+0.5*UX851Win06Lenght"/>
+        </physvol>
+        <physvol name="pvUX851Vacuum07A"             volume="lvUX851Vacuum07A">
+          <position z="UX85Vacuum01Lenght+UX85Vacuum03BLenght+UX851Cone05ALenght+
+                       UX851Cone05BLenght+UX851Win06Lenght+0.5*UX851Cyl07ALenght"/>
+        </physvol>
+      </volume>
+
+      <envelope type="Assembly" name="lvPipeInRich1" vis="Pipe:InRich1">
+        <!--    Begin Rich1MasterBeamPipe
+                This is the part upstream of rich1 submaster
+                and downstream of rich1submaster -->
+        <physvol name="pvUX851InRich1BeforeSubM"      volume="lvUX851InRich1BeforeSubM" >
+          <position z="Rh1BeamPipeUpsAssemblyRMZ"/>
+        </physvol>
+        <physvol name="pvUX851InRich1AfterSubM"       volume="lvUX851InRich1AfterSubM" >
+          <position z="Rh1BeamPipeDnsAssemblyRMZ"/>
+        </physvol>
+        <!-- This is the part inside of rich1 submaster  -->
+        <physvol name="pvUX851InRich1SubMaster"       volume="lvUX851InRich1SubMaster" >
+          <position z="Rh1BeamPipeAssemblyZ"/>
+        </physvol>
+      </envelope>
+      <position/>
+    </detector>
+  </detectors>
+</lccdd>

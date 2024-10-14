@@ -1,0 +1,25 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Gas Quartz window  LogVol                                           -->
+<!--  ==========================================================================-->
+<Rich2>
+
+  <volume name="lvRich2QuartzWindow" material="Rich:Rich2GasWindowQuartz" vis="Rich:VisRich2GasQW">
+
+    <shape type="Box" name = "Rich2QuartzWindowBox"
+      dx =  "Rh2QuartzWindowSizeX*RhHalfSize"
+      dy =  "Rh2QuartzWindowSizeY*RhHalfSize"
+      dz =  "Rh2QuartzWindowSizeZ*RhHalfSize" />
+
+  </volume>
+
+
+</Rich2>

@@ -1,0 +1,4 @@
+#!/bin/sh
+export PATH=/cvmfs/lhcb.cern.ch/lib/lcg/releases/gcc/12.1.0-2435c/x86_64-el9/bin:/cvmfs/lhcb.cern.ch/lib/lcg/releases/binutils/2.40-acaab/x86_64-el9/bin
+export LD_LIBRARY_PATH=/cvmfs/lhcb.cern.ch/lib/lcg/releases/gcc/12.1.0-2435c/x86_64-el9/lib64
+exec /cvmfs/lhcb.cern.ch/lib/lcg/releases/gcc/12.1.0-2435c/x86_64-el9/bin/g++ "$@"

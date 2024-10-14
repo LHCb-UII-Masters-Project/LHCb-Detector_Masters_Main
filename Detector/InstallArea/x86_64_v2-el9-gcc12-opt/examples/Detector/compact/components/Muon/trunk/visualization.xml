@@ -1,0 +1,29 @@
+<lccdd>
+<!--
+    (c) Copyright 2023 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+  <display>
+    <vis name="MUON"                      alpha="1.0" r="0.5" g="0.5" b="0.5"     showDaughters="true"  visible="true"/>
+    <vis name="MUON:CopperLayerVis"       alpha="1.0" r="1.0" g="0.3" b="0.1"     showDaughters="false" visible="true"/>
+    <vis name="MUON:G10LayerVis"          alpha="1.0" r="0.1" g="0.1" b="0.8"     showDaughters="false" visible="true"/>
+    <vis name="MUON:PolyurethaneLayerVis" alpha="1.0" r="1.0" g="0.3" b="0.1"     showDaughters="false" visible="true"/>
+    <vis name="MUON:GasGapVis"            alpha="0.0" r="1.0" g="1.0" b="1.0"     showDaughters="false" visible="true"/>
+    <vis name="MUON:G10AirVis"            alpha="0.3" r="1.0" g="1.0" b="1.0"     showDaughters="false" visible="true"/>
+    <vis name="MUON:FrameVis"             alpha="0.5" r="0.30" g="0.30" b="0.60"  showDaughters="true"  visible="true"/>
+    <vis name="MUON:ChamberVis"           alpha="0.1" r="0.52" g="0.23" b="0.05"  showDaughters="true"  visible="true"/>
+    <vis name="MUON:MuonVis"              alpha="0.2" r="0.40" g="0.40" b="0.00"  showDaughters="true"  visible="true"/>
+    <vis name="MUON:StationVis"           alpha="1.0" r="0.00" g="0.00" b="0.30" showDaughters="true"  visible="false"/>
+    <vis name="MUON:SideVis"              alpha="1.0" r="0.00" g="0.00" b="0.60" showDaughters="true"  visible="false"/>
+    <vis name="MUON:SupportVis"           alpha="0.2" r="0.66" g="0.67" b="0.71" showDaughters="true"  visible="true"/>
+    <vis name="MUON:BeamPlugVis"          alpha="1.0" r="0.16" g="0.14" b="0.13" showDaughters="true"  visible="true"/>
+    <vis name="MUON:Gap"                  alpha="0.9" r="0.5" g="0.1" b="0.1"    showDaughters="true"  visible="true"/>
+  </display>
+
+</lccdd>

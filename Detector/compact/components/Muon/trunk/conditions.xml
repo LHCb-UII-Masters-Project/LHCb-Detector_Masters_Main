@@ -1,0 +1,42 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_Muon_cond_XML_reader" type="xml">
+      <conditions_config prefix="Conditions/Muon"/>
+      <alignment_pattern regex="M\d(A|C)Side" path="Alignment.yml"/>
+      <alignment_pattern regex="M\dStation"   path="Alignment.yml"/>
+      <alignment detector="Muon" path="Alignment.yml" name="MuonSystem"/>
+
+      <conditions path="ReadoutConf/ChamberGrid.yml">
+        <condition name="ChambersGrids"/>
+      </conditions>
+      <conditions path="ReadoutConf/Cabling/M2.yml">
+        <condition name="M2"/>
+      </conditions>
+      <conditions path="ReadoutConf/Cabling/M3.yml">
+        <condition name="M3"/>
+      </conditions>
+      <conditions path="ReadoutConf/Cabling/M4.yml">
+        <condition name="M4"/>
+      </conditions>
+      <conditions path="ReadoutConf/Cabling/M5.yml">
+        <condition name="M5"/>
+      </conditions>
+      <conditions path="ReadoutConf/Modules.yml">
+        <condition name="ReadoutModules"/>
+      </conditions>
+    </plugin>
+  </plugins>
+
+</lccdd>

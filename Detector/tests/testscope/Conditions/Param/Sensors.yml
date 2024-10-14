@@ -1,0 +1,69 @@
+###############################################################################
+# (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration           #
+#                                                                             #
+# This software is distributed under the terms of the GNU General Public      #
+# Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".   #
+#                                                                             #
+# In applying this licence, CERN does not waive the privileges and immunities #
+# granted to it by virtue of its status as an Intergovernmental Organization  #
+# or submit itself to any jurisdiction.                                       #
+###############################################################################
+gain_1_0: 
+  value: 40
+
+gain_1_1: 
+  value: 42
+
+gain_1_2: 
+  value: 43
+
+gain_1_3: 
+  value: 39
+
+gain_1_4: 
+  value: 42
+
+gain_1_5: 
+  value: 42
+
+gain_1_6: 
+  value: 42
+
+gain_1_7: 
+  value: 42
+
+gain_1_8: 
+  value: 42
+
+gain_1_9: 
+  value: 42
+
+gain_2_0: 
+  value: 42
+
+gain_2_1: 
+  value: 42
+
+gain_2_2: 
+  value: 42
+
+gain_2_3: 
+  value: 42
+
+gain_2_4: 
+  value: 42
+
+gain_2_5: 
+  value: 42
+
+gain_2_6: 
+  value: 42
+
+gain_2_7: 
+  value: 42
+
+gain_2_8: 
+  value: 42
+
+gain_2_9: 
+  value: 42

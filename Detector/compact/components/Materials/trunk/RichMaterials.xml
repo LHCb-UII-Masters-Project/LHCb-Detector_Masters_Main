@@ -1,0 +1,392 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    01/07/2020                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich material  definitions                                               -->
+<!--===========================================================================-->
+
+<lccdd>
+
+  <define>
+
+  </define>
+
+<!-- The following lines moved to higher level in LHCb-no-GDML.xml for now -->
+<!-- <include ref="../DetElem/RichRun3PropertySpecParam.xml"/>    -->
+<!-- <include ref="../../Materials/compact/elements.xml"/>      -->
+<!--end of include                                                -->
+
+  <materials>
+
+
+   <material name="Rich:Air" >
+    <D type="density"  value="1.205"  unit="mg/cm3"
+	    pressure="AtmospherePressure" temperature="AtmosphereTemperature" state="gas"/>
+    <fraction n="1.0"  ref="Air" />
+  </material>
+
+<!-- The following is for air without any optical material properties -->
+   <material name="Rich:AirNP" >
+    <D type="density"  value="1.205"  unit="mg/cm3"
+            pressure="AtmospherePressure" temperature="AtmosphereTemperature" state="gas"/>
+    <fraction n="1.0"  ref="Air" />
+  </material>
+
+  <!-- The following is pure carbon -->
+  <material name="Rich:Carbon">
+    <D type="density" value="2.2650" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="78.0"/>
+    <fraction n="1.0" ref="Carbon" />
+  </material>
+
+  <material name="Rich:HpdSilicon">
+    <D type="density" value="2.3300" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="173.0"/>
+    <fraction n="1.0" ref="Silicon"/>
+  </material>
+
+  <material name="Rich:PMTAnodeMaterial">
+    <D type="density" value="2.3300" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="173.0"/>
+    <fraction n="1.0" ref="Silicon"/>
+  </material>
+
+  <!--  The density of the following 4 materials fixed in Sept 2005. SE -->
+
+  <material name="Rich:Sodium">
+  <RL type="X0" unit="cm" value="28.5646" />
+  <NIL type="lambda" unit="cm" value="102.463" />
+  <D type="density" unit="g/cm3" value="0.971" />
+  <composite n="2" ref="Na" />
+  </material>
+
+  <material name="Rich:Potassium">
+  <RL type="X0" unit="cm" value="20.0871" />
+  <NIL type="lambda" unit="cm" value="138.041" />
+  <D type="density" unit="g/cm3" value="0.862" />
+  <composite n="2" ref="K" />
+  </material>
+
+  <material name="Rich:Cesium">
+  <RL type="X0" unit="cm" value="1.19506" />
+  <NIL type="lambda" unit="cm" value="27.3227" />
+  <D type="density" value="1.873" unit="g/cm3"/>
+  <composite n="2" ref="Ce" />
+
+  </material>
+
+  <material name="Rich:Antimony">
+  <RL type="X0" unit="cm" value="1.30401" />
+  <NIL type="lambda" unit="cm" value="25.8925" />
+  <D type="density" unit="g/cm3" value="6.691" />
+  <composite n="1" ref="Sb" />
+  </material>
+
+  <material name="Rich:Nickel">
+  <RL type="X0" unit="cm" value="1.42422" />
+  <NIL type="lambda" unit="cm" value="15.2265" />
+  <D type="density" unit="g/cm3" value="8.902" />
+  <ION type="ionization" unit="ev" value="311.0"/>
+  <composite n="1" ref="Ni" />
+  </material>
+
+  <material name="Rich:RichSoftIron">
+    <D type="density" value="7.87" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="286.0"/>
+    <fraction n="1.0" ref="Iron"/>
+  </material>
+
+  <material name="Rich:Steel">
+    <D type="density" value="7.87" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="286.0"/>
+    <fraction n="1.0" ref="Iron"/>
+  </material>
+
+  <material name="Rich:Rich2SoftIron">
+    <D type="density" value="7.87" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="286.0"/>
+    <fraction n="1.0" ref="Iron"/>
+  </material>
+
+  <material name="Rich:Copper">
+    <D type="density" value="8.96" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="322.0"/>
+    <fraction n="1.0" ref="Copper" />
+  </material>
+
+  <material name="Rich:Molybdenum">
+    <D type="density" value="10.22" unit="g/cm3"/>
+    <ION type="ionization" unit="ev" value="425"/>
+    <fraction n="1.0" ref="Molybdenum" />
+  </material>
+
+  <material name="Rich:C4F10">
+    <D type="density" value="C4F10Density" unit="g/cm3"
+            temperature="C4F10Temperature" pressure="C4F10Pressure" state="gas"/>
+    <composite n="4"  ref="C" />
+    <composite n="10" ref="F" />
+  </material>
+
+  <material name="Rich:CF4">
+    <D type="density" value="CF4Density" unit="g/cm3"
+            temperature="CF4Temperature" pressure="CF4Pressure" state="gas"/>
+    <composite n="1"  ref="C" />
+    <composite n="4" ref="F" />
+  </material>
+
+  <material name="Rich:CO2">
+    <D type="density" value="1.8182*0.001" unit="g/cm3"
+            temperature="RichCO2Temperature" pressure="RichCO2Pressure" state="gas"/>
+    <composite n="1"  ref="C" />
+    <composite n="2" ref="O" />
+  </material>
+
+  <material name="Rich:R1RadiatorGas">
+   <D type="density" value="C4F10Density" unit="g/cm3"
+	    temperature="C4F10Temperature" pressure="C4F10Pressure" state="gas"/>
+   <fraction n="1.0" ref="Rich:C4F10"  />
+  </material>
+
+  <material name="Rich:R2RadiatorGas">
+   <D type="density" value="CF4Density" unit="g/cm3"
+	    temperature="CF4Temperature" pressure="CF4Pressure" state="gas"/>
+   <fraction n="0.99" ref="Rich:CF4"  />
+   <fraction n="0.01" ref="Rich:CO2"  />
+  </material>
+
+
+
+  <material name="Rich:Rich1CarbonForFibre" >
+   <D type="density"  value="1.76" unit="g/cm3" />
+    <fraction n="1.0"  ref="Carbon"  />
+  </material>
+
+  <material name="Rich:Rich1CarbonFibreResin" >
+   <D type="density" value="1.12" unit="g/cm3" />
+    <composite n="36" ref="C"  />
+    <composite n="4" ref="H" />
+    <composite n="10" ref="O"  />
+    <composite n="1" ref="N" />
+  </material>
+
+  <material name="Rich:Rich1MirrorCarbonFibre" >
+   <D type="density" value="0.167" unit="g/cm3" />
+    <fraction n="0.70" ref="Rich:Rich1CarbonForFibre" />
+    <fraction n="0.30"  ref="Rich:Rich1CarbonFibreResin" />
+  </material>
+
+
+
+
+  <material name="Rich:Rich1SiO2">
+  <D type="density" value="2.2"  unit="g/cm3" />
+    <composite n="1" ref="Si" />
+    <composite n="2" ref="O" />
+  </material>
+
+  <material name="Rich:Rich1B2O3">
+  <D type="density" value="1.812" unit="g/cm3" />
+    <composite n="2" ref="B" />
+    <composite n="3" ref="O" />
+  </material>
+
+  <material name="Rich:Rich1Al2O3">
+  <D type="density" value="3.97" unit="g/cm3" />
+    <composite n="2" ref="Al" />
+    <composite n="3" ref="O"  />
+  </material>
+
+  <material name="Rich:Rich1Na2O">
+  <D type="density" value="2.27" unit="g/cm3" />
+    <composite  n="2" ref="Na" />
+    <composite  n="1" ref="O" />
+  </material>
+
+  <material name="Rich:Rich1K2O">
+  <D type="density" value="2.32" unit="g/cm3" />
+    <composite n="2" ref="K" />
+    <composite n="1" ref="O" />
+  </material>
+
+  <!-- the following is the material for  Rich1Mirror2  from Fabio Metlica -->
+  <material name="Rich:Rich1MirrorGlassSimex" >
+   <D type="density" value="2.23" unit="g/cm3" />
+    <fraction n="0.804" ref="Rich:Rich1SiO2" />
+    <fraction n="0.130" ref="Rich:Rich1B2O3" />
+    <fraction n="0.024" ref="Rich:Rich1Al2O3" />
+    <fraction n="0.021" ref="Rich:Rich1Na2O" />
+    <fraction n="0.021" ref="Rich:Rich1K2O" />
+  </material>
+
+  <material name="Rich:Rich1Mirror2SupportMaterial">
+   <D type="density" value="2.7" unit="g/cm3" />
+    <fraction n="1.0" ref="Aluminum" />
+  </material>
+
+  <!-- see EDMS doc 382420 -->
+  <material name="Rich:Rich2MirrSupportMaterial">
+   <D type="density" value="0.21" unit="g/cm3" />
+    <fraction n="1.0" ref="Aluminum" />
+  </material>
+
+  <material name="Rich:Rich2GasContainerWallMaterial">
+   <D type="density" value="2.7" unit="g/cm3" />
+    <fraction n="1.0" ref="Aluminum" />
+  </material>
+
+  <material name="Rich:Rich2SuperStructureWallMaterial">
+   <D type="density" value="2.7" unit="g/cm3" />
+    <fraction n="1.0" ref="Aluminum" />
+  </material>
+
+  <material name="Rich:Rich2MirrorGlass">
+   <D type="density" value="2.23" unit="g/cm3" />
+    <composite n="1" ref="Si" />
+    <composite n="2" ref="O" />
+  </material>
+
+
+  <material name="Rich:Rich1Nitrogen">
+   <D type="density" value="Rich1NitrogenDensity"
+	    temperature="Rich1NitrogenTemperature" pressure="Rich1NitrogenPressure" state="gas" />
+    <composite n="2" ref="N"/>
+
+  </material>
+  <material name="Rich:Rich2Nitrogen">
+   <D type="density" value="Rich2NitrogenDensity"
+	    temperature="Rich2NitrogenTemperature" pressure="Rich2NitrogenPressure" state="gas" />
+    <composite n="2" ref="N"/>
+
+  </material>
+
+
+  <material name="Rich:Rich1GasWindowQuartz">
+   <D type="density" value="2.2" unit="g/cm3" />
+    <composite n="1" ref="Si" />
+    <composite n="2" ref="O" />
+<!--
+    <property name="RINDEX"   ref="RINDEX_Rich_GasWindowQuartzRindexPT" />
+
+    <property name="CKVRNDX"  ref="CKVRNDEX_Rich_GasWindowQuartzRndexPT"/>
+-->
+  </material>
+
+  <material name="Rich:Rich2GasWindowQuartz">
+   <D type="density" value="2.2" unit="g/cm3" />
+    <composite n="1" ref="Si" />
+    <composite n="2" ref="O" />
+  </material>
+
+  <material name="Rich:RichPMTVacuum" >
+   <D type="density" value="1.0e-25" unit="g/cm3"
+            temperature="0.1*kelvin" pressure="1.0e-19*pascal" state="gas" />
+    <composite n="1" ref="H" />
+  </material>
+
+  <material name="Rich:RichPMTQuartzMaterial">
+   <D type="density" value="2.2" unit="g/cm3" />
+    <composite n="1" ref="Si" />
+    <composite n="2" ref="O" />
+  </material>
+
+  <material name="Rich:RichPMTPhCathodeMaterial">
+   <D type="density" value="1.0e-25" unit="g/cm3" />
+    <fraction n="1.0" ref="Rich:RichPMTVacuum" />
+  </material>
+
+  <material name="Rich:RichPMTEnvelopeMaterial" density="2.7*g/cm3">
+   <D type="density" value="2.7" unit="g/cm3" />
+    <fraction n="1.0" ref="Aluminum" />
+  </material>
+
+  <material name="Rich:Rich2ExitWindowSkinMaterial" density="2.7*g/cm3">
+   <D type="density" value="2.7" unit="g/cm3" />
+    <fraction n="1.0" ref="Aluminum" />
+  </material>
+
+  <material name="Rich:RichPMTAnodeMaterial" >
+   <D type="density" value="2.3300" unit="g/cm3"  />
+   <ION type="ionization" unit="ev" value="173.0"/>
+    <fraction n="1.0" ref="Silicon" />
+  </material>
+
+  <material name="Rich:MuMetal">
+   <D type="density" value="8.8" unit="g/cm3"  />
+    <fraction n="0.75" ref="Rich:Nickel" />
+    <fraction n="0.15" ref="Rich:Steel" />
+    <fraction n="0.05" ref="Rich:Copper" />
+    <fraction n="0.05" ref="Rich:Molybdenum" />
+  </material>
+
+  <!-- The following values for Rich2 are from a note made by Antonis long time ago-->
+  <material name="Rich:Rich2CarbonFibreResin">
+   <D type="density" value="1.12" unit="g/cm3" />
+    <composite n="36" ref="C" />
+    <composite n="4"  ref="H" />
+    <composite n="10" ref="O" />
+    <composite n="1"  ref="N" />
+  </material>
+
+  <material name="Rich:Rich2CarbonForFibre" >
+   <D type="density" value="1.76" unit="g/cm3" />
+    <composite n="1" ref="C" />
+  </material>
+
+  <material name="Rich:Rich2CarbonFibre">
+   <D type="density" value="1.37" unit="g/cm3" />
+    <fraction n="0.51" ref="Rich:Rich2CarbonForFibre"/>
+    <fraction n="0.49" ref="Rich:Rich2CarbonFibreResin"/>
+  </material>
+
+  <!-- The Rich1G10 is  is set to have the same  -->
+  <!--     properties as that of Rich2Carbon fibre  to be compatible -->
+   <!--    with EDMS 495184 -->
+
+  <material name="Rich:Rich1G10">
+   <D type="density" value="1.37" unit="g/cm3" />
+    <fraction n="0.51" ref="Rich:Rich2CarbonForFibre" />
+    <fraction n="0.49" ref="Rich:Rich2CarbonFibreResin" />
+  </material>
+
+
+  <!-- The Rich1PMI is set to have the same
+       properties as that of Rich2Rohacell51IG to be
+       compatible with EDMS 495184 -->
+  <material name="Rich:Rich1PMI">
+   <D type="density" value="0.052" unit="g/cm3" />
+
+    <composite n="9" ref="C" />
+    <composite n="13" ref="H" />
+    <composite n="1" ref="N" />
+    <composite n="2" ref="O" />
+
+
+  </material>
+
+  <material name="Rich:Rich2Rohacell51IG" >
+   <D type="density" value="0.052" unit="g/cm3" />
+    <composite n="9" ref="C" />
+    <composite n="13" ref="H" />
+    <composite n="1" ref="N" />
+    <composite n="2" ref="O" />
+
+  </material>
+
+  <material name="Rich:Rich1DiaphramMaterial" >
+   <D type="density" value="1.15" unit="g/cm3" />
+    <composite n="2" ref="C" />
+    <composite n="6" ref="H" />
+    <composite n="1" ref="Si" />
+    <composite n="1" ref="O" />
+  </material>
+
+
+  </materials>
+</lccdd>

@@ -1,0 +1,73 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Zehua Xu                                                         -->
+<!--   @date    2022                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the NeutronShielding parameter definitions              -->
+<!-- ========================================================================== -->
+<lccdd>
+
+
+  <define>
+
+    <!-- Dimensions -->
+    <constant name = "SupportOuterSizeX" value = "9000*mm"/>
+    <constant name = "SupportOuterSizeY" value = "7700*mm"/>
+    <constant name = "SupportInnerSizeX" value = "350*mm"/>
+    <constant name = "SupportInnerSizeY" value = "350*mm"/>
+    <constant name = "SupportGap" value = "20*mm"/>
+    <constant name = "SupportSizeZ" value = "1.5*mm"/>
+    <constant name = "CoverSizeZ" value = "0.5*mm"/>
+    <constant name = "PlasticOuterSizeX" value = "5000*mm"/>
+    <constant name = "PlasticOuterSizeY" value = "5000*mm"/>
+    <constant name = "PlasticInnerSizeX" value = "2000*mm"/>
+    <constant name = "PlasticInnerSizeY" value = "2000*mm"/>
+    <constant name = "PlasticInnerRadius" value = "165*mm"/>
+    <constant name = "PlasticInnerSizeZ" value = "100*mm"/>
+    <constant name = "PlasticOuterSizeZ" value = "50*mm"/>
+    <constant name = "Epsilon" value = "0.1*mm"/>
+    <constant name = "TiltAngle" value = "0.207*degree"/>
+
+    <!-- z positions -->
+    <constant name = "zSupport" value = "0.5*(SupportGap+SupportSizeZ)"/>
+    <constant name = "zPlasticOuter" value = "0.5*(SupportSizeZ+PlasticOuterSizeZ)+zSupport"/>
+    <constant name = "zPlasticInner" value = "0.5*(PlasticOuterSizeZ+PlasticInnerSizeZ)+zPlasticOuter"/>
+    <constant name = "zCoverInner" value = "zPlasticInner+0.5*(PlasticInnerSizeZ+CoverSizeZ)"/>
+    <constant name = "zCoverOuter" value = "zPlasticOuter+0.5*(PlasticOuterSizeZ+CoverSizeZ)"/>
+
+  </define>
+
+  <materials>
+
+    <material name="NSAluminium">
+	<D type="density" value="2.7" unit="g/cm3" />
+	<fraction n="1.000" ref="Al" />
+    </material>
+
+
+    <material name = "Polyethylene">
+       <D type="density" value="0.95" unit="g/cm3"/>
+       <composite  n = "2" ref = "C"/>
+       <composite  n = "4" ref = "H"/>
+    </material>
+
+    <material name="BoratedPolyethylene">
+	<D type="density" value="1.02" unit="g/cm3" />
+        <fraction n="0.95" ref="Polyethylene" />
+        <fraction n="0.05" ref="Boron"  />
+    </material>
+
+  </materials>
+
+
+  <display>
+    <vis name="NeutronShielding:Vis"         alpha="1" r="0.5" g="0.5" b="0.5" showDaughters="true" visible="true"/>
+  </display>
+
+</lccdd>

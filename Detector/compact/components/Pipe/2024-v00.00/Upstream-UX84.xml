@@ -1,0 +1,46 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--==================================UX84-up================================-->
+<!--===========================================================================-->
+<pipe>
+
+  <!-- UX84 Cylinder of 40 mm radius -->
+  <volume name="lvUX84Cyl" material="Pipe:CuOFE">
+    <shape type="Tube" name ="UpStr:UX84Cylinder"
+           dz="0.5*UpStr:UX84CylLength"
+           rmin="UpStr:UX84CylRadius"
+           rmax="UpStr:UX84CylRadius+UpStr:UX84CylThick"/>
+  </volume>
+  <!-- UpStr:UX84 Flange of 76 mm radius -->
+  <volume name="lvUX84Flange" material="Pipe:Steel316LN">
+    <shape type="Tube" name ="UpStr:UX84Flange"
+           dz="0.5*UpStr:UX84FlangeLength"
+           rmin="UpStr:UX84FlangeRadius"
+           rmax="UpStr:UX84FlangeRadius+UpStr:UX84FlangeThick"/>
+  </volume>
+  <!-- Vacuum in UpStr:UX84Cyl -->
+  <volume name="lvUX84Vacuum" material="Vacuum">
+    <shape type="Tube" name ="UpStr:UX84Vacuum"
+           dz="0.5*UpStr:UX84CylLength"
+           rmax="UpStr:UX84CylRadius"/>
+  </volume>
+  <!-- Whole section: combination of sections -->
+  <volume name="lvUX84">
+    <physvol name="pvUX84Cyl"             volume="lvUX84Cyl"/>
+    <physvol name="pvUX84Vacuum"          volume="lvUX84Vacuum"/>
+    <physvol name="pvUX84Flange"          volume="lvUX84Flange">
+      <position z="UpStr:UX84FlangePosZ"/>
+    </physvol>
+  </volume>
+</pipe>

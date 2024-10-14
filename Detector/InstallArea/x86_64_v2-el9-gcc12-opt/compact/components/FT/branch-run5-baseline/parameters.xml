@@ -1,0 +1,269 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank,B.Dey                                                   -->
+<!--   @date    17/04/2019                                                      -->
+<!--   B.Dey converted FT mat to DDDB format (13/7/2020)                        -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the FT stations                                        -->
+<!--==========================================================================-->
+
+<lccdd>
+
+  <define>
+    <!-- Author: Jeroen van Tilburg & Oliver Gruenberg -->
+    <!-- Date: 2015-04-14 -->
+    <!-- Revised on: 2016-10-24 -->
+    <!-- Version: FTv63 -->
+    <!-- See https://cds.cern.ch/record/2289871 for DDDB v6.4 validation -->
+    <constant name="FT:eps"           value="float:epsilon"/>
+
+    <constant name="MP:includeMT"         value="1"/>
+    <!-- Dimensions for the fibre mats + dead regions -->
+    <constant name="MP:MatSizeX"          value="529.6*mm"/>
+    <constant name="MP:MatSizeY"          value="261.6*mm"/>
+
+    <!-- TODO: test this... 2mm not properly implemented.  -->
+    <constant name="MP:MatGapX"          value="0*mm"/>
+    <constant name="MP:MatGapY"          value="0.5*mm"/>
+
+    <constant name="MP:MatPitchX"         value="MP:MatSizeX+MP:MatGapX"/>              <!-- variable -->
+    <constant name="MP:MatPitchY"         value="MP:MatSizeY+MP:MatGapY"/>              <!-- variable -->
+
+    <constant name="MP:TotalPitchX"         value="2*MP:MatPitchX"/>                    <!-- variable -->
+    <constant name="MP:TotalPitchY"         value="5*MP:MatPitchY"/>                    <!-- variable -->
+
+    <!-- Overlap between FT fibres and MP pixels -->
+    <constant name="FT:overlap"           value="20*mm"/>                              <!-- variable -->
+
+    <!-- Global position of TStations -->
+    <constant name="FT:T1CenterZ"         value="7941.0*mm"/>                          <!-- variable -->
+    <constant name="FT:T2CenterZ"         value="8533.0*mm"/>                          <!-- variable -->
+    <constant name="FT:T3CenterZ"         value="9125.0*mm"/>                          <!-- variable -->
+
+    <!-- Local position of TStations in lvT, TZPos=8529.5*mm -->
+    <constant name="FT:T1ZPos"            value="FT:T1CenterZ - Regions:TZPos"/>
+    <constant name="FT:T2ZPos"            value="FT:T2CenterZ - Regions:TZPos"/>
+    <constant name="FT:T3ZPos"            value="FT:T3CenterZ - Regions:TZPos"/>
+
+    <!-- Stereoangles -->
+    <constant name="FT:StereoAngle"       value="5.0*degree"/>                         <!-- variable -->
+    <constant name="FT:StereoAngleX"      value="0.0*degree"/>                         <!-- variable -->
+    <constant name="FT:StereoAngleU"      value="-1.0*FT:StereoAngle"/>
+    <constant name="FT:StereoAngleV"      value="1.0*FT:StereoAngle"/>
+
+    <!-- Gap between layers -->
+    <constant name="FT:LayerPitchZ"       value="69.8*mm"/>                            <!-- variable -->
+    <constant name="FT:LayerUVPitchZ"     value="55.0*mm"/>                            <!-- variable -->
+    <constant name="FT:LayerXPitchZ"      value="35.0*mm"/>                            <!-- variable -->
+
+    <!-- Dimensions for the fibre mats + dead regions -->
+    <constant name="FT:MatSizeX"          value="130.4*mm"/>                            <!-- variable -->
+    <constant name="FT:MatSizeY"          value="2424.0*mm + FT:overlap"/>              <!-- variable -->
+    <constant name="FT:MatSizeZ"          value="1.3*mm"/>                              <!-- variable -->
+    <constant name="FT:MatPitchX"         value="130.8*mm"/>                            <!-- variable -->
+    <constant name="FT:DeadSizeX"         value="2.4*mm"/>                              <!-- variable -->
+    <constant name="FT:DeadSizeY"         value="1.5*mm"/>                              <!-- variable -->
+
+    <!-- Dimensions for the module -->
+    <constant name="FT:nMats"             value="4"/>
+    <constant name="FT:ModuleGapX"        value="2.0*mm"/>                              <!-- variable -->
+    <constant name="FT:ModuleSizeX"       value="FT:nMats*FT:MatPitchX+2*FT:DeadSizeX"/> <!--  528.0*mm-->
+    <constant name="FT:ModuleSizeY"       value="FT:MatSizeY+FT:DeadSizeY"/>            <!-- 2425.0*mm-->
+    <constant name="FT:ModulePitchX"      value="FT:ModuleSizeX+FT:ModuleGapX"/>        <!-- 530.0*mm -->
+
+    <!-- Dimensions for the carbon-fibre skin  -->
+    <constant name="FT:WallThickness"     value="0.45*mm"/>                             <!-- variable -->
+    <constant name="FT:SkinSizeX"         value="FT:ModuleSizeX-2*FT:WallThickness"/>   <!--  527.1*mm-->
+    <constant name="FT:SkinSizeY"         value="2330.0*mm + FT:overlap"/>              <!-- variable -->
+    <constant name="FT:SkinSizeZ"         value="0.595*mm"/>                            <!-- variable -->
+
+    <constant name="FT:EndplugSizeY"      value="142.0*mm"/>                            <!-- variable -->
+    <!-- Dimensions for the honeycomb core  -->
+    <constant name="FT:CoreSizeX"         value="FT:ModuleSizeX-2*FT:WallThickness"/>      <!--  527.1*mm-->
+    <constant name="FT:CoreSizeY"         value="2243.0*mm+FT:EndplugSizeY + FT:overlap"/> <!-- variable -->
+    <constant name="FT:CoreSizeZ"         value="19.540*mm"/>                              <!-- variable -->
+
+    <!-- Dimensions for the endplug  -->
+    <constant name="FT:EndplugSizeX"      value="FT:CoreSizeX"/>
+    <constant name="FT:EndplugSizeZ"      value="FT:CoreSizeZ"/>
+
+    <!-- Dimensions for the endpieces  -->
+    <constant name="FT:EndpieceSizeX"     value="FT:nMats*FT:MatPitchX"/>
+    <constant name="FT:EndpieceSizeY"     value="15.0*mm"/>                             <!-- variable -->
+    <constant name="FT:EndpieceSizeZ"     value="2.0*mm"/>                              <!-- variable -->
+
+    <!-- Parameters for the beam hole -->
+    <constant name="FT:HoleSizeX"         value="130.8*mm"/>                            <!-- variable -->
+    <constant name="FT:HoleLeftXSizeY"    value="115.0*mm"/>                            <!-- variable -->
+    <constant name="FT:HoleRightXSizeY"   value="FT:HoleLeftXSizeY"/>                   <!-- 115.0*mm -->
+
+    <constant name="FT:HoleLeftX1SizeY"    value="FT:HoleLeftXSizeY"/>                   <!-- variable -->
+    <constant name="FT:HoleRightX1SizeY"   value="FT:HoleLeftXSizeY"/>                   <!-- 115.0*mm -->
+    <constant name="FT:HoleLeftX2SizeY"    value="FT:HoleLeftXSizeY"/>                   <!-- variable -->
+    <constant name="FT:HoleRightX2SizeY"   value="FT:HoleLeftXSizeY"/>                   <!-- 115.0*mm -->
+
+    <constant name="FT:HoleLeftUSizeY"    value="(115.0-23.0)*mm"/>                     <!--  92.0*mm -->
+    <constant name="FT:HoleRightUSizeY"   value="(115.0+23.0)*mm"/>                     <!-- 138.0*mm -->
+    <!-- Not in DDDB ========================================================================   -->
+    <constant name="FT:HoleLeftVSizeY"   value="(115.0+23.0)*mm"/>                      <!-- 138.0*mm -->
+    <constant name="FT:HoleRightVSizeY"  value="(115.0-23.0)*mm"/>                      <!--  92.0*mm -->
+    <!-- ====================================================================================   -->
+    <constant name="FT:FullSizeY"         value="0.0*mm"/>                              <!--   dummy  -->
+    <constant name="FT:HoleDeltaAngle"    value="0.5*asin(FT:ModuleGapX/
+                                                 FT:HoleLeftXSizeY)*rad"/>              <!--8.7 mrad-->
+
+    <constant name="FT:ModuleSizeZ"       value="FT:MatSizeZ + 2*FT:CoreSizeZ +
+                                                 2*FT:SkinSizeZ"/>                      <!--  41.57*mm-->
+
+    <!-- C-Frame constants -->
+    <constant name="FT:CFrameUpperEdgeToPipecenter" value="3096.0*mm"/>                      <!-- variable -->
+    <constant name="FT:CFrameLowerEdgeToPipecenter" value="3029.0*mm"/>                      <!-- variable -->
+    <constant name="FT:CFrameYShiftToPipecenter" value="0.5*(FT:CFrameUpperEdgeToPipecenter-FT:CFrameLowerEdgeToPipecenter)"/> <!-- 33.5*mm -->
+
+    <constant name="FT:CFrameGapX"               value="4.5*mm"/>                 <!-- variable -->
+
+
+    <constant name="FT:CFramePitchZ"             value="140.0*mm" />                    <!-- variable -->
+    <constant name="FT:CFrameIBarX"              value="640.0*mm"/>                     <!-- variable -->
+    <constant name="FT:CFrameIBarY"              value="5805.0*mm"/>                    <!-- variable -->
+    <constant name="FT:CFrameIBarZ"              value="10.958*mm"/>                    <!-- variable / approx -->
+    <constant name="FT:CFrameCarrierTopX"        value="4150.0*mm"/>                    <!-- variable -->
+    <constant name="FT:CFrameCarrierTopY"        value="320.0*mm"/>                     <!-- variable -->
+    <constant name="FT:CFrameCarrierTopZ"        value="12.209*mm"/>                    <!-- variable / approx -->
+    <constant name="FT:CFrameCarrierBottomX"     value="FT:CFrameCarrierTopX-FT:CFrameIBarX"/> <!-- 3510*mm -->
+    <constant name="FT:CFrameCarrierBottomY"     value="253.0*mm"/>                     <!-- variable -->
+    <constant name="FT:CFrameCarrierBottomZ"     value="13.579*mm"/>                    <!-- variable / approx -->
+    <constant name="FT:CFrameModuleMountX"       value="FT:CFrameCarrierBottomX"/>      <!-- 351*mm / approx -->
+    <constant name="FT:CFrameModuleMountY"       value="433.0*mm"/>                     <!-- variable / approx -->
+    <constant name="FT:CFrameModuleMountZTop"    value="19.898*mm"/>                    <!-- variable / approx -->
+    <constant name="FT:CFrameModuleMountZBottom" value="19.675*mm"/>                    <!-- variable / approx -->
+
+    <constant name="FT:CFrameSpacerBarX"                value="3300.00*mm"/>
+    <constant name="FT:CFrameSpacerBarY"                value="26.00*mm"/>
+    <constant name="FT:CFrameSpacerBarZ"                value="26.00*mm"/>
+    <constant name="FT:CFrameSpacerBarSkinZ"            value="0.350*mm"/>
+    <constant name="FT:CFrameSpacerBarUpperYPosRelPipe" value="1002.00*mm"/>
+    <constant name="FT:CFrameSpacerBarLowerYPosRelPipe" value="-997.75*mm"/>
+    <constant name="FT:CFrameSpacerBarUpperYPos"        value="FT:CFrameSpacerBarUpperYPosRelPipe-FT:CFrameYShiftToPipecenter"/>
+    <constant name="FT:CFrameSpacerBarLowerYPos"        value="FT:CFrameSpacerBarLowerYPosRelPipe-FT:CFrameYShiftToPipecenter"/>
+
+    <constant name="FT:CFramePairSupportCableCableRadius"     value="2.00*mm"/>
+    <constant name="FT:CFramePairSupportCableDowelHoleRadius" value="2.05*mm"/>
+    <constant name="FT:CFramePairSupportCableDowelRadius"     value="7.00*mm"/>
+    <constant name="FT:CFramePairSupportCableDowelHeadRadius" value="10.00*mm"/>
+    <constant name="FT:CFramePairSupportCableDowelHeadY"      value="8.00*mm"/>
+    <constant name="FT:CFramePairSupportCableDowelY"          value="35.00*mm"/>
+    <constant name="FT:CFramePairSupportCableY"               value="4472.9*mm"/>
+    <constant name="FT:CFramePairSupportCableYPos"            value="-16.05*mm"/>
+    <constant name="FT:CFramePairSupportCablepairXDist"       value="25.00*mm"/>
+    <constant name="FT:CFramePairSupportCablepairInnerXPos"   value="507.50*mm+0.5*FT:CFramePairSupportCablepairXDist"/>
+<!-- <constant name="FT:CFramePairSupportCablepairOuterXPos"   value="2632.5*mm+0.5*FT:CFramePairSupportCablepairXDist"/> -->
+    <constant name="FT:CFramePairSupportCablepairOuterXPos"   value="FT:CFramePairSupportCablepairInnerXPos+2125.00*mm"/>
+
+
+    <constant name="FT:CFrameShiftY"             value="67.0*mm" />                     <!-- variable -->
+    <constant name="FT:CFrameSizeX"              value="FT:CFrameCarrierTopX"/>         <!-- 4150.0*mm -->
+    <constant name="FT:CFrameSizeY"              value="FT:CFrameIBarY+FT:CFrameCarrierTopY"/>      <!-- 6125.0*mm -->
+    <constant name="FT:CFrameSizeZ"              value="26.0*mm"/>                      <!-- variable -->
+
+    <!-- Station dimensions (only needed for mother volumes) -->
+    <constant name="FT:StationSizeX"      value="2*FT:CFrameSizeX+FT:eps"/>             <!-- 8300.0*mm-->
+    <constant name="FT:StationSizeY"      value="FT:CFrameSizeY+
+                                                 2.0*FT:CFrameYShiftToPipecenter+FT:eps"/>    <!-- 6192.0*mm-->
+    <constant name="FT:StationSizeZ"      value="254.0*mm"/>
+
+    <!-- ############################################################################### -->
+    <!-- #################### Parameters for the detector elements ##################### -->
+    <!-- ############################################################################### -->
+
+    <constant name="FT:version"           value="65"/>
+    <constant name="FT:airGap"            value="0.080*mm"/>
+    <constant name="FT:deadRegion"        value="0.160*mm"/>
+    <constant name="FT:channelPitch"      value="0.250*mm"/>
+    <constant name="FT:dieGap"            value="0.220*mm"/>
+    <constant name="FT:nSiPMsInMat"       value="4"/>
+    <constant name="FT:nDiesInSiPM"       value="2"/>
+    <constant name="FT:nChannelsInSiPM"   value="128"/>
+    <constant name="FT:nModulesT1"        value="5"/>
+    <constant name="FT:nModulesT2"        value="5"/>
+    <constant name="FT:nModulesT3"        value="6"/>
+    <constant name="FT:nLayers"           value="4"/>
+    <constant name="FT:nHalfLayers"       value="2"/>
+    <constant name="FT:nQuarters"         value="4"/>
+    <constant name="FT:nStations"         value="3"/>
+    <constant name="FT:nChannelsInModule" value="FT:nChannelsInSiPM * FT:nSiPMsInMat * FT:nMats"/>
+  </define>
+
+  <materials>
+    <material name="FT:PerforatedAluminium" state="solid">
+        <D type="density" value="1.505" unit="g/cm3"/>
+        <fraction n="1.0" ref="Aluminum"/>
+    </material>
+    <material name="FT:Polycarbonate">
+      <D unit="g/cm3" value="1.2"/>
+      <composite n="16" ref="C"/>
+      <composite n="14" ref="H"/>
+      <composite n="3" ref="O"/>
+    </material>
+    <material name="FT:Honeycomb">
+      <D unit="g/cm3" value="0.032"/>
+      <composite n="22" ref="C"/>
+      <composite n="22" ref="H"/>
+      <composite n="4" ref="O"/>
+      <composite n="2" ref="N"/>
+    </material>
+    <!-- Taken from DDDB/materials/FTMaterials.xml directly-->
+    <material name="FT:Epoxy">
+      <D unit="g/cm3" value="1.2"/>
+      <composite n="27" ref="C"/>
+      <composite n="32" ref="H"/>
+      <composite n="4" ref="O"/>
+      <composite n="2" ref="N"/>
+    </material>
+    <material name="FT:CFRP-Fibre">
+      <D unit="g/cm3" value="1.77"/>
+      <composite n="16" ref="C"/>
+      <composite n="14" ref="H"/>
+      <composite n="3" ref="O"/>
+    </material>
+    <material name="FT:CFRP">
+      <D unit="g/cm3" value="1.54"/>
+      <fraction ref="FT:Epoxy" n="0.3125"/>
+      <fraction ref="FT:CFRP-Fibre" n="0.6875"/>
+    </material>
+    <material name="FT:Skin">
+      <D unit="g/cm3" value="1.358"/>
+      <fraction ref="FT:CFRP" n="0.63"/>
+      <fraction ref="FT:Epoxy" n="0.37"/>
+    </material>
+    <material name="FT:Core">
+      <D unit="g/cm3" value="1.05"/>
+      <fraction n="0.923" ref="C"/>
+      <fraction n="0.077" ref="H"/>
+    </material>
+    <material name="FT:InnerClad">
+      <D unit="g/cm3" value="1.19"/>
+      <fraction n="0.0799" ref="H"/>
+      <fraction n="0.6059" ref="O"/>
+      <fraction n="0.3142" ref="C"/>
+    </material>
+    <material name="FT:OuterClad">
+      <D unit="g/cm3" value="1.43"/>
+      <fraction n="0.0581" ref="H"/>
+      <fraction n="0.2791" ref="C"/>
+      <fraction n="0.6628" ref="F"/>
+    </material>
+    <material name="FT:SciFibre">
+      <D unit="g/cm3" value="1.18"/>
+      <fraction ref="FT:Core" n="0.7744"/>
+      <fraction ref="FT:InnerClad" n="0.1092"/>
+      <fraction ref="FT:OuterClad" n="0.1164"/>
+    </material>
+   </materials>
+</lccdd>

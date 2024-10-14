@@ -1,0 +1,27 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the LHCb detector region parameters                     -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <display>
+    <vis name="Regions:Upstream"     alpha="0.1" r="0.1" g="1.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="Regions:BeforeMagnet" alpha="0.2" r="1.0" g="0.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="Regions:BeforeVelo"   alpha="0.2" r="1.0" g="0.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="Regions:Magnet"       alpha="0.2" r="0.0" g="0.0" b="1.0" showDaughters="true" visible="true"/>
+    <vis name="Regions:AfterMagnet"  alpha="0.2" r="1.0" g="1.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="Regions:T"            alpha="0.2" r="0.7" g="1.0" b="0.0" showDaughters="true" visible="true"/>
+    <vis name="Regions:Downstream"   alpha="0.2" r="1.0" g="0.0" b="1.0" showDaughters="true" visible="true"/>
+    <vis name="Regions:AfterMuon"    alpha="0.2" r="1.0" g="0.6" b="0.0" showDaughters="true" visible="true"/>
+  </display>
+
+</lccdd>

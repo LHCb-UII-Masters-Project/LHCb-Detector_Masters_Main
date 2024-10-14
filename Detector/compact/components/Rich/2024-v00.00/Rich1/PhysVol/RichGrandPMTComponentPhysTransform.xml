@@ -1,0 +1,80 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!-- Grand  Mapmt component transforms   -->
+<!--- Author  : Sajan EASO -->
+<!-- Original XML version  : 2010-10-17   -->
+<!--   Current version       : 2020-10-09 -->
+<!-- Original phys volnames kept for reference -->
+<!--  <physvol name = "pvRichGrandPMTSMaster" logvol = "lvRichGrandPMTSMaster"> -->
+<!--  <physvol name = "pvRichPMTAnode0001" logvol = "lvRichPMTAnode0001"> -->
+<!--  <physvol name = "pvRichGrandPMTQuartz" logvol = "lvRichGrandPMTQuartz" -->
+<!--  <physvol name = "pvRichGrandPMTPhCathode"  logvol ="lvRichGrandPMTPhCathode"> -->
+<!--  <physvol name = "pvRichGrandPMTSideEnvelope" logvol ="lvRichGrandPMTSideEnvelope"> -->
+<!--  <physvol name = "pvRichGrandPMTBackEnvelope" logvol ="lvRichGrandPMTBackEnvelope"> -->
+<!--  <physvol name = "pvRichGrandPMTFrontRing"  logvol ="lvRichGrandPMTFrontRing"> -->
+<!--  =================================================================================  -->
+<Rich1>
+
+ <item name="PhysVolName"    value="pvRichGrandPMTSMaster" />
+ <item name="PhysVolName"    value="pvRichPMTAnode0001" />
+ <item name="PhysVolName"    value="pvRichGrandPMTQuartz" />
+ <item name="PhysVolName"    value="pvRichGrandPMTPhCathode" />
+ <item name="PhysVolName"    value="pvRichGrandPMTSideEnvelope" />
+ <item name="PhysVolName"    value="pvRichGrandPMTBackEnvelope" />
+ <item name="PhysVolName"    value="pvRichGrandPMTFrontRing" />
+
+ <item name="TransformName"  value="pvRichGrandPMTSMasterTransform">
+  <transformation>
+     <position  x="RhGrandPMTSubMasterXPos"
+                y="RhGrandPMTSubMasterYPos"
+                z="RhGrandPMTSubMasterZPos" />
+  </transformation>
+ </item>
+
+ <item name="TransformName"  value="pvRichPMTAnode0001Transform" >
+  <transformation>
+    <position  z="RhPMTAnodeZPos" />
+  </transformation>
+ </item>
+
+ <item name="TransformName"  value= "pvRichGrandPMTQuartzTransform" >
+   <transformation>
+     <position  z= "RhPMTQuartzZPos"/>
+   </transformation>
+ </item>
+
+ <item name="TransformName"  value= "pvRichGrandPMTPhCathodeTransform" >
+   <transformation>
+     <position  z= "RhPMTPhCathodeZPos"/>
+   </transformation>
+ </item>
+
+  <item name="TransformName"  value="pvRichGrandPMTSideEnvelopeTransform" >
+   <transformation>
+     <position  z= "RhPMTSideEnvelopeZPos"/>
+   </transformation>
+  </item>
+
+
+  <item name="TransformName"  value="pvRichGrandPMTBackEnvelopeTransform" >
+   <transformation>
+     <position  z="RhPMTBackEnvelopeZPos"/>
+   </transformation>
+  </item>
+
+
+  <item name="TransformName"  value="pvRichGrandPMTFrontRingTransform" >
+   <transformation>
+     <position  z="RhPMTFrontRingZPos"/>
+   </transformation>
+  </item>
+
+</Rich1>

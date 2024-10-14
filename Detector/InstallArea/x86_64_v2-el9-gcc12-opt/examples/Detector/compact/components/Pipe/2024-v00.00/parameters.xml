@@ -1,0 +1,64 @@
+<!--========================================================================== -->
+<!--  LHCb Detector Description                                                -->
+<!--========================================================================== -->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--========================================================================== -->
+<!-- XML description of the Full beam pipe in LHCb                             -->
+<!--========================================================================== -->
+<lccdd>
+  <define>
+    <constant name="PipeUpstream:parent"           value="/world/UpstreamRegion"                 type="string"/>
+    <constant name="PipeBeforeMagnet:parent"       value="/world/BeforeMagnetRegion"             type="string"/>
+    <constant name="PipeBeforeVeloJunction:parent" value="/world/BeforeMagnetRegion"             type="string"/>
+    <constant name="PipeBeforeVelo:parent"         value="/world/BeforeMagnetRegion/BeforeVelo"  type="string"/>
+    <constant name="PipeInVP:parent"               value="/world/BeforeMagnetRegion/VP"          type="string"/>
+    <constant name="PipeInUT:parent"               value="/world/BeforeMagnetRegion/UT"          type="string"/>
+    <constant name="PipeInRich1:parent"            value="/world/BeforeMagnetRegion/Rich1"       type="string"/>
+    <constant name="PipeMagnet:parent"             value="/world/MagnetRegion"                   type="string"/>
+    <constant name="PipeAfterMagnetBakeout:parent" value="/world/AfterMagnetRegion"              type="string"/>
+    <constant name="PipeAfterT:parent"             value="/world/AfterMagnetRegion"              type="string"/>
+    <constant name="PipeInT:parent"                value="/world/AfterMagnetRegion/T"            type="string"/>
+    <constant name="PipeDownstream:parent"         value="/world/DownstreamRegion"               type="string"/>
+    <constant name="PipeAfterMuon:parent"          value="/world/DownstreamRegion/AfterMuon"     type="string"/>
+
+    <constant name="VMAAAUpstream:parent"          value="/world/UpstreamRegion/PipeUpstream"    type="string"/>
+    <constant name="VMAAAUpstreamVax:parent"       value="/world/UpstreamRegion/PipeUpstream"    type="string"/>
+    <constant name="VMACAUpstream:parent"          value="/world/UpstreamRegion/PipeUpstream"    type="string"/>
+    <constant name="VMABKUpstream:parent"          value="/world/UpstreamRegion/PipeUpstream"    type="string"/>
+
+    <constant name="VMAAA:parent"                  value="/world/BeforeMagnetRegion/BeforeVelo/PipeBeforeVelo" type="string"/>
+
+    <constant name="VMAAADownstream:parent"        value="/world/DownstreamRegion/AfterMuon/PipeAfterMuon"     type="string"/>
+    <constant name="VMAAADownstreamVax:parent"     value="/world/DownstreamRegion/AfterMuon/PipeAfterMuon"     type="string"/>
+    <constant name="VMABJ:parent"                  value="/world/DownstreamRegion/AfterMuon/PipeAfterMuon"     type="string"/>
+
+  <!-- The following two lines defined in LHCb.xml and hence commented out here -->
+  <!--  <constant name="Rich1:parent"                  value="/world/BeforeMagnetRegion"             type="string"/> -->
+  <!--  <constant name="Rich2:parent"                  value="/world/AfterMagnetRegion"              type="string"/> -->
+
+  </define>
+
+  <display>
+    <vis name="Pipe:Vis"        alpha="0.3" r="0.4" g="0.4" b="0.4" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:Vacuum"     alpha="1"   r="0.4" g="0.4" b="0.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:Bakeout"    alpha="0.4" r="0.0" g="1.0" b="0.1" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:Magnet"     alpha="1"   r="1.0" g="0.1" b="0.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:Upstream"   alpha="1"   r="0.0" g="0.1" b="1.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:Downstream" alpha="1"   r="0.0" g="0.1" b="1.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:AfterMuon"  alpha="1"   r="1.0" g="0.7" b="0.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:Support"    alpha="1"   r="1.0" g="0.1" b="0.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:InVP"       alpha="1"   r="0.5" g="1.0" b="0.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:InUT"       alpha="1"   r="0.0" g="0.1" b="1.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:InRich1"    alpha="1"   r="0.0" g="1.0" b="0.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:InT"        alpha="1.0" r="0.0" g="0.9" b="0.0" showDaughters="true"  visible="true"/>
+    <vis name="Pipe:AfterT"     alpha="1.0" r="0.9" g="0.0" b="0.0" showDaughters="true"  visible="true"/>
+  </display>
+
+  <include ref="./materials.xml"/>
+</lccdd>

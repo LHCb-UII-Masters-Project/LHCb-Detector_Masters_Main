@@ -1,0 +1,392 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<velo>
+
+  <!-- ****************************************************** -->
+  <!-- * Definition of Vacuum Tank                          * -->
+  <!-- * Describe with Polycones                            * -->
+  <!-- ****************************************************** -->
+
+  <!-- Main vacuum vessel - Stainless Steel -->
+  <volume vis="TV:VacuumTank" name="lvVeloVacTankTop" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="subtraction" name="VacTankTopSub">
+      <shape type="Tube" name="VacTankTopTubs"
+            dz="0.5*TV:vTankMainZ"
+            rmin="TV:vTankInnerR"
+            rmax="TV:vTankOuterR"
+            startphi="TV:vTankStartAngle"
+            deltaphi="TV:vTankAngle"/>
+      <shape type="Box" name="VacTankTopCut"
+           dx="TV:vTankOuterR*1.1"
+           dy="0.5*TV:vTankMainCutY"
+           dz="0.5*TV:vTankMainZ*1.1"/>
+      <position y="TV:vTankMainCutPosY+TV:vTankMainCutY/2"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:VacuumTank" name="lvVeloVacTankSide" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="union" name="VacTankSideUnion">
+      <shape type="BooleanShape" operation="subtraction" name="VacTankSideSub">
+        <shape type="Box" name="VacTankSideBox"
+             dx="0.5*TV:vTankSideX"
+             dy="0.5*TV:vTankSideY"
+             dz="0.5*TV:vTankSideZ"/>
+        <shape type="Box" name="VacTankSideCut"
+             dx="0.5*TV:vTankSideX*1.1"
+             dy="0.5*TV:vTankCutY"
+             dz="0.5*TV:vTankCutZ"/>
+      </shape>
+      <!--Add some extra parts to finish the shape-->
+      <shape type="Box" name="VacTankSideExtra1"
+           dx="0.5*TV:vTankSideExtra1X"
+           dy="0.5*TV:vTankSideExtra1Y"
+           dz="0.5*TV:vTankSideExtra1Z"/>
+      <position x="-(TV:vTankSideExtra1X+TV:vTankSideX)/2"
+                y="-(TV:vTankSideExtra2Y-TV:vTankSideExtra1Y)/2"
+                z="0*mm"/>
+      <shape type="Box" name="VacTankSideExtra1b"
+             dx="0.5*TV:vTankSideExtra1X"
+             dy="0.5*TV:vTankSideExtra1Y"
+             dz="0.5*TV:vTankSideExtra1Z"/>
+      <position x="-(TV:vTankSideExtra1X+TV:vTankSideX)/2"
+                y="(TV:vTankSideExtra2Y-TV:vTankSideExtra1Y)/2"
+                z="0*mm"/>
+      <shape type="Box" name="VacTankSideExtra2"
+             dx="0.5*TV:vTankSideExtra2X"
+             dy="0.5*TV:vTankSideExtra2Y"
+             dz="0.5*TV:vTankSideExtra2Z"/>
+      <position x="(-TV:vTankSideX+TV:vTankSideExtra2X)/2"
+                y="0*mm"
+                z="-(TV:vTankSideExtra1Z-TV:vTankSideExtra2Z)/2"/>
+      <shape type="Box" name="VacTankSideExtra2b"
+             dx="0.5*TV:vTankSideExtra2X"
+             dy="0.5*TV:vTankSideExtra2Y"
+             dz="0.5*TV:vTankSideExtra2Z"/>
+      <position x="(-TV:vTankSideX+TV:vTankSideExtra2X)/2"
+                y="0*mm"
+                z="(TV:vTankSideExtra1Z-TV:vTankSideExtra2Z)/2"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:VacuumTank" name="lvVeloVacTankDownEnd" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="union" name="VacTankDownEndUnion">
+      <shape type="Tube" name="VacTankDownEndTubs"
+            dz="0.5*TV:vTankDownEndZ"
+            rmin="TV:vTankDownEndInnerR"
+            rmax="TV:vTankDownEndOuterR"
+            startphi="0*degree"
+            deltaphi="360*degree"/>
+      <shape type="Tube" name="VacTankDownEndTubs2"
+            dz="0.5*TV:vTankMain2Ends"
+            rmin="TV:vTankInnerR"
+            rmax="TV:vTankOuterR"
+            startphi="0*degree"
+            deltaphi="360*degree"/>
+      <position x="0*mm" y="0*mm" z="-(TV:vTankDownEndZ+TV:vTankMain2Ends)/2"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:VacuumTank" name="lvVeloVacTankUpEnd" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="union" name="VacTankUpEndUnion">
+      <shape type="Tube" name="VacTankUpEndTubs"
+            dz="0.5*TV:vTankUpEndZ"
+            rmin="TV:vTankUpEndInnerR"
+            rmax="TV:vTankDownEndOuterR"
+            startphi="0*degree"
+            deltaphi="360*degree"/>
+      <shape type="Tube" name="VacTankUpEndTubs2"
+            dz="0.5*TV:vTankMain2Ends"
+            rmin="TV:vTankInnerR"
+            rmax="TV:vTankOuterR"
+            startphi="0*degree"
+            deltaphi="360*degree"/>
+      <position x="0*mm" y="0*mm" z="(TV:vTankUpEndZ+TV:vTankMain2Ends)/2"/>
+    </shape>
+  </volume>
+
+  <volume vis="TV:VacuumTank" name="lvVeloVacTankDSExitWindowFlange" material="TV:StainlessSteel">
+    <shape type="Tube" name="VacTankDSExitWindowFlange"
+          dz="0.5*TV:vTankDownEWFlangeZ"
+          rmin="TV:vTankDownEWFlangeIR"
+          rmax="TV:vTankDownEWFlangeOR"
+          startphi="0*degree"
+          deltaphi="360*degree"/>
+  </volume>
+
+  <volume vis="TV:VacuumTank" name="lvVeloVacTankDSExitWindow" material="Pipe:Al6061">
+    <shape type="BooleanShape" operation="subtraction" name="VacTankDSEWSub">
+      <sphere name="VacTankDSExitWindow"
+              rmax="TV:vTankDownExitWindowOR"
+              rmin="TV:vTankDownExitWindowIR"
+              theta="pi*rad-TV:vTankDownExitWindowAngle"
+              deltatheta="TV:vTankDownExitWindowAngle"/>
+      <shape type="Tube" name="VacTankDSExitWindowBPHole"
+            dz="0.5*25*mm"
+            rmin="0*mm"
+            rmax="TV:vTankDownExitWindowHoleR"
+            startphi="0*degree"
+            deltaphi="360*degree"/>
+      <position z="-TV:vTankDownExitWindowOR"/>
+    </shape>
+  </volume>
+
+  <!-- Main side plates of the support -->
+  <volume vis="TV:Support" name="lvVeloDetSupSide" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="union" name="VeloDetSupSideUnion">
+      <shape type="Box" name="VeloDetSupSideBox"
+             dx="TV:DetSupBoxX/2"
+             dy="TV:DetSupBoxY/2"
+             dz="TV:DetSupBoxZ/2"/>
+      <shape type="Trap" name="VeloDetSupSideTrap"
+             z="TV:DetSupBoxY/2"
+             x1="TV:DetSupTrapX1/2"
+             x3="TV:DetSupTrapX1/2"
+             x2="(TV:DetSupBoxX-TV:DetSupTrapX1)/2"
+             x4="(TV:DetSupBoxX-TV:DetSupTrapX1)/2"
+             y1="TV:DetSupTrapY1/2"
+             y2="TV:DetSupTrapY1/2"
+             alpha1="(TV:DetSupBoxX-2*TV:DetSupTrapX1)/2/TV:DetSupTrapY1"
+             alpha2="(TV:DetSupBoxX-2*TV:DetSupTrapX1)/2/TV:DetSupTrapY1"/>
+      <position x="-TV:DetSupBoxX/4-0.1*mm" z="(TV:DetSupBoxZ+TV:DetSupTrapY1)/2"/>
+      <rotation x="-90*degree"/>
+    </shape>
+  </volume>
+
+  <!-- The top section - joins to the RFBox -->
+  <volume vis="TV:Support" name="lvVeloDetSupTop" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="subtraction" name="VeloDetSupTopSub">
+      <shape type="BooleanShape" operation="union" name="VeloDetSupTopUnion">
+        <shape type="Box" name="VeloDetSupTopBox"
+               dx="0.5*TV:DetSupBoxY"
+               dy="0.5*TV:DetSupTopY"
+               dz="0.5*TV:DetSupBoxZ"/>
+        <shape type="Box" name="VeloDetSupTopMain"
+               dx="0.5*TV:DetSupBoxY"
+               dy="0.5*TV:DetSupTopY"
+               dz="0.5*TV:DetSupTopZ"/>
+        <position x="-TV:DetSupTopPosX" z="(TV:DetSupBoxZ+TV:DetSupTopZ)/2-TV:DetSupTopPosZ"/>
+        <rotation y="-9*degree"/>
+      </shape>
+      <shape type="Box" name="VeloDetSupTopCut"
+             dx="0.5* TV:DetSupBoxY*1.1"
+             dy="0.5* TV:DetSupTopCutY"
+             dz="0.5*TV:DetSupTopCutZ"/>
+      <position x="-TV:DetSupTopPosX" z="(TV:DetSupBoxZ+TV:DetSupTopZ)/2-TV:DetSupTopPosZ"/>
+      <rotation y="-9*degree"/>
+    </shape>
+  </volume>
+
+  <!-- Base part - Cut 1 the 4mm border, Cut 2 the 10mm border, Cut 3 the hole and Cut 4 the slope-->
+  <volume vis="TV:Support" name="lvVeloDetSupBase" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="subtraction" name="VeloDetSupBaseSub">
+      <shape type="Box" name="VeloDetSupBaseBox"
+           dx="0.5*TV:DetSupBaseX"
+           dy="0.5*TV:DetSupBaseY"
+           dz="0.5*TV:DetSupBaseZ"/>
+      <shape type="Box" name="VeloDetSupBaseCut1"
+           dx="0.5*TV:DetSupBaseCut1X"
+           dy="0.5*TV:DetSupBaseCut1Y"
+           dz="0.5*TV:DetSupBaseCut1Z"/>
+      <position x="(TV:DetSupBaseX-TV:DetSupBaseCut1X)/2"/>
+      <shape type="Box" name="VeloDetSupBaseCut2"
+             dx="0.5*TV:DetSupBaseCut2X"
+             dy="0.5*TV:DetSupBaseCut2Y"
+             dz="0.5*TV:DetSupBaseCut2Z"/>
+      <position x="(-TV:DetSupBaseX+TV:DetSupBaseCut2X)/2"/>
+      <shape type="Box" name="VeloDetSupBaseCut3"
+             dx="0.5*TV:DetSupBaseX*1.1"
+             dy="0.5*TV:DetSupBaseCut3Y"
+             dz="0.5*TV:DetSupBaseCut3Z"/>
+      <shape type="Trap" name="VeloDetSupBaseCut4"
+             z="0.5*TV:DetSupBaseY*1.1"
+             x1="0.5*TV:DetSupBaseCut4X1"
+             x3="0.5*TV:DetSupBaseCut4X1"
+             x2="0.5*TV:DetSupBaseCut4X2"
+             x4="0.5*TV:DetSupBaseCut4X2"
+             y1="0.5*TV:DetSupBaseCut4Y1"
+             y2="0.5*TV:DetSupBaseCut4Y1"
+             alpha1="TV:DetSupBaseCut4X2/2/TV:DetSupBaseCut4Y1"
+             alpha2="TV:DetSupBaseCut4X2/2/TV:DetSupBaseCut4Y1"/>
+      <position x="2*TV:DetSupBaseCut4X1+(TV:DetSupBaseX-TV:DetSupBaseCut4X2/2)/2"
+                z="TV:DetSupBaseCut4X1+(TV:DetSupBaseZ-TV:DetSupBaseCut4Y1)/2"/>
+      <rotation x="90*degree" y="180*degree"/>
+    </shape>
+  </volume>
+
+  <!--Back plate to enclose the volume-->
+  <volume vis="TV:Support" name="lvVeloDetSupBack" material="TV:StainlessSteel">
+    <shape type="Box" name="VeloDetSupBack"
+           dx="0.5*TV:DetSupBoxX"
+           dy="0.5*TV:DetSupBackY"
+           dz="0.5*TV:DetSupBoxY"/>
+  </volume>
+
+  <!--Add the trim under the base section-->
+  <volume vis="TV:Support" name="lvVeloDetSupTrim" material="TV:StainlessSteel">
+    <shape type="BooleanShape" operation="subtraction" name="VeloDetSupTrimSub">
+      <shape type="Box" name="VeloDetSupTrimBox"
+             dx="0.5*TV:DetSupTrimX"
+             dy="0.5*TV:DetSupBaseY"
+             dz="0.5*TV:DetSupBaseZ"/>
+      <shape type="Box" name="VeloDetSupTrimCut"
+             dx="0.5*TV:DetSupTrimX*1.1"
+             dy="0.5*(TV:DetSupBaseY-2*TV:DetSupBaseCut2X)"
+             dz="0.5*(TV:DetSupBaseZ-2*TV:DetSupBaseCut2X)"/>
+    </shape>
+  </volume>
+
+  <!-- The RICH1 gas sections DS of the exit window -->
+  <!-- The section within the exit window flange -->
+  <volume vis="TV:VacuumTank" name="lvVelo2Rich1Gas1" material="Rich:C4F10">
+    <shape type="Tube" name="V2R1Gas1Tubs"
+           dz="0.5*(TV:vTankDownEWFlangeZ-TV:vTankDownEWFlangeZExcess)"
+           rmax="TV:vTankDownEWFlangeIR"
+           rmin="TV:vTankDownExitWindowHoleR"/>
+  </volume>
+
+  <volume vis="TV:VacuumTank" name="lvVelo2Rich1Gas2" material="Rich:C4F10">
+    <shape type="BooleanShape" operation="subtraction" name="V2R1Gas2Sub">
+      <sphere name="V2R1Gas2Sphere"
+              rmax="TV:vTankDownExitWindowIR"
+              rmin="0*mm"
+              theta="pi*rad-TV:vTankDownExitWindowAngle"
+              deltatheta="TV:vTankDownExitWindowAngle"/>
+      <shape type="Tube" name="V2R1Gas2Tubs1"
+             dz="0.5*TV:vTankDownExitWindowIR*cos(TV:vTankDownExitWindowAngle)"
+             rmax="TV:vTankDownEndOuterR"/>
+      <position z="-TV:vTankDownExitWindowIR*cos(TV:vTankDownExitWindowAngle)/2"/>
+      <shape type="Tube" name="V2R1Gas2Tubs2"
+             dz="0.5*TV:vTankDownExitWindowIR"
+             rmax="TV:vTankDownExitWindowHoleR"/>
+      <position z="-TV:vTankDownExitWindowIR*cos(TV:vTankDownExitWindowAngle)/2-TV:vTankDownExitWindowIR/2"/>
+    </shape>
+  </volume>
+
+
+  <!-- Stainless steel detector supports -->
+  <volume vis="TV:Assembly" name="lvVeloDetSup" material="Vacuum">
+    <shape type="BooleanShape" operation="subtraction" name="DetSupMotherSub">
+      <shape type="Box" name="TV:DetSupMotherBox"
+             dx="0.5*TV:DetSupX"
+             dy="0.5*TV:DetSupBaseY"
+             dz="0.5*TV:DetSupBaseZ"/>
+      <shape type="Trap" name="TV:DetSupMotherCut1"
+             z="0.5*TV:DetSupBaseY*1.1"
+             x1="0.5*TV:DetSupTrapX1"
+             x3="0.5*TV:DetSupTrapX1"
+             x2="0.5*TV:DetSupMotherCutX"
+             x4="0.5*TV:DetSupMotherCutX"
+             y1="0.5*TV:DetSupMotherCutY"
+             y2="0.5*TV:DetSupMotherCutY"
+             alpha1="(TV:DetSupMotherCutX)/2/(TV:DetSupMotherCutY)"
+             alpha2="(TV:DetSupMotherCutX)/2/(TV:DetSupMotherCutY)"/>
+      <position x="(TV:DetSupX+TV:DetSupAdjustX-TV:DetSupMotherCutX/2)/2" z="(TV:DetSupBaseZ-TV:DetSupMotherCutY)/2"/>
+      <rotation x="-90*degree" z="180*degree"/>
+      <!-- Numbers to prevent DetSupTop overlapping mother volume-->
+      <shape type="Box" name="DetSupMotherCut2"
+             dx="0.5*TV:DetSupX*1.1"
+             dy="0.5*(-1*mm+TV:DetSupTopCutY)"
+             dz="0.5*(-2*mm+TV:DetSupTopCutZ*cos(9*degree))"/>
+      <position z="-1*mm+TV:DetSupBoxZ/2"/>
+    </shape>
+    <!--Add the physvols-->
+    <physvol volume="lvVeloDetSupSide" name="DetSupSide1">
+      <position x="(TV:DetSupX-TV:DetSupBoxX-2*TV:DetSupBoxY)/2" y="(TV:DetSupTopY-TV:DetSupBoxY)/2" z="(-TV:DetSupBaseZ+TV:DetSupBoxZ)/2"/>
+    </physvol>
+    <physvol volume="lvVeloDetSupSide" name="DetSupSide2">
+      <position x="(TV:DetSupX-TV:DetSupBoxX-2*TV:DetSupBoxY)/2" y="-(TV:DetSupTopY-TV:DetSupBoxY)/2" z="(-TV:DetSupBaseZ+TV:DetSupBoxZ)/2"/>
+    </physvol>
+    <physvol volume="lvVeloDetSupBack" name="DetSupBack">
+      <position x="(TV:DetSupX-TV:DetSupBoxX-2*TV:DetSupBoxY)/2" z="-(TV:DetSupBaseZ-TV:DetSupBoxY)/2"/>
+    </physvol>
+    <physvol volume="lvVeloDetSupTop" name="DetSupTop">
+      <position x="(TV:DetSupX-TV:DetSupBoxY)/2" z="(-TV:DetSupBaseZ+TV:DetSupBoxZ)/2"/>
+    </physvol>
+    <physvol volume="lvVeloDetSupBase" name="DetSupBase">
+      <position x="-(TV:DetSupX-2*TV:DetSupTrimX-TV:DetSupBaseX)/2"/>
+    </physvol>
+    <physvol volume="lvVeloDetSupTrim" name="DetSupTrim">
+      <position x="-(TV:DetSupX-TV:DetSupTrimX)/2"/>
+    </physvol>
+  </volume>
+
+  <!-- Mother Volume to hold the middle part of the vacuum tank   -->
+  <volume vis="TV:Assembly" name="lvVacTank" material="Vacuum">
+    <shape type="BooleanShape" operation="union" name="VTankUnion">
+      <!-- Main part of tank -->
+      <shape type="Tube" name="VTankSecDownTubs"
+             dz="0.5*TV:vTankTotalZ"
+             rmax="TV:vTankDownEndOuterR"
+             rmin="TV:vTankDownEndInnerR"/>
+      <!-- Fill in centre for exit window -->
+      <shape type="Tube" name="VTankExitWindowTubs"
+             dz="0.5*TV:vTankDownExitWindowZSize"
+             rmax="TV:vTankDownEndInnerR"
+             rmin="TV:vTankDownExitWindowHoleR"/>
+      <position z="(TV:vTankTotalZ-TV:vTankDownExitWindowZSize)/2"/>
+      <!-- Exit window flange (except small part extending into Rich1 zone) -->
+      <shape type="Tube" name="VTankEWFlangeTubs"
+             dz="0.5*(TV:vTankDownEWFlangeZ-TV:vTankDownEWFlangeZExcess)"
+             rmax="TV:vTankDownEWFlangeOR"
+             rmin="TV:vTankDownExitWindowHoleR"/>
+      <position z="(TV:vTankTotalZ+TV:vTankDownEWFlangeZ-TV:vTankDownEWFlangeZExcess)/2"/>
+      <!-- Small part of flange that extends into Rich1 zone -->
+      <shape type="Tube" name="VTankEWFlangeExcessTubs"
+             dz="0.5*TV:vTankDownEWFlangeZExcess"
+             rmax="TV:vTankDownEWFlangeOR"
+             rmin="TV:vTankDownEWFlangeIR"/>
+      <position z="TV:vTankTotalZ/2+TV:vTankDownEWFlangeZ-TV:vTankDownEWFlangeZExcess/2"/>
+    </shape>
+    <!-- Try a new description: Stainless Steel main vessel and detector -->
+    <!-- supports that join with the RFBox plus Aluminium exit foil -->
+    <physvol volume="lvVeloVacTankTop" name="pvVacTankTop">
+      <position z="(TV:vTankUpEndZ-TV:vTankDownEndZ)/2"/>
+    </physvol>
+    <physvol volume="lvVeloVacTankTop" name="pvVacTankBase">
+      <position z="(TV:vTankUpEndZ-TV:vTankDownEndZ)/2"/>
+      <rotation z="180*degree"/>
+    </physvol>
+    <physvol volume="lvVeloVacTankSide" name="pvVacTankSide">
+      <position x="(TV:vTankOuterR+TV:vTankSideX/2-TV:vTankSideExtra1X/2)"
+                y="0*mm"
+                z="(TV:vTankUpEndZ-TV:vTankDownEndZ)/2"/>
+    </physvol>
+    <physvol volume="lvVeloVacTankSide" name="pvVacTankSide2">
+      <position x="-(TV:vTankOuterR+TV:vTankSideX/2-TV:vTankSideExtra1X/2)"
+                y="0*mm"
+                z="(TV:vTankUpEndZ-TV:vTankDownEndZ)/2"/>
+      <rotation x="0*degree" y="180*degree" z="0*degree"/>
+    </physvol>
+    <physvol volume="lvVeloVacTankUpEnd" name="pvVacTankUp">
+      <position x="0*mm" y="0*mm" z="-TV:vTankTotalZ/2+TV:vTankUpEndZ/2"/>
+    </physvol>
+    <physvol volume="lvVeloVacTankDownEnd" name="pvVacTankDown">
+      <position x="0*mm" y="0*mm" z="TV:vTankTotalZ/2-TV:vTankDownEndZ/2"/>
+    </physvol>
+    <physvol volume="lvVeloVacTankDSExitWindowFlange" name="pvVacTankDSEWFlange">
+      <position x="0*mm" y="0*mm" z="(TV:vTankTotalZ+TV:vTankDownEWFlangeZ)/2"/>
+    </physvol>
+<ERROR author="M.Frank" type="Geant4 does not like this volume!">
+    <physvol volume="lvVeloVacTankDSExitWindow" name="pvVacTankDSEW">
+      <position x="0*mm" y="0*mm" z="TV:vTankTotalZ/2+TV:vTankDownExitWindowIR*cos(TV:vTankDownExitWindowAngle)"/>
+    </physvol>
+</ERROR>
+    <physvol volume="lvVelo2Rich1Gas1" name="pvVacTankGas1">
+      <position x="0*mm" y="0*mm" z="(TV:vTankTotalZ+TV:vTankDownEWFlangeZ-TV:vTankDownEWFlangeZExcess)/2"/>
+    </physvol>
+<ERROR author="M.Frank" type="Geant4 does not like this volume!">
+    <physvol volume="lvVelo2Rich1Gas2" name="pvVacTankGas2">
+      <position x="0*mm" y="0*mm" z="TV:vTankTotalZ/2+TV:vTankDownExitWindowIR*cos(TV:vTankDownExitWindowAngle)"/>
+    </physvol>
+</ERROR>
+  </volume>
+
+</velo>

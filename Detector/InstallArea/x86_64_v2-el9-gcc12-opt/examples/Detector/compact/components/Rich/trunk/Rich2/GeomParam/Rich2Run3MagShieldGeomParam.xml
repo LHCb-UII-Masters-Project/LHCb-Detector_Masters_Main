@@ -1,0 +1,126 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 Magnetic shield in  Run3 configuration         -->
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+
+
+<!-- Magnetic Shielding -->
+<!-- Here the label Front refers to upstream side of the Shielding and Back refers to downstream side of the -->
+<!-- Shielding.  The Shielding is oriented 'almost normal' to the beam axis, They are implemented as   -->
+<!-- 5 plates to cover the 5 sides shielding box region. The five sides are labelled as -->
+<!-- Front, Top, Bottom, FrontSide, BackSide   -->
+
+
+  <constant name= "Rh2MagShFrontBoxAngle" value = "103*degree"/>
+
+  <constant name= "Rh2MagShFrontBoxPosX" value = "3385*mm"/>
+  <constant name= "Rh2MagShFrontBoxPosZ" value = "-250*mm + Rh2MainGasEnclosurePosZ"/>
+
+  <constant name= "Rh2MagShFrontBoxPositivePosX"  value="Rh2MagShFrontBoxPosX" />
+  <constant name= "Rh2MagShFrontBoxNegativePosX" value="-1.0*Rh2MagShFrontBoxPosX" />
+  <constant name= "Rh2MagShFrontBoxPositiveRotY" value="Rh2MagShFrontBoxAngle" />
+  <constant name= "Rh2MagShFrontBoxNegativeRotY" value="-1.0*Rh2MagShFrontBoxAngle" />
+
+
+  <constant name= "Rh2MagShThickness" value = "60*mm"/>
+
+  <constant name= "Rh2MagShFrontBoxSizeX" value = "1587*mm"/>
+  <constant name= "Rh2MagShFrontBoxSizeY" value = "2170*mm"/>
+  <constant name= "Rh2MagShFrontBoxSizeZ" value = "Rh2MagShThickness"/>
+
+  <constant name= "Rh2MagShFrontBoxHoleSizeZ" value = "Rh2MagShFrontBoxSizeX-240*mm"/>
+  <constant name= "Rh2MagShFrontBoxHoleSizeX1" value = "80*mm"/>
+  <constant name= "Rh2MagShFrontBoxHoleSizeY1" value = "1740*mm"/>
+  <constant name= "Rh2MagShFrontBoxHoleSizeX2" value = "80*mm"/>
+  <constant name= "Rh2MagShFrontBoxHoleSizeY2" value = "1550*mm"/>
+
+  <constant name= "Rh2MagShFrontBoxHoleXOff" value = "50*mm"/>
+  <constant name= "Rh2MagShFrontBoxHoleYOff" value = "50*mm"/>
+  <constant name= "Rh2MagShFrontBoxHoleRotY" value = "-1.0*((pi/2.0)*rad)" />
+  <constant name= "Rh2MagShFrontBoxPosY" value = "-1.0*Rh2MagShFrontBoxHoleYOff"/>
+  <constant name= "Rh2MagShFrontBoxHoleNegSideXOff" value = "-1.0*Rh2MagShFrontBoxHoleXOff" />
+  <constant name= "Rh2MagShFrontBoxHoleNegSideRotY"  value="-1.0*Rh2MagShFrontBoxHoleRotY" />
+
+
+  <constant name= "Rh2MagShTopAndBotPosX" value = "Rh2MagShFrontBoxPosX + 700*mm"/>
+  <constant name= "Rh2MagShTopPosY" value = "Rh2MagShFrontBoxPosY + 1070*mm"/>
+  <constant name= "Rh2MagShBottomPosY" value = "Rh2MagShFrontBoxPosY - 1070*mm"/>
+  <constant name= "Rh2MagShTopAndBotPosZ" value = "Rh2MagShFrontBoxPosZ + 380*mm"/>
+  <constant name= "Rh2MagShTopAndBotPositivePosX" value="Rh2MagShTopAndBotPosX" />
+  <constant name= "Rh2MagShTopAndBotNegativePosX" value="-1.0*Rh2MagShTopAndBotPosX" />
+
+
+  <constant name= "Rh2MagShTopAndBotSizeZ" value = "Rh2MagShThickness"/>
+  <constant name= "Rh2MagShTopAndBotSizeX1" value = "1934*mm"/>
+  <constant name= "Rh2MagShTopAndBotSizeX2" value = "1075*mm"/>
+  <constant name= "Rh2MagShTopAndBotSizeY1" value = "1100*mm"/>
+  <constant name= "Rh2MagShTopAndBotAlp1" value = "27*degree"/>
+
+  <constant name= "Rh2MagShTopAndBotCentreOffset" value = "Rh2MagShTopAndBotSizeY1*tan(Rh2MagShTopAndBotAlp1)"/>
+  <constant name= "Rh2MagShTopAndBotAngleTemp" value = "(atan((0.5*(Rh2MagShTopAndBotSizeX1-Rh2MagShTopAndBotSizeX2)+Rh2MagShTopAndBotCentreOffset)/Rh2MagShTopAndBotSizeY1))*rad"/>
+  <constant name= "Rh2MagShTopAndBotAngle" value = "-1.0*(Rh2MagShFrontBoxAngle-((pi/2.0)*rad)) + Rh2MagShTopAndBotAngleTemp"/>
+
+ <constant name= "Rh2MagShTopAndBotAnglePositiveRotX"  value="((pi/2.0)*rad)" />
+ <constant name= "Rh2MagShTopAndBotAnglePositiveRotZ"  value="Rh2MagShTopAndBotAngle" />
+
+ <constant name= "Rh2MagShTopAndBotAngleNegativeRotX"  value="Rh2MagShTopAndBotAnglePositiveRotX" />
+ <constant name= "Rh2MagShTopAndBotAngleNegativeRotY"  value="(pi*rad)" />
+ <constant name= "Rh2MagShTopAndBotAngleNegativeRotZ"  value="Rh2MagShTopAndBotAngle" />
+ 
+
+  <constant name= "Rh2MagShSideBackSizeZ" value = "Rh2MagShThickness"/>
+  <constant name= "Rh2MagShSideBackSizeY" value = "2050*mm"/>
+  <constant name= "Rh2MagShSideBackSizeX" value = "1070*mm"/>
+<!-- Small shift made to the BackSide Magshield plate in Feb2021 as in the line below -->
+<!-- This is to accomodate the increased size of the PhDetSupframe and PhDetGasEnclosure -->
+<!-- when the number of Module columns is increased to 14 from 12. This shift avoids overlap -->
+<!-- between this magshield plate and the PhotonDet gas enclosure lvRich2PhDetGasEncl0 . It also  -->
+<!-- avoids the overlap between magshield plate and lvRich2PhDetGasEncl1                  -->
+
+<!--  <constant name= "Rh2MagShSideBackPosZ" value = "Rh2MagShFrontBoxPosZ + 970*mm"/> -->
+  <constant name= "Rh2MagShSideBackPosZ" value = "Rh2MagShFrontBoxPosZ + 1000*mm"/>
+  <constant name= "Rh2MagShSideBackPosY" value = "Rh2MagShFrontBoxPosY"/>
+  <constant name= "Rh2MagShSideBackPosX" value = "Rh2MagShFrontBoxPosX + 700*mm"/> 
+  <constant name= "Rh2MagShSideBackRotY" value = "-1.0*Rh2MagShTopAndBotAngle" />
+  <constant name= "Rh2MagShSideBackPositivePosX" value = "Rh2MagShSideBackPosX"/>
+  <constant name= "Rh2MagShSideBackNegativePosX" value = "-1.0*Rh2MagShSideBackPosX"/>
+
+  <constant name= "Rh2MagShSideBackPositiveRotY"  value="Rh2MagShSideBackRotY" />
+  <constant name= "Rh2MagShSideBackNegativeRotY"  value="-1.0*Rh2MagShSideBackRotY" />
+
+
+  <constant name= "Rh2MagShSideFrontSizeZ" value = "2050*mm"/>
+  <constant name= "Rh2MagShSideFrontSizeY1" value = "Rh2MagShThickness"/>
+  <constant name= "Rh2MagShSideFrontSizeX1" value = "1930*mm"/>
+  <constant name= "Rh2MagShSideFrontSizeX2" value = "1885*mm"/>
+  <constant name= "Rh2MagShSideFrontAlp1" value = "Rh2MagShTopAndBotAlp1"/>
+
+  <constant name= "Rh2MagShSideFrontPosZ" value = "Rh2MagShFrontBoxPosZ -220*mm"/>
+  <constant name= "Rh2MagShSideFrontPosY" value = "Rh2MagShFrontBoxPosY"/>
+  <constant name= "Rh2MagShSideFrontPosX" value = "Rh2MagShFrontBoxPosX + 715*mm"/>
+  <constant name= "Rh2MagShSideFrontAngleRotX" value = "((pi/2.0)*rad)" />  
+  <constant name= "Rh2MagShSideFrontAngleRotZ" value = "Rh2MagShTopAndBotAngle" />  
+
+  <constant name= "Rh2MagShSideFrontPositivePosX"  value="Rh2MagShSideFrontPosX" />
+  <constant name= "Rh2MagShSideFrontNegativePosX"  value="-1.0*Rh2MagShSideFrontPosX" />
+
+  <constant name= "Rh2MagShSideFrontAnglePositiveRotX" value="Rh2MagShSideFrontAngleRotX" />
+  <constant name= "Rh2MagShSideFrontAnglePositiveRotZ" value= "Rh2MagShSideFrontAngleRotZ" />
+  <constant name= "Rh2MagShSideFrontAngleNegativeRotX"  value ="((pi/2.0)*rad)" /> 
+  <constant name= "Rh2MagShSideFrontAngleNegativeRotY"  value="(pi*rad)" />
+  <constant name= "Rh2MagShSideFrontAngleNegativeRotZ"  value="Rh2MagShSideFrontAngleRotZ" />  
+  </define>
+</lccdd>
+

@@ -1,0 +1,729 @@
+<!-- ========================================================================== -->
+<!-- LHCb Detector Description -->
+<!-- ========================================================================== -->
+<!--  -->
+<!-- Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!-- All rights reserved. -->
+<!--  -->
+<!-- @author  M.Frank -->
+<!-- @date    14/10/2018 -->
+<!--  -->
+<!-- ========================================================================== -->
+<!-- XML description of the UT constant definitions -->
+<!-- ========================================================================== -->
+<lccdd>
+	<define>
+		<!-- UT Geometry constants -->
+		<!-- *  Author: Jianchun Wang  * -->
+		<constant name="UTGeomVersion" value="1.1" />
+		<constant name="UTEpsilon" value="0.001*mm" />
+		<!-- ========== UT sensors ========== -->
+    <constant name="UTSensorAPitch" value="0.1875*mm" />
+    <constant name="UTSensorBCDPitch" value="0.0935*mm" />
+		<constant name="UTSensorWide" value="97.5*mm" />
+		<constant name="UTSensorLongA" value="99.5*mm" />
+		<constant name="UTSensorLongB" value="UTSensorLongA" />
+		<constant name="UTSensorSiOverlapY" value="1.8*mm" />
+		<constant name="UTSensorGRWideFar" value="0.8*mm" />
+		<constant name="UTSensorGRWideNear" value="0.8*mm+0.5*mm" />
+		<constant name="UTSensorOverlapY" value="UTSensorSiOverlapY+UTSensorGRWideFar+UTSensorGRWideNear" />
+		<constant name="UTSensorLongC" value="(UTSensorLongA+UTSensorOverlapY)/2" />
+		<constant name="UTSensorLongD" value="UTSensorLongC" />
+		<constant name="UTSensorThick" value="0.320*mm" />
+		<constant name="UTSensorOverlapY0" value="UTSensorSiOverlapY+UTSensorGRWideFar*2" />
+		<constant name="UTSensorSiOverlapX" value="2.0*mm" />
+		<constant name="UTSensorGRWideSide" value="0.8*mm" />
+		<constant name="UTSensorOverlapX" value="UTSensorSiOverlapX+2*UTSensorGRWideSide" />
+		<constant name="UTSensorSiWide" value="UTSensorWide-2*UTSensorGRWideSide" />
+		<constant name="UTSensorSiLongA" value="UTSensorLongA-UTSensorGRWideFar-UTSensorGRWideNear" />
+		<constant name="UTSensorSiLongB" value="UTSensorLongB-UTSensorGRWideFar-UTSensorGRWideNear" />
+		<constant name="UTSensorSiLongC" value="UTSensorLongC-UTSensorGRWideFar-UTSensorGRWideNear" />
+		<constant name="UTSensorSiLongD" value="UTSensorLongD-UTSensorGRWideFar-UTSensorGRWideNear" />
+		<constant name="UTSensorAlThick" value="0.003*mm" />
+		<constant name="UTSensorSiThickA" value="0.320*mm-UTSensorAlThick" />
+		<constant name="UTSensorSiThickB" value="0.250*mm-UTSensorAlThick" />
+		<constant name="UTSensorSiThickC" value="0.250*mm-UTSensorAlThick" />
+		<constant name="UTSensorSiThickD" value="0.250*mm-UTSensorAlThick" />
+		<constant name="UTSensorSiOffsetY" value="(UTSensorGRWideNear-UTSensorGRWideFar)/2" />
+		<constant name="UTSensorGRThickA" value="UTSensorSiThickA" />
+		<constant name="UTSensorGRThickB" value="UTSensorSiThickB" />
+		<constant name="UTSensorGRThickC" value="UTSensorSiThickC" />
+		<constant name="UTSensorGRThickD" value="UTSensorSiThickD" />
+		<constant name="UTSensorAlWide" value="UTSensorWide" />
+		<constant name="UTSensorAlLongA" value="UTSensorLongA" />
+		<constant name="UTSensorAlLongB" value="UTSensorLongB" />
+		<constant name="UTSensorAlLongC" value="UTSensorLongC" />
+		<constant name="UTSensorAlLongD" value="UTSensorLongD" />
+		<constant name="UTSensorAlZ" value="UTSensorThick/2-UTSensorAlThick/2" />
+		<constant name="UTSensorSiZ" value="-UTSensorAlThick/2" />
+		<!-- ========== Hybrid ========== -->
+		<constant name="UTStiffWide" value="UTSensorWide" />
+		<constant name="UTHybridWide" value="UTStiffWide" />
+		<constant name="UTHybridFlex4Long" value="30*mm" />
+		<constant name="UTAnchorLong" value="10*mm" />
+		<constant name="UTHybridFlex4Gap" value="1*mm" />
+		<constant name="UTStiffLongA" value="UTSensorLongA+UTHybridFlex4Gap+UTHybridFlex4Long+UTAnchorLong*2" />
+		<constant name="UTHybridLongA" value="UTStiffLongA" />
+		<constant name="UTHybridFlex8Long" value="30*mm" />
+		<constant name="UTHybridFlex8Gap" value="1*mm" />
+		<constant name="UTStiffLongB" value="UTSensorLongB+UTHybridFlex8Gap+UTHybridFlex8Long+UTAnchorLong*2" />
+		<constant name="UTHybridLongB" value="UTStiffLongB" />
+		<constant name="UTStiffLongC" value="UTSensorLongC+UTHybridFlex8Gap+UTHybridFlex8Long+UTAnchorLong*2" />
+		<constant name="UTHybridLongC" value="UTStiffLongC" />
+		<constant name="UTStiffLongD" value="UTSensorLongD+UTHybridFlex8Gap+UTHybridFlex8Long+UTAnchorLong*2" />
+		<constant name="UTHybridLongD" value="UTStiffLongD" />
+		<constant name="UTSiAsicThick" value="0.320*mm" />
+		<constant name="UTSilverEpoxyThick" value="0.100*mm" />
+		<constant name="UTAsicThick" value="UTSiAsicThick+UTSilverEpoxyThick" />
+		<constant name="UTHybridFlex4Thick" value="0.400*mm" />
+		<constant name="UTHysolThick" value="0.050*mm" />
+		<constant name="UTStiffThick" value="0.500*mm" />
+		<constant name="UTTimThick" value="0.125*mm" />
+		<constant name="UTHybrid4Thick" value="UTTimThick+UTStiffThick+UTHysolThick+UTHybridFlex4Thick+UTAsicThick+4*UTEpsilon" />
+		<constant name="UTHybridFlex8Thick" value="0.400*mm" />
+		<constant name="UTHybrid8Thick" value="UTTimThick+UTStiffThick+UTHysolThick+UTHybridFlex8Thick+UTAsicThick+4*UTEpsilon" />
+		<constant name="UTAsicWide" value="10.9*mm" />
+		<constant name="UTAsicLong" value="4.75*mm" />
+		<constant name="UTAsicThickAve" value="UTAsicThick*UTAsicWide/UTSensorSiWide" />
+		<constant name="UTHybridFlex4Wide" value="UTSensorWide" />
+		<constant name="UTHybridFlex8Wide" value="UTSensorWide" />
+		<constant name="UTHysolWide" value="UTSensorWide" />
+		<constant name="UTHysolLongA" value="UTSensorLongA+UTHybridFlex4Gap+UTHybridFlex4Long" />
+		<constant name="UTHysolLongB" value="UTSensorLongB+UTHybridFlex8Gap+UTHybridFlex8Long" />
+		<constant name="UTHysolLongC" value="UTSensorLongC+UTHybridFlex8Gap+UTHybridFlex8Long" />
+		<constant name="UTHysolLongD" value="UTSensorLongD+UTHybridFlex8Gap+UTHybridFlex8Long" />
+		<constant name="UTStiffLWide" value="10*mm" />
+		<constant name="UTHysolCutWide" value="UTSensorWide-UTStiffLWide" />
+		<constant name="UTHysolCutLongA" value="UTSensorLongA-UTStiffLWide" />
+		<constant name="UTHysolCutLongB" value="UTSensorLongB-UTStiffLWide" />
+		<constant name="UTHysolCutLongC" value="UTSensorLongC-UTStiffLWide" />
+		<constant name="UTHysolCutLongD" value="UTSensorLongD-UTStiffLWide" />
+		<constant name="UTHysolGapWide" value="1*mm" />
+		<constant name="UTStiffCutWide" value="UTSensorWide-UTStiffLWide" />
+		<constant name="UTStiffCutLongA" value="UTSensorLongA-UTStiffLWide+UTAnchorLong" />
+		<constant name="UTStiffCutLongB" value="UTSensorLongB-UTStiffLWide+UTAnchorLong" />
+		<constant name="UTStiffCutLongC" value="UTSensorLongC-UTStiffLWide+UTAnchorLong" />
+		<constant name="UTStiffCutLongD" value="UTSensorLongD-UTStiffLWide+UTAnchorLong" />
+		<constant name="UTAnchorWide" value="10*mm" />
+		<constant name="UTAnchorSide" value="15*mm" />
+		<constant name="UTTimWide" value="UTSensorWide" />
+		<constant name="UTTimLongA" value="UTSensorLongA+UTHybridFlex4Gap+UTHybridFlex4Long" />
+		<constant name="UTTimLongB" value="UTSensorLongB+UTHybridFlex8Gap+UTHybridFlex8Long" />
+		<constant name="UTTimLongC" value="UTSensorLongC+UTHybridFlex8Gap+UTHybridFlex8Long" />
+		<constant name="UTTimLongD" value="UTSensorLongD+UTHybridFlex8Gap+UTHybridFlex8Long" />
+		<constant name="UTTimCutWide" value="UTSensorWide-UTStiffLWide" />
+		<constant name="UTTimCutLongA" value="UTSensorLongA-UTStiffLWide" />
+		<constant name="UTTimCutLongB" value="UTSensorLongB-UTStiffLWide" />
+		<constant name="UTTimCutLongC" value="UTSensorLongC-UTStiffLWide" />
+		<constant name="UTTimCutLongD" value="UTSensorLongD-UTStiffLWide" />
+		<constant name="UTHybridAsicGap" value="2*mm" />
+		<constant name="UTHybridFlex4End" value="UTHybridFlex4Gap+UTHybridFlex4Long" />
+		<constant name="UTTimZ" value="UTHybrid4Thick/2-UTTimThick/2" />
+		<constant name="UTStiffZ" value="UTTimZ-(UTTimThick+UTStiffThick)/2-UTEpsilon" />
+		<constant name="UTHysolZ" value="UTStiffZ-(UTStiffThick+UTHysolThick)/2-UTEpsilon" />
+		<constant name="UTSensorYA" value="UTHybridLongA/2-UTAnchorLong-UTSensorLongA/2" />
+		<constant name="UTSensorYB" value="UTHybridLongA/2-UTAnchorLong-UTSensorLongA/2" />
+		<constant name="UTSensorYC" value="UTHybridLongA/2-UTAnchorLong-UTSensorLongA/2" />
+		<constant name="UTSensorYD" value="UTHybridLongA/2-UTAnchorLong-UTSensorLongA/2" />
+		<constant name="UTSensorZ" value="UTHysolZ-(UTHysolThick+UTSensorThick)/2-UTEpsilon" />
+		<constant name="UTHybridFlexYA" value="UTSensorYA-UTSensorLongA/2-UTHybridFlex4Gap-UTHybridFlex4Long/2" />
+		<constant name="UTHybridFlexYB" value="UTSensorYB-UTSensorLongB/2-UTHybridFlex8Gap-UTHybridFlex8Long/2" />
+		<constant name="UTHybridFlexYC" value="UTSensorYC-UTSensorLongC/2-UTHybridFlex8Gap-UTHybridFlex8Long/2" />
+		<constant name="UTHybridFlexYD" value="UTSensorYD-UTSensorLongD/2-UTHybridFlex8Gap-UTHybridFlex8Long/2" />
+		<constant name="UTHybridFlex4Z" value="UTHysolZ-(UTHysolThick+UTHybridFlex4Thick)/2-UTEpsilon" />
+		<constant name="UTHybridFlex8Z" value="UTHysolZ-(UTHysolThick+UTHybridFlex8Thick)/2-UTEpsilon" />
+		<constant name="UTAsicYA" value="UTSensorYA-UTSensorLongA/2-UTHybridAsicGap-UTAsicLong/2" />
+		<constant name="UTAsicYB" value="UTSensorYB-UTSensorLongB/2-UTHybridAsicGap-UTAsicLong/2" />
+		<constant name="UTAsicYC" value="UTSensorYC-UTSensorLongC/2-UTHybridAsicGap-UTAsicLong/2" />
+		<constant name="UTAsicYD" value="UTSensorYD-UTSensorLongD/2-UTHybridAsicGap-UTAsicLong/2" />
+		<constant name="UTAsic4Z" value="UTHybridFlex4Z-(UTHybridFlex4Thick+UTAsicThick)/2-UTEpsilon" />
+		<constant name="UTAsic8Z" value="UTHybridFlex8Z-(UTHybridFlex8Thick+UTAsicThick)/2-UTEpsilon" />
+		<!-- ========== Stave ========== -->
+		<constant name="UTBareStaveThick" value="3.90*mm" />
+		<constant name="UTCableKaptonThick" value="0.325*mm" />
+		<constant name="UTCableCuThickL0" value="0.037*mm" />
+		<constant name="UTCableThick" value="UTCableKaptonThick+UTCableCuThickL0" />
+		<constant name="UTStaveThick" value="UTBareStaveThick+UTCableThick*2+UTHybrid4Thick*2 + 4*UTEpsilon" />
+		<constant name="UTBareStaveEdge" value="1*mm" />
+		<constant name="UTBareStaveWide" value="UTHybridWide+2*UTBareStaveEdge" />
+		<constant name="UTStaveWide" value="UTBareStaveWide" />
+		<constant name="UTBareStaveEnd" value="15.11*mm" />
+		<constant name="UTBareStaveLong" value="UTSensorLongA*14-UTSensorOverlapY*13+UTHybridFlex4End*2+UTBareStaveEnd*2" />
+		<constant name="UTBareStaveEOSLong" value="111.28*mm" />
+		<constant name="UTStaveLong" value="UTBareStaveLong+2*UTBareStaveEOSLong" />
+		<constant name="UTCableWide" value="UTBareStaveWide" />
+		<constant name="UTCableLongL0" value="UTSensorLongA-UTSensorOverlapY" />
+		<constant name="UTCableLongL1" value="UTSensorLongA*2-UTSensorOverlapY*2" />
+		<constant name="UTCableLongL2" value="UTSensorLongA*2-UTSensorOverlapY*2" />
+		<constant name="UTCableLongL3" value="UTSensorLongA+UTSensorLongC-UTSensorOverlapY*2" />
+		<constant name="UTCableLongL" value="UTCableLongL0+UTCableLongL1+UTCableLongL2+UTCableLongL3" />
+		<constant name="UTCableLongM0" value="UTBareStaveEOSLong" />
+		<constant name="UTCableLongM1" value="UTSensorLongA*2-UTSensorOverlapY*2" />
+		<constant name="UTCableLongM2" value="UTSensorLongA*2-UTSensorOverlapY*2" />
+		<constant name="UTCableLongM3" value="UTSensorLongA*2-UTSensorOverlapY*2" />
+		<constant name="UTCableLongM" value="UTCableLongM0+UTCableLongM1+UTCableLongM2+UTCableLongM3" />
+		<constant name="UTCableLongS0" value="UTBareStaveEOSLong+UTSensorLongA-UTSensorOverlapY" />
+		<constant name="UTCableLongS1" value="UTSensorLongA*2-UTSensorOverlapY*2" />
+		<constant name="UTCableLongS2" value="UTSensorLongA*2-UTSensorOverlapY*2" />
+		<constant name="UTCableLongS" value="UTCableLongS0+UTCableLongS1+UTCableLongS2" />
+		<constant name="UTCableCuThickL1" value="0.032*mm" />
+		<constant name="UTCableCuThickL2" value="0.026*mm" />
+		<constant name="UTCableCuThickL3" value="0.011*mm" />
+		<constant name="UTCableCuThickM0" value="0.037*mm" />
+		<constant name="UTCableCuThickM1" value="0.030*mm" />
+		<constant name="UTCableCuThickM2" value="0.020*mm" />
+		<constant name="UTCableCuThickM3" value="0.010*mm" />
+		<constant name="UTCableCuThickS0" value="0.030*mm" />
+		<constant name="UTCableCuThickS1" value="0.020*mm" />
+		<constant name="UTCableCuThickS2" value="0.010*mm" />
+		<constant name="UTMegArrayWide" value="55*mm" />
+		<constant name="UTMegArrayLong" value="17.5*mm" />
+		<constant name="UTMegArrayThick" value="3*mm" />
+		<constant name="UTMegArrayY" value="40.8*mm" />
+		<constant name="UTHVConnectorWide" value="20*mm" />
+		<constant name="UTHVConnectorLong" value="10*mm" />
+		<constant name="UTHVConnectorThick" value="3*mm" />
+		<constant name="UTHVConnectorLX" value="36*mm" />
+		<constant name="UTHVConnectorMX" value="-36*mm" />
+		<constant name="UTHVConnectorSX" value="36*mm" />
+		<constant name="UTCoolingJointLong" value="30*mm" />
+		<constant name="UTCoolingJointR0" value="2.0*mm" />
+		<constant name="UTCoolingJointR1" value="1.0*mm" />
+		<constant name="UTCoolingJointX" value="-40*mm" />
+		<constant name="UTStaveHybridAStepY" value="UTSensorLongA-UTSensorOverlapY" />
+		<constant name="UTStaveHybridBStepY" value="UTSensorLongB-UTSensorOverlapY" />
+		<constant name="UTStaveHybridCStepY" value="UTSensorLongC-UTSensorOverlapY" />
+		<constant name="UTStaveHybridDStepY" value="UTSensorLongD-UTSensorOverlapY" />
+		<constant name="UTStaveAHybridY0" value="UTHybridLongA/2-UTAnchorLong-UTSensorOverlapY0/2-UTStaveHybridAStepY/2" />
+		<constant name="UTStaveBHybridY0" value="UTHybridLongB/2-UTAnchorLong-UTSensorOverlapY0/2-UTStaveHybridBStepY/2" />
+		<constant name="UTStaveCHybridY0" value="UTHybridLongD/2-UTAnchorLong-UTSensorOverlapY0/2-UTStaveHybridDStepY/2" />
+		<constant name="UTStaveCableZ" value="UTBareStaveThick/2+UTCableThick/2+UTEpsilon" />
+		<constant name="UTStaveHybridZ" value="UTBareStaveThick/2+UTHybrid4Thick/2+UTCableThick+2*UTEpsilon" />
+		<!-- Aluminium frame -->
+		<constant name="UTFrameThick" value="15*mm" />
+		<constant name="UTVirtualBoxWide" value="2586*mm" />
+		<constant name="UTFrameOuterWide" value="UTVirtualBoxWide" />
+		<constant name="UTVirtualBoxLong" value="2628*mm" />
+		<constant name="UTFrameOuterLong" value="UTVirtualBoxLong" />
+		<constant name="UTBoxOuterWide" value="2040*mm" />
+		<constant name="UTFrameInnerWide" value="UTBoxOuterWide" />
+		<constant name="UTBoxOuterLong" value="1960*mm" />
+		<constant name="UTFrameInnerLong" value="UTBoxOuterLong" />
+		<!-- UT light tight box -->
+		<constant name="UTBoxOuterThick" value="430.0*mm" />
+		<constant name="UTBoxWallDownstreamThick" value="20.0*mm" />
+		<constant name="UTBoxInnerThick" value="UTBoxOuterThick-2*UTBoxWallDownstreamThick" />
+		<constant name="UTBoxWallSideThick" value="25.0*mm" />
+		<constant name="UTBoxInnerWide" value="UTBoxOuterWide-2*UTBoxWallSideThick" />
+		<constant name="UTBoxInnerLong" value="UTBoxOuterLong-2*UTBoxWallSideThick" />
+		<!-- UTBoxWallUpstreamThick is thickness of plates on front and back (in Z) in the UT -->
+		<!-- UTBoxWallSideThick is thickness of top, bottom, left, and right plates when looking downstream -->
+		<constant name="UTBeamHoleRadius" value="33.4*mm" />
+		<constant name="UTBoxBeamHoleRadius" value="UTBeamHoleRadius-0.1*mm" />
+		<!-- UT box plug -->
+		<constant name="UTCylJacketThick" value="5.12*mm" />
+		<constant name="UTConeJacketThick" value="UTCylJacketThick" />
+		<constant name="UTPipeHeaterDownstreamThick" value="0.35*mm" />
+		<constant name="UTConeJacketRadiusZmax" value="UX851Cone08ARadiusZmax+UX851Cone08AThick+UTPipeHeaterDownstreamThick+0.01*mm" />
+		<constant name="UTPlugOuterRadius" value="UTConeJacketRadiusZmax + UTConeJacketThick + 57.6*mm" />
+		<constant name="UTPlugInnerRadius" value="UTConeJacketRadiusZmax + UTConeJacketThick" />
+		<constant name="UTPlugThickZ" value="UTBoxWallDownstreamThick" />
+		<constant name="UTInternalRingThick" value="5.0*mm" />
+		<constant name="UTInternalRingIR" value="46.0*mm" />
+		<constant name="UTInternalRingOR" value="80.0*mm" />
+		<constant name="UTInternalSealThick" value="5.0*mm" />
+		<constant name="UTInternalSealIR" value="43.5*mm" />
+		<constant name="UTInternalSealOR" value="46.0*mm" />
+		<constant name="UTBoxPipeAirexRingInnerThick" value="8.0*mm" />
+		<constant name="UTBoxPipeAirexRingMiddleThick" value="10.0*mm" />
+		<constant name="UTBoxPipeAirexRingOuterThick" value="8.0*mm" />
+		<constant name="UTBoxPipeAirexRingIR" value="35.0*mm" />
+		<constant name="UTBoxPipeAirexRingInnerOR" value="43.5*mm" />
+		<constant name="UTBoxPipeAirexRingMiddleOR" value="52.0*mm" />
+		<constant name="UTBoxPipeAirexRingOuterOR" value="43.5*mm" />
+		<constant name="UTBoxWallSealThick" value="10.0*mm" />
+		<constant name="UTBoxWallSealIR" value="UTBoxPipeAirexRingMiddleOR" />
+		<constant name="UTBoxWallSealOR" value="55.0*mm" />
+		<!-- Kapton beam pipe jacket -->
+		<constant name="UTCylJacketLength" value="UX851Cyl07BLenght" />
+		<constant name="UTCylJacketZpos" value="UTCylJacketLength*0.5" />
+		<!-- 230 -->
+		<constant name="UTPipeHeaterUpstreamRadius" value="UX851Cyl07Radius+UX851Cyl07Thick+0.01*mm" />
+		<constant name="UTPipeHeaterUpstreamThick" value="0.35*mm" />
+		<constant name="UTCylJacketRadius" value="UTPipeHeaterUpstreamRadius+UTPipeHeaterUpstreamThick+0.01*mm" />
+		<constant name="UTConeJacketLength" value="UX851Cone08ALenght" />
+		<!-- 200 -->
+		<!-- 27.0009+1+0.01 -->
+		<constant name="UTConeJacketRadiusZmin" value="UX851Cone08ARadiusZmin+UX851Cone08AThick+UTPipeHeaterDownstreamThick+0.01*mm" />
+		<!-- 25+1+0.01 -->
+		<!-- aerogel cutout -->
+		<constant name="UTConeJacketCutOutOffset" value="5*mm" />
+		<constant name="UTLayerDz" value="55*mm" />
+		<constant name="UTStaveDz" value="15*mm" />
+		<constant name="UTConeJacketCutOutLength" value="UTLayerDz+UTStaveDz+UTStaveThick+2*UTConeJacketCutOutOffset" />
+		<constant name="UTSystemZ" value="2485*mm" />
+		<constant name="UTStationDz" value="280*mm" />
+		<constant name="UTConeJacketCutOutPos" value="UTSystemZ+0.5*UTStationDz-0.5*UTLayerDz-0.5*UTStaveDz-0.5*UTStaveThick-UTConeJacketCutOutOffset-UX851Rich1TTSplitZposIP" />
+		<constant name="UTConeJacketCutOutLHCbZmin" value="UX851Rich1TTSplitZposIP+UTConeJacketCutOutPos" />
+		<constant name="UTConeJacketCutOutLHCbZmax" value="UX851Rich1TTSplitZposIP+UTConeJacketCutOutPos+UTConeJacketCutOutLength" />
+		<constant name="UTConeJacketCutOutRadiusZmin" value="UTConeJacketCutOutLHCbZmin*tan(UX851to4Angle)+UX851Cyl07Thick+UTPipeHeaterDownstreamThick+0.01*mm" />
+		<constant name="UTConeJacketCutOutRadiusZmax" value="UTConeJacketCutOutLHCbZmax*tan(UX851to4Angle)+UX851Cyl07Thick+UTPipeHeaterDownstreamThick+0.02*mm" />
+		<constant name="UTConeJacketUpstreamLength" value="UTConeJacketCutOutPos-UTCylJacketLength" />
+		<constant name="UTConeJacketDownstreamLength" value="UTConeJacketLength-UTConeJacketUpstreamLength-UTConeJacketCutOutLength" />
+		<constant name="UTConeJacketZposUpstream" value="UTCylJacketLength+UTConeJacketUpstreamLength*0.5" />
+		<constant name="UTConeJacketZposDownstream" value="UTConeJacketCutOutPos+UTConeJacketCutOutLength+0.5*UTConeJacketDownstreamLength" />
+		<!-- beam pipe heaters -->
+		<constant name="UTPipeHeaterUpstreamLength" value="200.0*mm" />
+		<!-- 25+1+0.01 -->
+		<constant name="UTPipeHeaterUpstreamPos" value="UX851Rich1TTSplitZposIP-UTSystemZ-17.0*mm+0.5*UTPipeHeaterUpstreamLength" />
+		<constant name="UTPipeHeaterDownstreamLength" value="67.0*mm" />
+		<constant name="UTPipeHeaterDownstreamZmin" value="UX851TTMagnetSplitZposIP-UTBoxWallDownstreamThick-5*mm" />
+		<constant name="UTPipeHeaterDownstreamLengthInUT" value="UX851TTMagnetSplitZposIP-UTPipeHeaterDownstreamZmin" />
+		<constant name="UTPipeHeaterDownstreamLengthInMagnet" value="UTPipeHeaterDownstreamLength-UTPipeHeaterDownstreamLengthInUT" />
+		<constant name="UTPipeHeaterDownstreamZmax" value="UTPipeHeaterDownstreamZmin+UTPipeHeaterDownstreamLength" />
+		<constant name="UTPipeHeaterDownstreamRadiusZmin" value="UTPipeHeaterDownstreamZmin*tan(UX851to4Angle)+UX851Cyl07Thick+0.01*mm" />
+		<constant name="UTPipeHeaterDownstreamRadiusZmax" value="UTPipeHeaterDownstreamZmax*tan(UX851to4Angle)+UX851Cyl07Thick+0.01*mm" />
+		<constant name="UTPipeHeaterDownstreamPos" value="UTPipeHeaterDownstreamZmin+0.5*UTPipeHeaterDownstreamLength-UTSystemZ" />
+		<!-- Detector Z positions -->
+		<!-- virtual thickness -->
+		<constant name="UTEOSPigtailThick" value="7.236*mm" />
+		<constant name="UTLayerThick" value="UTStaveThick+UTStaveDz+UTEOSPigtailThick+0.01*mm" />
+		<constant name="UTStationThick" value="UTLayerThick+UTLayerDz+0.01*mm" />
+		<constant name="UTVirtualBoxAWide" value="UTBoxInnerWide" />
+		<constant name="UTVirtualBoxBWide" value="UTBoxInnerWide" />
+		<constant name="UTVirtualHoleRadius" value="UTPlugInnerRadius-0.1*mm" />
+		<!-- Beam pipe hole -->
+		<constant name="UTAngle" value="5.0*degree" />
+		<constant name="UTSinAngle" value="sin(UTAngle)" />
+		<constant name="UTEOSWideUTa" value="16*UTStaveWide+UTSinAngle*UTStaveLong" />
+		<constant name="UTEOSWideUTb" value="18*UTStaveWide+UTSinAngle*UTStaveLong" />
+		<constant name="UTEOSLong" value="46.765*mm" />
+		<constant name="UTEOSThick" value="3.29*mm" />
+		<constant name="UTEOSPigtailLong" value="(UTBoxInnerLong-UTBareStaveLong)/2-UTEOSLong" />
+		<!-- Stereo angle -->
+		<constant name="UTCosAngle" value="cos(UTAngle)" />
+		<!-- Stave positions -->
+		<!--
+		From the center to either side, the design has one instance of 5.5mm
+		overlap, then 2 instances of 4.2mm overlap, and the rest is 3.6mm overlap
+		-->
+		<constant name="UTStaveAOverlap" value="3.600*mm" />
+		<constant name="UTStaveBOverlap" value="4.200*mm" />
+		<constant name="UTStaveCOverlap" value="5.500*mm" />
+		<constant name="UTStaveStep" value="UTStaveWide-UTStaveAOverlap" />
+		<constant name="UTStaveCCorrect" value="(UTStaveCOverlap-UTStaveAOverlap)/2" />
+		<constant name="UTStaveBCorrect" value="UTStaveCCorrect+(UTStaveBOverlap-UTStaveAOverlap)" />
+		<constant name="UTStaveACorrect" value="UTStaveBCorrect+(UTStaveBOverlap-UTStaveAOverlap)" />
+		<!-- U/V layers have different corrections due to stereo angle -->
+		<constant name="UTUVGlobalCorrectX" value="(UTStaveStep/2-UTStaveCCorrect)*(1.0/UTCosAngle-1)" />
+		<constant name="UTUVHoleCorrectX" value="UTStaveStep*(UTSinAngle*UTSinAngle/UTCosAngle)" />
+		<constant name="UTStaveCCorrectUV" value="UTStaveCCorrect-UTUVGlobalCorrectX+UTUVHoleCorrectX" />
+		<constant name="UTStaveBCorrectUV" value="UTStaveBCorrect-UTUVGlobalCorrectX" />
+		<constant name="UTStaveACorrectUV" value="UTStaveACorrect-UTUVGlobalCorrectX" />
+		<constant name="UTStaveCUVPosY" value="UTSinAngle*(UTStaveWide-UTStaveCOverlap)/2" />
+		<constant name="UTaXR1S1CorrectionX" value="-1.9*mm" />
+		<constant name="UTaXR1S2CorrectionX" value="2.1*mm" />
+		<constant name="UTaXR1S3CorrectionX" value="-1.8*mm" />
+		<constant name="UTaXR1S4CorrectionX" value="1.0*mm" />
+		<constant name="UTaXR1S5CorrectionX" value="-1.7*mm" />
+		<constant name="UTaXR1S6CorrectionX" value="0.0*mm" />
+		<constant name="UTaXR2S1CorrectionX" value="-1.0*mm" />
+		<constant name="UTaXR2S2CorrectionX" value="0.*mm" />
+		<constant name="UTaXR2S3CorrectionX" value="0.*mm" />
+		<constant name="UTaXR2S4CorrectionX" value="-0.2*mm" />
+		<constant name="UTaXR3S1CorrectionX" value="1.5*mm" />
+		<constant name="UTaXR3S2CorrectionX" value="-0.6*mm" />
+		<constant name="UTaXR3S3CorrectionX" value="1.7*mm" />
+		<constant name="UTaXR3S4CorrectionX" value="-1.5*mm" />
+		<constant name="UTaXR3S5CorrectionX" value="2.00*mm" />
+		<constant name="UTaXR3S6CorrectionX" value="-2.5*mm" />
+
+		<constant name="UTaUR1S1CorrectionX" value="-1.720*mm" />
+		<constant name="UTaUR1S2CorrectionX" value="2.180*mm" />
+		<constant name="UTaUR1S3CorrectionX" value="-1.620*mm" />
+		<constant name="UTaUR1S4CorrectionX" value="1.180*mm" />
+		<constant name="UTaUR1S5CorrectionX" value="-1.520*mm" />
+		<constant name="UTaUR1S6CorrectionX" value="0.180*mm" />
+		<constant name="UTaUR2S1CorrectionX" value="-0.820*mm" />
+		<constant name="UTaUR2S2CorrectionX" value="-0.552*mm" />
+		<constant name="UTaUR2S3CorrectionX" value="0.552*mm" />
+		<constant name="UTaUR2S4CorrectionX" value="-0.380*mm" />
+		<constant name="UTaUR3S1CorrectionX" value="1.220*mm" />
+		<constant name="UTaUR3S2CorrectionX" value="-0.780*mm" />
+		<constant name="UTaUR3S3CorrectionX" value="1.520*mm" />
+		<constant name="UTaUR3S4CorrectionX" value="-1.780*mm" />
+		<constant name="UTaUR3S5CorrectionX" value="1.720*mm" />
+		<constant name="UTaUR3S6CorrectionX" value="-2.680*mm" />
+
+		<constant name="UTbVR1S1CorrectionX" value="2.680*mm" />
+		<constant name="UTbVR1S2CorrectionX" value="-1.92*mm" />
+		<constant name="UTbVR1S3CorrectionX" value="1.780*mm" />
+		<constant name="UTbVR1S4CorrectionX" value="-1.720*mm" />
+		<constant name="UTbVR1S5CorrectionX" value="0.880*mm" />
+		<constant name="UTbVR1S6CorrectionX" value="-1.520*mm" />
+		<constant name="UTbVR1S7CorrectionX" value="-0.120*mm" />
+		<constant name="UTbVR2S1CorrectionX" value="-0.820*mm" />
+		<constant name="UTbVR2S2CorrectionX" value="-0.552*mm" />
+		<constant name="UTbVR2S3CorrectionX" value="0.552*mm" />
+		<constant name="UTbVR2S4CorrectionX" value="-0.18*mm" />
+		<constant name="UTbVR3S1CorrectionX" value="1.22*mm" />
+		<constant name="UTbVR3S2CorrectionX" value="-0.68*mm" />
+		<constant name="UTbVR3S3CorrectionX" value="1.42*mm" />
+		<constant name="UTbVR3S4CorrectionX" value="-1.58*mm" />
+		<constant name="UTbVR3S5CorrectionX" value="1.52*mm" />
+		<constant name="UTbVR3S6CorrectionX" value="-2.48*mm" />
+		<constant name="UTbVR3S7CorrectionX" value="1.72*mm" />
+
+		<constant name="UTbXR1S1CorrectionX" value="2.4*mm" />
+		<constant name="UTbXR1S2CorrectionX" value="-2.1*mm" />
+		<constant name="UTbXR1S3CorrectionX" value="1.5*mm" />
+		<constant name="UTbXR1S4CorrectionX" value="-1.9*mm" />
+		<constant name="UTbXR1S5CorrectionX" value="0.6*mm" />
+		<constant name="UTbXR1S6CorrectionX" value="-1.7*mm" />
+		<constant name="UTbXR1S7CorrectionX" value="-0.3*mm" />
+		<constant name="UTbXR2S1CorrectionX" value="-1.0*mm" />
+		<constant name="UTbXR2S2CorrectionX" value="0.0*mm" />
+		<constant name="UTbXR2S3CorrectionX" value="0.0*mm" />
+		<constant name="UTbXR2S4CorrectionX" value="0.0*mm" />
+		<constant name="UTbXR3S1CorrectionX" value="1.4*mm" />
+		<constant name="UTbXR3S2CorrectionX" value="-0.4*mm" />
+		<constant name="UTbXR3S3CorrectionX" value="1.6*mm" />
+		<constant name="UTbXR3S4CorrectionX" value="-1.3*mm" />
+		<constant name="UTbXR3S5CorrectionX" value="1.8*mm" />
+		<constant name="UTbXR3S6CorrectionX" value="-2.2*mm" />
+		<constant name="UTbXR3S7CorrectionX" value="1.9*mm" />
+		<!-- A/C side cuts -->
+		<constant name="UTStaveGap" value="UTStaveDz-UTStaveThick" />
+		<constant name="UTSideCutGap" value="10*mm" />
+		<constant name="UTaXSideOverlap" value="UTStaveWide-(UTStaveStep+UTStaveCCorrect)" />
+		<constant name="UTBareLayerThick" value="UTStaveThick+UTStaveDz+0.01*mm" />
+		<constant name="UTaXLayerCut" value="(UTaXSideOverlap+3*UTSideCutGap)*(0.5*(UTLayerThick+UTStaveDz-UTStaveThick)/(UTStaveDz-UTStaveThick))-(0.5*UTaXSideOverlap+2*UTSideCutGap)" />
+		<constant name="UTaXLayerSideLongWidth" value="17/2*UTStaveStep-UTStaveACorrect+1/2*UTStaveWide+2*UTaXLayerCut-1/2*UTaXSideOverlap" />
+		<constant name="UTaXLayerSideShortWidth" value="UTaXLayerSideLongWidth-2*(2*UTaXLayerCut+UTSideCutGap)" />
+		<constant name="UTaULayerSideLongWidth" value="UTaXLayerSideLongWidth" />
+		<constant name="UTaULayerSideShortWidth" value="UTaXLayerSideShortWidth" />
+		<constant name="UTbVLayerSideLongWidth" value="UTaXLayerSideLongWidth" />
+		<constant name="UTbVLayerSideShortWidth" value="UTaXLayerSideShortWidth" />
+		<constant name="UTbXLayerSideLongWidth" value="UTaXLayerSideLongWidth" />
+		<constant name="UTbXLayerSideShortWidth" value="UTaXLayerSideShortWidth" />
+		<constant name="UTLayerSideCorrectedWidth" value="UTaXLayerSideLongWidth-2*UTaXLayerCut" />
+		<constant name="UTLayerSideCorrectedX" value="1/2*UTLayerSideCorrectedWidth*(1-UTCosAngle)" />
+		<constant name="UTLayerSideCorrectedY" value="1/2*UTLayerSideCorrectedWidth*UTSinAngle" />
+	</define>
+	<materials>
+		<!-- Elements (temporary) -->
+		<element Z="13" formula="Al" name="UT:AluminiumElement">
+			<!-- <D type="density" value="2.7" unit="g/cm3" /> -->
+			<atom type="A" unit="g/mol" value="26.98" />
+		</element>
+		<element Z="56" formula="Ba" name="UT:Barium">
+			<D type="density" value="3.51" unit="g/cm3" />
+			<atom type="A" unit="g/mol" value="137.327" />
+		</element>
+		<material density="0.46*g/cm3" name="UT:EPDM">
+			<D type="density" unit="g/cm3" value="0.46" />
+			<composite n="5" ref="Carbon" />
+			<composite n="10" ref="Hydrogen" />
+		</material>
+		<material name="UT:Aluminium">
+			<D type="density" value="2.7" unit="g/cm3" />
+			<fraction n="1.000" ref="UT:AluminiumElement" />
+		</material>
+		<material name="UT:Steel">
+			<!-- Hangyi -->
+			<D type="density" unit="g/cm3" value="7.8" />
+			<fraction n="0.7" ref="Iron" />
+			<fraction n="0.1" ref="Carbon" />
+			<fraction n="0.2" ref="Copper" />
+		</material>
+		<material name="UT:Airex">
+			<D type="density" value="0.06" unit="g/cm3" />
+			<composite n="37" ref="Carbon" />
+			<composite n="24" ref="Hydrogen" />
+			<composite n="6" ref="Oxygen" />
+			<composite n="2" ref="Nitrogen" />
+		</material>
+		<material name="UT:Al2O3">
+			<D type="density" value="3.97" unit="g/cm3" />
+			<composite n="2" ref="UT:Aluminium" />
+			<composite n="3" ref="Oxygen" />
+		</material>
+		<material name="UT:AluminaTrihydrate">
+			<D type="density" value="2.42" unit="g/cm3" />
+			<composite n="1" ref="UT:Aluminium" />
+			<composite n="3" ref="Hydrogen" />
+			<composite n="3" ref="Oxygen" />
+		</material>
+		<material name="UT:AluminiumNitride">
+			<D type="density" value="3.30" unit="g/cm3" />
+			<composite n="1" ref="UT:Aluminium" />
+			<composite n="1" ref="Nitrogen" />
+		</material>
+		<material name="UT:BaTiO3">
+			<D type="density" value="6.02" unit="g/cm3" />
+			<composite n="1" ref="UT:Barium" />
+			<composite n="1" ref="Titanium" />
+			<composite n="3" ref="Oxygen" />
+		</material>
+		<material name="UT:BoronNitride">
+			<D type="density" value="2.29" unit="g/cm3" />
+			<composite n="1" ref="Boron" />
+			<composite n="1" ref="Nitrogen" />
+		</material>
+		<material name="UT:DiamondPowder">
+			<D type="density" value="3.51" unit="g/cm3" />
+			<composite n="1" ref="Carbon" />
+		</material>
+		<material name="UT:Glass">
+			<D type="density" value="2.46" unit="g/cm3" />
+			<composite n="1" ref="Silicon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UT:Kevlar">
+			<D type="density" value="1.44" unit="g/cm3" />
+			<composite n="2" ref="Nitrogen" />
+			<composite n="10" ref="Hydrogen" />
+			<composite n="14" ref="Carbon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UT:Polyethylene">
+			<D type="density" value="0.93" unit="g/cm3" />
+			<composite n="2" ref="Carbon" />
+			<composite n="4" ref="Hydrogen" />
+		</material>
+		<material name="UT:Polyurethane">
+			<D type="density" value="1.005" unit="g/cm3" />
+			<composite n="3" ref="Carbon" />
+			<composite n="8" ref="Hydrogen" />
+			<composite n="2" ref="Nitrogen" />
+			<composite n="1" ref="Oxygen" />
+		</material>
+		<material name="UT:PlugFoam">
+			<D type="density" value="0.2" unit="g/cm3" />
+			<fraction n="1.0000" ref="UT:Polyurethane" />
+		</material>
+		<!-- Ethylene Propylene Rubber -->
+		<material name="UT:EPR">
+			<D type="density" value="0.86" unit="g/cm3" />
+			<composite n="6" ref="Carbon" />
+			<composite n="10" ref="Hydrogen" />
+		</material>
+		<material name="UT:SilicaAerogel">
+			<D type="density" value="0.0898" unit="g/cm3" />
+			<composite n="1" ref="Silicon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UT:TitaniumDioxide">
+			<D type="density" value="4.23" unit="g/cm3" />
+			<composite n="1" ref="Titanium" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UT:RohacellFoam">
+			<D type="density" value="0.051" unit="g/cm3" />
+			<fraction n="0.6084" ref="Carbon" />
+			<fraction n="0.2200" ref="Oxygen" />
+			<fraction n="0.0740" ref="Hydrogen" />
+			<fraction n="0.0960" ref="Nitrogen" />
+			<fraction n="0.0016" ref="Zinc" />
+		</material>
+		<material name="UT:AllcompK9Foam">
+			<D type="density" value="0.200" unit="g/cm3" />
+			<fraction n="1.0000" ref="Carbon" />
+		</material>
+		<!-- Mixtures -->
+		<material name="UT:Epoxy">
+			<D type="density" value="1.3" unit="g/cm3" />
+			<fraction n="0.07" ref="Hydrogen" />
+			<fraction n="0.76" ref="Carbon" />
+			<fraction n="0.17" ref="Oxygen" />
+		</material>
+		<!-- Kapton from wiki/Kapton -->
+		<material name="UT:Kapton">
+			<D type="density" value="1.43" unit="g/cm3" />
+			<composite n="22" ref="Carbon" />
+			<composite n="10" ref="Hydrogen" />
+			<composite n="2" ref="Nitrogen" />
+			<composite n="5" ref="Oxygen" />
+		</material>
+		<material name="UT:CarbonFiber">
+			<D type="density" value="1.72" unit="g/cm3" />
+			<composite n="6" ref="Hydrogen" />
+			<composite n="9" ref="Carbon" />
+			<composite n="2" ref="Oxygen" />
+			<composite n="3" ref="Nitrogen" />
+		</material>
+		<material name="UT:Traces">
+			<D type="density" value="9.023" unit="g/cm3" />
+			<fraction n="0.44" ref="Copper" />
+			<fraction n="0.02" ref="Gold" />
+			<fraction n="0.54" ref="Nickel" />
+		</material>
+		<material name="UT:WireBonds">
+			<D type="density" value="2.7" unit="g/cm3" />
+			<fraction n="1.0" ref="UT:Aluminium" />
+		</material>
+		<material name="UT:EthyleneAlcohol">
+			<D type="density" value="1.1132" unit="g/cm3" />
+			<composite n="6" ref="Hydrogen" />
+			<composite n="2" ref="Carbon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UT:CoolingFluid">
+			<D type="density" value="1.0684" unit="g/cm3" />
+			<fraction n="0.63" ref="UT:EthyleneAlcohol" />
+			<fraction n="0.37" ref="Water" />
+		</material>
+		<material name="UT:PyrogelXT">
+			<D type="density" value="0.18" unit="g/cm3" />
+			<fraction n="0.48" ref="UT:SilicaAerogel" />
+			<fraction n="0.48" ref="UT:Glass" />
+			<fraction n="0.02" ref="UT:TitaniumDioxide" />
+			<fraction n="0.02" ref="UT:AluminaTrihydrate" />
+		</material>
+		<material name="UT:HysolBN">
+			<D type="density" value="1.342" unit="g/cm3" />
+			<fraction n="0.7692" ref="UT:Epoxy" />
+			<fraction n="0.2308" ref="UT:BoronNitride" />
+		</material>
+		<material name="UT:BareStave">
+			<D type="density" value="0.3823" unit="g/cm3" />
+			<fraction n="0.0383" ref="UT:RohacellFoam" />
+			<fraction n="0.0801" ref="UT:AllcompK9Foam" />
+			<fraction n="0.4614" ref="UT:CarbonFiber" />
+			<fraction n="0.0588" ref="Titanium" />
+			<fraction n="0.0062" ref="UT:Epoxy" />
+			<fraction n="0.0453" ref="UT:CoolingFluid" />
+			<fraction n="0.3099" ref="UT:HysolBN" />
+		</material>
+		<material name="UT:BeamPipeJacket">
+			<D type="density" value="0.209" unit="g/cm3" />
+			<fraction n="0.1601" ref="UT:Kapton" />
+			<fraction n="0.8399" ref="UT:PyrogelXT" />
+		</material>
+		<material name="UT:PipeHeater">
+			<D type="density" value="1.703" unit="g/cm3" />
+			<fraction n="0.1909" ref="Copper" />
+			<fraction n="0.8091" ref="UT:Kapton" />
+		</material>
+		<material name="UT:HybridFlex8">
+			<D type="density" value="1.710" unit="g/cm3" />
+			<fraction n="0.5167" ref="UT:Kapton" />
+			<fraction n="0.4486" ref="Copper" />
+			<fraction n="0.0347" ref="UT:HysolBN" />
+		</material>
+		<material name="UT:EOSPigtail">
+			<D type="density" value="4.279" unit="g/cm3" />
+			<fraction n="0.9282" ref="UT:Steel" />
+			<fraction n="0.0718" ref="UT:HybridFlex8" />
+		</material>
+		<material name="UT:BoxWall">
+			<D type="density" value="0.1038" unit="g/cm3" />
+			<fraction n="0.3471" ref="UT:CarbonFiber" />
+			<fraction n="0.0607" ref="UT:Epoxy" />
+			<fraction n="0.0315" ref="UT:Aluminium" />
+			<fraction n="0.5607" ref="UT:Airex" />
+		</material>
+		<material name="UT:CFPrePreg">
+			<D type="density" value="1.460" unit="g/cm3" />
+			<fraction n="0.53" ref="Carbon" />
+			<fraction n="0.47" ref="UT:Epoxy" />
+		</material>
+		<material name="UT:Resistor">
+			<D type="density" value="4.2768" unit="g/cm3" />
+			<fraction n="0.86" ref="UT:Al2O3" />
+			<fraction n="0.08" ref="Nickel" />
+			<fraction n="0.06" ref="Tin" />
+		</material>
+		<material name="UT:Capacitor">
+			<D type="density" value="6.2480" unit="g/cm3" />
+			<fraction n="0.86" ref="UT:BaTiO3" />
+			<fraction n="0.08" ref="Nickel" />
+			<fraction n="0.06" ref="Tin" />
+		</material>
+		<material name="UT:Dcdc">
+			<D type="density" value="7.4825" unit="g/cm3" />
+			<fraction n="0.0026" ref="Silicon" />
+			<fraction n="0.5186" ref="Gold" />
+			<fraction n="0.2672" ref="UT:Polyethylene" />
+			<fraction n="0.0017" ref="UT:Resistor" />
+			<fraction n="0.2099" ref="UT:Capacitor" />
+		</material>
+		<material name="UT:FlexCable">
+			<D type="density" value="1.8092" unit="g/cm3" />
+			<fraction n="0.5751" ref="UT:Kapton" />
+			<fraction n="0.2681" ref="Copper" />
+			<fraction n="0.1568" ref="UT:HysolBN" />
+		</material>
+		<material name="UT:HybridFilm">
+			<D type="density" value="3.912" unit="g/cm3" />
+			<fraction n="0.5731" ref="UT:Glass" />
+			<fraction n="0.4269" ref="Gold" />
+			<fraction n="0.0000" ref="UT:Epoxy" />
+		</material>
+		<material name="UT:HybridFlex4">
+			<D type="density" value="1.710" unit="g/cm3" />
+			<fraction n="0.7410" ref="UT:Kapton" />
+			<fraction n="0.2243" ref="Copper" />
+			<fraction n="0.0347" ref="UT:HysolBN" />
+		</material>
+		<material name="UT:BoxPlug">
+			<D type="density" value="0.86" unit="g/cm3" />
+			<fraction n="0.9999" ref="UT:EPR" />
+			<fraction n="0.0001" ref="UT:Epoxy" />
+		</material>
+		<material name="UT:HybridTim">
+			<D type="density" value="1.100" unit="g/cm3" />
+			<fraction n="1.0000" ref="UT:Epoxy" />
+		</material>
+		<material name="UT:HysolDia">
+			<D type="density" value="1.310" unit="g/cm3" />
+			<fraction n="0.7692" ref="UT:Epoxy" />
+			<fraction n="0.2308" ref="UT:DiamondPowder" />
+		</material>
+		<material name="UT:SilverEpoxy">
+			<D type="density" value="3.200" unit="g/cm3" />
+			<fraction n="0.9434" ref="UT:Epoxy" />
+			<fraction n="0.0566" ref="Silver" />
+		</material>
+		<material name="UT:Asic">
+			<D type="density" value="2.404" unit="g/cm3" />
+			<fraction n="0.9351" ref="Silicon" />
+			<fraction n="0.0360" ref="Copper" />
+			<fraction n="0.0289" ref="UT:Aluminium" />
+		</material>
+		<material name="UT:UTAsic">
+			<D type="density" value="2.5935" unit="g/cm3" />
+			<fraction n="0.7062" ref="UT:Asic" />
+			<fraction n="0.2938" ref="UT:SilverEpoxy" />
+		</material>
+	</materials>
+	<display>
+		<vis name="DEBUG:RED" alpha="0.5" r="1.0" g="0.0" b="0.0" showDaughters="true" visible="true" />
+		<vis name="DEBUG:GREEN" alpha="0.5" r="0.0" g="1.0" b="0.0" showDaughters="true" visible="true" />
+		<vis name="DEBUG:BLUE" alpha="0.5" r="0.0" g="0.0" b="1.0" showDaughters="true" visible="true" />
+		<vis name="UT:Envelope" alpha="0.0" r="0.5" g="0.5" b="0.5" showDaughters="true" visible="false" />
+		<vis name="UT:Invisible" alpha="0.0" r="1.0" g="1.0" b="1.0" showDaughters="false" visiable="false" />
+		<vis name="UT:Box" alpha="0.1" r="0.95" g="0.95" b="0.95" showDaughters="true" visible="true" />
+		<vis name="UT:Airex" alpha="1.0" r="0.11" g="0.28" b="0.41" showDaughters="false" visible="true" />
+		<vis name="UT:Connector" alpha="1.0" r="0.93" g="0.91" b="0.91" showDaughters="false" visible="true" />
+		<vis name="UT:EPDM" alpha="1.0" r="0.75" g="0.75" b="0.90" showDaughters="false" visible="true" />
+		<vis name="UT:HalfMoon" alpha="1.0" r="0.45" g="0.56" b="0.69" showDaughters="false" visible="true" />
+		<vis name="UT:PipeHeater" alpha="1.0" r="0.36" g="0.79" b="0.79" showDaughters="false" visible="true" />
+		<!-- Silver -->
+		<vis name="UT:Frame" alpha="1.0" r="0.33" g="0.18" b="0.25" showDaughters="true" visible="true" />
+		<vis name="UT:EOS" alpha="1.0" r="0.33" g="0.18" b="0.25" showDaughters="false" visible="true" />
+		<vis name="UT:Jacket" alpha="1.0" r="0.5" g="0.5" b="0.5" showDaughters="true" visible="true" />
+		<vis name="UT:KaptonCable" alpha="1.0" r="0.16" g="0.39" b="0.61" showDaughters="false" visible="true" />
+		<vis name="UT:BareStave" alpha="1.0" r="0.04" g="0.24" b="0.43" showDaughters="false" visible="true" />
+		<vis name="UT:HybridFlex" alpha="1.0" r="0.63" g="0.38" b="0.47" showDaughters="true" visible="true" />
+		<vis name="UT:Asic" alpha="1.0" r="0.71" g="0.74" b="0.76" showDaughters="false" visible="true" />
+		<vis name="UT:Stiffener" alpha="1.0" r="0.58" g="0.74" b="0.88" showDaughters="false" visible="true" />
+		<vis name="UT:Sensor" alpha="1.0" r="0.25" g="0.6" b="0.8" showDaughters="true" visible="true" />
+		<!-- High constrast palette -->
+		<!-- <vis name="UT:BareStave" alpha="1.0" r="0.0" g="0.50" b="0.0" showDaughters="false" visible="true"/> -->
+		<!-- <vis name="UT:HybridFlex" alpha="1.0" r="1.0" g="1.0" b="0.0" showDaughters="true" visible="true"/> -->
+		<!-- <vis name="UT:Asic" alpha="1.0" r="1.0" g="0.0" b="0.0" showDaughters="false" visible="true"/> -->
+		<!-- <vis name="UT:Stiffener" alpha="0.8" r="0.86" g="0.85" b="0.80" showDaughters="false" visible="true"/> -->
+		<!-- <vis name="UT:Sensor" alpha="1.0" r="0.0" g="0.0" b="1.0" showDaughters="true" visible="true"/> -->
+	</display>
+</lccdd>

@@ -1,0 +1,41 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank, B. Dey                                                         -->
+<!--   @date    14/10/2018,                                                       -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the FT stations                                        -->
+<!--==========================================================================-->
+
+<lccdd>
+  <display>
+    <vis name="FT:Envelope"       alpha="0.35" r="0.8" g="0.8" b="0.0"  showDaughters="true"  visible="false"/>
+<!--
+    <vis name="FT:Envelope"       showDaughters="true"  visible="false"/>
+    <vis name="FT:Frame"          alpha="0.35" showDaughters="true"  visible="false"/>
+-->
+    <vis name="FT:Frame"          alpha="1.6"  r="1" g="0" b="0"  showDaughters="true"  visible="false"/>
+    <vis name="FT:Layer"          alpha="0.35" showDaughters="true"  visible="false"/>
+    <vis name="FT:HalfLayer"      alpha="0.35" showDaughters="true"  visible="false"/>
+    <vis name="FT:Quarter"        alpha="0.35" showDaughters="true"  visible="false"/>
+
+    <vis name="FT:CFrameCables"   alpha="1.0"  r="0.0" g="0.0" b="1.0"  showDaughters="false" visible="false"/>
+    <vis name="FT:CFramePairSupportCablepair" alpha="0.5"  r="0.0" g="1.0" b="0.5"  showDaughters="true" visible="true"/>
+    <vis name="FT:Dowels"         alpha="0.5"  r="1.0" g="0.0" b="0.0"  showDaughters="true" visible="true"/>
+    <vis name="FT:CFramePairSpacerBarCFSkin" alpha="0.5"  r="0" g="1.0" b="0.0"  showDaughters="true" visible="true"/>
+    <vis name="FT:CFrame"         alpha="1.0"  r="0.0" g="0.0" b="1.0"  showDaughters="true" visible="true"/>
+    <vis name="FT:CFramePairModuleMountBottom"    alpha="1.0"  r="1.0" g="0.0" b="0.0"  showDaughters="false" visible="true"/>
+    <vis name="FT:Module"         alpha="0.3"  r="0.9" g="0.2" b="0.2"  showDaughters="true"  visible="true"/>
+    <vis name="FT:Support"        alpha="0.2"  r="0.5" g="0.5" b="0.5"  showDaughters="true"  visible="true"/>
+
+    <vis name="FT:Core"           alpha="0.5"  r="0.0" g="0.3" b="0.0"  showDaughters="true"  visible="true"/>
+    <vis name="FT:Core1"          alpha="0.3"  r="0.5" g="0.0" b="0.2"  showDaughters="true" visible="false"/>
+    <vis name="FT:Core2"          alpha="0.3"  r="0.5" g="0.0" b="0.2"  showDaughters="true" visible="false"/>
+    <vis name="FT:Fibre"          alpha="0.3"  r="1.0" g="1.0" b="0.0"  showDaughters="true" visible="false"/>
+  </display>
+</lccdd>

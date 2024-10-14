@@ -1,0 +1,85 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- This contains the geometry parameters of the Exit window diaphram           -->
+<!--     which seals between the beam pipe and the exit wall of RICH1.           -->
+<!-- It is forseen to have a flange at 2146.5 mm . So the diaphram is around     -->
+<!-- that.                                                                       -->
+<!--  The diaphram has a thickness of 1 mm. In the current version. it is        -->
+<!-- two  tubes for the ups and dns central part.                                -->
+<!-- a tube for the middle part and a tube for the periphery.                    -->
+<!--  using values from EDMS TD-1026-135  and TD-1026-132.                        -->
+<!--  The beampipe is subtracted as a simple tube to avoid problems with paroramix. -->
+<lccdd>
+  <define>
+
+
+<constant name="Rh1DiaphramZThickness"  value="0.1*mm" />
+<constant name="Rh1DiaphramRadialTolerence" value="0.2*mm" />
+<constant name="Rh1DiaphramBeamPipeRadialGap" value="1.0*mm" />
+
+<constant name="Rh1DiaphramZTolerence" value="0.2*mm" />
+<constant name="Rh1DiaphramCentralOverallZThickness" value="7.0*mm+2.0*Rh1DiaphramZTolerence" />
+
+<constant name="Rh1DiaphramPerhOuterRad" value="91.0*mm" />
+<constant name="Rh1DiaphramPerhExitWindowGap" value="0.1*mm" />
+<constant name="Rh1ExitWindowHoleRad" value="Rh1DiaphramPerhOuterRad+Rh1DiaphramPerhExitWindowGap" />
+<constant name="Rh1ExitWindowHoleZSizeLargeValue" value="1000.0*mm" />
+
+<!-- Now for the exit wall part    -->
+<!--     The following radius is 0.1 mm more than the outer radius -->
+<!--     of the silicon rubber diaphram at the exitwall -->
+
+ <constant name="Rh1BeamPipeHoleRadiusInExitWindow"  value="Rh1DiaphramPerhOuterRad+Rh1DiaphramPerhExitWindowGap" />
+ <constant name="Rh1BeamPipeHoleInExitWindowZLargeValue"  value="1000.0*mm" />
+ <constant name="Rh1BeamPipeHoleInExitWallMasterZ" value= "0.0*mm"  />
+ <constant name="Rh1BeamPipeHoleInExitWallUpstrG10Z" value= "0.0*mm"  />
+ <constant name="Rh1BeamPipeHoleInExitWallPMIZ" value= "0.0*mm"  />
+ <constant name="Rh1BeamPipeHoleInExitWallDnstrG10Z" value= "0.0*mm"  />
+
+<!-- Now for the Diaphram part -->
+
+<constant name="Rh1DiaphramCentralUpsPlugRadialThickness" value="2.0*mm" />
+<constant name="Rh1DiaphramCentralDnsPlugRadialThickness" value="Rh1DiaphramCentralUpsPlugRadialThickness" />
+
+<!-- use the values from EDMS TD 1026-135 . The radial thickness beyond the flange for the central part is -->
+<!--       10.4 - 8.75 = 1.65 from the EDMS document.  Also the upstream and downstream parts have a     -->
+<!-- thickness of 2 mm.                                                                                   -->
+
+<constant name="Rh1DiaphramCentralRadialThickness" value="1.65*mm" />
+<constant name="Rh1DiaphramCentralRadialSize"   value="Rh1BeamPipeDnstFlangeHoleOuterRad+Rh1DiaphramCentralRadialThickness" />
+<constant name="Rh1DiaphramCentralOuterRad"   value="Rh1DiaphramCentralRadialSize" />
+
+<constant name="Rh1ExitDiaphramBeamPipeOuterRad" value="Rh1BeamPipeConeHoleOuterRad2+Rh1DiaphramBeamPipeRadialGap" />
+<constant name="Rh1DiaphramCentralInnerRad" value="Rh1ExitDiaphramBeamPipeOuterRad" />
+<constant name="Rh1DiaphramCentralZSize" value="Rh1DiaphramZThickness" />
+<constant name="Rh1DiaphramCentralShiftZ" value="0.5*Rh1BeamPipeDnstFlangeHoleZSize+Rh1DiaphramZTolerence+0.5*Rh1DiaphramCentralZSize" />
+<constant name="Rh1DiaphramCentralUpsZ" value="Rh1ExitWallMasterZ-Rh1DiaphramCentralShiftZ" />
+<constant name="Rh1DiaphramCentralDnsZ" value="Rh1ExitWallMasterZ+Rh1DiaphramCentralShiftZ" />
+<constant name="Rh1DiaphramCentralPlugRadialTolerence" value="0.6*mm" />
+<constant name="Rh1DiaphramCentralPlugInnerRadUps" value="Rh1DiaphramCentralInnerRad" />
+<constant name="Rh1DiaphramCentralPlugInnerRadDns" value="Rh1DiaphramCentralInnerRad+Rh1DiaphramCentralPlugRadialTolerence" />
+<constant name="Rh1DiaphramCentralPlugOuterRadUps" value="Rh1DiaphramCentralPlugInnerRadUps+Rh1DiaphramCentralUpsPlugRadialThickness" />
+<constant name="Rh1DiaphramCentralPlugOuterRadDns" value="Rh1DiaphramCentralPlugInnerRadDns+Rh1DiaphramCentralUpsPlugRadialThickness" />
+<constant name="Rh1DiaphramCentralPlugZSize" value="2.0*mm" />
+<constant name="Rh1DiaphramCentralPlugUpsZ" value="Rh1DiaphramCentralUpsZ-0.5*Rh1DiaphramCentralZSize-Rh1DiaphramZTolerence-0.5*Rh1DiaphramCentralPlugZSize" />
+<constant name="Rh1DiaphramCentralPlugDnsZ" value="Rh1DiaphramCentralDnsZ+0.5*Rh1DiaphramCentralZSize+Rh1DiaphramZTolerence+0.5*Rh1DiaphramCentralPlugZSize" />
+<constant name="Rh1DiaphramPerhRadialThickness" value="3.5*mm" />
+<constant name="Rh1DiaphramPerhInnerRad" value="Rh1DiaphramPerhOuterRad-Rh1DiaphramPerhRadialThickness" />
+<constant name="Rh1DiaphramPerhZSize" value="4.0*mm" />
+<constant name="Rh1DiaphramPerhZ" value="Rh1ExitWallMasterZ" />
+
+<constant name="Rh1DiaphramMidPartInnerRad" value="Rh1DiaphramCentralOuterRad+Rh1DiaphramRadialTolerence" />
+<constant name="Rh1DiaphramMidPartOuterRad" value="Rh1DiaphramPerhInnerRad-Rh1DiaphramRadialTolerence" />
+<constant name="Rh1DiaphramMidPartZSize" value="Rh1DiaphramZThickness" />
+<constant name="Rh1DiaphramMidPartZ" value="Rh1ExitWallMasterZ" />
+
+  </define>
+</lccdd>

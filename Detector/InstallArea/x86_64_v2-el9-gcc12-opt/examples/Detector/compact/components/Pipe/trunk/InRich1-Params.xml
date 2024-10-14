@@ -1,0 +1,75 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+    <!-- this file contains the geometry parameters for Rich1 BeamPipe -->
+
+    <constant name="Rh1BeamPipeThickness" value="UX851Cyl04Thick"/>
+    <constant name="Rh1BeamPipeUpsAssemblyLHCbZ" value="UX851ZStartIP"/>
+    <constant name="Rh1BeamPipeConeUpsAddtionalLargeZSize" value="300.0*mm"/>
+    <constant name="Rh1BeamPipeHoleRadialTolerence" value="1.0*mm"/>
+    <constant name="Rh1BeamPipeDnstFlangeRadialThickness" value="9.75*mm"/>
+    <constant name="Rh1BeamPipeDnstFlangeInnerRad" value="UX851Rich1FlangeRadiusZMax"/>
+    <constant name="Rh1BeamPipeConeInnerRad2" value="UX851Cone05BRadiusZmax"/>
+    <constant name="Rh1SubMasterHoleZSizeAfterMagSh" value="Rh1SubMasterDnstrZLim-Rh1MagShMainPartDnsZLim"/>
+    <constant name="Rh1BeamPipeConeDnsAddtionalLargeZSize" value="300.0*mm"/>
+    <constant name="Rh1BeamPipeCylBeginInLHCbZ" value="UX851Rich1SplitZminIP"/>
+    <constant name="Rh1SubMasterHoleRadiusAfterMagSh" value="UX851Cone05BRadiusZmax+2.0*mm"/>
+    <constant name="Rh1BeamPipeAssemblyInSubMasterLHCbZ" value="UX851ZStartIP"/>
+    <constant name="Rh1BeamPipeCylInnerRad" value="UX851Cyl04Radius"/>
+    <constant name="Rh1BeamPipeCylEndInLHCbZ" value="1080.0*mm"/>
+    <constant name="Rh1BeamPipeDnstFlangeZBeginInLHCb" value="UX851Rich1FlangeOffsetIP"/>
+    <constant name="Rh1BeamPipeHoleZTolerence" value="0.1*mm"/>
+    <constant name="Rh1BeamPipeDnsAssemblyLHCbZ" value="UX851ZStartIP"/>
+    <constant name="Rh1BeamPipeDnstFlangeZSize" value="UX851Rich1Flange1Length"/>
+    <constant name="Rh1BeamPipeConeEndInLHCbZ" value="2210.0*mm"/>
+    <constant name="Rh1BeamPipeUpsAssemblyRMZ" value="Rh1BeamPipeUpsAssemblyLHCbZ-Rich1MasterZ"/>
+    <constant name="Rh1BeamPipeDnstFlangeOuterRad" value="Rh1BeamPipeDnstFlangeInnerRad+Rh1BeamPipeDnstFlangeRadialThickness"/>
+    <constant name="Rh1BeamPipeConeOuterRad2" value="Rh1BeamPipeConeInnerRad2+Rh1BeamPipeThickness"/>
+    <constant name="Rh1SubMasterHoleZLocationAfterMagSh" value="Rh1MagShMainPartDnsZLim+0.5*Rh1SubMasterHoleZSizeAfterMagSh-Rh1SubMasterZ-Rich1MasterZ"/>
+    <constant name="Rh1BeamPipeExtendedConeZShift" value="0.5*(Rh1BeamPipeConeDnsAddtionalLargeZSize-Rh1BeamPipeConeUpsAddtionalLargeZSize)"/>
+    <constant name="Rh1BeamPipeAssemblyZ" value="Rh1BeamPipeAssemblyInSubMasterLHCbZ-Rich1MasterZ-Rh1SubMasterZ"/>
+    <constant name="Rh1BeamPipeConeInnerRad1" value="Rh1BeamPipeCylInnerRad"/>
+    <constant name="Rh1BeamPipeCylOuterRad" value="Rh1BeamPipeCylInnerRad+Rh1BeamPipeThickness"/>
+    <constant name="Rh1BeamPipeConeBeginInLHCbZ" value="Rh1BeamPipeCylEndInLHCbZ"/>
+    <constant name="Rh1BeamPipeCylZSize" value="Rh1BeamPipeCylEndInLHCbZ-Rh1BeamPipeCylBeginInLHCbZ"/>
+    <constant name="Rh1BeamPipeDnsAssemblyRMZ" value="Rh1BeamPipeDnsAssemblyLHCbZ-Rich1MasterZ"/>
+    <constant name="Rh1BeamPipeDnstFlangeHoleZSize" value="Rh1BeamPipeDnstFlangeZSize+2.0*Rh1BeamPipeHoleZTolerence"/>
+    <constant name="Rh1BeamPipeDnstFlangeZInLHCb" value="Rh1BeamPipeDnstFlangeZBeginInLHCb+0.5*Rh1BeamPipeDnstFlangeZSize"/>
+    <constant name="Rh1BeamPipeDnstFlangeHoleOuterRad" value="Rh1BeamPipeDnstFlangeOuterRad+Rh1BeamPipeHoleRadialTolerence"/>
+    <constant name="Rh1BeamPipeConeHoleOuterRad2" value="Rh1BeamPipeConeOuterRad2+Rh1BeamPipeHoleRadialTolerence"/>
+    <constant name="Rh1BeamPipeConeOuterRad1" value="Rh1BeamPipeConeInnerRad1+Rh1BeamPipeThickness"/>
+    <constant name="Rh1BeamPipeCylHoleOuterRad" value="Rh1BeamPipeCylOuterRad+Rh1BeamPipeHoleRadialTolerence"/>
+    <constant name="Rh1BeamPipeConeBeginInRh1SubMasterZ" value="Rh1BeamPipeConeBeginInLHCbZ-Rich1MasterZ-Rh1SubMasterZ"/>
+    <constant name="Rh1BeamPipeConeZSize" value="Rh1BeamPipeConeEndInLHCbZ-Rh1BeamPipeConeBeginInLHCbZ"/>
+    <constant name="Rh1BeamPipeDnstFlangeRMZ" value="Rh1BeamPipeDnstFlangeZInLHCb-Rich1MasterZ"/>
+    <constant name="Rh1BeamPipeConeHoleOuterRad1" value="Rh1BeamPipeConeOuterRad1+Rh1BeamPipeHoleRadialTolerence"/>
+    <constant name="Rh1BeamPipeConeSlope" value="(Rh1BeamPipeConeOuterRad2-Rh1BeamPipeConeOuterRad1)/Rh1BeamPipeConeZSize"/>
+    <constant name="Rh1BeamPipeExtendedConeHoleZSize" value="Rh1BeamPipeConeZSize+Rh1BeamPipeConeUpsAddtionalLargeZSize+Rh1BeamPipeConeDnsAddtionalLargeZSize"/>
+    <constant name="Rh1BeamPipeConeRMZ" value="Rh1BeamPipeConeBeginInLHCbZ+(0.5*Rh1BeamPipeConeZSize)-Rich1MasterZ"/>
+    <constant name="Rh1BeamPipeDnstFlangeZ" value="Rh1BeamPipeDnstFlangeRMZ-Rh1SubMasterZ"/>
+    <constant name="Rh1BeamPipeExtendedConeHoleOuterRad1" value="Rh1BeamPipeConeHoleOuterRad1-(Rh1BeamPipeConeUpsAddtionalLargeZSize*Rh1BeamPipeConeSlope)"/>
+    <constant name="Rh1BeamPipeExtendedConeHoleOuterRad2" value="Rh1BeamPipeConeHoleOuterRad2+(Rh1BeamPipeConeDnsAddtionalLargeZSize*Rh1BeamPipeConeSlope)"/>
+    <constant name="Rh1Mirror1BeamPipeConeZSize" value="Rh1BeamPipeExtendedConeHoleZSize"/>
+    <constant name="Rh1BeamPipeExtendedConeHoleRMZ" value="Rh1BeamPipeConeRMZ+Rh1BeamPipeExtendedConeZShift"/>
+    <constant name="Rh1BeamPipeConeZ" value="Rh1BeamPipeConeRMZ-Rh1SubMasterZ"/>
+    <!--parameter name="Rh1Mirror1BeamPipeConeOuterRad1" value="Rh1BeamPipeExtendedConeHoleOuterRad1+Rh1Mirror1BeamPipeHoleRadialTolerance" /-->
+    <!--parameter name="Rh1Mirror1BeamPipeConeOuterRad2" value="Rh1BeamPipeExtendedConeHoleOuterRad2+Rh1Mirror1BeamPipeHoleRadialTolerance" /-->
+    <constant name="Rh1BeamPipeExtendedConeHoleZ" value="Rh1BeamPipeExtendedConeHoleRMZ-Rh1SubMasterZ"/>
+    <!--parameter name="Rh1Mirror1BeamPipeConeX" value="Rh1BeamPipeExtendedConeHoleZ-Rh1Mirror1CCZ-Rh1MirrorSingleADiagDeltaZ" /-->
+
+  </define>
+
+</lccdd>

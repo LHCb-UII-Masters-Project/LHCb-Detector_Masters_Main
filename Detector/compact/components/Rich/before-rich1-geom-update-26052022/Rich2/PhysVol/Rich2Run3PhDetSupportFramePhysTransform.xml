@@ -1,0 +1,78 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!-- Begin Rich2 PhDet Support Frame Physvols.                                  -->
+
+<!-- Old names listed for reference    -->
+<!-- <physvol  name="pvRich2HPDN2Encl0" <volume name="lvRich2HPDN2Encl0" -->
+<!-- <physvol  name="pvRich2HPDN2Encl1" <volume name="lvRich2HPDN2Encl1" -->
+<!-- <physvol name="pvRich2HPDPanel:0   <volume name="lvRich2HPDPanel0"  -->
+<!-- <physvol name="pvRich2HPDPanel:1   <volume name="lvRich2HPDPanel1"  -->
+<!-- New volume names listed here                                               -->
+<!--    <physvol name ="pvRich2PhDetGasEncl0"    <volume name="lvRich2PhDetGasEncl0" -->
+<!--    <physvol name ="pvRich2PhDetGasEncl1"    <volume name="lvRich2PhDetGasEncl1" -->
+<!--    <physvol name ="pvRich2PhDetPanel0"   <volume name="lvRich2PhDetPanel0"   -->
+<!--    <physvol name ="pvRich2PhDetPanel1"   <volume name="lvRich2PhDetPanel1"   -->
+
+<!-- The pvRich2PhDetGasEncl0 and pvRich2PhDetGasEncl1 are palced inside lvRich2Master   -->
+<!-- The pvRich2PhDetPanel0 is placed inside pvRich2PhDetGasEncl0                        -->
+<!-- The pvRich2PhDetPanel1 is placed inside pvRich2PhDetGasEncl1                        -->
+
+<!-- Here the label 0 refers to the positive X side which the A side and is on the left side  -->
+<!--     when looking downstream from the interaction point -->
+<!-- Here the label 1 refers to the negativetive X side which the C side and is on the right side -->
+<!--     when looking downstream from the interaction point -->
+
+
+
+<Rich2>
+
+    <item name="PhysVolName"    value="pvRich2PhDetGasEncl0" />
+    <item name="TransformName"  value="pvRich2PhDetGasEncl0Transform">
+      <transformation>
+           <position  x = "Rh2PhDetGasEnclPositivePosX"
+                      y = "Rh2PhDetGasEnclPosY"
+                      z = "Rh2PhDetGasEnclPosZ" />
+           <rotation  y = "Rh2PhDetGasEnclPositiveAngleRotY" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2PhDetGasEncl1" />
+    <item name="TransformName"  value="pvRich2PhDetGasEncl1Transform">
+      <transformation>
+           <position  x = "Rh2PhDetGasEnclNegativePosX"
+                      y = "Rh2PhDetGasEnclPosY"
+                      z = "Rh2PhDetGasEnclPosZ" />
+           <rotation  y = "Rh2PhDetGasEnclNegativeAngleRotY" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2PhDetPanel0" />
+    <item name="TransformName"  value="pvRich2PhDetPanel0Transform">
+      <transformation>
+           <position  x = "Rh2PhDetPanel0PosX"
+                      y = "Rh2PhDetPanel0PosY"
+                      z = "Rh2PhDetPanel0PosZ" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2PhDetPanel1" />
+    <item name="TransformName"  value="pvRich2PhDetPanel1Transform">
+      <transformation>
+           <position  x = "Rh2PhDetPanel1PosX"
+                      y = "Rh2PhDetPanel1PosY"
+                      z = "Rh2PhDetPanel1PosZ" />
+      </transformation>
+    </item>
+
+
+</Rich2>

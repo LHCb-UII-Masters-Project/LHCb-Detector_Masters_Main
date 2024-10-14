@@ -1,0 +1,559 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--=============================Downstream support============================-->
+<!--===========================================================================-->
+<lccdd>
+  <detectors>
+
+    <!--==================================================================================-->
+    <!--===================================Bakeout========================================-->
+    <!--==================================================================================-->
+    <detector name="DownstreamPipeSupport" type="DD4hep_VolumeAssembly" parent="${PipeDownstream:parent}" vis="Pipe:Vis">
+      <!-- Foot upper plate -->
+      <volume name="lvUX854SlSupFootTop" material="Pipe:Steel316LN" vis="Pipe:Support">
+        <shape type="BooleanShape" operation="subtraction" name="UX854SlSupFootTopSub">
+          <shape type="Box" name="UX854SlSupFootTopBox"
+                 dx="0.5*UX854SlSupFootTopX"
+                 dy="0.5*UX854SlSupFootTopY"
+                 dz="0.5*UX854SlSupFootTopThick"/>
+
+          <shape type="Tube" name="UX854SlSupFootTopCentralHole"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopCentralHoleRad"/>
+
+          <shape type="Tube" name="UX854SlSupFootTopHole1A"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="UX854SlSupFootTopHolePosX" y="UX854SlSupFootTopHolePosY + UX854SlSupFootTopHoleOffset"/>
+          <shape type="Tube" name="UX854SlSupFootTopHole1B"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="UX854SlSupFootTopHolePosX" y="UX854SlSupFootTopHolePosY - UX854SlSupFootTopHoleOffset"/>
+          <shape type="Box" name="UX854SlSupFootHoleBox1"
+                 dx="0.5*UX854SlSupFootTopHoleWidth"
+                 dy="0.5*UX854SlSupFootTopHoleLength"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"/>
+          <position x="UX854SlSupFootTopHolePosX" y="UX854SlSupFootTopHolePosY"/>
+
+          <shape type="Tube" name="UX854SlSupFootTopHole2A"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="UX854SlSupFootTopHolePosX" y="-UX854SlSupFootTopHolePosY - UX854SlSupFootTopHoleOffset"/>
+          <shape type="Tube" name="UX854SlSupFootTopHole2B"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="UX854SlSupFootTopHolePosX" y="-UX854SlSupFootTopHolePosY + UX854SlSupFootTopHoleOffset"/>
+          <shape type="Box" name="UX854SlSupFootHoleBox2"
+                 dx="0.5*UX854SlSupFootTopHoleWidth"
+                 dy="0.5*UX854SlSupFootTopHoleLength"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"/>
+          <position x="UX854SlSupFootTopHolePosX" y="-UX854SlSupFootTopHolePosY"/>
+
+          <shape type="Tube" name="UX854SlSupFootTopHole3A"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="-UX854SlSupFootTopHolePosX" y="-UX854SlSupFootTopHolePosY - UX854SlSupFootTopHoleOffset"/>
+          <shape type="Tube" name="UX854SlSupFootTopHole3B"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="-UX854SlSupFootTopHolePosX" y="-UX854SlSupFootTopHolePosY + UX854SlSupFootTopHoleOffset"/>
+          <shape type="Box" name="UX854SlSupFootHoleBox3"
+                 dx="0.5*UX854SlSupFootTopHoleWidth"
+                 dy="0.5*UX854SlSupFootTopHoleLength"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"/>
+          <position x="-UX854SlSupFootTopHolePosX" y="-UX854SlSupFootTopHolePosY"/>
+
+          <shape type="Tube" name="UX854SlSupFootTopHole4A"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="-UX854SlSupFootTopHolePosX" y="UX854SlSupFootTopHolePosY + UX854SlSupFootTopHoleOffset"/>
+          <shape type="Tube" name="UX854SlSupFootTopHole4B"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"
+                 rmax="UX854SlSupFootTopHoleRad"/>
+          <position x="-UX854SlSupFootTopHolePosX" y="UX854SlSupFootTopHolePosY - UX854SlSupFootTopHoleOffset"/>
+          <shape type="Box" name="UX854SlSupFootHoleBox4"
+                 dx="0.5*UX854SlSupFootTopHoleWidth"
+                 dy="0.5*UX854SlSupFootTopHoleLength"
+                 dz="0.5*(UX854SlSupFootTopThick + 1.0*mm)"/>
+          <position x="-UX854SlSupFootTopHolePosX" y="UX854SlSupFootTopHolePosY"/>
+        </shape>
+
+      </volume>
+
+      <!-- Tube for foot -->
+      <volume name="lvUX854SlSupFootTube" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="BooleanShape" operation="subtraction" name="UX854SlSupFootTubeSub">
+          <shape type="Box" name="UX854SlSupFootTubeBox"
+                 dx="0.5*UX854SlSupFootTubeWidth"
+                 dy="0.5*UX854SlSupFootTubeWidth"
+                 dz="0.5*UX854SlSupFootTubeLength"/>
+          <shape type="Box" name="UX854SlSupFootTubeInnerBox"
+                 dx="0.5*UX854SlSupFootTubeWidth - UX854SlSupFootTubeThick*2"
+                 dy="0.5*UX854SlSupFootTubeWidth - UX854SlSupFootTubeThick*2"
+                 dz="0.5*(UX854SlSupFootTubeLength + 1.0*mm)"/>
+        </shape>
+      </volume>
+
+      <!-- Foot base plate -->
+      <volume name="lvUX854SlSupFootBase" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="Box" name="UX854SlSupFootBaseBox"
+               dx="0.5*UX854SlSupFootBaseX"
+               dy="0.5*UX854SlSupFootBaseY"
+               dz="0.5*UX854SlSupFootBaseThick"/>
+      </volume>
+
+      <!-- Foot shim -->
+      <volume name="lvUX854SlSupFootShim" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="Box" name="UX854SlSupFootShimBox"
+               dx="0.5*UX854SlSupFootShimWidth"
+               dy="0.5*UX854SlSupFootShimWidth"
+               dz="0.5*UX854SlSupFootShimThick"/>
+      </volume>
+
+      <!-- Base -->
+      <volume name="lvUX854SlSupFoot" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupFootTop"                   volume="lvUX854SlSupFootTop"/>
+        <physvol name="pvUX854SlSupFootTube"                  volume="lvUX854SlSupFootTube">
+          <position z="UX854SlSupFootTubePosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupFootBase"                  volume="lvUX854SlSupFootBase">
+          <position z="UX854SlSupFootBasePosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupFootShim1"                 volume="lvUX854SlSupFootShim">
+          <position x="UX854SlSupFootShimPosX" y="UX854SlSupFootShimPosY" z="UX854SlSupFootShimPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupFootShim2"                 volume="lvUX854SlSupFootShim">
+          <position x="UX854SlSupFootShimPosX" y="-UX854SlSupFootShimPosY" z="UX854SlSupFootShimPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupFootShim3"                 volume="lvUX854SlSupFootShim">
+          <position x="-UX854SlSupFootShimPosX" y="-UX854SlSupFootShimPosY" z="UX854SlSupFootShimPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupFootShim4"                 volume="lvUX854SlSupFootShim">
+          <position x="-UX854SlSupFootShimPosX" y="UX854SlSupFootShimPosY" z="UX854SlSupFootShimPosZ"/>
+        </physvol>
+
+      </volume>
+
+
+      <!-- Rod -->
+      <volume name="lvUX854SlSupRod" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="Tube" name="Ux854SlSupRodTubs"
+               dz="0.5*UX854SlSupRodLength"
+               rmax="UX854SlSupRodRad"/>
+      </volume>
+
+      <!-- Washer -->
+      <volume name="lvUX854SlSupWasher" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="Tube" name="Ux854SlSupWasherTubs"
+               dz="0.5*UX854SlSupWasherLenght"
+               rmax="UX854SlSupWasherRad + UX854SlSupWasherThick"
+               rmin="UX854SlSupWasherThick"/>
+      </volume>
+
+      <!-- Nut -->
+      <volume name="lvUX854SlSupNut" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="Tube" name="Ux854SlSupNutTubs"
+               dz="0.5*UX854SlSupNutLength"
+               rmax="UX854SlSupNutRad + UX854SlSupNutThick"
+               rmin="UX854SlSupNutRad"/>
+      </volume>
+
+      <!-- Assebled rod -->
+      <volume name="lvUX854SlSupRodAss" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupRod"                 volume="lvUX854SlSupRod"/>
+        <physvol name="pvUX854SlSupNut1"                volume="lvUX854SlSupNut">
+          <position z="UX854SlSupRodAssNut1PosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupNut2"                volume="lvUX854SlSupNut">
+          <position z="UX854SlSupRodAssNut2PosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupWasher1"             volume="lvUX854SlSupWasher">
+          <position z="UX854SlSupRodAssWasher1PosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupWasher2"             volume="lvUX854SlSupWasher">
+          <position z="UX854SlSupRodAssWasher2PosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupNut3"                volume="lvUX854SlSupNut">
+          <position z="UX854SlSupRodAssNut3PosZ"/>
+        </physvol>
+      </volume>
+
+
+      <!-- Top Plate -->
+      <volume name="lvUX854SlSupTop" material="Pipe:Steel316LN" vis="Pipe:Support">
+        <shape type="BooleanShape" operation="subtraction" name="UX854SlSupTopSub">
+          <shape type="Box" name="UX854SlSupTopBox"
+                 dx="0.5*UX854SlSupTopX"
+                 dy="0.5*UX854SlSupTopY"
+                 dz="0.5*UX854SlSupTopThick"/>
+
+          <shape type="Tube" name="UX854SlSupTopHoleA"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleCentRad"/>
+          <position x="UX854SlSupTopHoleCentOffset"/>
+          <shape type="Tube" name="UX854SlSupTopHoleB"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleCentRad"/>
+          <position x="-UX854SlSupTopHoleCentOffset"/>
+          <shape type="Box" name="UX854SlSupHoleBox"
+                 dx="0.5*UX854SlSupTopHoleCentLength"
+                 dy="0.5*UX854SlSupTopHoleCentWidth"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"/>
+
+          <shape type="Tube" name="UX854SlSupTopHole1"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleRad"/>
+          <position x="UX854SlSupTopHolePosX" y="UX854SlSupTopHolePosY"/>
+          <shape type="Tube" name="UX854SlSupTopHole2"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleRad"/>
+          <position x="UX854SlSupTopHolePosX" y="-UX854SlSupTopHolePosY"/>
+          <shape type="Tube" name="UX854SlSupTopHole3"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleRad"/>
+          <position x="-UX854SlSupTopHolePosX" y="-UX854SlSupTopHolePosY"/>
+          <shape type="Tube" name="UX854SlSupTopHole4"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleRad"/>
+          <position x="-UX854SlSupTopHolePosX" y="UX854SlSupTopHolePosY"/>
+
+          <shape type="Tube" name="UX854SlSupTopHoleInner1"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleInnerRad"/>
+          <position x="UX854SlSupTopHoleInnerPosX" y="UX854SlSupTopHoleInnerPosY"/>
+          <shape type="Tube" name="UX854SlSupTopHoleInner2"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleInnerRad"/>
+          <position x="UX854SlSupTopHoleInnerPosX" y="-UX854SlSupTopHoleInnerPosY"/>
+          <shape type="Tube" name="UX854SlSupTopHoleInner3"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleInnerRad"/>
+          <position x="-UX854SlSupTopHoleInnerPosX" y="-UX854SlSupTopHoleInnerPosY"/>
+          <shape type="Tube" name="UX854SlSupTopHoleInner4"
+                 dz="0.5*(UX854SlSupTopThick + 1.0*mm)"
+                 rmax="UX854SlSupTopHoleInnerRad"/>
+          <position x="-UX854SlSupTopHoleInnerPosX" y="UX854SlSupTopHoleInnerPosY"/>
+
+        </shape>
+      </volume>
+
+      <!-- Rail main plate-->
+      <volume name="lvUX854SlSupRailBase" material="Pipe:Steel316LN" vis="Pipe:Support">
+        <shape type="BooleanShape" operation="subtraction" name="UX854SlSupRailBaseSub">
+          <shape type="Box" name="UX854SlSupRailBaseBox"
+                 dx="0.5*UX854SlSupRailBaseX"
+                 dy="0.5*UX854SlSupRailBaseY"
+                 dz="0.5*UX854SlSupRailBaseThick"/>
+
+          <shape type="Tube" name="UX854SlSupRailBaseCentralHole"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseCentralHoleRad"/>
+
+          <shape type="Tube" name="UX854SlSupRailBaseHole1A"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="UX854SlSupRailBaseHolePosX + UX854SlSupRailBaseHoleOffset" y="UX854SlSupRailBaseHolePosY"/>
+          <shape type="Tube" name="UX854SlSupRailBaseHole1B"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="UX854SlSupRailBaseHolePosX - UX854SlSupRailBaseHoleOffset" y="UX854SlSupRailBaseHolePosY"/>
+          <shape type="Box" name="UX854SlSupRailBaseHoleBox1"
+                 dx="0.5*UX854SlSupRailBaseHoleLength"
+                 dy="0.5*UX854SlSupRailBaseHoleWidth"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"/>
+          <position x="UX854SlSupRailBaseHolePosX" y="UX854SlSupRailBaseHolePosY"/>
+
+          <shape type="Tube" name="UX854SlSupRailBaseHole2A"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="UX854SlSupRailBaseHolePosX + UX854SlSupRailBaseHoleOffset" y="-UX854SlSupRailBaseHolePosY"/>
+          <shape type="Tube" name="UX854SlSupRailBaseHole2B"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="UX854SlSupRailBaseHolePosX - UX854SlSupRailBaseHoleOffset" y="-UX854SlSupRailBaseHolePosY"/>
+          <shape type="Box" name="UX854SlSupRailBaseHoleBox2"
+                 dx="0.5*UX854SlSupRailBaseHoleLength"
+                 dy="0.5*UX854SlSupRailBaseHoleWidth"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"/>
+          <position x="UX854SlSupRailBaseHolePosX" y="-UX854SlSupRailBaseHolePosY"/>
+
+          <shape type="Tube" name="UX854SlSupRailBaseHole3A"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="-UX854SlSupRailBaseHolePosX - UX854SlSupRailBaseHoleOffset" y="-UX854SlSupRailBaseHolePosY"/>
+          <shape type="Tube" name="UX854SlSupRailBaseHole3B"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="-UX854SlSupRailBaseHolePosX + UX854SlSupRailBaseHoleOffset" y="-UX854SlSupRailBaseHolePosY"/>
+          <shape type="Box" name="UX854SlSupRailBaseHoleBox3"
+                 dx="0.5*UX854SlSupRailBaseHoleLength"
+                 dy="0.5*UX854SlSupRailBaseHoleWidth"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"/>
+          <position x="-UX854SlSupRailBaseHolePosX" y="-UX854SlSupRailBaseHolePosY"/>
+
+          <shape type="Tube" name="UX854SlSupRailBaseHole4A"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="-UX854SlSupRailBaseHolePosX - UX854SlSupRailBaseHoleOffset" y="UX854SlSupRailBaseHolePosY"/>
+          <shape type="Tube" name="UX854SlSupRailBaseHole4B"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"
+                 rmax="UX854SlSupRailBaseHoleRad"/>
+          <position x="-UX854SlSupRailBaseHolePosX + UX854SlSupRailBaseHoleOffset" y="UX854SlSupRailBaseHolePosY"/>
+          <shape type="Box" name="UX854SlSupRailBaseHoleBox4"
+                 dx="0.5*UX854SlSupRailBaseHoleLength"
+                 dy="0.5*UX854SlSupRailBaseHoleWidth"
+                 dz="0.5*(UX854SlSupRailBaseThick + 1.0*mm)"/>
+          <position x="-UX854SlSupRailBaseHolePosX" y="UX854SlSupRailBaseHolePosY"/>
+        </shape>
+      </volume>
+
+      <!-- Rail block -->
+      <volume name="lvUX854SlSupRailBlock" material="Pipe:Steel316LN" vis="Pipe:Support">
+        <shape type="Box" name="UX854SlSupRailBlockBox"
+               dx="0.5*UX854SlSupRailBlockLength"
+               dy="0.5*UX854SlSupRailBlockWidth"
+               dz="0.5*UX854SlSupRailBlockHeight"/>
+      </volume>
+
+      <!-- Rail -->
+      <volume name="lvUX854SlSupRail" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupRailBase"                 volume="lvUX854SlSupRailBase"/>
+        <physvol name="pvUX854SlSupRailBlock1"               volume="lvUX854SlSupRailBlock">
+          <position y="UX854SlSupRailPosY" z="UX854SlSupRailPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailBlock2"               volume="lvUX854SlSupRailBlock">
+          <position y="-UX854SlSupRailPosY" z="UX854SlSupRailPosZ"/>
+        </physvol>
+      </volume>
+
+      <!-- Rail Screw -->
+      <volume name="lvUX854SlSupRailScrew" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="BooleanShape" operation="union" name="UX854SlSupRailScrewUnion">
+          <shape type="Tube" name="UX854SlSupRailScrewHeadTubs"
+                 dz="0.5*UX854SlSupRailScrewHeadLength"
+                 rmax="UX854SlSupRailScrewHeadRad"/>
+          <shape type="Tube" name="UX854SlSupRailScrewTubs"
+                 dz="0.5*UX854SlSupRailScrewLength"
+                 rmax="UX854SlSupRailScrewRad"/>
+          <position z="-UX854SlSupRailScrewLength/2 - UX854SlSupRailScrewHeadLength/2 - 0.01*mm"/>
+        </shape>
+      </volume>
+
+      <!-- Rail Rod -->
+      <volume name="lvUX854SlSupRailRod" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="Tube" name="UX854SlSupRailRodTubs"
+               dz="0.5*UX854SlSupRailRodLength"
+               rmax="UX854SlSupRailRodRad"/>
+      </volume>
+
+      <!-- Rail Cover -->
+      <volume name="lvUX854SlSupRailCover" material="Pipe:Brass" vis="Pipe:Support">
+        <shape type="Box" name="UX854SlSupRailCoverBox"
+               dx="0.5*UX854SlSupRailCoverLength"
+               dy="0.5*UX854SlSupRailCoverThick"
+               dz="0.5*UX854SlSupRailCoverWidth"/>
+      </volume>
+
+      <!-- Rail assebled -->
+      <volume name="lvUX854SlSupRailAssem" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupRail"                 volume="lvUX854SlSupRail"/>
+        <physvol name="pvUX854SlSupRailCover1"           volume="lvUX854SlSupRailCover">
+          <position y="UX854SlSupRailCoverPosY" z="UX854SlSupRailCoverPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailCover2"           volume="lvUX854SlSupRailCover">
+          <position y="-UX854SlSupRailCoverPosY" z="UX854SlSupRailCoverPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailRod"              volume="lvUX854SlSupRailRod">
+          <position z="UX854SlSupRailRodPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailNut1"             volume="lvUX854SlSupNut">
+          <position z="UX854SlSupRailNut1PosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailNut2"             volume="lvUX854SlSupNut">
+          <position z="UX854SlSupRailNut2PosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailScrew1"           volume="lvUX854SlSupRailScrew">
+          <position x="UX854SlSupRailScrewPosX" y="UX854SlSupRailScrewPosY" z="UX854SlSupRailScrewPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailScrew2"           volume="lvUX854SlSupRailScrew">
+          <position x="UX854SlSupRailScrewPosX" y="-UX854SlSupRailScrewPosY" z="UX854SlSupRailScrewPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailScrew3"           volume="lvUX854SlSupRailScrew">
+          <position x="-UX854SlSupRailScrewPosX" y="-UX854SlSupRailScrewPosY" z="UX854SlSupRailScrewPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRailScrew4"           volume="lvUX854SlSupRailScrew">
+          <position x="-UX854SlSupRailScrewPosX" y="UX854SlSupRailScrewPosY" z="UX854SlSupRailScrewPosZ"/>
+        </physvol>
+
+      </volume>
+
+      <!-- Trolley main plate -->
+      <volume name="lvUX854SlSupTrolleyPlate" material="Pipe:Steel316LN" vis="Pipe:Support">
+        <shape type="BooleanShape" operation="subtraction" name="UX854SlSupTrolleyPlateSub">
+          <shape type="Box" name="UX854SlSupTrolleyPlateBox"
+                 dx="0.5*UX854SlSupTrolleyPlateLength"
+                 dy="0.5*UX854SlSupTrolleyPlateHeight"
+                 dz="0.5*UX854SlSupTrolleyPlateWidth"/>
+
+          <shape type="Tube" name="UX854SlSupTrolleyPlateHole"
+                 dz="0.5*(UX854SlSupTrolleyPlateWidth + 1.0*mm)"
+                 rmax="UX854SlSupTrolleyPlateHoleRad"/>
+          <position y="-UX854SlSupTrolleyPlateHolePosY"/>
+
+          <shape type="Box" name="UX854SlSupTrolleyPlateScrape1"
+                 dx="0.5*UX854SlSupTrolleyPlateLength"
+                 dy="0.5*UX854SlSupTrolleyPlateHeight"
+                 dz="0.5*(UX854SlSupTrolleyPlateWidth + 1.0*mm)"/>
+          <position x="UX854SlSupTrolleyPlateCutPosX" y="-UX854SlSupTrolleyPlateCutPosY"/>
+          <shape type="Box" name="UX854SlSupTrolleyPlateScrape2"
+                 dx="0.5*UX854SlSupTrolleyPlateLength"
+                 dy="0.5*UX854SlSupTrolleyPlateHeight"
+                 dz="0.5*(UX854SlSupTrolleyPlateWidth + 1.0*mm)"/>
+          <position x="-UX854SlSupTrolleyPlateCutPosX" y="-UX854SlSupTrolleyPlateCutPosY"/>
+        </shape>
+      </volume>
+
+      <!-- Trolley Pin -->
+      <volume name="lvUX854SlSupTrolleyPin" material="Pipe:Steel316LN" vis="Pipe:Support">
+        <shape type="Tube" name="Ux854SlSupTrolleyPinTubs"
+               dz="0.5*UX854SlSupTrolleyPinLength"
+               rmax="UX854SlSupTrolleyPinRad"/>
+      </volume>
+
+      <!-- Trolley wheel -->
+      <volume name="lvUX854SlSupTrolleyWheel" material="Pipe:Steel" vis="Pipe:Support">
+        <shape type="Tube" name="Ux854SlSupTrolleyWheelTubs"
+               dz="0.5*UX854SlSupTrolleyWheelWidth"
+               rmax="UX854SlSupTrolleyWheelRad + UX854SlSupTrolleyWheelThick"
+               rmin="UX854SlSupTrolleyWheelRad"/>
+      </volume>
+
+      <!-- Trolley -->
+      <volume name="lvUX854SlSupTrolley" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupTrolleyPlate"                 volume="lvUX854SlSupTrolleyPlate"/>
+        <physvol name="pvUX854SlSupTrolleyPin"                   volume="lvUX854SlSupTrolleyPin">
+          <position y="-UX854SlSupTrolleyHolePosY"/>
+        </physvol>
+        <physvol name="pvUX854SlSupTrolleyWheel1"                volume="lvUX854SlSupTrolleyWheel">
+          <position y="-UX854SlSupTrolleyHolePosY" z="UX854SlSupTrolleyWheelPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupTrolleyWheel2"                volume="lvUX854SlSupTrolleyWheel">
+          <position y="-UX854SlSupTrolleyHolePosY" z="-UX854SlSupTrolleyWheelPosZ"/>
+        </physvol>
+      </volume>
+
+      <!-- Rail and trolley assebly -->
+      <volume name="lvUX854SlSupRailTroll" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupRailAssem"                    volume="lvUX854SlSupRailAssem"/>
+        <physvol name="pvUX854SlSupTrolley"                      volume="lvUX854SlSupTrolley">
+          <position z="UX854SlSupRailTrollPosZ"/>
+          <rotation x="90.0*degree"/>
+        </physvol>
+      </volume>
+
+      <!-- Sliding support -->
+      <volume name="lvUX854SlSupLow" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupTop"                          volume="lvUX854SlSupTop"/>
+        <physvol name="pvUX854SlSupRodAss1"                      volume="lvUX854SlSupRodAss">
+          <position x="UX854SlSupRodAssPosX" y="UX854SlSupRodAssPosY" z="-UX854SlSupRodAssPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRodAss2"                      volume="lvUX854SlSupRodAss">
+          <position x="UX854SlSupRodAssPosX" y="-UX854SlSupRodAssPosY" z="-UX854SlSupRodAssPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRodAss3"                      volume="lvUX854SlSupRodAss">
+          <position x="-UX854SlSupRodAssPosX" y="-UX854SlSupRodAssPosY" z="-UX854SlSupRodAssPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupRodAss4"                      volume="lvUX854SlSupRodAss">
+          <position x="-UX854SlSupRodAssPosX" y="UX854SlSupRodAssPosY" z="-UX854SlSupRodAssPosZ"/>
+        </physvol>
+        <physvol name="pvUX854SlSupFoot"                         volume="lvUX854SlSupFoot">
+          <position z="-UX854SlSupFootPosZ"/>
+        </physvol>
+      </volume>
+
+      <volume name="lvUX854SlSup" vis="Pipe:Support">
+        <physvol name="pvUX854SlSupRailTroll"                    volume="lvUX854SlSupRailTroll"/>
+        <physvol name="pvUX854SlSupLow"                          volume="lvUX854SlSupLow">
+          <position z="-UX854SlSupLowPosZ"/>
+        </physvol>
+      </volume>
+
+
+      <!-- UX85-3 Support: Spacer and Collar togheter, sectioning due to regions -->
+      <volume name="lvUX853CollarDownstream" material="Pipe:Al6082" vis="Pipe:Support">
+        <shape type="Tube" name="UX85-3-Collar-B"
+               dz="0.5*UX853CollarDownstreamSize"
+               rmin="UX853CollarInnerRadius"
+               rmax="UX853CollarOuterRadius"/>
+      </volume>
+
+      <!-- UX85-3 Support: Cables -->
+      <volume name="lvUX853CableDownstream" material="Pipe:Steel316LN" vis="Pipe:Support">
+        <shape type="Tube" name="UX85-3-Cable-Downstream"
+               dz="0.5*UX853CableDownstreamLenght"
+               rmax="UX853CableDownstreamRadius"/>
+      </volume>
+
+
+      <envelope type="Assembly" name="lvUX85SupportsDownstream" vis="Pipe:Support">
+        <!-- UX85-3 Support -->
+        <physvol name="pvUX853DownstreamCollar"                  volume="lvUX853CollarDownstream">
+          <position z="0.5*UX853CollarDownstreamSize"/>
+        </physvol>
+
+        <physvol name="pvUX853CableDownstream01"                 volume="lvUX853CableDownstream">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="0.0*degree" z="0.0*degree"/>
+            <position x="0.0*mm" y="UX853CableDownstreamXYpos" z="UX853CableDownstreamZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853CableDownstream02"                 volume="lvUX853CableDownstream">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <position x="UX853CableDownstreamXYpos" y="0.0*mm" z="UX853CableDownstreamZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853CableDownstream03"                 volume="lvUX853CableDownstream">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="0.0*degree" z="0.0*degree"/>
+            <position x="0.0*mm" y="-UX853CableDownstreamXYpos" z="UX853CableDownstreamZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX853CableDownstream04"                 volume="lvUX853CableDownstream">
+          <transformation>
+            <position x="0.0*mm" y="0.0*mm" z="0.0*mm"/>
+            <rotation x="90.0*degree" y="90.0*degree" z="0.0*degree"/>
+            <position x="-UX853CableDownstreamXYpos" y="0.0*mm" z="UX853CableDownstreamZpos"/>
+          </transformation>
+        </physvol>
+
+        <physvol name="pvUX854SlSup"                             volume="lvUX854SlSup">
+          <transformation>
+            <position/>
+            <rotation x="-90.0*degree" z="90.0*degree"/>
+            <position y="-100.0*mm - 44.22*mm" z="7663.0*mm"/>
+          </transformation>
+        </physvol>
+      </envelope>
+      <position z="UX853Rich2DownSplitZposIP - Regions:DownstreamZPos"/>
+    </detector>
+
+  </detectors>
+</lccdd>

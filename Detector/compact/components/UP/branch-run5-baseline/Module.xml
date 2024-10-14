@@ -1,0 +1,346 @@
+<up>
+    <!--
+             (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+        This software is distributed under the terms of the GNU General Public
+        Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+        In applying this licence, CERN does not waive the privileges and immunities
+        granted to it by virtue of its status as an Intergovernmental Organization
+        or submit itself to any jurisdiction.
+    -->
+
+      <!-- ========== Readout ASIC ========== -->
+       <volume material="UP:VTRx_LpGbt" name="lvPixelAsic1" vis="UP:Asic">
+        <shape name="upPixelAsic" type="Box" dx="UPPixelAsicWide/2" dy="UPPixelAsicLong/2" dz="UPPixelAsicThick/2"/>
+      </volume>
+
+      <volume name="lvPixelAsic2">
+        <paramphysvol number="2">
+          <physvol name="pvPixelAsicForGroup2" volume="lvPixelAsic1">
+            <position x="-2*(UPPixelWide+UPPixelGap)"/>
+          </physvol>
+          <position x="4*(UPPixelWide+UPPixelGap)"/>
+        </paramphysvol>
+      </volume>
+
+      <volume name="lvPixelAsic2G">
+        <paramphysvol number="2">
+          <physvol name="pvPixelAsicForGroup2G" volume="lvPixelAsic1">
+            <position x="-UPPixel2lpGBTGap/2-UPPixelAsicWide/2"/>
+          </physvol>
+          <position x="UPPixelAsicWide+UPPixel2lpGBTGap"/>
+        </paramphysvol>
+      </volume>
+
+      <volume name="lvPixelAsic3">
+        <paramphysvol number="3">
+          <physvol name="pvPixelAsicForGroup3" volume="lvPixelAsic1">
+            <position x="-2*(UPPixelWide+UPPixelGap)"/>
+          </physvol>
+          <position x="2*(UPPixelWide+UPPixelGap)"/>
+        </paramphysvol>
+      </volume>
+
+      <volume name="lvPixelAsic4">
+        <paramphysvol number="4">
+          <physvol name="pvPixelAsicForGroup4" volume="lvPixelAsic1">
+            <position x="-1.5*UPPixel5AlWide/4-(UPPixelWide+UPPixelGap)"/>
+          </physvol>
+          <position x="UPPixel5AlWide/4"/>
+        </paramphysvol>
+      </volume>
+
+      <volume name="lvPixelAsic5">
+        <paramphysvol number="5">
+          <physvol name="pvPixelAsicForGroup5" volume="lvPixelAsic1">
+            <position x="-2*UPPixelAlWide/5"/>
+          </physvol>
+          <position x="UPPixelAlWide/5"/>
+        </paramphysvol>
+      </volume>
+
+
+      <volume name="lvPixelAsic7">
+        <paramphysvol number="7">
+          <physvol name="pvPixelAsicForGroup7" volume="lvPixelAsic1">
+            <position x="-3*(UPPixelWide+UPPixelGap)"/>
+          </physvol>
+          <position x="UPPixelWide+UPPixelGap"/>
+        </paramphysvol>
+      </volume>
+
+      <volume name="lvPixelAsic10">
+        <paramphysvol number="5">
+          <physvol name="pvPixelAsicForGroup10" volume="lvPixelAsic2G">
+            <position x="-3*(UPPixelWide+UPPixelGap)"/>
+          </physvol>
+          <position x="UPPixelWide+UPPixelGap"/>
+        </paramphysvol>
+      </volume>
+
+      <volume name="lvPixelAsic14">
+        <paramphysvol number="7">
+          <physvol name="pvPixelAsicForGroup14" volume="lvPixelAsic2G">
+            <position x="-3*(UPPixelWide+UPPixelGap)"/>
+          </physvol>
+          <position x="UPPixelWide+UPPixelGap"/>
+        </paramphysvol>
+      </volume>
+
+
+      <!-- ========== VTRx+ ========== -->
+      <volume material="UP:VTRx_LpGbt" name="lvVTRx" vis="UP:VTRx">
+        <shape name="upVTRxBox" type="Box" dx="UPPixelVTRxWide/2" dy="UPPixelVTRxLong/2" dz="UPPixelVTRxThick/2"/>
+      </volume>
+
+
+      <!-- ========== HybridFlex ========== -->
+      <volume material="UP:HybridFlex7" name="lvHybridFlex7" vis="UP:HybridFlex">
+        <shape name="upHybridFlex7" type="Box" dx="UPHybridFlex7Wide/2" dy="UPHybridFlex7Long/2" dz="UPHybridFlex7Thick/2"/>
+      </volume>
+
+      <volume material="UP:HybridFlex7" name="lvHybridFlex7L" vis="UP:HybridFlex">
+        <shape name="upHybridFlex7L" type="Box" dx="UPHybridFlex7Wide/2" dy="UPHybridFlex7LongEL/2" dz="UPHybridFlex7Thick/2"/>
+      </volume>
+
+      <volume material="UP:HybridFlex7" name="lvHybridFlex77" vis="UP:HybridFlex">
+        <shape name="upHybridFlex77" type="Box" dx="UPHybridFlex7Wide/2" dy="UPHybridFlex7Long" dz="UPHybridFlex7Thick/2"/>
+      </volume>
+
+      <volume material="UP:HybridFlex7" name="lvHybridFlex7LL" vis="UP:HybridFlex">
+        <shape name="upHybridFlex7LL" type="Box" dx="UPHybridFlex7Wide/2" dy="UPHybridFlex7LongELL/2" dz="UPHybridFlex7Thick/2"/>
+      </volume>
+
+      <volume material="UP:HybridFlex7" name="lvHybridFlex5" vis="UP:HybridFlex">
+        <shape name="upHybridFlex5" type="Box" dx="UPHybridFlex5Wide/2" dy="UPHybridFlex7LongELL/2" dz="UPHybridFlex7Thick/2"/>
+      </volume>
+
+
+      <!-- ========== Hysol+Dia glue ========== -->
+      <volume material="UP:HysolDia" name="lvHysolE" vis="UP:Invisible">
+        <shape name="upHysolE" type="BooleanShape" operation="subtraction">
+           <shape name="upHysolBoxE1" type="Box" dx="UPPixelHysolWide/2" dy="UPPixelHysolLongE/2" dz="UPHysolThick/2"/>
+           <shape name="upHysolBoxE2" type="Box" dx="UPPixelHysolCutWide" dy="UPHysolCutLongE" dz="UPHysolThick"/>
+           <position x="UPPixelHysolWide/2" y="UPPixelHysolLongE/2"/>
+        </shape>
+      </volume>
+
+      <!-- ========== Stiff ========== -->
+      <volume material="UP:BoronNitride" name="lvStiffE" vis="UP:Stiffener">
+        <shape name="upStiffE" type="BooleanShape" operation="subtraction">
+           <shape name="upStiffBoxE1" type="Box" dx="UPPixelStiffWide/2" dy="UPPixelStiffLongE/2" dz="UPStiffThick/2"/>
+           <shape name="upStiffBoxE2" type="Box" dx="UPPixelStiffCutWide" dy="UPPixelStiffCutLongE" dz="UPStiffThick"/>
+           <position x="UPPixelStiffWide/2" y="UPPixelStiffLongE/2"/>
+           <shape name="upStiffBoxE3" type="Box" dx="(UPPixelStiffWide-UPAnchorWide*2-UPAnchorSide*2)/2" dy="UPAnchorLong" dz="UPStiffThick"/>
+           <position y="-UPPixelStiffLongE/2"/>
+           <shape name="upStiffBoxE4" type="Box" dx="UPAnchorSide" dy="UPAnchorLong" dz="UPStiffThick"/>
+           <position x="-UPPixelStiffWide/2" y="-UPPixelStiffLongE/2"/>
+           <shape name="upStiffBoxE5" type="Box" dx="UPAnchorSide" dy="UPAnchorLong" dz="UPStiffThick"/>
+           <position x="UPPixelStiffWide/2" y="-UPPixelStiffLongE/2"/>
+
+           <shape name="upStiffCutE1" type="Box" dx="6*mm/2" dy="2*mm/2" dz="UPStiffThick"/>
+           <position x="UPPixelStiffWide/2-UPAnchorSide-UPAnchorWide" y="-UPPixelStiffLongE/2+UPAnchorLong-1*mm"/>
+           <shape name="upStiffCutE2" type="Box" dx="6*mm/2" dy="2*mm/2" dz="UPStiffThick"/>
+           <position x="-UPPixelStiffWide/2+UPAnchorSide+UPAnchorWide" y="-UPPixelStiffLongE/2+UPAnchorLong-1*mm"/>
+           <shape name="upStiffCutE3" type="Box" dx="6*mm/2" dy="2*mm/2" dz="UPStiffThick"/>
+           <position x="UPPixelStiffWide/2-UPAnchorSide" y="-UPPixelStiffLongE/2+UPAnchorLong-1*mm"/>
+           <shape name="upStiffCutE4" type="Box" dx="6*mm/2" dy="2*mm/2" dz="UPStiffThick"/>
+           <position x="-UPPixelStiffWide/2+UPAnchorSide" y="-UPPixelStiffLongE/2+UPAnchorLong-1*mm"/>
+           <shape name="upStiffCutE5" type="Box" dx="6*mm/2" dy="2*mm/2" dz="UPStiffThick"/>
+           <position x="-UPPixelStiffWide/2" y="UPPixelStiffLongE/2-UPAnchorLong+1*mm"/>
+           <shape name="upStiffCutE6" type="Box" dx="6*mm/2" dy="2*mm/2" dz="UPStiffThick"/>
+           <position x="-UPPixelStiffWide/2+UPAnchorWide" y="UPPixelStiffLongE/2-UPAnchorLong+1*mm"/>
+        </shape>
+      </volume>
+
+      <!-- ========== Phase change thermal interface material ========== -->
+      <volume material="UP:HybridTim" name="lvTimE" vis="UP:Invisible">
+        <shape name="upTimE" type="BooleanShape" operation="subtraction">
+           <shape name="upTimBoxE1" type="Box" dx="UPPixelTimWide/2" dy="UPPixelTimLongE/2" dz="UPTimThick/2"/>
+           <shape name="upTimBoxE2" type="Box" dx="UPPixelTimCutWide" dy="UPPixelTimCutLongE" dz="UPTimThick"/>
+           <position x="UPPixelTimWide/2" y="UPPixelTimLongE/2"/>
+        </shape>
+      </volume>
+
+      <!-- ========== Hybrid = Tim + Stiffener + Hysol +   Sensor  or  HybridFlex + ASICs ========== -->
+    <!--Module5: 2IpGBT+1VTRx+ -->
+      <volume material="Air" name="lvPixelModuleC" vis="UP:Envelope">
+        <shape name="upHybridEL" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongEL/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvAsicEL" volume="lvPixelAsic2">
+          <position x="-2*(UPPixelWide+UPPixelGap)" y="UPPixelAsicYEL" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL" volume="lvVTRx">
+           <position x="2*(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYD" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvHybridFlex7EL" volume="lvHybridFlex7L">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+      </volume>
+
+    <!--Module4: 3IpGBT+1VTRx+ -->
+      <volume material="Air" name="lvPixelModuleD" vis="UP:Envelope">
+        <shape name="upHybridEL0" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongEL/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvAsicEL0" volume="lvPixelAsic3">
+          <position x="-2*(UPPixelWide+UPPixelGap)" y="UPPixelAsicYEL" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL0" volume="lvVTRx">
+           <position x="2*(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYD" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvHybridFlex7EL0" volume="lvHybridFlex7L">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+      </volume>
+
+    <!--Mudule3: 10(7+3)IpGBT+3VTRx+ -->
+      <volume material="Air" name="lvPixelModuleE" vis="UP:Envelope">
+        <shape name="upHybridEL1" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongEL/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvAsicEL11" volume="lvPixelAsic7">
+          <position x="-3*(UPPixelWide+UPPixelGap)" y="UPPixelAsicYEL" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvAsicEL12" volume="lvPixelAsic3">
+          <position x="-2*(UPPixelWide+UPPixelGap)+UPPixelWide+UPPixelGap" y="UPPixelVTRxYD" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL11" volume="lvVTRx">
+           <position x="-2*(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYD" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL12" volume="lvVTRx">
+           <position x="2*(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYD" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL13" volume="lvVTRx">
+           <position y="UPPixelVTRxYD" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvHybridFlex7EL1" volume="lvHybridFlex7L">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+      </volume>
+
+    <!--Module2: 19(14+5)IpGBT+5VTRx+ -->
+      <volume material="Air" name="lvPixelModuleF" vis="UP:Envelope">
+        <shape name="upHybridEL2" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongELL/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvAsicEL21" volume="lvPixelAsic14">
+          <position x="-3*(UPPixelWide+UPPixelGap)-UPPixel2lpGBTGap/2-UPPixelAsicWide/2" y="UPPixelAsicYELL" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvAsicEL22" volume="lvPixelAsic5">
+          <position x="-2*UPPixelAlWide/5" y="UPPixelAsicYELL+UPPixel2lpGBTGapy+UPPixelAsicLong" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL21" volume="lvVTRx">
+           <position x="UPPixelAlWide/5" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL22" volume="lvVTRx">
+           <position x="2*UPPixelAlWide/5" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL23" volume="lvVTRx">
+           <position y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL24" volume="lvVTRx">
+           <position x="-UPPixelAlWide/5" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEL25" volume="lvVTRx">
+           <position x="-2*UPPixelAlWide/5" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvHybridFlex7EL2" volume="lvHybridFlex7LL">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+      </volume>
+
+      <!-- 2E1+2E2=Dual Module -->
+      <volume material="Air" name="lvPixelModuleA" vis="UP:Envelope">
+        <shape name="upHybrid2E1" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongE/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvHybridFlex72E1" volume="lvHybridFlex7">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+        <physvol name="pvAsic2E1" volume="lvPixelAsic1">
+          <position y="UPPixelAsicYD" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvVTRx2E1" volume="lvVTRx">
+          <position x="2*(UPPixelWide+UPPixelGap)" y="UPPixelAsicYD+1*mm" z="UPPixelVTRx7Z"/>
+        </physvol>
+      </volume>
+
+      <volume material="Air" name="lvPixelModuleB" vis="UP:Envelope">
+        <shape name="upHybrid2E2" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongE/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvHybridFlex72E2" volume="lvHybridFlex7">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+        <physvol name="pvAsic2E2" volume="lvPixelAsic1">
+          <position y="UPPixelAsicYD" z="UPPixelAsic7Z"/>
+        </physvol>
+      </volume>
+
+    <!--module1: near beam pipe-->
+      <volume material="Air" name="lvPixelModuleG" vis="UP:Envelope">
+        <shape name="upHybridFLL" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongELL/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvAsicFLL1" volume="lvPixelAsic10">
+          <position x="-3*(UPPixelWide+UPPixelGap)-UPPixel2lpGBTGap/2-UPPixelAsicWide/2" y="UPPixelAsicYELL" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvAsicFLL2" volume="lvPixelAsic4">
+          <position x="-1.5*UPPixel5AlWide/4-(UPPixelWide+UPPixelGap)" y="UPPixelAsicYELL+UPPixel2lpGBTGapy+UPPixelAsicLong" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvVTRxFLL21" volume="lvVTRx">
+           <position x="-1.5*UPPixel5AlWide/4-(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxFLL22" volume="lvVTRx">
+           <position x="-0.5*UPPixel5AlWide/4-(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxFLL23" volume="lvVTRx">
+           <position x="0.5*UPPixel5AlWide/4-(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvVTRxFLL24" volume="lvVTRx">
+           <position x="1.5*UPPixel5AlWide/4-(UPPixelWide+UPPixelGap)" y="UPPixelVTRxYDL" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvHybridFlex7HoleAFLL" volume="lvHybridFlex5">
+          <position x="-UPPixelWide-UPPixelGap" y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+      </volume>
+
+      <!-- Basic component for the next -->
+      <volume material="Air" name="lvHybrid2ESeperate">
+        <shape name="upHybridEE" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongE/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvHybridFlex7EE" volume="lvHybridFlex7">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+      </volume>
+
+    <!--module6: Dual Module1 (Not used)-->
+      <volume material="Air" name="lvHybrid2E" vis="UP:Envelope">
+        <shape name="upHybrid2E" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongE2/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvHybridE1" volume="lvHybrid2ESeperate">
+          <position y="-UPHybridLongE/2"/>
+        </physvol>
+        <physvol name="pvAsicEE1" volume="lvPixelAsic1">
+          <position y="-UPPixelAsicY2E" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvAsicEE2" volume="lvPixelAsic1">
+          <position y="UPPixelAsicY2E" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvVTRxEE1" volume="lvVTRx">
+           <position x="2*(UPPixelWide+UPPixelGap)" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvHybridE2" volume="lvHybrid2ESeperate">
+          <position y="UPHybridLongE/2"/>
+          <rotation z="180*degree"/>
+        </physvol>
+      </volume>
+
+    <!--module6: Dual Module2 (Not used)-->
+      <volume material="Air" name="lvHybridDual" vis="UP:Envelope">
+        <shape name="upHybridDual" type="Box" dx="UPPixelHybridWide/2" dy="UPHybridLongE2/2" dz="UPHybrid7Thick/2"/>
+        <physvol name="pvHybridDualPixelGroup2A" volume="lvPixelGroup2A">
+          <position z="UPPixelZ"/>
+        </physvol>
+        <physvol name="pvHybridDualAsic1" volume="lvPixelAsic1">
+          <position y="-UPPixelAsicY2E" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvHybridDualAsic2" volume="lvPixelAsic1">
+          <position y="UPPixelAsicY2E" z="UPPixelAsic7Z"/>
+        </physvol>
+        <physvol name="pvHybridDualVTRx" volume="lvVTRx">
+           <position x="2*(UPPixelWide+UPPixelGap)" z="UPPixelVTRx7Z"/>
+        </physvol>
+        <physvol name="pvHybridDualHybrid" volume="lvHybridFlex77">
+          <position y="UPHybridFlexPielYD" z="UPHybridFlex7Z"/>
+        </physvol>
+      </volume>
+
+</up>

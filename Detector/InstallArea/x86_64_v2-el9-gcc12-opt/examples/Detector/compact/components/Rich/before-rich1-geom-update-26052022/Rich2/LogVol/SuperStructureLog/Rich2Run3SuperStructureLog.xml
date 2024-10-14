@@ -1,0 +1,340 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 Super structure  LogVol definitions                                 -->
+<!--  ==========================================================================-->
+
+
+<Rich2>
+
+
+  <!-- Logical Volumes for Air Boxes containing structure -->
+
+  <volume name="lvRich2SuperStrAirBoxTop" material="Rich:AirNP" vis="Rich:VisRich2AirBoxTop" >
+    <shape type="Box" name =  "Rich2SuperStrAirBoxTopBox"
+	 dx = "Rh2SuperStrAirBoxTopWidth*RhHalfSize"
+	 dy = "Rh2SuperStrAirBoxTopHeight*RhHalfSize"
+	 dz = "Rh2SuperStrAirBoxTopDepth*RhHalfSize"/>
+
+  </volume>
+
+  <volume name="lvRich2SuperStrAirBoxBot" material="Rich:AirNP" vis="Rich:VisRich2AirBoxBot">
+    <shape type="Box" name =  "Rich2SuperStrAirBoxBotBox"
+	 dx = "Rh2SuperStrAirBoxBotWidth*RhHalfSize"
+	 dy = "Rh2SuperStrAirBoxBotHeight*RhHalfSize"
+	 dz = "Rh2SuperStrAirBoxBotDepth*RhHalfSize"/>
+
+  </volume>
+
+  <volume name="lvRich2SuperStrAirTrapRight" material="Rich:AirNP" vis="Rich:VisRich2SuperStrAirTrapRight" >
+   <shape type="BooleanShape" operation="subtraction" name= "Rich2SuperStrAirTrapRightWSubtraction">
+      <shape type="Trap"  name = "Rich2SuperStrAirTrapRight"
+	    z = "Rh2SuperStrAirTrapDepth*RhHalfSize"
+	    y1  = "Rh2SuperStrAirTrapHeight*RhHalfSize"
+	    x1  = "Rh2SuperStrAirTrapFrontWidth*RhHalfSize"
+	    x2  = "Rh2SuperStrAirTrapFrontWidth*RhHalfSize"
+	    y2  = "Rh2SuperStrAirTrapHeight*RhHalfSize"
+	    x3  = "Rh2SuperStrAirTrapBackWidth*RhHalfSize"
+	    x4  = "Rh2SuperStrAirTrapBackWidth*RhHalfSize"/>
+
+      <shape type="Box" name =  "Rich2SuperStrSubtractBox"
+	   dx = "Rh2SubtractBoxWidth*RhHalfSize"
+	   dy = "Rh2SubtractBoxHeight*RhHalfSize"
+	   dz = "Rh2SubtractBoxDepth*RhHalfSize"/>
+      <position y = "Rh2SuperStrAirTrapSubBoxPosY"/>
+
+      <shape type="Box" name =  "Rich2SuperStrSubtractBox2"
+	   dx = "Rh2SuperStrAirTrapSubBox2SizeX*RhHalfSize"
+	   dy = "Rh2SuperStrAirTrapSubBox2SizeY*RhHalfSize"
+	   dz = "Rh2SuperStrAirTrapSubBox2SizeZ*RhHalfSize" />
+      <position x = "Rh2SuperStrAirTrapSubBoxRightPosX"/>
+
+    </shape>
+
+  </volume>
+
+  <volume name="lvRich2SuperStrAirTrapLeft" material="Rich:AirNP" vis="Rich:VisRich2SuperStrAirTrapLeft" >
+    <shape type="BooleanShape" operation="subtraction" name= "Rich2SuperStrAirTrapLeftWSubtraction">
+       <shape type="Trap"  name = "Rich2SuperStrAirTrapLeft"
+	    z   = "Rh2SuperStrAirTrapDepth*RhHalfSize"
+	    y1  = "Rh2SuperStrAirTrapHeight*RhHalfSize"
+	    x1  = "Rh2SuperStrAirTrapFrontWidth*RhHalfSize"
+	    x2  = "Rh2SuperStrAirTrapFrontWidth*RhHalfSize"
+	    y2  = "Rh2SuperStrAirTrapHeight*RhHalfSize"
+	    x3  = "Rh2SuperStrAirTrapBackWidth*RhHalfSize"
+	    x4  = "Rh2SuperStrAirTrapBackWidth*RhHalfSize"/>
+      <shape type="Box" name =  "Rich2SuperStrSubtractBoxLeft"
+	   dx = "Rh2SubtractBoxWidth*RhHalfSize"
+	   dy = "Rh2SubtractBoxHeight*RhHalfSize"
+	   dz = "Rh2SubtractBoxDepth*RhHalfSize"/>
+      <position y = "Rh2SuperStrAirTrapSubBoxPosY"/>
+      <shape type="Box" name =  "Rich2SuperStrSubtractBox2Left"
+	   dx = "Rh2SuperStrAirTrapSubBox2SizeX*RhHalfSize"
+	   dy = "Rh2SuperStrAirTrapSubBox2SizeY*RhHalfSize"
+	   dz = "Rh2SuperStrAirTrapSubBox2SizeZ*RhHalfSize" />
+      <position x = "Rh2SuperStrAirTrapSubBoxLeftPosX"/>
+   </shape>
+
+
+  </volume>
+
+
+  <!-- Logical Volumes for Top and Bottom Structure Assemblies -->
+
+  <volume name="lvRich2SquareRodTopFL" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod" >
+    <shape type="Box" name =  "Rich2SquareRodTopFLBox"
+	 dx = "Rh2StructTopWidth*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2SquareRodBotFH" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2SquareRodBotFHBox"
+	 dx = "Rh2StructBotWidth*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2SquareRodTopZ" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2SquareRodTopZBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "(Rh2StructDepth-2*Rh2SqRodCrossSection2)*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodZJoin" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodZJoinBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2RodZJoinHeight*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodZJoinX" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodZJoinXBox"
+	 dx = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dy = "Rh2RodZJoinHeight*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodXJoin1" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodXJoin1Box"
+	 dx = "Rh2RodXJoin1Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodXJoin2" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodXJoin2Box"
+	 dx = "Rh2RodXJoin2Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodXJoin3" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodXJoin3Box"
+	 dx = "Rh2RodXJoin3Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodXJoin4" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodXJoin4Box"
+	 dx = "Rh2RodXJoin4Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodXJoin5" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodXJoin5Box"
+	 dx = "Rh2RodXJoin5Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodXJoin6" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodXJoin6Box"
+	 dx = "Rh2RodXJoin6Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodTopAngJoin" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodTopAngJoinBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2RodTopAngJoinLength*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodBotAngJoinIn" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodBotAngJoinInBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2RodBotAngJoinInLength*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodBotAngJoinOut" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodBotAngJoinOutBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2RodBotAngJoinOutLength*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodBotAngledEdge" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodBotAngledEdgeBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2RodBotAngledEdgeLength*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodBotXJoinEdge" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodBotXJoinEdgeBox"
+	 dx = "Rh2RodBotXJoinEdgeLength*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+
+  <!-- Logical Volumes for RH and LH Structure Assemblies -->
+
+  <volume name="lvRich2RodRightFR" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightFRBox"
+	 dx = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dy = "Rh2RodRightFRLength*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightXTopF" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightXTopFBox"
+	 dx = "Rh2RodRightXTopFLength*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightXTopB" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightXTopBBox"
+	 dx = "Rh2RodRightXTopBLength*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightSmallJoin1" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightSmallJoin1Box"
+	 dx = "Rh2RodRightSmallJoin1Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightSmallJoin2" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightSmallJoin2Box"
+	 dx = "Rh2RodRightSmallJoin2Length*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightBigJoin1" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightBigJoin1Box"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2RodRightBigJoin1Length*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightVertJoin1" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightVertJoin1Box"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2RodRightVertJoin1Length*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightVertJoin2" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightVertJoin2Box"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2RodRightVertJoin2Length*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightAngleJoin1" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightAngleJoin1Box"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2RodRightAngleJoin1Length*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightAngleJoin2" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightAngleJoin2Box"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2RodRightAngleJoin2Length*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightVertAngJoin" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightVertAngJoinBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2RodRightVertAngJoinLength*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightHorAngEdge" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightHorAngEdgeBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2RodRightHorAngEdgeLength*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightShieldSup1" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightShieldSup1Box"
+	 dx = "Rh2RodRightShieldSupLength1*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightShieldSup2" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightShieldSup2Box"
+	 dx = "Rh2RodRightShieldSupLength2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightShieldSup3" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightShieldSup3Box"
+	 dx = "Rh2RodRightShieldSupLength3*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightShieldSup4" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightShieldSup4Box"
+	 dx = "Rh2RodRightShieldSupLength4*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightHorDiag1" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightHorDiag1Box"
+	 dx = "Rh2RodRightHorDiagLength1*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightHorDiag2" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name =  "Rich2RodRightHorDiag2Box"
+	 dx = "Rh2RodRightHorDiagLength2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection2*RhHalfSize"/>
+  </volume>
+
+  <volume name="lvRich2RodRightShieldSupSpacer" material="Rich:Rich2SuperStructureWallMaterial"  vis="Rich:VisRich2SuperStrRod">
+    <shape type="Box" name = "Rich2RodRightShieldSupSpacerBox"
+	 dx = "Rh2SqRodCrossSection2*RhHalfSize"
+	 dy = "Rh2SqRodCrossSection3*RhHalfSize"
+	 dz = "Rh2SqRodCrossSection3*RhHalfSize"/>
+  </volume>
+
+</Rich2>
+

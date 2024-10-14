@@ -1,0 +1,36 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+  <display>
+    <vis name="VP"                alpha="1.0"  r="0.50" g="0.50" b="0.50"  showDaughters="true"  visible="false"/>
+    <vis name="VP:Chip"           alpha="1.0"  r="0.00" g="0.00" b="1.00"  showDaughters="false" visible="true"/>
+    <vis name="VP:Glue"           alpha="1.0"  r="0.80" g="0.80" b="0.00"  showDaughters="false" visible="true"/>
+    <vis name="VP:BumpBonds"      alpha="1.0"  r="0.70" g="0.70" b="0.00"  showDaughters="false" visible="true"/>
+    <vis name="VP:Sensor"         alpha="0.6"  r="0.90" g="0.00" b="0.00"  showDaughters="true"  visible="true"/>
+    <vis name="VP:Module"         alpha="1.0"  r="0.50" g="0.50" b="0.50"  showDaughters="true"  visible="true"/>
+    <vis name="VP:Hybrid"         alpha="0.8"  r="0.00" g="0.70" b="0.00"  showDaughters="true"  visible="true"/>
+    <vis name="VP:Clamp"          alpha="0.8"  r="0.90" g="0.00" b="0.20"  showDaughters="false" visible="true"/>
+    <vis name="VP:Foot"           alpha="1.0"  r="0.75" g="0.75" b="0.75"  showDaughters="true"  visible="true"/>
+    <vis name="VP:LVClamp"        alpha="1.0"  r="0.83" g="0.68" b="0.21"  showDaughters="true"  visible="true"/>
+    <vis name="VP:ModuleGBT"      alpha="0.9"  r="0.30" g="0.30" b="0.80"  showDaughters="false" visible="true"/>
+    <vis name="VP:ModuleSupport"  alpha="1.0"  r="0.60" g="0.60" b="1.00"  showDaughters="true"  visible="true"/>
+    <vis name="VP:LVCable"        alpha="0.8"  r="0.1"  g="0.1"  b="0.1"   showDaughters="true"  visible="true"/>
+    <vis name="VP:Assembly"       alpha="1.0"  r="0.60" g="0.60" b="1.00"  showDaughters="true"  visible="false"/>
+    <vis name="VP:RFBox"          alpha="0.5"  r="1.00" g="0.30" b="0.30"  showDaughters="true"  visible="true"/>
+    <vis name="RFFoil"            alpha="0.5"  r="0.50" g="0.50" b="0.00"  showDaughters="true"  visible="true"/>
+    <vis name="VP:RFBoxAssembly"  alpha="1.0"  r="1.00" g="0.30" b="0.30"  showDaughters="true"  visible="true"/>
+    <vis name="VP:Support"        alpha="0.7"  r="0.70" g="0.70" b="0.70"  showDaughters="true"  visible="true"/>
+    <vis name="VP:VacuumTank"     alpha="0.2"  r="0.30" g="0.70" b="1.00"  showDaughters="true"  visible="true"/>
+    <vis name="VP:WFCone"         alpha="1.0"  r="1.00" g="0.60" b="0.60"  showDaughters="true"  visible="false"/>
+  </display>
+
+</lccdd>

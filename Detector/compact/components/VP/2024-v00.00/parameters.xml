@@ -1,0 +1,1179 @@
+<!--============================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--============================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--============================================================================-->
+<!-- XML description of the BLS stations                                        -->
+<!--============================================================================-->
+<lccdd>
+  <define>
+
+    <!--==========================================================================-->
+    <!--==========GENERAL=========================================================-->
+    <!--==========================================================================-->
+    <constant name="VP:OpenX"               value="0.0*mm"/>
+    <constant name="VP:Epsilon"             value="0.01*mm"/>
+    <constant name="VP:VeloZ"               value="1670*mm"/>
+    <constant name="VP:VeloRad"             value="590*mm"/>
+    <constant name="VP:VeloDSEndStartZ"     value="VP:VeloZ/2"/>
+    <constant name="VP:VeloDSEndDeltaZ"     value="135*mm"/>
+    <constant name="VP:VeloEWFlangeZExcess" value="5*mm"/>
+
+    <constant name="VP:NoOfStations"        value="26"/>
+
+    <constant name="VP:Rotation"            value="45*degree"/>
+
+    <constant name="VP:VPEpsilon"           value="0.001*mm"/> <!-- original 0.000001 -->
+
+    <constant name="VP:ShimSize"            value="0.5*mm"/>
+
+    <!-- Z positions of stations -->
+    <constant name="VP:Right2LeftDist"  value="12.5*mm"/>
+
+    <!--       regularised layout -->
+    <constant name="VP:Station00Z"          value="-28.125*cm"/>
+    <constant name="VP:Station01Z"          value="-25.625*cm"/>
+    <constant name="VP:Station02Z"          value="-23.125*cm"/>
+    <constant name="VP:Station03Z"          value="-20.625*cm"/>
+    <constant name="VP:Station04Z"          value="-13.125*cm"/>
+    <constant name="VP:Station05Z"          value="-5.625*cm"/>
+    <constant name="VP:Station06Z"          value="-3.125*cm"/>
+    <constant name="VP:Station07Z"          value="-0.625*cm"/>
+    <constant name="VP:Station08Z"          value="1.875*cm"/>
+    <constant name="VP:Station09Z"          value="4.375*cm"/>
+    <constant name="VP:Station10Z"          value="6.875*cm"/>
+    <constant name="VP:Station11Z"          value="9.375*cm"/>
+    <constant name="VP:Station12Z"          value="11.875*cm"/>
+    <constant name="VP:Station13Z"          value="14.375*cm"/>
+    <constant name="VP:Station14Z"          value="16.875*cm"/>
+    <constant name="VP:Station15Z"          value="19.375*cm"/>
+    <constant name="VP:Station16Z"          value="21.875*cm"/>
+    <constant name="VP:Station17Z"          value="24.375*cm"/>
+    <constant name="VP:Station18Z"          value="26.875*cm"/>
+    <constant name="VP:Station19Z"          value="31.875*cm"/>
+    <constant name="VP:Station20Z"          value="39.375*cm"/>
+    <constant name="VP:Station21Z"          value="49.375*cm"/>
+    <constant name="VP:Station22Z"          value="59.375*cm"/>
+    <constant name="VP:Station23Z"          value="64.375*cm"/>
+    <constant name="VP:Station24Z"          value="69.375*cm"/>
+    <constant name="VP:Station25Z"          value="74.375*cm"/>
+
+    <!--==========================================================================-->
+    <!--============LADDERS=======================================================-->
+    <!--==========================================================================-->
+
+    <!-- Design references:
+      https://edms.cern.ch/document/1706379/3
+      https://edms.cern.ch/document/1706381/1
+      https://edms.cern.ch/document/2086903/1
+      https://edms.cern.ch/document/1851416/2
+      https://edms.cern.ch/document/2266981/1
+    -->
+
+    <!-- Pixel size and number -->
+    <constant name = "VP:PixelSize"         value = "0.055*mm"/>
+    <constant name = "VP:NPixels"           value = "256"/>
+
+    <!-- Chip dimensions (active area) -->
+    <constant name = "VP:ChipThick"         value = "0.200*mm"/>
+    <constant name = "VP:ChipActiveSize"    value = "VP:NPixels*VP:PixelSize"/>
+    <!-- Width of inactive edges -->
+    <constant name = "VP:ChipEdgeX"         value = "0.030*mm"/>
+    <constant name = "VP:ChipTopEdgeY"      value = "0.100*mm"/>
+    <constant name = "VP:ChipBtmEdgeY"      value = "2.420*mm"/>
+    <!-- Chip dimensions (total) -->
+    <constant name = "VP:ChipTotalSizeX"    value = "VP:ChipActiveSize+2*VP:ChipEdgeX"/>
+    <constant name = "VP:ChipTotalSizeY"    value = "VP:ChipActiveSize+VP:ChipTopEdgeY+VP:ChipBtmEdgeY"/>
+    <!-- Distance between two readout chips -->
+    <constant name = "VP:Chip2ChipDist"     value = "0.165*mm"/>
+
+    <!-- Thickness of glue layer -->
+    <constant name = "VP:GlueThick"         value = "0.070*mm"/>
+    <!-- Thickness of bump bond layer -->
+    <constant name = "VP:BumpBondsThick"    value = "0.020*mm"/>
+
+    <!-- Sensor dimensions (active area) -->
+    <constant name = "VP:SiThick"           value = "0.200*mm"/>
+    <constant name = "VP:SiSizeX"           value = "3*VP:ChipActiveSize+2*VP:Chip2ChipDist"/>
+    <constant name = "VP:SiSizeY"           value = "VP:ChipActiveSize"/>
+    <!-- Width of inactive edge -->
+    <constant name = "VP:SiEdge"            value = "0.450*mm"/>
+
+    <!-- Ladder positioning on module -->
+    <!-- Distance of closest pixel row to beam line -->
+    <constant name = "VP:ClosestInnerPixelRow"    value = "93*VP:PixelSize"/>
+    <constant name = "VP:ClosestOuterPixelRow"    value = "343*VP:PixelSize"/>
+    <!-- Distance of first/last pixel column to beam line -->
+    <constant name = "VP:ClosestShortPixelColumn" value = "95*VP:PixelSize"/>
+    <constant name = "VP:ClosestNLOPixelColumn"   value = "73*VP:PixelSize"/>
+    <constant name = "VP:ClosestCLIPixelColumn"   value = "98*VP:PixelSize"/>
+
+    <!--==========================================================================-->
+    <!--============ACTIVE AREA===================================================-->
+    <!--==========================================================================-->
+
+    <!-- TODO - could consider modifying DeVPSensor code to use the same names as VP_geo to avoid this duplication (which was necessary in DetDesc) -->
+    <constant name="VP:Thickness"          value="VP:SiThick"/>
+    <constant name="VP:ChipSize"           value="VP:ChipActiveSize"/>
+    <constant name="VP:InterChipDist"      value="VP:Chip2ChipDist"/>
+    <constant name="VP:NChips"             value="3"/>
+    <constant name="VP:NColumns"           value="VP:NPixels"/>
+    <constant name="VP:NRows"              value="VP:NPixels"/>
+    <!--
+    Already defined above
+    <constant name="VP:PixelSize"          value="0.055*mm"/>
+    -->
+    <constant name="VP:InterChipPixelSize" value="VP:PixelSize + 0.5*VP:Chip2ChipDist"/>
+
+    <constant name="VP:sensitiveVolumeCut"    value="5.0*mm"/>
+
+    <!--==========================================================================-->
+    <!--============SUPPORT=======================================================-->
+    <!--==========================================================================-->
+
+    <!-- PlanA Substrate -->
+    <constant name="VP:SubstrateThick"                 value="0.500*mm"/>
+    <constant name="VP:SubstrateNewSizeX"              value="111.3688*mm"/>
+    <constant name="VP:SubstrateNewSizeY"              value="116.5*mm"/>
+    <constant name="VP:SubstrateNewIPXDistFromBL"      value="90.0*mm"/>
+    <constant name="VP:SubstrateNewIPYDistFromBL"      value="46.5*mm"/>
+    <constant name="VP:SubstrateNewTopInnerCutSize"    value="sqrt(2)*35.6417*mm - 5.005*mm"/>
+    <constant name="VP:SubstrateNewBottomInnerCutSize" value="sqrt(2)*11.0963*mm - 5.005*mm"/>
+
+    <!-- Hybrid -->
+    <constant name="VP:HybridVFEHYB3Thick"               value="0.672*mm"/>
+    <constant name="VP:HybridVFEHYB3SizeX"               value="43.25*mm"/>
+    <constant name="VP:HybridVFEHYB3SizeY"               value="30.60*mm"/>
+    <constant name="VP:HybridVFEHYB3SizeBottomSide"      value="30.45*mm"/>
+    <constant name="VP:HybridVFEHYB3BLCutSizeX"          value="4.20*mm"/>
+    <constant name="VP:HybridVFEHYB3BLCutSizeY"          value="6.90*mm"/>
+    <constant name="VP:HybridVFEHYB3BLCutAngle"          value="atan(VP:HybridVFEHYB3BLCutSizeX/VP:HybridVFEHYB3BLCutSizeY)"/>
+    <constant name="VP:HybridVFEHYB3BLCutHypot"          value="sqrt(VP:HybridVFEHYB3BLCutSizeX*VP:HybridVFEHYB3BLCutSizeX+VP:HybridVFEHYB3BLCutSizeY*VP:HybridVFEHYB3BLCutSizeY)"/>
+    <constant name="VP:HybridVFEHYB3BLCutBoxSizeX"       value="2*VP:HybridVFEHYB3BLCutSizeY*sin(VP:HybridVFEHYB3BLCutAngle)"/>
+    <constant name="VP:HybridVFEHYB3BLCutBoxSizeY"       value="2*VP:HybridVFEHYB3BLCutHypot"/>
+    <constant name="VP:HybridVFEHYB3BRCutSizeX"          value="2.60*mm"/>
+    <constant name="VP:HybridVFEHYB3BRCutSizeY"          value="2.60*mm"/>
+    <constant name="VP:HybridVFEHYB3BRCutAngle"          value="atan(VP:HybridVFEHYB3BRCutSizeX/VP:HybridVFEHYB3BRCutSizeY)"/>
+    <constant name="VP:HybridVFEHYB3BRCutHypot"          value="sqrt(VP:HybridVFEHYB3BRCutSizeX*VP:HybridVFEHYB3BRCutSizeX+VP:HybridVFEHYB3BRCutSizeY*VP:HybridVFEHYB3BRCutSizeY)"/>
+    <constant name="VP:HybridVFEHYB3BRCutBoxSizeX"       value="2*VP:HybridVFEHYB3BRCutSizeY*sin(VP:HybridVFEHYB3BRCutAngle)"/>
+    <constant name="VP:HybridVFEHYB3BRCutBoxSizeY"       value="2*VP:HybridVFEHYB3BRCutHypot"/>
+    <constant name="VP:HybridVFEHYB3Trap1SizeX"          value="2.90*mm"/>
+    <constant name="VP:HybridVFEHYB3Trap1SizeY1"         value="3.70*mm"/>
+    <constant name="VP:HybridVFEHYB3Trap1SizeY2"         value="VP:HybridVFEHYB3Trap1SizeY1+1.70*mm"/>
+    <constant name="VP:HybridVFEHYB3Trap2SizeX"          value="3.10*mm"/>
+    <constant name="VP:HybridVFEHYB3Trap2SizeY1"         value="2.70*mm"/>
+    <constant name="VP:HybridVFEHYB3Trap2SizeY2"         value="VP:HybridVFEHYB3Trap2SizeY1+8.40*mm"/>
+    <constant name="VP:HybridVFEGBTX3Thick"              value="0.672*mm"/>
+    <constant name="VP:HybridVFEGBTX3SizeX"              value="(194.65-150.75)*mm"/>
+    <constant name="VP:HybridVFEGBTX3SizeY"              value="(157.30-121.00)*mm"/>
+    <constant name="VP:HybridVFEGBTX3TopLeftCutSize"     value="sqrt(2)*(157.30-149.70)*mm"/>
+    <constant name="VP:HybridVFEGBTX3TopRightCutSize"    value="sqrt(2)*(157.30-143.70)*mm"/>
+    <constant name="VP:HybridVFEGBTX3BottomRightCutSize" value="sqrt(2)*(127.50-121.00)*mm"/>
+
+    <!-- LV Harness -->
+    <!-- Transition Board -->
+    <constant name = "VP:TransitionMainX"              value = "90*mm"/>
+    <constant name = "VP:TransitionMainY"              value = "20.5*mm"/>
+    <constant name = "VP:TransitionMainThick"          value = "1*mm"/>
+    <constant name = "VP:TransitionDeliveryPipeHoleX"  value = "3*mm"/>
+    <constant name = "VP:TransitionDeliveryPipeHoleY"  value = "3.5*mm"/>
+    <constant name = "VP:TransitionDeliveryPipeOffset" value = "8*mm"/>
+
+    <constant name = "VP:TransitionWingLX"             value = "38.07*mm"/>
+    <constant name = "VP:TransitionWingRX"             value = "37.75*mm"/>
+    <constant name = "VP:TransitionWingY"              value = "7*mm"/>
+
+    <constant name = "VP:TransitionX"                  value = "-118.3*mm"/>
+
+    <!-- LV cables -->
+
+    <!-- Part 45501 -->
+    <constant name = "VP:LVCableBigR" value = "1.45*mm"/>
+    <!-- Part 45401 -->
+    <constant name = "VP:LVCableMediumR" value = "1.3*mm"/>
+    <!-- Part 45101 -->
+    <constant name = "VP:LVCableSmallR" value = "0.95*mm"/>
+
+    <!-- LV Cables for Back, Short Hybrid to Transition Board -->
+
+    <constant name = "VP:LVShortBackLength" value = "10*mm"/>
+    <constant name = "VP:LVShortBackSeparation" value = "14.26*mm"/>
+    <constant name = "VP:LVShortBackWidth" value = "VP:LVShortBackSeparation + 3*mm + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVShortBackCentreX" value = "-37.801 - 0.5*VP:LVShortBackSeparation/sqrt(2)"/>
+    <constant name = "VP:LVShortBackCentreY" value = "31.0703 - 0.5*VP:LVShortBackSeparation/sqrt(2)"/>
+    <constant name = "VP:LVShortBackPosX" value = "VP:LVShortBackCentreX - 0.5*VP:LVShortBackLength/sqrt(2)"/>
+    <constant name = "VP:LVShortBackPosY" value = "VP:LVShortBackCentreY + 0.5*VP:LVShortBackLength/sqrt(2)"/>
+    <constant name = "VP:LVHybridBackTop" value = "VP:SubstrateThick/2 + VP:HybridVFEHYB3Thick"/>
+    <constant name = "VP:LVShortBackPosZ" value = "VP:LVHybridBackTop + VP:LVCableMediumR"/>
+
+    <constant name = "VP:LVShortBackTransitionLength" value = "28.536*mm"/>
+    <constant name = "VP:LVShortBackTransitionSeparation" value = "(41.74 - 27.69)*mm"/>
+    <constant name = "VP:LVShortBackTransitionWidth" value = "VP:LVShortBackTransitionSeparation + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVShortBackTransitionPosX" value = "VP:TransitionX + 0.5*(VP:LVShortBackTransitionLength - 0.5*VP:TransitionMainThick) + 0.5*VP:TransitionMainThick"/>
+    <constant name = "VP:LVShortBackTransitionPosY" value = "27.69*mm + 0.5*VP:LVShortBackTransitionSeparation"/>
+    <constant name = "VP:LVShortBackTransitionPosZ" value = "8.02*mm"/>
+    <constant name = "VP:LVShortBackTransitionEndPosX" value = "VP:TransitionX + VP:LVShortBackTransitionLength"/>
+
+    <constant name = "VP:LVShortBackInclineDeltaZ" value = "VP:LVShortBackTransitionPosZ - VP:LVShortBackPosZ"/>
+    <constant name = "VP:LVShortBackInclineLength" value = "sqrt(VP:LVShortBackLength*VP:LVShortBackLength - VP:LVShortBackInclineDeltaZ*VP:LVShortBackInclineDeltaZ)"/>
+    <constant name = "VP:LVShortBackInclineAngle" value = "asin(VP:LVShortBackInclineDeltaZ/VP:LVShortBackLength)"/>
+    <constant name = "VP:LVShortBackInclinePosX" value = "VP:LVShortBackPosX - 0.5*(VP:LVShortBackLength + VP:LVShortBackInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVShortBackInclinePosY" value = "VP:LVShortBackPosY + 0.5*(VP:LVShortBackLength + VP:LVShortBackInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVShortBackInclinePosZ" value = "VP:LVShortBackPosZ + 0.5*(VP:LVShortBackInclineDeltaZ)"/>
+    <constant name = "VP:LVShortBackInclineEndPosX" value = "VP:LVShortBackInclinePosX - 0.5*(VP:LVShortBackInclineLength)/sqrt(2) - VP:VPEpsilon"/>
+    <constant name = "VP:LVShortBackInclineEndPosY" value = "VP:LVShortBackInclinePosY + 0.5*(VP:LVShortBackInclineLength)/sqrt(2)"/>
+
+    <constant name = "VP:LVShortBack1Y" value = "VP:LVShortBackWidth/sqrt(2)"/>
+    <constant name = "VP:LVShortBack1X1" value = "5*mm"/>
+    <constant name = "VP:LVShortBack1X2" value = "VP:LVShortBack1X1 + VP:LVShortBack1Y"/>
+    <constant name = "VP:LVShortBack1XLength" value = "VP:LVShortBack1X1 + 0.5*VP:LVShortBack1Y"/>
+    <constant name = "VP:LVShortBack1Angle" value = "atan(0.5)"/>
+    <constant name = "VP:LVShortBack1PosX" value = "VP:LVShortBackInclineEndPosX - 0.5*VP:LVShortBack1XLength"/>
+    <constant name = "VP:LVShortBack1PosY" value = "VP:LVShortBackInclineEndPosY"/>
+    <constant name = "VP:LVShortBack1EndPosX" value = "VP:LVShortBack1PosX - 0.5*VP:LVShortBack1XLength"/>
+
+    <constant name = "VP:LVShortBackL" value = "VP:LVShortBackInclineEndPosX - VP:LVShortBackTransitionEndPosX"/>
+    <constant name = "VP:LVShortBack2Y" value = "VP:LVShortBackL - (VP:LVShortBack1X1+0.5*VP:LVShortBack1Y)"/>
+    <constant name = "VP:LVShortBack2X1" value = "VP:LVShortBack1Y"/>
+    <constant name = "VP:LVShortBack2X2" value = "VP:LVShortBackTransitionWidth"/>
+    <constant name = "VP:LVShortBack2Angle" value = "atan((VP:LVShortBack1PosY-VP:LVShortBackTransitionPosY)/(VP:LVShortBack1EndPosX-VP:LVShortBackTransitionEndPosX))"/>
+    <constant name = "VP:LVShortBack2PosX" value = "0.5*(VP:LVShortBackTransitionEndPosX + VP:LVShortBack1EndPosX)"/>
+    <constant name = "VP:LVShortBack2PosY" value = "0.5*(VP:LVShortBack1PosY + VP:LVShortBackTransitionPosY)"/>
+
+    <!-- LV Cables for Back, GBTX to Transition Board -->
+
+    <constant name = "VP:LVGBTXBackTransitionPosZ" value = "7.52*mm"/>
+
+    <constant name = "VP:LVGBTXBackPosX" value = "-76.094*mm"/>
+    <constant name = "VP:LVGBTXBackPosY" value = "-19.824*mm"/>
+    <constant name = "VP:LVGBTXBackPosZ" value = "VP:LVHybridBackTop + VP:LVCableSmallR"/>
+    <constant name = "VP:LVGBTXBackLength" value = "6*mm"/>
+    <constant name = "VP:LVGBTXBackWidth" value = "6*mm"/>
+
+    <constant name = "VP:LVGBTXBackInclineDeltaZ" value = "VP:LVGBTXBackTransitionPosZ - VP:LVGBTXBackPosZ"/>
+    <constant name = "VP:LVGBTXBackInclineLength" value = "sqrt(VP:LVGBTXBackLength*VP:LVGBTXBackLength - VP:LVGBTXBackInclineDeltaZ*VP:LVGBTXBackInclineDeltaZ)"/>
+    <constant name = "VP:LVGBTXBackInclineAngle" value = "asin(VP:LVGBTXBackInclineDeltaZ/VP:LVGBTXBackLength)"/>
+    <constant name = "VP:LVGBTXBackInclinePosX" value = "VP:LVGBTXBackPosX - 0.5*VP:LVGBTXBackInclineLength"/>
+    <constant name = "VP:LVGBTXBackInclinePosY" value = "VP:LVGBTXBackPosY"/>
+    <constant name = "VP:LVGBTXBackInclinePosZ" value = "VP:LVGBTXBackPosZ + 0.5*(VP:LVGBTXBackInclineDeltaZ)"/>
+    <constant name = "VP:LVGBTXBackInclineEndPosX" value = "VP:LVGBTXBackInclinePosX - 0.5*(VP:LVGBTXBackInclineLength)"/>
+    <constant name = "VP:LVGBTXBackInclineEndPosY" value = "VP:LVGBTXBackPosY"/>
+
+    <constant name = "VP:LVGBTXBackTransitionEndPosX" value = "VP:TransitionX + 0.5*VP:TransitionMainThick"/>
+    <constant name = "VP:LVGBTXBackTransitionEndPosY" value = "-7.62*mm"/>
+
+    <constant name = "VP:LVGBTXBackTransitionY" value = "VP:LVGBTXBackInclineEndPosX - VP:LVGBTXBackTransitionEndPosX"/>
+    <constant name = "VP:LVGBTXBackTransitionX1" value = "VP:LVGBTXBackWidth"/>
+    <constant name = "VP:LVGBTXBackTransitionX2" value = "5.64*mm"/>
+    <constant name = "VP:LVGBTXBackTransitionAngle" value = "atan((VP:LVGBTXBackInclineEndPosY-VP:LVGBTXBackTransitionEndPosY)/VP:LVGBTXBackTransitionY)"/>
+
+    <constant name = "VP:LVGBTXBackTransitionPosX" value = "VP:LVGBTXBackTransitionEndPosX + 0.5*VP:LVGBTXBackTransitionY"/>
+    <constant name = "VP:LVGBTXBackTransitionPosY" value = "0.5*(VP:LVGBTXBackTransitionEndPosY + VP:LVGBTXBackInclineEndPosY)"/>
+
+    <!-- LV Cables for Back, Long Hybrid to Transition Board
+         Follows the same formalism as the "short" ones with different starting points,
+         different arbitrary lengths and some sign changes-->
+
+    <constant name = "VP:LVLongBackLength" value = "10*mm"/>
+    <constant name = "VP:LVLongBackSeparation" value = "14.26*mm"/>
+    <constant name = "VP:LVLongBackWidth" value = "VP:LVLongBackSeparation + 3*mm + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVLongBackCentreX" value = "-38.877 + 0.5*VP:LVLongBackSeparation/sqrt(2)"/>
+    <constant name = "VP:LVLongBackCentreY" value = "-49.451 - 0.5*VP:LVLongBackSeparation/sqrt(2)"/>
+    <constant name = "VP:LVLongBackPosX" value = "VP:LVLongBackCentreX - 0.5*VP:LVLongBackLength/sqrt(2)"/>
+    <constant name = "VP:LVLongBackPosY" value = "VP:LVLongBackCentreY - 0.5*VP:LVLongBackLength/sqrt(2)"/>
+    <constant name = "VP:LVLongBackPosZ" value = "VP:LVShortBackPosZ"/>
+
+    <constant name = "VP:LVLongBackTransitionLength" value = "20*mm"/>
+    <constant name = "VP:LVLongBackTransitionSeparation" value = "(41.8 - 28.5)*mm"/>
+    <constant name = "VP:LVLongBackTransitionWidth" value = "VP:LVLongBackTransitionSeparation + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVLongBackTransitionPosX" value = "VP:TransitionX + 0.5*(VP:LVLongBackTransitionLength - 0.5*VP:TransitionMainThick) + 0.5*VP:TransitionMainThick"/>
+    <constant name = "VP:LVLongBackTransitionPosY" value = "-41.8*mm + 0.5*VP:LVLongBackTransitionSeparation"/>
+    <constant name = "VP:LVLongBackTransitionPosZ" value = "8.02*mm"/>
+    <constant name = "VP:LVLongBackTransitionEndPosX" value = "VP:TransitionX + VP:LVLongBackTransitionLength"/>
+
+    <constant name = "VP:LVLongBackInclineDeltaZ" value = "VP:LVLongBackTransitionPosZ - VP:LVLongBackPosZ"/>
+    <constant name = "VP:LVLongBackInclineLength" value = "sqrt(VP:LVLongBackLength*VP:LVLongBackLength - VP:LVLongBackInclineDeltaZ*VP:LVLongBackInclineDeltaZ)"/>
+    <constant name = "VP:LVLongBackInclineAngle" value = "asin(VP:LVLongBackInclineDeltaZ/VP:LVLongBackLength)"/>
+    <constant name = "VP:LVLongBackInclinePosX" value = "VP:LVLongBackPosX - 0.5*(VP:LVLongBackLength + VP:LVLongBackInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVLongBackInclinePosY" value = "VP:LVLongBackPosY - 0.5*(VP:LVLongBackLength + VP:LVLongBackInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVLongBackInclinePosZ" value = "VP:LVLongBackPosZ + 0.5*(VP:LVLongBackInclineDeltaZ)"/>
+    <constant name = "VP:LVLongBackInclineEndPosX" value = "VP:LVLongBackInclinePosX - 0.5*(VP:LVLongBackInclineLength)/sqrt(2) - VP:VPEpsilon"/>
+    <constant name = "VP:LVLongBackInclineEndPosY" value = "VP:LVLongBackInclinePosY - 0.5*(VP:LVLongBackInclineLength)/sqrt(2)"/>
+
+    <constant name = "VP:LVLongBack1Y" value = "VP:LVLongBackWidth/sqrt(2)"/>
+    <constant name = "VP:LVLongBack1X1" value = "5*mm"/>
+    <constant name = "VP:LVLongBack1X2" value = "VP:LVLongBack1X1 + VP:LVLongBack1Y"/>
+    <constant name = "VP:LVLongBack1XLength" value = "VP:LVLongBack1X1 + 0.5*VP:LVLongBack1Y"/>
+    <constant name = "VP:LVLongBack1Angle" value = "atan(0.5)"/>
+    <constant name = "VP:LVLongBack1PosX" value = "VP:LVLongBackInclineEndPosX - 0.5*VP:LVLongBack1XLength"/>
+    <constant name = "VP:LVLongBack1PosY" value = "VP:LVLongBackInclineEndPosY"/>
+    <constant name = "VP:LVLongBack1EndPosX" value = "VP:LVLongBack1PosX - 0.5*VP:LVLongBack1XLength"/>
+
+    <constant name = "VP:LVLongBackL" value = "VP:LVLongBackInclineEndPosX - VP:LVLongBackTransitionEndPosX"/>
+    <constant name = "VP:LVLongBack2Y" value = "VP:LVLongBackL - (VP:LVLongBack1X1+0.5*VP:LVLongBack1Y)"/>
+    <constant name = "VP:LVLongBack2X1" value = "VP:LVLongBack1Y"/>
+    <constant name = "VP:LVLongBack2X2" value = "VP:LVLongBackTransitionWidth"/>
+    <constant name = "VP:LVLongBack2Angle" value = "atan((VP:LVLongBack1PosY-VP:LVLongBackTransitionPosY)/(VP:LVLongBack1EndPosX-VP:LVLongBackTransitionEndPosX))"/>
+    <constant name = "VP:LVLongBack2PosX" value = "0.5*(VP:LVLongBackTransitionEndPosX + VP:LVLongBack1EndPosX)"/>
+    <constant name = "VP:LVLongBack2PosY" value = "0.5*(VP:LVLongBack1PosY + VP:LVLongBackTransitionPosY)"/>
+
+
+    <!-- LV Cables for Front, Short Hybrid to Transition Board -->
+
+    <constant name = "VP:LVShortFrontLength" value = "10*mm"/>
+    <constant name = "VP:LVShortFrontSeparation" value = "14.26*mm"/>
+    <constant name = "VP:LVShortFrontWidth" value = "VP:LVShortFrontSeparation + 3*mm + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVShortFrontCentreX" value = "-37.801 - 0.5*VP:LVShortFrontSeparation/sqrt(2)"/>
+    <constant name = "VP:LVShortFrontCentreY" value = "31.0703 - 0.5*VP:LVShortFrontSeparation/sqrt(2)"/>
+    <constant name = "VP:LVShortFrontPosX" value = "VP:LVShortFrontCentreX - 0.5*VP:LVShortFrontLength/sqrt(2)"/>
+    <constant name = "VP:LVShortFrontPosY" value = "VP:LVShortFrontCentreY + 0.5*VP:LVShortFrontLength/sqrt(2)"/>
+    <constant name = "VP:LVHybridFrontTop" value = "-(VP:SubstrateThick/2 + VP:HybridVFEHYB3Thick)"/>
+    <constant name = "VP:LVShortFrontPosZ" value = "VP:LVHybridFrontTop - VP:LVCableMediumR"/>
+
+    <constant name = "VP:LVShortFrontTransitionLength" value = "28.536*mm"/>
+    <constant name = "VP:LVShortFrontTransitionSeparation" value = "(41.69 - 27.73)*mm"/>
+    <constant name = "VP:LVShortFrontTransitionWidth" value = "VP:LVShortFrontTransitionSeparation + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVShortFrontTransitionPosX" value = "VP:TransitionX + 0.5*(VP:LVShortFrontTransitionLength - 0.5*VP:TransitionMainThick) + 0.5*VP:TransitionMainThick"/>
+    <constant name = "VP:LVShortFrontTransitionPosY" value = "27.69*mm + 0.5*VP:LVShortFrontTransitionSeparation"/>
+    <constant name = "VP:LVShortFrontTransitionPosZ" value = "-8.01*mm"/>
+    <constant name = "VP:LVShortFrontTransitionEndPosX" value = "VP:TransitionX + VP:LVShortFrontTransitionLength"/>
+
+    <constant name = "VP:LVShortFrontInclineDeltaZ" value = "-(VP:LVShortFrontTransitionPosZ - VP:LVShortFrontPosZ)"/>
+    <constant name = "VP:LVShortFrontInclineLength" value = "sqrt(VP:LVShortFrontLength*VP:LVShortFrontLength - VP:LVShortFrontInclineDeltaZ*VP:LVShortFrontInclineDeltaZ)"/>
+    <constant name = "VP:LVShortFrontInclineAngle" value = "asin(VP:LVShortFrontInclineDeltaZ/VP:LVShortFrontLength)"/>
+    <constant name = "VP:LVShortFrontInclinePosX" value = "VP:LVShortFrontPosX - 0.5*(VP:LVShortFrontLength + VP:LVShortFrontInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVShortFrontInclinePosY" value = "VP:LVShortFrontPosY + 0.5*(VP:LVShortFrontLength + VP:LVShortFrontInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVShortFrontInclinePosZ" value = "VP:LVShortFrontPosZ - 0.5*(VP:LVShortFrontInclineDeltaZ)"/>
+    <constant name = "VP:LVShortFrontInclineEndPosX" value = "VP:LVShortFrontInclinePosX - 0.5*(VP:LVShortFrontInclineLength)/sqrt(2) - VP:VPEpsilon"/>
+    <constant name = "VP:LVShortFrontInclineEndPosY" value = "VP:LVShortFrontInclinePosY + 0.5*(VP:LVShortFrontInclineLength)/sqrt(2)"/>
+
+    <constant name = "VP:LVShortFront1Y" value = "VP:LVShortFrontWidth/sqrt(2)"/>
+    <constant name = "VP:LVShortFront1X1" value = "5*mm"/>
+    <constant name = "VP:LVShortFront1X2" value = "VP:LVShortFront1X1 + VP:LVShortFront1Y"/>
+    <constant name = "VP:LVShortFront1XLength" value = "VP:LVShortFront1X1 + 0.5*VP:LVShortFront1Y"/>
+    <constant name = "VP:LVShortFront1Angle" value = "atan(0.5)"/>
+    <constant name = "VP:LVShortFront1PosX" value = "VP:LVShortFrontInclineEndPosX - 0.5*VP:LVShortFront1XLength"/>
+    <constant name = "VP:LVShortFront1PosY" value = "VP:LVShortFrontInclineEndPosY"/>
+    <constant name = "VP:LVShortFront1EndPosX" value = "VP:LVShortFront1PosX - 0.5*VP:LVShortFront1XLength"/>
+
+    <constant name = "VP:LVShortFrontL" value = "VP:LVShortFrontInclineEndPosX - VP:LVShortFrontTransitionEndPosX"/>
+    <constant name = "VP:LVShortFront2Y" value = "VP:LVShortFrontL - (VP:LVShortFront1X1+0.5*VP:LVShortFront1Y)"/>
+    <constant name = "VP:LVShortFront2X1" value = "VP:LVShortFront1Y"/>
+    <constant name = "VP:LVShortFront2X2" value = "VP:LVShortFrontTransitionWidth"/>
+    <constant name = "VP:LVShortFront2Angle" value = "atan((VP:LVShortFront1PosY-VP:LVShortFrontTransitionPosY)/(VP:LVShortFront1EndPosX-VP:LVShortFrontTransitionEndPosX))"/>
+    <constant name = "VP:LVShortFront2PosX" value = "0.5*(VP:LVShortFrontTransitionEndPosX + VP:LVShortFront1EndPosX)"/>
+    <constant name = "VP:LVShortFront2PosY" value = "0.5*(VP:LVShortFront1PosY + VP:LVShortFrontTransitionPosY)"/>
+
+    <!-- LV Cables for Front, GBTX to Transition Board -->
+
+    <constant name = "VP:LVGBTXFrontTransitionPosZ" value = "-7.45*mm"/>
+
+    <constant name = "VP:LVGBTXFrontPosX" value = "VP:LVGBTXBackPosX"/>
+    <constant name = "VP:LVGBTXFrontPosY" value = "VP:LVGBTXBackPosY - VP:LVShortFrontSeparation"/>
+    <constant name = "VP:LVGBTXFrontPosZ" value = "VP:LVHybridFrontTop - VP:LVCableSmallR"/>
+    <constant name = "VP:LVGBTXFrontLength" value = "6*mm"/>
+    <constant name = "VP:LVGBTXFrontWidth" value = "6*mm"/>
+
+    <constant name = "VP:LVGBTXFrontInclineDeltaZ" value = "-(VP:LVGBTXFrontTransitionPosZ - VP:LVGBTXFrontPosZ)"/>
+    <constant name = "VP:LVGBTXFrontInclineLength" value = "sqrt(VP:LVGBTXFrontLength*VP:LVGBTXFrontLength - VP:LVGBTXFrontInclineDeltaZ*VP:LVGBTXFrontInclineDeltaZ)"/>
+    <constant name = "VP:LVGBTXFrontInclineAngle" value = "asin(VP:LVGBTXFrontInclineDeltaZ/VP:LVGBTXFrontLength)"/>
+    <constant name = "VP:LVGBTXFrontInclinePosX" value = "VP:LVGBTXFrontPosX - 0.5*VP:LVGBTXFrontInclineLength"/>
+    <constant name = "VP:LVGBTXFrontInclinePosY" value = "VP:LVGBTXFrontPosY"/>
+    <constant name = "VP:LVGBTXFrontInclinePosZ" value = "VP:LVGBTXFrontPosZ - 0.5*(VP:LVGBTXFrontInclineDeltaZ)"/>
+    <constant name = "VP:LVGBTXFrontInclineEndPosX" value = "VP:LVGBTXFrontInclinePosX - 0.5*(VP:LVGBTXFrontInclineLength)"/>
+    <constant name = "VP:LVGBTXFrontInclineEndPosY" value = "VP:LVGBTXFrontPosY"/>
+
+    <constant name = "VP:LVGBTXFrontTransitionEndPosX" value = "VP:TransitionX + 0.5*VP:TransitionMainThick"/>
+    <constant name = "VP:LVGBTXFrontTransitionEndPosY" value = "-7.62*mm"/>
+
+    <constant name = "VP:LVGBTXFrontTransitionY" value = "VP:LVGBTXFrontInclineEndPosX - VP:LVGBTXFrontTransitionEndPosX"/>
+    <constant name = "VP:LVGBTXFrontTransitionX1" value = "VP:LVGBTXFrontWidth"/>
+    <constant name = "VP:LVGBTXFrontTransitionX2" value = "5.64*mm"/>
+    <constant name = "VP:LVGBTXFrontTransitionAngle" value = "atan((VP:LVGBTXFrontInclineEndPosY-VP:LVGBTXFrontTransitionEndPosY)/VP:LVGBTXFrontTransitionY)"/>
+
+    <constant name = "VP:LVGBTXFrontTransitionPosX" value = "VP:LVGBTXFrontTransitionEndPosX + 0.5*VP:LVGBTXFrontTransitionY"/>
+    <constant name = "VP:LVGBTXFrontTransitionPosY" value = "0.5*(VP:LVGBTXFrontTransitionEndPosY + VP:LVGBTXFrontInclineEndPosY)"/>
+
+    <!-- LV Cables for Front, Long Hybrid to Transition Board
+         Follows the same formalism as the "short" ones with different starting points,
+         different arbitrary lengths and some sign changes-->
+
+    <constant name = "VP:LVLongFrontLength" value = "10*mm"/>
+    <constant name = "VP:LVLongFrontSeparation" value = "14.26*mm"/>
+    <constant name = "VP:LVLongFrontWidth" value = "VP:LVLongFrontSeparation + 3*mm + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVLongFrontCentreX" value = "-16.374 - 0.5*VP:LVLongFrontSeparation/sqrt(2)"/>
+    <constant name = "VP:LVLongFrontCentreY" value = "-52.697 + 0.5*VP:LVLongFrontSeparation/sqrt(2)"/>
+    <constant name = "VP:LVLongFrontPosX" value = "VP:LVLongFrontCentreX - 0.5*VP:LVLongFrontLength/sqrt(2)"/>
+    <constant name = "VP:LVLongFrontPosY" value = "VP:LVLongFrontCentreY - 0.5*VP:LVLongFrontLength/sqrt(2)"/>
+    <constant name = "VP:LVLongFrontPosZ" value = "VP:LVShortFrontPosZ"/>
+
+    <constant name = "VP:LVLongFrontTransitionLength" value = "20*mm"/>
+    <constant name = "VP:LVLongFrontTransitionSeparation" value = "(41.8 - 28.53)*mm"/>
+    <constant name = "VP:LVLongFrontTransitionWidth" value = "VP:LVLongFrontTransitionSeparation + 2*VP:LVCableMediumR"/>
+    <constant name = "VP:LVLongFrontTransitionPosX" value = "VP:TransitionX + 0.5*(VP:LVLongFrontTransitionLength - 0.5*VP:TransitionMainThick) + 0.5*VP:TransitionMainThick"/>
+    <constant name = "VP:LVLongFrontTransitionPosY" value = "-41.8*mm + 0.5*VP:LVLongFrontTransitionSeparation"/>
+    <constant name = "VP:LVLongFrontTransitionPosZ" value = "-7.99*mm"/>
+    <constant name = "VP:LVLongFrontTransitionEndPosX" value = "VP:TransitionX + VP:LVLongFrontTransitionLength"/>
+
+    <constant name = "VP:LVLongFrontInclineSlantLength" value = "15*mm"/>
+    <constant name = "VP:LVLongFrontInclineDeltaZ" value = "-(VP:LVLongFrontTransitionPosZ - VP:LVLongFrontPosZ)"/>
+    <constant name = "VP:LVLongFrontInclineLength" value = "sqrt(VP:LVLongFrontInclineSlantLength*VP:LVLongFrontInclineSlantLength - VP:LVLongFrontInclineDeltaZ*VP:LVLongFrontInclineDeltaZ)"/>
+    <constant name = "VP:LVLongFrontInclineAngle" value = "asin(VP:LVLongFrontInclineDeltaZ/VP:LVLongFrontInclineSlantLength)"/>
+    <constant name = "VP:LVLongFrontInclinePosX" value = "VP:LVLongFrontPosX - 0.5*(VP:LVLongFrontLength + VP:LVLongFrontInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVLongFrontInclinePosY" value = "VP:LVLongFrontPosY - 0.5*(VP:LVLongFrontLength + VP:LVLongFrontInclineLength)/sqrt(2)"/>
+    <constant name = "VP:LVLongFrontInclinePosZ" value = "VP:LVLongFrontPosZ - 0.5*(VP:LVLongFrontInclineDeltaZ)"/>
+    <constant name = "VP:LVLongFrontInclineEndPosX" value = "VP:LVLongFrontInclinePosX - 0.5*(VP:LVLongFrontInclineLength)/sqrt(2) - VP:VPEpsilon"/>
+    <constant name = "VP:LVLongFrontInclineEndPosY" value = "VP:LVLongFrontInclinePosY - 0.5*(VP:LVLongFrontInclineLength)/sqrt(2)"/>
+
+    <constant name = "VP:LVLongFront1Y" value = "VP:LVLongFrontWidth/sqrt(2)"/>
+    <constant name = "VP:LVLongFront1X1" value = "5*mm"/>
+    <constant name = "VP:LVLongFront1X2" value = "VP:LVLongFront1X1 + VP:LVLongFront1Y"/>
+    <constant name = "VP:LVLongFront1XLength" value = "VP:LVLongFront1X1 + 0.5*VP:LVLongFront1Y"/>
+    <constant name = "VP:LVLongFront1Angle" value = "atan(0.5)"/>
+    <constant name = "VP:LVLongFront1PosX" value = "VP:LVLongFrontInclineEndPosX - 0.5*VP:LVLongFront1XLength"/>
+    <constant name = "VP:LVLongFront1PosY" value = "VP:LVLongFrontInclineEndPosY"/>
+    <constant name = "VP:LVLongFront1EndPosX" value = "VP:LVLongFront1PosX - 0.5*VP:LVLongFront1XLength"/>
+
+    <constant name = "VP:LVLongFrontL" value = "VP:LVLongFrontInclineEndPosX - VP:LVLongFrontTransitionEndPosX"/>
+    <constant name = "VP:LVLongFront2Y" value = "VP:LVLongFrontL - (VP:LVLongFront1X1+0.5*VP:LVLongFront1Y)"/>
+    <constant name = "VP:LVLongFront2X1" value = "VP:LVLongFront1Y"/>
+    <constant name = "VP:LVLongFront2X2" value = "VP:LVLongFrontTransitionWidth"/>
+    <constant name = "VP:LVLongFront2Angle" value = "atan((VP:LVLongFront1PosY-VP:LVLongFrontTransitionPosY)/(VP:LVLongFront1EndPosX-VP:LVLongFrontTransitionEndPosX))"/>
+    <constant name = "VP:LVLongFront2PosX" value = "0.5*(VP:LVLongFrontTransitionEndPosX + VP:LVLongFront1EndPosX)"/>
+    <constant name = "VP:LVLongFront2PosY" value = "0.5*(VP:LVLongFront1PosY + VP:LVLongFrontTransitionPosY)"/>
+
+    <!-- End of LV Harness -->
+
+    <!-- Cooling Connector (also known as CO2 manifold) -->
+    <constant name="VP:CoolingConnectorDistFromSubstrateBase" value="1.9*mm"/>
+    <constant name="VP:CoolingConnectorSizeX"                 value="28.1*mm"/>
+    <constant name="VP:CoolingConnectorSizeY"                 value="8.2*mm"/>
+    <constant name="VP:CoolingConnectorThickness"             value="3.0*mm"/>
+    <constant name="VP:CoolingConnectorIndentX1"              value="3.55*mm"/>
+    <constant name="VP:CoolingConnectorIndentX2"              value="12.45*mm"/>
+    <constant name="VP:CoolingConnectorIndentX3"              value="15.65*mm"/>
+    <constant name="VP:CoolingConnectorIndentX4"              value="24.55*mm"/>
+    <constant name="VP:CoolingConnectorIndentY1"              value="3.7*mm"/>
+    <constant name="VP:CoolingConnectorIndentY2"              value="4.5*mm"/>
+    <constant name="VP:CoolingConnectorIndentSizeX"           value="VP:CoolingConnectorIndentX2-VP:CoolingConnectorIndentX1"/>
+    <constant name="VP:CoolingConnectorIndentSizeY"           value="VP:CoolingConnectorIndentY2-VP:CoolingConnectorIndentY1"/>
+    <constant name="VP:CoolingConnectorIndentDepth"           value="2.1*mm"/>
+    <constant name="VP:CoolingConnectorIndentRadius"          value="0.4*mm"/>
+    <constant name="VP:CoolingConnectorDistFromSideToIndentX" value="15.9*mm"/>
+    <constant name="VP:CoolingConnectorIndentShiftX"          value="VP:CoolingConnectorDistFromSideToIndentX - VP:CoolingConnectorSizeX/2"/>
+    <constant name="VP:CoolingConnectorBigTubeRadiusRight"    value="(1.65/2)*mm"/>
+    <constant name="VP:CoolingConnectorBigTubeRadiusLeft"     value="(1.70/2)*mm"/>
+    <constant name="VP:CoolingConnectorBigTubeZ"              value="VP:CoolingConnectorSizeY-5.0*mm"/>
+    <constant name="VP:CoolingConnectorSmallTubeRadius"       value="(1.10/2)*mm"/>
+    <constant name="VP:CoolingConnectorSmallTubeZ"            value="VP:CoolingConnectorSizeY-(VP:CoolingConnectorIndentY2-0.1*mm)"/>
+    <constant name="VP:CoolingConnectorTubeCentreFromEdge"    value="6.1*mm"/>
+    <constant name="VP:CoolingConnectorCornerRadius"          value="2.0*mm"/>
+
+    <!-- Cooling Connector Foil -->
+    <constant name="VP:CoolingConnectorFoilThickness"	      value="0.2*mm"/>
+
+    <!-- Delivery Pipe Lengths -->
+    <constant name="VP:DeliveryPipeInnerRadiusL"                        value="(0.8/2)*mm"/>
+    <constant name="VP:DeliveryPipeInnerRadiusR"                        value="(0.5/2)*mm"/>
+    <constant name="VP:DeliveryPipeOuterRadiusL"                        value="(1.62/2)*mm"/>
+    <constant name="VP:DeliveryPipeOuterRadiusR"                        value="(1.59/2)*mm"/>
+
+    <constant name="VP:DeliveryPipeTorusDiameter"                   value="30*mm"/>
+
+    <constant name="VP:DeliveryPipeLength1Z"                        value="100.1*mm"/>
+    <constant name="VP:DeliveryPipeLength2Z"                        value="20*mm"/>
+    <constant name="VP:DeliveryPipeLength2X"                        value="5.4*mm"/>
+    <constant name="VP:DeliveryPipeLength3Z"                        value="5.0*mm"/>
+    <constant name="VP:DeliveryPipeLength4Z"                        value="(0.5*pi - 1.0) * 0.5*VP:DeliveryPipeTorusDiameter"/>
+    <constant name="VP:DeliveryPipeLength5Y"                        value="VP:DeliveryPipeTorusDiameter"/>
+    <constant name="VP:DeliveryPipeDirection5"                      value="-1"/>
+    <constant name="VP:DeliveryPipeLength6Z"                        value="VP:DeliveryPipeLength4Z"/>
+    <constant name="VP:DeliveryPipeLength7Z"                        value="35.6*mm"/>
+    <constant name="VP:DeliveryPipeLength7Y"                        value="2.05*mm"/>
+    <constant name="VP:DeliveryPipeLength8Z"                        value="VP:DeliveryPipeLength4Z"/>
+    <constant name="VP:DeliveryPipeLength9Y"                        value="VP:DeliveryPipeTorusDiameter"/>
+    <constant name="VP:DeliveryPipeLength10Z"                       value="VP:DeliveryPipeLength4Z"/>
+    <constant name="VP:DeliveryPipeDirection10"                     value="1"/>
+    <constant name="VP:DeliveryPipeLength11Z"                       value="15.0*mm"/>
+    <constant name="VP:DeliveryPipeLength12Z"                       value="20*mm"/>
+    <constant name="VP:DeliveryPipeLength12X"                       value="5.4*mm"/>
+    <constant name="VP:DeliveryPipeLength13Z"                       value="27.3*mm"/>
+
+    <constant name="VP:DeliveryPipeXpos"                        value="-(VP:SubstrateNewIPXDistFromBL - VP:CoolingConnectorDistFromSubstrateBase - VP:CoolingConnectorBigTubeZ)"/>
+    <constant name="VP:DeliveryPipeYpos"                        value="VP:CoolingConnectorSizeX/2 - VP:CoolingConnectorTubeCentreFromEdge"/>
+    <constant name="VP:DeliveryPipeZpos"                        value="-(VP:SubstrateThick/2 + VP:CoolingConnectorFoilThickness + VP:CoolingConnectorThickness/2)"/>
+
+    <!-- Delivery Pipe Torus Switch -->
+    <constant name="VP:DeliveryPipeBuildTori"			value="1"/>
+
+    <!-- Delivery Pipe Cut Swaps -->
+    <constant name ="VP:DeliveryPipeSwapFE1"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapBE2"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapFE5"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapBE5"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapFE6"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapBE6"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapBE7"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapFE8"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapBE8"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapFE11"			value="1"/>
+    <constant name ="VP:DeliveryPipeSwapBE12"			value="1"/>
+
+    <!-- Support hurdle -->
+    <constant name="VP:SupportPipeDistFromSubstrateBase"        value="1.5*mm"/>
+    <constant name="VP:SupportPipeLength"                        value="180.5*mm"/>
+    <constant name="VP:SupportPipeInnerRadius"                value="8.0*mm/2"/>
+    <constant name="VP:SupportPipeOuterRadius"                value="9.8*mm/2"/>
+    <constant name="VP:SupportPipeGrooveDepth"                value="1.65*mm"/>
+    <constant name="VP:SupportPipeGrooveLength"                value="15.5*mm"/>
+    <constant name="VP:SupportPipeGrooveDistFromEnd"        value="17.5*mm"/>
+    <constant name="VP:SupportPipeGrooveDistFromCentre" value="VP:SupportPipeOuterRadius-VP:SupportPipeGrooveDepth"/>
+    <constant name="VP:SupportPipeGlueDepth" value="VP:CoolingConnectorFoilThickness"/>
+    <constant name="VP:SupportPipeGlueInnerY" value="sqrt(VP:SupportPipeInnerRadius*VP:SupportPipeInnerRadius-VP:SupportPipeGrooveDistFromCentre*VP:SupportPipeGrooveDistFromCentre)"/>
+    <constant name="VP:SupportPipeGlueOuterY" value="sqrt(VP:SupportPipeOuterRadius*VP:SupportPipeOuterRadius-VP:SupportPipeGrooveDistFromCentre*VP:SupportPipeGrooveDistFromCentre)"/>
+    <constant name="VP:SupportPipeGlueWidth" value="VP:SupportPipeGlueOuterY-VP:SupportPipeGlueInnerY"/>
+    <constant name="VP:SupportMidPlateSizeX"                value="29.0*mm"/>
+    <constant name="VP:SupportMidPlateSizeY"                value="50.0*mm"/>
+    <constant name="VP:SupportMidPlateThick"                value="1.0*mm"/>
+    <constant name="VP:SupportMidPlateCornerSizeX"        value="14.0*mm"/>
+    <constant name="VP:SupportMidPlateCornerSizeY"        value="15.0*mm"/>
+    <constant name="VP:SupportMidPlateCornerRadius"        value="5.0*mm"/>
+
+    <!-- BrazeSocket -->
+    <constant name="VP:BrazeSocketInnerRadius"        value="1.27*mm/2"/>
+    <constant name="VP:BrazeSocketOuterRadius"        value="6.4*mm/2"/>
+    <constant name="VP:BrazeSocketLength"             value="17.8*mm"/>"
+    <constant name="VP:BrazeSocketCut1Radius"         value="5.0*mm/2"/>
+    <constant name="VP:BrazeSocketCut1Zpos"           value="2.5*mm"/>"
+    <constant name="VP:BrazeSocketCut2Radius"         value="3.3*mm/2"/>
+    <constant name="VP:BrazeSocketCut2Zpos"           value="14.8*mm"/>"
+    <constant name="VP:BrazeSocketPipeCutRadiusR"     value="1.65*mm/2"/>"
+    <constant name="VP:BrazeSocketPipeCutRadiusL"     value="1.70*mm/2"/>"
+    <constant name="VP:BrazeSocketPipeCutZpos"        value="13.3*mm"/>"
+    <constant name="VP:BrazeSocketConeLength"         value="0.5*mm"/>"
+    <constant name="VP:BrazeSocketConeZpos"           value="VP:BrazeSocketCut2Zpos+(-VP:BrazeSocketLength/2+VP:BrazeSocketConeLength)"/>"
+    <constant name="VP:BrazeSocketCO2Length"          value="13.3*mm"/>"
+    <constant name="VP:BrazeSocketPosX"               value="VP:DeliveryPipeXpos - (VP:DeliveryPipeLength1Z + VP:DeliveryPipeLength2Z + VP:DeliveryPipeLength3Z - VP:DeliveryPipeLength7Z + VP:DeliveryPipeLength11Z + VP:DeliveryPipeLength12Z + VP:DeliveryPipeLength13Z) + VP:BrazeSocketLength/2 - VP:BrazeSocketPipeCutZpos"/>
+    <constant name="VP:BrazeSocketPosY"               value="VP:DeliveryPipeYpos + VP:DeliveryPipeLength5Y + VP:DeliveryPipeLength7Y + VP:DeliveryPipeLength9Y"/>
+    <constant name="VP:BrazeSocketPosZ"               value="VP:DeliveryPipeZpos - VP:DeliveryPipeLength2X - VP:DeliveryPipeLength12X"/>
+
+    <!-- VCR Connectors -->
+    <constant name = "VP:VCRTopOuterRadius"		value = "4.988*mm"/>
+    <constant name = "VP:VCRInnerRadius"		value = "2.65*mm"/>
+    <constant name = "VP:VCRTopLength"			value = "4.8*mm"/>
+    <constant name = "VP:VCRBottomOuterRadius"		value = "3.95*mm"/>
+    <constant name = "VP:VCRBottomLength"		value = "7.9*mm"/>
+    <constant name = "VP:VCRTopPosX"			value = "VP:DeliveryPipeXpos - (VP:DeliveryPipeLength1Z + VP:DeliveryPipeLength2Z + VP:DeliveryPipeLength3Z - VP:DeliveryPipeLength7Z + VP:DeliveryPipeLength11Z + VP:DeliveryPipeLength12Z)"/>
+    <constant name = "VP:VCRPosY"			value = "VP:BrazeSocketPosY"/>
+    <constant name = "VP:VCRPosZ"			value = "VP:BrazeSocketPosZ"/>
+
+    <!-- Support foot and LV clamp -->
+    <constant name="VP:FootCentreLength"     value="152*mm"/>
+    <constant name="VP:FootLongEndLength"    value="27*mm"/>
+    <constant name="VP:FootShortEndLength"   value="17*mm"/>
+    <constant name="VP:FootLongHalfLength"   value="0.5*VP:FootCentreLength + VP:FootLongEndLength"/>
+    <constant name="VP:FootShortHalfLength"  value="0.5*VP:FootCentreLength + VP:FootShortEndLength"/>
+    <constant name="VP:FootLength"           value="VP:FootLongHalfLength + VP:FootShortHalfLength"/>
+    <constant name="VP:LVClampLength"        value="92.0*mm"/>
+    <constant name="VP:FootEnvelopeLength"   value="2*VP:FootLongHalfLength"/>
+
+    <constant name="VP:FootEndWidth"         value="24*mm"/>
+    <constant name="VP:FootCentreWidth"      value="12*mm"/>
+    <constant name="VP:LVClampSideWidth"     value="6.05*mm"/>
+    <constant name="VP:LVClampTopWidth"      value="12.4*mm"/>
+    <constant name="VP:FootEnvelopeWidth"    value="2*VP:LVClampSideWidth + VP:LVClampTopWidth"/>
+
+    <constant name="VP:FootTopBumpHeight"    value="4*mm"/>
+    <constant name="VP:FootCentreHeight"     value="8*mm"/>
+    <constant name="VP:FootEndHeight"        value="9*mm"/>
+    <constant name="VP:FootBottomBumpHeight" value="3*mm"/>
+    <constant name="VP:LVClampSideHeight"    value="12.0*mm"/>
+    <constant name="VP:LVClampTopHeight"     value="VP:LVClampSideHeight - VP:FootCentreHeight - VP:Epsilon"/>
+    <constant name="VP:FootEnvelopeHeight"   value="VP:FootTopBumpHeight + VP:FootEndHeight + VP:FootBottomBumpHeight"/>
+
+    <constant name="VP:FootShortEndYOffset"  value="-0.5*(VP:FootCentreLength + VP:FootShortEndLength)"/>
+    <constant name="VP:FootLongEndYOffset"   value=" 0.5*(VP:FootCentreLength + VP:FootLongEndLength )"/>
+
+    <constant name="VP:FootBigHoleYOffset"         value="20*mm"/>
+    <constant name="VP:FootBigHoleSmallerRadius"   value="5*mm/2"/>
+    <constant name="VP:FootBigHoleLargerRadius"    value="10*mm/2"/>
+    <constant name="VP:FootBigHoleExtrusionRadius" value="15*mm/2"/>
+    <constant name="VP:FootBigHoleTotalDepth"      value="10*mm"/>
+    <constant name="VP:FootBigHoleSubDepth"        value="VP:FootBigHoleTotalDepth - VP:FootTopBumpHeight"/>
+
+    <constant name="VP:FootBottomBumpYSize" value="10.0*mm"/>
+    <constant name="VP:FootBottomBumpZSize" value="14.0*mm"/>
+    <constant name="VP:FootBottomBumpRoundingRadius" value="4.0*mm"/>
+
+    <constant name="VP:FootSmallHoleYOffset" value="37.3*mm"/>
+    <constant name="VP:FootSmallHoleRadius" value="3.3*mm/2"/>
+
+    <constant name="VP:FootShortEndLargeHoleY" value="5*mm"/>
+    <constant name="VP:FootShortEndLargeHoleRadius" value="6.5*mm/2"/>
+
+    <constant name="VP:FootLongEndRidgeLength" value="20.0*mm"/>
+    <constant name="VP:FootLongEndRidgeWidth" value="5.0*mm"/>
+
+    <constant name="VP:FootEndCurveOffset" value="0.7*mm"/>
+    <constant name="VP:FootEndCurveRadius" value="5.3*mm"/>
+
+    <constant name="VP:FootLongEndLargeHoleY1" value="6*mm"/>
+    <constant name="VP:FootLongEndLargeHoleY2" value="VP:FootLongEndLargeHoleY1 + 9*mm"/>
+    <constant name="VP:FootLongEndLargeHoleRadius1" value="6*mm/2"/>
+    <constant name="VP:FootLongEndLargeHoleRadius2" value="6.5*mm/2"/>
+
+    <constant name="VP:FootSideHoleRadius" value="4*mm/2"/>
+    <constant name="VP:FootSideHoleDepth" value="4*mm"/>
+
+
+    <!-- Have to put these below the foot description because they rely on that to know where to end! -->
+    <!-- LV Cable Boxes for the foot-to-transition board cables -->
+
+    <constant name = "VP:LVFootOffsetX" value = "8*mm"/>
+    <constant name = "VP:LVFootEndX" value = "-VP:SubstrateNewIPXDistFromBL - VP:SupportPipeDistFromSubstrateBase - VP:SupportPipeLength + VP:FootBigHoleTotalDepth + 0.5*VP:LVClampTopHeight"/>
+    <constant name = "VP:LVFootTransitionStartX" value = "VP:TransitionX - 0.5*VP:TransitionMainThick"/>
+    <constant name = "VP:LVFootX" value = "VP:LVFootTransitionStartX - VP:LVFootEndX"/>
+    <constant name = "VP:LVFootPosX" value = "VP:LVFootTransitionStartX - 0.5*VP:LVFootX"/>
+
+    <!-- LV Cable Box for foot to Long, Back positions -->
+
+    <constant name = "VP:LVLongBackFootSeparation" value = "(-27.98 + 42.3)*mm"/>
+    <constant name = "VP:LVLongBackFootY" value = "VP:LVLongBackFootSeparation + 2*VP:LVCableBigR"/>
+    <constant name = "VP:LVLongBackFootPosY" value = "-42.3*mm + 0.5*VP:LVLongBackFootSeparation"/>
+    <constant name = "VP:LVLongBackFootPosZ" value = "4.24*mm"/>
+
+    <!-- LV Cable Box for foot to Long, Front positions -->
+
+    <constant name = "VP:LVLongFrontFootSeparation" value = "(-28.01 + 42.25)*mm"/>
+    <constant name = "VP:LVLongFrontFootY" value = "VP:LVLongFrontFootSeparation + 2*VP:LVCableBigR"/>
+    <constant name = "VP:LVLongFrontFootPosY" value = "-42.25*mm + 0.5*VP:LVLongFrontFootSeparation"/>
+    <constant name = "VP:LVLongFrontFootPosZ" value = "-4.2*mm"/>
+
+    <!-- LV Cable Box for foot to Short, Back positions -->
+
+    <constant name = "VP:LVShortBackFootSeparation" value = "(42.23 - 27.18)*mm"/>
+    <constant name = "VP:LVShortBackFootY" value = "VP:LVShortBackFootSeparation + 2*VP:LVCableBigR"/>
+    <constant name = "VP:LVShortBackFootPosY" value = "27.18*mm + 0.5*VP:LVShortBackFootSeparation"/>
+    <constant name = "VP:LVShortBackFootPosZ" value = "4.24*mm"/>
+
+    <!-- LV Cable Box for foot to Short, Front positions -->
+
+    <constant name = "VP:LVShortFrontFootSeparation" value = "(41.28 - 27.21)*mm"/>
+    <constant name = "VP:LVShortFrontFootY" value = "VP:LVShortFrontFootSeparation + 2*VP:LVCableBigR"/>
+    <constant name = "VP:LVShortFrontFootPosY" value = "27.21*mm + 0.5*VP:LVShortFrontFootSeparation"/>
+    <constant name = "VP:LVShortFrontFootPosZ" value = "-4.2*mm"/>
+
+    <!-- LV Cables for the GBTX Transition to the Foot -->
+
+    <constant name = "VP:LVGBTXFootOffsetAngle" value = "1.5*degree"/>
+    <constant name = "VP:LVGBTXFootOffsetX" value = "0.5*VP:LVFootX*(1-cos(VP:LVGBTXFootOffsetAngle)) + 0.5*VP:LVCableBigR*cos(VP:LVGBTXFootOffsetAngle)"/>
+    <constant name = "VP:LVGBTXFootOffsetZ" value = "0.5*VP:LVFootX*sin(VP:LVGBTXFootOffsetAngle)"/>
+
+    <!-- Cooling Clamp -->
+    <constant name="VP:ClampWidth" value="82*mm"/>
+    <constant name="VP:ClampHeight" value="17.94*mm"/>
+    <constant name="VP:ClampDepth" value="5*mm"/>
+
+    <constant name="VP:LegHoleRadius" value="5.15*mm"/>
+    <constant name="VP:LegHoleSkirtWidth" value="1*mm"/><!--TODO change to Freek's specification-->
+    <constant name="VP:LegHolePositionX" value="20*mm"/>
+    <constant name="VP:LegHolePositionY" value="-VP:ClampHeight/2+VP:LegHoleRadius+VP:LegHoleSkirtWidth"/>
+
+    <constant name="VP:PipeHoleDistanceFromTop" value="4.5*mm"/><!--TODO change to Freek's specification, measured from top-->
+    <constant name="VP:ClampCentralCutawayWidth" value="(VP:LegHolePositionX-VP:LegHoleRadius-VP:LegHoleSkirtWidth)*2"/>
+    <constant name="VP:ClampCentralCutawayHeight" value="VP:ClampHeight-VP:PipeHoleDistanceFromTop-2.5*mm"/><!--TODO change to Freek's specification, the magic number is the distance from the pipe hole line to the top of the central cutaway -->
+    <constant name="VP:PipeHoleWidth" value="3*mm"/>
+    <constant name="VP:PipeHoleHeight" value="2*mm"/>
+    <constant name="VP:ClampTopDiagonalAngle" value="12.5*degree"/><!--TODO change to Freek's specification. = ArcTan[(PipeHoleDistanceFromTop-PipeHoleExtraLip-PipeHoleWidth/2)/(21-5.2)] -->
+    <constant name="VP:ClampCosTopDiagonalAngle" value="0.976"/>
+    <constant name="VP:ClampTopDiagonalHeight" value="15.4*mm"/><!--"(ClampEdgeToLegHoleDistance - ClampTopHoleSeparation)*ClampCosTopDiagonalAngle" -->
+    <constant name="VP:ClampTopDiagonalLength" value="3.4*mm"/><!--"ClampTopDiagonalHeight*(PipeHoleDistanceFromTop-ClampPipeHoleExtraLip)/(ClampEdgeToLegHoleDistance-ClampTopHoleSeparation)" -->
+    <constant name="VP:ClampEdgeToLegHoleDistance" value="21*mm"/>
+    <constant name="VP:ClampPipeHoleBottomClearance" value="1*mm"/>
+    <constant name="VP:ClampPositionFromLegTop" value="87.8*mm"/>
+
+    <!--==========================================================================-->
+    <!--============RFBOX=========================================================-->
+    <!--==========================================================================-->
+
+    <constant name="VP:RFBoxThick"           value="0.5*mm"/>
+    <constant name="VP:RFBoxSidePlateThick"  value="0.3*mm"/>
+
+    <constant name="VP:RFBoxAvgZDistToFoil"  value="25*mm"/>
+    <constant name="VP:RFBoxXOffsetFromBeamAxis" value="1.2*mm"/>
+
+    <constant name="VP:RFBoxWeldFlangeOuterZ" value="1177.63*mm"/>
+    <constant name="VP:RFBoxWeldFlangeInnerZ" value="1128.90*mm"/>
+    <constant name="VP:RFBoxWeldFlangeOuterY" value="270.0*mm"/>
+    <constant name="VP:RFBoxWeldFlangeInnerY" value="220.0*mm"/>
+    <constant name="VP:RFBoxWeldFlangeThickX" value="20.0*mm"/>
+
+    <constant name="VP:RFBoxSidePlateSizeX"                 value="264.4*mm"/>
+    <constant name="VP:RFBoxSidePlateSizeZ"                 value="1115.0*mm"/>
+
+    <constant name="VP:RFBoxZPosition"       value="VP:Station00Z-VP:RFBoxAvgZDistToFoil+VP:RFBoxSidePlateSizeZ/2"/>
+
+    <constant name="VP:RFBoxSidePlateSlopeSectionLength"    value="29*mm"/>
+    <constant name="VP:RFBoxSidePlateSlopeSectionTiltAngle" value="30*degree"/>
+    <constant name="VP:RFBoxSidePlateFoilSectionSizeX"      value="5.1*mm"/>
+    <constant name="VP:RFBoxSidePlateFoilSectionSizeY"      value="3.8*mm"/>
+    <constant name="VP:RFBoxSidePlateSlopeSectionSizeX"     value="VP:RFBoxSidePlateSlopeSectionLength*cos(VP:RFBoxSidePlateSlopeSectionTiltAngle)"/>
+    <constant name="VP:RFBoxSidePlateSlopeSectionSizeY"     value="VP:RFBoxSidePlateSlopeSectionLength*sin(VP:RFBoxSidePlateSlopeSectionTiltAngle)"/>
+    <constant name="VP:RFBoxSidePlateFlatSectionSizeX"      value="VP:RFBoxSidePlateSizeX-VP:RFBoxSidePlateSlopeSectionSizeX-VP:RFBoxSidePlateFoilSectionSizeX"/>
+    <constant name="VP:RFBoxSidePlateCutout1Angle"          value="9*degree"/>
+    <constant name="VP:RFBoxSidePlateCutout1SizeX"          value="VP:RFBoxSidePlateSizeZ*tan(VP:RFBoxSidePlateCutout1Angle)"/>
+    <constant name="VP:RFBoxSidePlateCutout2Angle"          value="3.59*degree"/>
+    <constant name="VP:RFBoxSidePlateCutout2XOffset"        value="25*mm"/>
+    <constant name="VP:RFBoxSidePlateCutout2SizeX"          value="VP:RFBoxSidePlateSizeX-VP:RFBoxSidePlateCutout2XOffset"/>
+    <constant name="VP:RFBoxSidePlateCutout2SizeZ"          value="VP:RFBoxSidePlateCutout2SizeX*tan(VP:RFBoxSidePlateCutout2Angle)"/>
+
+    <constant name="VP:RFBoxEndPlateSizeY"            value="219.4*mm"/>
+    <constant name="VP:RFBoxEndPlateFoilSectionSizeX" value="5.15*mm"/>
+    <constant name="VP:RFBoxEndPlateFoilSectionSizeY" value="190.4*mm"/>
+
+    <constant name="VP:RFBoxUpstreamEndPlateSizeX"             value="88.0*mm"/>
+    <constant name="VP:RFBoxUpstreamEndPlateFlatSectionSizeX"  value="57.65*mm"/>
+    <constant name="VP:RFBoxUpstreamEndPlateSlopeSectionSizeX" value="VP:RFBoxUpstreamEndPlateSizeX-VP:RFBoxUpstreamEndPlateFlatSectionSizeX-VP:RFBoxEndPlateFoilSectionSizeX"/>
+
+    <constant name="VP:RFBoxDownstreamEndPlateSlopeSectionSizeX"  value="25.15*mm"/>
+    <constant name="VP:RFBoxDownstreamEndPlateTiltSectionSizeX"   value="VP:RFBoxSidePlateCutout2XOffset"/>
+    <constant name="VP:RFBoxDownstreamEndPlateActualSizeX"        value="264.0*mm"/>
+    <constant name="VP:RFBoxDownstreamEndPlateMainSectionSizeX"   value="(VP:RFBoxDownstreamEndPlateActualSizeX-VP:RFBoxDownstreamEndPlateTiltSectionSizeX)/cos(VP:RFBoxSidePlateCutout2Angle)"/>
+    <constant name="VP:RFBoxDownstreamEndPlateFlatSectionSizeX"   value="VP:RFBoxDownstreamEndPlateMainSectionSizeX-VP:RFBoxDownstreamEndPlateSlopeSectionSizeX-VP:RFBoxEndPlateFoilSectionSizeX"/>
+    <constant name="VP:RFBoxDownstreamEndPlateXDistToRaisedCentre" value="148.45*mm"/>
+    <constant name="VP:RFBoxDownstreamEndPlateRaisedTubeLength"    value="1.5*mm"/>
+    <constant name="VP:RFBoxDownstreamEndPlateRaisedRadius"        value="VP:RFBoxDownstreamEndPlateMainSectionSizeX-VP:RFBoxDownstreamEndPlateXDistToRaisedCentre"/>
+    <constant name="VP:RFBoxDownstreamEndPlateRaisedInnerRadius"   value="449.8*mm"/>
+    <constant name="VP:RFBoxDownstreamEndPlateRaisedOuterRadius"   value="450.3*mm"/>
+    <constant name="VP:RFBoxDownstreamEndPlateRaisedAngle"         value="asin(VP:RFBoxDownstreamEndPlateRaisedRadius/VP:RFBoxDownstreamEndPlateRaisedOuterRadius)"/>
+
+    <!--==========================================================================-->
+    <!--============RFFOIL========================================================-->
+    <!--==========================================================================-->
+
+    <constant name="RFThickness" value="0.250*mm"/>
+    <constant name="VP:RFThickness" value="0.250*mm"/>
+    <constant name="VP:RFFoilYSize" value="198*mm"/>
+    <constant name="VP:RFFoilZSize" value="1100*mm"/>
+    <constant name="VP:RFWidth"     value="180.8*mm"/>
+
+    <!--This is the width of the unit size of the foil-->
+    <constant name="VP:Station2Station" value="24*mm"/>
+    <constant name="Station2Station" value="24*mm"/>
+
+    <constant name="VP:RFFoilLeftPosZ"  value="0.5*VP:Right2LeftDist"/>
+    <constant name="VP:RFFoilRightPosZ" value="-0.5*VP:Right2LeftDist"/>
+
+    <!--==========================================================================-->
+    <!--============VacuumTank====================================================-->
+    <!--==========================================================================-->
+
+    <!-- Parameters for the improved Velo Tank description -->
+    <constant name="VP:vTankMainZ" value="1330*mm"/>
+    <constant name="VP:vTankInnerR" value="475*mm"/>
+    <constant name="VP:vTankOuterR" value="481*mm"/>
+    <constant name="VP:vTankAngle" value="129*degree"/>
+    <constant name="VP:vTankStartAngle" value="25.5*degree"/>
+    <constant name="VP:vTankMain2Ends" value="15*mm"/>
+    <constant name="VP:vTankMainCutY" value="(VP:vTankOuterR-VP:vTankInnerR)*sin(VP:vTankStartAngle)"/>
+    <constant name="VP:vTankMainCutPosY" value="VP:vTankInnerR*sin(VP:vTankStartAngle)"/>
+    <!-- Parameters for the side boxes -->
+    <constant name="VP:vTankSideX" value="38*mm"/>
+    <constant name="VP:vTankSideY" value="540*mm"/>
+    <constant name="VP:vTankSideZ" value="1260*mm"/>
+    <constant name="VP:vTankCutY" value="256*mm"/>
+    <constant name="VP:vTankCutZ" value="1180*mm"/>
+    <constant name="VP:vTankSideExtra1X" value="71.5*mm"/>
+    <constant name="VP:vTankSideExtra1Y" value="22*mm"/>
+    <constant name="VP:vTankSideExtra1Z" value="1330*mm"/>
+    <constant name="VP:vTankSideExtra2X" value="10*mm"/>
+    <constant name="VP:vTankSideExtra2Y" value="414*mm"/>
+    <constant name="VP:vTankSideExtra2Z" value="35*mm"/>
+    <!-- Parameters for the end flanges -->
+    <constant name="VP:vTankDownEndInnerR" value="402.5*mm"/>
+    <constant name="VP:vTankDownEndOuterR" value="555*mm"/>
+    <constant name="VP:vTankDownEndZ" value="40*mm"/>
+    <constant name="VP:vTankUpEndInnerR" value="475*mm"/>
+    <constant name="VP:vTankUpEndZ" value="35*mm"/>
+    <!-- Total length of the main tank (i.e. not including the exit window flange) -->
+    <constant name="VP:vTankTotalZ" value="VP:vTankMainZ+VP:vTankDownEndZ+VP:vTankUpEndZ+2*VP:vTankMain2Ends"/>
+    <!-- Parameters of the exit window and its flange -->
+    <constant name="VP:vTankDownEWFlangeZExcess" value="5*mm"/>
+    <constant name="VP:vTankDownEWFlangeZ" value="30*mm"/>
+    <constant name="VP:vTankDownEWFlangeIR" value="401.0*mm"/>
+    <constant name="VP:vTankDownEWFlangeOR" value="455*mm"/>
+    <constant name="VP:vTankDownExitWindowIR" value="978*mm"/>
+    <constant name="VP:vTankDownExitWindowOR" value="980*mm"/>
+    <constant name="VP:vTankDownExitWindowAngle" value="asin(VP:vTankDownEndInnerR/VP:vTankDownExitWindowOR)"/>
+    <constant name="VP:vTankDownExitWindowHoleR" value="49.2*mm"/>
+    <constant name="VP:vTankDownExitWindowZSize" value="VP:vTankDownExitWindowOR-VP:vTankDownExitWindowIR*cos(VP:vTankDownExitWindowAngle)"/>
+
+    <!-- Parameters for the new detector supports-->
+    <constant name="VP:DetSupMotherCutX" value="199.1*mm"/>
+    <constant name="VP:DetSupMotherCutY" value="1257.5*mm"/>
+
+    <constant name="VP:DetSupBoxX" value="187*mm"/>
+    <constant name="VP:DetSupBoxY" value="3*mm"/>
+    <constant name="VP:DetSupBoxZ" value="62.5*mm"/>
+
+    <constant name="VP:DetSupTrapX1" value="0.01*mm"/>
+    <constant name="VP:DetSupTrapY1" value="1180.7*mm"/>
+
+    <constant name="VP:DetSupTopY" value="386*mm"/>
+    <constant name="VP:DetSupTopZ" value="1271.2*mm"/>
+    <constant name="VP:DetSupTopCutY" value="220*mm"/>
+    <constant name="VP:DetSupTopCutZ" value="1124*mm"/>
+    <constant name="VP:DetSupTopPosX" value="99.43*mm"/>
+    <constant name="VP:DetSupTopPosZ" value="7.761*mm"/>
+
+    <constant name="VP:DetSupBaseX" value="28.26*mm"/>
+    <constant name="VP:DetSupBaseY" value="390*mm"/>
+    <constant name="VP:DetSupBaseZ" value="1320*mm"/>
+    <constant name="VP:DetSupBaseXZPos" value="1*mm"/>
+    <constant name="VP:DetSupBaseCut1X" value="4*mm"/>
+    <constant name="VP:DetSupBaseCut1Y" value="384*mm"/>
+    <constant name="VP:DetSupBaseCut1Z" value="1314*mm"/>
+    <constant name="VP:DetSupBaseCut2X" value="10*mm"/>
+    <constant name="VP:DetSupBaseCut2Y" value="370*mm"/>
+    <constant name="VP:DetSupBaseCut2Z" value="1300*mm"/>
+    <constant name="VP:DetSupBaseCut3Y" value="256*mm"/>
+    <constant name="VP:DetSupBaseCut3Z" value="1180*mm"/>
+    <constant name="VP:DetSupBaseCut4X1" value="0.01*mm"/>
+    <constant name="VP:DetSupBaseCut4X2" value="12.2*mm"/>
+    <constant name="VP:DetSupBaseCut4Y1" value="76.8*mm"/>
+
+    <constant name="VP:DetSupBackY" value="380*mm"/>
+
+    <constant name="VP:DetSupTrimX" value="70*mm"/>
+    <!--Adjustment to prevent overlaps-->
+    <constant name="VP:DetSupAdjustX" value="0.14*mm"/>
+    <constant name="VP:DetSupX" value="VP:DetSupBoxX+VP:DetSupBoxY+VP:DetSupBaseX+VP:DetSupTrimX+VP:DetSupAdjustX+0.1*mm"/>
+
+
+    <!--==========================================================================-->
+    <constant name="VP:vTankPosZ" value="945*mm-VP:vTankTotalZ/2"/>
+    <constant name="VP:DetSupLeftPosX" value="243*mm"/>
+    <constant name="VP:DetSupLeftPosZ" value="195*mm"/>
+    <constant name="VP:DetSupRightPosX" value="-243*mm"/>
+    <constant name="VP:DetSupRightPosZ" value="195*mm"/>
+
+    <!--==========================================================================-->
+    <!--======Wake field cones===================================================-->
+    <!--==========================================================================-->
+    <constant name="VP:UpStrWakeFieldConePosZ"   value="-319.9*mm-194.001*mm/2"/>
+    <constant name="VP:DownStrWakeFieldConePosZ" value="760*mm+75.001*mm/2"/>
+
+
+    <!--==========================================================================-->
+    <!--======The section within the exit window "sphere"========================-->
+    <!--==========================================================================-->
+    <constant name="VP:ExitWindow2BellowsZSize" value="55.54*mm"/>
+    <constant name="VP:DSTubeZSize" value="9.56*mm"/>
+    <constant name="VP:DSTubeInnerRadius" value="34*mm"/>
+    <constant name="VP:DSTubeThickness" value="2.5*mm"/>
+    <constant name="VP:BellowsEndZ" value="-VP:vTankDownExitWindowIR*cos(VP:vTankDownExitWindowAngle)-VP:DSTubeZSize"/>
+    <constant name="VP:BellowsZSize" value="21.3*mm"/>
+    <constant name="VP:BellowsInnerRadius" value="VP:DSTubeInnerRadius"/>
+    <constant name="VP:BellowsOuterRadius" value="46*mm"/>
+    <constant name="VP:BellowsThickness" value="0.3*mm"/>
+    <constant name="VP:BellowsSpacing" value="2.7*mm"/>
+  </define>
+
+
+  <!-- Material mixtures -->
+  <materials>
+    <!-- Renaming of Aluminium-->
+    <material name="VP:Aluminium" state="solid" >
+      <D type="density" unit="g/cm3" value="2.699"/>
+      <fraction n="1" ref="Aluminum"/>
+    </material>
+
+    <!-- Support hurdle materials -->
+    <!-- Carbon fibre -->
+    <material name="VP:CarbonFibre" state="solid" >
+      <D type="density" unit="g/cm3" value="1.72"/>
+      <composite n="10" ref="Carbon"   />
+      <composite n="6"  ref="Hydrogen" />
+      <composite n="1"  ref="Oxygen"   />
+    </material>
+    <material name="VP:CarbonFibreSupportPipe" state="solid" >
+      <D type="density" unit="g/cm3" value="2.5"/>
+      <composite n="10" ref="Carbon"   />
+      <composite n="6"  ref="Hydrogen" />
+      <composite n="1"  ref="Oxygen"   />
+    </material>
+    <!-- BoroFloat glass -->
+    <!-- First define its components, then the material itself -->
+    <material name="VP:SiO2" state="solid" >
+      <D type="density" unit="g/cm3" value="2.2"/>
+      <composite n="1" ref="Silicon" />
+      <composite n="2" ref="Oxygen"  />
+    </material>
+    <material name="VP:B2O3" state="solid" >
+      <D type="density" unit="g/cm3" value="1.812"/>
+      <composite n="2" ref="Boron"  />
+      <composite n="3" ref="Oxygen" />
+    </material>
+    <material name="VP:Na2O" state="solid" >
+      <D type="density" unit="g/cm3" value="2.27"/>
+      <composite n="2" ref="Sodium" />
+      <composite n="1" ref="Oxygen" />
+    </material>
+    <material name="VP:Al2O3" state="solid" >
+      <D type="density" unit="g/cm3" value="3.97"/>
+      <composite n="2" ref="Aluminum" />
+      <composite n="3" ref="Oxygen"    />
+    </material>
+    <material name="VP:Borofloat" state="solid" >
+      <D type="density" unit="g/cm3" value="2.2"/>
+      <fraction n="0.81" ref="VP:SiO2"/>
+      <fraction n="0.13" ref="VP:B2O3"/>
+      <fraction n="0.04" ref="VP:Na2O"/>
+      <fraction n="0.02" ref="VP:Al2O3"/>
+    </material>
+
+    <!-- Glues -->
+    <material name="VP:Epoxy" state="solid" >
+      <D type="density" unit="g/cm3" value="1.3"/>
+      <fraction n="0.07" ref="Hydrogen" />
+      <fraction n="0.76" ref="Carbon"   />
+      <fraction n="0.17" ref="Oxygen"   />
+    </material>
+    <material name="VP:Stycast" state="solid" >
+      <D type="density" unit="g/cm3" value="2.29"/>
+      <fraction n="0.07" ref="Hydrogen" />
+      <fraction n="0.76" ref="Carbon"   />
+      <fraction n="0.17" ref="Oxygen"   />
+    </material>
+
+    <!-- Average material (estimated 10% coverage) of bump bond layer between sensor and chips -->
+    <material name="VP:BumpBonds" state="solid" >
+      <D type="density" unit="g/cm3" value="0.1*8.433"/>
+      <fraction n="0.63" ref="Tin"  />
+      <fraction n="0.37" ref="Lead" />
+    </material>
+
+    <!-- Hybrid and components materials -->
+    <material name="VP:LCP" state="solid" >
+      <D type="density" unit="g/cm3" value="1.7"/>
+      <fraction n="0.7" ref="Carbon"   />
+      <fraction n="0.2" ref="Oxygen"   />
+      <fraction n="0.1" ref="Hydrogen" />
+    </material>
+    <material name="VP:Kapton" state="solid" >
+      <D type="density" unit="g/cm3" value="1.39"/>
+      <composite n="8" ref="Hydrogen" />
+      <composite n="5" ref="Carbon"   />
+      <composite n="2" ref="Oxygen"   />
+    </material>
+    <!-- Change the density slightly to better match the actual measured mass -->
+    <!-- Was previously 1.773/((0.007+0.06)*12.18) = 2.172634 -->
+    <material name="VP:CopperKaptonMix" state="solid">
+      <D type="density" unit="g/cm3" value="2.275196"/>
+      <fraction n="0.423" ref="Copper"    /> <!-- = 0.75/1.773 -->
+      <fraction n="0.577" ref="VP:Kapton" /> <!-- = 1.023/1.773 -->
+    </material>
+
+    <!-- Slightly different density to better match the measured mass -->
+    <!-- Add also a some silicon to make up for the missing chip -->
+    <material name="VP:GBTXCopperKaptonSiliconMix" state="solid">
+      <D type="density" unit="g/cm3" value="3.815173"/>
+      <fraction n="(3.72-1.0)/3.72" ref="VP:CopperKaptonMix"/>
+      <fraction n="1.0/3.72"        ref="Silicon"           />
+    </material>
+
+    <!-- Transition Board and LV Cable Materials -->
+	<!-- Transition board is made of FR4 rather than Kapton so make a similar mix -->
+    <material name="VP:MgO" state="solid">
+      <D type="density" unit="g/cm3" value="3.58"/>
+		<composite n="1" ref="Magnesium"/>
+		<composite n="1" ref="Oxygen"/>
+	</material>
+
+    <material name="VP:CaO" state="solid">
+      <D type="density" unit="g/cm3" value="3.34"/>
+		<composite n="1" ref="Calcium"/>
+		<composite n="1" ref="Oxygen"/>
+    </material>
+
+    <material name="VP:Fe2O3" state="solid">
+      <D type="density" unit="g/cm3" value="5.25"/>
+        <composite n="2" ref="Iron"/>
+        <composite n="3" ref="Oxygen"/>
+    </material>
+
+	<!-- e-glass, density from https://www.sciencedirect.com/science/article/pii/B9780323395007000046 -->
+	<!-- Composition approx. from Das, Kalobaran & Kamaruzzaman, Sm & Middya, Tapas & Datta, Siddhartha. (2009). Thermal diffusivity of advanced composite materials of e-glass fiber reinforced plastic in the temperature range 5-120K. Indian Journal of Pure and Applied Physics. 47.  -->
+    <material name="VP:FibreGlass" state="solid">
+      <D type="density" unit="g/cm3" value="2.543"/>
+		<fraction n="0.552" ref="VP:SiO2" />
+		<fraction n="0.148" ref="VP:Al2O3"/>
+		<fraction n="0.073" ref="VP:B2O3" />
+        <fraction n="0.033" ref="VP:MgO"  />
+		<fraction n="0.187" ref="VP:CaO"  />
+        <fraction n="0.007" ref="VP:Fe2O3"/>
+	</material>
+
+    <material name="VP:FR4" state="solid">
+      <D type="density" ubit="g/cm3" value="1.85"/>
+        <fraction n="0.6" ref="VP:Epoxy"     />
+		<fraction n="0.4" ref="VP:FibreGlass"/>
+	</material>
+
+	<!-- "Standard" PCBs have 1oz of Copper per layer, transition board has 4 layers -->
+	<!-- So have 0.0348mm thick layer of Copper per layer (from https://pcbprime.com/pcb-tips/how-thick-is-1oz-copper/) -->
+    <material name="VP:CopperFR4Mix" state="solid">
+      <D type="density" unit="g/cm3" value="(((8.96*4*0.00348)+(1.85*(0.1-(4*0.00348))))/(0.1))"/> <!-- =2.839712g/cm3 -->
+        <fraction n="0.439" ref="Copper" />
+		<fraction n="0.561" ref="VP:FR4" />
+	</material>
+
+	<!-- Cable datasheet implies the Copper has a density of 9.6g/cm3 instead of the usual 8.96 g/cm3 -->
+    <material name="VP:CableCopper" state="solid">
+      <D type="density" ubit="g/cm3" value="9.6"/>
+		<fraction n="1.0" ref="Copper"/>
+	</material>
+
+	<!-- Silicone insulation for LV cables -->
+	<!-- density from 0.901 to 2.3 -->
+    <material name="VP:Silicone" state="solid">
+      <D type="density" unit="g/cm3" value="1.3"/>
+		<composite n="1" ref="Silicon"  />
+		<composite n="2" ref="Carbon"   />
+		<composite n="6" ref="Hydrogen" />
+		<composite n="1" ref="Oxygen"   />
+	</material>
+
+	<!-- Silicone/Copper mix for LV Cables -->
+	<!-- (((9.6*0.015)+(1.3*((pi*0.145*0.145)-(0.015))))/(pi*0.145*0.145)) = 3.18488 -->
+	<!-- Then add small amount to account for cooling clamp to get 3.44912 -->
+    <material name="VP:SiliCopper" state="solid">
+      <D type="density" unit="g/cm3" value="3.44912"/>
+		<fraction n="14.4/19"      ref="VP:CableCopper"/>
+		<fraction n="(19-14.4)/19" ref="VP:Silicone"   />
+	</material>
+
+	<!-- Silicone/Copper mix for the LV Cable Boxes between the transition board and the foot -->
+	<!-- Density need to be lighter because volume of box is bigger than cables so weight by ratio of 4-cables (length is the same so cancels) -->
+	<!-- ((4*pi*1.45*1.45)/(2.9*17.22))*(3.18488) = 1.68503 -->
+	<!-- Again, small amount added to account for cooling clamp -->
+    <material name="VP:SiliCopperFoot" state="solid">
+      <D type="density" unit="g/cm3" value="1.82364"/>
+		<fraction n="1.0" ref="VP:SiliCopper"/>
+	</material>
+
+	<!-- S=Short, L=Long, G=GBTX, B=Back and F=Front -->
+    <material name="VP:SiliCopperGF" state="solid">
+      <D type="density" unit="g/cm3" value="0.504*(3.18488)"/>
+		<fraction n="1.0" ref="VP:SiliCopper"/>
+	</material>
+
+    <material name="VP:SiliCopperGB" state="solid">
+      <D type="density" unit="g/cm3" value="0.561*(3.18488)"/>
+		<fraction n="1.0" ref="VP:SiliCopper"/>
+	</material>
+
+    <material name="VP:SiliCopperSB" state="solid">
+      <D type="density" unit="g/cm3" value="2.55507"/>
+		<fraction n="1.0" ref="VP:SiliCopper"/>
+	</material>
+
+    <material name="VP:SiliCopperLB" state="solid">
+      <D type="density" unit="g/cm3" value="2.59866"/>
+		<fraction n="1.0" ref="VP:SiliCopper"/>
+	</material>
+
+    <material name="VP:SiliCopperSF" state="solid">
+      <D type="density" unit="g/cm3" value="2.55542"/>
+		<fraction n="1.0" ref="VP:SiliCopper"/>
+      </material>
+
+    <material name="VP:SiliCopperLF" state="solid">
+      <D type="density" unit="g/cm3" value="2.58075"/>
+		<fraction n="1.0" ref="VP:SiliCopper"/>
+	</material>
+
+
+
+    <!-- Cooling connector -->
+    <material name="VP:Invar" state="solid" >
+      <D type="density" unit="g/cm3" value="8.1"/>
+      <fraction n="0.6367" ref="Iron"      />
+      <fraction n="0.3580" ref="Nickel"    />
+      <fraction n="0.0033" ref="Manganese" />
+      <fraction n="0.0011" ref="Silicon"   />
+      <fraction n="0.0005" ref="Chromium"  />
+      <fraction n="0.0002" ref="Copper"    />
+      <fraction n="0.0002" ref="Cobalt"    />
+    </material>
+
+    <!-- Cooling pipes and vacuum tank -->
+    <material name="VP:StainlessSteel" state="solid" >
+      <D type="density" unit="g/cm3" value="7.99"/>
+      <fraction n="0.6530"  ref="Iron"       />
+      <fraction n="0.16325" ref="Chromium"   />
+      <fraction n="0.1270"  ref="Nickel"     />
+      <fraction n="0.0272"  ref="Molybdenum" />
+      <fraction n="0.0200"  ref="Manganese"  />
+      <fraction n="0.0010"  ref="Nitrogen"   />
+      <fraction n="0.0003"  ref="Sulfur"     />
+      <fraction n="0.0003"  ref="Carbon"     />
+      <fraction n="0.0075"  ref="Silicon"    />
+      <fraction n="0.00045" ref="Phosphorus" />
+    </material>
+
+    <!-- Cooling fluid -->
+    <!-- Currently saturated liquid CO2 at -30 degrees Celcius -->
+    <material name="VP:Coolant" state="liquid" >
+      <D type="density" unit="g/cm3" value="1.077"/>
+      <composite n="1" ref="Carbon"/>
+      <composite n="2" ref="Oxygen"/>
+    </material>
+
+    <!-- Solder (between cooling connector and substrate) -->
+    <material name="VP:Solder" state="solid">
+      <D type="density" unit="g/cm3" value="8.433"/>
+      <fraction n="0.62" ref="Tin"    />
+      <fraction n="0.36" ref="Lead"   />
+      <fraction n="0.02" ref="Silver" />
+    </material>
+
+    <!-- Cooling clamp -->
+    <material name="VP:PEEK" state="solid" >
+      <D type="density" unit="g/cm3" value="1.32"/>
+      <composite n="19" ref="Carbon"   />
+      <composite n="12" ref="Hydrogen" />
+      <composite n="3"  ref="Oxygen"   />
+    </material>
+
+    <!-- LV clamp -->
+    <!-- Polyetherimide (the clamp itself) -->
+    <material name="VP:LVClampPlastic" state="solid" >
+      <D type="density" unit="g/cm3" value="1.31"/>
+      <composite n="37" ref="Carbon"   />
+      <composite n="24" ref="Hydrogen" />
+      <composite n="6"  ref="Oxygen"   />
+      <composite n="2"  ref="Nitrogen" />
+    </material>
+    <!-- A mixture of polyetherimide (the clamp itself) and copper (the plugs) -->
+    <material name="VP:LVClampPlugs" state="solid" >
+      <D type="density" unit="g/cm3" value="4.22"/>
+      <fraction n="0.808" ref="Copper"   />
+      <fraction n="0.192" ref="VP:LVClampPlastic" />
+    </material>
+
+    <!-- Wakefield suppressor -->
+    <material name="VP:BerylliumCopper" state="solid" >
+      <D type="density" unit="g/cm3" value="8.931"/>
+      <fraction n="0.978" ref="Copper"    />
+      <fraction n="0.018" ref="Nickel"    />
+      <fraction n="0.004" ref="Beryllium" />
+    </material>
+  </materials>
+</lccdd>

@@ -1,0 +1,196 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<pipe>
+
+  <!-- ************************************************************** -->
+  <!-- * BEAM PIPE                                                  * -->
+  <!-- * Sections in MagnetRegion                                   * -->
+  <!-- *   from z=2270 mm to z=7620 mm                          * -->
+  <!-- *                                                            * -->
+  <!-- * Author: Gloria Corti                                       * -->
+  <!-- *                                                            * -->
+  <!-- * Consists of                                                * -->
+  <!-- *   UX85-2:                                                  * -->
+  <!-- *     - conical sections of 10 mrad of different thickness   * -->
+  <!-- *     - two flanges                                          * -->
+  <!-- *   and corresponding vaccum conical sections                * -->
+  <!-- ************************************************************** -->
+
+  <!-- UX85-2 Flange  -->
+  <volume name="lvUX852Flange01" material="Pipe:Al2219F" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Flange01"
+           dz="0.5*UX852Flange01Lenght"
+           rmin1="UX852Flange01RadiusZmin"
+           rmin2="UX852Flange01RadiusZmax"
+           rmax1="UX852Flange01OuterRadius"
+           rmax2="UX852Flange01OuterRadius"/>
+  </volume>
+
+  <!-- UX85-2 Cone 10 mrad of Alumimium 1.5mm thick for flange  -->
+  <volume name="lvUX852Cone02" material="Pipe:Al2219F" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-02"
+           dz="0.5*UX852Cone02Lenght"
+           rmin1="UX852Cone02RadiusZmin"
+           rmin2="UX852Cone02RadiusZmax"
+           rmax1="UX852Cone02RadiusZmin + UX852Cone02Thick"
+           rmax2="UX852Cone02RadiusZmax + UX852Cone02Thick"/>
+  </volume>
+
+  <!-- UX85-2 Cone 10 mrad of Beryllium 1.0mm thick -->
+  <volume name="lvUX852Cone03" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-03"
+           dz="0.5*UX852Cone03Lenght"
+           rmin1="UX852Cone03RadiusZmin"
+           rmin2="UX852Cone03RadiusZmax"
+           rmax1="UX852Cone03RadiusZmin + UX852Cone03Thick"
+           rmax2="UX852Cone03RadiusZmax + UX852Cone03Thick"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium section for support A  -->
+  <volume name="lvUX852Cone04A" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-04A"
+           dz="0.5*UX852Cone04ALenght"
+           rmin1="UX852Cone04ARadiusZmin"
+           rmin2="UX852Cone04ARadiusZmax"
+           rmax1="UX852Cone04ARadiusZmin + UX852Cone04AThick"
+           rmax2="UX852Cone04ARadiusZmax + UX852Cone04AThick"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium section for support B - cylindrical on outside -->
+  <volume name="lvUX852Cone04B" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-04B"
+           dz="0.5*UX852Cone04BLenght"
+           rmin1="UX852Cone04BRadiusZmin"
+           rmin2="UX852Cone04BRadiusZmax"
+           rmax1="UX852Cone04BOuterRadius"
+           rmax2="UX852Cone04BOuterRadius"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium section for support C -->
+  <volume name="lvUX852Cone04C" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-04C"
+           dz="0.5*UX852Cone04CLenght"
+           rmin1="UX852Cone04CRadiusZmin"
+           rmin2="UX852Cone04CRadiusZmax"
+           rmax1="UX852Cone04CRadiusZmin + UX852Cone04CThick"
+           rmax2="UX852Cone04CRadiusZmax + UX852Cone04CThick"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium section for support - flange surrounds B section -->
+  <volume name="lvUX852Cone04Rib" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="Tube" name="UX85-2-Cone04-Rib"
+           dz="0.5*UX852Cone04RibLenght"
+           rmin="UX852Cone04RibInnerRadius"
+           rmax="UX852Cone04RibOuterRadius"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium section for support A+B+C+flange -->
+  <volume name="lvUX852Cone04"  vis="Pipe:Magnet">
+    <physvol name="pvUX852Cone04A"             volume="lvUX852Cone04A">
+      <position z="-0.5*UX852Cone04Lenght + 0.5*UX852Cone04ALenght"/>
+    </physvol>
+    <physvol name="pvUX852Cone04B"             volume="lvUX852Cone04B">
+      <position z="-0.5*UX852Cone04Lenght + UX852Cone04ALenght + 0.5*UX852Cone04BLenght"/>
+    </physvol>
+    <physvol name="pvUX852Cone04C"             volume="lvUX852Cone04C">
+      <position z="-0.5*UX852Cone04Lenght + UX852Cone04ALenght + UX852Cone04BLenght + 0.5*UX852Cone04CLenght"/>
+    </physvol>
+    <physvol name="pvUX852Cone04Rib"           volume="lvUX852Cone04Rib">
+      <position z="-0.5*UX852Cone04Lenght + UX852Cone04ALenght + 0.5*UX852Cone04BLenght"/>
+    </physvol>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium 1.0 mm thick -->
+  <volume name="lvUX852Cone05" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-05"
+           dz="0.5*UX852Cone05Lenght"
+           rmin1="UX852Cone05RadiusZmin"
+           rmin2="UX852Cone05RadiusZmax"
+           rmax1="UX852Cone05RadiusZmin + UX852Cone05Thick"
+           rmax2="UX852Cone05RadiusZmax + UX852Cone05Thick"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium 1.1 mm thick -->
+  <volume name="lvUX852Cone06" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-06"
+           dz="0.5*UX852Cone06Lenght"
+           rmin1="UX852Cone06RadiusZmin"
+           rmin2="UX852Cone06RadiusZmax"
+           rmax1="UX852Cone06RadiusZmin + UX852Cone06Thick"
+           rmax2="UX852Cone06RadiusZmax + UX852Cone06Thick"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Beryllium 1.3 mm thick -->
+  <volume name="lvUX852Cone07" material="Pipe:BeTV56" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-07"
+           dz="0.5*UX852Cone07Lenght"
+           rmin1="UX852Cone07RadiusZmin"
+           rmin2="UX852Cone07RadiusZmax"
+           rmax1="UX852Cone07RadiusZmin + UX852Cone07Thick"
+           rmax2="UX852Cone07RadiusZmax + UX852Cone07Thick"/>
+  </volume>
+  <!-- UX85-2 Cone 10 mrad of Aluminum 2.0 mm thick -->
+  <volume name="lvUX852Cone08" material="Pipe:Al2219F" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Cone10mrad-08"
+           dz="0.5*UX852Cone08Lenght"
+           rmin1="UX852Cone08RadiusZmin"
+           rmin2="UX852Cone08RadiusZmax"
+           rmax1="UX852Cone08RadiusZmin + UX852Cone08Thick"
+           rmax2="UX852Cone08RadiusZmax + UX852Cone08Thick"/>
+  </volume>
+  <!-- UX85-2 Flange -->
+  <volume name="lvUX852Flange09" material="Pipe:Al2219F" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Flange09"
+           dz="0.5*UX852Flange09Lenght"
+           rmin1="UX852Flange09RadiusZmin"
+           rmin2="UX852Flange09RadiusZmax"
+           rmax1="UX852Flange09OuterRadius"
+           rmax2="UX852Flange09OuterRadius"/>
+  </volume>
+  <!-- Vacuum in UX852 -->
+  <volume name="lvUX852Vacuum01" material="Vacuum" vis="Pipe:Magnet">
+    <shape type="ConeSegment" name="UX85-2-Vacuum-01"
+           dz="0.5*UX852Vacuum01Lenght"
+           rmax1="UX852Flange01RadiusZmin"
+           rmax2="UX852Flange09RadiusZmax"/>
+  </volume>
+
+  <!-- UX85-2 Pipes of Al and Be -->
+  <volume name="lvUX852" vis="Pipe:Magnet">
+    <physvol name="pvUX852Flange01"             volume="lvUX852Flange01">
+      <position z="UX852Flange01Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Cone02"               volume="lvUX852Cone02">
+      <position z="UX852Cone02Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Cone03"               volume="lvUX852Cone03">
+      <position z="UX852Cone03Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Cone04"               volume="lvUX852Cone04">
+      <position z="UX852Cone04Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Cone05"               volume="lvUX852Cone05">
+      <position z="UX852Cone05Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Cone06"               volume="lvUX852Cone06">
+      <position z="UX852Cone06Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Cone07"               volume="lvUX852Cone07">
+      <position z="UX852Cone07Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Cone08"               volume="lvUX852Cone08">
+      <position z="UX852Cone08Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Flange09"             volume="lvUX852Flange09">
+      <position z="UX852Flange09Zpos"/>
+    </physvol>
+    <physvol name="pvUX852Vacuum01"             volume="lvUX852Vacuum01">
+      <position z="0.5*UX852Vacuum01Lenght"/>
+    </physvol>
+
+  </volume>
+
+</pipe>

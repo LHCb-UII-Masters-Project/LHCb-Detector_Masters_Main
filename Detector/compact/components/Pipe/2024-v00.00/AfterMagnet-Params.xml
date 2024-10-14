@@ -1,0 +1,162 @@
+<lccdd>
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+  <!-- ****************************************************************** -->
+  <!-- *  BeamPipe in AfterMagnet geometry parameters                   * -->
+  <!-- *                                                                * -->
+  <!-- *  Date: 2006-03-16                                              * -->
+  <!-- *  Author: Gloria Corti                                          * -->
+  <!-- *                                                                * -->
+  <!-- *  This section of the beam pipe extend from z=7620mm to 11900mm * -->
+  <!-- *                                                                * -->
+  <!-- ****************************************************************** -->
+
+  <!-- ***************************************************************** -->
+  <!-- * UX85-3 AfterMagnet in T                                       * -->
+  <!-- ***************************************************************** -->
+  <!-- Start at beginning of at T, stops at end of T                     -->
+
+  <define>
+    <!-- UX85-3 Cone 10 mrad of Beryllium 1.6 mm thick - Split Magnet/T -->
+    <constant name="UX853Cone05BLenght"
+              value="UX853ZStartIP + UX853Flange01Cone02Lenght + UX853Cone0304Lenght +
+                     UX853Cone05Lenght - UX853MagnetTSplitZposIP"/>
+
+    <constant name="UX853Cone05BRadiusZmin"
+              value="UX853MagnetTSplitZposIP*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone05BRadiusZmax"
+              value="(UX853MagnetTSplitZposIP + UX853Cone05BLenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX853Cone05BThick"       value="1.60*mm"/>
+    <constant name="UX853Cone05BZpos"        value="0.5*UX853Cone05BLenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 1.7 mm thick -->
+    <constant name="UX853Cone06Lenght"       value="400.00*mm"/>
+    <constant name="UX853Cone06RadiusZmin"   value="UX853Cone05BRadiusZmax"/>
+    <constant name="UX853Cone06RadiusZmax"
+              value="(UX853MagnetTSplitZposIP + UX853Cone05BLenght + UX853Cone06Lenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX853Cone06Thick"        value="1.70*mm"/>
+    <constant name="UX853Cone06Zpos"
+              value="UX853Cone05BLenght + 0.5*UX853Cone06Lenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 1.9 mm thick - Split T/Rich2 -->
+    <constant name="UX853Cone07Lenght"       value="800.00*mm"/>
+
+    <constant name="UX853Cone07ALenght"
+              value="UX853TRich2SplitZposIP - UX853ZStartIP - UX853Flange01Cone02Lenght -
+                     UX853Cone0304Lenght - UX853Cone05Lenght - UX853Cone06Lenght"/>
+    <constant name="UX853Cone07ARadiusZmin"  value="UX853Cone06RadiusZmax"/>
+    <constant name="UX853Cone07ARadiusZmax"
+              value="(UX853MagnetTSplitZposIP + UX853Cone05BLenght + UX853Cone06Lenght +
+                     UX853Cone07ALenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone07AThick"       value="1.90*mm"/>
+    <constant name="UX853Cone07AZpos"
+              value="UX853Cone05BLenght + UX853Cone06Lenght + 0.5*UX853Cone07ALenght"/>
+
+    <!-- UX85-3 in T and Vacuum inside for whole of it -->
+    <constant name="UX853InTLenght"
+              value="UX853Cone05BLenght + UX853Cone06Lenght + UX853Cone07ALenght"/>
+
+    <!-- ***************************************************************** -->
+    <!-- * UX85-3 AfterMagnet after T                                    * -->
+    <!-- ***************************************************************** -->
+    <!-- Starts at end of T, ends with end of AfterMagnet                  -->
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 1.9 mm thick - Split T/Rich2 -->
+    <constant name="UX853Cone07BLenght"
+              value="UX853Cone07Lenght - UX853Cone07ALenght"/>
+    <constant name="UX853Cone07BRadiusZmin"  value="UX853Cone07ARadiusZmax"/>
+    <constant name="UX853Cone07BRadiusZmax"
+              value="(UX853TRich2SplitZposIP + UX853Cone07BLenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone07BThick"       value="1.90*mm"/>
+    <constant name="UX853Cone07BZpos"        value="0.5*UX853Cone07BLenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 2.0 mm thick -->
+    <constant name="UX853Cone08Lenght"       value="800.00*mm"/>
+    <constant name="UX853Cone08RadiusZmin"   value="UX853Cone07BRadiusZmax"/>
+    <constant name="UX853Cone08RadiusZmax"
+              value="(UX853TRich2SplitZposIP + UX853Cone07BLenght + UX853Cone08Lenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX853Cone08Thick"       value="2.00*mm"/>
+    <constant name="UX853Cone08Zpos"
+              value="UX853Cone07BLenght + 0.5*UX853Cone08Lenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 2.1 mm thick -->
+    <constant name="UX853Cone09Lenght"      value="400.00*mm"/>
+    <constant name="UX853Cone09RadiusZmin"  value="UX853Cone08RadiusZmax"/>
+    <constant name="UX853Cone09RadiusZmax"
+              value="(UX853TRich2SplitZposIP + UX853Cone07BLenght + UX853Cone08Lenght +
+                     UX853Cone09Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone09Thick"       value="2.10*mm"/>
+    <constant name="UX853Cone09Zpos"
+              value="UX853Cone07BLenght + UX853Cone08Lenght + 0.5*UX853Cone09Lenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 2.3 mm thick -->
+    <constant name="UX853Cone10Lenght"      value="800.00*mm"/>
+    <constant name="UX853Cone10RadiusZmin"  value="UX853Cone09RadiusZmax"/>
+    <constant name="UX853Cone10RadiusZmax"
+              value="(UX853TRich2SplitZposIP + UX853Cone07BLenght + UX853Cone08Lenght +
+                     UX853Cone09Lenght + UX853Cone10Lenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone10Thick"       value="2.30*mm"/>
+    <constant name="UX853Cone10Zpos"
+              value="UX853Cone07BLenght + UX853Cone08Lenght + UX853Cone09Lenght +
+                     0.5*UX853Cone10Lenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium 2.4 mm thick -->
+    <constant name="UX853Cone11Lenght"
+              value="UX853Cone11Cone14Lenght + UX853Cone15Flange17Lenght -
+                     UX853ConeSupportFromEnd - UX853Cone12Lenght"/>
+    <constant name="UX853Cone11RadiusZmin"  value="UX853Cone10RadiusZmax"/>
+    <constant name="UX853Cone11RadiusZmax"
+              value="(UX853TRich2SplitZposIP + UX853Cone07BLenght + UX853Cone08Lenght +
+                     UX853Cone09Lenght + UX853Cone10Lenght + UX853Cone11Lenght)*
+                     tan(UX851to4Angle)"/>
+    <constant name="UX853Cone11Thick"       value="2.40*mm"/>
+    <constant name="UX853Cone11Zpos"
+              value="UX853Cone07BLenght + UX853Cone08Lenght + UX853Cone09Lenght +
+                     UX853Cone10Lenght + 0.5*UX853Cone11Lenght"/>
+
+    <!-- UX85-3 Cone 10 mrad of Beryllium cylindrical part for support -->
+    <!-- Split Rich2/Downstream                                        -->
+    <constant name="UX853Cone12ALenght"
+              value="UX853Rich2DownSplitZposIP - UX853TRich2SplitZposIP -
+                     UX853Cone07BLenght - UX853Cone08Lenght - UX853Cone09Lenght -
+                     UX853Cone10Lenght - UX853Cone11Lenght"/>
+    <constant name="UX853Cone12ARadiusZmin"  value="UX853Cone11RadiusZmax"/>
+    <constant name="UX853Cone12ARadiusZmax"
+              value="(UX853TRich2SplitZposIP + UX853Cone07BLenght + UX853Cone08Lenght +
+                     UX853Cone09Lenght + UX853Cone10Lenght + UX853Cone11Lenght +
+                     UX853Cone12ALenght)*tan(UX851to4Angle)"/>
+    <constant name="UX853Cone12AOuterRadius" value="122.10*mm"/>
+    <constant name="UX853Cone12AZpos"
+              value="UX853Cone07BLenght + UX853Cone08Lenght + UX853Cone09Lenght +
+                     UX853Cone10Lenght + UX853Cone11Lenght + 0.5*UX853Cone12ALenght"/>
+
+    <!-- UX85-3 after T and Vacuum inside for whole of it -->
+    <constant name="UX853AfterTLenght"
+              value="UX853Cone07BLenght + UX853Cone08Lenght + UX853Cone09Lenght +
+                     UX853Cone10Lenght + UX853Cone11Lenght + UX853Cone12ALenght"/>
+
+    <!-- Bakeout equipment -->
+    <constant  name="UX853BakeoutRich2DeltaPipeInner"  value="2.40*mm + 0.10*mm"/>
+    <constant  name="UX853BakeoutRich2RadiusZmin"
+               value="UX853BakeoutRich2StartIP*tan(UX851to4Angle) +
+                      UX853BakeoutRich2DeltaPipeInner"/>
+    <constant  name="UX853BakeoutRich2RadiusZmax"
+               value="(UX853BakeoutRich2StartIP + UX853BakeoutRich2Lenght)*
+                      tan(UX851to4Angle) + UX853BakeoutRich2DeltaPipeInner"/>
+    <constant  name="UX853BakeoutRich2Thick"           value="10.00*mm"/>
+
+  </define>
+
+</lccdd>

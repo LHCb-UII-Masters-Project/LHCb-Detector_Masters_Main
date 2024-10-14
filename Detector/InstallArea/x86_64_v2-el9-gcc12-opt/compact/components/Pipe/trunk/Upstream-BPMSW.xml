@@ -1,0 +1,192 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--==================================BPMSW==================================-->
+<!--===========================================================================-->
+<pipe>
+
+
+  <!-- UpStr:BPMSW -->
+  <!-- 1/8th of middle section -->
+  <volume name="lvBPMSWMidSect" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="subtraction" name="UpStr:BPMSWMidSectSub">
+      <shape type="Tube" name="UpStr:BPMSWMidSectTubs"
+             dz="0.5*UpStr:BPMSWMidSectLength"
+             rmin="UpStr:BPMSWMidSectRadius"
+             rmax="UpStr:BPMSWMidSectRadius + UpStr:BPMSWMidSectThick"
+             startPhiAngle="44.9*degree"
+             deltaPhiAngle="89.8*degree"/>
+      <shape type="Box" name="UpStr:BPMSWMidSectTopCut"
+             dx="0.5*UpStr:BPMSWMidSectRadius + UpStr:BPMSWMidSectThick"
+             dy="0.5*UpStr:BPMSWMidSectRadius + UpStr:BPMSWMidSectThick"
+             dz="0.5*UpStr:BPMSWMidSectLength+1.0*mm"/>
+      <position y="UpStr:BPMSWMidSectTopCutOffset + UpStr:BPMSWMidSectRadius/2 + UpStr:BPMSWMidSectThick/2"/>
+      <shape type="Tube" name="UpStr:BPMSWMidSectHoleTubs"
+             dz="0.5*UpStr:BPMSWMidSectRadius + UpStr:BPMSWMidSectThick"
+             rmax="UpStr:BPMSWMidSectHoleRadius"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="UpStr:BPMSWMidSectRadius + UpStr:BPMSWMidSectThick/2" z="-UpStr:BPMSWMidSectHolePosZ"/>
+      </transformation>
+      <shape type="Tube" name="UpStr:BPMSWMidSectEdgeTubs"
+             dz="0.5*UpStr:BPMSWMidSectEdgeDepth*2"
+             rmax="UpStr:BPMSWMidSectEdgeRadius"/>
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="UpStr:BPMSWMidSectTopCutOffset" z="-UpStr:BPMSWMidSectHolePosZ"/>
+      </transformation>
+    </shape>
+  </volume>
+
+  <!-- Upstream Flange -->
+  <volume name="lvBPMSWFlangeUp" material="Pipe:Steel316LN">
+    <shape type="Tube" name="UpStr:BPMSWFlangeUpTubs"
+           dz="0.5*UpStr:BPMSWFlangeUpLength"
+           rmin="UpStr:BPMSWFlangeUpRadius"
+           rmax="UpStr:BPMSWFlangeUpRadius + UpStr:BPMSWFlangeUpThick"/>
+  </volume>
+
+  <!-- Upstream Flange -->
+  <volume name="lvBPMSWFlangeDown" material="Pipe:Steel316LN">
+    <shape type="Tube" name="UpStr:BPMSWFlangeDownTubs"
+           dz="0.5*UpStr:BPMSWFlangeDownLength"
+           rmin="UpStr:BPMSWFlangeDownRadius"
+           rmax="UpStr:BPMSWFlangeDownRadius + UpStr:BPMSWFlangeDownThick"/>
+  </volume>
+
+  <!-- Entry tube -->
+  <volume name="lvBPMSWEntry" material="Pipe:Steel316LN">
+    <shape type="Tube" name="UpStr:BPMSWEntryTubs"
+           dz="0.5*UpStr:BPMSWEntryLength"
+           rmin="UpStr:BPMSWEntryRadius"
+           rmax="UpStr:BPMSWEntryRadius + UpStr:BPMSWEntryThick"/>
+  </volume>
+
+  <!-- Exit Tube -->
+  <volume name="lvBPMSWExit" material="Pipe:Steel316LN">
+    <shape type="Tube" name="UpStr:BPMSWExitTubs"
+           dz="0.5*UpStr:BPMSWExitLength"
+           rmin="UpStr:BPMSWExitRadius"
+           rmax="UpStr:BPMSWExitRadius + UpStr:BPMSWExitThick"/>
+  </volume>
+
+  <!-- Plug -->
+  <volume name="lvBPMSWPlug" material="Pipe:Steel316LN">
+    <shape type="BooleanShape" operation="union" name="lvBPMSWPlugUnion">
+      <shape type="Tube" name="lvBPMSWPlugFlange"
+             dz="0.5*UpStr:BPMSWPlugFlangeLength"
+             rmax="UpStr:BPMSWPlugFlangeRadius"/>
+      <shape type="Tube" name="lvBPMSWPlugPin"
+             dz="0.5*UpStr:BPMSWPlugPinLength"
+             rmax="UpStr:BPMSWPlugPinRadius"/>
+    </shape>
+  </volume>
+
+  <!-- Vacuum -->
+  <volume name="lvBPMSWVacuum" material="Vacuum">
+    <shape type="Tube" name="UpStr:BPMSWVacuumTubs"
+           dz="0.5*UpStr:BPMSWVacuumLength"
+           rmax="UpStr:BPMSWFlangeUpRadius - 0.01*mm"/>
+  </volume>
+
+  <!-- 1/8th of middle section with plug -->
+  <volume name="lvBPMSWMidSectAss">
+    <physvol name="pvBPMSWMidSect"                volume="lvBPMSWMidSect"/>
+    <physvol name="pvBPMSWPlug"                   volume="lvBPMSWPlug">
+      <transformation>
+        <position/>
+        <rotation x="90.0*degree"/>
+        <position y="UpStr:BPMSWMidSectTopCutOffset + UpStr:BPMSWPlugFlangeLength/2" z="-UpStr:BPMSWMidSectHolePosZ"/>
+      </transformation>
+    </physvol>
+  </volume>
+
+  <!-- Assebly of body -->
+  <volume name="lvBPMSWBody">
+    <physvol name="pvBPMSWFlangeUp"               volume="lvBPMSWFlangeUp"/>
+    <physvol name="pvBPMSWEntry"                  volume="lvBPMSWEntry">
+      <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength/2"/>
+    </physvol>
+
+    <physvol name="pvBPMSWMidSect0A"
+             volume="lvBPMSWMidSectAss">
+      <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength/2"/>
+    </physvol>
+    <physvol name="pvBPMSWMidSect1A"              volume="lvBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation z="90.0*degree"/>
+        <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvBPMSWMidSect2A"              volume="lvBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation z="180.0*degree"/>
+        <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvBPMSWMidSect3A"              volume="lvBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation z="270.0*degree"/>
+        <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+
+    <physvol name="pvBPMSWMidSect0B"              volume="lvBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree"/>
+        <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength + UpStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvBPMSWMidSect1B"              volume="lvBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree" z="90.0*degree"/>
+        <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength + UpStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvBPMSWMidSect2B"              volume="lvBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree" z="180.0*degree"/>
+        <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength + UpStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+    <physvol name="pvBPMSWMidSect3B"              volume="lvBPMSWMidSectAss">
+      <transformation>
+        <position/>
+        <rotation y="180.0*degree" z="270.0*degree"/>
+        <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength + UpStr:BPMSWMidSectLength/2"/>
+      </transformation>
+    </physvol>
+
+    <physvol name="pvBPMSWExit"                   volume="lvBPMSWExit">
+      <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength*2 + UpStr:BPMSWExitLength/2"/>
+    </physvol>
+    <physvol name="pvBPMSWFlangeDown"             volume="lvBPMSWFlangeDown">
+      <position z="UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWEntryLength + UpStr:BPMSWMidSectLength*2 + UpStr:BPMSWExitLength + UpStr:BPMSWFlangeDownLength/2"/>
+    </physvol>
+  </volume>
+
+  <volume name="lvBPMSW">
+    <physvol name="pvBPMSWBody"                   volume="lvBPMSWBody"/>
+    <physvol name="pvBPMSWVacuum"                 volume="lvBPMSWVacuum">
+      <position z="-UpStr:BPMSWFlangeUpLength/2 + UpStr:BPMSWVacuumLength/2"/>
+    </physvol>
+  </volume>
+</pipe>

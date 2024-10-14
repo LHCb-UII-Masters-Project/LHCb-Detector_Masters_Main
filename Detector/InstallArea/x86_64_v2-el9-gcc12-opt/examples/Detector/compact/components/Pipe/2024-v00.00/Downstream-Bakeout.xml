@@ -1,0 +1,94 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe                                          -->
+<!--===========================================================================-->
+<!--=============================Downstream bakeout============================-->
+<!--===========================================================================-->
+<lccdd>
+  <detectors>
+
+    <!--==================================================================================-->
+    <!--===================================Bakeout========================================-->
+    <!--==================================================================================-->
+    <detector name="DownstreamPipeBakeout" type="DD4hep_VolumeAssembly" parent="${PipeDownstream:parent}" vis="Pipe:Vis">
+
+      <!-- UX85-4 bakeout -->
+      <volume name="lvUX854Bakeout" material="Pipe:BakeOutAerogel" vis="Pipe:Bakeout">
+	<shape type="ConeSegment" name="UX85-4-Bakeout-Downstream"
+               dz="0.5*UX854BakeoutLenght"
+               rmin1="UX854BakeoutRadiusZmin"
+               rmin2="UX854BakeoutRadiusZmax"
+               rmax1="UX854BakeoutRadiusZmin + UX854BakeoutThick"
+               rmax2="UX854BakeoutRadiusZmax + UX854BakeoutThick"/>
+
+      </volume>
+
+      <!-- UX85-4 Win05 bakeout -->
+      <volume name="lvUX854Win05BakeoutMain" material="Pipe:BakeOutAerogel" vis="Pipe:Bakeout">
+	<shape type="BooleanShape" operation="subtraction" name="UX854Win05BakeoutSub">
+	  <shape type="ConeSegment" name="UX85-4-WindowBakeout15degree-05"
+		 dz="0.5*UX854Win05BakeoutLenght"
+		 rmin1="UX854Win05BakeoutRadiusZmin"
+		 rmin2="UX854Win05BakeoutRadiusZmax"
+		 rmax1="UX854Win05BakeoutRadiusZmin + UX854Win05BakeoutThick"
+		 rmax2="UX854Win05BakeoutRadiusZmax + UX854Win05BakeoutThick"/>
+	  <shape type="Tube" name="UX85-4-Win05Bakeout-Hole-1"
+		 dz="0.5*UX854Win05BakeoutHole1Length"
+		 rmax="UX854Win05BakeoutHole1Radius"/>
+	  <transformation>
+	    <position z="UX854Win05BakeoutHole1PosZ"/>
+	    <rotation x="UX854Win05BakeoutHole1RotX"/>
+	    <position/>
+	    <rotation z="UX854Win05BakeoutHole1RotZ"/>
+	    <posRPhiZ r="UX854Win05BakeoutHole1PosR" phi="UX854Win05BakeoutHole1PosPhi"/>
+	  </transformation>
+	  <shape type="Tube" name="UX85-4-Win05Bakeout-Hole-2"
+		 dz="0.5*UX854Win05BakeoutHole2Length"
+		 rmax="UX854Win05BakeoutHole2Radius"/>
+	  <transformation>
+	    <position/>
+	    <rotation x="UX854Win05BakeoutHole2RotX"/>
+	    <position y="UX854Win05BakeoutHole2PosY" z="UX854Win05BakeoutHole2PosZ"/>
+	  </transformation>
+	  <shape type="Tube" name="UX85-4-Win05Bakeout-Hole-3"
+		 dz="0.5*UX854Win05BakeoutHole3Length"
+		 rmax="UX854Win05BakeoutHole3Radius"/>
+	  <transformation>
+	    <position/>
+	    <rotation y="UX854Win05BakeoutHole3RotY"/>
+	    <position x="UX854Win05BakeoutHole3PosX" z="UX854Win05BakeoutHole3PosZ"/>
+	  </transformation>
+	  <shape type="Tube" name="UX85-4-Win05Bakeout-Hole-4"
+		 dz="0.5*UX854Win05BakeoutHole4Length"
+		 rmax="UX854Win05BakeoutHole4Radius"/>
+	  <transformation>
+	    <position/>
+	    <rotation y="UX854Win05BakeoutHole4RotY"/>
+	    <position x="UX854Win05BakeoutHole4PosX" z="UX854Win05BakeoutHole4PosZ"/>
+	  </transformation>
+	</shape>
+      </volume>
+
+      <envelope type="Assembly" name="lvUX85BakeoutDownstream" vis="Pipe:Vis">
+	<physvol name="pvUX854Bakeout"              volume="lvUX854Bakeout">
+	  <position z="UX854BakeoutZPos"/>
+	</physvol>
+	<physvol name="pvUX854Win05BakeoutMain"    volume="lvUX854Win05BakeoutMain">
+	  <position z="UX854Win05BakeoutZpos"/>
+	</physvol>
+      </envelope>
+      <position z="UX853Rich2DownSplitZposIP - Regions:DownstreamZPos"/>
+      <nodebug/>
+    </detector>
+
+  </detectors>
+</lccdd>

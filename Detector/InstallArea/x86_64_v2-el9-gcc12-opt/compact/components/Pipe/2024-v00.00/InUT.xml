@@ -1,0 +1,79 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe inside the UT region                     -->
+<!--===========================================================================-->
+<!--==================================Pipe In  UT=============================-->
+<!--===========================================================================-->
+<lccdd>
+
+  <detectors>
+    <detector name="PipeInUT" type="DD4hep_VolumeAssembly" parent="${PipeInUT:parent}" vis="Pipe:Vis">
+
+      <!-- UX85-1 Cylinder of 50 mm diameter -->
+      <volume name="lvUX851Cyl07B" material="Pipe:BeTV56" vis="Pipe:InUT">
+        <shape type="Tube" name="UX85-1-Cylinder-07B"
+               dz="0.5*UX851Cyl07BLenght"
+               rmin="UX851Cyl07Radius"
+               rmax="UX851Cyl07Radius+UX851Cyl07Thick"/>
+      </volume>
+
+      <!-- UX85-1 Cone 10 mrad                    -->
+      <!-- Stop at end of BeforeMagnet Region     -->
+      <volume name="lvUX851Cone08A" material="Pipe:BeTV56" vis="Pipe:InUT">
+        <shape type="ConeSegment" name="UX85-1-Cone10mrad-08A"
+               dz="0.5*UX851Cone08ALenght"
+               rmin2="UX851Cone08ARadiusZmax"
+               rmin1="UX851Cone08ARadiusZmin"
+               rmax2="UX851Cone08ARadiusZmax+UX851Cone08AThick"
+               rmax1="UX851Cone08ARadiusZmin+UX851Cone08AThick"/>
+      </volume>
+
+      <!-- Vacuum in UX851Cyl07B in UT -->
+      <volume name="lvUX851Vacuum07B" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="Tube" name="UX85-1-Vacuum-07B"
+               dz="0.5*UX851Cyl07BLenght"
+               rmax="UX851Cyl07Radius"/>
+      </volume>
+
+      <!-- Vacuum in UX851Cone08A in UT -->
+      <volume name="lvUX851Vacuum08A" material="Vacuum" vis="Pipe:Vacuum">
+        <shape type="ConeSegment" name="UX85-1-Vacuum-08A"
+               dz="0.5*UX851Cone08ALenght"
+               rmax1="UX851Cone08ARadiusZmin"
+               rmax2="UX851Cone08ARadiusZmax"/>
+      </volume>
+
+      <!-- Whole section: combination of sections -->
+      <!-- For the moment assume sections put at 0.0 of this (set with center at 970mm  -->
+      <envelope type="Assembly" name="lvUX851InUT" vis="Pipe:InUT">
+        <!-- Pipes of Al and Be -->
+        <physvol name="pvUX851Cyl07B"            volume="lvUX851Cyl07B">
+          <position z="UX851Cyl07BZpos"/>
+        </physvol>
+
+        <physvol name="pvUX851Cone08A"           volume="lvUX851Cone08A">
+          <position z="UX851Cone08AZpos"/>
+        </physvol>
+
+        <!-- Now the vacuum inside -->
+        <physvol name="pvUX851Vacuum07B"         volume="lvUX851Vacuum07B">
+          <position z="UX851Cyl07BZpos"/>
+        </physvol>
+
+        <physvol name="pvUX851Vacuum08A"         volume="lvUX851Vacuum08A">
+          <position z="UX851Cone08AZpos"/>
+        </physvol>
+      </envelope>
+      <position z="UX851Rich1TTSplitZposIP-UTSystemZ"/>
+    </detector>
+  </detectors>
+</lccdd>

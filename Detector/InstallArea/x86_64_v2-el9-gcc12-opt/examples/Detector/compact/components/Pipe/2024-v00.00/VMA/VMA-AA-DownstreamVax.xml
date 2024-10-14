@@ -1,0 +1,39 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the VMA Warm Module BJ                                 -->
+<!--===========================================================================-->
+<lccdd>
+  <detectors>
+    <detector name="VMAAADownstreamVax" type="LHCb_Pipe_VMA_v1_0" parent="${VMAAADownstreamVax:parent}" vis="VMA">
+      <params>
+        <param name="FullZ"            value="180*mm"/>
+        <param name="TransTubeRad"     value="40*mm"/>
+        <param name="TransTubeCylZ"    value="97.2*mm"/>
+        <param name="TransTubeConsRad" value="41*mm"/>
+        <param name="TransTubeConsZ"   value="6.3*mm"/>
+        <param name="EntryUpCylZ"      value="22.2*mm"/>
+        <param name="RfContactRad"     value="40*mm"/>
+        <param name="RfFingers"        value="48"/>
+      </params>
+      <RfContact vis="VMA:Contact">
+       <RfContactMount  material="Pipe:CuOFE"/>
+       <RfContactSingle material="Pipe:CuBe17410"/>
+      </RfContact>
+      <TransitionTube material="Pipe:CuOFE"       vis="VMA:TransitionTube"/>
+      <Pipe           material="Pipe:Steel316LN"  vis="VMA:Pipe"/>
+      <debug>
+        <item name="debug" value="VMA:debug"/>
+      </debug>
+      <position z="75.0*mm + 280*mm + 80.0*mm + 1274.6*mm + 285.0*mm + 180.0*mm/2 - 2500.0*mm/2"/>
+    </detector>
+  </detectors>
+</lccdd>

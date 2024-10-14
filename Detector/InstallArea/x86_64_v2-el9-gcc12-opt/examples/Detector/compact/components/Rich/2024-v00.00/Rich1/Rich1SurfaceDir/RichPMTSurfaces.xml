@@ -1,0 +1,54 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    09/11/2020                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich1 PMT optical surface definitions                                    -->
+<!--===========================================================================-->
+<lccdd>
+
+ <surfaces>
+
+
+<opticalsurface name="RichPMTQuartzWindowSurface" model="glisur" finish="polished"
+                type="dielectric_dielectric" value="0" >
+     <property name="REFLECTIVITY" ref="RichPMTQuartzWindowSurfaceReflectivityPT" />
+     <property name="EFFICIENCY" ref="RichPMTQuartzWindowSurfaceEfficiencyPT" />
+     <property name="TRANSMITTANCE" ref="RichPMTQuartzWindowSurfaceTransmittancePT" />
+
+</opticalsurface>
+
+
+<opticalsurface name="RichPMTQWPhCathodeSurface" model="glisur" finish="polished"
+         type="dielectric_dielectric" value="0" >
+     <property name="REFLECTIVITY" ref="RichPMTQWPhCathodeSurfaceReflectivityPT" />
+     <property name="EFFICIENCY" ref="RichPMTQWPhCathodeSurfaceEfficiencyPT" />
+     <property name="TRANSMITTANCE" ref="RichPMTQWPhCathodeSurfaceTransmittancePT" />
+
+</opticalsurface>
+
+
+<opticalsurface name="RichPMTEnvSideTubeMetalSurface" model="glisur" finish="groundfrontpainted"
+         type="dielectric_metal" value="0" >
+     <property name="REFLECTIVITY" ref="RichPMTMetalTubeSurfaceReflectivityPT" />
+     <property name="EFFICIENCY" ref="RichPMTMetalTubeSurfaceEfficiencyPT" />
+
+</opticalsurface>
+
+
+<opticalsurface name="RichPMTAnodeSurface" model="glisur" finish="polished"
+         type="dielectric_metal" value="0">
+     <property name="REFLECTIVITY" ref="RichPMTAnodeSurfaceReflectivityPT" />
+     <property name="EFFICIENCY" ref="RichPMTAnodeSurfaceEfficiencyPT" />
+
+</opticalsurface>
+
+</surfaces>
+
+</lccdd>

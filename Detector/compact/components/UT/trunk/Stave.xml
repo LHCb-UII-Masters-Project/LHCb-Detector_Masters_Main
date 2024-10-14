@@ -1,0 +1,208 @@
+<ut>
+	<!--
+	(c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+	This software is distributed under the terms of the GNU General Public
+	Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+	In applying this licence, CERN does not waive the privileges and immunities
+	granted to it by virtue of its status as an Intergovernmental Organization
+	or submit itself to any jurisdiction.
+	-->
+	<!-- ========== Stave Geometry ========== -->
+	<!-- ========== MegArray connector ========== -->
+	<volume material="Silicon" name="lvMegArray" vis="UT:Connector">
+		<shape dx="UTMegArrayWide/2" dy="UTMegArrayLong/2" dz="UTMegArrayThick/2" name="utMegArray" type="Box" />
+	</volume>
+	<!-- ========== HV connector ========== -->
+	<volume material="Silicon" name="lvHVConnector" vis="UT:Connector">
+		<shape dx="UTHVConnectorWide/2" dy="UTHVConnectorLong/2" dz="UTHVConnectorThick/2" name="utHVConnector" type="Box" />
+	</volume>
+	<!-- ========== Flex Cable Kapton========== -->
+	<volume material="UT:FlexCable" name="lvCableKaptonL" vis="UT:KaptonCable">
+		<shape dx="UTCableWide/2" dy="UTCableLongL/2" dz="UTCableKaptonThick/2" name="utCableKaptonL" type="Box" />
+	</volume>
+	<volume material="UT:FlexCable" name="lvCableKaptonM" vis="UT:KaptonCable">
+		<shape dx="UTCableWide/2" dy="UTCableLongM/2" dz="UTCableKaptonThick/2" name="utCableKaptonM" type="Box" />
+	</volume>
+	<volume material="UT:FlexCable" name="lvCableKaptonS" vis="UT:KaptonCable">
+		<shape dx="UTCableWide/2" dy="UTCableLongS/2" dz="UTCableKaptonThick/2" name="utCableKaptonS" type="Box" />
+	</volume>
+	<!-- ========== Flex Cable Copper========== -->
+	<volume material="Copper" name="lvCableCuL" vis="UT:KaptonCable">
+		<shape name="utCableCuL" operation="subtraction" type="BooleanShape">
+			<shape dx="UTCableWide/2" dy="UTCableLongL/2" dz="UTCableCuThickL0/2" name="utCableCuBoxL0" type="Box" />
+			<shape dx="UTCableWide" dy="UTCableLongL1" dz="UTCableCuThickL0-UTCableCuThickL1" name="utCableCuBoxL1" type="Box" />
+			<position y="-UTCableLongL/2+UTCableLongL0+UTCableLongL1" z="-UTCableCuThickL0/2" />
+			<shape dx="UTCableWide" dy="UTCableLongL2" dz="UTCableCuThickL0-UTCableCuThickL2" name="utCableCuBoxL2" type="Box" />
+			<position y="-UTCableLongL/2+UTCableLongL0+UTCableLongL1+UTCableLongL2" z="-UTCableCuThickL0/2" />
+			<shape dx="UTCableWide" dy="UTCableLongL3" dz="UTCableCuThickL0-UTCableCuThickL3" name="utCableCuBoxL3" type="Box" />
+			<position y="-UTCableLongL/2+UTCableLongL0+UTCableLongL1+UTCableLongL2+UTCableLongL3" z="-UTCableCuThickL0/2" />
+		</shape>
+	</volume>
+	<volume material="Copper" name="lvCableCuM" vis="UT:KaptonCable">
+		<shape name="utCableCuM" operation="subtraction" type="BooleanShape">
+			<shape dx="UTCableWide/2" dy="UTCableLongM/2" dz="UTCableCuThickM0/2" name="utCableCuBoxM0" type="Box" />
+			<shape dx="UTCableWide" dy="UTCableLongM1" dz="UTCableCuThickM0-UTCableCuThickM1" name="utCableCuBoxM1" type="Box" />
+			<position y="-UTCableLongM/2+UTCableLongM0+UTCableLongM1" z="-UTCableCuThickM0/2" />
+			<shape dx="UTCableWide" dy="UTCableLongM2" dz="UTCableCuThickM0-UTCableCuThickM2" name="utCableCuBoxM2" type="Box" />
+			<position y="-UTCableLongM/2+UTCableLongM0+UTCableLongM1+UTCableLongM2" z="-UTCableCuThickM0/2" />
+			<shape dx="UTCableWide" dy="UTCableLongM3" dz="UTCableCuThickM0-UTCableCuThickM3" name="utCableCuBoxM3" type="Box" />
+			<position y="-UTCableLongM/2+UTCableLongM0+UTCableLongM1+UTCableLongM2+UTCableLongM3" z="-UTCableCuThickM0/2" />
+		</shape>
+	</volume>
+	<volume material="Copper" name="lvCableCuS" vis="UT:KaptonCable">
+		<shape name="utCableCuS" operation="subtraction" type="BooleanShape">
+			<shape dx="UTCableWide/2" dy="UTCableLongS/2" dz="UTCableCuThickS0/2" name="utCableCuBoxS0" type="Box" />
+			<shape dx="UTCableWide" dy="UTCableLongS1" dz="UTCableCuThickS0-UTCableCuThickS1" name="utCableCuBoxS1" type="Box" />
+			<position y="-UTCableLongS/2+UTCableLongS0+UTCableLongS1" z="-UTCableCuThickS0/2" />
+			<shape dx="UTCableWide" dy="UTCableLongS2" dz="UTCableCuThickS0-UTCableCuThickS2" name="utCableCuBoxS2" type="Box" />
+			<position y="-UTCableLongS/2+UTCableLongS0+UTCableLongS1+UTCableLongS2" z="-UTCableCuThickS0/2" />
+		</shape>
+	</volume>
+	<!-- ========== Kapton Cable ========== -->
+	<volume name="lvCableL">
+		<physvol name="pvCableCuL" volume="lvCableCuL">
+			<position z="UTCableKaptonThick/2" />
+		</physvol>
+		<physvol name="pvCableKaptonL" volume="lvCableKaptonL">
+			<position z="-UTCableCuThickL0/2" />
+		</physvol>
+		<physvol name="pvMegArrayL" volume="lvMegArray">
+			<position y="-UTCableLongL/2+UTMegArrayY" z="-1/2*(UTCableCuThickL0+UTMegArrayThick+UTCableKaptonThick)" />
+		</physvol>
+		<physvol name="pvConnectorL" volume="lvHVConnector">
+			<!-- <position x="UTHVConnectorLX" y="-UTCableLongL/2+UTHVConnectorLong/2" z="-1/2*(UTCableCuThickL0+UTHVConnectorThick+UTCableKaptonThick)" /> -->
+			<position y="-UTCableLongL/2+UTHVConnectorLong/2" z="-1/2*(UTCableCuThickL0+UTHVConnectorThick+UTCableKaptonThick)" />
+		</physvol>
+	</volume>
+	<volume name="lvCableM">
+		<physvol name="pvCableCuM" volume="lvCableCuM">
+			<position z="UTCableKaptonThick/2" />
+		</physvol>
+		<physvol name="pvCableKaptonM" volume="lvCableKaptonM">
+			<position z="-UTCableCuThickM0/2" />
+		</physvol>
+		<physvol name="pvMegArrayM" volume="lvMegArray">
+			<position y="-UTCableLongM/2+UTMegArrayY" z="-1/2*(UTCableCuThickM0+UTMegArrayThick+UTCableKaptonThick)" />
+		</physvol>
+		<physvol name="pvConnectorM" volume="lvHVConnector">
+			<position y="-UTCableLongM/2+UTHVConnectorLong/2" z="-1/2*(UTCableCuThickM0+UTHVConnectorThick+UTCableKaptonThick)" />
+			<!-- <position x="UTHVConnectorMX" y="-UTCableLongM/2+UTHVConnectorLong/2" z="-1/2*(UTCableCuThickM0+UTHVConnectorThick+UTCableKaptonThick)" /> -->
+		</physvol>
+	</volume>
+	<volume name="lvCableS">
+		<physvol name="pvCableCuS" volume="lvCableCuS">
+			<position z="UTCableKaptonThick/2" />
+		</physvol>
+		<physvol name="pvCableKaptonS" volume="lvCableKaptonS">
+			<position z="-UTCableCuThickS0/2" />
+		</physvol>
+		<physvol name="pvMegArrayS" volume="lvMegArray">
+			<position y="-UTCableLongS/2+UTMegArrayY" z="-1/2*(UTCableCuThickS0+UTMegArrayThick+UTCableKaptonThick)" />
+		</physvol>
+		<physvol name="pvConnectorS" volume="lvHVConnector">
+			<position y="-UTCableLongS/2+UTHVConnectorLong/2" z="-1/2*(UTCableCuThickS0+UTHVConnectorThick+UTCableKaptonThick)" />
+			<!-- <position x="UTHVConnectorSX" y="-UTCableLongS/2+UTHVConnectorLong/2" z="-1/2*(UTCableCuThickS0+UTHVConnectorThick+UTCableKaptonThick)" /> -->
+		</physvol>
+	</volume>
+	<!-- ========== Bare Stave ========== -->
+	<volume material="UT:BareStave" name="lvBareStaveA" vis="UT:BareStave">
+		<shape dx="UTBareStaveWide/2" dy="UTBareStaveLong/2" dz="UTBareStaveThick/2" name="utBareStaveA" type="Box" />
+	</volume>
+	<volume material="UT:BareStave" name="lvBareStaveB" vis="UT:BareStave">
+		<shape dx="UTBareStaveWide/2" dy="UTBareStaveLong/2" dz="UTBareStaveThick/2" name="utBareStaveB" type="Box" />
+	</volume>
+	<volume material="UT:BareStave" name="lvBareStaveC" vis="UT:BareStave">
+		<shape name="utBareStaveC" operation="subtraction" type="BooleanShape">
+			<shape dx="UTBareStaveWide/2" dy="UTBareStaveLong/2" dz="UTBareStaveThick/2" name="utBareStaveBox" type="Box" />
+			<shape dz="UTBareStaveThick" name="utBareStaveTub" rmax="UTBeamHoleRadius" type="Tube" />
+			<position x="UTBareStaveWide/2-UTBareStaveEdge-UTSensorOverlapX/2" />
+		</shape>
+	</volume>
+	<!-- ====== Stave A/B/C (Computed in C++) ====== -->
+	<!-- ========== Stave Type A ========== -->
+	<!-- ========== Stave Type A core ========== -->
+	<volume name="lvStaveACore" vis="UT:Envelope">
+		<physvol name="pvBareStaveA" volume="lvBareStaveA" />
+		<physvol name="pvCableA1" volume="lvCableS">
+			<position y="-UTStaveLong/2+UTCableLongS/2" z="-UTStaveCableZ" />
+		</physvol>
+		<physvol name="pvCableA2" volume="lvCableM">
+			<position y="-UTStaveLong/2+UTCableLongM/2" z="UTStaveCableZ" />
+			<rotation y="pi*rad" />
+		</physvol>
+		<physvol name="pvCableA3" volume="lvCableM">
+			<position y="UTStaveLong/2-UTCableLongM/2" z="-UTStaveCableZ" />
+			<rotation z="pi*rad" />
+		</physvol>
+		<physvol name="pvCableA4" volume="lvCableS">
+			<position y="UTStaveLong/2-UTCableLongS/2" z="UTStaveCableZ" />
+			<rotation y="pi*rad" z="pi*rad" />
+		</physvol>
+	</volume>
+	<!-- ========== Stave Type A Front ========== -->
+	<volume name="lvStaveAFront" vis="UT:Envelope"/>
+	<!-- ========== Stave Type A Back ========== -->
+	<volume name="lvStaveABack" vis="UT:Envelope"/>
+	<volume name="lvStaveA" vis="UT:Envelope">
+		<physvol name="pvStaveACore" volume="lvStaveACore">
+		</physvol>
+	</volume>
+	<!-- ========== Stave Type B ========== -->
+	<!-- ========== Stave Type B core ========== -->
+	<volume name="lvStaveBCore" vis="UT:Envelope">
+		<physvol name="pvBareStaveB" volume="lvBareStaveB" />
+		<physvol name="pvCableB1" volume="lvCableS">
+			<position y="-UTStaveLong/2+UTCableLongS/2" z="-UTStaveCableZ" />
+		</physvol>
+		<physvol name="pvCableB2" volume="lvCableM">
+			<position y="-UTStaveLong/2+UTCableLongM/2" z="UTStaveCableZ" />
+			<rotation y="pi*rad" />
+		</physvol>
+		<physvol name="pvCableB3" volume="lvCableM">
+			<position y="UTStaveLong/2-UTCableLongM/2" z="-UTStaveCableZ" />
+			<rotation z="pi*rad" />
+		</physvol>
+		<physvol name="pvCableB4" volume="lvCableS">
+			<position y="UTStaveLong/2-UTCableLongS/2" z="UTStaveCableZ" />
+			<rotation y="pi*rad" z="pi*rad" />
+		</physvol>
+	</volume>
+	<!-- ========== Stave Type B Front ========== -->
+	<volume name="lvStaveBFront" vis="UT:Envelope"/>
+	<!-- ========== Stave Type B Back ========== -->
+	<volume name="lvStaveBBack" vis="UT:Envelope"/>
+	<volume name="lvStaveB" vis="UT:Envelope">
+		<physvol name="pvStaveBCore" volume="lvStaveBCore">
+		</physvol>
+	</volume>
+	<!-- ========== Stave Type C ========== -->
+	<!-- ========== Stave Type C core ========== -->
+	<volume name="lvStaveCCore" vis="UT:Envelope">
+		<physvol name="pvBareStaveC" volume="lvBareStaveC" />
+		<physvol name="pvCableC1" volume="lvCableL">
+			<position y="-UTStaveLong/2+UTCableLongL/2" z="-UTStaveCableZ" />
+		</physvol>
+		<physvol name="pvCableC2" volume="lvCableM">
+			<position y="-UTStaveLong/2+UTCableLongM/2" z="UTStaveCableZ" />
+			<rotation y="pi*rad" />
+		</physvol>
+		<physvol name="pvCableC3" volume="lvCableM">
+			<position y="UTStaveLong/2-UTCableLongM/2" z="-UTStaveCableZ" />
+			<rotation z="pi*rad" />
+		</physvol>
+		<physvol name="pvCableC4" volume="lvCableL">
+			<position y="UTStaveLong/2-UTCableLongL/2" z="UTStaveCableZ" />
+			<rotation y="pi*rad" z="pi*rad" />
+		</physvol>
+	</volume>
+	<!-- ========== Stave Type C Front ========== -->
+	<volume name="lvStaveCFront" vis="UT:Envelope"/>
+	<!-- ========== Stave Type C Back ========== -->
+	<volume name="lvStaveCBack" vis="UT:Envelope"/>
+	<volume name="lvStaveC" vis="UT:Envelope">
+		<physvol name="pvStaveCCore" volume="lvStaveCCore">
+		</physvol>
+	</volume>
+</ut>

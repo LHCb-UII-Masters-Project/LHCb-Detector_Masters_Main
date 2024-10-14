@@ -1,0 +1,23 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH2 Detector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 general geometry parameters in  Run3 configuration -->
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+  <constant name="Rh2NumSides"  value="2" />
+  <constant name="Rh2PiOver2Ang" value="((pi/2.0)*rad)" />
+  </define>
+</lccdd>
+
+
+

@@ -1,0 +1,311 @@
+<ut>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+    <!--======Readout ASIC======-->
+    <volume material="UT:UTAsic" name="lvAsic1" vis="UT:Asic">
+        <shape name="utAsic" type="Box" dx="(UTAsicWide)/2" dy="(UTAsicLong)/2" dz="(UTAsicThick)/2"/>
+    </volume>
+    <volume name="lvAsic4">
+        <physvol volume="lvAsic1" name="pvAsicForGroup4_0">
+            <position x="-3/8*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup4_1">
+            <position x="-1/8*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup4_2">
+            <position x="1/8*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup4_3">
+            <position x="3/8*UTSensorSiWide"/>
+        </physvol>
+    </volume>
+    <volume name="lvAsic8">
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_0">
+            <position x="-7/16*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_1">
+            <position x="-5/16*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_2">
+            <position x="-3/16*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_3">
+            <position x="-1/16*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_4">
+            <position x="1/16*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_5">
+            <position x="3/16*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_6">
+            <position x="5/16*UTSensorSiWide"/>
+        </physvol>
+        <physvol volume="lvAsic1" name="pvAsicForGroup8_7">
+            <position x="7/16*UTSensorSiWide"/>
+        </physvol>
+    </volume>
+    <!--====== HybridFlex ======-->
+    <!-- Porting from UTv4r1-materials branch instead of UTV4r2 -->
+    <volume material="UT:HybridFlex4" name="lvModuleFlex4" vis="UT:HybridFlex">
+        <shape name="utHybridFlex4" type="Box" dx="(UTHybridFlex4Wide)/2" dy="(UTHybridFlex4Long)/2" dz="(UTHybridFlex4Thick)/2"/>
+    </volume>
+    <volume material="UT:HybridFlex8" name="lvModuleFlex8" vis="UT:HybridFlex">
+        <shape name="utHybridFlex8" type="Box" dx="(UTHybridFlex8Wide)/2" dy="(UTHybridFlex8Long)/2" dz="(UTHybridFlex8Thick)/2"/>
+    </volume>
+    <!--====== Hysol+Dia glue ======-->
+    <volume material="UT:HysolDia" name="lvHysolA" vis="UT:Invisible">
+        <shape name="utHysolA" type="BooleanShape" operation="subtraction">
+            <shape name="utHysolBoxA1" type="Box" dx="(UTHysolWide)/2" dy="(UTHysolLongA)/2" dz="(UTHysolThick)/2"/>
+            <shape name="utHysolBoxA2" type="Box" dx="(UTHysolCutWide*2)/2" dy="(UTHysolCutLongA*2)/2" dz="(UTHysolThick*2)/2"/>
+            <position x="UTHysolWide/2" y="UTHysolLongA/2"/>
+            <shape name="utHysolBoxA3" type="Box" dx="(UTHysolWide*2)/2" dy="(UTHysolGapWide)/2" dz="(UTHysolThick*2)/2"/>
+            <position y="UTHysolLongA/2-UTSensorLongA-UTHysolGapWide/2"/>
+        </shape>
+    </volume>
+    <volume material="UT:HysolDia" name="lvHysolB" vis="UT:Invisible">
+        <shape name="utHysolB" type="BooleanShape" operation="subtraction">
+            <shape name="utHysolBoxB1" type="Box" dx="(UTHysolWide)/2" dy="(UTHysolLongB)/2" dz="(UTHysolThick)/2"/>
+            <shape name="utHysolBoxB2" type="Box" dx="(UTHysolCutWide*2)/2" dy="(UTHysolCutLongB*2)/2" dz="(UTHysolThick*2)/2"/>
+            <position x="UTHysolWide/2" y="UTHysolLongB/2"/>
+            <shape name="utHysolBoxB3" type="Box" dx="(UTHysolWide*2)/2" dy="(UTHysolGapWide)/2" dz="(UTHysolThick*2)/2"/>
+            <position y="UTHysolLongB/2-UTSensorLongB-UTHysolGapWide/2"/>
+        </shape>
+    </volume>
+    <volume material="UT:HysolDia" name="lvHysolC" vis="UT:Invisible">
+        <shape name="utHysolC" type="BooleanShape" operation="subtraction">
+            <shape name="utHysolBoxC1" type="Box" dx="(UTHysolWide)/2" dy="(UTHysolLongC)/2" dz="(UTHysolThick)/2"/>
+            <shape name="utHysolBoxC2" type="Box" dx="(UTHysolCutWide*2)/2" dy="(UTHysolCutLongC*2)/2" dz="(UTHysolThick*2)/2"/>
+            <position x="UTHysolWide/2" y="UTHysolLongC/2"/>
+            <shape name="utHysolBoxC3" type="Box" dx="(UTHysolWide*2)/2" dy="(UTHysolGapWide)/2" dz="(UTHysolThick*2)/2"/>
+            <position y="UTHysolLongC/2-UTSensorLongC-UTHysolGapWide/2"/>
+        </shape>
+    </volume>
+    <volume material="UT:HysolDia" name="lvHysolD" vis="UT:Invisible">
+        <shape name="utHysolD" type="BooleanShape" operation="subtraction">
+            <shape name="utHysolBoxD1" type="Box" dx="(UTHysolWide)/2" dy="(UTHysolLongD)/2" dz="(UTHysolThick)/2"/>
+            <shape name="utHysolBoxD2" type="Box" dx="(UTHysolCutWide*2)/2" dy="(UTHysolCutLongD*2)/2" dz="(UTHysolThick*2)/2"/>
+            <position x="UTHysolWide/2" y="UTHysolLongD/2"/>
+            <shape name="utHysolBoxD3" type="Box" dx="(UTHysolWide*2)/2" dy="(UTHysolGapWide)/2" dz="(UTHysolThick*2)/2"/>
+            <position y="UTHysolLongD/2-UTSensorLongD-UTHysolGapWide/2"/>
+        </shape>
+    </volume>
+    <!--====== Stiff ======-->
+    <volume material="UT:BoronNitride" name="lvStiffA" vis="UT:Stiffener">
+        <shape name="utStiffA" type="BooleanShape" operation="subtraction">
+            <shape name="utStiffBoxA1" type="Box" dx="(UTStiffWide)/2" dy="(UTStiffLongA)/2" dz="(UTStiffThick)/2"/>
+            <shape name="utStiffBoxA2" type="Box" dx="(UTStiffCutWide*2)/2" dy="(UTStiffCutLongA*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="UTStiffLongA/2"/>
+            <shape name="utStiffBoxA3" type="Box" dx="(UTStiffWide-UTAnchorWide*2-UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position y="-UTStiffLongA/2"/>
+            <shape name="utStiffBoxA4" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="-UTStiffLongA/2"/>
+            <shape name="utStiffBoxA5" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="-UTStiffLongA/2"/>
+
+            <shape name="utStiffCutA1" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide-UTAnchorWide" y="-UTStiffLongA/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutA2" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide+UTAnchorWide" y="-UTStiffLongA/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutA3" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide" y="-UTStiffLongA/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutA4" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide" y="-UTStiffLongA/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutA5" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="UTStiffLongA/2-UTAnchorLong+1*mm"/>
+            <shape name="utStiffCutA6" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorWide" y="UTStiffLongA/2-UTAnchorLong+1*mm"/>
+        </shape>
+    </volume>
+
+    <volume material="UT:BoronNitride" name="lvStiffB" vis="UT:Stiffener">
+        <shape name="utStiffB" type="BooleanShape" operation="subtraction">
+            <shape name="utStiffBoxB1" type="Box" dx="(UTStiffWide)/2" dy="(UTStiffLongB)/2" dz="(UTStiffThick)/2"/>
+            <shape name="utStiffBoxB2" type="Box" dx="(UTStiffCutWide*2)/2" dy="(UTStiffCutLongB*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="UTStiffLongB/2"/>
+            <shape name="utStiffBoxB3" type="Box" dx="(UTStiffWide-UTAnchorWide*2-UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position y="-UTStiffLongB/2"/>
+            <shape name="utStiffBoxB4" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="-UTStiffLongB/2"/>
+            <shape name="utStiffBoxB5" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="-UTStiffLongB/2"/>
+
+            <shape name="utStiffCutB1" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide-UTAnchorWide" y="-UTStiffLongB/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutB2" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide+UTAnchorWide" y="-UTStiffLongB/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutB3" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide" y="-UTStiffLongB/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutB4" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide" y="-UTStiffLongB/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutB5" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="UTStiffLongB/2-UTAnchorLong+1*mm"/>
+            <shape name="utStiffCutB6" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorWide" y="UTStiffLongB/2-UTAnchorLong+1*mm"/>
+        </shape>
+    </volume>
+    <volume material="UT:BoronNitride" name="lvStiffC" vis="UT:Stiffener">
+        <shape name="utStiffC" type="BooleanShape" operation="subtraction">
+            <shape name="utStiffBoxC1" type="Box" dx="(UTStiffWide)/2" dy="(UTStiffLongC)/2" dz="(UTStiffThick)/2"/>
+            <shape name="utStiffBoxC2" type="Box" dx="(UTStiffCutWide*2)/2" dy="(UTStiffCutLongC*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="UTStiffLongC/2"/>
+            <shape name="utStiffBoxC3" type="Box" dx="(UTStiffWide-UTAnchorWide*2-UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position y="-UTStiffLongC/2"/>
+            <shape name="utStiffBoxC4" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="-UTStiffLongC/2"/>
+            <shape name="utStiffBoxC5" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="-UTStiffLongC/2"/>
+
+            <shape name="utStiffCutC1" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide-UTAnchorWide" y="-UTStiffLongC/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutC2" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide+UTAnchorWide" y="-UTStiffLongC/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutC3" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide" y="-UTStiffLongC/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutC4" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide" y="-UTStiffLongC/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutC5" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="UTStiffLongC/2-UTAnchorLong+1*mm"/>
+            <shape name="utStiffCutC6" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorWide" y="UTStiffLongC/2-UTAnchorLong+1*mm"/>
+        </shape>
+    </volume>
+    <volume material="UT:BoronNitride" name="lvStiffD" vis="UT:Stiffener">
+        <shape name="utStiffD" type="BooleanShape" operation="subtraction">
+            <shape name="utStiffBoxD1" type="Box" dx="(UTStiffWide)/2" dy="(UTStiffLongD)/2" dz="(UTStiffThick)/2"/>
+            <shape name="utStiffBoxD2" type="Box" dx="(UTStiffCutWide*2)/2" dy="(UTStiffCutLongD*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="UTStiffLongD/2"/>
+            <shape name="utStiffBoxD3" type="Box" dx="(UTStiffWide-UTAnchorWide*2-UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position y="-UTStiffLongD/2"/>
+            <shape name="utStiffBoxD4" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="-UTStiffLongD/2"/>
+            <shape name="utStiffBoxD5" type="Box" dx="(UTAnchorSide*2)/2" dy="(UTAnchorLong*2)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2" y="-UTStiffLongD/2"/>
+
+            <shape name="utStiffCutD1" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide-UTAnchorWide" y="-UTStiffLongD/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutD2" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide+UTAnchorWide" y="-UTStiffLongD/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutD3" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="UTStiffWide/2-UTAnchorSide" y="-UTStiffLongD/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutD4" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorSide" y="-UTStiffLongD/2+UTAnchorLong-1*mm"/>
+            <shape name="utStiffCutD5" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2" y="UTStiffLongD/2-UTAnchorLong+1*mm"/>
+            <shape name="utStiffCutD6" type="Box" dx="(6*mm)/2" dy="(2*mm)/2" dz="(UTStiffThick*2)/2"/>
+            <position x="-UTStiffWide/2+UTAnchorWide" y="UTStiffLongD/2-UTAnchorLong+1*mm"/>
+        </shape>
+    </volume>
+    <!--====== Phase change thermal interface material ======-->
+    <volume material="UT:HybridTim" name="lvTimA" vis="UT:Invisible">
+        <shape name="utTimA" type="BooleanShape" operation="subtraction">
+            <shape name="utTimBoxA1" type="Box" dx="(UTTimWide)/2" dy="(UTTimLongA)/2" dz="(UTTimThick)/2"/>
+            <shape name="utTimBoxA2" type="Box" dx="(UTTimCutWide*2)/2" dy="(UTTimCutLongA*2)/2" dz="(UTTimThick*2)/2"/>
+            <position x="UTTimWide/2" y="UTTimLongA/2"/>
+        </shape>
+    </volume>
+
+    <volume material="UT:HybridTim" name="lvTimB" vis="UT:Invisible">
+        <shape name="utTimB" type="BooleanShape" operation="subtraction">
+            <shape name="utTimBoxB1" type="Box" dx="(UTTimWide)/2" dy="(UTTimLongB)/2" dz="(UTTimThick)/2"/>
+            <shape name="utTimBoxB2" type="Box" dx="(UTTimCutWide*2)/2" dy="(UTTimCutLongB*2)/2" dz="(UTTimThick*2)/2"/>
+            <position x="UTTimWide/2" y="UTTimLongB/2"/>
+        </shape>
+    </volume>
+
+    <volume material="UT:HybridTim" name="lvTimC" vis="UT:Invisible">
+        <shape name="utTimC" type="BooleanShape" operation="subtraction">
+            <shape name="utTimBoxC1" type="Box" dx="(UTTimWide)/2" dy="(UTTimLongC)/2" dz="(UTTimThick)/2"/>
+            <shape name="utTimBoxC2" type="Box" dx="(UTTimCutWide*2)/2" dy="(UTTimCutLongC*2)/2" dz="(UTTimThick*2)/2"/>
+            <position x="UTTimWide/2" y="UTTimLongC/2"/>
+        </shape>
+    </volume>
+
+    <volume material="UT:HybridTim" name="lvTimD" vis="UT:Invisible">
+        <shape name="utTimD" type="BooleanShape" operation="subtraction">
+            <shape name="utTimBoxD1" type="Box" dx="(UTTimWide)/2" dy="(UTTimLongD)/2" dz="(UTTimThick)/2"/>
+            <shape name="utTimBoxD2" type="Box" dx="(UTTimCutWide*2)/2" dy="(UTTimCutLongD*2)/2" dz="(UTTimThick*2)/2"/>
+            <position x="UTTimWide/2" y="UTTimLongD/2"/>
+        </shape>
+    </volume>
+    <!--====== Hybrid - SensorGroup + ASIC + HybridFlex + Hysol + Stiffener + Tim (Computed in C++) ======-->
+    <volume name="lvModuleA" vis="UT:Envelope">
+        <physvol volume="lvAsic4" name="pvAsicA">
+            <position y="UTAsicYA" z="UTAsic4Z"/>
+        </physvol>
+        <physvol volume="lvModuleFlex4" name="pvHybridFlexA">
+            <position y="UTHybridFlexYA" z="UTHybridFlex4Z"/>
+        </physvol>
+        <physvol volume="lvHysolA" name="pvHysolA">
+            <position z="UTHysolZ"/>
+        </physvol>
+        <physvol volume="lvStiffA" name="pvStiffA">
+            <position z="UTStiffZ"/>
+        </physvol>
+        <physvol volume="lvTimA" name="pvTimA">
+            <position z="UTTimZ"/>
+        </physvol>
+    </volume>
+
+    <volume name="lvModuleB" vis="UT:Envelope">
+        <physvol volume="lvAsic8" name="pvAsicB">
+            <position y="UTAsicYB" z="UTAsic8Z"/>
+        </physvol>
+        <physvol volume="lvModuleFlex8" name="pvHybridFlexB">
+            <position y="UTHybridFlexYB" z="UTHybridFlex8Z"/>
+        </physvol>
+        <physvol volume="lvHysolB" name="pvHysolB">
+            <position z="UTHysolZ"/>
+        </physvol>
+        <physvol volume="lvStiffB" name="pvStiffB">
+            <position z="UTStiffZ"/>
+        </physvol>
+        <physvol volume="lvTimB" name="pvTimB">
+            <position z="UTTimZ"/>
+        </physvol>
+    </volume>
+
+    <volume name="lvModuleC" vis="UT:Envelope">
+        <physvol volume="lvAsic8" name="pvAsicC">
+            <position y="UTAsicYC" z="UTAsic8Z"/>
+        </physvol>
+        <physvol volume="lvModuleFlex8" name="pvHybridFlexC">
+            <position y="UTHybridFlexYC" z="UTHybridFlex8Z"/>
+        </physvol>
+        <physvol volume="lvHysolC" name="pvHysolC">
+            <position z="UTHysolZ"/>
+        </physvol>
+        <physvol volume="lvStiffC" name="pvStiffC">
+            <position z="UTStiffZ"/>
+        </physvol>
+        <physvol volume="lvTimC" name="pvTimC">
+            <position z="UTTimZ"/>
+        </physvol>
+    </volume>
+
+    <volume name="lvModuleD" vis="UT:Envelope">
+        <physvol volume="lvAsic8" name="pvAsicD">
+            <position y="UTAsicYD" z="UTAsic8Z"/>
+        </physvol>
+        <physvol volume="lvModuleFlex8" name="pvHybridFlexD">
+            <position y="UTHybridFlexYD" z="UTHybridFlex8Z"/>
+        </physvol>
+        <physvol volume="lvHysolD" name="pvHysolD">
+            <position z="UTHysolZ"/>
+        </physvol>
+        <physvol volume="lvStiffD" name="pvStiffD">
+            <position z="UTStiffZ"/>
+        </physvol>
+        <physvol volume="lvTimD" name="pvTimD">
+            <position z="UTTimZ"/>
+        </physvol>
+    </volume>
+</ut>

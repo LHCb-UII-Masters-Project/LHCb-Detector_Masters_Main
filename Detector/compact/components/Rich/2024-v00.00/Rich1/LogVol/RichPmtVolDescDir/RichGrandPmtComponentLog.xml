@@ -1,0 +1,89 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     27/01/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich Grand Mapmt components     logvol                                   -->
+<!--  This includes the Grand pmt anode which is a sensitive volume            -->
+<!--  ==========================================================================-->
+
+<Rich1>
+
+<volume name="lvRichGrandPMTSMaster"  material="Rich:RichPMTVacuum" vis="Rich:VisRichGrandPMTSMaster" >
+
+   <shape type="Box"  name="RichGrandPMTSMasterBox"
+       dx="RhGrandPMTSMasterLengthSize*RhHalfSize"
+       dy="RhGrandPMTSMasterLengthSize*RhHalfSize"
+       dz="RhGrandPMTSMasterZSize*RhHalfSize" />
+
+</volume>
+
+
+<volume name="lvRichGrandPMTQuartz" material="Rich:RichPMTQuartzMaterial" vis="Rich:VisRichGrandPMTQuartz" >
+    <shape type="Box" name="RhGrandPMTQuartzBox"
+        dx= "RhGrandPMTQuartzLengthSize*RhHalfSize"
+        dy= "RhGrandPMTQuartzLengthSize*RhHalfSize"
+        dz= "RhPMTQuartzThickness*RhHalfSize" />
+</volume>
+
+<volume name="lvRichGrandPMTPhCathode" material="Rich:RichPMTPhCathodeMaterial" vis="Rich:VisRichGrandPMTPhCathode" sensitive="1">
+
+     <shape type="Box" name="RhGrandPMTPhCathodeBox"
+        dx = "RhGrandPMTPhCathodeLengthSize*RhHalfSize"
+        dy = "RhGrandPMTPhCathodeLengthSize*RhHalfSize"
+        dz = "RhPMTPhCathodeZThickness*RhHalfSize" />
+
+</volume>
+
+<volume name="lvRichGrandPMTSideEnvelope" material="Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichGrandPMTEnvelope" >
+  <shape type="BooleanShape" operation="subtraction" name="RichGrandPMTSideEnvSubract" >
+    <shape type="Box" name="RhGrandPMTSideEnvelopeBox"
+        dx="RhGrandPMTSideEnvelopeLateralOuterSize*RhHalfSize"
+        dy="RhGrandPMTSideEnvelopeLateralOuterSize*RhHalfSize"
+        dz="RhPMTSideEnvelopeZLength*RhHalfSize" />
+    <shape type="Box" name="RhGrandPMTSideEnvelopeHoleBox"
+       dx="RhGrandPMTSideEnvelopeHoleSize*RhHalfSize"
+       dy="RhGrandPMTSideEnvelopeHoleSize*RhHalfSize"
+       dz="RhPMTSideEnvelopeHoleLargeZSize*RhHalfSize" />
+     <position z= "RhPMTSideEnvelopeHoleZPos" />
+  </shape>
+</volume>
+
+<volume name="lvRichGrandPMTBackEnvelope" material="Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichGrandPMTEnvelope" >
+     <shape type="Box" name="RhGrandPMTBackEnvBox"
+      dx= "RhGrandPMTBackEnvelopeSize*RhHalfSize"
+      dy= "RhGrandPMTBackEnvelopeSize*RhHalfSize"
+      dz= "RhPMTBackEnvelopeThickness*RhHalfSize" />
+</volume>
+
+<volume name="lvRichGrandPMTFrontRing" material = "Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichGrandPMTFrontRing">
+     <shape type="BooleanShape" operation="subtraction" name = "RichGrandPMTFrontEnvSubtract" >
+      <shape type="Box" name="RichGrandPMTFrontEnvBox"
+       dx= "RhGrandPMTFrontRingLateralOuterSize*RhHalfSize"
+       dy= "RhGrandPMTFrontRingLateralOuterSize*RhHalfSize"
+       dz= "RhPMTFrontRingZSize*RhHalfSize" />
+      <shape type="Box" name = "RichGrandPMTFrontEnvHoleBox"
+       dx ="RhGrandPMTFrontRingSubHoleXSize*RhHalfSize"
+       dy ="RhGrandPMTFrontRingSubHoleYSize*RhHalfSize"
+       dz ="RhPMTFrontRingSubHoleLargeZSize*RhHalfSize" />
+       <position z="RhPMTFrontRingSubHoleZPos" />
+    </shape>
+</volume>
+
+
+<volume name="lvRichPMTAnode0001" material="Rich:RichPMTAnodeMaterial" vis = "Rich:VisRichGrandPMTAnode" >
+
+    <shape type="Box" name="RhGrandPMTAnodeBox0001"
+        dx = "RhGrandPMTAnodeXSize*RhHalfSize"
+        dy = "RhGrandPMTAnodeYSize*RhHalfSize"
+        dz = "RhGrandPMTAnodeZSize*RhHalfSize" />
+
+</volume>
+
+
+</Rich1>

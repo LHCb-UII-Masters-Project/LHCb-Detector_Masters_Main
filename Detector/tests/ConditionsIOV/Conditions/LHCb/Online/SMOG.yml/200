@@ -1,0 +1,12 @@
+# Example of SMOG condition
+# ```
+# SMOG:
+#     Mode: [string in ["NONE", "SMOG", "SMOG2", "UNKNOWN"]]
+#     Gas: [string in ["ARGON", "NEON", "HELIUM", "HYDROGEN", ....]]
+#     Stable: [int|bool]
+# ```
+---
+SMOG:
+    Mode: "SMOG2"
+    Gas: "ARGON"
+    Stable: 1

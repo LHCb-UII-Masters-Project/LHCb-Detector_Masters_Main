@@ -1,0 +1,61 @@
+<!--==========================================================================-->
+<!-- LHCb Detector Description -->
+<!--==========================================================================-->
+<!--  -->
+<!-- Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!-- All rights reserved. -->
+<!--  -->
+<!-- @author  Shuqi Sheng & Ji Peng -->
+<!-- @date    23/11/2023 -->
+<!--  -->
+<!--==========================================================================-->
+<!-- XML description of the UP stations -->
+<!--==========================================================================-->
+
+<lccdd>
+	<define>
+	</define>
+	<detectors>
+		<detector id="UP:ID" name="UP" type="LHCb_UP_v1_0" parent="${UP:parent}" readout="UPHits" vis="UP:Envelope">
+
+			<include ref="Sensor.xml"/>
+			<include ref="Module.xml"/>
+			<include ref="Stave.xml"/>
+			<include ref="UPBox.xml"/>
+			<include ref="UPaXLayer.xml"/>
+			<include ref="UPaULayer.xml"/>
+			<include ref="UPbVLayer.xml"/>
+			<include ref="UPbXLayer.xml"/>
+			<include ref="UPHalf.xml"/>
+
+			<debug>
+				<item name="debug" value="false"/>
+				<item name="Build_Sides" value="1"/>
+				<item name="Build_Aside" value="1"/>
+				<item name="Build_Aside_UPaX" value="1"/>
+				<item name="Build_Aside_UPaU" value="1"/>
+				<item name="Build_Aside_UPbV" value="1"/>
+				<item name="Build_Aside_UPbX" value="1"/>
+				<item name="Build_Cside" value="1"/>
+				<item name="Build_Cside_UPaX" value="1"/>
+				<item name="Build_Cside_UPaU" value="1"/>
+				<item name="Build_Cside_UPbV" value="1"/>
+				<item name="Build_Cside_UPbX" value="1"/>
+				<item name="Build_Frame" value="1"/>
+				<item name="Build_Jacket" value="1"/>
+				<item name="Build_PipeHeater" value="1"/>
+				<item name="Build_Box" value="1"/>
+				<item name="Build_BoxPlug" value="1"/>
+				<item name="select_volume" value="lvUP"/>
+			</debug>
+
+			<position z="2485*mm" />
+
+		</detector>
+	</detectors>
+	<readouts>
+		<readout name="UPHits">
+			<id>system:16,chip:4,module:5,face:1,stave:3,layer:2,side:1</id>
+		</readout>
+	</readouts>
+</lccdd>

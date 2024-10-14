@@ -1,0 +1,892 @@
+<!-- ========================================================================== -->
+<!-- LHCb Detector Description -->
+<!-- ========================================================================== -->
+<!--  -->
+<!-- Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!-- All rights reserved. -->
+<!--  -->
+<!-- @author  Shuqi Sheng & Ji Peng -->
+<!-- @date    27/11/2023 -->
+<!--  -->
+<!-- ========================================================================== -->
+<!-- XML description of the UP constant definitions -->
+<!-- ========================================================================== -->
+<lccdd>
+	<define>
+		<!-- UP Geometry constants -->
+		<!-- *  Author: Jianchun Wang  * -->
+		<constant name="UPGeomVersion" value="1.1" />
+		<constant name="UPEpsilon" value="0.001*mm" />
+		<!-- ========== UP Pixels ========== -->
+                <constant name="UPPixelWide"        value="20.16*mm" />
+                <constant name="UPPixelGroupsWide"  value="UPPixelWide*7" />
+                <constant name="UPPixelLong"        value="21.36*mm" />
+                <constant name="UPPixelGroupsLong"  value="UPPixelLong*2" />
+                <constant name="UPPixelGap"         value="0.04*mm" />
+                <constant name="UPPixelAlWide"      value="UPPixelGroupsWide+UPPixelGap*6" />
+                <constant name="UPPixelAlLong"      value="UPPixelGroupsLong+UPPixelGap" />
+                <constant name="UPPixelTrueLong"    value="19.2*mm" />
+                <constant name="UPPixelSideLong"    value="0.08*mm" />
+                <constant name="UPSensorOverLapX"   value="3.48*mm" />
+                <constant name="UPSensorOverLapY"   value="1.0*mm" />
+                <constant name="UPPixelThick"       value="0.2*mm" />
+                <constant name="UPPixelTrueWide"    value="20.0*mm" />
+                <constant name="UPPixelBufferLongOld"  value="1.2*mm" />
+                <constant name="UPPixelSideWide"     value="0.08*mm" />
+                <constant name="UPPixelBufferOffset" value="0.04*mm" />
+		<!-- beam pipe region -->
+                <constant name="UPPixelHoleHalfWide"  value="39.0*mm" />
+                <constant name="UPPixelHoleHalfLong"  value="37.0*mm" />
+                <constant name="UPPixelHoleWide"      value="UPPixelHoleHalfWide*2" />
+                <constant name="UPPixelHoleLong"      value="UPPixelHoleHalfLong*2" />
+		<!--  GR, Al and Hybrid -->
+                <constant name="UPHybridSideWide"   value="0.4*mm" />
+                <constant name="UPPixelAlHoleWide"    value="UPPixelHoleHalfWide-UPHybridSideWide" />
+                <constant name="UPPixelBufferLong"  value="2.0*mm" />
+                <constant name="UPBufferandSide"       value="UPPixelBufferLong+UPPixelSideLong" />
+                <constant name="UPHybridFlex7Side"   value="(2*(UPPixelTrueLong-UPSensorOverLapY+UPPixelSideLong)+UPPixelGap-2*UPBufferandSide)/2" />
+                <constant name="UPPixelAlHoleLong"    value="UPPixelHoleHalfLong-UPHybridFlex7Side" />
+                <constant name="UPPixel5AlWide"      value="UPPixelWide*5+UPPixelGap*4" />
+                <constant name="UPPixel5AlLong"      value="UPPixelLong*2+UPPixelGap" />
+                <constant name="UPPixelGRLongOut"     value="UPBufferandSide" />
+
+                <constant name="UPPixelBufferY"     value="-UPPixelLong/2+UPPixelBufferOffset+UPPixelBufferLong/2" />
+                <constant name="UPPixelOffsetY"     value="UPPixelBufferLong/2" />
+                <constant name="UPPixelSiWide"      value="UPPixelWide-2*UPPixelSideWide" />
+
+                <constant name="UPSensorAlThick"    value="0.003*mm" />
+		<constant name="UPSensorAlZ" value="UPPixelThick/2-UPSensorAlThick/2" />
+		<constant name="UPSensorSiZ" value="-UPSensorAlThick/2" />
+                <constant name="UPSensorSiThickE"   value="UPPixelThick-UPSensorAlThick" />
+                <constant name="UPSensorGRThickE"   value="UPSensorSiThickE" />
+                <constant name="UPHybridSideLong"   value="0.2*mm" />
+                <constant name="UPHybridFlex7Wide"  value="UPPixelAlWide+UPHybridSideWide*2" />
+                <constant name="UPHybridFlex5Wide"  value="UPPixel5AlWide+UPHybridSideWide*2" />
+                <constant name="UPHybridFlex7Long"  value="UPHybridFlex7Side+UPPixelLong*2+UPHybridSideLong+UPPixelGap" />
+                <constant name="UPHybridFlex7Thick" value="0.2*mm" />
+
+                <constant name="UPPixelVTRxWide"    value="20.0*mm" />
+                <constant name="UPPixelVTRxLong"    value="10.0*mm" />
+                <constant name="UPPixelVTRxThick"   value="4.0*mm" />
+                <constant name="UPHybrid7Thick"     value="UPPixelVTRxThick+UPHybridFlex7Thick+UPEpsilon" />
+                <constant name="UPPixelHybridWide"  value="UPHybridFlex7Wide" />
+                <constant name="UPHybridLongE"      value="UPHybridFlex7Long" />
+                <constant name="UPHybridLongE2"     value="UPHybridFlex7Long*2" />
+
+                <constant name="UPPixelYD"          value="-(UPHybridLongE/2-UPHybridSideLong-(UPPixelLong*2+UPPixelGap)/2)" />
+                <constant name="UPPixelAsicLong"         value="9.*mm" />
+                <constant name="UPPixelAsicWide"         value="9.*mm" />
+                <constant name="UPPixelAsicThick"      value="1.25*mm" />
+                <constant name="UPPixelHybridAsicGap"    value="1.*mm" />
+                <constant name="UPPixelAsicYD"      value="UPPixelYD+UPPixelHybridAsicGap+(UPPixelLong*2+UPPixelGap+UPPixelAsicLong)/2" />
+                <constant name="UPHybridFlexPielYD" value="0.*mm" />
+                <constant name="UPHybridFlex7Z"     value="UPHybrid7Thick/2-UPHybridFlex7Thick/2" />
+                <constant name="UPPixelAsic7Z"      value="UPHybridFlex7Z-(UPHybridFlex7Thick+UPPixelAsicThick)/2-UPEpsilon" />
+                <constant name="UPPixelZ"           value="UPHybridFlex7Z-(UPHybridFlex7Thick+UPPixelThick)/2-UPEpsilon" />
+
+		<!-- Hysol/stiff/Tim(Not used) -->
+                <constant name="UPPixelHysolWide"   value="UPHybridFlex7Wide" />
+                <constant name="UPPixelHysolLongE"  value="UPHybridFlex7Long" />
+                <constant name="UPStiffLWide"       value="10*mm" />
+                <constant name="UPPixelHysolCutWide" value="UPHybridFlex7Wide-UPStiffLWide" />
+                <constant name="UPHysolCutLongE"    value="UPPixelAlLong-UPStiffLWide" />
+                <constant name="UPPixelHysolGapWide" value="1.0*mm" />
+
+                <constant name="UPPixelStiffWide"    value="UPHybridFlex7Wide" />
+                <constant name="UPAnchorLong"       value="10*mm" />
+                <constant name="UPPixelStiffLongE"   value="UPHybridFlex7Long+UPAnchorLong*2" />
+                <constant name="UPPixelStiffCutWide" value="UPHybridFlex7Wide-UPStiffLWide" />
+                <constant name="UPPixelStiffCutLongE" value="UPPixelAlLong-UPStiffLWide" />
+
+                <constant name="UPPixelTimWide"      value="UPHybridFlex7Wide" />
+                <constant name="UPPixelTimLongE"     value="UPHybridFlex7Long" />
+                <constant name="UPPixelTimCutWide"   value="UPHybridFlex7Wide-UPStiffLWide" />
+                <constant name="UPPixelTimCutLongE"  value="UPPixelAlLong-UPStiffLWide" />
+
+		<!-- Cable/BareStave -->
+                <constant name="UPPixelCableLong"    value="UPPixelTrueLong*2*36-UPSensorOverLapY*35+UPPixelSideLong*36*2+(UPBufferandSide+UPHybridSideLong)*2" />
+                <constant name="UPBareStaveEdge"    value="1*mm" />
+                <constant name="UPPixelBareStaveWide"    value="UPHybridFlex7Wide+2*UPBareStaveEdge" />
+                <constant name="UPPixelCableWide"    value="UPPixelBareStaveWide"/>
+                <constant name="UPPixelCableLongA"   value="UPPixelTrueLong*2*36-UPSensorOverLapY*35+UPPixelSideLong*36*2+(UPBufferandSide+UPHybridSideLong)*2" />
+                <constant name="UPHVConnectorPixelX"  value="36.0*mm" />
+                <!--constant name="UPHybridFlex7End"      value="UPHybridFlex7Side" /-->
+                <constant name="UPPixelBareStaveEnd"   value="15.0*mm"/>
+                <constant name="UPStaveEHybridY0"     value="UPHybridLongE-UPSensorOverLapY-UPHybridSideLong-UPBufferandSide" />
+                <constant name="UPPixelBareStaveLong"  value="UPPixelTrueLong*2*36-UPSensorOverLapY*35+UPStaveEHybridY0*2+UPPixelSideLong*36*2+(UPBufferandSide+UPHybridSideLong)*2+UPPixelBareStaveEnd*2" />
+                <constant name="UPBareStaveThick"   value="4.0*mm" />
+                <constant name="UPPixelStaveWide"     value="UPPixelBareStaveWide" />
+                <constant name="UPBareStaveEOSLong" value="111.28*mm" />
+                <constant name="UPPixelStaveLong"     value="UPPixelBareStaveLong+2*UPBareStaveEOSLong" />
+
+                <constant name="UPPixelCableCuThickA"   value="0.01*mm" />
+                <constant name="UPCableCuThickPixel0" value="UPPixelCableCuThickA" />
+                <constant name="UPCableKaptonThick" value="0.09*mm" />
+                <constant name="UPPixelCableThick"    value="UPCableKaptonThick+UPCableCuThickPixel0" />
+
+                <constant name="UPPixelStaveThick"    value="UPBareStaveThick+UPPixelCableThick*2+UPHybrid7Thick*2+4*UPEpsilon" />
+                <constant name="UPPixelStaveCableZ"   value="UPBareStaveThick/2+UPPixelCableThick/2+UPEpsilon" />
+
+                <constant name="UPStaveHybridEStepY0"  value="UPPixelLong+UPHybridFlex7Side+UPPixelGap/2" />
+                <constant name="UPStaveHybridEStepY1"  value="UPHybridFlex7Long*2-UPSensorOverLapY-2*UPBufferandSide-2*UPHybridSideLong" />
+                <constant name="UPPixelStaveHybridZ"  value="UPBareStaveThick/2+UPPixelCableThick+UPHybrid7Thick/2+2*UPEpsilon" />
+                <constant name="UPStaveEHybridY1"     value="UPHybridFlex7Side+UPBufferandSide+UPSensorOverLapY/2" />
+
+                <constant name="UPPixelStaveStep"     value="UPPixelStaveWide-UPSensorOverLapX" />
+                <constant name="UPStaveFHybridY0"     value="UPHybridFlex7Long/2-UPSensorOverLapY/2-UPHybridSideLong-UPBufferandSide" />
+                <constant name="UPStaveHybridFStepY0" value="(UPPixelTrueLong+UPPixelSideLong)*2+UPPixelGap-UPSensorOverLapY" />
+                <constant name="UPStaveHybridFStepY1" value="UPStaveHybridFStepY0+UPHybridFlex7Long/2" />
+
+
+                <constant name="UPPixelStaveDz"           value="20.*mm" />
+                <constant name="UPPixelBareLayerThick" value="UPPixelStaveThick+UPPixelStaveDz+0.01*mm" />
+
+                <constant name="UPPixelVTRx7Z"      value="UPHybridFlex7Z-(UPHybridFlex7Thick+UPPixelVTRxThick)/2-UPEpsilon" />
+                <constant name="UPHybridFlex7Offset"     value="8.0*mm" />
+                <constant name="UPHybridFlex7LongEL"     value="UPHybridFlex7Long+UPHybridFlex7Offset" />
+                <constant name="UPHybridLongEL"     value="UPHybridFlex7LongEL" />
+                <constant name="UPPixelVTRxOffset"     value="2.0*mm" />
+                <constant name="UPPixelYEL"          value="-(UPHybridLongEL/2-UPHybridSideLong-(UPPixelLong*2+UPPixelGap)/2)" />
+                <constant name="UPPixelAsicYEL"      value="UPPixelYEL+UPPixelHybridAsicGap+(UPPixelLong*2+UPPixelGap+UPPixelAsicLong)/2" />
+                <constant name="UPPixelVTRxYD"      value="UPHybridLongEL/2-UPPixelVTRxLong/2-UPPixelVTRxOffset" />
+                <constant name="UPPixelAsicY2E"      value="UPHybridLongE-UPHybridSideLong-UPPixelLong*2-UPPixelHybridAsicGap-UPPixelAsicLong/2" />
+
+                <constant name="UPPixelVTRxlpGBTGap"    value="1.*mm" />
+                <constant name="UPPixel2lpGBTGap"    value="1.*mm" />
+                <constant name="UPPixel2lpGBTGapy"    value="1.*mm" />
+
+                <constant name="UPPixelVTRxOffsetL"     value="1.0*mm" />
+                <constant name="UPHybridFlex7OffsetL"     value="16.0*mm" />
+                <constant name="UPHybridFlex7LongELL"     value="UPHybridFlex7Long+UPHybridFlex7OffsetL" />
+                <constant name="UPHybridLongELL"     value="UPHybridFlex7LongELL" />
+                <constant name="UPPixelYELL"          value="-(UPHybridLongELL/2-UPHybridSideLong-(UPPixelLong*2+UPPixelGap)/2)" />
+                <constant name="UPPixelAsicYELL"      value="UPPixelYELL+UPPixelHybridAsicGap+(UPPixelLong*2+UPPixelGap+UPPixelAsicLong)/2" />
+                <constant name="UPPixelVTRxYDL"      value="UPHybridLongELL/2-UPPixelVTRxLong/2-UPPixelVTRxOffsetL" />
+
+                <constant name="UUPaXLayerCut" value="97.*mm" />
+                <constant name="UUPSideCutGap" value="10.*mm" />
+                <constant name="UPSideCutGap" value="10*mm" />
+                <constant name="UPSiAsicThick"      value="0.320*mm" />
+                <constant name="UPSilverEpoxyThick" value="0.100*mm" />
+                <constant name="UPAsicThick"        value="UPSiAsicThick+UPSilverEpoxyThick" />
+                <constant name="UPHybridFlex4Thick" value="0.400*mm" />
+                <constant name="UPHysolThick"       value="0.050*mm" />
+                <constant name="UPStiffThick"       value="0.500*mm" />
+                <constant name="UPTimThick"         value="0.125*mm" />
+                <constant name="UPStaveAOverlap"   value="3.600*mm" />
+                <constant name="UPStaveCOverlap"   value="5.500*mm" />
+                <constant name="UUPaXLayerSideLongWidth" value="13/2*UPPixelStaveStep+1/2*UPPixelStaveWide+2*UUPaXLayerCut" />
+                <constant name="UPStaveBOverlap"   value="4.200*mm" />
+                <constant name="UUPaXLayerSideShortWidth" value="UUPaXLayerSideLongWidth-2*(2*UUPaXLayerCut+UUPSideCutGap)" />
+                <constant name="UUPLayerSideCorrectedWidth" value="UUPaXLayerSideLongWidth-2*UUPaXLayerCut" />
+
+                <constant name="UUPBoxInnerLong"           value="UPPixelStaveLong" />
+
+                <constant name="UP2PixelActiveSensor"           value="(UPPixelTrueLong+UPPixelSideLong)*2.+UPPixelGap" />
+                <constant name="UPPixelAndHoleDiff"            value="(2.*UP2PixelActiveSensor-UPSensorOverLapY-UPPixelHoleLong)/2" />
+                <constant name="UPPixelNearExceed"           value="UPBufferandSide-(UPPixelAndHoleDiff-UPSensorOverLapY)+UPHybridSideLong" />
+		<!-- ========== UP sensors ========== -->
+		<constant name="UPSensorWide" value="97.5*mm" />
+		<constant name="UPSensorLongA" value="99.5*mm" />
+		<constant name="UPSensorSiOverlapY" value="1.8*mm" />
+		<constant name="UPSensorGRWideFar" value="0.8*mm" />
+		<constant name="UPSensorGRWideNear" value="0.8*mm+0.5*mm" />
+		<constant name="UPSensorOverlapY" value="UPSensorSiOverlapY+UPSensorGRWideFar+UPSensorGRWideNear" />
+		<constant name="UPSensorThick" value="0.2*mm" />
+		<constant name="UPSensorOverlapY0" value="UPSensorSiOverlapY+UPSensorGRWideFar*2" />
+		<constant name="UPSensorSiOverlapX" value="2.0*mm" />
+		<constant name="UPSensorGRWideSide" value="0.8*mm" />
+		<constant name="UPSensorOverlapX" value="UPSensorSiOverlapX+2*UPSensorGRWideSide" />
+		<constant name="UPSensorSiWide" value="UPSensorWide-2*UPSensorGRWideSide" />
+		<constant name="UPSensorSiOffsetY" value="(UPSensorGRWideNear-UPSensorGRWideFar)/2" />
+		<constant name="UPSensorAlWide" value="UPSensorWide" />
+		<!-- ========== Hybrid ========== -->
+		<constant name="UPAnchorWide" value="10*mm" />
+                <constant name="UPAnchorSide" value="15*mm" />
+		<!-- ========== Stave ========== -->
+		<!-- ========== Add ========== -->
+		<constant name="UPStaveThick" value="UPPixelStaveThick" />
+		<constant name="UPStaveWide" value="UPPixelStaveWide" />
+		<constant name="UPStaveLong" value="UPPixelStaveLong" />
+		<constant name="UPBareStaveLong" value="UPPixelBareStaveLong" />
+		<!-- ========== Add ========== -->
+		<constant name="UPMegArrayWide" value="55*mm" />
+		<constant name="UPMegArrayLong" value="17.5*mm" />
+		<constant name="UPMegArrayThick" value="3*mm" />
+		<constant name="UPMegArrayY" value="40.8*mm" />
+		<constant name="UPHVConnectorWide" value="20*mm" />
+		<constant name="UPHVConnectorLong" value="10*mm" />
+		<constant name="UPHVConnectorThick" value="3*mm" />
+		<constant name="UPHVConnectorLX" value="36*mm" />
+		<constant name="UPHVConnectorMX" value="-36*mm" />
+		<constant name="UPHVConnectorSX" value="36*mm" />
+		<constant name="UPCoolingJointLong" value="30*mm" />
+		<constant name="UPCoolingJointR0" value="2.0*mm" />
+		<constant name="UPCoolingJointR1" value="1.0*mm" />
+		<constant name="UPCoolingJointX" value="-40*mm" />
+		<!-- Aluminium frame -->
+		<constant name="UPFrameThick" value="15*mm" />
+		<constant name="UPVirtualBoxWide" value="2586*mm" />
+		<constant name="UPFrameOuterWide" value="UPVirtualBoxWide" />
+		<constant name="UPVirtualBoxLong" value="2628*mm" />
+		<constant name="UPFrameOuterLong" value="UPVirtualBoxLong" />
+		<constant name="UPBoxOuterWide" value="2040*mm" />
+		<constant name="UPFrameInnerWide" value="UPBoxOuterWide" />
+		<constant name="UPBoxOuterLong" value="1960*mm" />
+		<constant name="UPFrameInnerLong" value="UPBoxOuterLong" />
+		<!-- UP light tight box -->
+		<constant name="UPBoxOuterThick" value="432.0*mm" />
+		<constant name="UPBoxWallDownstreamThick" value="21.0*mm" />
+		<constant name="UPBoxInnerThick" value="UPBoxOuterThick-2*UPBoxWallDownstreamThick" />
+		<constant name="UPBoxWallSideThick" value="26.0*mm" />
+		<constant name="UPBoxInnerWide" value="UPBoxOuterWide-2*UPBoxWallSideThick" />
+		<constant name="UPBoxInnerLong" value="UPBoxOuterLong-2*UPBoxWallSideThick" />
+		<!-- UPBoxWallUpstreamThick is thickness of plates on front and back (in Z) in the UP -->
+		<!-- UPBoxWallSideThick is thickness of top, bottom, left, and right plates when looking downstream -->
+		<constant name="UPBeamHoleRadius" value="33.4*mm" />
+		<constant name="UPBoxBeamHoleRadius" value="UPBeamHoleRadius-0.1*mm" />
+		<!-- UP box plug -->
+		<constant name="UPCylJacketThick" value="5.12*mm" />
+		<constant name="UPConeJacketThick" value="UPCylJacketThick" />
+		<constant name="UPPipeHeaterDownstreamThick" value="0.35*mm" />
+		<constant name="UPConeJacketRadiusZmax" value="UX851Cone08ARadiusZmax+UX851Cone08AThick+UPPipeHeaterDownstreamThick+0.01*mm" />
+		<constant name="UPPlugOuterRadius" value="UPConeJacketRadiusZmax + UPConeJacketThick + 57.6*mm" />
+		<constant name="UPPlugInnerRadius" value="UPConeJacketRadiusZmax + UPConeJacketThick" />
+		<constant name="UPPlugThickZ" value="UPBoxWallDownstreamThick" />
+		<constant name="UPInternalRingThick" value="5.0*mm" />
+		<constant name="UPInternalRingIR" value="46.0*mm" />
+		<constant name="UPInternalRingOR" value="80.0*mm" />
+		<constant name="UPInternalSealThick" value="5.0*mm" />
+		<constant name="UPInternalSealIR" value="43.5*mm" />
+		<constant name="UPInternalSealOR" value="46.0*mm" />
+		<constant name="UPBoxPipeAirexRingInnerThick" value="8.0*mm" />
+		<constant name="UPBoxPipeAirexRingMiddleThick" value="10.0*mm" />
+		<constant name="UPBoxPipeAirexRingOuterThick" value="8.0*mm" />
+		<constant name="UPBoxPipeAirexRingIR" value="35.0*mm" />
+		<constant name="UPBoxPipeAirexRingInnerOR" value="43.5*mm" />
+		<constant name="UPBoxPipeAirexRingMiddleOR" value="52.0*mm" />
+		<constant name="UPBoxPipeAirexRingOuterOR" value="43.5*mm" />
+		<constant name="UPBoxWallSealThick" value="10.0*mm" />
+		<constant name="UPBoxWallSealIR" value="UPBoxPipeAirexRingMiddleOR" />
+		<constant name="UPBoxWallSealOR" value="55.0*mm" />
+		<!-- Kapton beam pipe jacket -->
+		<constant name="UPCylJacketLength" value="UX851Cyl07BLenght" />
+		<constant name="UPCylJacketZpos" value="UPCylJacketLength*0.5" />
+		<!-- 230 -->
+		<constant name="UPPipeHeaterUpstreamRadius" value="UX851Cyl07Radius+UX851Cyl07Thick+0.01*mm" />
+		<constant name="UPPipeHeaterUpstreamThick" value="0.35*mm" />
+		<constant name="UPCylJacketRadius" value="UPPipeHeaterUpstreamRadius+UPPipeHeaterUpstreamThick+0.01*mm" />
+		<constant name="UPConeJacketLength" value="UX851Cone08ALenght" />
+		<!-- 200 -->
+		<!-- 27.0009+1+0.01 -->
+		<constant name="UPConeJacketRadiusZmin" value="UX851Cone08ARadiusZmin+UX851Cone08AThick+UPPipeHeaterDownstreamThick+0.01*mm" />
+		<!-- 25+1+0.01 -->
+		<!-- aerogel cutout -->
+		<constant name="UPConeJacketCutOutOffset" value="5*mm" />
+		<constant name="UPLayerDz" value="55*mm" />
+		<constant name="UPStaveDz" value="15*mm" />
+		<constant name="UPConeJacketCutOutLength" value="UPLayerDz+UPStaveDz+UPStaveThick+2*UPConeJacketCutOutOffset" />
+		<constant name="UPSystemZ" value="2485*mm" />
+		<constant name="UPStationDz" value="280*mm" />
+		<constant name="UPConeJacketCutOutPos" value="UPSystemZ+0.5*UPStationDz-0.5*UPLayerDz-0.5*UPStaveDz-0.5*UPStaveThick-UPConeJacketCutOutOffset-UX851Rich1TTSplitZposIP" />
+		<constant name="UPConeJacketCutOutLHCbZmin" value="UX851Rich1TTSplitZposIP+UPConeJacketCutOutPos" />
+		<constant name="UPConeJacketCutOutLHCbZmax" value="UX851Rich1TTSplitZposIP+UPConeJacketCutOutPos+UPConeJacketCutOutLength" />
+		<constant name="UPConeJacketCutOutRadiusZmin" value="UPConeJacketCutOutLHCbZmin*tan(UX851to4Angle)+UX851Cyl07Thick+UPPipeHeaterDownstreamThick+0.01*mm" />
+		<constant name="UPConeJacketCutOutRadiusZmax" value="UPConeJacketCutOutLHCbZmax*tan(UX851to4Angle)+UX851Cyl07Thick+UPPipeHeaterDownstreamThick+0.02*mm" />
+		<constant name="UPConeJacketUpstreamLength" value="UPConeJacketCutOutPos-UPCylJacketLength" />
+		<constant name="UPConeJacketDownstreamLength" value="UPConeJacketLength-UPConeJacketUpstreamLength-UPConeJacketCutOutLength" />
+		<constant name="UPConeJacketZposUpstream" value="UPCylJacketLength+UPConeJacketUpstreamLength*0.5" />
+		<constant name="UPConeJacketZposDownstream" value="UPConeJacketCutOutPos+UPConeJacketCutOutLength+0.5*UPConeJacketDownstreamLength" />
+		<!-- beam pipe heaters -->
+		<constant name="UPPipeHeaterUpstreamLength" value="42.0*mm" />
+		<!-- 25+1+0.01 -->
+		<constant name="UPPipeHeaterUpstreamPos" value="UX851Rich1TTSplitZposIP-UPSystemZ-17.0*mm+0.5*UPPipeHeaterUpstreamLength" />
+		<constant name="UPPipeHeaterDownstreamLength" value="67.0*mm" />
+		<constant name="UPPipeHeaterDownstreamZmin" value="UX851TTMagnetSplitZposIP-UPBoxWallDownstreamThick-5*mm" />
+		<constant name="UPPipeHeaterDownstreamZmax" value="UPPipeHeaterDownstreamZmin+UPPipeHeaterDownstreamLength" />
+		<constant name="UPPipeHeaterDownstreamRadiusZmin" value="UPPipeHeaterDownstreamZmin*tan(UX851to4Angle)+UX851Cyl07Thick+0.01*mm" />
+		<constant name="UPPipeHeaterDownstreamRadiusZmax" value="UPPipeHeaterDownstreamZmax*tan(UX851to4Angle)+UX851Cyl07Thick+0.01*mm" />
+		<constant name="UPPipeHeaterDownstreamPos" value="UPPipeHeaterDownstreamZmin+0.5*UPPipeHeaterDownstreamLength-UPSystemZ" />
+		<!-- Detector Z positions -->
+		<!-- virtual thickness -->
+		<constant name="UPEOSPigtailThick" value="7.236*mm" />
+		<constant name="UPLayerThick" value="UPStaveThick+UPStaveDz+UPEOSPigtailThick+0.01*mm" />
+		<constant name="UPStationThick" value="UPLayerThick+UPLayerDz+0.01*mm" />
+		<constant name="UPVirtualBoxAWide" value="UPBoxInnerWide" />
+		<constant name="UPVirtualBoxBWide" value="UPBoxInnerWide" />
+		<constant name="UPVirtualHoleRadius" value="UPPlugInnerRadius-0.1*mm" />
+		<!-- Beam pipe hole -->
+		<constant name="UPAngle" value="5.0*degree" />
+		<constant name="UPSinAngle" value="sin(UPAngle)" />
+		<constant name="UPEOSWideUPa" value="16*UPStaveWide+UPSinAngle*UPStaveLong" />
+		<constant name="UPEOSWideUPb" value="18*UPStaveWide+UPSinAngle*UPStaveLong" />
+		<constant name="UPEOSLong" value="46.765*mm" />
+		<constant name="UPEOSThick" value="3.29*mm" />
+		<constant name="UPEOSPigtailLong" value="(UPBoxInnerLong-UPBareStaveLong)/2-UPEOSLong" />
+		<!-- Chip position -->
+		<constant name="SetpvChipA1X" value="-3*UPPixelWide-3*UPPixelGap" />
+		<constant name="SetpvChipA1Y" value="UPPixelLong/2+UPPixelGap/2" />
+		<constant name="SetpvChipA2X" value="-3*UPPixelWide-3*UPPixelGap" />
+                <constant name="SetpvChipA2Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+                <constant name="SetpvChipA3X" value="-2*UPPixelWide-2*UPPixelGap" />
+                <constant name="SetpvChipA3Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetpvChipA4X" value="-2*UPPixelWide-2*UPPixelGap" />
+		<constant name="SetpvChipA4Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+		<constant name="SetpvChipA5X" value="-UPPixelWide-UPPixelGap" />
+                <constant name="SetpvChipA5Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetpvChipA6X" value="-UPPixelWide-UPPixelGap" />
+		<constant name="SetpvChipA6Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+		<constant name="SetpvChipA7Y" value="UPPixelLong/2+UPPixelGap/2" />
+		<constant name="SetpvChipA8Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+		<constant name="SetpvChipA9X" value="UPPixelWide+UPPixelGap" />
+                <constant name="SetpvChipA9Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetpvChipA10X" value="UPPixelWide+UPPixelGap" />
+		<constant name="SetpvChipA10Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+		<constant name="SetpvChipA11X" value="2*UPPixelWide+2*UPPixelGap" />
+                <constant name="SetpvChipA11Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetpvChipA12X" value="2*UPPixelWide+2*UPPixelGap" />
+                <constant name="SetpvChipA12Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+                <constant name="SetpvChipA13X" value="3*UPPixelWide+3*UPPixelGap" />
+                <constant name="SetpvChipA13Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetpvChipA14X" value="3*UPPixelWide+3*UPPixelGap" />
+		<constant name="SetpvChipA14Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+		<constant name="SetMGpvChipA1X" value="-3*UPPixelWide-3*UPPixelGap" />
+                <constant name="SetMGpvChipA1Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetMGpvChipA2X" value="-3*UPPixelWide-3*UPPixelGap" />
+                <constant name="SetMGpvChipA2Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+                <constant name="SetMGpvChipA3X" value="-2*UPPixelWide-2*UPPixelGap" />
+                <constant name="SetMGpvChipA3Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetMGpvChipA4X" value="-2*UPPixelWide-2*UPPixelGap" />
+                <constant name="SetMGpvChipA4Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+                <constant name="SetMGpvChipA5X" value="-UPPixelWide-UPPixelGap" />
+                <constant name="SetMGpvChipA5Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetMGpvChipA6X" value="-UPPixelWide-UPPixelGap" />
+                <constant name="SetMGpvChipA6Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+                <constant name="SetMGpvChipA7Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetMGpvChipA8Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+                <constant name="SetMGpvChipA9X" value="UPPixelWide+UPPixelGap" />
+                <constant name="SetMGpvChipA9Y" value="UPPixelLong/2+UPPixelGap/2" />
+                <constant name="SetMGpvChipA10X" value="UPPixelWide+UPPixelGap" />
+                <constant name="SetMGpvChipA10Y" value="-(UPPixelLong/2+UPPixelGap/2)" />
+		<!-- Module position -->
+                <!-- Stave E Front and Back -->
+                <constant name="SetUPStavEFrontModule3" value="UPStaveEHybridY1-UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule4" value="UPStaveEHybridY1-UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule7" value="UPStaveEHybridY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule8" value="UPStaveEHybridY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule11" value="UPStaveEHybridY1-UPStaveHybridEStepY0*3-UPStaveHybridEStepY1*2-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule12" value="UPStaveEHybridY1-UPStaveHybridEStepY0*3-UPStaveHybridEStepY1*2+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule15" value="UPStaveEHybridY1-UPStaveHybridEStepY0*4-UPStaveHybridEStepY1*3-UPHybridFlex7Long/2" />
+		<constant name="SetUPStavEFrontModule16" value="UPStaveEHybridY1-UPStaveHybridEStepY0*4-UPStaveHybridEStepY1*3+UPHybridFlex7Long/2" />
+		<constant name="SetUPStavEFrontModule20" value="UPStaveEHybridY1-UPStaveHybridEStepY0*5-UPStaveHybridEStepY1*4+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule21" value="UPStaveEHybridY1+UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule22" value="UPStaveEHybridY1+UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule25" value="UPStaveEHybridY1+2*UPStaveHybridEStepY1+UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule26" value="UPStaveEHybridY1+2*UPStaveHybridEStepY1+UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule29" value="UPStaveEHybridY1+3*UPStaveHybridEStepY1+2*UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule30" value="UPStaveEHybridY1+3*UPStaveHybridEStepY1+2*UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEFrontModule33" value="UPStaveEHybridY1+4*UPStaveHybridEStepY1+3*UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule1" value="UPStaveEHybridY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule2" value="UPStaveEHybridY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule5" value="UPStaveEHybridY1-UPStaveHybridEStepY0-UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule6" value="UPStaveEHybridY1-UPStaveHybridEStepY0-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule9" value="UPStaveEHybridY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1*2-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule10" value="UPStaveEHybridY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1*2+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule13" value="UPStaveEHybridY1-UPStaveHybridEStepY0*3-UPStaveHybridEStepY1*3-UPHybridFlex7Long/2" />
+		<constant name="SetUPStavEBackModule14" value="UPStaveEHybridY1-UPStaveHybridEStepY0*3-UPStaveHybridEStepY1*3+UPHybridFlex7Long/2" />
+		<constant name="SetUPStavEBackModule18" value="UPStaveEHybridY1-UPStaveHybridEStepY0*4-UPStaveHybridEStepY1*4+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule23" value="UPStaveEHybridY1+UPStaveHybridEStepY1+UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule24" value="UPStaveEHybridY1+UPStaveHybridEStepY1+UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule27" value="UPStaveEHybridY1+UPStaveHybridEStepY1*2+UPStaveHybridEStepY0*2-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule28" value="UPStaveEHybridY1+UPStaveHybridEStepY1*2+UPStaveHybridEStepY0*2+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule31" value="UPStaveEHybridY1+UPStaveHybridEStepY1*3+UPStaveHybridEStepY0*3-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule32" value="UPStaveEHybridY1+UPStaveHybridEStepY1*3+UPStaveHybridEStepY0*3+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavEBackModule35" value="UPStaveEHybridY1+UPStaveHybridEStepY1*4+UPStaveHybridEStepY0*4-UPHybridFlex7Long/2" />
+                <!-- Stave F Front and Back -->
+                <constant name="SetUPStavFFrontModule2" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0" />
+                <constant name="SetUPStavFFrontModule4" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*3" />
+                <constant name="SetUPStavFFrontModule6" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*5" />
+                <constant name="SetUPStavFFrontModule9" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFFrontModule10" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFFrontModule13" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+		<constant name="SetUPStavFFrontModule14" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+		<constant name="SetUPStavFFrontModule18" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0*3-UPStaveHybridEStepY1*2+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFFrontModule19" value="UPStaveFHybridY0+UPHybridFlex7Offset/2" />
+                <constant name="SetUPStavFFrontModule21" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*2" />
+                <constant name="SetUPStavFFrontModule23" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*4" />
+                <constant name="SetUPStavFFrontModule25" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFFrontModule26" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFFrontModule29" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0+UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFFrontModule30" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0+UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFFrontModule33" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0*2+UPStaveHybridEStepY1*2-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule1" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2" />
+                <constant name="SetUPStavFBackModule3" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*2" />
+                <constant name="SetUPStavFBackModule5" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*4" />
+                <constant name="SetUPStavFBackModule7" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule8" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1+UPHybridFlex7Long/2" />
+		<constant name="SetUPStavFBackModule11" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0-UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+		<constant name="SetUPStavFBackModule12" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule16" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*5-UPStaveHybridFStepY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1*2+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule20" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0" />
+                <constant name="SetUPStavFBackModule22" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*3" />
+                <constant name="SetUPStavFBackModule24" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*5" />
+                <constant name="SetUPStavFBackModule27" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule28" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule31" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0*2+UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule32" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0*2+UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavFBackModule35" value="UPStaveFHybridY0+UPStaveHybridFStepY0*5+UPStaveHybridFStepY1+UPStaveHybridEStepY0*3+UPStaveHybridEStepY1*2-UPHybridFlex7Long/2" />
+                <!-- Stave G Front and Back -->
+                <constant name="SetUPStavGFrontModule2" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0" />
+                <constant name="SetUPStavGFrontModule4" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*3" />
+                <constant name="SetUPStavGFrontModule6" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*5" />
+                <constant name="SetUPStavGFrontModule8" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*7" />
+		<constant name="SetUPStavGFrontModule10" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*9" />
+		<constant name="SetUPStavGFrontModule13" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGFrontModule14" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGFrontModule18" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGFrontModule19" value="UPStaveFHybridY0+UPHybridFlex7Offset/2" />
+                <constant name="SetUPStavGFrontModule21" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*2" />
+                <constant name="SetUPStavGFrontModule23" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*4" />
+                <constant name="SetUPStavGFrontModule25" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*6" />
+                <constant name="SetUPStavGFrontModule27" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*8" />
+                <constant name="SetUPStavGFrontModule29" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGFrontModule30" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGFrontModule33" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0+UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGBackModule1" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2" />
+                <constant name="SetUPStavGBackModule3" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*2" />
+                <constant name="SetUPStavGBackModule5" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*4" />
+		<constant name="SetUPStavGBackModule7" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*6" />
+		<constant name="SetUPStavGBackModule9" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*8" />
+                <constant name="SetUPStavGBackModule11" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGBackModule12" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGBackModule16" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGBackModule20" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0" />
+                <constant name="SetUPStavGBackModule22" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*3" />
+                <constant name="SetUPStavGBackModule24" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*5" />
+                <constant name="SetUPStavGBackModule26" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*7" />
+                <constant name="SetUPStavGBackModule28" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*9" />
+                <constant name="SetUPStavGBackModule31" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGBackModule32" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavGBackModule35" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0*2+UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <!-- Stave H Front and Back -->
+                <constant name="SetUPStavHFrontModule2" value="-UPStaveFHybridY0-UPHybridFlex7OffsetL/2-UPStaveHybridFStepY0" />
+                <constant name="SetUPStavHFrontModule4" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*3" />
+		<constant name="SetUPStavHFrontModule6" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*5" />
+		<constant name="SetUPStavHFrontModule8" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*7" />
+                <constant name="SetUPStavHFrontModule10" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*9" />
+                <constant name="SetUPStavHFrontModule13" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHFrontModule14" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHFrontModule18" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0*2-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHFrontModule19" value="UPStaveFHybridY0+UPHybridFlex7OffsetL/2" />
+                <constant name="SetUPStavHFrontModule21" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*2" />
+                <constant name="SetUPStavHFrontModule23" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*4" />
+                <constant name="SetUPStavHFrontModule25" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*6" />
+                <constant name="SetUPStavHFrontModule27" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*8" />
+                <constant name="SetUPStavHFrontModule29" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHFrontModule30" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHFrontModule33" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0+UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHBackModule1" value="-UPStaveFHybridY0-UPHybridFlex7OffsetL/2" />
+		<constant name="SetUPStavHBackModule3" value="-UPStaveFHybridY0-UPHybridFlex7OffsetL/2-UPStaveHybridFStepY0*2" />
+		<constant name="SetUPStavHBackModule5" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*4" />
+                <constant name="SetUPStavHBackModule7" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*6" />
+                <constant name="SetUPStavHBackModule9" value="-UPStaveFHybridY0-UPHybridFlex7Offset/2-UPStaveHybridFStepY0*8" />
+                <constant name="SetUPStavHBackModule11" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHBackModule12" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHBackModule16" value="-UPStaveFHybridY0-UPStaveHybridFStepY0*9-UPStaveHybridFStepY1-UPStaveHybridEStepY0-UPStaveHybridEStepY1+UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHBackModule20" value="UPStaveFHybridY0+UPHybridFlex7OffsetL/2+UPStaveHybridFStepY0" />
+                <constant name="SetUPStavHBackModule22" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*3" />
+                <constant name="SetUPStavHBackModule24" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*5" />
+                <constant name="SetUPStavHBackModule26" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*7" />
+                <constant name="SetUPStavHBackModule28" value="UPStaveFHybridY0+UPHybridFlex7Offset/2+UPStaveHybridFStepY0*9" />
+                <constant name="SetUPStavHBackModule31" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0-UPHybridFlex7Long/2" />
+                <constant name="SetUPStavHBackModule32" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0+UPHybridFlex7Long/2" />
+		<constant name="SetUPStavHBackModule35" value="UPStaveFHybridY0+UPStaveHybridFStepY0*9+UPStaveHybridFStepY1+UPStaveHybridEStepY0*2+UPStaveHybridEStepY1-UPHybridFlex7Long/2" />
+		<!-- Stave position -->
+		<constant name="SetUPStave0HX" value="1/2*UUPLayerSideCorrectedWidth-1/2*UPPixelStaveStep" />
+                <constant name="SetUPStave0HZ" value="UPPixelStaveDz/2" />
+                <constant name="SetUPStave1GX" value="1/2*UUPLayerSideCorrectedWidth-3/2*UPPixelStaveStep" />
+                <constant name="SetUPStave1GZ" value="-UPPixelStaveDz/2" />
+                <constant name="SetUPStave2FX" value="1/2*UUPLayerSideCorrectedWidth-5/2*UPPixelStaveStep" />
+                <constant name="SetUPStave2FZ" value="UPPixelStaveDz/2" />
+
+	</define>
+	<materials>
+		<!-- Elements (temporary) -->
+		<element Z="13" formula="Al" name="UP:AluminiumElement">
+			<atom type="A" unit="g/mol" value="26.98" />
+		</element>
+		<element Z="56" formula="Ba" name="UP:Barium">
+			<D type="density" value="3.51" unit="g/cm3" />
+			<atom type="A" unit="g/mol" value="137.327" />
+		</element>
+		<material density="0.46*g/cm3" name="UP:EPDM">
+			<D type="density" unit="g/cm3" value="0.46" />
+			<composite n="5" ref="Carbon" />
+			<composite n="10" ref="Hydrogen" />
+		</material>
+		<material name="UP:Aluminium">
+			<D type="density" value="2.7" unit="g/cm3" />
+			<fraction n="1.000" ref="UP:AluminiumElement" />
+		</material>
+		<material name="UP:Steel">
+			<!-- Hangyi -->
+			<D type="density" unit="g/cm3" value="7.8" />
+			<fraction n="0.7" ref="Iron" />
+			<fraction n="0.1" ref="Carbon" />
+			<fraction n="0.2" ref="Copper" />
+		</material>
+		<material name="UP:Airex">
+			<D type="density" value="0.06" unit="g/cm3" />
+			<composite n="37" ref="Carbon" />
+			<composite n="24" ref="Hydrogen" />
+			<composite n="6" ref="Oxygen" />
+			<composite n="2" ref="Nitrogen" />
+		</material>
+		<material name="UP:Al2O3">
+			<D type="density" value="3.97" unit="g/cm3" />
+			<composite n="2" ref="UP:Aluminium" />
+			<composite n="3" ref="Oxygen" />
+		</material>
+		<material name="UP:AluminaTrihydrate">
+			<D type="density" value="2.42" unit="g/cm3" />
+			<composite n="1" ref="UP:Aluminium" />
+			<composite n="3" ref="Hydrogen" />
+			<composite n="3" ref="Oxygen" />
+		</material>
+		<material name="UP:AluminiumNitride">
+			<D type="density" value="3.30" unit="g/cm3" />
+			<composite n="1" ref="UP:Aluminium" />
+			<composite n="1" ref="Nitrogen" />
+		</material>
+		<material name="UP:BaTiO3">
+			<D type="density" value="6.02" unit="g/cm3" />
+			<composite n="1" ref="UP:Barium" />
+			<composite n="1" ref="Titanium" />
+			<composite n="3" ref="Oxygen" />
+		</material>
+		<material name="UP:BoronNitride">
+			<D type="density" value="2.29" unit="g/cm3" />
+			<composite n="1" ref="Boron" />
+			<composite n="1" ref="Nitrogen" />
+		</material>
+		<material name="UP:DiamondPowder">
+			<D type="density" value="3.51" unit="g/cm3" />
+			<composite n="1" ref="Carbon" />
+		</material>
+		<material name="UP:Glass">
+			<D type="density" value="2.46" unit="g/cm3" />
+			<composite n="1" ref="Silicon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UP:Kevlar">
+			<D type="density" value="1.44" unit="g/cm3" />
+			<composite n="2" ref="Nitrogen" />
+			<composite n="10" ref="Hydrogen" />
+			<composite n="14" ref="Carbon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UP:Polyethylene">
+			<D type="density" value="0.93" unit="g/cm3" />
+			<composite n="2" ref="Carbon" />
+			<composite n="4" ref="Hydrogen" />
+		</material>
+		<material name="UP:Polyurethane">
+			<D type="density" value="1.005" unit="g/cm3" />
+			<composite n="3" ref="Carbon" />
+			<composite n="8" ref="Hydrogen" />
+			<composite n="2" ref="Nitrogen" />
+			<composite n="1" ref="Oxygen" />
+		</material>
+		<material name="UP:PlugFoam">
+			<D type="density" value="0.2" unit="g/cm3" />
+			<fraction n="1.0000" ref="UP:Polyurethane" />
+		</material>
+		<!-- Ethylene Propylene Rubber -->
+		<material name="UP:EPR">
+			<D type="density" value="0.86" unit="g/cm3" />
+			<composite n="6" ref="Carbon" />
+			<composite n="10" ref="Hydrogen" />
+		</material>
+		<material name="UP:SilicaAerogel">
+			<D type="density" value="0.0898" unit="g/cm3" />
+			<composite n="1" ref="Silicon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UP:TitaniumDioxide">
+			<D type="density" value="4.23" unit="g/cm3" />
+			<composite n="1" ref="Titanium" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UP:RohacellFoam">
+			<D type="density" value="0.051" unit="g/cm3" />
+			<fraction n="0.6084" ref="Carbon" />
+			<fraction n="0.2200" ref="Oxygen" />
+			<fraction n="0.0740" ref="Hydrogen" />
+			<fraction n="0.0960" ref="Nitrogen" />
+			<fraction n="0.0016" ref="Zinc" />
+		</material>
+		<material name="UP:AllcompK9Foam">
+			<D type="density" value="0.200" unit="g/cm3" />
+			<fraction n="1.0000" ref="Carbon" />
+		</material>
+		<!-- Mixtures -->
+		<material name="UP:Epoxy">
+			<D type="density" value="1.3" unit="g/cm3" />
+			<fraction n="0.07" ref="Hydrogen" />
+			<fraction n="0.76" ref="Carbon" />
+			<fraction n="0.17" ref="Oxygen" />
+		</material>
+		<!-- Kapton from wiki/Kapton -->
+		<material name="UP:Kapton">
+			<D type="density" value="1.43" unit="g/cm3" />
+			<composite n="22" ref="Carbon" />
+			<composite n="10" ref="Hydrogen" />
+			<composite n="2" ref="Nitrogen" />
+			<composite n="5" ref="Oxygen" />
+		</material>
+		<material name="UP:CarbonFiber">
+			<D type="density" value="1.72" unit="g/cm3" />
+			<composite n="6" ref="Hydrogen" />
+			<composite n="9" ref="Carbon" />
+			<composite n="2" ref="Oxygen" />
+			<composite n="3" ref="Nitrogen" />
+		</material>
+		<material name="UP:Traces">
+			<D type="density" value="9.023" unit="g/cm3" />
+			<fraction n="0.44" ref="Copper" />
+			<fraction n="0.02" ref="Gold" />
+			<fraction n="0.54" ref="Nickel" />
+		</material>
+		<material name="UP:WireBonds">
+			<D type="density" value="2.7" unit="g/cm3" />
+			<fraction n="1.0" ref="UP:Aluminium" />
+		</material>
+		<material name="UP:EthyleneAlcohol">
+			<D type="density" value="1.1132" unit="g/cm3" />
+			<composite n="6" ref="Hydrogen" />
+			<composite n="2" ref="Carbon" />
+			<composite n="2" ref="Oxygen" />
+		</material>
+		<material name="UP:CoolingFluid">
+			<D type="density" value="1.0684" unit="g/cm3" />
+			<fraction n="0.63" ref="UP:EthyleneAlcohol" />
+			<fraction n="0.37" ref="Water" />
+		</material>
+		<material name="UP:PyrogelXT">
+			<D type="density" value="0.18" unit="g/cm3" />
+			<fraction n="0.48" ref="UP:SilicaAerogel" />
+			<fraction n="0.48" ref="UP:Glass" />
+			<fraction n="0.02" ref="UP:TitaniumDioxide" />
+			<fraction n="0.02" ref="UP:AluminaTrihydrate" />
+		</material>
+		<material name="UP:HysolBN">
+			<D type="density" value="1.342" unit="g/cm3" />
+			<fraction n="0.7692" ref="UP:Epoxy" />
+			<fraction n="0.2308" ref="UP:BoronNitride" />
+		</material>
+		<material name="UP:BareStave">
+			<D type="density" value="0.2195" unit="g/cm3" />
+			<fraction n="0.2089" ref="UP:RohacellFoam" />
+			<fraction n="0.7837" ref="UP:AllcompK9Foam" />
+			<fraction n="0.0074" ref="UP:CarbonFiber" />
+		</material>
+		<material name="UP:BeamPipeJacket">
+			<D type="density" value="0.209" unit="g/cm3" />
+			<fraction n="0.1601" ref="UP:Kapton" />
+			<fraction n="0.8399" ref="UP:PyrogelXT" />
+		</material>
+		<material name="UP:PipeHeater">
+			<D type="density" value="1.703" unit="g/cm3" />
+			<fraction n="0.1909" ref="Copper" />
+			<fraction n="0.8091" ref="UP:Kapton" />
+		</material>
+		<material name="UP:HybridFlex8">
+			<D type="density" value="1.710" unit="g/cm3" />
+			<fraction n="0.5167" ref="UP:Kapton" />
+			<fraction n="0.4486" ref="Copper" />
+			<fraction n="0.0347" ref="UP:HysolBN" />
+		</material>
+		<material name="UP:HybridFlex7">
+			<D type="density" value="1.710" unit="g/cm3" />
+			<fraction n="0.5167" ref="UP:Kapton" />
+			<fraction n="0.4486" ref="Copper" />
+			<fraction n="0.0347" ref="UP:HysolBN" />
+		</material>
+		<material name="UP:EOSPigtail">
+			<D type="density" value="4.279" unit="g/cm3" />
+			<fraction n="0.9282" ref="UP:Steel" />
+			<fraction n="0.0718" ref="UP:HybridFlex8" />
+		</material>
+		<material name="UP:BoxWall">
+			<D type="density" value="0.1038" unit="g/cm3" />
+			<fraction n="0.3471" ref="UP:CarbonFiber" />
+			<fraction n="0.0607" ref="UP:Epoxy" />
+			<fraction n="0.0315" ref="UP:Aluminium" />
+			<fraction n="0.5607" ref="UP:Airex" />
+		</material>
+		<material name="UP:CFPrePreg">
+			<D type="density" value="1.460" unit="g/cm3" />
+			<fraction n="0.53" ref="Carbon" />
+			<fraction n="0.47" ref="UP:Epoxy" />
+		</material>
+		<material name="UP:Resistor">
+			<D type="density" value="4.2768" unit="g/cm3" />
+			<fraction n="0.86" ref="UP:Al2O3" />
+			<fraction n="0.08" ref="Nickel" />
+			<fraction n="0.06" ref="Tin" />
+		</material>
+		<material name="UP:Capacitor">
+			<D type="density" value="6.2480" unit="g/cm3" />
+			<fraction n="0.86" ref="UP:BaTiO3" />
+			<fraction n="0.08" ref="Nickel" />
+			<fraction n="0.06" ref="Tin" />
+		</material>
+		<material name="UP:Dcdc">
+			<D type="density" value="7.4825" unit="g/cm3" />
+			<fraction n="0.0026" ref="Silicon" />
+			<fraction n="0.5186" ref="Gold" />
+			<fraction n="0.2672" ref="UP:Polyethylene" />
+			<fraction n="0.0017" ref="UP:Resistor" />
+			<fraction n="0.2099" ref="UP:Capacitor" />
+		</material>
+		<material name="UP:FlexCable">
+			<D type="density" value="1.8092" unit="g/cm3" />
+			<fraction n="0.5751" ref="UP:Kapton" />
+			<fraction n="0.2681" ref="Copper" />
+			<fraction n="0.1568" ref="UP:HysolBN" />
+		</material>
+		<!-- fraction n="0.1398" ref="UP:HysolBN" -->
+		<material name="UP:HybridFilm">
+			<D type="density" value="3.912" unit="g/cm3" />
+			<fraction n="0.5731" ref="UP:Glass" />
+			<fraction n="0.4269" ref="Gold" />
+			<fraction n="0.0000" ref="UP:Epoxy" />
+		</material>
+		<material name="UP:HybridFlex4">
+			<D type="density" value="1.710" unit="g/cm3" />
+			<fraction n="0.7410" ref="UP:Kapton" />
+			<fraction n="0.2243" ref="Copper" />
+			<fraction n="0.0347" ref="UP:HysolBN" />
+		</material>
+		<material name="UP:BoxPlug">
+			<D type="density" value="0.86" unit="g/cm3" />
+			<fraction n="0.9999" ref="UP:EPR" />
+			<fraction n="0.0001" ref="UP:Epoxy" />
+		</material>
+		<material name="UP:HybridTim">
+			<D type="density" value="1.100" unit="g/cm3" />
+			<fraction n="1.0000" ref="UP:Epoxy" />
+		</material>
+		<material name="UP:HysolDia">
+			<D type="density" value="1.310" unit="g/cm3" />
+			<fraction n="0.7692" ref="UP:Epoxy" />
+			<fraction n="0.2308" ref="UP:DiamondPowder" />
+		</material>
+		<material name="UP:SilverEpoxy">
+			<D type="density" value="3.200" unit="g/cm3" />
+			<fraction n="0.9434" ref="UP:Epoxy" />
+			<fraction n="0.0566" ref="Silver" />
+		</material>
+		<material name="UP:Asic">
+			<D type="density" value="2.404" unit="g/cm3" />
+			<fraction n="0.9351" ref="Silicon" />
+			<fraction n="0.0360" ref="Copper" />
+			<fraction n="0.0289" ref="UP:Aluminium" />
+		</material>
+		<material name="UP:UPAsic">
+			<D type="density" value="2.5935" unit="g/cm3" />
+			<fraction n="0.7062" ref="UP:Asic" />
+			<fraction n="0.2938" ref="UP:SilverEpoxy" />
+		</material>
+		<material name="UP:Stesalite">
+			<D type="density" value="1.6" unit="g/cm3" />
+			<fraction n="0.7" ref="SiliconOxide" />
+			<fraction n="0.3" ref="UP:Epoxy" />
+		</material>
+		<material name="UP:PCB">
+			<D type="density" value="2.44347" unit="g/cm3" />
+			<fraction n="0.04595" ref="UP:Epoxy" />
+			<fraction n="0.46654" ref="SiliconOxide" />
+			<fraction n="0.20971" ref="Copper" />
+			<fraction n="0.27310" ref="UP:Stesalite" />
+		</material>
+		<material name="UP:VTRx_BaTiO3">
+                        <D type="density" value="5.85" unit="g/cm3" />
+                        <fraction n="0.588904" ref="Barium" />
+                        <fraction n="0.205827" ref="Oxygen" />
+                        <fraction n="0.20527" ref="Titanium" />
+                </material>
+                <material name="UP:VTRx_FR4">
+                        <D type="density" value="1.85" unit="g/cm3" />
+                        <fraction n="0.067109" ref="Bromine" />
+                        <fraction n="0.278042" ref="Carbon" />
+                        <fraction n="0.068443" ref="Hydrogen" />
+                        <fraction n="0.405632" ref="Oxygen" />
+                        <fraction n="0.180774" ref="Silicon" />
+                </material>
+                <material name="UP:VTRx_Kovar">
+                        <D type="density" value="8.36" unit="g/cm3" />
+                        <fraction n="0.17" ref="Cobalt" />
+                        <fraction n="0.54" ref="Iron" />
+                        <fraction n="0.29" ref="Nickel" />
+                </material>
+                <material name="UP:VTRx_C2H4">
+                        <D type="density" value="0.89" unit="g/cm3" />
+                        <fraction n="0.856277" ref="Carbon" />
+                        <fraction n="0.143723" ref="Hydrogen" />
+                </material>
+                <material name="UP:VTRx_C3H6O">
+                        <D type="density" value="1.36" unit="g/cm3" />
+                        <fraction n="0.620403" ref="Carbon" />
+                        <fraction n="0.104133" ref="Hydrogen" />
+                        <fraction n="0.275465" ref="Oxygen" />
+                </material>
+                <material name="UP:VTRx_Si">
+                        <D type="density" value="2.33" unit="g/cm3" />
+                        <composite n="1" ref="Silicon" />
+                </material>
+                <material name="UP:VTRx_Sn">
+                        <D type="density" value="7.31" unit="g/cm3" />
+                        <composite n="1" ref="Tin" />
+                </material>
+		<material name="UP:VTRx_Kapton">
+                        <D type="density" value="1.42" unit="g/cm3" />
+                        <fraction n="0.599851" ref="Carbon" />
+                        <fraction n="0.080541" ref="Hydrogen" />
+                        <fraction n="0.319608" ref="Oxygen" />
+                </material>
+                <material name="UP:VTRx_LpGbt">
+                        <D type="density" value="1.54" unit="g/cm3" />
+                        <fraction n="0.008267" ref="UP:VTRx_BaTiO3" />
+                        <fraction n="0.134495" ref="UP:VTRx_FR4" />
+                        <fraction n="0.138893" ref="UP:VTRx_Kovar" />
+                        <fraction n="0.03307"  ref="UP:VTRx_C2H4" />
+                        <fraction n="0.44975"  ref="UP:VTRx_C3H6O" />
+                        <fraction n="0.171269" ref="UP:VTRx_C2H4" />
+                        <fraction n="0.023116" ref="UP:VTRx_Si" />
+                        <fraction n="0.002513" ref="UP:VTRx_Sn" />
+                        <fraction n="0.02596"  ref="UP:VTRx_Kapton" />
+                        <fraction n="0.012666" ref="UP:VTRx_Kapton" />
+                </material>
+
+	</materials>
+	<display>
+		<vis name="UP:Envelope" alpha="0.0" r="1.0" g="0.5" b="0.4" showDaughters="true" visible="true" />
+		<vis name="UP:Invisible" alpha="0.0" r="1.0" g="1.0" b="1.0" showDaughters="false" visiable="false" />
+		<vis name="UP:Box" alpha="0.1" r="0.95" g="0.95" b="0.95" showDaughters="true" visible="true" />
+		<!-- Silver -->
+		<vis name="UP:Frame" alpha="1.0" r="0.33" g="0.18" b="0.25" showDaughters="true" visible="true" />
+		<vis name="UP:EOS" alpha="1.0" r="0.33" g="0.18" b="0.25" showDaughters="false" visible="true" />
+		<vis name="UP:Jacket" alpha="1.0" r="0.5" g="0.5" b="0.5" showDaughters="true" visible="true" />
+		<vis name="UP:GR" alpha="1.0" r="0.40" g="0.58" b="0.53" showDaughters="true" visible="true" />
+		<vis name="UP:VTRx" alpha="1.0" r="0.0" g="0.0" b="0.93" showDaughters="true" visible="true" />
+		<vis name="UP:KaptonCable" alpha="1.0" r="0.15" g="0.15" b="0.15" showDaughters="false" visible="true" />
+		<vis name="UP:BareStave" alpha="1.0" r="0.0" g="0.75" b="1.0" showDaughters="false" visible="true" />
+		<vis name="UP:Al" alpha="1.0" r="1.0" g="1.0" b="0.87" showDaughters="false" visible="true" />
+		<vis name="UP:HybridFlex" alpha="1.0" r="0.55" g="0.53" b="0.51" showDaughters="true" visible="true" />
+		<vis name="UP:Asic" alpha="1.0" r="1.0" g="0.41" b="0.71" showDaughters="false" visible="true" />
+		<vis name="UP:Periphery" alpha="1.0" r="1.0" g="1.0" b="0.0" showDaughters="false" visible="true" />
+		<vis name="UP:Stiffener" alpha="1.0" r="0.58" g="0.74" b="0.88" showDaughters="false" visible="true" />
+		<vis name="UP:Sensor" alpha="1.0" r="1.0" g="0.85" b="0.0" showDaughters="true" visible="true" />
+	</display>
+</lccdd>

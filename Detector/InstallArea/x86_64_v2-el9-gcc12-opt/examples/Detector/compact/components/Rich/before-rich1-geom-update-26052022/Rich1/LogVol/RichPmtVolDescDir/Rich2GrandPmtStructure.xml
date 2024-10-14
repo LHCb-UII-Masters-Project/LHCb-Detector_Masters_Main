@@ -1,0 +1,47 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/01/2021                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich GrandPmtModule  Logvol for single Module                             -->
+<!--  Rich PmtECH  Logvol for single EC                                         -->
+<!--  Rich GrandPMT Master for single GrandPmt                                  -->
+<!--  They are cloned to create the multiple copies                             -->
+<!--  ==========================================================================-->
+<Rich1>
+  <volume name="lvRich2GrandPmtSingleModule"  material="Rich:Rich2Nitrogen" vis="Rich:VisRichGrandPMTModuleMaster">
+
+       <shape type="Box" name  = "Rich2GrandPmtSingleModuleBox"
+              dx = "Rich2PmtGrandModuleXSize*RhHalfSize"
+              dy = "Rich2PmtGrandModuleYSize*RhHalfSize"
+              dz = "Rich2PmtGrandModuleZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich2GrandPmtSingleECH"  material="Rich:Rich2Nitrogen" vis="Rich:VisRichGrandPMTECH" >
+
+       <shape type="Box" name  = "Rich2GrandPmtSingleECHBox"
+              dx = "RhGrandECHXSize*RhHalfSize"
+              dy = "RhGrandECHYSize*RhHalfSize"
+              dz = "RhGrandECHZSize*RhHalfSize" />
+
+  </volume>
+
+  <volume name="lvRich2GrandPmtSingleMaster"  material="Rich:Rich2Nitrogen" vis="Rich:VisRichGrandPMTMaster" >
+
+      <shape type="Box" name  = "Rich2GrandPmtSinglePmtMasterBox"
+              dx = "RhGrandPMTMasterLengthSize*RhHalfSize"
+              dy = "RhGrandPMTMasterLengthSize*RhHalfSize"
+              dz = "RhGrandPMTMasterZSize*RhHalfSize" />
+
+
+  </volume>
+
+
+
+</Rich1>

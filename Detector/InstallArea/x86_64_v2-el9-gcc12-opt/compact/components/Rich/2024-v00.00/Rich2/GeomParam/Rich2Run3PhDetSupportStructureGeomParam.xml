@@ -1,0 +1,107 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  XML descriptions of  Rich2 photon detector support frames and quartz windows -->
+<!--                                      in  Run3 configuration                  -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+<!-- Rich2 Gas Quartz Window parameters  -->
+
+<constant name="Rh2QuartzWindowSizeZ" value="6.0*mm"/>
+<constant name="Rh2QuartzWindowSizeX" value="750.0*mm"/>
+<constant name="Rh2QuartzWindowSizeY" value="1500.0*mm"/>
+<constant name="Rh2QuartzWindowPositivePosX"
+  value="Rh2SideGasPosX+0.5*(Rh2SideGasSizeZ+Rh2QuartzWindowSizeZ)*sin(Rh2SideGasAngle)"/>
+<constant name="Rh2QuartzWindowPosZ"
+  value="Rh2MainGasEnclosurePosZ+Rh2SideGasPosZ+0.5*(Rh2SideGasSizeZ+Rh2QuartzWindowSizeZ)*cos(Rh2SideGasAngle)"/>
+<constant name="Rh2QuartzWindowNegativePosX"  value="-1.0*Rh2QuartzWindowPositivePosX" />
+<constant name="Rh2QuartzWindowPosY"  value="0.0*mm" />
+
+<!-- Photon Detector Panel parameters  -->
+<!-- The Rh2PhDetGasEnclSizeX is increased to account for the extra two Module columns in  Feb2021 -->
+<!-- As described below The PD panel size set with an X Size of 800 mm. Here the Gas enclosure is -->
+<!-- created as slightly larger than the PD Panel and hence an X size of 820 mm is assigned       -->
+
+
+<!--<constant name="Rh2PhDetGasEnclSizeX" value="750*mm"/> -->
+<constant name="Rh2PhDetGasEnclSizeX" value="820*mm"/>
+
+<constant name="Rh2PhDetGasEnclSizeY" value="1510*mm"/>
+<constant name="Rh2PhDetGasEnclSizeZ" value="300*mm"/>
+
+<constant name="Rh2PhDetGasEnclPosY" value="0.0*mm"/>
+<constant name="Rh2PhDetGasEnclPosX"
+  value="Rh2QuartzWindowPositivePosX+(Rh2QuartzWindowSizeZ/2.0+Rh2PhDetGasEnclSizeZ/2.0)*sin(Rh2SideGasAngle)"/>
+<constant name="Rh2PhDetGasEnclPosZ"
+  value="Rh2QuartzWindowPosZ+(Rh2QuartzWindowSizeZ/2.0+Rh2PhDetGasEnclSizeZ/2.0)*cos(Rh2SideGasAngle)"/>
+<constant name="Rh2PhDetGasEnclPositivePosX" value="Rh2PhDetGasEnclPosX" />
+<constant name="Rh2PhDetGasEnclNegativePosX" value="-1.0*Rh2PhDetGasEnclPosX" />
+<constant name="Rh2PhDetGasEnclPositiveAngleRotY" value="Rh2SideGasPosAngle" />
+<constant name="Rh2PhDetGasEnclNegativeAngleRotY" value="Rh2SideGasNegAngle" />
+
+
+
+
+<!-- PD panel parameters  -->
+<!--                      -->
+<!-- Updates done in 2020 -->
+<!-- Rh2PMTModuleArrayDiffX: difference in the module array size wrt the old PMT system -->
+<!-- (as in upgrade/dddb-20190223 and previous versions)-->
+<!-- The R2 detection plane center is kept same as in the old system (in X coordinate).-->
+<!-- Rh2PDPanelOffsetYForSymmetricHitDistribution: the PD panel is offset by +10mm in Y, -->
+<!-- to get a more symmetric photon hit distribution (and thus reduce the peak occupancy in Rich2)-->
+<!-- Update in Feb 2021  -->
+<!-- For RUN3, the size of the PD panel increased to account for the two extra Module columns -->
+<!-- in Feb 2021. The sizew of these panel is exceeding the X size of quartz window for now. -->
+<!-- Thishas to do with  800 mm of the panel being greater than the 750 mm of quartz window    -->
+<!-- The Size is calculated as 14 (num columms) X 56.5 (Width of Module with gap) = 791 mm. A size -->
+<!-- 800 mm is assiged to avoid potential issues related to overlaps.                     -->
+
+
+<constant name ="Rh2PMTModuleArraySizeDiffX"  value="-119.2*mm" />
+<constant name ="Rh2PDPanelOffsetYForSymmetricHitDistribution"  value="15.0*mm" />
+
+<constant name="Rh2PDPanelSizeZ" value="162*mm"/>
+<constant name="Rh2PDPanelSizeY" value="1478.75*mm"/>
+<!--<constant name="Rh2PDPanelSizeX" value="716*mm*cos((pi/6.0)*rad)+91.5*mm"/> -->
+<constant name="Rh2PDPanelSizeX" value="800*mm"/>
+
+<!-- Survey results https://edms.cern.ch/document/2433230/2
+  Offsets needed to match the survey results are given below.
+  The values from the survey are taken in the LHCb frame, below they are transformed into
+  offsets along/perpendicular to the panel planes.
+-->
+
+<constant name="Rh2PDPanel0SurveyOffsetX" value="(-3.55)*mm * cos(Rh2SideGasAngle) - (-3.47)*mm * sin(Rh2SideGasAngle)"/>
+<constant name="Rh2PDPanel0SurveyOffsetY" value="(-0.26)*mm"/>
+<constant name="Rh2PDPanel0SurveyOffsetZ" value="(-3.55)*mm * sin(Rh2SideGasAngle) + (-3.47)*mm * cos(Rh2SideGasAngle)"/>
+<constant name="Rh2PDPanel1SurveyOffsetX" value="(1.57)*mm * cos(-1.0 * Rh2SideGasAngle) - (-2.48)*mm * sin(-1.0 * Rh2SideGasAngle)"/>
+<constant name="Rh2PDPanel1SurveyOffsetY" value="(-1.08)*mm"/>
+<constant name="Rh2PDPanel1SurveyOffsetZ" value="(1.57)*mm * sin(-1.0 * Rh2SideGasAngle) + (-2.48)*mm * cos(-1.0 * Rh2SideGasAngle)"/>
+
+
+<constant name="Rh2PhDetPanelPosX" value="0.0*mm"/>
+<constant name="Rh2PhDetPanelPosY" value="Rh2PDPanelOffsetYForSymmetricHitDistribution"/>
+<constant name="Rh2PhDetPanelPosZ" value="-0.5*Rh2PhDetGasEnclSizeZ+0.5*Rh2PDPanelSizeZ+8.8*mm-Rh2MixedPMTDetPlaneZOffsetDueToEC"/>
+
+
+<constant name="Rh2PhDetPanel0PosX" value="Rh2PhDetPanelPosX+Rh2PDPanel0SurveyOffsetX"/>
+<constant name="Rh2PhDetPanel0PosY" value="Rh2PhDetPanelPosY+Rh2PDPanel0SurveyOffsetY"/>
+<constant name="Rh2PhDetPanel0PosZ" value="Rh2PhDetPanelPosZ+Rh2PDPanel0SurveyOffsetZ"/>
+<constant name="Rh2PhDetPanel1PosX" value="(-1.0*Rh2PhDetPanelPosX)+Rh2PDPanel1SurveyOffsetX"/>
+<constant name="Rh2PhDetPanel1PosY" value="Rh2PhDetPanelPosY+Rh2PDPanel1SurveyOffsetY"/>
+<constant name="Rh2PhDetPanel1PosZ" value="Rh2PhDetPanelPosZ+Rh2PDPanel1SurveyOffsetZ"/>
+
+
+  </define>
+</lccdd>

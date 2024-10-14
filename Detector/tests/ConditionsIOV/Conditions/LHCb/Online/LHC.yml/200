@@ -1,0 +1,14 @@
+# Example of LHC condition
+# ```
+# LHCCondition:
+#     fillnumber: [int]
+#     lhcbstate: [string]
+#     lhcbenergy: [int]
+#     lhcbclockphase: [float]
+# ```
+---
+LHC:
+        FillNumber: 7974
+        LHCState: INJECTION
+        LHCEnergy: 450
+        LHCbClockPhase: 0.46556840909089

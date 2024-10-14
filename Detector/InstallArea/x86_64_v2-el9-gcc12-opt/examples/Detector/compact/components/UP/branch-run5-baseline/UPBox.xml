@@ -1,0 +1,123 @@
+<up>
+	<!--
+	(c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+	This software is distributed under the terms of the GNU General Public
+	Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+	In applying this licence, CERN does not waive the privileges and immunities
+	granted to it by virtue of its status as an Intergovernmental Organization
+	or submit itself to any jurisdiction.
+	-->
+	<!-- UP frame -->
+	<!--<volume name="lvUP" vis="UP:Envelope"/>-->
+	<volume material="UP:Aluminium" name="lvUPFrame" vis="UP:Frame">
+		<shape name="upFrame" operation="subtraction" type="BooleanShape">
+			<shape dx="UPFrameOuterWide/2" dy="UPFrameOuterLong/2" dz="UPFrameThick/2" name="upFrameBoxOuter" type="Box" />
+			<shape dx="UPFrameInnerWide/2" dy="UPFrameInnerLong/2" dz="UPFrameThick*1.1/2" name="upFrameBoxInner" type="Box" />
+		</shape>
+	</volume>
+	<!-- UP light tight box -->
+	<volume material="UP:BoxWall" name="lvUPBox" vis="UP:Box">
+		<shape name="upBox" operation="subtraction" type="BooleanShape">
+			<shape dx="UPBoxOuterWide/2" dy="UPBoxOuterLong/2" dz="UPBoxOuterThick/2" name="upBoxOuter" type="Box" />
+			<shape dx="UPBoxInnerWide/2" dy="UPBoxInnerLong/2" dz="UPBoxInnerThick/2" name="upBoxInner" type="Box" />
+			<shape dz="UPBoxOuterThick*1.1/2" name="upBoxPipeHole" rmax="UPBoxWallSealOR" type="Tube" />
+		</shape>
+	</volume>
+	<!-- UP box plug -->
+	<volume material="UP:Airex" name="lvUPBoxPipeAirexRingInner">
+		<shape dz="UPBoxPipeAirexRingInnerThick/2" name="upBoxPipeAirexRingInner" rmax="UPBoxPipeAirexRingInnerOR" rmin="UPBoxPipeAirexRingIR" type="Tube" />
+	</volume>
+	<volume material="UP:Airex" name="lvUPBoxPipeAirexRingMiddle">
+		<shape dz="UPBoxPipeAirexRingMiddleThick/2" name="upBoxPipeAirexRingMiddle" rmax="UPBoxPipeAirexRingMiddleOR" rmin="UPBoxPipeAirexRingIR" type="Tube" />
+	</volume>
+	<volume material="UP:Airex" name="lvUPBoxPipeAirexRingOuter">
+		<shape dz="UPBoxPipeAirexRingOuterThick/2" name="upBoxPipeAirexRingOuter" rmax="UPBoxPipeAirexRingOuterOR" rmin="UPBoxPipeAirexRingIR" type="Tube" />
+	</volume>
+	<volume name="lvUPBoxPipeAirexRing">
+		<physvol name="pvUPBoxPipeAirexRingInner" volume="lvUPBoxPipeAirexRingInner">
+			<position z="0.5*(UPBoxPipeAirexRingInnerThick+UPBoxPipeAirexRingMiddleThick)" />
+		</physvol>
+		<physvol name="pvUPBoxPipeAirexRingMiddle" volume="lvUPBoxPipeAirexRingMiddle" />
+		<physvol name="pvUPBoxPipeAirexRingOuter" volume="lvUPBoxPipeAirexRingOuter">
+			<position z="-0.5*(UPBoxPipeAirexRingOuterThick+UPBoxPipeAirexRingMiddleThick)" />
+		</physvol>
+	</volume>
+	<volume material="UP:EPDM" name="lvUPBoxWallSeal">
+		<shape dz="UPBoxWallSealThick/2" name="upBoxWallSeal" rmax="UPBoxWallSealOR" rmin="UPBoxWallSealIR" type="Tube" />
+	</volume>
+	<volume material="UP:Airex" name="lvUPBoxInternalAirexRing">
+		<shape dz="UPInternalRingThick/2" name="upBoxInternalAirexRing" rmax="UPInternalRingOR" rmin="UPInternalRingIR" type="Tube" />
+	</volume>
+	<volume material="UP:EPDM" name="lvUPBoxInternalSeal">
+		<shape dz="UPInternalSealThick/2" name="upBoxInternalSeal" rmax="UPInternalSealOR" rmin="UPInternalSealIR" type="Tube" />
+	</volume>
+	<volume name="lvUPBoxPlugPiece">
+		<physvol name="pvUPBoxPipeAirexRing" volume="lvUPBoxPipeAirexRing" />
+		<physvol name="pvUPBoxWallSeal" volume="lvUPBoxWallSeal" />
+		<physvol name="pvUPBoxInternalAirexRing" volume="lvUPBoxInternalAirexRing">
+			<position z="0.5*(UPBoxWallDownstreamThick+UPInternalRingThick)" />
+		</physvol>
+		<physvol name="pvUPBoxInternalSeal" volume="lvUPBoxInternalSeal">
+			<position z="0.5*(UPBoxWallDownstreamThick+UPInternalSealThick)" />
+		</physvol>
+	</volume>
+	<volume name="lvUPBoxPlug">
+		<physvol name="pvUPBoxPlug1" volume="lvUPBoxPlugPiece">
+			<position z="0.5*(UPBoxOuterThick-UPPlugThickZ)" />
+			<rotation x="180*degree" />
+		</physvol>
+		<physvol name="pvUPBoxPlug2" volume="lvUPBoxPlugPiece">
+			<position z="-0.5*(UPBoxOuterThick-UPPlugThickZ)" />
+		</physvol>
+	</volume>
+	<!-- End of Stave (EOS) volumes -->
+	<volume material="UP:Steel" name="lvUPaEOS" vis="UP:EOS">
+		<shape dx="(UPEOSWideUPa/2)/2" dy="UPEOSLong/2" dz="UPEOSThick/2" name="upUPaEOS" type="Box" />
+	</volume>
+	<volume material="UP:EOSPigtail" name="lvUPaEOSPigtail" vis="UP:EOS">
+		<shape dx="(UPEOSWideUPa/2)/2" dy="UPEOSPigtailLong/2" dz="UPEOSPigtailThick/2" name="upUPaEOSPigtail" type="Box" />
+	</volume>
+	<volume material="UP:Steel" name="lvUPbEOS" vis="UP:EOS">
+		<shape dx="(UPEOSWideUPb/2)/2" dy="UPEOSLong/2" dz="UPEOSThick/2" name="upUPbEOS" type="Box" />
+	</volume>
+	<volume material="UP:EOSPigtail" name="lvUPbEOSPigtail" vis="UP:EOS">
+		<shape dx="(UPEOSWideUPb/2)/2" dy="UPEOSPigtailLong/2" dz="UPEOSPigtailThick/2" name="upUPbEOSPigtail" type="Box" />
+	</volume>
+	<!-- UP Kapton jacket for electronic insulation -->
+	<volume material="UP:BeamPipeJacket" name="lvUPCylJacket">
+		<shape dz="UPCylJacketLength/2" name="UPCylJacket" rmax="UPCylJacketRadius+UPCylJacketThick" rmin="UPCylJacketRadius" type="Tube" />
+	</volume>
+	<volume material="UP:BeamPipeJacket" name="lvUPConeJacketUpstream">
+		<shape dz="UPConeJacketUpstreamLength/2" name="UPConeJacketUpstream" rmax1="UPConeJacketCutOutRadiusZmin+UPConeJacketThick" rmax2="UPConeJacketRadiusZmin+UPConeJacketThick" rmin1="UPConeJacketCutOutRadiusZmin" rmin2="UPConeJacketRadiusZmin" type="Cone" />
+	</volume>
+	<volume material="UP:BeamPipeJacket" name="lvUPConeJacketDownstream">
+		<shape dz="UPConeJacketDownstreamLength/2" name="UPConeJacketDownstream" rmax1="UPConeJacketRadiusZmax+UPConeJacketThick" rmax2="UPConeJacketCutOutRadiusZmax+UPConeJacketThick" rmin1="UPConeJacketRadiusZmax" rmin2="UPConeJacketCutOutRadiusZmax" type="Cone" />
+	</volume>
+	<volume name="lvUPJacket">
+		<physvol name="pvUPCylJacket" volume="lvUPCylJacket">
+			<position z="UPCylJacketZpos" />
+		</physvol>
+		<physvol name="pvUPConeJacketUpstream" volume="lvUPConeJacketUpstream">
+			<position z="UPConeJacketZposUpstream" />
+		</physvol>
+		<physvol name="pvUPConeJacketDownstream" volume="lvUPConeJacketDownstream">
+			<position z="UPConeJacketZposDownstream" />
+		</physvol>
+	</volume>
+	<volume material="UP:PipeHeater" name="lvUPPipeHeaterUpstream">
+		<shape dz="UPPipeHeaterUpstreamLength/2" name="UPPipeHeaterUpstream" rmax="UPPipeHeaterUpstreamRadius+UPPipeHeaterUpstreamThick" rmin="UPPipeHeaterUpstreamRadius" type="Tube" />
+	</volume>
+	<volume material="UP:PipeHeater" name="lvUPPipeHeaterDownstream">
+		<shape dz="UPPipeHeaterDownstreamLength/2" name="UPPipeHeaterDownstream" rmax1="UPPipeHeaterDownstreamRadiusZmax+UPPipeHeaterDownstreamThick" rmax2="UPPipeHeaterDownstreamRadiusZmin+UPPipeHeaterDownstreamThick" rmin1="UPPipeHeaterDownstreamRadiusZmax" rmin2="UPPipeHeaterDownstreamRadiusZmin" type="Cone" />
+	</volume>
+	<volume name="lvUPPipeHeater">
+		<physvol name="pvUPPipeHeaterUpstream" volume="lvUPPipeHeaterUpstream">
+			<position z="UPPipeHeaterUpstreamPos" />
+		</physvol>
+		<physvol name="pvUPPipeHeaterDownstream" volume="lvUPPipeHeaterDownstream">
+			<position z="UPPipeHeaterDownstreamPos" />
+		</physvol>
+	</volume>
+</up>

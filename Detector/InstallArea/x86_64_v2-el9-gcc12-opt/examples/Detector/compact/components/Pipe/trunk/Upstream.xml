@@ -1,0 +1,181 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe Bakeout after the Magnet                 -->
+<!--===========================================================================-->
+<lccdd>
+  <detectors>
+
+    <!--==================================================================================-->
+    <!--===================================Bakeout========================================-->
+    <!--==================================================================================-->
+    <detector name="PipeUpstream" type="DD4hep_VolumeAssembly" parent="${PipeUpstream:parent}" vis="Pipe:Vis">
+
+      <!-- Pipe UpStr:UX86Adapter  (LHCb_Pipe_Section_Type_1) -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvUX86Adapter">
+	<param name="vis"                value="Pipe:Upstream"/>
+	<param name="Material"           value="Pipe:Steel316LN"/>
+	<param name="Length"             value="UpStr:UX86AdapterPipeZ"/>
+	<param name="Radius"             value="UpStr:UX86AdapterPipeRad"/>
+	<param name="Thick"              value="UpStr:UX86AdapterPipeThick"/>
+	<param name="FlangeUpLength"     value="17.4*mm"/>
+	<param name="FlangeUpThick"      value="57.0*mm - (UpStr:UX86AdapterPipeRad + UpStr:UX86AdapterPipeThick + 0.01*mm)"/>
+	<param name="FlangeUpMaterial"   value="Pipe:Steel316LN"/>
+	<param name="FlangeDownLength"   value="19.7*mm"/>
+	<param name="FlangeDownThick"    value="76.0*mm - (UpStr:UX86AdapterPipeRad + UpStr:UX86AdapterPipeThick + 0.01*mm)"/>
+	<param name="FlangeDownMaterial" value="Pipe:Steel316LN"/>
+      </volume>
+
+      <!-- Pipe UpStr:MBXWH  (LHCb_Pipe_Section_Type_1) -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvMBXWHPipe">
+	<param name="vis"                value="Pipe:Upstream"/>
+	<param name="Material"           value="Pipe:CuOFE"/>
+	<param name="Length"             value="UpStr:MBXWHPipeLength"/>
+	<param name="Radius"             value="UpStr:MBXWHPipeRadius"/>
+	<param name="Thick"              value="UpStr:MBXWHPipeThick"/>
+	<param name="FlangeUpLength"     value="19.8*mm"/>
+	<param name="FlangeUpThick"      value="76.0*mm - (UpStr:MBXWHPipeRadius + UpStr:MBXWHPipeThick + 0.01*mm)"/>
+	<param name="FlangeUpMaterial"   value="Pipe:Steel316LN"/>
+	<param name="FlangeDownLength"   value="17.4*mm"/>
+	<param name="FlangeDownThick"    value="57.0*mm - (UpStr:MBXWHPipeRadius + UpStr:MBXWHPipeThick + 0.01*mm)"/>
+	<param name="FlangeDownMaterial" value="Pipe:Steel316LN"/>
+      </volume>
+
+      <!-- UX85-4, Pipe in UpStr:MBXWS  (LHCb_Pipe_Section_Type_1) -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvMBXWSPipe">
+	<param name="vis"                value="Pipe:Upstream"/>
+	<param name="Material"           value="Pipe:CuOFE"/>
+	<param name="Length"             value="UpStr:MBXWSPipeLength"/>
+	<param name="Radius"             value="UpStr:MBXWSPipeRadius"/>
+	<param name="Thick"              value="UpStr:MBXWSPipeThick"/>
+	<param name="FlangeUpLength"     value="17.4*mm"/>
+	<param name="FlangeUpThick"      value="29.0*mm"/>
+	<param name="FlangeUpMaterial"   value="Pipe:Steel316LN"/>
+	<param name="FlangeDownLength"   value="19.8*mm"/>
+	<param name="FlangeDownThick"    value="48.0*mm"/>
+	<param name="FlangeDownMaterial" value="Pipe:Steel316LN"/>
+      </volume>
+      <!-- UX85-4, Pipe in VCDA  (LHCb_Pipe_Section_Type_1) -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvVCDAPipe">
+	<param name="vis"                value="Pipe:Upstream"/>
+	<param name="Material"           value="Pipe:CuOFE"/>
+	<param name="Length"             value="UpStr:VCDAPipeLength"/>
+	<param name="Radius"             value="UpStr:VCDAPipeRadius"/>
+	<param name="Thick"              value="UpStr:VCDAPipeThick"/>
+	<param name="FlangeUpLength"     value="19.8*mm"/>
+	<param name="FlangeUpThick"      value="76.0*mm - (UpStr:VCDAPipeRadius + UpStr:VCDAPipeThick + 0.01*mm)"/>
+	<param name="FlangeUpMaterial"   value="Pipe:Steel316LN"/>
+	<param name="FlangeDownLength"   value="17.4*mm"/>
+	<param name="FlangeDownThick"    value="76.0*mm - (UpStr:VCDAPipeRadius + UpStr:VCDAPipeThick + 0.01*mm)"/>
+	<param name="FlangeDownMaterial" value="Pipe:Steel316LN"/>
+      </volume>
+
+      <!-- UX85-4, Pipe in VCDBU  (LHCb_Pipe_Section_Type_1) -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvVCDBUPipe">
+	<param name="vis"                value="Pipe:Upstream"/>
+	<param name="Material"           value="Pipe:CuOFE"/>
+	<param name="Length"             value="UpStr:VCDBUPipeLength"/>
+	<param name="Radius"             value="UpStr:VCDBUPipeRadius"/>
+	<param name="Thick"              value="UpStr:VCDBUPipeThick"/>
+	<param name="FlangeUpLength"     value="19.8*mm"/>
+	<param name="FlangeUpThick"      value="76.0*mm - (UpStr:VCDBUPipeRadius + UpStr:VCDBUPipeThick + 0.01*mm)"/>
+	<param name="FlangeUpMaterial"   value="Pipe:Steel316LN"/>
+	<param name="FlangeDownLength"   value="17.4*mm"/>
+	<param name="FlangeDownThick"    value="76.0*mm - (UpStr:VCDBUPipeRadius + UpStr:VCDBUPipeThick + 0.01*mm)"/>
+	<param name="FlangeDownMaterial" value="Pipe:Steel316LN"/>
+      </volume>
+
+      <!-- UX85-4, Pipe in Trans  (LHCb_Pipe_Section_Type_1) -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvTransPipe">
+	<param name="vis"                value="Pipe:Upstream"/>
+	<param name="Material"           value="Pipe:CuOFE"/>
+	<param name="Length"             value="UpStr:TransPipeLength"/>
+	<param name="Radius"             value="UpStr:TransPipeRadius"/>
+	<param name="Thick"              value="UpStr:TransPipeThick"/>
+	<param name="FlangeUpLength"     value="19.8*mm"/>
+	<param name="FlangeUpThick"      value="76.0*mm - (UpStr:TransPipeRadius + UpStr:TransPipeThick + 0.01*mm)"/>
+	<param name="FlangeUpMaterial"   value="Pipe:Steel316LN"/>
+	<param name="FlangeDownLength"   value="19.8*mm"/>
+	<param name="FlangeDownThick"    value="76.0*mm - (UpStr:TransPipeRadius + UpStr:TransPipeThick + 0.01*mm)"/>
+	<param name="FlangeDownMaterial" value="Pipe:Steel316LN"/>
+      </volume>
+
+      <!-- Pipe segment replacement of VVSSH  (LHCb_Pipe_Section_Type_1)  -->
+      <volume type="LHCb_Pipe_Section_Type_1" name="lvVVSSH">
+	<param name="vis"                value="Pipe:Upstream"/>
+	<param name="Material"           value="Pipe:Steel316LN"/>
+	<param name="Length"             value="UpStr:VVSSHPipeZ"/>
+	<param name="Radius"             value="UpStr:VVSSHPipeRad"/>
+	<param name="Thick"              value="UpStr:VVSSHPipeThick"/>
+	<param name="FlangeLength"       value="19.7*mm"/>
+	<param name="FlangeThick"        value="76.0*mm - (UpStr:VVSSHPipeRad + UpStr:VVSSHPipeThick + 0.01*mm)"/>
+	<param name="FlangeMaterial"     value="Pipe:Steel316LN"/>
+      </volume>
+
+      <include ref="Upstream-UX84.xml"/>
+      <include ref="Upstream-VVSGF.xml"/>
+      <include ref="Upstream-BPMSW.xml"/>
+      <include ref="Upstream-Vax.xml"/>
+
+      <!--==================================================================================-->
+      <!--===================================Final  Assembly================================-->
+      <!--==================================================================================-->
+      <envelope type="Assembly" name="lvPipeUpstream" vis="GreenVis">
+        <physvol name="pvUX84"        volume="lvUX84"/>
+        <physvol name="pvUX86Adapter" volume="lvUX86Adapter">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm/2"/>
+        </physvol>
+        <physvol name="pvVVSGF" volume="lvVVSGF">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm/2"/>
+        </physvol>
+        <physvol name="pvPipeInMBXWH" volume="lvMBXWHPipe">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm/2"/>
+        </physvol>
+        <physvol name="pvPipeVCDA" volume="lvVCDAPipe">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm/2"/>
+        </physvol>
+        <physvol name="pvPipeVCDBU" logvol="lvVCDBUPipe">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm - 180.0*mm - 5130.0*mm/2"/>
+        </physvol>
+        <physvol name="pvTransPipe" logvol="lvTransPipe">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm - 180.0*mm - 5130.0*mm - 75.0*mm/2"/>
+        </physvol>
+        <physvol name="pvVVSSH"       volume="lvVVSSH">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm - 180.0*mm - 5130.0*mm - 75.0*mm - 280.0*mm - 80.0*mm/2"/>
+        </physvol>
+	<physvol name="pvMBXWSUpStrPipe" volume="lvMBXWSPipe">
+	  <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm - 180.0*mm - 5130.0*mm - 75.0*mm - 280.0*mm - 80.0*mm - 1275.0*mm/2"/>
+	</physvol>
+        <physvol name="pvBPMSW" volume="lvBPMSW">
+          <transformation>
+            <position/>
+            <rotation x="180.0*degree"/>
+            <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm - 180.0*mm - 5130.0*mm - 75.0*mm - 280.0*mm - 80.0*mm - 1275.0*mm - 17.4*mm/2"/>
+          </transformation>
+
+        </physvol>
+	<physvol name="pvVaxUpStr" volume="lvVaxUpStr">
+	  <transformation>
+            <position/>
+            <rotation y="180.0*degree"/>
+            <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm - 180.0*mm - 5130.0*mm - 75.0*mm - 280.0*mm - 80.0*mm - 1275.0*mm - 285.0*mm - 180.0*mm - 134.0*mm/2"/>
+	  </transformation>
+	</physvol>
+        <physvol name="pvVVSGFVaxUpStr" volume="lvVVSGF">
+          <position z="-327*mm/2 - 180.0*mm - 72.0*mm - 75.0*mm - 3916.0*mm  - 180.0*mm - 7000.0*mm - 180.0*mm - 5130.0*mm - 75.0*mm - 280.0*mm - 80.0*mm - 1275.0*mm - 285.0*mm - 180.0*mm - 190.0*mm - 75.0*mm/2"/>
+        </physvol>
+      </envelope>
+
+      <position z="-Regions:BeforeMagnetZSize/2 - 327.0*mm/2 - Regions:UpstreamZPos"/>
+    </detector>
+
+  </detectors>
+</lccdd>

@@ -1,0 +1,392 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!-- XML description of the Beam Pipe inside the VP region                      -->
+<!--===========================================================================-->
+<!--==================================Pipe In  VP=============================-->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+    <!-- ****************************************************** -->
+    <!-- * Definition of CuBe pipe sections in velo tank      * -->
+    <!-- * and supports                                       * -->
+    <!-- ****************************************************** -->
+
+    <!-- SPOKE CAP:
+	 - this is the small cap at the end of the spokes which are supposed
+	 to support the wf suppressor end and the punctured CuBe pipe.
+	 Let's start with a simplified conical description, not corresponding
+	 to actual shape.
+	 z_end_wf should correspond here to z_end. If not, adjust.
+	 - see CDD drawings:  ...
+	 - centered to beam axis
+	 - material: aluminium
+	 cone1:  r_in_start=47   r_out_start=57   z_start=-470
+         r_in_end=27   r_out_end=37   z_end=-540 -->
+
+    <constant name="PipeVP:SpokeZ" value="70*mm"/>
+    <constant name="PipeVP:SpokeInnerRPZ" value="47*mm"/>
+    <constant name="PipeVP:SpokeInnerRMZ" value="27*mm"/>
+    <constant name="PipeVP:SpokeOuterRPZ" value="57*mm"/>
+    <constant name="PipeVP:SpokeOuterRMZ" value="37*mm"/>
+
+    <!-- COPPERBERYLLIUM PUNCTURED PIPE:
+	 - this is the CuBe pipe with holes inside the VELO vacuum (upstream of RF Boxes)
+	 - see CDD drawings:
+	 http://www.nikhef.nl/pub/departments/mt/projects/lhcb-vertex/pdf/TVE-LAYOUTS/TVE65.pdf
+	 - centered to beam axis
+	 - material: aluminium
+	 cylinder1: r_in=27     r_out=39
+         z_start=-540     z_end=-550
+	 - material: copper
+	 cylinder2: r_in=27     r_out=27.1
+         z_start=-550     z_end=-729
+	 - material: aluminium
+	 cylinder3: r_in=27     r_out=39
+         z_start=-729     z_end=-739
+	 cylinder2==cylinder3 -->
+
+    <constant name="PipeVP:AlCylinderZ" value="10*mm"/>
+    <constant name="PipeVP:AlCylinderInnerR" value="27*mm"/>
+    <constant name="PipeVP:AlCylinderOuterR" value="39*mm"/>
+    <constant name="PipeVP:CuCylinderZ" value="179*mm"/>
+    <constant name="PipeVP:CuCylinderInnerR" value="27*mm"/>
+    <constant name="PipeVP:CuCylinderOuterR" value="27.1*mm"/>
+    <constant name="PipeVP:Z" value="PipeVP:AlCylinderZ+PipeVP:CuCylinderZ+PipeVP:AlCylinderZ"/>
+
+    <!-- UPSTREAM VELO PIPE JUNCTION:
+	 - this is a series of pieces that connect from the CuBe punctured pipe in the
+	 VELO to the LHC upstream beam pipe bellow connection.
+	 - see CDD drawings: LHBTVV__0084, 0085, 0057 and
+	 http://www.nikhef.nl/pub/departments/mt/projects/lhcb-vertex/pdf/TVE-LAYOUTS/TVE65.pdf
+	 NB: the extra connection flange at z=-760...-800 is not shown in these drawings.
+	 - material: stainless steel
+	 cylinder1: r_in=27     r_out=30
+         z_start=-739     z_end=-800
+	 - material: stainless steel
+	 cylinder2: r_in=30     r_out=39
+         z_start=-739     z_end=-745
+	 - material: stainless steel
+	 cylinder3: r_in=30     r_out=39
+         z_start=-760     z_end=-800
+	 - material: stainless steel
+	 cone1:  r_in_start=27   r_out_start=29   z_start=-800
+         r_in_end=38   r_out_end=40   z_end=-865
+	 - material: stainless steel
+	 cylinder4: r_in=40     r_out=76
+         z_start=-865     z_end=-885 -->
+    <constant name="PipeVP:JunkSteelCyl1Z" value="61*mm"/>
+    <constant name="PipeVP:JunkSteelCyl1InnerR" value="27*mm"/>
+    <constant name="PipeVP:JunkSteelCyl1OuterR" value="30*mm"/>
+
+    <constant name="PipeVP:JunkSteelCyl2Z" value="6*mm"/>
+    <constant name="PipeVP:JunkSteelCyl2InnerR" value="30*mm"/>
+    <constant name="PipeVP:JunkSteelCyl2OuterR" value="39*mm"/>
+
+    <constant name="PipeVP:JunkSteelCyl3Z" value="40*mm"/>
+    <constant name="PipeVP:JunkSteelCyl3InnerR" value="30*mm"/>
+    <constant name="PipeVP:JunkSteelCyl3OuterR" value="39*mm"/>
+
+    <!-- Velo volume ends at -835mm so second half of the cone is moved into Before
+	 Magnet pipe volume. -->
+    <constant name="PipeVP:JunkSteelConeZ" value="35*mm"/>
+    <constant name="PipeVP:JunkSteelConeInnerRPZ" value="27*mm"/>
+    <constant name="PipeVP:JunkSteelConeInnerRMZ" value="(35*(38-27)/65)*mm+27*mm"/>
+    <constant name="PipeVP:JunkSteelConeOuterRPZ" value="29*mm"/>
+    <constant name="PipeVP:JunkSteelConeOuterRMZ" value="(35*(40-29)/65)*mm+29*mm"/>
+
+    <constant name="PipeVP:JunkSteelCyl4Z" value="20*mm"/>
+    <constant name="PipeVP:JunkSteelCyl4InnerR" value="40*mm"/>
+    <constant name="PipeVP:JunkSteelCyl4OuterR" value="76*mm"/>
+
+    <constant name="PipeVP:JunkZ" value="PipeVP:JunkSteelCyl1Z+PipeVP:JunkSteelConeZ"/>
+    <constant name="PipeVP:UpstreamPipeZ" value="PipeVP:SpokeZ+PipeVP:Z+PipeVP:JunkZ"/>
+
+    <!-- The downstream beam pipe sections -->
+    <!-- NB any changes here must be propagated to the subtractions in the gas volumes included in the vacuum tank description -->
+
+    <constant name="PipeVP:ExitWindowHoleZ" value="858.6*mm"/>
+    <constant name="PipeVP:ExitWindowZSize" value="945*mm-PipeVP:ExitWindowHoleZ"/>
+    <constant name="PipeVP:ExitWindow2BellowsZSize" value="55.54*mm"/>
+    <constant name="PipeVP:BellowsStartZ" value="PipeVP:ExitWindowHoleZ+PipeVP:ExitWindow2BellowsZSize"/>
+    <constant name="PipeVP:BellowsInnerRadius" value="34*mm"/>
+    <constant name="PipeVP:BellowsOuterRadius" value="46*mm"/>
+    <constant name="PipeVP:BellowsThickness" value="0.3*mm"/>
+    <constant name="PipeVP:BellowsSpacing" value="2.7*mm"/>
+    <constant name="PipeVP:BellowsZSize" value="8*PipeVP:BellowsThickness+7*PipeVP:BellowsSpacing"/>
+    <constant name="PipeVP:DSTubeZToWeld" value="16.56*mm"/>
+    <constant name="PipeVP:DSTube1ZSize" value="PipeVP:DSTubeZToWeld+6*mm"/>
+    <constant name="PipeVP:DSTube1InnerRadius" value="PipeVP:BellowsInnerRadius"/>
+    <constant name="PipeVP:DSTube1Thickness" value="2.5*mm"/>
+    <constant name="PipeVP:DSTube2ZSize" value="2.5*mm"/>
+    <constant name="PipeVP:DSTube2InnerRadius" value="28*mm"/>
+    <constant name="PipeVP:DSTube2Thickness" value="PipeVP:DSTube1InnerRadius-PipeVP:DSTube2InnerRadius"/>
+    <constant name="PipeVP:DSTube3ZSize" value="12*mm"/>
+    <constant name="PipeVP:DSTube3InnerRadius" value="PipeVP:DSTube2InnerRadius"/>
+    <constant name="PipeVP:DSTube3Thickness" value="PipeVP:DSTube1Thickness"/>
+    <constant name="PipeVP:WFSGrooveZSize" value="2.2*mm"/>
+    <constant name="PipeVP:WFSGrooveRSize" value="1*mm"/>
+    <constant name="PipeVP:DSTube4ZSize" value="2.5*mm"/>
+    <constant name="PipeVP:DSTube4InnerRadius" value="27*mm"/>
+    <constant name="PipeVP:DSTube4Thickness" value="1*mm"/>
+    <constant name="PipeVP:BellowsEpsilon" value="0.01*mm"/>
+    <constant name="PipeVP:RadiusChange" value="VP:vTankDownExitWindowHoleR-(PipeVP:BellowsInnerRadius+2*mm)"/>
+  </define>
+
+  <detectors>
+    <detector name="VPUpStreamPipe" type="DD4hep_VolumeAssembly" parent="${PipeInVP:parent}" vis="Pipe:InVP">
+      <!-- ****************************************************** -->
+      <!-- * Definition of CuBe pipe sections in velo tank      * -->
+      <!-- * and supports                                       * -->
+      <!-- ****************************************************** -->
+
+      <!-- SPOKE CAP -->
+      <volume name="lvSpokeCap" material="Pipe:Al" vis="Pipe:InVP">
+	<shape type="ConeSegment" name="SpokeCapCone"
+               dz="0.5*PipeVP:SpokeZ"
+               rmin2="PipeVP:SpokeInnerRPZ"
+               rmin1="PipeVP:SpokeInnerRMZ"
+               rmax2="PipeVP:SpokeOuterRPZ"
+               rmax1="PipeVP:SpokeOuterRMZ"/>
+      </volume>
+
+      <!-- COPPERBERYLLIUM PUNCTURED PIPE -->
+      <volume name="lvPipeAlCylinder" material="Pipe:Al" vis="Pipe:InVP">
+	<shape type="Tube" name="PipeAlCylTubs"
+	       dz="0.5*PipeVP:AlCylinderZ"
+	       rmin="PipeVP:AlCylinderInnerR"
+	       rmax="PipeVP:AlCylinderOuterR"/>
+      </volume>
+      <volume name="lvPipeCuCylinder" material="Pipe:Cu" vis="Pipe:InVP">
+	<shape type="Tube" name="PipeCuCylTubs"
+	       dz="0.5*PipeVP:CuCylinderZ"
+	       rmin="PipeVP:CuCylinderInnerR"
+	       rmax="PipeVP:CuCylinderOuterR"/>
+      </volume>
+
+      <!-- UPSTREAM VELO PIPE JUNCTION -->
+      <volume name="lvPipeJuncCyl1" material="Pipe:Steel316LN" vis="Pipe:InVP">
+	<shape type="Tube" name="PipeVP:JunkSteelCyl1"
+	       dz="0.5*PipeVP:JunkSteelCyl1Z"
+	       rmin="PipeVP:JunkSteelCyl1InnerR"
+	       rmax="PipeVP:JunkSteelCyl1OuterR"/>
+      </volume>
+      <volume name="lvPipeJuncCyl2" material="Pipe:Steel316LN" vis="Pipe:InVP">
+	<shape type="Tube" name="PipeVP:JunkSteelCyl2"
+	       dz="0.5*PipeVP:JunkSteelCyl2Z"
+	       rmin="PipeVP:JunkSteelCyl2InnerR+0.01*mm"
+	       rmax="PipeVP:JunkSteelCyl2OuterR"/>
+      </volume>
+      <volume name="lvPipeJuncCyl3" material="Pipe:Steel316LN" vis="Pipe:InVP">
+	<shape type="Tube" name="PipeVP:JunkSteelCyl3"
+	       dz="0.5*PipeVP:JunkSteelCyl3Z"
+	       rmin="PipeVP:JunkSteelCyl3InnerR+0.01*mm"
+	       rmax="PipeVP:JunkSteelCyl3OuterR"/>
+      </volume>
+      <volume name="lvPipeJuncCone1" material="Pipe:Steel316LN" vis="Pipe:InVP">
+	<shape type="ConeSegment" name="PipeVP:JunkSteelCone"
+	       dz="0.5*PipeVP:JunkSteelConeZ"
+	       rmin2="PipeVP:JunkSteelConeInnerRPZ"
+	       rmin1="PipeVP:JunkSteelConeInnerRMZ"
+	       rmax2="PipeVP:JunkSteelConeOuterRPZ"
+	       rmax1="PipeVP:JunkSteelConeOuterRMZ"/>
+      </volume>
+
+
+      <envelope type="Assembly" name="lvVeloUpStreamPipe" vis="Pipe:InVP">
+	<!-- Spoke cap -->
+	<physvol volume="lvSpokeCap" name="SpokeCap">
+	  <position z="-505*mm"/>
+	</physvol>
+	<!-- CuBe pipe -->
+	<physvol volume="lvPipeAlCylinder" name="PipeAlCyl1">
+	  <position z="-545*mm"/>
+	</physvol>
+	<physvol volume="lvPipeCuCylinder" name="PipeCuCyl">
+	  <position z="-639.5*mm"/>
+	</physvol>
+	<physvol volume="lvPipeAlCylinder" name="PipeAlCyl2">
+	  <position z="-734*mm"/>
+	</physvol>
+	<!-- Pipe junction -->
+	<physvol volume="lvPipeJuncCone1" name="PipeJuncCone1">
+	  <position z="-817.5*mm"/>
+	</physvol>
+	<physvol volume="lvPipeJuncCyl1" name="PipeJuncCyl1">
+	  <position z="-769.5*mm"/>
+	</physvol>
+	<physvol volume="lvPipeJuncCyl2" name="PipeJuncCyl2">
+	  <position z="-742*mm"/>
+	</physvol>
+	<physvol volume="lvPipeJuncCyl3" name="PipeJuncCyl3">
+	  <position z="-780*mm"/>
+	</physvol>
+      </envelope>
+      <position/>
+    </detector>
+
+
+    <detector name="VeloDownStreamPipe" type="DD4hep_VolumeAssembly" parent="${PipeInVP:parent}" vis="Pipe:InVP">
+
+      <!-- Definition of section joining Al exit window with beam pipe -->
+      <volume name="lvExitWindow2Bellows" material="Pipe:Al6061" vis="Pipe:InVP">
+	<shape type="ConeSegment" name="ExitWindow2Bellows"
+	       dz="0.5*PipeVP:ExitWindow2BellowsZSize"
+	       rmin2="PipeVP:BellowsInnerRadius"
+	       rmin1="VP:vTankDownExitWindowHoleR-2*mm"
+	       rmax2="PipeVP:BellowsInnerRadius+2*mm"
+	       rmax1="VP:vTankDownExitWindowHoleR"/>
+      </volume>
+
+      <volume name="lvVelo2Rich1GasEW2B" material="Rich:C4F10" vis="Pipe:InVP">
+	<shape type="BooleanShape" operation="subtraction" name="V2R1GasEW2BSub">
+	  <shape type="Tube" name="V2R1GasEW2BTubs1"
+		 dz="0.5*PipeVP:ExitWindow2BellowsZSize"
+		 rmax="VP:vTankDownExitWindowHoleR"/>
+	  <shape type="ConeSegment" name="V2R1GasEW2BCons1"
+		 dz="0.5*2*PipeVP:ExitWindow2BellowsZSize"
+		 rmin2="0*mm"
+		 rmin1="0*mm"
+		 rmax2="(PipeVP:BellowsInnerRadius+2*mm)-PipeVP:RadiusChange/2"
+		 rmax1="VP:vTankDownExitWindowHoleR+PipeVP:RadiusChange/2"/>
+	</shape>
+      </volume>
+
+      <!-- Definition of the bellows section of the beam pipe -->
+      <volume name="lvBellows" material="Pipe:Al6061" vis="Pipe:InVP">
+	<shape type="Polycone" name="Bellows">
+	  <!-- 1 -->  <zplane z="PipeVP:BellowsStartZ"                                                    rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 2 -->  <zplane z="PipeVP:BellowsStartZ+PipeVP:BellowsThickness"                                   rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 3 -->  <zplane z="PipeVP:BellowsStartZ+PipeVP:BellowsThickness+PipeVP:BellowsEpsilon"                    rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 4 -->  <zplane z="PipeVP:BellowsStartZ+PipeVP:BellowsThickness+PipeVP:BellowsSpacing"                    rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 5 -->  <zplane z="PipeVP:BellowsStartZ+PipeVP:BellowsThickness+PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon"     rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 6 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+PipeVP:BellowsSpacing"                  rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 7 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon"   rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 8 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+2*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 9 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+2*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 10 --> <zplane z="PipeVP:BellowsStartZ+3*PipeVP:BellowsThickness+2*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 11 --> <zplane z="PipeVP:BellowsStartZ+3*PipeVP:BellowsThickness+2*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 12 --> <zplane z="PipeVP:BellowsStartZ+3*PipeVP:BellowsThickness+3*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 13 --> <zplane z="PipeVP:BellowsStartZ+3*PipeVP:BellowsThickness+3*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 14 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+3*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 15 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+3*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 16 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+4*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 17 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+4*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 18 --> <zplane z="PipeVP:BellowsStartZ+5*PipeVP:BellowsThickness+4*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 19 --> <zplane z="PipeVP:BellowsStartZ+5*PipeVP:BellowsThickness+4*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 20 --> <zplane z="PipeVP:BellowsStartZ+5*PipeVP:BellowsThickness+5*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 21 --> <zplane z="PipeVP:BellowsStartZ+5*PipeVP:BellowsThickness+5*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 22 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+5*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 23 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+5*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 24 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+6*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 25 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+6*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 26 --> <zplane z="PipeVP:BellowsStartZ+7*PipeVP:BellowsThickness+6*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 27 --> <zplane z="PipeVP:BellowsStartZ+7*PipeVP:BellowsThickness+6*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 28 --> <zplane z="PipeVP:BellowsStartZ+7*PipeVP:BellowsThickness+7*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsOuterRadius-PipeVP:BellowsThickness" rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 29 --> <zplane z="PipeVP:BellowsStartZ+7*PipeVP:BellowsThickness+7*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	  <!-- 30 --> <zplane z="PipeVP:BellowsStartZ+8*PipeVP:BellowsThickness+7*PipeVP:BellowsSpacing"                rmin="PipeVP:BellowsInnerRadius"                  rmax="PipeVP:BellowsOuterRadius"/>
+	</shape>
+      </volume>
+
+      <!-- The RICH1 gas sections DS of the exit window -->
+
+      <volume name="lvVelo2Rich1GasBellows" material="Rich:C4F10" vis="Pipe:InVP">
+	<shape type="Polycone" name="V2R1GasBellows">
+	  <!-- 1 -->  <zplane z="PipeVP:BellowsStartZ"                                                    rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	  <!-- 6 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+PipeVP:BellowsSpacing"                  rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	  <!-- 7 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon"   rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 8 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+2*PipeVP:BellowsSpacing"                rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 9 -->  <zplane z="PipeVP:BellowsStartZ+2*PipeVP:BellowsThickness+2*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	  <!-- 14 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+3*PipeVP:BellowsSpacing"                rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	  <!-- 15 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+3*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 16 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+4*PipeVP:BellowsSpacing"                rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 17 --> <zplane z="PipeVP:BellowsStartZ+4*PipeVP:BellowsThickness+4*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	  <!-- 22 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+5*PipeVP:BellowsSpacing"                rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	  <!-- 23 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+5*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 24 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+6*PipeVP:BellowsSpacing"                rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsInnerRadius+PipeVP:BellowsThickness"/>
+	  <!-- 25 --> <zplane z="PipeVP:BellowsStartZ+6*PipeVP:BellowsThickness+6*PipeVP:BellowsSpacing+PipeVP:BellowsEpsilon" rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	  <!-- 30 --> <zplane z="PipeVP:BellowsStartZ+8*PipeVP:BellowsThickness+7*PipeVP:BellowsSpacing-PipeVP:BellowsEpsilon" rmax="VP:vTankDownExitWindowHoleR" rmin="PipeVP:BellowsOuterRadius"/>
+	</shape>
+      </volume>
+
+      <!-- Definition of the tube section of the beam pipe -->
+      <!-- TODO: Looks like the groove for the connection of the wakefield suppressor is in the wrong place?
+           It's DS edge is currently located at 968mm but the wakefield suppressor ends at 954mm -->
+      <volume name="lvDSTubeSection" material="Pipe:Al2219F" vis="Pipe:InVP">
+	<shape type="BooleanShape" operation="union" name="DSTubeUnion">
+	  <shape type="Tube" name="DSTube1"
+		 dz="0.5*PipeVP:DSTube1ZSize"
+		 rmin="PipeVP:DSTube1InnerRadius"
+		 rmax="PipeVP:DSTube1InnerRadius+PipeVP:DSTube1Thickness"/>
+	  <shape type="Tube" name="DSTube2"
+		 dz="0.5*PipeVP:DSTube2ZSize"
+		 rmin="PipeVP:DSTube2InnerRadius"
+		 rmax="PipeVP:DSTube2InnerRadius+PipeVP:DSTube2Thickness"/>
+	  <position z="(PipeVP:DSTube1ZSize-PipeVP:DSTube2ZSize)/2"/>
+	  <shape type="BooleanShape" operation="subtraction" name="DSTube3Sub">
+            <shape type="Tube" name="DSTube3a"
+		   dz="0.5*PipeVP:DSTube3ZSize"
+		   rmin="PipeVP:DSTube3InnerRadius"
+		   rmax="PipeVP:DSTube3InnerRadius+PipeVP:DSTube3Thickness"/>
+            <shape type="Tube" name="DSTube3b"
+		   dz="0.5*PipeVP:WFSGrooveZSize"
+		   rmin="0*mm"
+		   rmax="PipeVP:DSTube3InnerRadius+PipeVP:WFSGrooveRSize"/>
+            <position z="(PipeVP:DSTube3ZSize-PipeVP:WFSGrooveZSize)/2-2*mm"/>
+	  </shape>
+	  <position z="(PipeVP:DSTube1ZSize+PipeVP:DSTube3ZSize)/2"/>
+	</shape>
+      </volume>
+
+      <volume name="lvVelo2Rich1GasDSTube" material="Rich:C4F10" vis="Pipe:InVP">
+	<shape type="BooleanShape" operation="subtraction" name="DSTubeGasSub">
+	  <shape type="Tube" name="DSTubeGas"
+		 dz="0.5*(PipeVP:DSTube1ZSize+PipeVP:DSTube3ZSize)"
+		 rmin="0*mm"
+		 rmax="VP:vTankDownExitWindowHoleR"/>
+	  <shape type="Tube" name="DSTube1Gas"
+		 dz="0.5*2*PipeVP:DSTube1ZSize"
+		 rmin="0*mm"
+		 rmax="PipeVP:DSTube1InnerRadius+PipeVP:DSTube1Thickness"/>
+	  <position z="-(PipeVP:DSTube1ZSize+PipeVP:DSTube3ZSize)/2"/>
+	  <shape type="Tube" name="DSTube3Gas"
+		 dz="0.5*2*PipeVP:DSTube3ZSize"
+		 rmin="0*mm"
+		 rmax="PipeVP:DSTube3InnerRadius+PipeVP:DSTube3Thickness"/>
+	  <position z="(PipeVP:DSTube1ZSize+PipeVP:DSTube3ZSize)/2"/>
+	</shape>
+      </volume>
+
+      <envelope type="Assembly" name="lvVeloDownStreamPipe" vis="Pipe:InVP">
+	<physvol volume="lvExitWindow2Bellows" name="VeloDSPipe1">
+          <position z="PipeVP:ExitWindowHoleZ+PipeVP:ExitWindow2BellowsZSize/2"/>
+	</physvol>
+	<physvol volume="lvVelo2Rich1GasEW2B" name="VeloDSPipe1Gas">
+          <position z="PipeVP:ExitWindowHoleZ+PipeVP:ExitWindow2BellowsZSize/2"/>
+	</physvol>
+
+	<physvol volume="lvBellows" name="VeloDSPipe2">
+	</physvol>
+	<physvol volume="lvVelo2Rich1GasBellows" name="VeloDSPipe2Gas">
+	</physvol>
+	<physvol volume="lvDSTubeSection" name="VeloDSPipe3">
+          <position z="PipeVP:BellowsStartZ+PipeVP:BellowsZSize+(PipeVP:DSTube1ZSize)/2"/>
+	</physvol>
+	<physvol volume="lvVelo2Rich1GasDSTube" name="VeloDSPipe3Gas">
+          <position z="PipeVP:BellowsStartZ+PipeVP:BellowsZSize+(PipeVP:DSTube1ZSize+PipeVP:DSTube3ZSize)/2"/>
+	</physvol>
+      </envelope>
+      <position/>
+    </detector>
+
+  </detectors>
+</lccdd>

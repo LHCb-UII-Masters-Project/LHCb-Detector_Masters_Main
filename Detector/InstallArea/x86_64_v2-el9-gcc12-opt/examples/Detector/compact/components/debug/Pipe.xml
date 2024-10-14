@@ -1,0 +1,41 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <debug>
+    <type name="includes" value="0" />
+    <type name="incguard" value="1" />
+  </debug>
+
+  <includes>
+    <file ref="../Materials/trunk/common.xml" />
+    <file ref="../Pipe/trunk/PipeCommon.xml" />
+    <file ref="../Regions/trunk/Regions-invisible.xml"/>
+  </includes>
+
+
+  <include ref="../VP/trunk/VP.xml" />
+  <include ref="../UT/trunk/UT.xml" />
+  <include ref="../Pipe/trunk/PipeUpstream.xml" />
+  <include ref="../Pipe/trunk/PipeBeforeVelo.xml" />
+  <include ref="../Pipe/trunk/PipeBeforeMagnet.xml" />
+  <include ref="../Pipe/trunk/PipeVP.xml" />
+  <include ref="../Pipe/trunk/PipeUT.xml" />
+  <include ref="../Pipe/trunk/PipeMagnet.xml" />
+  <include ref="../Pipe/trunk/AfterMagnet-Params.xml" />
+  <include ref="../Pipe/trunk/PipeAfterMagnet.xml" />
+  <include ref="../Pipe/trunk/PipeT.xml" />
+  <include ref="../Pipe/trunk/PipeAfterT.xml" />
+  <include ref="../Pipe/trunk/PipeDownstream.xml" />
+  <include ref="../Pipe/trunk/PipeAfterMuon.xml" />
+
+</lccdd>

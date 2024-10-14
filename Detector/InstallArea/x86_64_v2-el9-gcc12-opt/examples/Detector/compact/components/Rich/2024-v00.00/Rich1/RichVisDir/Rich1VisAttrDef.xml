@@ -1,0 +1,76 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Visualization attributes for Rich1  volumes                               -->
+<!--  ==========================================================================-->
+<lccdd>
+  <display>
+<vis name="Rich:VisRich1Master" alpha="0.3" r="0.0" g="1.0" b="1.0" showDaughters="true" visible="false"/>
+<vis name="Rich:VisRich1SubMaster" alpha="0.3" r="0.3" g="0.2" b="0.7" showDaughters="true" visible="false"/>
+<vis name="Rich:VisRich1MagSh"  alpha="0.3"  r="0.1" g="0.1" b="0.9"  showDaughters="true" visible="false"/>
+<vis name="Rich:VisRich1MgShield"  alpha="0.3"  r="0.9" g="0.1" b="0.2"  showDaughters="true" visible="true"/>
+<vis name="Rich:VisRich1Mirror1CaFiInnerSeg"  alpha="1.0" r="0.0" g="0.5" b="0.5"  showDaughters="true" visible="true"/>
+
+<vis name="Rich:VisRich1Mirror1CaFiOuterSeg" alpha="1.0" r="0.2" g="0.3" b="0.5"  showDaughters="true" visible="true"/>
+
+<vis name="Rich:VisRich1Mirror1CaFiCylinderSeg" alpha="1.0" r="0.1" g="0.5" b="0.8"  showDaughters="true" visible="true"/>
+
+<vis name="Rich:VisRich1Mirror1Quadrant" alpha="0.5" r="0.6" g="0.3" b="0.3"  showDaughters="true" visible="false" />
+
+<vis name="Rich:VisRich1Mirror1Master"  alpha="0.7" r="0.4" g="0.7" b="0.7"  showDaughters="true" visible="false" />
+
+<vis name="Rich:VisRich1Mirror2Master" alpha="0.9" r="0.4" g="0.2" b="0.6"  showDaughters="true" visible="false"  />
+
+<vis name="Rich:VisRich1Mirror2QuadrantMaster" alpha="0.9" r="0.2" g="0.8" b="0.5"  showDaughters="true" visible="false"  />
+
+<vis name="Rich:VisRich1Mirror2Support" alpha="0.9" r="0.3" g="0.7" b="0.9"  showDaughters="true" visible="true"/>
+
+<vis name="Rich:VisRich1Mirror2" alpha="0.8" r="0.1" g="0.4" b="0.1"  showDaughters="true" visible="true" />
+
+<vis name="Rich:VisRich1PhDetSupFrame"  alpha="0.2" r="0.7" g="0.9" b="0.6"  showDaughters="true" visible="false"  />
+
+<vis name="Rich:VisRich1BeamPipe" alpha="1.0" r="0.0" g="0.0" b="0.3"  showDaughters="true" visible="true"  />
+
+<vis name="Rich:VisRich1GQuartzW" alpha="1.0" r="0.4" g="0.4" b="0.8" showDaughters="true" visible="true"  />
+
+
+
+<vis name="Rich:VisRichPMTModuleMaster" alpha="0.3" r="0.7" g="0.4" b="0.2" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichGrandPMTECR" alpha="0.5" r="0.4" g="0.7" b="0.2" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTECH" alpha="0.5" r="0.2" g="0.5" b="0.9" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTMaster" alpha="0.5" r="0.8" g="0.2" b="0.7" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTSMaster" alpha="0.5" r="0.6" g="0.3" b="0.7" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTAnode" alpha="0.8" r="0.0" g="0.4" b="0.8" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTQuartz" alpha="0.7" r="0.7" g="0.2" b="0.2" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTPhCathode" alpha="0.8" r="0.2" g="0.3" b="0.3" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTEnvelope"  alpha="0.7" r="0.2" g="0.4" b="0.9" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTFrontRing" alpha="0.8" r="0.1" g="0.7" b="0.4" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichPMTShielding" alpha="0.8" r="0.5" g="0.3" b="0.7" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichGrandPMTQuartz" alpha="0.7" r="0.7" g="0.8" b="0.3" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichGrandPMTPhCathode" alpha="0.8" r="0.6" g="0.3" b="0.7" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichGrandPMTEnvelope"  alpha="0.7" r="0.5" g="0.6" b="0.5" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichGrandPMTFrontRing" alpha="0.8" r="0.4" g="0.2" b="0.7" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichGrandPMTMaster" alpha="0.5" r="0.5" g="0.7" b="0.6" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRichGrandPMTSMaster" alpha="0.5" r="0.3" g="0.3" b="0.9" showDaughters="true" visible="false"  />
+<vis name="Rich:VisRichGrandPMTAnode" alpha="0.8" r="0.4" g="0.4" b="0.7" showDaughters="true" visible="false"  />
+<vis name="Rich:VisRichGrandPMTModuleMaster" alpha="0.3" r="0.3" g="0.4" b="0.8" showDaughters="true" visible="true"  />
+
+
+<vis name="Rich:VisRich1ExitG10Upstr" alpha="0.7" r="0.5" g="0.3" b="0.4" showDaughters="true" visible="true"  />
+<vis name="Rich:VisRich1ExitG10Dnstr" alpha="0.7" r="0.4" g="0.2" b="0.3" showDaughters="true" visible="true" />
+<vis name="Rich:VisRich1ExitPMI" alpha="0.7"   r="0.3" g="0.8" b="0.3" showDaughters="true" visible="true" />
+<vis name="Rich:VisRich1ExitWall" alpha="0.3"  r="0.4" g="0.2" b="0.3" showDaughters="true" visible="true" />
+<vis name="Rich:VisRich1ExitDiaphramCentral" alpha="0.5"  r="0.2" g="0.7" b="0.4" showDaughters="true" visible="true" />
+<vis name="Rich:VisRich1ExitDiaphramPlug" alpha="0.5"  r="0.4" g="0.3" b="0.8" showDaughters="true" visible="true" />
+
+
+
+  </display>
+</lccdd>

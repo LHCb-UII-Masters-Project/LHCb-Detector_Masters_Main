@@ -1,0 +1,222 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the Cavern's parameter definitions                      -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <define>
+    <!-- Values taken from lhbierm_0040-v0.plt -->
+    <!-- some are also relative to the bunker... -->
+
+    <constant name="HEB200Height" value="200.0*mm"/>
+    <constant name="HEB200Depth" value="200.0*mm"/>
+
+    <!-- ExtensionBunker position is to the centre of the left front top I-BEAM -->
+    <!-- (looking downstream) -->
+    <!-- in the middle of the platform I-beams.... - centre in z and y to -->
+    <!-- first beam -->
+    <!-- first I-beam: left top front of platform -->
+    <constant name="FrontLeftLength" value="700.0*mm+3715.0*mm"/>
+    <constant name="GantryxPos" value="0.5*Bunker:TopBlockWidth+0.5*FrontLeftLength"/>
+    <constant name="GantryyPos" value="Bunker:yPos-0.5*Bunker:FrontBlockHeight+2175.0*mm+0.5*HEB200Height"/>
+    <constant name="GantryzPos" value="Bunker:zPos-0.5*Bunker:FrontBlockDepth+200.0*mm+0.5*HEB200Depth"/>
+
+    <!-- second I-beam: right top front of platform -->
+    <constant name="FrontRightLength" value="3050.0*mm"/>
+    <constant name="FrontRightxPos" value="-(Bunker:TopBlockWidth+0.5*FrontLeftLength+0.5*FrontRightLength)"/>
+    <constant name="FrontRightyPos" value="0.0*mm"/>
+    <constant name="FrontRightzPos" value="0.0*mm"/>
+
+
+    <!-- I-beam: left top-right -->
+    <constant name="LeftTopRightLength" value="4281.5*mm-2.0*HEB200Depth"/>
+    <constant name="LeftTopRightxPos" value="-0.5*FrontLeftLength+700.0*mm+0.5*HEB200Depth"/>
+    <constant name="LeftTopRightyPos" value="0.0*mm"/>
+    <constant name="LeftTopRightzPos" value="0.5*HEB200Depth+0.5*LeftTopRightLength"/>
+
+
+    <!-- I-beam: left top-left -->
+    <constant name="LeftTopLeftLength" value="LeftTopRightLength"/>
+    <constant name="LeftTopLeftxPos" value="0.5*FrontLeftLength-0.5*HEB200Depth"/>
+    <constant name="LeftTopLeftyPos" value="0.0*mm"/>
+    <constant name="LeftTopLeftzPos" value="0.5*HEB200Depth+0.5*LeftTopRightLength"/>
+
+
+    <!-- I-beam: left top-centre -->
+    <constant name="LeftTopCentreLength" value="3715.0*mm-2.0*HEB200Depth"/>
+    <constant name="LeftTopCentrexPos" value="0.5*FrontLeftLength-HEB200Depth-0.5*LeftTopCentreLength"/>
+    <constant name="LeftTopCentreyPos" value="0.0*mm"/>
+    <constant name="LeftTopCentrezPos" value="HEB200Depth+1840.0*mm"/>
+
+
+    <!-- I-beam: left top-back -->
+    <constant name="LeftTopBackLength" value="FrontLeftLength"/>
+    <constant name="LeftTopBackxPos" value="0.0*mm"/>
+    <constant name="LeftTopBackyPos" value="0.0*mm"/>
+    <constant name="LeftTopBackzPos" value="LeftTopCentrezPos+1841.5*mm+HEB200Depth"/>
+
+
+    <!-- I-beam: right top-left -->
+    <constant name="RightTopLeftLength" value="4281.5*mm-2.0*HEB200Depth"/>
+    <constant name="RightTopLeftxPos" value="FrontRightxPos+0.5*FrontRightLength-700.0*mm-0.5*HEB200Depth"/>
+    <constant name="RightTopLeftyPos" value="0.0*mm"/>
+    <constant name="RightTopLeftzPos" value="FrontRightzPos+0.5*HEB200Depth+0.5*RightTopLeftLength"/>
+
+
+
+    <!-- I-beam: right top-right -->
+    <constant name="RightTopRightLength" value="RightTopLeftLength"/>
+    <constant name="RightTopRightxPos" value="RightTopLeftxPos+HEB200Depth-2350.0*mm"/>
+    <constant name="RightTopRightyPos" value="0.0*mm"/>
+    <constant name="RightTopRightzPos" value="RightTopLeftzPos"/>
+
+
+
+    <!-- I-beam: right top-centre -->
+    <constant name="RightTopCentreLength" value="3050.0*mm-2.0*HEB200Depth-700.0*mm"/>
+    <constant name="RightTopCentrexPos" value="FrontRightxPos-0.5*FrontRightLength+HEB200Depth+0.5*RightTopCentreLength"/>
+    <constant name="RightTopCentreyPos" value="0.0*mm"/>
+    <constant name="RightTopCentrezPos" value="FrontRightzPos+HEB200Depth+1841.5*mm"/>
+
+
+
+    <!-- I-beam: right top-back -->
+    <!-- 1200mm extra length is a guess - not on drawing (LHBIERM_0040) -->
+    <constant name="RightTopBackLength" value="FrontRightLength+500.0*mm"/>
+    <constant name="RightTopBackxPos" value="FrontRightxPos+0.5*FrontRightLength-0.5*RightTopBackLength"/>
+    <constant name="RightTopBackyPos" value="0.0*mm"/>
+    <constant name="RightTopBackzPos" value="RightTopCentrezPos+HEB200Depth+1840.0*mm"/>
+
+
+    <!-- Cross pieces - support for platform is not properly on the -->
+    <!-- drawings so guestimates -->
+
+    <!-- I-beam: cross-piece LEFT -->
+    <constant name="CrossPieceLength" value="1000.0*mm"/>
+    <constant name="LeftCrossPiecexPos" value="-0.5*FrontLeftLength+350.0*mm-50.0*mm"/>
+    <constant name="CrossPieceyPos" value="-450.0*mm"/>
+    <constant name="CrossPiecezPos" value="0.0*mm"/>
+
+    <!-- I-beam: cross-piece RIGHT -->
+    <constant name="RightCrossPiecexPos" value="-0.5*FrontLeftLength-350.0*mm-10000.0*mm+50.0*mm"/>
+  </define>
+
+
+  <detectors>
+    <detector name="ExtensionBunker" type="DD4hep_VolumeAssembly" parent="${Cavern:parent}" vis="Infrastructure:Vis">
+      <!--  the main volume , you can add any component you need-->
+      <envelope name="lvExtensionBunker" material="Infrastructure:Concrete" vis="Infrastructure:BunkerVis">
+	<shape type="BooleanShape" operation="union" name="GantryFull">
+
+	  <shape type="Box" name="FrontLeft"
+		 dx="FrontLeftLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+
+	  <shape type="Box" name="FrontRight"
+		 dx="FrontRightLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+	  <position x="FrontRightxPos"
+		    y="FrontRightyPos"
+		    z="FrontRightzPos"/>
+
+	  <shape type="Box" name="LeftTopRight"
+		 dx="HEB200Depth/2"
+		 dy="HEB200Height/2"
+		 dz="LeftTopRightLength/2"/>
+	  <position x="LeftTopRightxPos"
+		    y="LeftTopRightyPos"
+		    z="LeftTopRightzPos"/>
+
+	  <shape type="Box" name="LeftTopLeft"
+		 dx="HEB200Depth/2"
+		 dy="HEB200Height/2"
+		 dz="LeftTopLeftLength/2"/>
+	  <position x="LeftTopLeftxPos"
+		    y="LeftTopLeftyPos"
+		    z="LeftTopLeftzPos"/>
+
+	  <shape type="Box" name="LeftTopCentre"
+		 dx="LeftTopCentreLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+	  <position x="LeftTopCentrexPos"
+		    y="LeftTopCentreyPos"
+		    z="LeftTopCentrezPos"/>
+
+	  <shape type="Box" name="LeftTopBack"
+		 dx="LeftTopBackLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+	  <position x="LeftTopBackxPos"
+		    y="LeftTopBackyPos"
+		    z="LeftTopBackzPos"/>
+
+	  <shape type="Box" name="RightTopLeft"
+		 dx="HEB200Depth/2"
+		 dy="HEB200Height/2"
+		 dz="RightTopLeftLength/2"/>
+	  <position x="RightTopLeftxPos"
+		    y="RightTopLeftyPos"
+		    z="RightTopLeftzPos"/>
+
+	  <shape type="Box" name="RightTopRight"
+		 dx="HEB200Depth/2"
+		 dy="HEB200Height/2"
+		 dz="RightTopRightLength/2"/>
+	  <position x="RightTopRightxPos"
+		    y="RightTopRightyPos"
+		    z="RightTopRightzPos"/>
+
+	  <shape type="Box" name="RightTopCentre"
+		 dx="RightTopCentreLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+	  <position x="RightTopCentrexPos"
+		    y="RightTopCentreyPos"
+		    z="RightTopCentrezPos"/>
+
+	  <shape type="Box" name="RightTopBack"
+		 dx="RightTopBackLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+	  <position x="RightTopBackxPos"
+		    y="RightTopBackyPos"
+		    z="RightTopBackzPos"/>
+
+	  <shape type="Box" name="LeftCrossPiece"
+		 dx="CrossPieceLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+	  <position x="LeftCrossPiecexPos"
+		    y="CrossPieceyPos"
+		    z="CrossPiecezPos"/>
+	  <rotation z="45.*degree"/>
+
+	  <shape type="Box" name="RightCrossPiece"
+		 dx="CrossPieceLength/2"
+		 dy="HEB200Height/2"
+		 dz="HEB200Depth/2"/>
+	  <position x="RightCrossPiecexPos"
+		    y="CrossPieceyPos"
+		    z="CrossPiecezPos"/>
+	  <rotation z="-45.*degree"/>
+
+	</shape>
+      </envelope>
+      <position x="GantryxPos" y="GantryyPos" z="GantryzPos"/>
+
+    </detector>
+  </detectors>
+
+</lccdd>

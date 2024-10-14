@@ -1,0 +1,177 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML description of the Cavern's parameter definitions                      -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <detectors>
+    <detector name="Shaft" type="DD4hep_VolumeAssembly" parent="${Shaft:parent}" vis="Infrastructure:ConcreteVis">
+      <!--  the main volume , you can add any component you need-->
+      <envelope name="lvShaft" material="Infrastructure:Concrete">
+        <shape type="BooleanShape" operation="union" name="ShaftCombined">
+
+          <!--  ========================================================================= -->
+          <shape type="BooleanShape" operation="subtraction" name="ShaftTubeTotal">
+            <shape type="Tube" name="Shaft_Total"
+                   dz="(ShaftHorizontalLength+ShaftHorizontalLengthExtra)/2"
+                   rmax="ShaftHorizontalRadius+CavernWallThick"
+                   rmin="ShaftHorizontalRadius"
+                   startphi="CavernStartAngle"
+                   deltaphi="CavernDeltaAngle" />
+
+            <shape type="Box" name="ShaftFlat"
+                   dx="(2.0*ShaftHorizontalRadius+CavernWallThick+1.0*m)/2"
+                   dy="1.0*m/2"
+                   dz="(ShaftHorizontalLength+1.0*m+ShaftHorizontalLengthExtra)/2"/>
+            <position y="ShaftHorizontalRadius*sin(CavernStartAngle)-0.5*m"/>
+
+            <shape type="Tube" name="ShaftCutTube"
+                   dz="CavernTotalWidth/2"
+                   rmax="CavernInnerRadiusHeight"/>
+            <position x="0.0*m" y="CavernyPos-ShaftyPos"
+                      z="0.5*(ShaftHorizontalLength+ShaftHorizontalLengthExtra)-ShaftHorizontalLength-CavernzPos"/>
+            <rotation y="90.*degree" />
+          </shape>
+
+          <!--  ========================================================================= -->
+          <shape type="BooleanShape" operation="subtraction" name="ShaftBoat">
+            <shape type="Trap" name="ShaftTrap"
+                   z="ShaftTrapZ/2"
+                   y1="(ShaftTrapY1+CavernWallThick)/2"
+                   x1="(ShaftTrapX1+2.0*CavernWallThick)/2"
+                   x2="(ShaftTrapX2+2.0*CavernWallThick)/2"
+                   y2="(ShaftTrapY2+CavernWallThick)/2"
+                   x3="(ShaftTrapX3+2.0*CavernWallThick)/2"
+                   x4="(ShaftTrapX4+2.0*CavernWallThick)/2"/>
+
+            <shape type="Trap" name="Shaft_TrapInner"
+                   z="(ShaftTrapZ+Shaft:ExtraCut)/2"
+                   y1="(ShaftTrapY1+Shaft:ExtraCut)/2"
+                   x1="ShaftTrapX1/2"
+                   x2="ShaftTrapX2/2"
+                   y2="(ShaftTrapY2+Shaft:ExtraCut)/2"
+                   x3="ShaftTrapX3/2"
+                   x4="ShaftTrapX4/2"/>
+            <position y="0.5*CavernWallThick"/>
+
+
+            <shape type="Trap" name="ShaftCut_Trap"
+                   z="CavernTrapZ/2"
+                   y1="CavernTrapY1/2"
+                   x1="CavernTrapX1/2"
+                   x2="CavernTrapX2/2"
+                   y2="CavernTrapY2/2"
+                   x3="CavernTrapX3/2"
+                   x4="CavernTrapX4/2"/>
+            <position x="0.0*m"
+                      y="CavernTrapY1-ShaftTrapY1-0.5*CavernWallThick"
+                      z="0.5*(ShaftHorizontalLength+ShaftHorizontalLengthExtra)-ShaftHorizontalLength-CavernzPos"/>
+            <rotation y="90.*degree" />
+          </shape>
+          <position y="ShaftBoatY" z="ShaftBoatZ"/>
+
+          <!--  ========================================================================= -->
+          <shape type="BooleanShape" operation="subtraction" name="ShaftVertical">
+
+            <shape type="Tube" name="ShaftVerticalTube"
+                   dz="ShaftVerticalLength/2"
+                   rmax="ShaftVerticalRadius+CavernWallThick"
+                   rmin="ShaftVerticalRadius"/>
+
+            <!--   &ShaftTube; -->
+            <shape type="Tube" name="Shaft_VerticalTubeHole"
+                   dz="(ShaftHorizontalLength+ShaftHorizontalLengthExtra)/2"
+                   rmax="ShaftHorizontalRadius-1*mm"/>
+            <position x="ShaftVerticalxPos" y="-0.5*(ShaftTrapZ+Shaft:ExtraCut)+0.5*Shaft:ExtraCut" z="ShaftVerticalyPos"/>
+            <rotation x="-90.*degree" />
+
+            <shape type="Trap" name="Shaft_VerticalTrapHole"
+                   z="(ShaftTrapZ+Shaft:ExtraCut)/2"
+                   y1="(ShaftTrapY1+Shaft:ExtraCut)/2"
+                   x1="ShaftTrapX1/2"
+                   x2="ShaftTrapX2/2"
+                   y2="(ShaftTrapY2+Shaft:ExtraCut)/2"
+                   x3="ShaftTrapX3/2"
+                   x4="ShaftTrapX4/2"/>
+            <position x="ShaftVerticalxPos" y="-0.5*(ShaftTrapZ+Shaft:ExtraCut)" z="ShaftVerticalyPos-ShaftBoatY"/>
+            <rotation x="-90.*degree" />
+          </shape>
+          <position x="ShaftVerticalxPos"  y="ShaftVerticalyPos"  z="ShaftVerticalzPos-2.25*m"/>
+          <rotation x="90.*degree" />
+
+          <!--  ========================================================================= -->
+          <shape type="Tube" name="ShaftFloor"
+                 dz="(CavernWallThick+2.25*mm)/2" rmax="ShaftVerticalRadius+CavernWallThick"/>
+          <position x="ShaftVerticalFloorxPos" y="ShaftVerticalFlooryPos" z="ShaftVerticalFloorzPos-2.25*m"/>
+          <rotation x="90.*degree" />
+
+          <!--  ========================================================================= -->
+          <shape type="BooleanShape" operation="union" name="Extension">
+            <shape type="BooleanShape" operation="subtraction" name="ShaftBoat2">
+              <shape type="Trap" name="ShaftTrap2"
+                     z="ShaftTrapZ/2"
+                     y1="(ShaftTrapY1+CavernWallThick)/2"
+                     x1="(ShaftTrapX1+2.0*CavernWallThick)/2"
+                     x2="(ShaftTrapX2+2.0*CavernWallThick)/2"
+                     y2="(ShaftTrapY2+CavernWallThick)/2"
+                     x3="(ShaftTrapX3+2.0*CavernWallThick)/2"
+                     x4="(ShaftTrapX4+2.0*CavernWallThick)/2"/>
+
+              <shape type="Trap" name="Shaft_TrapInner2"
+                     z="(ShaftTrapZ+Shaft:ExtraCut)/2"
+                     y1="(ShaftTrapY1+Shaft:ExtraCut)/2"
+                     x1="ShaftTrapX1/2"
+                     x2="ShaftTrapX2/2"
+                     y2="(ShaftTrapY2+Shaft:ExtraCut)/2"
+                     x3="ShaftTrapX3/2"
+                     x4="ShaftTrapX4/2"/>
+              <position y="0.5*CavernWallThick"/>
+
+              <shape type="Trap" name="ShaftCut_Trap2"
+                     z="CavernTrapZ/2"
+                     y1="CavernTrapY1/2"
+                     x1="CavernTrapX1/2"
+                     x2="CavernTrapX2/2"
+                     y2="CavernTrapY2/2"
+                     x3="CavernTrapX3/2"
+                     x4="CavernTrapX4/2"/>
+              <position x="0.0*m"
+                        y="CavernTrapY1-ShaftTrapY1-0.5*CavernWallThick"
+                        z="0.5*(ShaftHorizontalLength+ShaftHorizontalLengthExtra)-ShaftHorizontalLength-CavernzPos"/>
+              <rotation y="90.*degree"/>
+            </shape>
+
+            <shape type="Box" name="ExtensionWall"  dx="0.5*m/2" dy="3*m/2" dz="1*m/2"/>
+            <position x="4.55*m" y="-0.75*m" z="-6.8*m"/>
+            <rotation z="-17.*degree" />
+
+            <shape type="Box" name="ExtensionWallSide2" dx="0.5*m/2" dy="3*m/2" dz="1*m/2"/>
+            <position x="-4.55*m" y="-0.75*m" z="-6.8*m"/>
+            <rotation x="17.*degree" />
+
+            <shape type="Box" name="ExtensionFloor" dx="8.5*m/2" dy="ShaftTrapY2/2" dz="1*m/2"/>
+            <position x="0*m"
+                      y="CavernTrapY1-ShaftTrapY1-0.5*CavernWallThick-2.85*m"
+                      z="-6.5*m"/>
+            <rotation x="90.*degree" />
+          </shape>
+          <position x="ShaftVerticalFloorxPos"
+                    y="ShaftVerticalFlooryPos+1.85*m"
+                    z="ShaftVerticalFloorzPos-12.75*m"/>
+        </shape>
+      </envelope>
+      <position x="ShaftxPos" y = "ShaftyPos" z = "ShaftzPos-1.5*m"/>
+      <rotation y="180.0*degree" />
+
+    </detector>
+  </detectors>
+</lccdd>

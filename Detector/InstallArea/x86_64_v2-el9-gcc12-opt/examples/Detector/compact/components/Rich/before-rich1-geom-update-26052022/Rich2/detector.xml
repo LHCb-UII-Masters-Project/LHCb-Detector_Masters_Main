@@ -1,0 +1,161 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH2 Detector Description                                           -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  Sajan Easo                                                      -->
+<!--   @date    26/11/2020                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<!-- XML Detector description headers for RICH2                                 -->
+<!-- ========================================================================== -->
+<lccdd>
+  <define>
+  </define>
+
+  <detectors>
+    <detector id="Rich2:ID" name="Rich2" type="LHCb_Rich2_Geometry_RUN3_v1" parent="${Rich2:parent}" vis="Rich:VisRich2Master">
+
+    <position x="Rich2MasterX" y="Rich2MasterY" z="Rich2MasterZ- (Regions:AfterMagnetZPos) "/>
+    <rotation x="Rich2MasterTilt" y="Rich2MasterRotY" z="Rich2MasterRotZ" />
+
+
+    <include ref="LogVol/Rich2Run3CentralGasEnclosureLog.xml"/>
+    <include ref="LogVol/Rich2Run3EntryExitWallsLog.xml" />
+    <include ref="LogVol/Rich2Run3MagShieldLog.xml" />
+    <include ref="LogVol/Rich2Run3GasQuartzWindowLog.xml" />
+    <include ref="LogVol/Rich2Run3MirrorMasterLog.xml" />
+    <include ref="LogVol/Rich2Run3PhDetSupportFrameLog.xml" />
+    <include ref="LogVol/Rich2Run3RichSystemImagVolLog.xml"/>
+    <include ref="../Rich1/LogVol/RichPmtVolDescDir/Rich2PmtStructureLog.xml"/>
+    <include ref="../Rich1/LogVol/RichPmtVolDescDir/Rich2GrandPmtStructure.xml"/>
+    <include ref="../Rich1/LogVol/RichPmtVolDescDir/RichGrandPmtComponentLog.xml"/>
+    <!-- The following three lines are already in Rich1/detector.xml and hence could be commented here -->
+    <!-- For Rich2  standalone debug tests, it is also added in debug/Rich2_debug.xml -->
+    <include ref="../Rich1/LogVol/RichPmtVolDescDir/RichPmtComponentLog.xml"/>
+    <include ref="../Rich1/LogVol/RichPmtVolDescDir/Rich2StdPmtComponentLog.xml"/>
+    <include ref="../Rich1/PhysVol/RichPMTComponentPhysTransform.xml"/>
+
+    <include ref="LogVol/SuperStructureLog/Rich2Run3SuperStructureLog.xml"/>
+
+    <include ref="LogVol/Rich2Run3MasterLog.xml"/>
+ 
+    <include ref="PhysVol/Rich2Run3CentralGasEnclosurePhysTransform.xml"/>
+    <include ref="PhysVol/Rich2Run3EntryExitWallsPhysTransform.xml"/>
+    <include ref="PhysVol/Rich2Run3MagShieldPhysTransform.xml" />
+    <include ref="PhysVol/Rich2Run3GasQuartzWindowPhysTransform.xml" />
+    <include ref="PhysVol/Rich2Run3MirrorMasterPhysTransform.xml" />
+    <include ref="PhysVol/Rich2Run3PhDetSupportFramePhysTransform.xml" />
+    <include ref="PhysVol/Rich2Run3RichSystemImagVolPhysTransform.xml" />
+    <include ref="../Rich1/PhysVol/RichGrandPMTComponentPhysTransform.xml" />
+
+
+    <include ref="PhysVol/SuperStructurePhys/Rich2Run3SuperStructureMasterPhysTransform.xml" />
+
+    <include ref="PhysVol/SuperStructurePhys/Rich2Run3SuperStructureTopPhysTransform.xml" />
+    <include ref="PhysVol/SuperStructurePhys/Rich2Run3SuperStructureBotPhysTransform.xml" />
+    <include ref="PhysVol/SuperStructurePhys/Rich2Run3SuperStructureLeftPhysTransform.xml" />
+    <include ref="PhysVol/SuperStructurePhys/Rich2Run3SuperStructureRightPhysTransform.xml" />
+
+     
+   <!-- Now for debug and graphics -->
+
+    <debug>
+     <item name="activate_Rich2GasEnclosure"  value="1" />
+     <item name="activate_Rich2EntryExitWall" value="1" /> 
+     <item name="activate_Rich2_MagneticShield_build"  value="1" />
+     <item name="activate_Rich2_GasQW_build"    value="1" />
+     <item name="activate_Rich2_PhotonDetector_build"  value="1" />
+     <item name="activate_Rich2_RichSystem_build"  value="1" />
+     <item name="activate_Rich2Mirror1_build"      value="1" />
+     <item name="activate_Rich2Mirror2_build"      value="1" />
+     <item name="activate_Rich2Mirror_System_build"  value="1" />  
+     <item name="activate_Rich2Surface_build"        value="1" /> 
+     <item name="activate_Rich2PmtSurface_build"     value="1" /> 
+     <item name="activate_Rich2QWSurface_build"      value="1" /> 
+     <item name="activate_Rich2SuperStructure_build"  value="1" /> 
+     <item name="activate_Rich2SuperStructureComponent_build"  value="1" />
+     <item name="activate_Rich2_DetElem_For_CurrentAppl"  value="1" />
+     <item name="activate_Rich2_DetElem_For_PmtEcrh"      value="1" />
+ 
+     <item name="debugRich2Activate"                  value="0" />  
+     <item name="volumeBuilderForRich2DebugActivate"  value="0" />  
+
+     <item name="debugRich2LvListActivate"            value="0" />
+     <item name="generalRich2UtilDebugActivate"       value="0" />
+     <item name="pmtutilRich2DebugActivate"           value="0" /> 
+     <item name="debugRich2Mirror1Activate"           value="0" />
+     <item name="debugRich2Mirror2Activate"           value="0" />
+     <item name="Rich2SurfaceDebugActivate"           value="0" />
+     <item name="Rich2PmtSurfaceDebugActivate"        value="0" />
+     <item name="Rich2SuperStructureDebugActivate"    value="0" />
+    
+
+
+     <item name="activateRich2VolumeDebug"            value="0" />  
+
+
+
+
+
+
+
+  
+    <!--
+       <item name="activateRich2VolumeDebug"            value="0" />  
+       <item name="activateRich2VolumeDebug"            value="1" />  
+       <item name="attachRich2VolumeForDebug"           value="lvRich2Master" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2GasEnclosure" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorMaster0" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorMaster1" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SecMirrorMaster0" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SecMirrorMaster1" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2PhDetGasEncl0" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2PhDetGasEncl1" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2PhDetPanel0"  />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2PhDetPanel1"  />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorHexSeg01" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorLeftHalfHexSeg00" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorMaster0" />
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SecMirrorMaster0" /> 
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SecMirrorSeg10" /> 
+       <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorHexSeg28" />
+      <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorRightHalfHexSeg07" />
+      <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorWithTopBPHoleRightHalfHexSeg47" />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorWithRightBPHoleHexSeg43" />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorWithLeftBPHoleHexSeg12" />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SphMirrorWithBotBPHoleLeftHalfHexSeg08" />
+     <item name="attachRich2VolumeForDebug"           value="lvRichPMTSMaster"  />
+     <item name="attachRich2VolumeForDebug"          value= "lvRichPmtStdECR0InModule134" />
+     <item name="attachRich2VolumeForDebug"           value="lvRichPmtMasterP2InECR1InStdModule135"  />
+     <item name="attachRich2VolumeForDebug"          value= "lvRichPmtStdECR0InModule134" />
+     <item name="attachRich2VolumeForDebug"           value="lvRichPmtGrandECH0InModule271"  />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2PmtGrandModule239"  />
+    <item name="attachRich2VolumeForDebug"           value="lvRich2PmtStdModule237"  />
+    <item name="attachRich2VolumeForDebug"           value="lvRich2PhDetGasEncl1" />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SuperStrAirTrapLeft"   />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SuperStrAirBoxTop"   />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SuperStrAirBoxBot" />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SuperStrAirTrapRight" />
+     <item name="attachRich2VolumeForDebug"           value="lvRich2SuperStrAirTrapLeft" />
+
+
+
+   -->
+    </debug>
+
+
+    </detector>
+  </detectors>
+
+<!--
+  <readouts>
+    <readout name="RichHits">
+      <id>system:8 </id>
+    </readout>
+
+  </readouts>
+-->
+</lccdd>

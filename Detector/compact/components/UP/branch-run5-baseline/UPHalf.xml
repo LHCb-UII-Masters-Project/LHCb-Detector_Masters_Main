@@ -1,0 +1,48 @@
+<up>
+      <!--
+      (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+      This software is distributed under the terms of the GNU General Public
+      Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+      In applying this licence, CERN does not waive the privileges and immunities
+      granted to it by virtue of its status as an Intergovernmental Organization
+      or submit itself to any jurisdiction.
+      -->
+
+      <volume material="Air" name="lvUPC" vis="UP:Envelope">
+           <shape name="UUPCBox" type="BooleanShape" operation="subtraction">
+              <shape name="UUPCBareBox" type="BooleanShape" operation="union">
+                 <shape name="UUPaXCsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideShortWidth/2" x2="UUPaXLayerSideLongWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <shape name="UUPaUCsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideShortWidth/2" x2="UUPaXLayerSideLongWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <position z="UPLayerDz"/>
+                 <shape name="UUPbVCsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideShortWidth/2" x2="UUPaXLayerSideLongWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <position z="UPStationDz"/>
+                 <shape name="UUPbXCsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideShortWidth/2" x2="UUPaXLayerSideLongWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <position z="UPLayerDz+UPStationDz"/>
+              </shape>
+              <shape name="UUPaXCBeamPipe" type="Box" dx="UPPixelHoleWide/2" dy="UPPixelHoleLong/2" dz="430*mm/2"/>
+              <position x="1/2*UUPLayerSideCorrectedWidth"/>
+           </shape>
+
+
+      </volume>
+
+      <volume material="Air" name="lvUPA" vis="UP:Envelope">
+           <shape name="UUPABox" type="BooleanShape" operation="subtraction">
+              <shape name="UUPABareBox" type="BooleanShape" operation="union">
+                 <shape name="UUPaXAsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideLongWidth/2" x2="UUPaXLayerSideShortWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <shape name="UUPaUAsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideLongWidth/2" x2="UUPaXLayerSideShortWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <position z="UPLayerDz"/>
+                 <shape name="UUPbVAsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideLongWidth/2" x2="UUPaXLayerSideShortWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <position z="UPStationDz"/>
+                 <shape name="UUPbXAsideBox" type="Trapezoid" z="UPPixelBareLayerThick/2" x1="UUPaXLayerSideLongWidth/2" x2="UUPaXLayerSideShortWidth/2" y1="UUPBoxInnerLong/2" y2="UUPBoxInnerLong/2"/>
+                 <position z="UPLayerDz+UPStationDz"/>
+              </shape>
+              <shape name="UUPaXABeamPipe" type="Box" dx="UPPixelHoleWide/2" dy="UPPixelHoleLong/2" dz="430*mm/2"/>
+              <position x="-1/2*UUPLayerSideCorrectedWidth"/>
+           </shape>
+
+      </volume>
+
+</up>

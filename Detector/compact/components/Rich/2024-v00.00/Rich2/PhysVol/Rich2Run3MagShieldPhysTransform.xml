@@ -1,0 +1,150 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!--  @author   Sajan Easo                                                  -->
+<!--  @date     26/11/2020                                                  -->
+<!--    Begin Rich2 magnetic shield physvols                                -->
+<!-- They are placed in lvRich2Master                                       -->
+<!-- Here the label 0 means positive X side which is the A side which is on the left as one -->
+<!-- looks downstream from the interaction point . -->
+<!-- The label 1 means negative X side which is the C side which is on the  -->
+<!--     right as one looks downstream from the interaction point.          -->
+<!-- Here the label front means upstream and back means downstream -->
+
+<!--  New names of volumes                                                  -->
+<!-- <physvol  name="pvRich2MagShFront0"  <volume name = "lvRich2MagShFront0"  -->
+<!-- <physvol name = "pvRich2MagShTop0"   <volume name =  "lvRich2MagShTopBot" -->
+<!-- <physvol name = "pvRich2MagShBottom0" <volume name = "lvRich2MagShTopBot" -->
+<!-- <physvol name = "pvRich2MagShSideBack0"  <volume name = "lvRich2MagShSideBack" -->
+<!-- <physvol name = "pvRich2MagShSideFront0" <volume name ="lvRich2MagShSideFront" -->
+<!-- <physvol name = "pvRich2MagShFront1"  <volume name ="lvRich2MagShFront1"  -->
+<!-- <physvol name = "pvRich2MagShTop1"   <volume name = "lvRich2MagShTopBot" -->
+<!-- <physvol name = "pvRich2MagShBottom1"  <volume name = "lvRich2MagShTopBot" -->
+<!-- <physvol name = "pvRich2MagShSideBack1"   <volume name = "lvRich2MagShSideBack" -->
+<!-- <physvol name = "pvRich2MagShSideFront1"  <volume name = "lvRich2MagShSideFront" -->
+<!--   ============================================================================   -->
+<Rich2>
+
+<!-- Now for the postive X side -->
+
+    <item name="PhysVolName"    value="pvRich2MagShFront0" />
+    <item name="TransformName"  value="pvRich2MagShFront0Transform">
+      <transformation>
+           <position  x = "Rh2MagShFrontBoxPositivePosX"
+                      y = "Rh2MagShFrontBoxPosY"
+                      z = "Rh2MagShFrontBoxPosZ" />
+           <rotation  y = "Rh2MagShFrontBoxPositiveRotY" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShTop0" />
+    <item name="TransformName"  value="pvRich2MagShTop0Transform">
+      <transformation>
+           <position  x = "Rh2MagShTopAndBotPositivePosX"
+                      y = "Rh2MagShTopPosY"
+                      z = "Rh2MagShTopAndBotPosZ" />
+           <rotation  x = "Rh2MagShTopAndBotAnglePositiveRotX"
+                      z = "Rh2MagShTopAndBotAnglePositiveRotZ"     />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShBottom0" />
+    <item name="TransformName"  value="pvRich2MagShBottom0Transform">
+      <transformation>
+           <position  x = "Rh2MagShTopAndBotPositivePosX"
+                      y = "Rh2MagShBottomPosY"
+                      z = "Rh2MagShTopAndBotPosZ" />
+           <rotation  x = "Rh2MagShTopAndBotAnglePositiveRotX"
+                      z = "Rh2MagShTopAndBotAnglePositiveRotZ"     />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShSideBack0" />
+    <item name="TransformName"  value="pvRich2MagShSideBack0Transform">
+      <transformation>
+           <position  x = "Rh2MagShSideBackPositivePosX"
+                      y = "Rh2MagShSideBackPosY"
+                      z = "Rh2MagShSideBackPosZ" />
+           <rotation  y = "Rh2MagShSideBackPositiveRotY"     />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShSideFront0" />
+    <item name="TransformName"  value="pvRich2MagShSideFront0Transform">
+      <transformation>
+           <position  x = "Rh2MagShSideFrontPositivePosX"
+                      y = "Rh2MagShSideFrontPosY"
+                      z = "Rh2MagShSideFrontPosZ" />
+           <rotation  x =  "Rh2MagShSideFrontAnglePositiveRotX"
+                      z =  "Rh2MagShSideFrontAnglePositiveRotZ"   />
+      </transformation>
+    </item>
+
+<!-- Now for the negative X side -->
+
+    <item name="PhysVolName"    value="pvRich2MagShFront1" />
+    <item name="TransformName"  value="pvRich2MagShFront1Transform">
+      <transformation>
+           <position  x = "Rh2MagShFrontBoxNegativePosX"
+                      y = "Rh2MagShFrontBoxPosY"
+                      z = "Rh2MagShFrontBoxPosZ" />
+           <rotation  y = "Rh2MagShFrontBoxNegativeRotY" />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShTop1" />
+    <item name="TransformName"  value="pvRich2MagShTop1Transform">
+      <transformation>
+           <position  x = "Rh2MagShTopAndBotNegativePosX"
+                      y = "Rh2MagShTopPosY"
+                      z = "Rh2MagShTopAndBotPosZ" />
+           <rotation  x = "Rh2MagShTopAndBotAngleNegativeRotX"
+                      y = "Rh2MagShTopAndBotAngleNegativeRotY"
+                      z = "Rh2MagShTopAndBotAngleNegativeRotZ"     />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShBottom1" />
+    <item name="TransformName"  value="pvRich2MagShBottom1Transform">
+      <transformation>
+           <position  x = "Rh2MagShTopAndBotNegativePosX"
+                      y = "Rh2MagShBottomPosY"
+                      z = "Rh2MagShTopAndBotPosZ" />
+           <rotation  x = "Rh2MagShTopAndBotAngleNegativeRotX"
+                      y = "Rh2MagShTopAndBotAngleNegativeRotY"
+                      z = "Rh2MagShTopAndBotAngleNegativeRotZ"     />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShSideBack1" />
+    <item name="TransformName"  value="pvRich2MagShSideBack1Transform">
+      <transformation>
+           <position  x = "Rh2MagShSideBackNegativePosX"
+                      y = "Rh2MagShSideBackPosY"
+                      z = "Rh2MagShSideBackPosZ" />
+           <rotation  y = "Rh2MagShSideBackNegativeRotY"     />
+      </transformation>
+    </item>
+
+    <item name="PhysVolName"    value="pvRich2MagShSideFront1" />
+    <item name="TransformName"  value="pvRich2MagShSideFront1Transform">
+      <transformation>
+           <position  x = "Rh2MagShSideFrontNegativePosX"
+                      y = "Rh2MagShSideFrontPosY"
+                      z = "Rh2MagShSideFrontPosZ" />
+           <rotation  x =  "Rh2MagShSideFrontAngleNegativeRotX"
+                      y =  "Rh2MagShSideFrontAngleNegativeRotY"
+                      z =  "Rh2MagShSideFrontAngleNegativeRotZ"   />
+      </transformation>
+    </item>
+
+
+
+</Rich2>

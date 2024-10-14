@@ -1,0 +1,95 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--  First version:   25-01-2016 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for MAPMT EC components for types R and H -->
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+<!-- RICH elementary cell components and array Geometry param -->
+
+<!-- First for the EC-R    -->
+<!-- The EC-r are placed inside the RICH1 modules so that they are horizontal modules -->
+
+<constant name="RhStdECRXSize" value="55.6*mm" />
+<constant name="RhStdECRYSize" value="RhStdECRXSize" />
+<constant name="RhStdECRZSize" value="30.0*mm"/>
+
+<constant name="RhStdECRGap"  value="0.4*mm" />
+
+<constant name="RhStdECRXDelta" value="(RhStdECRXSize+RhStdECRGap)" />
+<constant name="RhStdECRXLocationInModuleBegin" value="-1.5*RhStdECRXDelta" />
+<constant name="RhStdECRYLocationInModule" value="0.0*mm" />
+<constant name="RhStdECRZLocationInModule" value="-5.0*mm" />
+
+
+<constant name="RhStdECR0XPos" value="RhStdECRXLocationInModuleBegin" />
+<constant name="RhStdECR1XPos" value="RhStdECRXLocationInModuleBegin+RhStdECRXDelta"/>
+<constant name="RhStdECR2XPos" value="RhStdECRXLocationInModuleBegin+2.0*RhStdECRXDelta"/>
+<constant name="RhStdECR3XPos" value="RhStdECRXLocationInModuleBegin+3.0*RhStdECRXDelta"/>
+
+<constant name="RhStdECRRotZ"  value="-0.5*pi*rad" />
+<constant name="RhStdECR0RotZ" value="RhStdECRRotZ" />
+<constant name="RhStdECR1RotZ" value="RhStdECRRotZ" />
+<constant name="RhStdECR2RotZ" value="RhStdECRRotZ" />
+<constant name="RhStdECR3RotZ" value="RhStdECRRotZ" />
+
+
+<!--   Now for EC-R positioned inside RICH2 modules -->
+<!-- The EC-r are placed inside the RICH2 modules and the modules are
+     rotated to look vertical -->
+
+<constant name="RhStdECR2XDelta" value="RhStdECRXDelta" />
+<constant name="RhStdECR2XLocationInR2ModuleBegin" value="-1.5*RhStdECR2XDelta" />
+<constant name="RhStdECR2YLocationInR2Module" value= "RhStdECRYLocationInModule" />
+<constant name="RhStdECR2ZLocationInR2Module" value= "RhStdECRZLocationInModule" />
+
+<constant name="RhStdECR2N0XPos"   value="RhStdECR2XLocationInR2ModuleBegin" />
+<constant name="RhStdECR2N1XPos"   value="RhStdECR2XLocationInR2ModuleBegin +   RhStdECR2XDelta" />
+<constant name="RhStdECR2N2XPos"   value="RhStdECR2XLocationInR2ModuleBegin + 2*RhStdECR2XDelta" />
+<constant name="RhStdECR2N3XPos"   value="RhStdECR2XLocationInR2ModuleBegin + 3*RhStdECR2XDelta" />
+
+
+<constant name="RhStdECR2N0RotZ" value="RhStdECR2RotZ" />
+<constant name="RhStdECR2N1RotZ" value="RhStdECR2RotZ" />
+<constant name="RhStdECR2N2RotZ" value="RhStdECR2RotZ" />
+<constant name="RhStdECR2N3RotZ" value="RhStdECR2RotZ" />
+
+
+
+<!--  Now for the  EC-H  in RICH2  -->
+
+<constant name="RhGrandECHXSize" value="RhStdECRXSize"   />
+<constant name="RhGrandECHYSize" value="RhGrandECHXSize" />
+<constant name="RhGrandECHZSize" value="RhStdECRZSize"  />
+
+<constant name="RhGrandECHGap"  value= "RhStdECRGap" />
+
+<constant name="RhGrandECHXDelta" value="(RhGrandECHXSize+RhGrandECHGap)" />
+<constant name="RhGrandECHXLocationInGrandR2ModuleBegin" value="-1.5*RhGrandECHXDelta" />
+<constant name="RhGrandECHYLocationInR2Module" value="0.0*mm" />
+<constant name="RhGrandECHZLocationInR2Module" value= "RhStdECR2ZLocationInR2Module" />
+
+<constant name="RhGrandECHN0XPos"   value="RhGrandECHXLocationInGrandR2ModuleBegin" />
+<constant name="RhGrandECHN1XPos"   value="RhGrandECHXLocationInGrandR2ModuleBegin +   RhGrandECHXDelta" />
+<constant name="RhGrandECHN2XPos"   value="RhGrandECHXLocationInGrandR2ModuleBegin + 2*RhGrandECHXDelta" />
+<constant name="RhGrandECHN3XPos"   value="RhGrandECHXLocationInGrandR2ModuleBegin + 3*RhGrandECHXDelta" />
+
+
+
+<constant name="RhGrandECHRotZ"  value="-0.5*pi*rad" />
+<constant name="RhGrandECHN0RotZ" value="RhGrandECHRotZ" />
+<constant name="RhGrandECHN1RotZ" value="RhGrandECHRotZ" />
+<constant name="RhGrandECHN2RotZ" value="RhGrandECHRotZ" />
+<constant name="RhGrandECHN3RotZ" value="RhGrandECHRotZ" />
+
+  </define>
+</lccdd>

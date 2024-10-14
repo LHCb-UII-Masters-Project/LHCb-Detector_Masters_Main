@@ -1,0 +1,36 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--  First version:   11-10-2011 SE                                            -->
+<!--  ==========================================================================-->
+<!-- RICH DDDB Database configuraton parameters                                 -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+<!-- Photodetector configuration: 0  means Full set of HPDs as done until 2012  -->
+<!--                              1  means Full set of MAPMTS for LHCb phase 1 upgrade -->
+
+<!--      The Logvols and geometry, structure files are configured accordingly. -->
+
+<constant name="RichPhotoDetectorConfig" value="1" />
+
+<!-- Rich1 PMT Array configuration (0=all same pmts=R13742 (H11725)  -->
+<!-- as used until 2017.  1= PMT array configuration as used from 2018 -->
+<!-- onwards )                                                         -->
+
+<constant name="Rich1PMTArrayConfig" value="1" />
+
+<!-- Rich2 PMT Array configuration (0=all pmts same and are R13742(  -->
+<!-- R11725)  type, 1= all pmts same and are GrandPMTS= R13743 (H12700) -->
+<!-- Type 2= Mixed version with some rows of R13742 and other rows with -->
+<!-- R13743)  3= Mixed version with rows od R13742 and R13743 as used from -->
+<!-- 2018 onwards                                                          -->
+<constant name="Rich2PMTArrayConfig" value="3" />
+
+  </define>
+</lccdd>

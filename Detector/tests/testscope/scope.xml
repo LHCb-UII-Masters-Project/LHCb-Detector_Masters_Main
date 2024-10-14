@@ -1,0 +1,97 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+<!-- ========================================================================== -->
+<!--  Detector test                                                             -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <info name="Scope" title="Scope" author="Scope" url="http://cern.ch/lhcb" status="development" version="$Id: $">
+    <comment>
+      Test detector
+    </comment>
+  </info>
+  <geometry open="true" close="false"/>
+
+  <includes>
+    <gdmlFile ref="sc/elements.xml" />
+    <gdmlFile ref="sc/materials.xml" />
+  </includes>
+
+  <define>
+    <constant name="world_side" value="10*m" />
+    <constant name="world_x" value="world_side/2" />
+    <constant name="world_y" value="world_side/2" />
+    <constant name="world_z" value="world_side/2" />
+    <constant name="tracker_region_rmax" value="2.0*m" />
+    <constant name="tracker_region_zmax" value="2.0*m" />
+    <constant name="SolenoidField_zMax" value="4.0*m" />
+    <constant name="SolenoidField_outer_radius" value="4.0*m" />
+    <constant name="BField_nominal" value="2.0*tesla" />
+    <constant name="scope_width" value="0.3*m" />
+    <constant name="scope_length" value="0.6*m" />
+    <constant name="scope_box_thickness" value="2*cm" />
+
+  </define>
+
+  <limits>
+    <limitset name="Tracker_limits">
+      <limit name="step_length_max" particles="*" value="5.0" unit="mm" />
+    </limitset>
+  </limits>
+
+  <display>
+    <vis name="BoxVisExt" alpha="1.0" r="0.0" g="0.0" b="0.3" showDaughters="true" visible="true" />
+    <vis name="BoxVis" alpha="1.0" r="0.0" g="0.0" b="0.6" showDaughters="true" visible="false" />
+    <vis name="ScopeVis" alpha="1.0" r="0.5" g=".5" b=".5" showDaughters="true" visible="true" />
+  </display>
+
+  <detectors>
+    <detector name="scope" type="TScopeAll_v1_0" parent="/world" vis="BoxVis" readout="ScopeCollection">
+      <!--DImensions of the outside box-->
+      <box dx="scope_width" dy="scope_width" dz="scope_length" thickness="scope_box_thickness"/>
+      <!-- Dimensions of a sensor and of the array -->
+      <dimensions width="10*cm" height="12*cm" thickness="3*mm" gap="9.7*cm" number="10" />
+      <!-- Positionning each side independently -->
+      <side>
+        <comment>Side 1</comment> 
+        <position x="6*cm" y="0" z="3*cm" />
+      </side>
+      <side>
+        <comment>Side 2</comment>
+        <position x="-6*cm" y="0" z="0" />
+      </side>
+    </detector>
+  </detectors>
+
+  <readouts>
+    <readout name="ScopeCollection">
+      <!--segmentation type="CartesianGridXY" grid_size_x="1*cm" grid_size_y="1*cm" /-->
+      <id>system:8,side:4,sensor:4,</id>
+    </readout>
+  </readouts>
+
+  <fields>
+    <field type="solenoid" name="GlobalSolenoid" inner_field="BField_nominal" outer_field="-1.5*tesla" zmax="SolenoidField_zMax" inner_radius="SolenoidField_outer_radius" outer_radius="world_side" />
+  </fields>
+
+  <plugins>
+    <plugin name="LHCb_TestScope_cond_XML_reader" type="xml">
+       <conditions_config prefix="Conditions/" />
+      <alignment detector="scope" path="Alignment/Global.yml" name="scope"/>
+      <alignment_pattern regex="side\d" path="Alignment/Sides.yml"/>
+      <alignment_pattern path_regex=".*side(\d)/sensor(\d)$" path="Alignment/Sensors.yml" name="sensor_${1}_${2}"/>
+      <condition_pattern path_regex=".*side(\d)/sensor(\d)$" path="Param/Sensors.yml" name="gain_${1}_${2}"/>
+    </plugin>
+    <plugin name="LHCb_Align_cond_XML_reader" type="xml"/>
+  </plugins>
+
+
+</lccdd>

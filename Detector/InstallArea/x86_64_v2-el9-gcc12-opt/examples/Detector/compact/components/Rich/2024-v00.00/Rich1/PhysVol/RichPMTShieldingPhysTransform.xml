@@ -1,0 +1,61 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+
+<!--    Begin Rich1 PMT shielding Window Phys          -->
+<!--                                                -->
+<!--     Rich1 PMT shieldingVolumes  are inside  -->
+<!--     LOGVOL lvRich1PmtECR.... volumes  -->
+<!--     Here only the single shield plate pv volume transforms are listed -->
+<!--     They are renamed for the different ECRs when building the corresponding pv   -->
+<!--     Old names kept for reference    -->
+<!--     <physvol name="pvRichPmtSingleShieldingLongPlate" logvol="lvRichPmtShieldingLongPlate">-->
+<!--     <physvol name="pvRichPmtSingleShieldingSemiPlateTop" logvol="lvRichPmtShieldingSemiPlate">-->
+<!--     <physvol name="pvRichPmtSingleShieldingSemiPlateBottom" logvol="lvRichPmtShieldingSemiPlate">-->
+
+
+<Rich1>
+
+
+    <item name="PhysVolName"    value= "pvRichPmtSingleShieldingLongPlate" />
+    <item name="PhysVolName"    value= "pvRichPmtSingleShieldingSemiPlateTop"/>
+    <item name="PhysVolName"    value= "pvRichPmtSingleShieldingSemiPlateBottom" />
+
+    <item name="TransformName"  value="pvRichPmtSingleShieldingLongPlateTransform">
+      <transformation>
+           <position  x = "RhPMTShieldingLongPlateXLocation"
+                      y = "RhPMTShieldingLongPlateYLocation"
+                      z = "RhPMTShieldingPlateZLocation" />
+
+      </transformation>
+    </item>
+
+    <item name="TransformName"  value="pvRichPmtSingleShieldingSemiPlateTopTransform">
+      <transformation>
+           <position  x= "RhPMTShieldingSemiPlateXLocation"
+                      y= "RhPMTShieldingSemiPlateYLocationTop"
+                      z= "RhPMTShieldingSemiPlateZLocation" />
+
+      </transformation>
+    </item>
+
+    <item name="TransformName"  value="pvRichPmtSingleShieldingSemiPlateBottomTransform">
+      <transformation>
+           <position  x= "RhPMTShieldingSemiPlateXLocation"
+                      y= "RhPMTShieldingSemiPlateYLocationBottom"
+                      z= "RhPMTShieldingSemiPlateZLocation" />
+
+      </transformation>
+    </item>
+
+
+
+ </Rich1>

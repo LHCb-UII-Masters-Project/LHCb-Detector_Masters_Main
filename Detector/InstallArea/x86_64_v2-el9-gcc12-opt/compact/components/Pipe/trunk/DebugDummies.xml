@@ -1,0 +1,61 @@
+<!--===========================================================================-->
+<!--  LHCb Detector Description                                                -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  M.Frank                                                        -->
+<!--   @date    14/10/2018                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<lccdd>
+  <define>
+    <!-- UT Geometry parameters -->
+    <constant name="UTFrameOuterWidth"    value="2586*mm"/>
+    <constant name="UTFrameOuterHeight"   value="2628*mm"/>
+    <constant name="UTBoxOuterThickness"  value="430.0*mm"/>
+    <constant name="UTSystemZ"            value="2485*mm"/>
+    <constant name="Rich1MasterXSize" value="2.50*m" />
+    <constant name="Rich1MasterYSize" value="5.0*m" />
+    <constant name="Rich1MasterZSize" value="2.30*m" />
+  </define>
+
+  <!-- Positions imported from BeforeMagnet/geometry.xml  -->
+  <detectors>
+    <!-- Dummy VP to support VP beampipe   -->
+    <detector name="VP" type="DD4hep_VolumeAssembly" parent="${VP:parent}" vis="LightGrey">
+      <envelope name="lvVP" vis="LightGrey" material="Air">
+        <shape type="BooleanShape" operation="union" name="VeloUnion">
+          <shape type="Tube" name="VeloTubs1"
+                 dz="VP:VeloZ/2"
+                 rmax="VP:VeloRad"/>
+          <shape type="Tube" name="VeloTubs2"
+                 dz="VP:VeloDSEndDeltaZ/2"
+                 rmax="VP:VeloRad"/>
+          <position z="VP:VeloDSEndStartZ+VP:VeloDSEndDeltaZ/2"/>
+          <shape type="Tube" name="VeloTubs3"
+                 dz="(VP:VeloEWFlangeZExcess+2*mm)/2"
+                 rmax="VP:vTankDownEWFlangeOR+2*mm"
+                 rmin="VP:vTankDownEWFlangeIR-2*mm"/>
+          <position z="VP:VeloDSEndStartZ+VP:VeloDSEndDeltaZ+(VP:VeloEWFlangeZExcess+2*mm)/2"/>
+        </shape>
+      </envelope>
+      <position z="0*mm"/>
+    </detector>
+    <!-- Dummy UT to support UT beampipe   -->
+    <detector name="UT" type="DD4hep_VolumeAssembly" parent="${UT:parent}" vis="LightGrey">
+      <envelope type="Box" vis="LightGrey" material="Air"
+                dx="UTFrameOuterWidth/2" dy="UTFrameOuterHeight/2" dz="UTBoxOuterThickness/2"/>
+      <position z="2495*mm"/>
+    </detector>
+    <!-- Dummy Rich1 to support Rich1 beampipe   -->
+    <detector name="Rich1" type="DD4hep_VolumeAssembly" parent="${Rich1:parent}" vis="LightGrey">
+      <envelope name="lvRich1Master" type="Box" vis="LightGrey" material="Air"
+                dx="Rich1MasterXSize/2" dy="Rich1MasterYSize/2" dz="Rich1MasterZSize/2"/>
+      <position z="1500*mm"/>
+    </detector>
+
+
+  </detectors>
+</lccdd>

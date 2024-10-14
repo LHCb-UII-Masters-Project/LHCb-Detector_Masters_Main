@@ -1,0 +1,36 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    09/11/2020                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich1 surface property parameters for optical property definitions       -->
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+
+<!--   The following may be be defined from fundamental constants in the future.    -->
+
+ <constant name="RichPhotEnUniteV" value="1.0*eV" />
+
+ <constant name="PhotMomWaveConv" value="RichPhotMomWaveCnv * RichPhotEnUniteV" />
+
+ <constant name="RichPropColDim"  value="2" />
+
+<!--  End of Rich Surface parameters  -->
+
+  </define>
+
+</lccdd>
+
+
+
+
+
+

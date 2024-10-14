@@ -1,0 +1,86 @@
+<up>
+<!--
+    (c) Copyright 2021 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+    <!-- ========== Metalization Layer ========== -->
+    <volume material="UP:Aluminium" name="lvMetalLayerE" vis="UP:Al">
+      <shape name="upMetalLayerE" type="Box" dx="UPPixelAlWide/2" dy="UPPixelAlLong/2" dz="UPSensorAlThick/2"/>
+    </volume>
+
+    <volume material="UP:Aluminium" name="lvMetalLayerF" vis="UP:Al">
+      <shape name="upMetalLayerF" type="Box" dx="UPPixel5AlWide/2" dy="UPPixel5AlLong/2" dz="UPSensorAlThick/2"/>
+    </volume>
+
+    <!-- ========== GuardRing ========== -->
+    <volume material="Silicon" name="lvGuardRingF" vis="UP:GR">
+      <shape name="upGuardRingF" type="BooleanShape" operation="subtraction">
+        <shape name="upGuardRingBox61" type="Box" dx="UPPixelWide/2" dy="(UPPixelLong-UPPixelBufferLong)/2" dz="UPSensorGRThickE/2"/>
+        <shape name="upGuardRingBox62" type="Box" dx="(UPPixelTrueWide+UPEpsilon)/2" dy="(UPPixelTrueLong+UPEpsilon)/2" dz="UPSensorGRThickE"/>
+      </shape>
+    </volume>
+
+
+    <!-- ========== Buffer ========== -->
+    <volume material="Silicon" name="lvBuffer" vis="UP:Sensor">
+      <shape name="upBufferBox" type="Box" dx="UPPixelTrueWide/2" dy="UPPixelBufferLong/2" dz="UPSensorSiThickE/2"/>
+    </volume>
+
+    <volume material="Silicon" name="lvPeriphery" vis="UP:Periphery">
+      <shape name="upPeripheryBox" type="Box" dx="UPPixelWide/2" dy="UPPixelBufferLong/2" dz="UPSensorSiThickE/2"/>
+    </volume>
+
+    <!-- ========== Sensor ========== -->
+    <volume material="Silicon" name="lvSensorFourteen" sensitive="1" vis="UP:Sensor">
+      <shape name="upSensorFourteen" type="Box" dx="UPPixelTrueWide/2" dy="UPPixelTrueLong/2" dz="UPSensorSiThickE/2"/>
+    </volume>
+
+
+    <!-- ========== Sector ========== -->
+    <volume material="Air" name="lvSectorFourteen" vis="UP:Envelope">
+      <shape name="upSectorFourteen" type="Box" dx="UPPixelTrueWide/2" dy="UPPixelTrueLong/2" dz="UPSensorSiThickE/2"/>
+    </volume>
+
+
+    <!-- ========== Sensor Group ========== -->
+    <volume name="lvOnePixelGroup" vis="UP:Envelope">
+      <physvol name="pvGuardRingFOnePixelGroup" volume="lvGuardRingF">
+        <position y="-UPPixelLong/2+UPPixelBufferLong+UPPixelSideLong+UPPixelTrueLong/2"/>
+      </physvol>
+      <physvol name="pvPeripheryOnePixelGroup" volume="lvPeriphery">
+        <position y="-UPPixelLong/2+UPPixelBufferLong/2"/>
+      </physvol>
+    </volume>
+
+    <volume name="lvPixelGroupA" vis="UP:Envelope">
+      <physvol name="pvMetalLayerPixelGroupA" volume="lvMetalLayerE">
+        <position z="UPSensorAlZ"/>
+      </physvol>
+
+    </volume>
+
+    <volume name="lvPixelGroupB" vis="UP:Envelope">
+      <physvol name="pvMetalLayerPixelGroupB" volume="lvMetalLayerF">
+        <position x="-UPPixelWide-UPPixelGap" z="UPSensorAlZ"/>
+      </physvol>
+
+    </volume>
+
+    <volume name="lvPixelGroup2A" vis="UP:Envelope">
+      <physvol name="pvGroup2A1" volume="lvPixelGroupA">
+        <position y="UPHybridFlex7Side+UPPixelLong+UPPixelGap/2"/>
+      </physvol>
+      <physvol name="pvGroup2A2" volume="lvPixelGroupA">
+        <position y="-(UPHybridFlex7Side+UPPixelLong+UPPixelGap/2)"/>
+        <rotation z="180*degree"/>
+      </physvol>
+    </volume>
+
+  </up>

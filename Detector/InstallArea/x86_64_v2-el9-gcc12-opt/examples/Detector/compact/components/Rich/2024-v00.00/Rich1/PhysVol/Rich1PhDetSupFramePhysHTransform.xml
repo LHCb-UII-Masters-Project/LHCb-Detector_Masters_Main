@@ -1,0 +1,69 @@
+<!--
+    (c) Copyright 2020 CERN for the benefit of the LHCb Collaboration
+
+    This software is distributed under the terms of the GNU General Public
+    Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING".
+
+    In applying this licence, CERN does not waive the privileges and immunities
+    granted to it by virtue of its status as an Intergovernmental Organization
+    or submit itself to any jurisdiction.
+-->
+
+<!-- Begin Rich1PhotDetSupFramePhysH0Transform and  -->
+<!--       Rich1PhotDetSupFramePhysH1Transform        -->
+
+<!--  ===================================================== -->
+
+<!--     Rich1 PhotDet FrameH0  is inside  -->
+<!--     LOGVOL lvRich1MagShH0.          -->
+
+
+<!--    Rich1 PhotDet FrameH1  is inside -->
+<!--    LOGVOL lvRich1MagShH1 -->
+
+<!--          Old format for reference       -->
+<!--         <physvol  name="pvRich1PhDetSupFrameH0:0"  -->
+<!--         volume="lvRich1PhDetSupFrameH0" >       -->
+
+
+<!--      <physvol  name="pvRich1PhDetSupFrameH1:1" -->
+<!--              volume="lvRich1PhDetSupFrameH1" > -->
+<!--  ===================================================== -->
+
+
+
+<Rich1>
+<!--   The Physvol copy numbers are listed in                 -->
+<!--   ../GeomParam/Rich1Run3PhysVolGeneralCopyNumbers.xml    -->
+
+    <item name="PhysVolName"    value="pvRich1PhDetSupFrameH0" />
+    <item name="PhysVolName"    value="pvRich1PhDetSupFrameH1" />
+
+    <item name="TransformName"  value="pvRich1PhDetSupFrameH0Transform">
+
+      <transformation>
+           <position  x ="Rh1PhDetSupTopXH0"
+                      y ="Rh1PhDetSupTopYH0"
+                      z ="Rh1PhDetSupTopZH0"  />
+           <rotation  x = "Rh1PhDetSupTopRotXH0"
+                      y = "Rh1PhDetSupTopRotYH0" />
+      </transformation>
+
+   </item>
+
+   <item name="TransformName"  value="pvRich1PhDetSupFrameH1Transform">
+
+      <transformation>
+           <position  x ="Rh1PhDetSupBotXH1"
+                      y ="Rh1PhDetSupBotYH1"
+                      z ="Rh1PhDetSupBotZH1"  />
+           <rotation  x = "Rh1PhDetSupBotRotXH1"
+                      y = "Rh1PhDetSupBotRotYH1" />
+      </transformation>
+
+   </item>
+
+</Rich1>
+
+<!--          End   Rich1PhDetSupFramePhysH0Transform and -->
+<!--                Rich1PhDetSupFramePhysH1Transform     -->

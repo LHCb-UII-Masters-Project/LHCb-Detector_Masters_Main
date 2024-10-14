@@ -1,0 +1,65 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/07/2020                                                      -->
+<!--  First version:   13-08-2013 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters for large MAPMT components      -->
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+
+<!--    RICH Grand MAPMT  Master Volume -->
+
+
+  <constant name ="RhGrandPMTMasterLengthSize" value="52.2*mm" />
+  <constant name ="RhGrandPMTSMasterLengthSize" value="RhGrandPMTMasterLengthSize" />
+  <constant name ="RhGrandPMTMasterZSize" value="19.4*mm"  />
+  <constant name ="RhGrandPMTSMasterZSize" value="RhGrandPMTMasterZSize" />
+<!-- Now the component sizes -->
+  <constant name ="RhGrandPMTAnodeXSize" value="48.5*mm" />
+  <constant name ="RhGrandPMTAnodeYSize" value="RhGrandPMTAnodeXSize" />
+  <constant name ="RhGrandPMTAnodeZSize"  value="0.5*mm" />
+  <constant  name ="RhGrandPMTEdgePixelSize" value="6.25*mm" />
+  <constant name ="RhGrandPMTPixelGap"    value="0.005*mm" />
+
+  <constant name ="RhGrandPMTPixelXSize"  value="6.0*mm" />
+  <constant name ="RhGrandPMTPixelYSize"  value="RhGrandPMTPixelXSize" />
+  <constant name ="RhGrandPMTPixelZSize"  value="RhGrandPMTAnodeZSize" />
+
+
+
+  <constant name ="RhGrandPMTNumPixelsInRow"  value="8" />
+  <constant name ="RhGrandPMTNumPixelsInCol"  value="8" />
+  <constant name="RichGrandPmtTotalNumberofPixels" value="64"  />
+  <constant name ="RhGrandPMTQuartzLengthSize"   value="50.4*mm" />
+
+
+  <constant name = "RhGrandPMTBackEnvelopeSize"  value= "RhGrandPMTSMasterLengthSize-RhPMTTolerence"/>
+  <constant name = "RhGrandPMTFrontRingLateralOuterSize" value="RhGrandPMTSMasterLengthSize-RhPMTTolerence" />
+
+  <constant name = "RhGrandPMTFrontRingSubHoleXSize" value="RhGrandPMTFrontRingLateralOuterSize-(2.0*RhPMTFrontRingLateralThickness)" />
+  <constant name = "RhGrandPMTFrontRingSubHoleYSize" value="RhGrandPMTFrontRingSubHoleXSize" />
+
+ <!-- <constant name = "RhGrandPMTPhCathodeLengthSize" value="RhGrandPMTQuartzLengthSize" /> -->
+  <constant name = "RhGrandPMTPhCathodeLengthSize" value="RhGrandPMTAnodeXSize" />
+
+  <constant name = "RhGrandPMTSubMasterXPos" value="0.0*mm" />
+  <constant name = "RhGrandPMTSubMasterYPos" value="0.0*mm" />
+  <constant name = "RhGrandPMTSubMasterZPos" value="0.0*mm" />
+
+
+
+  <constant name ="RhGrandPMTSideEnvelopeLateralOuterSize" value="RhGrandPMTSMasterLengthSize-RhPMTTolerence" />
+  <constant  name ="RhGrandPMTSideEnvelopeHoleSize" value="RhGrandPMTSideEnvelopeLateralOuterSize-(2.0*RhPMTFrontRingLateralThickness)" />
+
+
+  </define>
+
+</lccdd>

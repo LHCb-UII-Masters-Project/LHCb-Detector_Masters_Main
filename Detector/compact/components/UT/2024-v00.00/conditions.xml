@@ -1,0 +1,48 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+<lccdd>
+
+  <plugins>
+    <plugin name="LHCb_UT_cond_XML_reader" type="xml">
+
+      <conditions_config prefix="Conditions/UT"/>
+
+      <alignment detector="UT" path="Alignment/Global.yml" name="UTSystem"/>
+      <alignment_pattern path_regex=".*([CA])side" path="Alignment/Global.yml" name="UT${1}side"/>
+      <alignment_pattern path_regex=".*([CA])side/UT(\S\S)" path="Alignment/HalfLayers.yml" name="UT${1}sideUT${2}"/>
+      <alignment_pattern path_regex=".*([CA])side/UT(\S\S)/Stave(\d)" path="Alignment/Staves.yml" name="UT${1}sideUT${2}Stave${3}"/>
+      <alignment_pattern path_regex=".*([CA])side/UT(\S\S)/Stave(\d)/Face(\d)" path="Alignment/Staves.yml" name="UT${1}sideUT${2}Stave${3}Face${4}"/>
+      <alignment_pattern path_regex=".*([CA])side/UT(\S\S)/Stave(\d)/Face(\d)/Module(\d)" path="Alignment/Modules.yml" name="UT${1}sideUT${2}Stave${3}Face${4}Module${5}"/>
+
+      <conditions path="ReadoutConf/ProductionMap.yml">
+        <condition name="ProductionMap"/>
+      </conditions>
+      <conditions path="ReadoutConf/ClusteringThresholds.yml">
+        <condition name="ClusteringThresholds"/>
+      </conditions>
+      <conditions path="ReadoutConf.yml">
+        <condition name="ReadoutMap"/>
+      </conditions>
+      <conditions path="ChannelInfo/NoiseValues.yml">
+        <condition name="NoiseValues"/>
+      </conditions>
+      <conditions path="ChannelInfo/ReadoutSectors.yml">
+        <condition name="ReadoutSectors"/>
+      </conditions>
+      <conditions path="HitError.yml">
+        <condition name="HitError" optional='1'/>
+      </conditions>
+
+    </plugin>
+  </plugins>
+
+</lccdd>

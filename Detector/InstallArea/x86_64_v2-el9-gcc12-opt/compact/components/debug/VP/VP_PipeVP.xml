@@ -1,0 +1,29 @@
+<!-- ========================================================================== -->
+<!--  LHCb Detector Description                                                 -->
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+
+<lccdd>
+
+  <debug>
+    <type name="includes" value="0" />
+    <type name="incguard" value="1" />
+  </debug>
+
+  <includes>
+    <file ref="../../Materials/trunk/common.xml" />
+    <file ref="../../Pipe/trunk/PipeCommon.xml" />
+    <file ref="../../Regions/trunk/Regions-invisible.xml"/>
+  </includes>
+
+  <include ref="../../VP/trunk/VP.xml" />
+  <include ref="../../Pipe/trunk/PipeVP.xml" />
+
+</lccdd>

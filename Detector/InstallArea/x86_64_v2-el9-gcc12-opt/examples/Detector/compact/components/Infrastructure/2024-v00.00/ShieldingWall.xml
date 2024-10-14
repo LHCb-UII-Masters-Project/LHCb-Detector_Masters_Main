@@ -1,0 +1,339 @@
+<!--==========================================================================-->
+<!--  LHCb Detector Description                                                 -->
+<!--==========================================================================-->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--   @author  M.Frank                                                         -->
+<!--   @date    14/10/2018                                                      -->
+<!--                                                                            -->
+<!--==========================================================================-->
+<!-- XML description of the Cavern's parameter definitions                      -->
+<!--==========================================================================-->
+<lccdd>
+
+  <define>
+    <constant name="ShieldingWallHeight"  value="CavernOuterDiameter+5.0*m"/>
+    <constant name="ShieldingWallWidth"  value="CavernOuterDiameter+5.0*m"/>
+    <constant name="ShieldingWallThick"  value="3.1*m"/>
+    <!-- xPos is to join centre of main shielding wall (i.e. not barrack) -->
+    <constant name="ShieldingWallxPos"  value="CavernxPos+6.6*m-0.5*ShieldingWallThick"/>
+    <!-- y and z position move it to centre of cavern and of curvature for -->
+    <!-- cylindrical part of main cavern -->
+    <constant name="ShieldingWallyPos"  value="CavernyPos"/>
+    <constant name="ShieldingWallzPos"  value="CavernzPos"/>
+
+    <constant name="ShieldingWall:ExtraCut3"                      value="100.0*mm"/>
+    <constant name="ShieldingWall:ExtraCut2"                      value="0.1*mm"/>
+    <constant name="ShieldingWall:ExtraCut"                      value="5.0*mm"/>
+
+
+    <constant name="BarrackWallHeight"  value="ShieldingWallHeight"/>
+    <constant name="BarrackWallWidth"  value="ShieldingWallWidth"/>
+    <constant name="BarrackWallThick"  value="4.0*m"/>
+    <constant name="BarrackWallxPos"  value="0.0*m"/>
+    <constant name="BarrackWallyPos"  value="0.0*m"/>
+    <constant name="BarrackWallzPos"  value="0.5*(ShieldingWallThick+BarrackWallThick)+ShieldingWall:ExtraCut"/>
+
+    <constant name="ShieldingDoorWidth"  value="1100.0*mm"/>
+    <constant name="ShieldingDoorHeight"  value="2.4*m"/>
+    <constant name="ShieldingDoorxPos"  value="0.5*14300.0*mm + 0.5*ShieldingDoorWidth"/>
+    <constant name="BarrackDoorHeight"  value="ShieldingDoorHeight"/>
+    <constant name="ShieldingDooryPos"  value="-CavernFloorPosition+0.5*BarrackDoorHeight"/>
+    <constant name="ShieldingDoorzPos"  value="0.0*m"/>
+
+    <!-- assume barrack wall holes and shielding wall holes -->
+    <!-- over-lap/centred also symmetric between equipment door and access -->
+    <!-- door -->
+    <constant name="BarrackDoorWidth"  value="900.0*mm"/>
+    <constant name="BarrackDoorxPos"  value="0.5*14300.0*mm + 0.5*BarrackDoorWidth"/>
+    <constant name="BarrackDooryPos"  value="ShieldingDooryPos"/>
+    <constant name="BarrackDoorzPos"  value="ShieldingDoorzPos"/>
+
+    <constant name="BarrackHoleWidth"  value="13300.0*mm"/>
+    <constant name="BarrackHoleHeight"  value="11600.0*mm"/>
+    <constant name="BarrackHolexPos"  value="0.0*m"/>
+    <constant name="BarrackHoleyPos"  value="-CavernFloorPosition+0.5*BarrackHoleHeight-ShieldingWall:ExtraCut"/>
+    <constant name="BarrackHolezPos"  value="0.0*m"/>
+
+    <constant name="CERNBlockWidth" value="800.0*mm"/>
+    <constant name="CERNBlockDepth" value="1600.0*mm"/>
+    <constant name="CERNBlockHeight" value="2400.0*mm"/>
+
+    <constant name="ChicanexPos" value="-0.5*14300.0*mm + 0.5*CERNBlockWidth"/>
+    <constant name="ChicaneyPos" value="-CavernFloorPosition+0.5*CERNBlockHeight"/>
+    <constant name="ChicanezPos" value="-0.5*(ShieldingWallThick+CERNBlockDepth)"/>
+
+
+    <constant name="ShieldingCutWidth" value="ShieldingWallWidth+1.0*cm"/>
+    <constant name="ShieldingCutHeight" value="ShieldingWallHeight-7200.0*mm"/>
+    <constant name="ShieldingCutxPos" value="0.0*m"/>
+    <constant name="ShieldingCutyPos" value="-CavernFloorPosition+7200.0*mm+0.5*ShieldingCutHeight"/>
+    <constant name="ShieldingCutzPos" value="0.0*m"/>
+
+    <constant name="ShieldingTopWidth" value="ShieldingWallWidth"/>
+    <constant name="ShieldingTopHeight" value="4800.0*mm"/>
+    <constant name="ShieldingTopxPos" value="0.0*m"/>
+    <constant name="ShieldingTopyPos" value="-CavernFloorPosition+7200.0*mm+0.5*ShieldingTopHeight+ShieldingWall:ExtraCut"/>
+    <constant name="ShieldingTopzPos" value="-350.0*mm"/>
+
+  </define>
+
+
+  <detectors>
+    <detector name="ShieldingWall" type="DD4hep_VolumeAssembly" parent="${Gantry:parent}" vis="Infrastructure:Vis">
+
+      <!--  the main volume , you can add any component you need  -->
+      <envelope name="lvShieldingWall" material="Infrastructure:Concrete" vis="Infrastructure:ConcreteVis">
+        <shape type="BooleanShape" operation="subtraction" name="ShieldingWallCombined">
+          <shape type="BooleanShape" operation="union" name="ShieldingWallCombinedBox">
+            <shape type="BooleanShape" operation="subtraction" name="ShieldingWallBox">
+              <shape type="Box" name="ShieldingBox"
+                  dx="0.5*ShieldingWallWidth"
+                  dy="0.5*ShieldingWallHeight"
+                  dz="0.5*ShieldingWallThick"/>
+
+              <shape type="Box" name="ShieldingWallEquipmentDoor"
+                  dx="0.5*ShieldingDoorWidth"
+                  dy="0.5*ShieldingDoorHeight"
+                  dz="0.5*(ShieldingWallThick+1.0*cm)"/>
+              <position  x="ShieldingDoorxPos"
+                   y="ShieldingDooryPos"
+                   z="ShieldingDoorzPos"/>
+
+              <shape type="Box" name="ShieldingWallPersonnelDoor"
+                  dx="0.5*ShieldingDoorWidth"
+                  dy="0.5*ShieldingDoorHeight"
+                  dz="0.5*(ShieldingWallThick+1.0*cm)"/>
+              <position  x="-ShieldingDoorxPos"
+                   y="ShieldingDooryPos"
+                   z="ShieldingDoorzPos"/>
+
+              <shape type="Box" name="ShieldingWallTopCut"
+                  dx="0.5*ShieldingCutWidth"
+                  dy="0.5*ShieldingCutHeight"
+                  dz="0.5*(ShieldingWallThick+1.0*cm)"/>
+              <position  x="-ShieldingCutxPos"
+                   y="ShieldingCutyPos"
+                   z="ShieldingCutzPos"/>
+
+            </shape>
+
+
+            <shape type="BooleanShape" operation="subtraction" name="BarrackWallBox">
+              <shape type="Box" name="BarrackBox"
+                  dx="0.5*BarrackWallWidth"
+                  dy="0.5*BarrackWallHeight"
+                  dz="0.5*BarrackWallThick"/>
+
+              <shape type="Box" name="BarrackWallEquipmentDoor"
+                  dx="0.5*BarrackDoorWidth"
+                  dy="0.5*BarrackDoorHeight"
+                  dz="0.5*(BarrackWallThick+1.0*cm)"/>
+              <position  x="BarrackDoorxPos"
+                   y="BarrackDooryPos"
+                   z="BarrackDoorzPos"/>
+
+              <shape type="Box" name="BarrackWallPersonnelDoor"
+                  dx="0.5*BarrackDoorWidth"
+                  dy="0.5*BarrackDoorHeight"
+                  dz="0.5*(BarrackWallThick+1.0*cm)"/>
+              <position  x="-BarrackDoorxPos"
+                   y="BarrackDooryPos"
+                   z="BarrackDoorzPos"/>
+
+              <shape type="Box" name="BarrackWallHole"
+                  dx="0.5*BarrackHoleWidth"
+                  dy="0.5*BarrackHoleHeight"
+                  dz="0.5*(BarrackWallThick+1.0*cm)"/>
+              <position  x="BarrackHolexPos"
+                   y="BarrackHoleyPos"
+                   z="BarrackHolezPos"/>
+
+            </shape>
+            <position x="BarrackWallxPos"
+                   y="BarrackWallyPos"
+                   z="BarrackWallzPos"/>
+
+
+            <shape type="BooleanShape" operation="union" name="ShieldingChicane">
+              <shape type="Box" name="CERNBlock1"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+
+              <shape type="Box" name="CERNBlock2"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="0.0*m"
+                   y="0.0*m"
+                   z="-CERNBlockDepth"/>
+
+              <shape type="Box" name="CERNBlock3"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <!-- x and z positions swapped due to rotation about y-axis -->
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-0.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+0.5*CERNBlockWidth)"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock4"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-0.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+1.5*(CERNBlockWidth+ShieldingWall:ExtraCut))"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock5"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-0.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+2.5*(CERNBlockWidth+ShieldingWall:ExtraCut))"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock6"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-0.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+3.5*(CERNBlockWidth+ShieldingWall:ExtraCut))"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock7"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-1.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+3.5*(CERNBlockWidth+ShieldingWall:ExtraCut))"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock8"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-1.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+2.5*(CERNBlockWidth+ShieldingWall:ExtraCut))"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock9"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-1.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+1.5*(CERNBlockWidth+ShieldingWall:ExtraCut))"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock10"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(0.5*CERNBlockWidth+1100.0*mm-1.5*CERNBlockDepth)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+0.5*(CERNBlockWidth+ShieldingWall:ExtraCut))"/>
+              <rotation  y="90.0*degree"/>
+
+              <shape type="Box" name="CERNBlock11"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(1100.0*mm-2.0*CERNBlockDepth-ShieldingWall:ExtraCut)"
+                   y="0.0*m"
+                   z="-(1.5*CERNBlockDepth+1100.0*mm+3.0*CERNBlockWidth+ShieldingWall:ExtraCut)"/>
+
+              <shape type="Box" name="CERNBlock12"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="-(1100.0*mm-2.0*CERNBlockDepth-ShieldingWall:ExtraCut)"
+                   y="0.0*m"
+                   z="-(0.5*CERNBlockDepth+1100.0*mm+3.0*CERNBlockWidth+2.0*ShieldingWall:ExtraCut)"/>
+
+              <shape type="Box" name="CERNBlock13"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="1.0*m+CERNBlockWidth"
+                   y="0.0*m"
+                   z="-(-0.5*(CERNBlockDepth+ShieldingWall:ExtraCut)+1100.0*mm+3.0*CERNBlockWidth)+ShieldingWall:ExtraCut"/>
+
+              <shape type="Box" name="CERNBlock14"
+                  dx="0.5*CERNBlockWidth"
+                  dy="0.5*CERNBlockHeight"
+                  dz="0.5*CERNBlockDepth"/>
+              <position  x="1.0*m+CERNBlockWidth"
+                   y="0.0*m"
+                   z="-(-1.5*(CERNBlockDepth+ShieldingWall:ExtraCut)+1100.0*mm+3.0*CERNBlockWidth)+ShieldingWall:ExtraCut"/>
+            </shape>
+            <position x="ChicanexPos"
+                   y="ChicaneyPos"
+                   z="ChicanezPos"/>
+
+            <shape type="Box" name="ShieldingTopBox"
+                dx="0.5*ShieldingTopWidth"
+                dy="0.5*ShieldingTopHeight"
+                dz="0.5*ShieldingWallThick"/>
+            <position x="ShieldingTopxPos"
+                   y="ShieldingTopyPos"
+                   z="ShieldingTopzPos"/>
+          </shape>
+
+          <!-- Note: Duplicated!  -->
+          <shape type="BooleanShape" operation="subtraction" name="Cavern_totalCut">
+            <shape type="Tube" name="Cavern_TotalCut"
+                dz="0.5*CavernTotalWidth"
+                rmax="CavernOuterRadiusHeight+ShieldingCut"
+                rmin="CavernInnerRadiusHeight"
+                startphi="CavernStartAngle"
+                deltaphi="CavernDeltaAngle"/>
+            <shape type="Box" name="CavernFlatCut"
+                dx="0.5*2.0*(CavernOuterRadiusHeight+ShieldingCut)"
+                dy="0.5*1.0*m"
+                dz="0.5*CavernTotalWidth+1.0*m"/>
+            <position y="-2.67*m-0.5*m"/>
+          </shape>
+          <position y="0.0*m"/>
+
+          <!-- Note: Duplicated!  -->
+          <shape type="BooleanShape" operation="subtraction" name="CavernBoatCut">
+            <shape type="Trap" name="Cavern_TrapCut"
+               z="0.5*CavernTrapZ"
+               y1="0.5*(CavernTrapY1+CavernWallThick+ShieldingCut)"
+               x1="0.5*(CavernTrapX1+2.0*(CavernWallThick+ShieldingCut))"
+               x2="0.5*(CavernTrapX2+2.0*(CavernWallThick+ShieldingCut))"
+               y2="0.5*(CavernTrapY2+CavernWallThick+ShieldingCut)"
+               x3="0.5*(CavernTrapX3+2.0*(CavernWallThick+ShieldingCut))"
+               x4="0.5*(CavernTrapX4+2.0*(CavernWallThick+ShieldingCut))"/>
+
+            <shape type="Trap" name="Cavern_TrapInnerCut"
+               z="0.5*(CavernTrapZ+ShieldingWall:ExtraCut)"
+               y1="0.5*(CavernTrapY1+ShieldingWall:ExtraCut)"
+               x1="0.5*CavernTrapX1"
+               x2="0.5*CavernTrapX2"
+               y2="0.5*(CavernTrapY2+ShieldingWall:ExtraCut)"
+               x3="0.5*CavernTrapX3"
+               x4="0.5*CavernTrapX4"/>
+            <position y="0.5*(CavernWallThick+ShieldingCut)"/>
+          </shape>
+          <position y="CavernBoatY-0.5*ShieldingCut"/>
+        </shape>
+
+      </envelope>
+      <position x="ShieldingWallxPos" y="ShieldingWallyPos"  z="ShieldingWallzPos"/>
+      <rotation y="90.0*degree"/>
+
+    </detector>
+  </detectors>
+
+</lccdd>

@@ -1,0 +1,104 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/09/2020                                                      -->
+<!--  Modif    Sajan Easo 22-04-2022                                            -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 std Mapmt components     logvol                                     -->
+<!--  This includes the pmt phcathode which is a sensitive volume              -->
+<!--  These are identical to those in RichPmtComponentLog.xml, but made here   -->
+<!--  with Rich2 labels in order to avoid having the same labels used in Rich1 registered -->
+<!--  registered again for Rich2 by DD4HEP                                          -->
+<!--  ==========================================================================-->
+
+<Rich1>
+
+ <!-- Rich PMT description for upgraded RICH -->
+ <!-- The PMT Master is in anoter other xml file -->
+
+<volume name="lvRich2PMTSMaster"  material="Rich:RichPMTVacuum" vis="Rich:VisRichPMTSMaster" >
+
+   <shape type="Box"  name="Rich2PMTSMasterBox"
+       dx="RhPMTSMasterLengthSize*RhHalfSize"
+       dy="RhPMTSMasterLengthSize*RhHalfSize"
+       dz="RhPMTSMasterZSize*RhHalfSize" />
+
+</volume>
+
+<volume name="lvRich2PMTQuartz" material="Rich:RichPMTQuartzMaterial" vis="Rich:VisRichPMTQuartz" >
+
+    <shape type="Box" name="Rh2PMTQuartzBox"
+        dx= "RhPMTQuartzLengthSize*RhHalfSize"
+        dy= "RhPMTQuartzLengthSize*RhHalfSize"
+        dz= "RhPMTQuartzThickness*RhHalfSize" />   
+
+</volume>
+
+<volume name="lvRich2PMTPhCathode" material="Rich:RichPMTPhCathodeMaterial" vis="Rich:VisRichPMTPhCathode" sensitive="1" >
+
+     <shape type="Box" name="Rh2PMTPhCathodeBox"
+        dx = "RhPMTPhCathodeLengthSize*RhHalfSize"
+        dy = "RhPMTPhCathodeLengthSize*RhHalfSize"
+        dz = "RhPMTPhCathodeZThickness*RhHalfSize" />
+
+</volume> 
+
+<volume name="lvRich2PMTSideEnvelope" material="Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichPMTEnvelope"  >
+
+  <shape type="BooleanShape" operation="subtraction" name="Rich2PMTSideEnvSubract" >
+    <shape type="Box" name="Rh2PMTSideEnvelopeBox"
+        dx="RhPMTSideEnvelopeLateralOuterSize*RhHalfSize"
+        dy="RhPMTSideEnvelopeLateralOuterSize*RhHalfSize"
+        dz="RhPMTSideEnvelopeZLength*RhHalfSize" />
+    <shape type="Box" name="Rh2PMTSideEnvelopeHoleBox"
+       dx="RhPMTSideEnvelopeHoleSize*RhHalfSize"  
+       dy="RhPMTSideEnvelopeHoleSize*RhHalfSize"  
+       dz="RhPMTSideEnvelopeHoleLargeZSize*RhHalfSize" />  
+     <position z= "RhPMTSideEnvelopeHoleZPos" />
+  </shape>
+
+</volume>
+
+<volume name="lvRich2PMTBackEnvelope" material="Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichPMTEnvelope" >
+
+     <shape type="Box" name="Rh2PMTBackEnvBox" 
+      dx= "RhPMTBackEnvelopeSize*RhHalfSize"
+      dy= "RhPMTBackEnvelopeSize*RhHalfSize"
+      dz= "RhPMTBackEnvelopeThickness*RhHalfSize" />
+
+</volume> 
+
+<volume name="lvRich2PMTFrontRing" material = "Rich:RichPMTEnvelopeMaterial" vis="Rich:VisRichPMTFrontRing"  >
+
+  <shape type="BooleanShape" operation="subtraction" name = "Rich2PMTFrontEnvSubtract" >
+      <shape type="Box" name="Rich2PMTFrontEnvBox"
+       dx= "RhPMTFrontRingLateralOuterSize*RhHalfSize"
+       dy= "RhPMTFrontRingLateralOuterSize*RhHalfSize"
+       dz= "RhPMTFrontRingZSize*RhHalfSize" />
+      <shape type="Box" name = "Rich2PMTFrontEnvHoleBox" 
+       dx ="RhPMTFrontRingSubHoleXSize*RhHalfSize"
+       dy ="RhPMTFrontRingSubHoleYSize*RhHalfSize"
+       dz="RhPMTFrontRingSubHoleLargeZSize*RhHalfSize" />
+       <position z="RhPMTFrontRingSubHoleZPos" />
+    </shape>
+
+</volume>
+
+
+<volume name="lvRich2PMTAnode0000" material="Rich:RichPMTAnodeMaterial" vis = "Rich:VisRichPMTAnode" >
+
+    <shape type="Box" name="Rh2PMTAnodeBox0000"
+        dx = "RhPMTAnodeXSize*RhHalfSize"
+        dy = "RhPMTAnodeYSize*RhHalfSize"
+        dz = "RhPMTAnodeZSize*RhHalfSize" />
+
+</volume>
+
+
+</Rich1>
+

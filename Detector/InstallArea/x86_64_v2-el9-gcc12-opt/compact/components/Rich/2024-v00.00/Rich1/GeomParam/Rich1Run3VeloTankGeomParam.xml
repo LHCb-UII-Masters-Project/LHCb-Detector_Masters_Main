@@ -1,0 +1,42 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICHDetector Geometry description parameters in DD4HEP               -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--                                                                            -->
+<!-- this file contains the geometry parameters for the VeloTank that           -->
+<!-- is to be subtracted from Rich1Master   -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+
+    <constant name="Rh1VeloTankRadius" value="600.0*mm"  />
+
+
+    <constant name="Rh1VeloTankCylZSize" value="900.0*mm"  />
+
+    <!-- The following hardcoded number commented out is for info extracted from PipeGeomParams.xml  -->
+    <!--  <constant name="Rh1VeloTankCylDnstrEndZ"  value="970.0*mm" /> -->
+
+
+    <constant name="Rh1VeloTankCylDnstrEndZ"  value="UX851ZStartIP" />
+
+    <constant name="Rh1VeloTankCylZ" value="Rh1VeloTankCylDnstrEndZ-0.5*Rh1VeloTankCylZSize-Rich1MasterZ" />
+    <constant name="Rh1VeloTankCylZInRh1SubM" value="Rh1VeloTankCylZ-Rh1SubMasterZ" />
+    <!-- NB these values are bigger than the actual tank flange to allow some wiggle room -->
+    <constant name="Rh1VeloTankFlangeZSize" value="7*mm" />
+    <constant name="Rh1VeloTankFlangeIR" value="399*mm" />
+    <constant name="Rh1VeloTankFlangeOR" value="457*mm" />
+    <constant name="Rh1VeloTankFlangeZ" value="Rh1VeloTankCylDnstrEndZ+0.5*Rh1VeloTankFlangeZSize-Rich1MasterZ" />
+    <constant name="Rh1VeloTankFlangeZInRh1SubM" value="Rh1VeloTankFlangeZ-Rh1SubMasterZ" />
+
+   <!-- End Rich1  Velo Tank volume Geometry parameters  -->
+
+  </define>
+</lccdd>

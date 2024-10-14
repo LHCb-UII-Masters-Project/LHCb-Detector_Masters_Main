@@ -1,0 +1,27 @@
+<!--===========================================================================-->
+<!--  LHCb Detector material Description                                       -->
+<!--===========================================================================-->
+<!--                                                                           -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN) -->
+<!--  All rights reserved.                                                     -->
+<!--                                                                           -->
+<!--   @author  S.Easo                                                         -->
+<!--   @date    20/01/2022                                                     -->
+<!--                                                                           -->
+<!--===========================================================================-->
+<!--  Rich2 detector user parameters                                           -->
+<!--  These are not needed for creating detector description. However useful   -->
+<!--  in different LHCb applications                                           -->      
+<!--===========================================================================-->
+<lccdd>
+
+  <define>
+
+    <constant name="Rh2NumSphMirrorSegRows"   value="7" />
+    <constant name="Rh2NumSphMirrorSegCols"   value="4" />
+
+
+  </define>
+
+</lccdd>
+

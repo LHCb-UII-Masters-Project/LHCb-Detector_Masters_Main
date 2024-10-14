@@ -1,0 +1,159 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     10/07/2020                                                      -->
+<!--  First version:   31-10-2017 SE                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains few basic parameters for Rich PMT numbering scheme.     -->
+<!--  ==========================================================================-->
+<lccdd>
+  <define>
+
+<!-- Numbering RICH PMTS in RICH1 and RICH2 -->
+
+
+
+<constant name = "RhNumPMTInECRRow"    value="2" />
+<constant name = "RhNumPMTInECRCol"    value="2" />
+<constant name = "RhNumPMTInECR"  value="RhNumPMTInECRRow*RhNumPMTInECRCol" />
+
+<constant name = "Rh1NumECRInStdModuleRow"  value="4" />
+<constant name = "Rh1NumECRInStdModuleCol"  value="1" />
+<constant name = "Rh1NumECRInStdModule"   value="Rh1NumECRInStdModuleRow*Rh1NumECRInStdModuleCol" />
+
+<constant name = "Rh1NumECRInEdgeModuleRow"  value="3" />
+<constant name = "Rh1NumECRInEdgeModuleCol"  value="1" />
+<constant name = "Rh1NumECRInEdgeModule" value="Rh1NumECRInEdgeModuleRow*Rh1NumECRInEdgeModuleCol" />
+
+
+<constant name = "Rh1NumECRInOuterCornerModuleRow"  value="0" />
+<constant name = "Rh1NumECRInOuterCornerModuleCol"  value="0" />
+<constant name = "Rh1NumECRInOuterCornerModule" value="Rh1NumECRInOuterCornerModuleRow*Rh1NumECRInOuterCornerModuleCol" />
+
+
+<constant name = "RhNumECRInStdModule" value=  "Rh1NumECRInStdModule" />
+
+
+<constant name = "Rh1NumPMTModulesInRow" value="6" />
+<constant name = "Rh1NumPMTModulesInColumn" value="11" />
+
+<constant name = "Rh1NumPMTStdModulesInRow" value="4" />
+<constant name = "Rh1NumPMTEdgeModulesInRow" value="2" />
+<constant name = "Rh1NumPMTEdgeNonOuterCornerModulesInPanelSide" value="10" />
+
+<constant name = "Rh1NumPMTInModuleCol" value= "2" />
+<constant name = "Rh1NumPanels" value="2" />
+
+
+<constant name = "Rh1TotalNumPMTStdModulesInPanel" value="Rh1NumPMTStdModulesInRow*Rh1NumPMTModulesInColumn" />
+<constant name = "Rh1NumPMTEdgeNonOuterCornerModulesInPanel"   value="2*Rh1NumPMTEdgeNonOuterCornerModulesInPanelSide"/>
+<constant name = "Rh1NumPMTOuterCornerModulesInPanel"  value="2" />
+
+
+
+<constant name = "Rh1TotalNumPMTModulesInPanel" value="Rh1NumPMTModulesInRow*Rh1NumPMTModulesInColumn" />
+
+<constant name = "Rh1TotalNumPMTModules" value="Rh1NumPanels*Rh1TotalNumPMTModulesInPanel" />
+<constant name = "Rh1TotalNumPMTStdModules" value="Rh1NumPanels*Rh1TotalNumPMTStdModulesInPanel" />
+<constant name = "Rh1NumPMTEdgeNonOuterCornerModules"  value="Rh1NumPanels*Rh1NumPMTEdgeNonOuterCornerModulesInPanel" />
+<constant name = "Rh1NumPMTOuterCornerModules" value="Rh1NumPanels*Rh1NumPMTOuterCornerModulesInPanel" />
+<constant name = "Rh1NumPMTEdgeCornerModules" value="Rh1NumPMTEdgeNonOuterCornerModules+Rh1NumPMTOuterCornerModules" />
+
+
+<constant name = "Rh1MaxNumberOfECRInPanel"  value="Rh1TotalNumPMTModulesInPanel*Rh1NumECRInStdModule" />
+<constant name = "Rh1MaxNumberOfECR"   value="Rh1NumPanels*Rh1MaxNumberOfECRInPanel" />
+
+<constant name = "Rh1MaxNumberOfPMTInPanel"  value="Rh1MaxNumberOfECRInPanel*RhNumPMTInECR" />
+<constant name = "Rh1MaxNumberOfPMT" value="Rh1NumPanels*Rh1MaxNumberOfPMTInPanel"/>
+
+
+
+<constant name = "Rh1NumPMTInStdModuleRow" value= "Rh1NumECRInStdModuleRow*RhNumPMTInECRRow" />
+<constant name = "Rh1NumPMTInEdgeModuleRow" value= "Rh1NumECRInEdgeModuleRow*RhNumPMTInECRRow" />
+<constant name = "Rh1NumPMTInOuterCornerModuleRow" value= "Rh1NumECRInOuterCornerModuleRow*RhNumPMTInECRRow" />
+
+<constant name = "Rh1NumPMTInStdModuleCol" value= "Rh1NumECRInStdModuleCol*RhNumPMTInECRCol" />
+
+<constant name = "Rh1NumPMTInStdModule"  value="Rh1NumPMTInStdModuleRow*Rh1NumPMTInModuleCol" />
+<constant name = "Rh1NumPMTInEdgeModule"  value="Rh1NumPMTInEdgeModuleRow*Rh1NumPMTInModuleCol" />
+<constant name = "Rh1NumPMTInOuterCornerModule"  value="Rh1NumPMTInOuterCornerModuleRow*Rh1NumPMTInModuleCol" />
+
+<constant name = "Rh1NumStdModuleECRInPanel" value= "(Rh1TotalNumPMTStdModulesInPanel * Rh1NumECRInStdModule)" />
+<constant name = "Rh1NumEdgeNonOuterCornerModuleECRInPanel"  value= "(Rh1NumPMTEdgeNonOuterCornerModulesInPanel* Rh1NumECRInEdgeModule )" />
+<constant name = "Rh1NumOuterCornerModuleECRInPanel" value="(Rh1NumPMTOuterCornerModulesInPanel * Rh1NumECRInOuterCornerModule)" />
+
+<constant name = "Rh1NumECRInPanel"  value="Rh1NumStdModuleECRInPanel + Rh1NumEdgeNonOuterCornerModuleECRInPanel + Rh1NumOuterCornerModuleECRInPanel" />
+ 
+<constant name = "Rh1NumberOfECR" value="Rh1NumPanels*Rh1NumECRInPanel" />
+
+<constant name = "Rh1NumPMTInPanel" value= "Rh1NumECRInPanel * RhNumPMTInECR " />
+
+<constant name = "Rh1TotalNumberOfPMT"  value="Rh1NumPanels*Rh1NumPMTInPanel" />
+
+
+
+<!--   Now for RICH2 PMT NUmbering -->
+
+<constant name = "RhNumGrandPMTInECH"  value="1" />
+
+<constant name = "Rh2NumECRInStdModuleRow"  value="4" />
+<constant name = "Rh2NumECRInStdModuleCol"  value="1" />
+<constant name = "Rh2NumECRInStdModule"   value="Rh2NumECRInStdModuleRow*Rh2NumECRInStdModuleCol" />
+
+<constant name = "Rh2NumECHInGrandModuleRow"  value="4" />
+<constant name = "Rh2NumECHInGrandModuleCol"  value="1" />
+<constant name = "Rh2NumECHInGrandModule"   value="Rh2NumECHInGrandModuleRow*Rh2NumECHInGrandModuleCol" />
+
+
+
+
+<constant name = "Rh2NumStdPMTModulesInRow" value="12" />
+<constant name = "Rh2NumStdPMTModulesInColumn" value="2" />
+<constant name = "Rh2NumGrandPMTModulesInTopColumn" value="2" />
+<constant name = "Rh2NumGrandPMTModulesInBotColumn" value="2" />
+<constant name = "Rh2NumGrandPMTModulesInColumn" value="Rh2NumGrandPMTModulesInTopColumn+Rh2NumGrandPMTModulesInBotColumn" />
+
+<constant name ="RhNumGrandPMTInModule"  value="RhNumGrandPMTInECH*Rh2NumECHInGrandModule"/>
+
+
+<constant name = "Rh2NumPanels" value="2" />
+
+<constant name = "Rh2TotalNumStdPMTModulesInPanel" value="Rh2NumStdPMTModulesInRow*Rh2NumStdPMTModulesInColumn" />
+<constant name = "Rh2TotalNumStdPMTModules"  value="Rh2NumPanels*Rh2TotalNumStdPMTModulesInPanel" />
+
+<constant name = "Rh2TotalNumGrandPMTModulesInTopPanel" value="Rh2NumStdPMTModulesInRow*Rh2NumGrandPMTModulesInTopColumn" />
+<constant name = "Rh2TotalNumGrandPMTModulesInBottomPanel" value="Rh2NumStdPMTModulesInRow*Rh2NumGrandPMTModulesInBotColumn" />
+
+<constant name = "Rh2TotalNumGrandPMTModulesInPanel" value="Rh2TotalNumGrandPMTModulesInTopPanel+Rh2TotalNumGrandPMTModulesInBottomPanel" />
+<constant name = "Rh2TotalNumGrandPMTModules" value="Rh2NumPanels*Rh2TotalNumGrandPMTModulesInPanel" />
+
+<constant name = "Rh2TotalNumPMTModules"  value="Rh2TotalNumStdPMTModules+Rh2TotalNumGrandPMTModules" />
+
+<constant name = "Rh2TotalNumPMTModulesInPanel" value ="Rh2TotalNumStdPMTModulesInPanel+Rh2TotalNumGrandPMTModulesInPanel" />
+
+<constant name = "Rh2TotalNumStdPMTECRInPanel"  value="Rh2TotalNumStdPMTModulesInPanel*Rh2NumECRInStdModule" />
+<constant name = "Rh2TotalNumStdPMTECR" value="Rh2NumPanels*Rh2TotalNumStdPMTECRInPanel" />
+<constant name = "Rh2TotalNumGrandPMTECHInPanel" value="Rh2TotalNumGrandPMTModulesInPanel*Rh2NumECHInGrandModule" />
+<constant name = "Rh2TotalNumGrandPMTECH"  value="Rh2NumPanels*Rh2TotalNumGrandPMTECHInPanel" />
+
+
+<constant name = "Rh2TotalNumStdPMTInPanel" value="Rh2TotalNumStdPMTECRInPanel*RhNumPMTInECR"  />
+<constant name = "Rh2TotalNumStdPMT"  value="Rh2NumPanels*Rh2TotalNumStdPMTInPanel" />
+
+<constant name = "Rh2TotalNumGrandPMTInPanel" value="Rh2TotalNumGrandPMTECHInPanel" />
+<constant name = "Rh2TotalNumGrandPMT"  value="Rh2NumPanels*Rh2TotalNumGrandPMTInPanel" />
+
+
+<constant name = "Rh2TotalNumPMTInPanel" value="Rh2TotalNumStdPMTInPanel+Rh2TotalNumGrandPMTInPanel" />
+<constant name = "Rh2TotalNumPMT" value="Rh2NumPanels*Rh2TotalNumPMTInPanel" />
+
+<constant name = "Rh2MaxNumberOfPMT" value="Rh2NumPanels*(Rh2TotalNumStdPMTInPanel+4*Rh2TotalNumGrandPMTInPanel)" />
+
+  </define>
+
+</lccdd>
+

@@ -1,0 +1,71 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- This file contains the geometry parameters of the exit wall of        -->
+<!--     Rich1. For now there are two G10 walls each of thickness 0.5 mm.  -->
+<!--     Between these there is a PMIfoam of thickness 16 mm. This gives   -->
+<!--     a total thickness of 15 mm.                                      -->
+<!--     The beamcone is subtracted from each of these components.        -->
+<!--    The Z extents are are follows. A 0.1 mm tolerence added in Z and  -->
+<!--     a 1 mm tolerence in Y                                            -->
+<!--     The Rich1 submaster ends at 2260 and the exit wall master ends at 2255 mm.-->
+
+<!--     Using values from EDMS  TD-1026-132 (apart from abosolute Z values). -->
+<!--     The thickness of G10 increased from 0.5 to 0.7 to account for the    -->
+<!--     glue on the G10 and from the discussions with Antonis who co-authored the -->
+<!--     note EDMS 495184                                                          -->
+<!--     The exit wall master has First G10        PMIfoam       second G10        -->
+<!--     The lateral size of all these are rich1submaterXsize-2*magshieldthickness .-->
+<!--  ==========================================================================   -->
+<lccdd>
+  <define>
+
+  <constant name="Rh1ExitG10Thickness" value="0.7*mm" />
+  <constant name="Rh1ExitPMIThickness" value="16.0*mm" />
+  <constant name="Rh1ExitShiftZ"       value="0.1*mm"  />
+  <constant name="Rh1ExitWallXTolerence"  value="0.5*mm" />
+  <constant name="Rh1ExitWallYTolerence"  value="0.5*mm" />
+  <constant name="Rh1ExitWallZTolerence"  value="0.1*mm" />
+
+  <constant name="Rh1ExitWallZShift"  value="5.0*mm" />
+
+  <constant name="Rh1ExitWallBeamPipeHoleRadialTolerence"  value="0.1*mm"  />
+ <!--  Now for the derived parameters -->
+
+  <constant name="Rh1ExitWallMasterXSize" value="1556.0*mm" />
+  <constant name="Rh1ExitWallMasterYSize" value="1322.0*mm" />
+  <constant name="Rh1ExitWallMasterZSize" value="Rh1ExitPMIThickness+2.0*Rh1ExitG10Thickness+4.0*Rh1ExitWallZTolerence" />
+
+  <constant name="Rh1ExitG10XSize"  value="Rh1ExitWallMasterXSize-2.0*Rh1ExitWallXTolerence" />
+  <constant name="Rh1ExitG10YSize"  value="Rh1ExitWallMasterYSize-2.0*Rh1ExitWallYTolerence" />
+  <constant name="Rh1ExitG10ZSize"  value="Rh1ExitG10Thickness" />
+
+  <constant name="Rh1ExitPMIXSize"  value="Rh1ExitWallMasterXSize-2.0*Rh1ExitWallXTolerence" />
+  <constant name="Rh1ExitPMIYSize"  value="Rh1ExitWallMasterYSize-2.0*Rh1ExitWallYTolerence" />
+  <constant name="Rh1ExitPMIZSize"  value="Rh1ExitPMIThickness" />
+
+  <constant name="Rh1ExitWallEndZInLHCb"  value="Rh1SubMasterDnstrZLim-Rh1ExitWallZShift" />
+  <constant name="Rh1ExitWallMasterZ" value="Rh1ExitWallEndZInLHCb-0.5*Rh1ExitWallMasterZSize-Rh1SubMasterZ-Rich1MasterZ" />
+  <constant name="Rh1ExitWallMasterX" value="0.0*mm" />
+  <constant name="Rh1ExitWallMasterY" value="0.0*mm" />
+
+  <constant name="Rh1ExitG10UpstrX"      value="0.0*mm"   />
+  <constant name="Rh1ExitG10UpstrY"      value="0.0*mm"   />
+  <constant name="Rh1ExitG10UpstrZ"      value="-0.5*(Rh1ExitG10ZSize+Rh1ExitPMIZSize)-Rh1ExitWallZTolerence"   />
+  <constant name="Rh1ExitPMIX"           value="0.0*mm"   />
+  <constant name="Rh1ExitPMIY"           value="0.0*mm"   />
+  <constant name="Rh1ExitPMIZ"           value="0.0*mm"  />
+  <constant name="Rh1ExitG10DnstrX"      value="0.0*mm"   />
+  <constant name="Rh1ExitG10DnstrY"      value="0.0*mm"   />
+  <constant name="Rh1ExitG10DnstrZ"      value="0.5*(Rh1ExitG10ZSize+Rh1ExitPMIZSize)+Rh1ExitWallZTolerence"   />
+
+<!--  End of Rich1 Exit wall Geometry parameters  -->
+  </define>
+</lccdd>

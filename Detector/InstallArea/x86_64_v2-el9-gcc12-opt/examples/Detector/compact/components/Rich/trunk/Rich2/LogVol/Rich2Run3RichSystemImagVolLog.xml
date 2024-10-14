@@ -1,0 +1,34 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description LogVol in DD4HEP                  -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     26/11/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!--  Rich2 logvol named RichSystem.  It is a small imaginary volume created for the  -->
+<!--  convenience of creating a corresponding detector elment with the same name where -->
+<!--  some information useful for digitization and reconstruction are stored    -->
+<!--  ==========================================================================-->
+
+
+<Rich2>
+
+  <!-- LOGVOL lvRichSystem  -->
+
+<!-- Now for the imaginary volume named RichSystem which was created just for having a -->
+<!-- Detector element with that name -->
+
+  <volume name="lvRichSystem" material="Rich:Air" vis="Rich:VisRichSystem">
+     <shape type="Box" name="RichSystemBox"
+	 dx="RichSystemImagXSize*RhHalfSize"
+	 dy="RichSystemImagXSize*RhHalfSize"
+	 dz="RichSystemImagXSize*RhHalfSize" />
+
+  </volume>
+
+  <!-- end lvRichSystem -->
+
+</Rich2>

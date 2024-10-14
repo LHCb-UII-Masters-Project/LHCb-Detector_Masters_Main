@@ -1,0 +1,4194 @@
+---
+NoiseValues:
+  UTAsideUTaUStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaUStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTaXStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbVStave8Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTAsideUTbXStave8Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaUStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTaXStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbVStave8Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module3Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module3Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module4Sector0:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module4Sector1:
+    SectorNoise: [ 0.55, 0.55, 0.55, 0.55]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave0Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module2Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module4Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module3Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module5Sector1:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave1Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave2Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave3Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave4Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave5Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave6Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave7Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face0Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face0Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face0Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face0Module4Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face0Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face0Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face0Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face1Module0Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face1Module1Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face1Module2Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face1Module3Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face1Module5Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face1Module6Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250
+  UTCsideUTbXStave8Face1Module7Sector0:
+    SectorNoise: [ 0.9, 0.9, 0.9, 0.9 ]
+    cmNoise: [ 1.0, 1.0, 1.0, 1.0 ]
+    electronsPerADC: 2250

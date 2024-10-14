@@ -1,0 +1,101 @@
+<!-- ========================================================================== -->
+<!--  LHCb RICH Detector Geometry description parameters in DD4HEP              -->
+<!--                                                                            -->
+<!--  Copyright (C) Organisation europeenne pour la Recherche nucleaire (CERN)  -->
+<!--  All rights reserved.                                                      -->
+<!--                                                                            -->
+<!--  @author   Sajan Easo                                                      -->
+<!--  @date     01/07/2020                                                      -->
+<!--                                                                            -->
+<!--  ==========================================================================-->
+<!-- this file contains the Rich1 PhotoDetector Support Frame  
+     Derived Geometry Parameters . The Basic parameters are in
+     Rich1Run3PhotDetSupFrameBasicGeomParam.xml
+
+     Rich1 HPDSupports contain arrays of HPDs. The Halves are
+     such that                         top    0 
+                                      bottom  1       -->
+<!--  Begin  Rich1PhotDetSupFrameGeomParameters    -->
+<!--  Begin the parameters input  -->
+
+<!--
+  Rh1PMTModuleArraySizeDiffY: difference in the module array size wrt old PMT system (as in: dddb-20190223).
+  It is used to calculate the Rh1PhDetSupYSize and offset Y in the Rich1PhotDetSupFrame plane. 
+  This offset ensures  that the detection plane edge stays the same as in the old system.
+-->
+<!-- Since DD4HEP does not have parameters with global validity in the sense that to evaulate each 
+   parameter in a line in a file ,all the calculations must in files included before the current 
+   file or the lines before current line in the current file , this file on PhotDetSupGFrameGeomParam
+   is spilt into two parts:
+    Rich1Run3PhotDetSupFrameBasicGeomParam.xml and Rich1Run3PhotDetSupFrameDerivedGeomParam.xml -->
+
+<!--  ==========================================================================-->
+
+<lccdd>
+  <define>
+
+
+<!-- Now for the derived parameters               -->
+
+
+   <constant name ="Rh1PMTDetPlaneZLocationInPhDetSupFrame" value="Rh1PMTModuleMasterZ+RhStdECRZLocationInModule+RhPMTMasterZLocationInECR-(0.5*RhPMTMasterZSize)+RhPMTEndToQuartzOuterSurface+RhPMTQuartzThickness" />
+
+   <constant name="Rh1PhDetTopShiftAlongPmtAxis"  value="-1.0*Rh1PMTDetPlaneZLocationInPhDetSupFrame" />
+
+
+   <constant name="Rh1PhDetSupTopXLoc" value="Rh1PhDetTopPlaneX+(Rh1PhDetTopShiftAlongPmtAxis*Rh1PhDetTopPlaneDirCosX)" />
+   <constant name="Rh1PhDetSupTopYLoc" value="Rh1PhDetTopPlaneY+(Rh1PhDetTopShiftAlongPmtAxis*Rh1PhDetTopPlaneDirCosY)" />
+   <constant name="Rh1PhDetSupTopZLoc" value="Rh1PhDetTopPlaneZ+(Rh1PhDetTopShiftAlongPmtAxis*Rh1PhDetTopPlaneDirCosZ)" />
+   <constant name="Rh1PhDetSupBotXLoc" value="Rh1PhDetBotPlaneX+(Rh1PhDetTopShiftAlongPmtAxis*Rh1PhDetBotPlaneDirCosX)" />
+   <constant name="Rh1PhDetSupBotYLoc" value="Rh1PhDetBotPlaneY+(Rh1PhDetTopShiftAlongPmtAxis*Rh1PhDetBotPlaneDirCosY)" />
+   <constant name="Rh1PhDetSupBotZLoc" value="Rh1PhDetBotPlaneZ+(Rh1PhDetTopShiftAlongPmtAxis*Rh1PhDetBotPlaneDirCosZ)" />
+
+   <constant name="Rh1PhDetSupTopXH0" value="Rh1PhDetSupTopXLoc-Rh1MagSVertXLocation-Rh1SubMasterX-Rich1MasterX"  />
+   <constant name="Rh1PhDetSupTopYH0" value="Rh1PhDetSupTopYLoc-Rh1MagSVertYLocationTop-Rh1SubMasterY-Rich1MasterY"  />
+   <constant name="Rh1PhDetSupTopZH0" value="Rh1PhDetSupTopZLoc-Rh1MagSVertZLocation-Rh1SubMasterZ-Rich1MasterZ"  />
+   <constant name="Rh1PhDetSupBotXH1" value="Rh1PhDetSupBotXLoc-Rh1MagSVertXLocation-Rh1SubMasterX-Rich1MasterX"  />
+   <constant name="Rh1PhDetSupBotYH1" value="Rh1PhDetSupBotYLoc-Rh1MagSVertYLocationBot-Rh1SubMasterY-Rich1MasterY"  />
+   <constant name="Rh1PhDetSupBotZH1" value="Rh1PhDetSupBotZLoc-Rh1MagSVertZLocation-Rh1SubMasterZ-Rich1MasterZ"  />
+ 
+  <!-- Now for the derived parameters for usage in Brunel use the that for the top plane for HPD. 
+       These parameters are same for PMT. The HPD name is also kept for now, for any backward compatibility issues in Brunel -->
+    <constant name="Rh1HpdInputWindowPlaneDirCosX" value="Rh1PhDetTopPlaneDirCosX" />
+    <constant name="Rh1HpdInputWindowPlaneDirCosY" value="Rh1PhDetTopPlaneDirCosY" />
+    <constant name="Rh1HpdInputWindowPlaneDirCosZ" value="Rh1PhDetTopPlaneDirCosZ" />
+    <constant name="Rh1HpdInputWindowPlaneDistFromOrigin" value="Rh1PhDetTopPlaneX*Rh1PhDetTopPlaneDirCosX+Rh1PhDetTopPlaneY*Rh1PhDetTopPlaneDirCosY+Rh1PhDetTopPlaneZ*Rh1PhDetTopPlaneDirCosZ"/>  
+
+ <!-- Now for the derived parameters for usage in Brunel use the that for PMT  -->
+
+
+   <constant name ="Rh1PhDetWithPmtTopPlaneX" value= "Rh1PhDetTopPlaneX" />
+   <constant name ="Rh1PhDetWithPmtTopPlaneY" value= "Rh1PhDetTopPlaneY" />
+   <constant name ="Rh1PhDetWithPmtTopPlaneZ" value= "Rh1PhDetTopPlaneZ" />
+
+   <constant name ="Rh1PhDetWithPmtBotPlaneX" value= "Rh1PhDetBotPlaneX" />
+   <constant name ="Rh1PhDetWithPmtBotPlaneY" value= "Rh1PhDetBotPlaneY" />
+   <constant name ="Rh1PhDetWithPmtBotPlaneZ" value= "Rh1PhDetBotPlaneZ" />
+
+    <constant name="Rh1PmtInputWindowTopPlaneDirCosX" value="Rh1PhDetTopPlaneDirCosX" />
+    <constant name="Rh1PmtInputWindowTopPlaneDirCosY" value="Rh1PhDetTopPlaneDirCosY" />
+    <constant name="Rh1PmtInputWindowTopPlaneDirCosZ" value="Rh1PhDetTopPlaneDirCosZ" />
+    <constant name="Rh1PmtTopInputWindowPlaneDistFromOrigin" value="Rh1PhDetWithPmtTopPlaneX*Rh1PhDetTopPlaneDirCosX+Rh1PhDetWithPmtTopPlaneY*Rh1PhDetTopPlaneDirCosY+Rh1PhDetWithPmtTopPlaneZ*Rh1PhDetTopPlaneDirCosZ"/>  
+    
+    <constant name="Rh1PmtInputWindowBotPlaneDirCosX" value="Rh1PhDetBotPlaneDirCosX" />
+    <constant name="Rh1PmtInputWindowBotPlaneDirCosY" value="Rh1PhDetBotPlaneDirCosY" />
+    <constant name="Rh1PmtInputWindowBotPlaneDirCosZ" value="Rh1PhDetBotPlaneDirCosZ" />
+    <constant name="Rh1PmtBotInputWindowPlaneDistFromOrigin" value="Rh1PhDetWithPmtBotPlaneX*Rh1PhDetBotPlaneDirCosX+Rh1PhDetWithPmtBotPlaneY*Rh1PhDetBotPlaneDirCosY+Rh1PhDetWithPmtBotPlaneZ*Rh1PhDetBotPlaneDirCosZ"/>  
+
+
+<!--   End  Rich1PhotDetSupFrameGeomParameters    -->
+  </define>
+</lccdd>
+
+
+
+
+
+
+
+
+
+
